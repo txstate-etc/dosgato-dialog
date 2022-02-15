@@ -10,8 +10,9 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@rodneylab/sveltekit-components": "^0.2.8",
-    "@txstate-mws/svelte-forms": "^0.0.1",
+    "@txstate-mws/svelte-forms": "^0.0.10",
+    "@iconify/svelte": "^2.1.1",
+    "@iconify/icons-mdi": "^1.1.42",
     "txstate-utils": "^1.5.2"
   },
   "devDependencies": {
