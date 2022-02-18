@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import { Form, FieldDate, FieldDateTime, FieldText, FieldMultiple, Tab, Tabs } from '$lib'
-import FieldChoices from '$lib/FieldChoices.svelte'
+  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs } from '$lib'
+import FieldRadio from '$lib/FieldRadio.svelte'
   let store
 
   async function submit (data) {
@@ -27,18 +27,23 @@ import FieldChoices from '$lib/FieldChoices.svelte'
 <main>
 <Form bind:store {submit} {validate} let:saved>
   <Tabs>
-    <Tab title="Left">
+    <Tab title="Add More">
       <FieldText path="test" label="Test" />
-      <FieldMultiple path="multi" label="People" initialState={{ name: 'Barney' }} let:index>
-        <FieldText path="name" label={'Name ' + index} />
+      <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>
+        <FieldText path="first" label="First Name" />
+        <FieldText path="last" label="Last Name" />
       </FieldMultiple>
-      <FieldMultiple path="multi_scalar" label="Just Names" initialState={'Barney'} let:index>
+      <FieldMultiple removable reorder path="multi_scalar" label="Just Names" initialState={'Barney'} let:index>
         <FieldText path="" label={'Name ' + index} />
       </FieldMultiple>
     </Tab>
-    <Tab title="Right">
+    <Tab title="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} />
+    </Tab>
+    <Tab title="Selections">
+      <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
+      <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
     </Tab>
     <Tab title="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />

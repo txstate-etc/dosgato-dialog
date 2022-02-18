@@ -2,6 +2,7 @@
   export let id: string|undefined = undefined
   export let name: string
   export let value: string
+  export let selected = false
   export let onChange: any = undefined
   export let onBlur: any = undefined
   export let messagesid: string|undefined = undefined
@@ -10,7 +11,7 @@
   export let invalid = false
 </script>
 
-<input {id} type="radio" {name} class:valid class:invalid {disabled} aria-describedby={messagesid} {value} on:change={onChange} on:blur={onBlur}>
+<input {id} type="radio" {name} class:valid class:invalid checked={selected} {disabled} aria-describedby={messagesid} {value} on:change={onChange} on:blur={onBlur}>
 
 <style>
 input, input:before, input:after {

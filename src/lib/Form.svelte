@@ -30,7 +30,7 @@
     box-sizing: border-box;
   }
   :global(.dialog-form) {
-    padding: 1.5em;
+    padding: 0;
   }
   :global(.dialog-form fieldset) {
     border: 1px solid #666666;

@@ -3,6 +3,7 @@
   import { randomid } from 'txstate-utils'
   import Container from './Container.svelte'
   export let id = randomid()
+  export let groupid: string|undefined = undefined
   export let path: string
   export let defaultValue: any = undefined
   export let label: string
@@ -12,7 +13,7 @@
 </script>
 
 <Field {path} {defaultValue} {conditional} {serialize} {deserialize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
-  <Container {id} {label} {messages}>
+  <Container {id} {label} {messages} {groupid}>
     <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} />
   </Container>
 </Field>

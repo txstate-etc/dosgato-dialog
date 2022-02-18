@@ -12,7 +12,7 @@
   onDestroy(() => store.unregisterTab(title))
 </script>
 
-<div id={$store.panelids[title]} class:active role="tabpanel" tabindex="0" aria-labelledby={$store.tabids[title]} class="dialog-tab-content">
+<div id={$store.panelids[title]} class:active role="tabpanel" tabindex="0" aria-labelledby={$store.tabids[title]} class="tabs-panel">
   <slot />
 </div>
 
@@ -24,6 +24,7 @@
     border-bottom-left-radius: var(--tabs-panel-radius, var(--tabs-radius, 0.3em));
     border-bottom-right-radius: var(--tabs-panel-radius, var(--tabs-radius, 0.3em));
     margin-top: -1px;
+    overflow: hidden;
   }
   div.active {
     display: block;

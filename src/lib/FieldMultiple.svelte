@@ -9,7 +9,10 @@
   export let path: string
   export let label: string
   export let initialState: any = undefined
+  export let startEmpty = false
   export let compact = false
+  export let removable = false
+  export let reorder = false
   export let conditional: boolean|undefined = undefined
 
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
@@ -17,11 +20,74 @@
   const store = getContext<FormStore>(FORM_CONTEXT)
   const messageStore = derivedStore(store, ({ messages }) => messages.all.filter(m => m.path?.startsWith(finalPath)))
 
+  const reorderelements: HTMLButtonElement[] = []
+  function moveUpAndFocus (onMoveUp: Function, idx: number) {
+    return () => {
+      onMoveUp()
+      reorderelements[idx - 1]?.focus()
+    }
+  }
+
   $: messages = compact ? $messageStore : []
 </script>
 
 <Container {label} {messages}>
-  <AddMore {path} {initialState} {conditional} let:path let:maxLength let:index let:maxed let:value>
-    <slot {path} {index} {value} {maxed} {maxLength} />
+  <AddMore {path} {initialState} {conditional} addMoreClass="dialog-multiple-button" {startEmpty} let:path let:currentLength let:maxLength let:index let:maxed let:value let:onDelete let:onMoveUp>
+    {@const showDelete = removable && (currentLength > 1 || startEmpty)}
+    {@const showMove = reorder && index > 0}
+    <div class="dialog-multiple" class:has-delete-icon={showDelete}>
+      <div class="dialog-multiple-content">
+        <slot {path} {index} {value} {maxed} {maxLength} {currentLength} />
+      </div>
+      {#if showDelete || showMove}<div class="dialog-multiple-buttons">
+        {#if reorder}<button bind:this={reorderelements[index]} class="dialog-multiple-move" type="button" aria-hidden={!showMove} disabled={!showMove} style:visibility={showMove ? 'visible' : 'hidden'} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}>^</button>{/if}
+        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}>X</button>{/if}
+      </div>{/if}
+    </div>
   </AddMore>
 </Container>
+
+<style>
+  .dialog-multiple {
+    position: relative;
+    border-left: var(--dialog-container-border, 1px solid #999999);
+    border-bottom: var(--dialog-container-border, 1px solid #999999);
+    padding: var(--dialog-container-padding, 1em);
+  }
+  .dialog-multiple:first-child {
+    border-top: var(--dialog-container-border, 1px solid #999999);
+  }
+  .dialog-multiple:nth-of-type(even) {
+    background-color: var(--dialog-field-bg1, #e6e6e6);
+    color: var(--dialog-field-text1, inherit);
+  }
+  .dialog-multiple:nth-of-type(odd) {
+    background-color: var(--dialog-field-bg2, #ffffff);
+    color: var(--dialog-field-text2, inherit);
+  }
+  :global(.tabs-panel) .dialog-multiple {
+    margin-right: var(--dialog-container-tab-correct);
+    padding-right: var(--tabs-panel-padding, 1em);
+  }
+  :global(.dialog-multiple-button) {
+    padding: 0.3em 0.4em;
+    margin-top: 0.5em;
+  }
+  .dialog-multiple.has-delete-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dialog-multiple-buttons {
+    margin-left: 0.75em;
+  }
+  .dialog-multiple-buttons button {
+    margin-left: 0.2em;
+  }
+  .dialog-multiple-buttons button:first-child {
+    margin-left: 0;
+  }
+  .dialog-multiple-content {
+    flex-grow: 1;
+  }
+</style>
