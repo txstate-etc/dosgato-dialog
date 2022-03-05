@@ -9,7 +9,8 @@
   export let path: string
   export let label: string
   export let initialState: any = undefined
-  export let startEmpty = false
+  export let minLength = 1
+  export let maxLength: number|undefined = undefined
   export let compact = false
   export let removable = false
   export let reorder = false
@@ -32,8 +33,8 @@
 </script>
 
 <Container {label} {messages}>
-  <AddMore {path} {initialState} {conditional} addMoreClass="dialog-multiple-button" {startEmpty} let:path let:currentLength let:maxLength let:index let:maxed let:value let:onDelete let:onMoveUp>
-    {@const showDelete = removable && (currentLength > 1 || startEmpty)}
+  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} addMoreClass="dialog-multiple-button" let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
+    {@const showDelete = removable && !minned}
     {@const showMove = reorder && index > 0}
     <div class="dialog-multiple" class:has-delete-icon={showDelete}>
       <div class="dialog-multiple-content">

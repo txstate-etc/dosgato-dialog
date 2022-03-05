@@ -7,14 +7,15 @@
   export let groupid: string|undefined = undefined
   export let label: string
   export let messages: Feedback[]
+  export let required = false
   let messagesid
 </script>
 
 <div use:eq class="dialog-field-container">
   {#if groupid == null}
-    <label class="dialog-field-label" for={id}>{label}</label>
+    <label class="dialog-field-label" for={id}>{label}{#if required}&nbsp;*{/if}</label>
   {:else}
-    <div id={groupid} class="dialog-field-label">{label}</div>
+    <div id={groupid} class="dialog-field-label">{label}{#if required}&nbsp;*{/if}</div>
   {/if}
   <div class="dialog-field-content">
     <slot {messagesid} />

@@ -12,8 +12,9 @@
   export let max: Date|{ toJSDate: () => Date }|undefined = undefined
   export let step: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
+  export let required = false
 </script>
 
-<FieldStandard bind:id {label} {path} {defaultValue} {conditional} serialize={dateSerialize} deserialize={dateDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={dateSerialize} deserialize={dateDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
   <Input type="date" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} />
 </FieldStandard>

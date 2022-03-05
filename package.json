@@ -10,7 +10,7 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@txstate-mws/svelte-forms": "^0.0.12",
+    "@txstate-mws/svelte-forms": "^0.0.14",
     "@iconify/svelte": "^2.1.1",
     "@iconify/icons-mdi": "^1.1.42",
     "txstate-utils": "^1.6.2"

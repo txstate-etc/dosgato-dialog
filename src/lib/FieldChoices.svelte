@@ -12,7 +12,7 @@
   export let path: string
   export let label: string = ''
   export let choices: { label?: string, value: any, disabled?: boolean }[]
-  export let defaultValue: any = undefined
+  export let defaultValue: any = []
   export let conditional: boolean|undefined = undefined
   export let maxwidth = 250
   export let leftToRight = false

@@ -36,7 +36,7 @@
 <Form bind:store {submit} {validate} let:saved>
   <Tabs {tabs}>
     <Tab title="Add More">
-      <FieldText path="test" label="Test" />
+      <FieldText path="test" label="Test" required />
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>
         <FieldText path="first" label="First Name" />
         <FieldText path="last" label="Last Name" />

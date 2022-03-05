@@ -13,8 +13,9 @@
   export let allowlastpass = false
   export let maxlength: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
+  export let required = false
 </script>
 
-<FieldStandard bind:id {label} {path} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
   <Input {type} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength}></Input>
 </FieldStandard>

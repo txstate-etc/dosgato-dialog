@@ -13,8 +13,9 @@
   export let max: number|undefined = undefined
   export let step: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
+  export let required = false
 </script>
 
-<FieldStandard bind:id {label} {path} {defaultValue} {conditional} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
   <Input type="number" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step}></Input>
 </FieldStandard>
