@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
+  import { eq } from '@txstate-mws/svelte-components'
   import InlineMessages from './InlineMessages.svelte'
 
   export let id: string|undefined = undefined
@@ -9,8 +10,8 @@
   let messagesid
 </script>
 
-<div class="dialog-field-container">
-  {#if id != null}
+<div use:eq class="dialog-field-container">
+  {#if groupid == null}
     <label class="dialog-field-label" for={id}>{label}</label>
   {:else}
     <div id={groupid} class="dialog-field-label">{label}</div>
@@ -68,6 +69,7 @@
   :global([data-eq~="500px"]) .dialog-field-label {
     width: 100%;
     max-width: 100%;
+    margin-bottom: 0.4em;
   }
   .dialog-field-container :global(.dialog-input) {
     width: 100%;

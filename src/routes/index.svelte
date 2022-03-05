@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs } from '$lib'
-import FieldRadio from '$lib/FieldRadio.svelte'
+  import plusThick from '@iconify/icons-mdi/plus-thick'
+  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs } from '$lib/index'
+  import FieldRadio from '$lib/FieldRadio.svelte'
   let store
 
   async function submit (data) {
@@ -19,6 +20,13 @@ import FieldRadio from '$lib/FieldRadio.svelte'
       path: 'multi.0.name'
     }]
   }
+
+  const tabs = [
+    { title: 'Add More', icon: plusThick },
+    { title: 'Dates' },
+    { title: 'Selections' },
+    { title: 'Checkboxes' }
+  ]
 </script>
 
 <svelte:head><title>DosGato Dialog Example</title></svelte:head>
@@ -26,7 +34,7 @@ import FieldRadio from '$lib/FieldRadio.svelte'
 
 <main>
 <Form bind:store {submit} {validate} let:saved>
-  <Tabs>
+  <Tabs {tabs}>
     <Tab title="Add More">
       <FieldText path="test" label="Test" />
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>

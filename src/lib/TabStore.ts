@@ -1,70 +1,47 @@
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
 import type { ElementSize } from '@txstate-mws/svelte-components'
-import { randomid } from 'txstate-utils'
+import { findIndex, randomid } from 'txstate-utils'
+import type { IconifyIcon } from '@iconify/svelte'
 
 export const TAB_CONTEXT = {}
 
+interface TabDef {
+  title: string
+  icon?: IconifyIcon
+}
+
 interface ITabStore extends ElementSize {
   current?: number
-  tabs: string[]
+  tabs: TabDef[]
   tabids: Record<string, string>
   panelids: Record<string, string>
 }
 
 export class TabStore extends Store<ITabStore> {
-  constructor (public initialTab: string|undefined, tabs: string[] = []) {
+  constructor (tabs: TabDef[], public initialTab?: string|undefined) {
     super({
-      current: typeof initialTab === 'undefined' ? undefined : tabs.findIndex(t => t === initialTab),
       tabs,
-      tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr]: randomid() }), {}),
-      panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr]: randomid() }), {}),
+      current: findIndex(tabs, t => t.title === initialTab, 0),
+      tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr.title]: randomid() }), {}),
+      panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr.title]: randomid() }), {}),
       clientWidth: 1024
     })
   }
 
-  registerTab (name: string) {
-    this.update(v => {
-      const foundidx = v.tabs.findIndex(t => t === name)
-      const idx = foundidx === -1 ? v.tabs.length : foundidx
-      let current = v.current
-      if (name === this.initialTab) {
-        current = idx
-        this.initialTab = undefined
-      }
-      current ??= idx
-      if (foundidx !== -1) return { ...v, current }
-      return {
-        ...v,
-        current,
-        tabs: [...v.tabs, name],
-        tabids: { ...v.tabids, [name]: randomid() },
-        panelids: { ...v.panelids, [name]: randomid() }
-      }
-    })
-  }
-
-  unregisterTab (name: string) {
-    this.update(v => {
-      const idx = v.tabs.findIndex(t => t === name)
-      const current = (idx === v.current && idx === v.tabs.length - 1) ? v.tabs.length - 2 : v.current
-      return {
-        ...v,
-        current,
-        tabs: [...v.tabs].splice(idx, 1)
-      }
-    })
-  }
-
   currentTitle () {
-    return derivedStore(this, v => v.tabs[v.current])
+    return derivedStore(this, v => v.tabs[v.current].title)
   }
 
   currentTabId () {
-    return derivedStore(this, v => v.tabids[v.tabs[v.current]])
+    return derivedStore(this, v => v.tabids[v.tabs[v.current].title])
   }
 
   currentPanelId () {
-    return derivedStore(this, v => v.panelids[v.tabs[v.current]])
+    return derivedStore(this, v => v.panelids[v.tabs[v.current].title])
+  }
+
+  accordion () {
+    return derivedStore(this, v => v.clientWidth < 500)
   }
 
   left () {

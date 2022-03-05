@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Feedback, Form, FormStore, SubmitResponse } from '@txstate-mws/svelte-forms'
+  import { Form, FormStore } from '@txstate-mws/svelte-forms'
+  import type { Feedback, SubmitResponse } from '@txstate-mws/svelte-forms'
   import { createEventDispatcher } from 'svelte'
   let className = ''
   export { className as class }

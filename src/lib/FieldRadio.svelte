@@ -17,12 +17,12 @@
   const width = '100%'
 </script>
 
-<FieldStandard bind:id {groupid} {label} {path} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange>
+<FieldStandard bind:id {groupid} {label} {path} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:onBlur let:onChange>
   <div class="dialog-radio {className}" class:horizontal role="radiogroup" aria-labelledby={groupid} class:invalid>
     {#each choices as choice, idx}
       {@const radioid = `${path}.${idx}`}
       <label for={radioid} style:width>
-        <Radio id={radioid} name={radioid} value={choice.value} selected={value === choice.value} disabled={choice.disabled} {onChange} {onBlur} />
+        <Radio id={radioid} name={path} value={choice.value} selected={value === choice.value} disabled={choice.disabled} {onChange} {onBlur} />
         <span>{choice.label || (typeof choice.value === 'string' ? choice.value : '')}</span>
       </label>
     {/each}
@@ -30,6 +30,9 @@
 </FieldStandard>
 
 <style>
+  .dialog-radio {
+    padding: 0.2em 0;
+  }
   label {
     margin-bottom: 0.7em;
     display: flex;

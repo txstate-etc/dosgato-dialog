@@ -50,12 +50,11 @@
 <style>
   .dialog-multiple {
     position: relative;
-    border-left: var(--dialog-container-border, 1px solid #999999);
-    border-bottom: var(--dialog-container-border, 1px solid #999999);
+    border: var(--dialog-container-border, 1px solid #999999);
     padding: var(--dialog-container-padding, 1em);
   }
-  .dialog-multiple:first-child {
-    border-top: var(--dialog-container-border, 1px solid #999999);
+  .dialog-multiple:not(:first-child) {
+    border-top: 0;
   }
   .dialog-multiple:nth-of-type(even) {
     background-color: var(--dialog-field-bg1, #e6e6e6);
@@ -64,10 +63,6 @@
   .dialog-multiple:nth-of-type(odd) {
     background-color: var(--dialog-field-bg2, #ffffff);
     color: var(--dialog-field-text2, inherit);
-  }
-  :global(.tabs-panel) .dialog-multiple {
-    margin-right: var(--dialog-container-tab-correct);
-    padding-right: var(--tabs-panel-padding, 1em);
   }
   :global(.dialog-multiple-button) {
     padding: 0.3em 0.4em;
