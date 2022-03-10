@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import plusThick from '@iconify/icons-mdi/plus-thick'
-  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs } from '$lib/index'
+  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
   import FieldRadio from '$lib/FieldRadio.svelte'
   let store
 
@@ -55,6 +55,7 @@
     </Tab>
     <Tab title="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
+      <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
     </Tab>
   </Tabs>
   {#if saved}Save successful!{/if}
