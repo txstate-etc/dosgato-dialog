@@ -1,16 +1,21 @@
 <script lang="ts">
+  import { isNotBlank } from 'txstate-utils'
+
   export let id: string|undefined = undefined
   export let name: string
   export let value: boolean
   export let onChange: any = undefined
   export let onBlur: any = undefined
+  export let descid: string|undefined = undefined
   export let messagesid: string|undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false
+
+  $: descby = [descid, messagesid].filter(isNotBlank).join(' ')
 </script>
 
-<input {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={messagesid} bind:checked={value} on:change={onChange} on:blur={onBlur}>
+<input {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={descby} bind:checked={value} on:change={onChange} on:blur={onBlur}>
 
 <style>
 input, input:before, input:after {

@@ -3,6 +3,7 @@
   import { Field, FORM_CONTEXT } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
+  import { randomid } from 'txstate-utils'
   import Container from './Container.svelte'
   import Checkbox from './Checkbox.svelte'
 
@@ -37,17 +38,19 @@
       else return [...v, choice.value]
     })
   }
+
+  const descid = randomid()
 </script>
 
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid>
-  <Container {id} {label} {messages}>
+  <Container {id} {label} {messages} {descid} let:messagesid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#each choices as choice, idx}
         {@const checkid = `${path}.${idx}`}
         {@const included = value && value.includes(choice.value)}
         {@const label = choice.label || (typeof choice.value === 'string' ? choice.value : '')}
         <label for={checkid} style:width style:order={orders[idx]}>
-          <Checkbox id={checkid} name={checkid} value={included} disabled={choice.disabled} onChange={() => onChangeCheckbox(setVal, choice, included)} {onBlur} />
+          <Checkbox id={checkid} name={checkid} value={included} {messagesid} {descid} disabled={choice.disabled} onChange={() => onChangeCheckbox(setVal, choice, included)} {onBlur} />
           <span>{label}</span>
         </label>
       {/each}
