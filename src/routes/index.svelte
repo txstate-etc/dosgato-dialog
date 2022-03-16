@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import plusThick from '@iconify/icons-mdi/plus-thick'
-  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
+  import { sleep } from 'txstate-utils'
+  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
   import FieldRadio from '$lib/FieldRadio.svelte'
   let store
 
@@ -52,6 +53,7 @@
     <Tab title="Selections">
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
+      <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
     </Tab>
     <Tab title="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
