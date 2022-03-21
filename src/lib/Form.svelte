@@ -1,22 +1,31 @@
+<script lang="ts" context="module">
+  export const ASSET_API_CONTEXT = {}
+</script>
 <script lang="ts">
   import { Form, FormStore } from '@txstate-mws/svelte-forms'
   import type { Feedback, SubmitResponse } from '@txstate-mws/svelte-forms'
-  import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher, setContext } from 'svelte'
+  import type * as assetAPI from './AssetAPI'
   let className = ''
   export { className as class }
   export let submit: (state: any) => Promise<SubmitResponse<any>> = undefined
   export let validate: (state: any) => Promise<Feedback[]> = undefined
   export let success: () => void|Promise<void> = undefined
   export let store: FormStore = undefined
+  export let assetClient: assetAPI.Client|undefined = undefined
   export let autocomplete: string|undefined = undefined
   export let name: string|undefined = undefined
+  export let preload = undefined
+
+  setContext(ASSET_API_CONTEXT, assetClient)
+
   const dispatch = createEventDispatcher()
   function onCancel () {
     dispatch('close')
   }
 </script>
 
-<Form bind:store class="{className} dialog-form" {submit} {validate} {success} {autocomplete} {name} let:messages let:saved let:valid let:invalid let:validating let:submitting>
+<Form bind:store class="{className} dialog-form" {submit} {validate} {success} {autocomplete} {name} {preload} let:messages let:saved let:valid let:invalid let:validating let:submitting>
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} />
   <div class="dialog-buttons">
     <slot name="buttons" {onCancel}>

@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type { Feedback } from '@txstate-mws/svelte-forms'
+  import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
   import plusThick from '@iconify/icons-mdi/plus-thick'
+  import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { Form, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
-  import FieldRadio from '$lib/FieldRadio.svelte'
-  let store
+  import { Form, FieldAsset, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
+  import { demoAssetAPI } from '../demo/AssetAPI'
+  let store: FormStore
 
   async function submit (data) {
     return {
@@ -28,13 +29,15 @@
     { title: 'Selections' },
     { title: 'Checkboxes' }
   ]
+
+  onMount(() => store.setField('asset', 'asset-1'))
 </script>
 
 <svelte:head><title>DosGato Dialog Example</title></svelte:head>
 <h1>DosGato Dialog Example</h1>
 
 <main>
-<Form bind:store {submit} {validate} let:saved>
+<Form bind:store {submit} {validate} assetClient={demoAssetAPI} let:saved>
   <Tabs {tabs}>
     <Tab title="Add More">
       <FieldText path="test" label="Test" required />
@@ -54,6 +57,7 @@
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
       <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
+      <FieldAsset path="asset" label="Choose an Asset" initialSource="DosGato" initialPath="/chemistry/organic"></FieldAsset>
     </Tab>
     <Tab title="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />

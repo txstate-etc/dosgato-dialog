@@ -1,0 +1,61 @@
+<script lang="ts" context="module">
+  import archiveOutline from '@iconify/icons-mdi/archive-outline'
+  import fileCodeOutline from '@iconify/icons-mdi/file-code-outline'
+  import fileDocumentOutline from '@iconify/icons-mdi/file-document-outline'
+  import fileMusicOutline from '@iconify/icons-mdi/file-music-outline'
+  import fileOutline from '@iconify/icons-mdi/file-outline'
+  import fileTableOutline from '@iconify/icons-mdi/file-table-outline'
+  import fileVideoOutline from '@iconify/icons-mdi/file-video-outline'
+  import fileImageOutline from '@iconify/icons-mdi/file-image-outline'
+  import microsoftExcel from '@iconify/icons-mdi/microsoft-excel'
+  import microsoftWord from '@iconify/icons-mdi/microsoft-word'
+  import noteTextOutline from '@iconify/icons-mdi/note-text-outline'
+
+  import type { IconifyIcon } from '@iconify/svelte'
+  const icons: Record<string, IconifyIcon> = {
+    'application/vnd.ms-excel': microsoftExcel,
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': microsoftExcel,
+    'application/vnd.oasis.opendocument.spreadsheet': microsoftExcel,
+    'text/csv': fileTableOutline,
+    'application/msword': microsoftWord,
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': microsoftWord,
+    'application/vnd.oasis.opendocument.text': microsoftWord,
+    'application/rtf': microsoftWord,
+    'application/pdf': fileDocumentOutline,
+    'application/json': fileCodeOutline,
+    'application/x-httpd-php': fileCodeOutline,
+    'application/x-sh': fileCodeOutline,
+    'application/xml': fileCodeOutline,
+    'text/css': fileCodeOutline,
+    'text/html': fileCodeOutline,
+    'text/javascript': fileCodeOutline,
+    'application/gzip': archiveOutline,
+    'application/java-archive': archiveOutline,
+    'application/zip': archiveOutline,
+    'application/vnd.apple.installer+xml': archiveOutline,
+    'application/vnd.rar': archiveOutline,
+    'application/x-7z-compressed': archiveOutline,
+    'application/x-bzip': archiveOutline,
+    'application/x-bzip2': archiveOutline,
+    'application/x-tar': archiveOutline
+  }
+  const prefixes: Record<string, IconifyIcon> = {
+    image: fileImageOutline,
+    text: noteTextOutline,
+    video: fileVideoOutline,
+    audio: fileMusicOutline
+  }
+</script>
+<script lang="ts">
+  import Icon from './Icon.svelte'
+  export let mime: string
+  export let hiddenLabel: string = undefined
+  export let inline: boolean = false
+  export let width: string|number = '1em'
+  export let height: string|number = width
+  export let vAlign: 'top'|'middle'|'bottom' = 'middle'
+
+  $: icon = icons[mime] ?? prefixes[mime.split('/', 2)[0]] ?? fileOutline
+</script>
+
+<Icon {icon} {hiddenLabel} {inline} {width} {height} {vAlign} />
