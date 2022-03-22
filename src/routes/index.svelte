@@ -3,7 +3,7 @@
   import plusThick from '@iconify/icons-mdi/plus-thick'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { Form, FieldAsset, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
+  import { Form, FieldAsset, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldRichText, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'
   import { demoAssetAPI } from '../demo/AssetAPI'
   let store: FormStore
 
@@ -30,7 +30,10 @@
     { title: 'Checkboxes' }
   ]
 
-  onMount(() => store.setField('asset', 'asset-1'))
+  onMount(() => {
+    store.setField('asset', 'asset-1')
+    store.setField('richtext', 'hello')
+  })
 </script>
 
 <svelte:head><title>DosGato Dialog Example</title></svelte:head>
@@ -52,6 +55,7 @@
     <Tab title="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} />
+      <FieldRichText path="richtext" label="Rich Text" maxlength={10} />
     </Tab>
     <Tab title="Selections">
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />

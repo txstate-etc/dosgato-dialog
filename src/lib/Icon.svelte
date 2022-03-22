@@ -11,7 +11,7 @@
 </script>
 
 {#if icon}
-  <Icon {icon} {inline} {width} {height} {vAlign} />
+  <Icon {icon} {inline} {width} {height} {vAlign} aria-hidden={!hiddenLabel} />
   {#if hiddenLabel}
     <ScreenReaderOnly>{hiddenLabel}</ScreenReaderOnly>
   {/if}

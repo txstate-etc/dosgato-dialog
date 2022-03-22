@@ -61,16 +61,18 @@
     margin-left: 0;
   }
   .dialog-field-content {
-    flex-grow: 1;
+    position: relative;
+    width: max(70%, calc(100% - 20em));
   }
   .dialog-field-label {
-    width: 30%;
-    max-width: 20em;
+    width: min(30%, 20em);
   }
   :global([data-eq~="500px"]) .dialog-field-label {
     width: 100%;
-    max-width: 100%;
     margin-bottom: 0.4em;
+  }
+  :global([data-eq~="500px"]) .dialog-field-content {
+    width: 100%;
   }
   .dialog-field-container :global(.dialog-input) {
     width: 100%;
