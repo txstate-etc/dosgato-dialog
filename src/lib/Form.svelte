@@ -5,19 +5,19 @@
   import { Form, FormStore } from '@txstate-mws/svelte-forms'
   import type { Feedback, SubmitResponse } from '@txstate-mws/svelte-forms'
   import { createEventDispatcher, setContext } from 'svelte'
-  import type * as assetAPI from './AssetAPI'
+  import type { Client } from './chooser'
   let className = ''
   export { className as class }
   export let submit: (state: any) => Promise<SubmitResponse<any>> = undefined
   export let validate: (state: any) => Promise<Feedback[]> = undefined
   export let success: () => void|Promise<void> = undefined
   export let store: FormStore = undefined
-  export let assetClient: assetAPI.Client|undefined = undefined
+  export let chooserClient: Client|undefined = undefined
   export let autocomplete: string|undefined = undefined
   export let name: string|undefined = undefined
   export let preload = undefined
 
-  setContext(ASSET_API_CONTEXT, assetClient)
+  setContext(ASSET_API_CONTEXT, chooserClient)
 
   const dispatch = createEventDispatcher()
   function onCancel () {

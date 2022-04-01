@@ -1,31 +1,33 @@
 <script lang="ts">
   import { modifierKey } from '@txstate-mws/svelte-components'
-  import { getContext } from 'svelte'
+  import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
-  import type { AssetStore, UIFolder, UIAsset } from './AssetStore'
-  import { ASSET_STORE_CONTEXT } from './AssetStore'
-  import FileIcon from './FileIcon.svelte'
-  import type { Asset } from './AssetAPI'
+  import type { ChooserStore, UIAsset, UIFolder, AnyUIItem } from './ChooserStore'
+  import { ASSET_STORE_CONTEXT } from './ChooserStore'
+  import FileIcon from '../FileIcon.svelte'
 
-  export let asset: Asset
+  export let asset: UIAsset
   export let level: number
   export let posinset: number
   export let setsize: number
-  export let next: UIFolder|UIAsset|undefined
-  export let prev: UIFolder|UIAsset|undefined
+  export let next: AnyUIItem|undefined
+  export let prev: AnyUIItem|undefined
   export let parent: UIFolder|undefined = undefined
 
-  const store = getContext<AssetStore>(ASSET_STORE_CONTEXT)
+  const store = getContext<ChooserStore>(ASSET_STORE_CONTEXT)
   $: id = hashid(asset.id)
   $: haveFocus = $store?.focus === asset.id
   $: isPreview = $store.preview?.id === asset.id
+
+  const dispatch = createEventDispatcher()
 
   function onKeyDown (e: KeyboardEvent) {
     if (modifierKey(e)) return
     if (['Enter', ' '].includes(e.key)) {
       e.preventDefault()
       e.stopPropagation()
-      store.preview(asset)
+      if ($store.preview?.id === asset.id) dispatch('choose', asset)
+      else store.preview(asset)
     } else if (e.key === 'ArrowDown') {
       e.preventDefault()
       e.stopPropagation()
@@ -72,9 +74,5 @@
 <style>
   li {
     cursor: pointer;
-  }
-  .isPreview {
-    background-color: var(--asset-chooser-active-bg, #333333);
-    color: var(--asset-chooser-active, #FFFFFF);
   }
 </style>

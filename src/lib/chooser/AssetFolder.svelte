@@ -1,35 +1,38 @@
 <script lang="ts">
-  import folderOutline from '@iconify/icons-mdi/folder-outline'
-  import folderOpenOutline from '@iconify/icons-mdi/folder-open-outline'
-  import folderSyncOutline from '@iconify/icons-mdi/folder-sync-outline'
+  import folderOutline from '@iconify/icons-mdi/folder-outline.js'
+  import folderOpenOutline from '@iconify/icons-mdi/folder-open-outline.js'
+  import folderSyncOutline from '@iconify/icons-mdi/folder-sync-outline.js'
   import { modifierKey } from '@txstate-mws/svelte-components'
-  import { getContext } from 'svelte'
+  import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
-  import type { AssetStore, UIFolder, UIAsset } from './AssetStore'
-  import { ASSET_STORE_CONTEXT } from './AssetStore'
+  import type { ChooserStore, UIFolder, AnyUIItem } from './ChooserStore'
+  import { ASSET_STORE_CONTEXT } from './ChooserStore'
   import Asset from './Asset.svelte'
-  import Icon from './Icon.svelte'
+  import Icon from '../Icon.svelte'
 
   export let folder: UIFolder
   export let level: number
   export let posinset: number
   export let setsize: number
-  export let next: UIFolder|UIAsset|undefined
-  export let prev: UIFolder|UIAsset|undefined
+  export let next: AnyUIItem|undefined
+  export let prev: AnyUIItem|undefined
   export let parent: UIFolder|undefined = undefined
 
-  const store = getContext<AssetStore>(ASSET_STORE_CONTEXT)
+  const store = getContext<ChooserStore>(ASSET_STORE_CONTEXT)
   $: open = folder.open && folder.children?.length
   $: nextlevel = level + 1
   $: id = hashid(folder.id)
   $: haveFocus = $store.focus === folder.id
+  $: isPreview = $store.preview?.id === folder.id
+
+  const dispatch = createEventDispatcher()
 
   function onKeyDown (e: KeyboardEvent) {
     if (modifierKey(e)) return
     if (['Enter', ' '].includes(e.key)) {
-      e.preventDefault()
-      e.stopPropagation()
-      store.toggle(folder)
+      onClick(e)
+      if ($store.preview?.id === folder.id) dispatch('choose', folder)
+      else store.preview(folder)
     } else if (e.key === 'ArrowRight') {
       e.preventDefault()
       e.stopPropagation()
@@ -68,11 +71,18 @@
       }
     }
   }
+  function onClick (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    store.preview(folder)
+    store.toggle(folder)
+  }
 </script>
 
 <li
   {id}
   role="treeitem"
+  class:isPreview
   aria-expanded={!!folder.open}
   aria-level={level}
   aria-setsize={setsize}
@@ -80,7 +90,7 @@
   aria-busy={folder.loading}
   tabindex={haveFocus ? 0 : -1}
   on:keydown={onKeyDown}
-  on:click={() => store.toggle(folder)}
+  on:click={onClick}
 >
   <Icon icon={folder.open ? folderOpenOutline : (folder.loading ? folderSyncOutline : folderOutline)} inline /> {folder.name}
 </li>
@@ -92,9 +102,9 @@
       {@const subprev = i === 0 ? folder : folder.children[i - 1]}
       {@const subnext = i === setsize - 1 ? next : folder.children[i + 1]}
       {#if child.type === 'folder'}
-        <svelte:self folder={child} {setsize} {posinset} level={nextlevel} prev={subprev} next={subnext} parent={folder} />
+        <svelte:self folder={child} {setsize} {posinset} level={nextlevel} prev={subprev} next={subnext} parent={folder} on:choose />
       {:else}
-        <Asset asset={child} {setsize} {posinset} level={nextlevel} prev={subprev} next={subnext} parent={folder} />
+        <Asset asset={child} {setsize} {posinset} level={nextlevel} prev={subprev} next={subnext} parent={folder} on:choose />
       {/if}
     {/each}
   </ul>

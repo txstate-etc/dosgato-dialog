@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getContext, onDestroy } from 'svelte'
-import Icon from './Icon.svelte'
+  import { getContext } from 'svelte'
+  import Icon from './Icon.svelte'
   import { TabStore, TAB_CONTEXT } from './TabStore'
 
   export let title: string

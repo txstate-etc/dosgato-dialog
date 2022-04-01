@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import alertCircleOutline from '@iconify/icons-mdi/alert-circle-outline'
-  import checkCircleOutline from '@iconify/icons-mdi/check-circle-outline'
-  import informationOutline from '@iconify/icons-mdi/information-outline'
-  import closeOctagonOutline from '@iconify/icons-mdi/close-octagon-outline'
+  import alertCircleOutline from '@iconify/icons-mdi/alert-circle-outline.js'
+  import checkCircleOutline from '@iconify/icons-mdi/check-circle-outline.js'
+  import informationOutline from '@iconify/icons-mdi/information-outline.js'
+  import closeOctagonOutline from '@iconify/icons-mdi/close-octagon-outline.js'
 
   import Icon from './Icon.svelte'
   export let message: Feedback
