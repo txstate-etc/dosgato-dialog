@@ -1,7 +1,7 @@
 <script lang="ts">
-  import folderOutline from '@iconify/icons-mdi/folder-outline.js'
-  import folderOpenOutline from '@iconify/icons-mdi/folder-open-outline.js'
-  import folderSyncOutline from '@iconify/icons-mdi/folder-sync-outline.js'
+  import folderOutline from '@iconify-icons/mdi/folder-outline.js'
+  import folderOpenOutline from '@iconify-icons/mdi/folder-open-outline.js'
+  import folderSyncOutline from '@iconify-icons/mdi/folder-sync-outline.js'
   import { modifierKey } from '@txstate-mws/svelte-components'
   import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'

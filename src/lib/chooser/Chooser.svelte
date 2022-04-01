@@ -1,6 +1,6 @@
 <script lang="ts">
-  import fileTree from '@iconify/icons-mdi/file-tree.js'
-  import viewGrid from '@iconify/icons-mdi/view-grid.js'
+  import fileTree from '@iconify-icons/mdi/file-tree.js'
+  import viewGrid from '@iconify-icons/mdi/view-grid.js'
   import { Loading, Modal } from '@txstate-mws/svelte-components'
   import { derivedStore } from '@txstate-mws/svelte-store'
   import { createEventDispatcher, getContext, onMount, setContext } from 'svelte'

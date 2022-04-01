@@ -1,6 +1,6 @@
 <script lang="ts">
-  import folderOutline from '@iconify/icons-mdi/folder-outline.js'
-  import fileLinkOutline from '@iconify/icons-mdi/file-link-outline.js'
+  import folderOutline from '@iconify-icons/mdi/folder-outline.js'
+  import fileLinkOutline from '@iconify-icons/mdi/file-link-outline.js'
   import FileIcon from '$lib/FileIcon.svelte'
   import Icon from '$lib/Icon.svelte'
   import type { AnyUIItem, RawURL } from './ChooserStore'

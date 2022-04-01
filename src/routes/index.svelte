@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
-  import plusThick from '@iconify/icons-mdi/plus-thick.js'
+  import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
   import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox } from '$lib/index'

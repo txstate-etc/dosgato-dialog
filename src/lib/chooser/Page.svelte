@@ -1,6 +1,6 @@
 <script lang="ts">
-  import fileOutline from '@iconify/icons-mdi/file-outline.js'
-  import fileSyncOutline from '@iconify/icons-mdi/file-sync-outline.js'
+  import fileOutline from '@iconify-icons/mdi/file-outline.js'
+  import fileSyncOutline from '@iconify-icons/mdi/file-sync-outline.js'
   import { modifierKey } from '@txstate-mws/svelte-components'
   import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
