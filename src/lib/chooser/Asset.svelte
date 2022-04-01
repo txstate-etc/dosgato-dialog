@@ -3,7 +3,7 @@
   import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
   import type { ChooserStore, UIAsset, UIFolder, AnyUIItem } from './ChooserStore'
-  import { ASSET_STORE_CONTEXT } from './ChooserStore'
+  import { CHOOSER_STORE_CONTEXT } from './ChooserStore'
   import FileIcon from '../FileIcon.svelte'
 
   export let asset: UIAsset
@@ -14,7 +14,7 @@
   export let prev: AnyUIItem|undefined
   export let parent: UIFolder|undefined = undefined
 
-  const store = getContext<ChooserStore>(ASSET_STORE_CONTEXT)
+  const store = getContext<ChooserStore>(CHOOSER_STORE_CONTEXT)
   $: id = hashid(asset.id)
   $: haveFocus = $store?.focus === asset.id
   $: isPreview = $store.preview?.id === asset.id

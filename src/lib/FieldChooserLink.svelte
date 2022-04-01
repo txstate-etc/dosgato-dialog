@@ -3,13 +3,12 @@
 </script>
 <script lang="ts">
   import { FORM_CONTEXT, type FormStore } from '@txstate-mws/svelte-forms'
-  import { getContext, setContext } from 'svelte'
+  import { getContext } from 'svelte'
   import { randomid } from 'txstate-utils'
-  import { Chooser, ChooserStore, ASSET_STORE_CONTEXT, type AnyUIItem, type RawURL } from './chooser'
+  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type AnyUIItem, type RawURL } from './chooser'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
   import FieldStandard from './FieldStandard.svelte'
-  import { ASSET_API_CONTEXT } from './Form.svelte'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -28,7 +27,7 @@
 
   const formStore = getContext<FormStore>(FORM_CONTEXT)
   const value = formStore.getField<string>(path)
-  const chooserClient = getContext<Client>(ASSET_API_CONTEXT)
+  const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
   const store = new ChooserStore(chooserClient)
 
   const descid = randomid()

@@ -1,11 +1,8 @@
-<script lang="ts" context="module">
-  export const ASSET_API_CONTEXT = {}
-</script>
 <script lang="ts">
   import { Form, FormStore } from '@txstate-mws/svelte-forms'
   import type { Feedback, SubmitResponse } from '@txstate-mws/svelte-forms'
   import { createEventDispatcher, setContext } from 'svelte'
-  import type { Client } from './chooser'
+  import { CHOOSER_API_CONTEXT, type Client } from './chooser'
   let className = ''
   export { className as class }
   export let submit: (state: any) => Promise<SubmitResponse<any>> = undefined
@@ -17,7 +14,7 @@
   export let name: string|undefined = undefined
   export let preload = undefined
 
-  setContext(ASSET_API_CONTEXT, chooserClient)
+  setContext(CHOOSER_API_CONTEXT, chooserClient)
 
   const dispatch = createEventDispatcher()
   function onCancel () {

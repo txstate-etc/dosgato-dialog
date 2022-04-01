@@ -6,7 +6,7 @@
   import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
   import type { ChooserStore, UIFolder, AnyUIItem } from './ChooserStore'
-  import { ASSET_STORE_CONTEXT } from './ChooserStore'
+  import { CHOOSER_STORE_CONTEXT } from './ChooserStore'
   import Asset from './Asset.svelte'
   import Icon from '../Icon.svelte'
 
@@ -18,7 +18,7 @@
   export let prev: AnyUIItem|undefined
   export let parent: UIFolder|undefined = undefined
 
-  const store = getContext<ChooserStore>(ASSET_STORE_CONTEXT)
+  const store = getContext<ChooserStore>(CHOOSER_STORE_CONTEXT)
   $: open = folder.open && folder.children?.length
   $: nextlevel = level + 1
   $: id = hashid(folder.id)

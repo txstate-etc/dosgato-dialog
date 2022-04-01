@@ -5,7 +5,7 @@
   import { createEventDispatcher, getContext } from 'svelte'
   import { hashid } from 'txstate-utils'
   import type { ChooserStore, UIPage, AnyUIItem } from './ChooserStore'
-  import { ASSET_STORE_CONTEXT } from './ChooserStore'
+  import { CHOOSER_STORE_CONTEXT } from './ChooserStore'
   import Icon from '../Icon.svelte'
 
   export let page: UIPage
@@ -16,7 +16,7 @@
   export let prev: AnyUIItem|undefined
   export let parent: UIPage|undefined = undefined
 
-  const store = getContext<ChooserStore>(ASSET_STORE_CONTEXT)
+  const store = getContext<ChooserStore>(CHOOSER_STORE_CONTEXT)
   $: open = page.open && page.children?.length
   $: nextlevel = level + 1
   $: id = hashid(page.id)

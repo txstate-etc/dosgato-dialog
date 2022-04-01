@@ -8,15 +8,14 @@
   import Asset from './Asset.svelte'
   import AssetFolder from './AssetFolder.svelte'
   import ButtonGroup from '../ButtonGroup.svelte'
-  import type { ChooserType, Client } from './ChooserAPI'
-  import { ASSET_STORE_CONTEXT, ChooserStore } from './ChooserStore'
+  import { CHOOSER_API_CONTEXT, type ChooserType, type Client } from './ChooserAPI'
+  import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
   import Details from './Details.svelte'
   import Icon from '../Icon.svelte'
   import Page from './Page.svelte'
   import Thumbnail from './Thumbnail.svelte'
-  import { ASSET_API_CONTEXT } from '$lib/Form.svelte'
 
-  const chooserClient = getContext<Client>(ASSET_API_CONTEXT)
+  const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
 
   export let label: string|undefined = undefined
   export let images = false
@@ -29,7 +28,7 @@
   export let activeSources: string[]|undefined = undefined
   export let store = new ChooserStore(chooserClient)
 
-  setContext(ASSET_STORE_CONTEXT, store)
+  setContext(CHOOSER_STORE_CONTEXT, store)
 
   $: if (!pages && !assets) assets = true
   $: activeTypes = [...(assets ? ['asset'] : []), ...(pages ? ['page'] : [])] as ChooserType[]

@@ -55,7 +55,7 @@ interface InternalStoreOptions extends Omit<ChooserStoreOptions, 'activeSources'
   activeSources?: Set<string>
 }
 
-export const ASSET_STORE_CONTEXT = {}
+export const CHOOSER_STORE_CONTEXT = {}
 
 const nofilter = (x: any) => true
 
