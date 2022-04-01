@@ -1,5 +1,5 @@
 {
-  "name": "dosgato-dialog",
+  "name": "@dosgato/dialog",
   "version": "0.0.1",
   "scripts": {
     "prepublishOnly": "echo \"Do not publish from the root. Run npm run package and publish the package directory.\"; exit 1;",
