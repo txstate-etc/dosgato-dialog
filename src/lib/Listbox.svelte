@@ -25,7 +25,9 @@
   async function reactToItems (..._: any[]) {
     firstactive = items.findIndex(itm => !itm.disabled)
     lastactive = items.length - [...items].reverse().findIndex(itm => !itm.disabled) - 1
-    if (hilited && items[hilited]?.disabled) hilited = firstactive
+    hilited = undefined
+
+    if (listboxElement) listboxElement.setAttribute('aria-activedescendant', null)
   }
   $: reactToItems(items)
 
@@ -33,6 +35,8 @@
     e.stopPropagation()
     e.preventDefault()
     if (item.disabled) return
+    listboxElement.setAttribute('aria-activedescendant', `${listId}-${index}`)
+    hilited = index
     if (multiselect) {
       if (selectedSet.has(item.value)) {
         // remove it from selected
@@ -41,7 +45,6 @@
         selected = [...selected, item]
       }
     } else {
-      hilited = index
       selected = [item]
     }
     dispatch('change', selected)

@@ -85,12 +85,12 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} let:value let:valid let:invalid let:id let:onBlur let:onChange let:setVal>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} let:value let:valid let:invalid let:id let:onBlur let:setVal>
   <div {id} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
     <ScreenReaderOnly>
       <span aria-live="polite">{instructions}</span>
     </ScreenReaderOnly>
-    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} {descid} {valid} {invalid} on:change={e => itemsToAdd = e.detail} selected={itemsToAdd}/>
+    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} {descid} {valid} {invalid} on:change={e => itemsToAdd = e.detail} selected={itemsToAdd} on:blur={onBlur}/>
     <div class="toolbar">
       <button type="button" class="toolbar-button" title="Move selection to {selectedLabel}" disabled={itemsToAdd.length === 0} on:click={addToSelected(value, setVal)}>
         <Icon icon={menuRight} width='3em'/>
@@ -99,7 +99,7 @@
         <Icon icon={menuLeft} width='3em'/>
       </button>
     </div>
-    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} {descid} {valid} {invalid}todo on:change={e => itemsToRemove = e.detail} selected={itemsToRemove}/>
+    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} {descid} {valid} {invalid} on:change={e => itemsToRemove = e.detail} selected={itemsToRemove} on:blur={onBlur}/>
   </div>
 </FieldStandard>
 
