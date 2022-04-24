@@ -29,8 +29,6 @@
     if (modifierKey(e)) return
     if (['Enter', ' '].includes(e.key)) {
       onClick(e)
-      if ($store.preview?.id === page.id) dispatch('choose', page)
-      else store.preview(page)
     } else if (e.key === 'ArrowRight') {
       e.preventDefault()
       e.stopPropagation()
@@ -72,8 +70,13 @@
   function onClick (e) {
     e.preventDefault()
     e.stopPropagation()
-    store.preview(page)
-    store.toggle(page)
+    // if the id was already the same as the one that was clicked, the user
+    // has clicked it twice, so we should choose the item and end the modal
+    if ($store.preview?.id === page.id) dispatch('choose', page)
+    else {
+      store.preview(page)
+      store.toggle(page)
+    }
   }
 </script>
 

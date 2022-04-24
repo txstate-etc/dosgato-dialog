@@ -24,10 +24,7 @@
   function onKeyDown (e: KeyboardEvent) {
     if (modifierKey(e)) return
     if (['Enter', ' '].includes(e.key)) {
-      e.preventDefault()
-      e.stopPropagation()
-      if ($store.preview?.id === asset.id) dispatch('choose', asset)
-      else store.preview(asset)
+      onClick(e)
     } else if (e.key === 'ArrowDown') {
       e.preventDefault()
       e.stopPropagation()
@@ -54,6 +51,14 @@
     }
   }
 
+  function onClick (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    // if the id was already the same as the one that was clicked, the user
+    // has clicked it twice, so we should choose the item and end the modal
+    if ($store.preview?.id === asset.id) dispatch('choose', asset)
+    else store.preview(asset)
+  }
 </script>
 
 <li
@@ -66,7 +71,7 @@
   class="dialog-asset-file"
   class:isPreview
   on:keydown={onKeyDown}
-  on:click={() => store.preview(asset)}
+  on:click={onClick}
 >
   <FileIcon mime={asset.mime} inline /> {asset.name}
 </li>
