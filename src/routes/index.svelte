@@ -75,6 +75,7 @@
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
     </Tab>
   </Tabs>
+  <button>Save</button>
   {#if saved}Save successful!{/if}
 </Form>
 </main>

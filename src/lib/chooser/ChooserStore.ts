@@ -1,5 +1,5 @@
 import { SafeStore } from '@txstate-mws/svelte-store'
-import { findIndex, isNotBlank } from 'txstate-utils'
+import { filterAsync, findIndex, isNotBlank } from 'txstate-utils'
 import type { AnyItem, Asset, Client, ChooserType, Folder, Page, Source } from './ChooserAPI.js'
 
 export interface UISource extends Source {
@@ -40,8 +40,9 @@ export interface IAssetStore {
   focusPath?: string
 }
 
-export interface ChooserStoreOptions {
+export interface ChooserStoreOptions<F> {
   filter?: (itm: AnyItem) => boolean|Promise<boolean>
+  passthruFilters?: F
   activeTypes?: ChooserType[]
   activeSources?: string[]
   initialType?: ChooserType
@@ -51,7 +52,7 @@ export interface ChooserStoreOptions {
   onlyImages?: boolean
 }
 
-interface InternalStoreOptions extends Omit<ChooserStoreOptions, 'activeSources'> {
+interface InternalStoreOptions<F> extends Omit<ChooserStoreOptions<F>, 'activeSources'> {
   activeSources?: Set<string>
 }
 
@@ -70,14 +71,14 @@ export function bytesToHuman (bytes: number) {
   return String(parseFloat((bytes / Math.pow(1024, scale)).toPrecision(3))) + scales[scale]
 }
 
-export class ChooserStore extends SafeStore<IAssetStore> {
-  options: InternalStoreOptions
+export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
+  options: InternalStoreOptions<F>
   constructor (public client: Client) {
     super({ activetype: 'page', activesource: 0 })
     this.setOptions({})
   }
 
-  setOptions (options: ChooserStoreOptions) {
+  setOptions (options: ChooserStoreOptions<F>) {
     const activeTypes: ChooserType[] = options.activeTypes?.length ? options.activeTypes : ['asset', 'page']
     const userFilter = options.filter ?? nofilter
     const filter = options.onlyImages
@@ -101,7 +102,7 @@ export class ChooserStore extends SafeStore<IAssetStore> {
     return findIndex<UISource>(state.sources[type], s => s.name === name) ?? 0
   }
 
-  async init (options: ChooserStoreOptions) {
+  async init (options: ChooserStoreOptions<F>) {
     this.setOptions(options)
     const activetype = this.value.preview ? (this.value.preview.type === 'page' ? 'page' : 'asset') : this.options.initialType
     this.update(v => ({ ...v, loading: true, activetype, activesource: this.getSourceIndex(this.options.initialSource, v, this.options.initialType) }))
@@ -148,7 +149,7 @@ export class ChooserStore extends SafeStore<IAssetStore> {
       return v
     })
     try {
-      const children = await this.client.getChildren(this.getSource().name, path, this.options.filter)
+      const children = await filterAsync(await this.client.getChildren(this.getSource().name, path, this.options.passthruFilters), this.options.filter)
       this.update(v => {
         const folder = this.itemByPath(v, path) as UIFolder|UIPage
         folder.open = true
@@ -170,12 +171,12 @@ export class ChooserStore extends SafeStore<IAssetStore> {
     const parts = path.substring(1).split('/')
     const source = this.getSource(this.clone(this.value))
 
-    if (!source.children) source.children = await this.client.getChildren(source.name, '/', this.options.filter)
+    if (!source.children) source.children = await filterAsync(await this.client.getChildren(source.name, '/', this.options.passthruFilters), this.options.filter)
     let current = source.children.find(c => c.name === parts[0]) ?? source.children[0]
     for (const part of parts.slice(1).filter(isNotBlank)) {
       if (!current || current.type === 'asset') break
       if (!current.open) {
-        current.children = await this.client.getChildren(source.name, combinePath(current.path, current.name), this.options.filter) as any[]
+        current.children = await filterAsync(await this.client.getChildren(source.name, combinePath(current.path, current.name), this.options.passthruFilters), this.options.filter) as any[]
         current.loading = false
         current.open = true
       }
@@ -232,7 +233,7 @@ export class ChooserStore extends SafeStore<IAssetStore> {
       return v
     })
     const source = this.getSource()
-    const children = await this.client.getChildren(source.name, '/', this.options.filter)
+    const children = await filterAsync(await this.client.getChildren(source.name, '/', this.options.passthruFilters), this.options.filter)
     this.update(v => {
       const source = this.getSource(v)
       source.children = children

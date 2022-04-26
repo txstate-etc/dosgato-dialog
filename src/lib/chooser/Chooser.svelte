@@ -8,7 +8,7 @@
   import Asset from './Asset.svelte'
   import AssetFolder from './AssetFolder.svelte'
   import ButtonGroup from '../ButtonGroup.svelte'
-  import { CHOOSER_API_CONTEXT, type ChooserType, type Client } from './ChooserAPI'
+  import { CHOOSER_API_CONTEXT, type AnyItem, type ChooserType, type Client } from './ChooserAPI'
   import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
   import Details from './Details.svelte'
   import Icon from '../Icon.svelte'
@@ -16,6 +16,8 @@
   import Thumbnail from './Thumbnail.svelte'
 
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
+
+  type F = $$Generic
 
   export let label: string|undefined = undefined
   export let images = false
@@ -26,7 +28,9 @@
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
   export let activeSources: string[]|undefined = undefined
-  export let store = new ChooserStore(chooserClient)
+  export let passthruFilters: F|undefined = undefined
+  export let filter: undefined|((item: AnyItem) => boolean|Promise<boolean>) = undefined
+  export let store = new ChooserStore<F>(chooserClient)
 
   setContext(CHOOSER_STORE_CONTEXT, store)
 
@@ -47,7 +51,7 @@
   }
 
   onMount(async () => {
-    await store.init({ activeTypes, activeSources, initialType, initialSource, initialPath, onlyImages: images, chooseFolder: folders })
+    await store.init({ activeTypes, activeSources, initialType, initialSource, initialPath, passthruFilters, filter, onlyImages: images, chooseFolder: folders })
     if ($store.focus) document.getElementById(hashid($store.focus))?.scrollIntoView()
   })
 </script>
@@ -63,7 +67,7 @@
           <div class="dialog-chooser-source">
             <select on:change={function () { store.changeSource(Number(this.value)) }}>
               {#each $sources as source, i}
-                <option value={i}>{source.name}</option>
+                <option value={i}>{source.label || source.name}</option>
               {/each}
             </select>
           </div>

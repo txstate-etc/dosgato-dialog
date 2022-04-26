@@ -154,16 +154,16 @@ class DemoChooserAPI implements Client {
     return ret
   }
 
-  async getChildren (source: string, path: string, filter: (assetOrFolder: Asset | Folder) => boolean | Promise<boolean>) {
+  async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
-    return await filterAsync(folder.children as AnyItem[] ?? [], filter)
+    return folder.children as AnyItem[] ?? []
   }
 
-  async find (source: string, path: string, searchstring: string, filter: (item: AnyUIItem) => boolean | Promise<boolean>) {
+  async find (source: string, path: string, searchstring: string) {
     const folder = this.findFolder(source, path)
     const items = this.collectItems(folder)
     const search = searchstring.toLocaleLowerCase()
-    return await filterAsync(items.filter(a => a.name.toLocaleLowerCase().includes(search)), filter)
+    return items.filter(a => a.name.toLocaleLowerCase().includes(search))
   }
 
   async findById (id: string) {

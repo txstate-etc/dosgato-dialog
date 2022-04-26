@@ -2,12 +2,12 @@ export const CHOOSER_API_CONTEXT = {}
 export type ChooserType = 'asset'|'page'
 export type AnyItem = Asset|Folder|Page
 
-export interface Client {
+export interface Client<F = any> {
   getSources: (type: ChooserType) => Promise<Source[]>
-  getChildren: (source: string, path: string, filter: (assetOrFolder: AnyItem) => boolean|Promise<boolean>) => Promise<(AnyItem)[]>
+  getChildren: (source: string, path: string, filters: F) => Promise<(AnyItem)[]>
 
   // should be a recursive search
-  find: (source: string, path: string, searchstring: string, filter: (asset: AnyItem) => boolean|Promise<boolean>) => Promise<(AnyItem)[]>
+  find: (source: string, path: string, searchstring: string, filters: F) => Promise<(AnyItem)[]>
 
   // if the form is preloaded with asset/folder identifiers, we will need a way to get
   // and display metadata like filenames and image previews
@@ -36,7 +36,10 @@ export interface Client {
 
 export interface Source {
   type: ChooserType
+  // this must be immutable or else existing links saved in the system will break
   name: string
+  // label is shown to the user, can change it at will
+  label?: string
   rootAcceptsUpload?: boolean
 }
 
