@@ -1,6 +1,3 @@
 export * from './ChooserAPI.js'
 export * from './ChooserStore.js'
-export { default as Asset } from './Asset.svelte'
-export { default as AssetFolder } from './AssetFolder.svelte'
 export { default as Chooser } from './Chooser.svelte'
-export { default as Page } from './Page.svelte'
