@@ -1,7 +1,7 @@
 {
   "name": "@dosgato/dialog",
   "description": "A component library for building forms that edit a JSON document.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "prepublishOnly": "echo \"Do not publish from the root. Run npm run package and publish the package directory.\"; exit 1;",
     "dev": "svelte-kit dev",
@@ -11,11 +11,11 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@txstate-mws/svelte-components": "^1.2.5",
-    "@txstate-mws/svelte-forms": "^0.0.15",
-    "@iconify/svelte": "^2.1.1",
-    "@iconify-icons/mdi": "^1.2.6",
-    "txstate-utils": "^1.6.6"
+    "@txstate-mws/svelte-components": "^1.2.9",
+    "@txstate-mws/svelte-forms": "^0.0.18",
+    "@iconify/svelte": "^2.2.1",
+    "@iconify-icons/mdi": "^1.2.22",
+    "txstate-utils": "^1.7.3"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
