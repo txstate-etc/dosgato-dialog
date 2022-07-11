@@ -117,7 +117,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
         return v
       })
     }
-    if (this.value.preview) await this.openPathRecursive(combinePath(this.value.preview.path, this.value.preview.name))
+    if (this.value.preview) await this.openPathRecursive(this.value.preview.path)
     else if (this.options.initialPath) await this.openPathRecursive(this.options.initialPath)
     else await this.openPathRecursive('/')
 
@@ -136,7 +136,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
   }
 
   async open (folder: UIFolder|UIPage) {
-    return await this.openPath(combinePath(folder.path, folder.name))
+    return await this.openPath(folder.path)
   }
 
   async openPath (path: string) {
@@ -176,7 +176,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     for (const part of parts.slice(1).filter(isNotBlank)) {
       if (!current || current.type === 'asset') break
       if (!current.open) {
-        current.children = await filterAsync(await this.client.getChildren(source.name, combinePath(current.path, current.name), this.options.passthruFilters), this.options.filter) as any[]
+        current.children = await filterAsync(await this.client.getChildren(source.name, current.path, this.options.passthruFilters), this.options.filter) as any[]
         current.loading = false
         current.open = true
       }
@@ -188,13 +188,13 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
       v.sources[v.activetype][v.activesource] = source
       if (!current) return v
       v.focus = current.id
-      v.focusPath = combinePath(current.path, current.name)
+      v.focusPath = current.path
       return v
     })
   }
 
   async close (folder: UIFolder|UIPage) {
-    return await this.closePath(combinePath(folder.path, folder.name))
+    return await this.closePath(folder.path)
   }
 
   async closePath (path: string) {
@@ -213,7 +213,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
   preview (item?: AnyUIItem) {
     if (!item) return this.clearPreview()
     if (item.type === 'folder' && !this.options.chooseFolder) return
-    this.update(v => ({ ...v, preview: item, focus: item.id, focusPath: combinePath(item.path, item.name) }))
+    this.update(v => ({ ...v, preview: item, focus: item.id, focusPath: item.path }))
   }
 
   clearPreview () {
@@ -228,7 +228,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
       if (source.children?.length) {
         const firstchild = source.children[0]
         v.focus = firstchild.id
-        v.focusPath = combinePath(firstchild.path, firstchild.name)
+        v.focusPath = firstchild.path
       }
       return v
     })
@@ -238,7 +238,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
       const source = this.getSource(v)
       source.children = children
       v.focus = children[0]?.id
-      v.focusPath = children[0] ? combinePath(children[0]?.path, children[0].name) : undefined
+      v.focusPath = children[0] ? children[0]?.path : undefined
       return v
     })
   }
@@ -252,7 +252,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     if (!itm) return
     this.update(v => {
       v.focus = itm.id
-      v.focusPath = combinePath(itm.path, itm.name)
+      v.focusPath = itm.path
       return v
     })
   }

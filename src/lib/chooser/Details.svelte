@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { bytesToHuman, combinePath, type AnyUIItem, type RawURL } from './ChooserStore'
+  import { bytesToHuman, type AnyUIItem, type RawURL } from './ChooserStore'
 
   export let item: AnyUIItem|RawURL
 </script>
@@ -13,7 +13,7 @@
   {:else if item.type === 'page'}
     <li>{item.title}</li>
   {:else if item.type === 'folder'}
-    <li>{combinePath(item.path, item.name)}</li>
+    <li>{item.path}</li>
   {/if}
   {#if item.type === 'asset'}
     <li>{item.mime}</li>

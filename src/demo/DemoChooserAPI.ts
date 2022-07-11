@@ -25,37 +25,37 @@ const assets: Record<string, RootFolder|RootPage> = {
         type: 'folder',
         id: 'folder-1',
         name: 'biology',
-        path: '/',
+        path: '/biology',
         acceptsUpload: true,
         children: [
           {
             type: 'folder',
             id: 'folder-4',
             name: 'evolutionary',
-            path: '/biology',
+            path: '/biology/evolutionary',
             acceptsUpload: false,
             children: [
               { type: 'asset', id: 'asset-3', path: '/biology/evolutionary', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/static/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/static/demo-thumb.png' } }
             ]
           },
-          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology', acceptsUpload: false }
+          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', acceptsUpload: false }
         ]
       },
       {
         type: 'folder',
         id: 'folder-2',
         name: 'chemistry',
-        path: '/',
+        path: '/chemistry',
         acceptsUpload: true,
         children: [
-          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry', acceptsUpload: true }
+          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', acceptsUpload: true }
         ]
       },
       {
         type: 'folder',
         id: 'folder-3',
         name: 'physics',
-        path: '/',
+        path: '/physics',
         acceptsUpload: true,
         children: [
           { type: 'asset', id: 'asset-1', path: '/physics', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/static/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/static/demo-thumb.png' } },
@@ -72,7 +72,7 @@ const assets: Record<string, RootFolder|RootPage> = {
       {
         type: 'page',
         id: 'page-1',
-        path: '/',
+        path: '/human-resources',
         name: 'human-resources',
         url: 'https://example.org/human-resources.html',
         title: 'Human Resources',
@@ -80,7 +80,7 @@ const assets: Record<string, RootFolder|RootPage> = {
           {
             type: 'page',
             id: 'page-5',
-            path: '/human-resources',
+            path: '/human-resources/about',
             name: 'about',
             url: 'https://example.org/human-resources/about.html',
             title: 'About Us'
@@ -88,7 +88,7 @@ const assets: Record<string, RootFolder|RootPage> = {
           {
             type: 'page',
             id: 'page-6',
-            path: '/human-resources',
+            path: '/human-resources/resources',
             name: 'resources',
             url: 'https://example.org/human-resources/resources.html',
             title: 'Forms & Other Resources'
@@ -98,7 +98,7 @@ const assets: Record<string, RootFolder|RootPage> = {
       {
         type: 'page',
         id: 'page-2',
-        path: '/',
+        path: '/history',
         name: 'history',
         url: 'https://example.org/history.html',
         title: 'Department of History'
@@ -106,7 +106,7 @@ const assets: Record<string, RootFolder|RootPage> = {
       {
         type: 'page',
         id: 'page-3',
-        path: '/',
+        path: '/math',
         name: 'math',
         url: 'https://example.org/math.html',
         title: 'Department of Mathematics'
@@ -114,7 +114,7 @@ const assets: Record<string, RootFolder|RootPage> = {
       {
         type: 'page',
         id: 'page-4',
-        path: '/',
+        path: '/vpit',
         name: 'vpit',
         url: 'https://example.org/vpit.html',
         title: 'Information Technology'
