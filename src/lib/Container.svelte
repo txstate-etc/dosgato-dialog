@@ -86,4 +86,8 @@
     background-color: var(--dialog-field-bg2, #ffffff);
     color: var(--dialog-field-text2, inherit);
   }
+  .dialog-field-container :global(.field-help-text) {
+    font-size: 0.9em;
+    color: #595959;
+  }
 </style>

@@ -1,5 +1,6 @@
 export { default as Checkbox } from './Checkbox.svelte'
 export { default as Container } from './Container.svelte'
+export { default as FieldAutocomplete } from './FieldAutocomplete.svelte'
 export { default as FieldCheckbox } from './FieldCheckbox.svelte'
 export { default as FieldChoices } from './FieldChoices.svelte'
 export { default as FieldChooserLink } from './FieldChooserLink.svelte'
