@@ -3,7 +3,7 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete } from '$lib/index'
+  import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker } from '$lib/index'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   let store: FormStore
 
@@ -62,6 +62,7 @@
       <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
       <FieldChooserLink path="asset" label="Choose an Asset" images initialType='asset' initialSource="DosGato" initialPath="/chemistry/organic"></FieldChooserLink>
       <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
+      <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
       <FieldDualListbox
         path="role"
         label="Roles"
