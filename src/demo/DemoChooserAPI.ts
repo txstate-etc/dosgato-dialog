@@ -35,7 +35,7 @@ const assets: Record<string, RootFolder|RootPage> = {
             path: '/biology/evolutionary',
             acceptsUpload: false,
             children: [
-              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/static/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/static/demo-thumb.png' } }
+              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
             ]
           },
           { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', acceptsUpload: false }
@@ -58,8 +58,8 @@ const assets: Record<string, RootFolder|RootPage> = {
         path: '/physics',
         acceptsUpload: true,
         children: [
-          { type: 'asset', id: 'asset-1', path: '/physics', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/static/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/static/demo-thumb.png' } },
-          { type: 'asset', id: 'asset-2', path: '/physics', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/static/blankpdf.pdf' }
+          { type: 'asset', id: 'asset-1', path: '/physics', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
+          { type: 'asset', id: 'asset-2', path: '/physics', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/blankpdf.pdf' }
         ]
       }
     ]
@@ -193,7 +193,7 @@ class DemoChooserAPI implements Client {
         asset.image = {
           width: 909,
           height: 1114,
-          thumbnailUrl: '/static/demo-thumb.png'
+          thumbnailUrl: '/demo-thumb.png'
         }
       }
       folder.children.push(asset)
