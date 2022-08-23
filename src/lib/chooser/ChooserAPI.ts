@@ -4,23 +4,23 @@ export type AnyItem = Asset|Folder|Page
 
 export interface Client<F = any> {
   getSources: (type: ChooserType) => Promise<Source[]>
-  getChildren: (source: string, path: string, filters: F) => Promise<(AnyItem)[]>
+  getChildren: (source: string, path: string, filters: F) => Promise<AnyItem[]>
 
   // should be a recursive search
-  find: (source: string, path: string, searchstring: string, filters: F) => Promise<(AnyItem)[]>
+  find: (source: string, path: string, searchstring: string, filters: F) => Promise<AnyItem[]>
 
   // if the form is preloaded with asset/folder identifiers, we will need a way to get
   // and display metadata like filenames and image previews
   // note that your API implementation must be able to determine the correct chooser type
   // and source from the identifier alone
-  findById: (id: string) => Promise<AnyItem>
+  findById: (id: string) => Promise<AnyItem | undefined>
 
   // we often use a form control where the user may enter a URL directly OR choose something
   // internal
   // if this function can be implemented, we can resolve whether the user-entered URL actually
   // points to something internal, and automatically make the internal selection rather
   // than simply recording the URL
-  findByUrl?: (url: string) => Promise<AnyItem>
+  findByUrl?: (url: string) => Promise<AnyItem | undefined>
 
   // If the user enters a URL that does not match any internal items, your application
   // may prefer a different format for the form value than just the raw URL string

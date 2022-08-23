@@ -171,7 +171,7 @@ class DemoChooserAPI implements Client {
       const found = this.collectItems(rootfolder).find(a => a.id === id)
       if (found) return found
     }
-    throw new Error('Asset or Folder ID not found.')
+    return undefined
   }
 
   async findByUrl (url: string) {
@@ -179,7 +179,7 @@ class DemoChooserAPI implements Client {
       const found = this.collectItems(rootfolder).find(a => a.url === url)
       if (found) return found
     }
-    throw new Error('Asset or Folder ID not found.')
+    return undefined
   }
 
   async upload (source: string, path: string, files: FileList) {
