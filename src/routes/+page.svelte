@@ -5,6 +5,7 @@
   import { sleep } from 'txstate-utils'
   import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker } from '$lib/index'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
+import FieldTextArea from '$lib/FieldTextArea.svelte'
   let store: FormStore
 
   async function submit (data) {
@@ -19,12 +20,13 @@
     return [{
       type: 'error',
       message: 'Nope',
-      path: 'multi.0.name'
+      path: 'multi.0.first'
     }]
   }
 
   const tabs = [
     { title: 'Add More', icon: plusThick },
+    { title: 'Text' },
     { title: 'Dates' },
     { title: 'Selections' },
     { title: 'Checkboxes' }
@@ -52,6 +54,9 @@
         <FieldText path="" label={'Name ' + index} />
       </FieldMultiple>
     </Tab>
+    <Tab title="Text">
+      <FieldTextArea path="textarea" label="Textarea" rows={10} />
+    </Tab>
     <Tab title="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} />
@@ -77,8 +82,10 @@
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
     </Tab>
   </Tabs>
-  <button>Save</button>
-  {#if saved}Save successful!{/if}
+  <svelte:fragment slot="submit" let:saved>
+    <button>Save</button>
+    {#if saved}Save successful!{/if}
+  </svelte:fragment>
 </Form>
 </main>
 <aside>

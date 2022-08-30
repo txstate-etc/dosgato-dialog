@@ -17,8 +17,8 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
 
-  let itemsToAdd: PopupMenuItem[] = [] //the items selected in the left listbox
-  let itemsToRemove: PopupMenuItem[] = [] //the items selected in the right listbox
+  let itemsToAdd: PopupMenuItem[] = [] // the items selected in the left listbox
+  let itemsToRemove: PopupMenuItem[] = [] // the items selected in the right listbox
   let instructions: String = 'test'
 
   $: {
@@ -50,11 +50,6 @@
     }
   }
 
-  let valueToLabel: Record<string, string> = {}
-  for (const choice of choices) {
-    valueToLabel[choice.value] = choice.label || choice.value
-  }
-
   function valueToSelectedChoices (value: string[]) {
     // keep the selected options ordered as they were in the available options
     const valueSet = new Set(value)
@@ -77,9 +72,9 @@
         if (itemsToAdd.length === 0) return
         addToSelected(value, setVal)()
       } else if (e.key === 'ArrowLeft') {
-          e.preventDefault()
-          if (itemsToRemove.length === 0) return
-          addToAvailable(value, setVal)()
+        e.preventDefault()
+        if (itemsToRemove.length === 0) return
+        addToAvailable(value, setVal)()
       }
     }
   }
@@ -90,7 +85,7 @@
     <ScreenReaderOnly>
       <span aria-live="polite">{instructions}</span>
     </ScreenReaderOnly>
-    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} {descid} {valid} {invalid} on:change={e => itemsToAdd = e.detail} selected={itemsToAdd} on:blur={onBlur}/>
+    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} {descid} {valid} {invalid} on:change={e => { itemsToAdd = e.detail }} selected={itemsToAdd} on:blur={onBlur}/>
     <div class="toolbar">
       <button type="button" class="toolbar-button" title="Move selection to {selectedLabel}" disabled={itemsToAdd.length === 0} on:click={addToSelected(value, setVal)}>
         <Icon icon={menuRight} width='3em'/>
@@ -99,7 +94,7 @@
         <Icon icon={menuLeft} width='3em'/>
       </button>
     </div>
-    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} {descid} {valid} {invalid} on:change={e => itemsToRemove = e.detail} selected={itemsToRemove} on:blur={onBlur}/>
+    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} {descid} {valid} {invalid} on:change={e => { itemsToRemove = e.detail }} selected={itemsToRemove} on:blur={onBlur}/>
   </div>
 </FieldStandard>
 
