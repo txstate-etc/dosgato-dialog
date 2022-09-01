@@ -16,8 +16,14 @@
   // each time we run getOptions we will save the value -> label mappings
   // that it finds, so that we can display labels on pills
   let valueToLabel: Record<string, string> = {}
+
   async function wrapGetOptions (search: string) {
-    const opts = await getOptions(search)
+    let opts = await getOptions(search)
+    // if no options are returned with the search term, we can end up with an infinite loop
+    // the first time reactToValue calls wrapGetOptions
+    if (opts.length === 0) {
+      opts = await getOptions('')
+    }
     for (const opt of opts) valueToLabel[opt.value] = opt.label || opt.value
     valueToLabel = valueToLabel
     return opts
