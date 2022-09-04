@@ -22,6 +22,7 @@
   let popupvalue = undefined
   let savedLabel = ''
   let changed = false
+  let menuid: string
 
   if (defaultValue) {
     const selected = choices.find(c => c.value === defaultValue)
@@ -29,7 +30,6 @@
     savedLabel = inputvalue
   }
 
-  const listId = randomid()
   const liveTextId = randomid()
   const helpTextId = randomid()
 
@@ -54,12 +54,11 @@
       if (inputelement.value !== savedLabel) changed = true
     }, 1)
   }
-
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
-  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} {onBlur} {onChange} aria-owns={listId} autocapitalize="none" type="text" autocomplete="off"  aria-autocomplete="list" role="combobox" aria-expanded="false" {disabled} aria-describedby={`${messagesid ?? ''} ${helptext.length ? helpTextId : ''}`} on:keydown={checkifchanged}>
-  <PopupMenu align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
+  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} {onBlur} {onChange} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={`${messagesid ?? ''} ${helptext.length ? helpTextId : ''}`} on:keydown={checkifchanged}>
+  <PopupMenu bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   {#if helptext.length}
     <span id={helpTextId} class="field-help-text">{helptext}</span>
   {/if}
