@@ -24,12 +24,6 @@
   let changed = false
   let menuid: string
 
-  if (defaultValue) {
-    const selected = choices.find(c => c.value === defaultValue)
-    inputvalue = selected.label || selected.value
-    savedLabel = inputvalue
-  }
-
   const liveTextId = randomid()
   const helpTextId = randomid()
 
@@ -54,9 +48,20 @@
       if (inputelement.value !== savedLabel) changed = true
     }, 1)
   }
+  const valueToLabel: Record<string, string> = {}
+  for (const choice of choices) valueToLabel[choice.value] = choice.label || choice.value
+
+  let set = false
+  function reactToInitialValue (value: string) {
+    if (!value || set) return
+    inputvalue = valueToLabel[value]
+    savedLabel = inputvalue
+    set = true
+  }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
+  {@const _ = reactToInitialValue(value)}
   <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} {onBlur} {onChange} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={`${messagesid ?? ''} ${helptext.length ? helpTextId : ''}`} on:keydown={checkifchanged}>
   <PopupMenu bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   {#if helptext.length}
