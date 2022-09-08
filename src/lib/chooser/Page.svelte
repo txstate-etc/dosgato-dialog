@@ -85,6 +85,7 @@
   role="treeitem"
   class:isPreview
   aria-expanded={!!page.open}
+  aria-selected={isPreview}
   aria-level={level}
   aria-setsize={setsize}
   aria-posinset={posinset}

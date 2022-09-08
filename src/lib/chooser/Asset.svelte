@@ -68,6 +68,7 @@
   aria-setsize={setsize}
   aria-posinset={posinset}
   aria-level={level}
+  aria-selected={isPreview}
   class="dialog-asset-file"
   class:isPreview
   on:keydown={onKeyDown}
