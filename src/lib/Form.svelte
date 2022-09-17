@@ -20,7 +20,7 @@
   setContext(CHOOSER_API_CONTEXT, chooserClient)
 </script>
 
-<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:saved let:valid let:invalid let:validating let:submitting>
+<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting>
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} />
   <div class="form-errors" aria-live='assertive'>
     {#if messages.length}
@@ -28,11 +28,11 @@
         {#each messages as message}
           <li>{message.message}</li>
         {/each}
-        {#if invalid}
+        {#if showingInlineErrors}
           <li>More errors. See inline messages for details.</li>
         {/if}
       </ul>
-    {:else if invalid}
+    {:else if showingInlineErrors}
       This form contains validation errors. See inline messages for details.
     {/if}
   </div>
