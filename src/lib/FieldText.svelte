@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { HTMLActionEntry } from '@txstate-mws/svelte-components'
   import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import FieldStandard from './FieldStandard.svelte'
   import Input from './Input.svelte'
@@ -14,8 +15,9 @@
   export let maxlength: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let use: HTMLActionEntry[] = []
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
-  <Input {type} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid}></Input>
+  <Input {type} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid} {use}></Input>
 </FieldStandard>

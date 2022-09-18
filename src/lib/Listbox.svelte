@@ -94,7 +94,7 @@
 
   function focusListbox () {
     if (selected.length) {
-      for (let i=0; i< items.length; i++) {
+      for (let i = 0; i < items.length; i++) {
         if (items[i].value === selected[0].value) {
           hilited = i
           listboxElement.setAttribute('aria-activedescendant', `${listId}-${hilited}`)

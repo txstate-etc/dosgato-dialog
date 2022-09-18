@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { passActions, type HTMLActionEntry } from '@txstate-mws/svelte-components'
   import { dateSerialize, datetimeSerialize } from '@txstate-mws/svelte-forms'
 
   let className = ''
@@ -19,6 +20,7 @@
   export let onChange: any
   export let onBlur: any
   export let onSelect: any = undefined
+  export let use: HTMLActionEntry[] = []
 
   function resolveMinMax (dt: any) {
     if (typeof dt === 'undefined') return undefined
@@ -30,4 +32,4 @@
   $: maxStr = resolveMinMax(max)
 </script>
 
-<input {type} {id} class={className} autocomplete="off" data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={messagesid} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange}>
+<input {type} {id} class={className} autocomplete="off" data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={messagesid} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
