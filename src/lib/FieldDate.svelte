@@ -13,8 +13,9 @@
   export let step: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let inputelement: HTMLInputElement = undefined
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={dateSerialize} deserialize={dateDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
-  <Input type="date" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {messagesid} />
+  <Input bind:inputelement type="date" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {messagesid} />
 </FieldStandard>

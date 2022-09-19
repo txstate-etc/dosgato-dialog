@@ -11,6 +11,7 @@
   export let defaultValue: boolean|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let inputelement: HTMLInputElement = undefined
 
   function onChange (setVal: Function) {
     return function () {
@@ -24,7 +25,7 @@
 <FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} let:value let:messagesid let:valid let:invalid let:id let:onBlur let:setVal>
   <div class={className}>
     <label for={id}>
-      <Checkbox {id} name={path} {value} {messagesid} {descid} {valid} {invalid} {onBlur} onChange={onChange(setVal)}></Checkbox>
+      <Checkbox bind:inputelement {id} name={path} {value} {messagesid} {descid} {valid} {invalid} {onBlur} onChange={onChange(setVal)}></Checkbox>
       <span>{boxLabel}</span>
     </label>
   </div>

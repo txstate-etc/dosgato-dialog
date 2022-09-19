@@ -21,6 +21,7 @@
   export let onBlur: any
   export let onSelect: any = undefined
   export let use: HTMLActionEntry[] = []
+  export let inputelement: HTMLInputElement = undefined
 
   function resolveMinMax (dt: any) {
     if (typeof dt === 'undefined') return undefined
@@ -32,4 +33,4 @@
   $: maxStr = resolveMinMax(max)
 </script>
 
-<input {type} {id} class={className} autocomplete="off" data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={messagesid} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
+<input bind:this={inputelement} {type} {id} class={className} autocomplete="off" data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={messagesid} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>

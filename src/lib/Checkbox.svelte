@@ -11,11 +11,12 @@
   export let disabled = false
   export let valid = false
   export let invalid = false
+  export let inputelement: HTMLInputElement = undefined
 
   $: descby = [descid, messagesid].filter(isNotBlank).join(' ')
 </script>
 
-<input {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={descby} bind:checked={value} on:change={onChange} on:blur={onBlur}>
+<input bind:this={inputelement} {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={descby} bind:checked={value} on:change={onChange} on:blur={onBlur}>
 
 <style>
 input, input:before, input:after {
