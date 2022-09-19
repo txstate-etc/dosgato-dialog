@@ -13,7 +13,7 @@
   export let defaultValue: any = notNull ? choices[0].value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
-  export let inputelement: HTMLSelectElement
+  export let inputelement: HTMLSelectElement = undefined
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
