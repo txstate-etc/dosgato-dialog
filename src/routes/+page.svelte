@@ -3,9 +3,9 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker } from '$lib/index'
+  import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker } from '$lib/index'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
-import FieldTextArea from '$lib/FieldTextArea.svelte'
+  import FieldTextArea from '$lib/FieldTextArea.svelte'
   let store: FormStore
 
   async function submit (data) {
@@ -68,6 +68,7 @@ import FieldTextArea from '$lib/FieldTextArea.svelte'
       <FieldChooserLink path="asset" label="Choose an Asset" images initialType='asset' initialSource="DosGato" initialPath="/chemistry/organic"></FieldChooserLink>
       <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
       <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
+      <FieldColorPicker defaultValue="hotpink" path="color" label="Another Color" options={[{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }]}/>
       <FieldDualListbox
         path="role"
         label="Roles"
