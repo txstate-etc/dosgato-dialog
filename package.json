@@ -15,6 +15,7 @@
     "@txstate-mws/svelte-forms": "^0.0.21",
     "@iconify/svelte": "^2.2.1",
     "@iconify-icons/mdi": "^1.2.22",
+    "@iconify-icons/ph": "^1.2.2",
     "txstate-utils": "^1.7.3"
   },
   "devDependencies": {
