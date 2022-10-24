@@ -4,7 +4,7 @@
   export let item: AnyUIItem|RawURL
 </script>
 
-<ul class="dialog-chooser-info">
+<ul class="dialog-chooser-info" aria-live="polite">
   {#if item.type !== 'raw'}
     <li>{item.name}</li>
   {/if}

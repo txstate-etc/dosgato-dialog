@@ -116,6 +116,7 @@
   <span id={labelId}>{label}</span>
   <ul bind:this={listboxElement} role="listbox" id={listId} class="listbox-items" tabindex="0" aria-describedby={descid} aria-labelledby={labelId} aria-multiselectable={multiselect} on:keydown={onkeydown} on:focus={focusListbox}>
     {#each items as item, i (item.value)}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <li
         bind:this={itemelements[i]}
         id={`${listId}-${i}`}

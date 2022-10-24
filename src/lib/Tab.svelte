@@ -16,7 +16,7 @@
 {#if $accordion}
   <div bind:this={tabelements[idx]} id={$store.tabids[title]} class="tabs-tab" class:last aria-selected={active} aria-controls={$store.panelids[title]} role="tab" tabindex={0} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={$store.tabs[idx].icon} inline />{title}<i class="tabs-accordion-arrow" aria-hidden="true"></i></div>
 {/if}
-<div id={$store.panelids[title]} hidden={!active} role="tabpanel" tabindex="0" aria-labelledby={$store.tabids[title]} class="tabs-panel" class:accordion={$accordion}>
+<div id={$store.panelids[title]} hidden={!active} role="tabpanel" tabindex="-1" aria-labelledby={$store.tabids[title]} class="tabs-panel" class:accordion={$accordion}>
   <slot />
 </div>
 

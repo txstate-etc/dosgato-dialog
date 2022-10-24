@@ -102,7 +102,7 @@
         </ul>
       </Loading>
     </section>
-    <section class="dialog-chooser-preview" tabindex={$preview ? 0 : -1}>
+    <section class="dialog-chooser-preview" tabindex="-1">
       {#if $preview}
         <Thumbnail item={$preview} />
         <Details item={$preview}>

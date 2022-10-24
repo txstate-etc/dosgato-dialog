@@ -86,9 +86,9 @@
 
   function onKeyDown (e: KeyboardEvent) {
     const currentSelectionIndex = visibleIcons.findIndex(i => i.class === selected.icon)
-    let newIndex
     if (modifierKey(e)) return
-    else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+    let newIndex
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
       e.preventDefault()
       if (currentSelectionIndex === visibleIcons.length - 1) {
         newIndex = 0
@@ -108,7 +108,6 @@
       iconElements[newIndex].focus()
     }
   }
-
 </script>
 
 <FieldStandard bind:id {path} {label} {required} {defaultValue} {conditional} let:value let:valid let:invalid let:id let:onBlur let:setVal>
@@ -134,11 +133,11 @@
               {/each}
             </select>
           </div>
-          <fieldset tabindex="0">
+          <fieldset>
             <ScreenReaderOnly><legend class="sr-only">Icons</legend></ScreenReaderOnly>
-            <div class="icon-picker-items" role="radiogroup" on:keydown={onKeyDown}>
+            <div class="icon-picker-items" role="radiogroup">
               {#each visibleIcons as icon, idx (icon.class)}
-                <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)}>
+                <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)}  on:keydown={onKeyDown}>
                   <Icon icon={`${iconToPrefix[icon.class] === 'fab' ? 'fa-brands' : 'fa-solid'}:${icon.class.slice(3)}`}/>
                   <ScreenReaderOnly>{icon.label}</ScreenReaderOnly>
                 </div>
