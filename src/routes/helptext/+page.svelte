@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form, FieldText, FieldChoices, FieldSelect, FieldNumber, FieldDate, FieldCheckbox, FieldChooserLink, FieldDateTime, FieldTextArea, FieldRadio, FieldAutocomplete } from '$lib'
+  import { Form, FieldText, FieldChoices, FieldSelect, FieldNumber, FieldDate, FieldCheckbox, FieldChooserLink, FieldDateTime, FieldTextArea, FieldRadio, FieldAutocomplete, FieldColorPicker, FieldIconPicker } from '$lib'
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { demoChooserAPI } from '../../demo/DemoChooserAPI'
 
@@ -33,6 +33,8 @@
     <FieldRadio path="radios" label="Cheese Preference" choices={[{ value: 'Yes' }, { value: 'No' }]} helptext="Do you like cheese?"/>
     <FieldSelect path="select" label="Day of Week" choices={[{ value: 'Monday' }, { value: 'Tuesday' }, { value: 'Wednesday' }, { value: 'Thursday' }, { value: 'Friday' }, { value: 'Saturday' }, { value: 'Sunday' }]} helptext="What day is it today?"/>
     <FieldAutocomplete path="planet" label="Planet" choices={[{ value: 'Mercury' }, { value: 'Venus' }, { value: 'Earth' }, { value: 'Mars' }, { value: 'Jupiter' }, { value: 'Saturn' }, { value: 'Uranus' }, { value: 'Neptune' }, { value: 'Pluto' }]} helptext="Pluto will always be a planet to me"/>
+    <FieldColorPicker path="color" label="Lettering Color" options={[{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }]} helptext="What color writing would you like on your cake?"/>
+    <FieldIconPicker path="icon" label="Best Icon" helptext="Choose an icon that represents your current mood"/>
   </Form>
 </main>
 <aside>

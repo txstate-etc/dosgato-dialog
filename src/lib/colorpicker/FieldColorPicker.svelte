@@ -2,6 +2,7 @@
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
   import { keyby } from 'txstate-utils'
+  import { getDescribedBy } from '$lib'
 
   export let id: string | undefined = undefined
   let className = ''
@@ -16,14 +17,15 @@
   export let conditional: boolean|undefined = undefined
   export let placeholder: string = 'Select' + (label ? ' ' + label : '')
   export let inputelement: HTMLSelectElement = undefined
+  export let helptext: string | undefined = undefined
 
   const colorsByValue = keyby(options, 'value')
 </script>
 
-<FieldStandard bind:id {path} {label} {required} {defaultValue} {conditional} let:id let:value let:valid let:invalid let:onBlur let:onChange>
+<FieldStandard bind:id {path} {label} {required} {defaultValue} {conditional} {helptext} let:id let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid>
   <div class="flex-color-container">
     <div class="selected-color" style="background-color: { value ? colorsByValue[value].color : 'transparent' }"/>
-    <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid>
+    <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid])}>
       {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
       {#each options as option (option.value) }
         <option value={option.value} selected={value === option.value}>{option.name || option.value}</option>

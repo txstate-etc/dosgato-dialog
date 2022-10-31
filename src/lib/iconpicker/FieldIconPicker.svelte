@@ -4,12 +4,14 @@
   import { FontAwesomeIcons, IconCategories } from './iconpicker'
   import Icon from '@iconify/svelte'
   import { randomid, keyby } from 'txstate-utils'
+  import { getDescribedBy } from '$lib/helpers'
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
   export let required = false
   export let defaultValue: { icon: string, prefix: string } = { icon: 'fa-graduation-cap', prefix: 'fas' }
   export let conditional: boolean|undefined = undefined
+  export let helptext: string | undefined = undefined
 
   const labelid = randomid()
   const descid = randomid()
@@ -110,9 +112,9 @@
   }
 </script>
 
-<FieldStandard bind:id {path} {label} {required} {defaultValue} {conditional} let:value let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
   <Icon icon={`${value.prefix === 'fab' ? 'fa-brands' : 'fa-solid'}:${value.icon.slice(3)}`}/>
-  <button id="btnSelectIcon" on:click={() => { modalOpen = true }}>Select New Icon</button>
+  <button id="btnSelectIcon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select New Icon</button>
   {#if modalOpen}
   <Modal>
     <section>
