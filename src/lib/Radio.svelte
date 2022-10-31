@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { isNotBlank } from 'txstate-utils'
+
+
   export let id: string|undefined = undefined
   export let name: string
   export let value: string
@@ -6,12 +9,15 @@
   export let onChange: any = undefined
   export let onBlur: any = undefined
   export let messagesid: string|undefined = undefined
+  export let helptextid: string|undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false
+
+  $: descby = [messagesid, helptextid].filter(isNotBlank).join(' ')
 </script>
 
-<input {id} type="radio" {name} class:valid class:invalid checked={selected} {disabled} aria-describedby={messagesid} {value} on:change={onChange} on:blur={onBlur}>
+<input {id} type="radio" {name} class:valid class:invalid checked={selected} {disabled} aria-describedby={descby} {value} on:change={onChange} on:blur={onBlur}>
 
 <style>
 input, input:before, input:after {

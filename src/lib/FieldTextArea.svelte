@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getDescribedBy } from '$lib'
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
   import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import FieldStandard from './FieldStandard.svelte'
@@ -15,10 +16,11 @@
   export let required = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLTextAreaElement = undefined
+  export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
-  <textarea bind:this={inputelement} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={messagesid} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste {maxlength} use:passActions={use}></textarea>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+  <textarea bind:this={inputelement} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={getDescribedBy([messagesid, helptextid])} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste {maxlength} use:passActions={use}></textarea>
 </FieldStandard>
 
 <style>

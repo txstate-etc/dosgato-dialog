@@ -11,10 +11,11 @@
   export let deserialize: ((value: string) => any)|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let helptext: string|undefined = undefined
 </script>
 
 <Field {path} {defaultValue} {conditional} {serialize} {deserialize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
-  <Container {id} {label} {messages} {descid} {required} let:messagesid>
-    <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} />
+  <Container {id} {label} {messages} {descid} {required} {helptext} let:messagesid let:helptextid>
+    <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid}/>
   </Container>
 </Field>

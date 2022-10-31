@@ -14,16 +14,17 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let horizontal = false
+  export let helptext: string | undefined = undefined
   const groupid = randomid()
   const width = '100%'
 </script>
 
-<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:onBlur let:onChange>
+<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:onBlur let:onChange let:helptextid>
   <div class="dialog-radio {className}" class:horizontal role="radiogroup" aria-labelledby={groupid} class:invalid>
     {#each choices as choice, idx}
       {@const radioid = `${path}.${idx}`}
       <label for={radioid} style:width>
-        <Radio id={radioid} name={path} value={choice.value} selected={value === choice.value} disabled={choice.disabled} {onChange} {onBlur} />
+        <Radio id={radioid} name={path} value={choice.value} selected={value === choice.value} disabled={choice.disabled} {onChange} {onBlur} {helptextid}/>
         <span>{choice.label || (typeof choice.value === 'string' ? choice.value : '')}</span>
       </label>
     {/each}

@@ -3,6 +3,7 @@
   import FieldStandard from './FieldStandard.svelte'
   import { randomid } from 'txstate-utils'
   import { PopupMenu, ScreenReaderOnly, type PopupMenuItem } from '@txstate-mws/svelte-components'
+  import { getDescribedBy } from '$lib'
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
@@ -15,8 +16,8 @@
   export let defaultValue: any = notNull ? choices[0].value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
-  export let helptext = ''
   export let inputelement: HTMLInputElement = undefined
+  export let helptext: string | undefined = undefined
 
   let inputvalue = ''
   let popupvalue = undefined
@@ -25,7 +26,6 @@
   let menuid: string
 
   const liveTextId = randomid()
-  const helpTextId = randomid()
 
   $:filteredChoices = changed
     ? choices.filter((item: PopupMenuItem) => {
@@ -60,13 +60,10 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
   {@const _ = reactToInitialValue(value)}
-  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:change={onChange} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={`${messagesid ?? ''} ${helptext.length ? helpTextId : ''}`} on:keydown={checkifchanged}>
+  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:change={onChange} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid])} on:keydown={checkifchanged}>
   <PopupMenu bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
-  {#if helptext.length}
-    <span id={helpTextId} class="field-help-text">{helptext}</span>
-  {/if}
   <ScreenReaderOnly arialive="polite" ariaatomic={true} id={liveTextId}>
     {filteredChoices.length} {filteredChoices.length === 1 ? 'option' : 'options'} available.
   </ScreenReaderOnly>

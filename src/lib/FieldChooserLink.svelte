@@ -9,6 +9,7 @@
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
   import FieldStandard from './FieldStandard.svelte'
+  import { getDescribedBy } from '$lib'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -24,6 +25,7 @@
   export let initialType: ChooserType|undefined = undefined
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
+  export let helptext: string | undefined = undefined
 
   const formStore = getContext<FormStore>(FORM_CONTEXT)
   const value = formStore.getField<string>(path)
@@ -70,14 +72,14 @@
   $: updateSelected($value)
 </script>
 
-<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} let:value let:messagesid let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
   {#if selectedAsset}
     <div class="dialog-chooser-container">
       <Thumbnail item={selectedAsset} />
       <Details item={selectedAsset} />
     </div>
   {/if}
-  <button type="button" on:click={show} aria-describedby={messagesid}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
+  <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
   {#if urlEntry && !folders && selectedAsset?.type !== 'folder'}
     <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry}><br>
   {/if}

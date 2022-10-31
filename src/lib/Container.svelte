@@ -2,13 +2,16 @@
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { eq } from '@txstate-mws/svelte-components'
   import InlineMessages from './InlineMessages.svelte'
+  import { isNotNull, randomid } from 'txstate-utils'
 
   export let id: string|undefined = undefined
   export let descid: string|undefined = undefined
   export let label: string
+  export let helptext: string|undefined = undefined
   export let messages: Feedback[]
   export let required = false
   let messagesid
+  const helptextid = helptext ? randomid() : undefined
 </script>
 
 <div use:eq class="dialog-field-container">
@@ -18,7 +21,10 @@
     <div id={descid} class="dialog-field-label">{label}{#if required}&nbsp;*{/if}</div>
   {/if}
   <div class="dialog-field-content">
-    <slot {messagesid} />
+    {#if isNotNull(helptext)}
+    <div id={helptextid}>{helptext}</div>
+    {/if}
+    <slot {messagesid} {helptextid}/>
   </div>
   <InlineMessages bind:id={messagesid} {messages} />
 </div>
