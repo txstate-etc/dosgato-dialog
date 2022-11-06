@@ -1,6 +1,6 @@
 export const CHOOSER_API_CONTEXT = {}
-export type ChooserType = 'asset'|'page'
-export type AnyItem = Asset|Folder|Page
+export type ChooserType = 'asset' | 'page'
+export type AnyItem = Asset | Folder | Page
 
 export interface Client<F = any> {
   getSources: (type: ChooserType) => Promise<Source[]>

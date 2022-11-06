@@ -34,7 +34,6 @@
 
   onMount(() => {
     store.setField('asset', 'asset-1')
-    store.setField('richtext', 'hello')
   })
 </script>
 

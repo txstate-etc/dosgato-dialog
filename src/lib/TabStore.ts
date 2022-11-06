@@ -18,7 +18,7 @@ interface ITabStore extends ElementSize {
 }
 
 export class TabStore extends Store<ITabStore> {
-  constructor (tabs: TabDef[], public initialTab?: string|undefined) {
+  constructor (tabs: TabDef[], public initialTab?: string | undefined) {
     super({
       tabs,
       current: findIndex(tabs, t => t.title === initialTab, 0),

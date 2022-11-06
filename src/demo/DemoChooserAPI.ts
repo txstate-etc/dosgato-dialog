@@ -3,22 +3,22 @@ import type { Asset, ChooserType, Client, Folder, Page, Source } from '$lib/choo
 import { filterAsync, randomid } from 'txstate-utils'
 
 interface RootFolder {
-  children?: (Asset|FolderWithChildren)[]
+  children?: (Asset | FolderWithChildren)[]
   acceptsUpload?: boolean
 }
 interface RootPage {
   children?: PageWithChildren[]
 }
 interface FolderWithChildren extends Folder {
-  children?: (Asset|FolderWithChildren)[]
+  children?: (Asset | FolderWithChildren)[]
 }
 interface PageWithChildren extends Page {
   children?: PageWithChildren[]
 }
 
-type AnyItem = Asset|FolderWithChildren|PageWithChildren
+type AnyItem = Asset | FolderWithChildren | PageWithChildren
 
-const assets: Record<string, RootFolder|RootPage> = {
+const assets: Record<string, RootFolder | RootPage> = {
   Assets: {
     children: [
       {
@@ -129,7 +129,7 @@ class DemoChooserAPI implements Client {
     return [{ type: 'page', name: 'Pages' }] as Source[]
   }
 
-  findFolder (source: string, path: string): RootFolder|RootPage|FolderWithChildren|PageWithChildren {
+  findFolder (source: string, path: string): RootFolder | RootPage | FolderWithChildren | PageWithChildren {
     if (path === '/') return assets[source]
     const parts = path.substring(1).split('/')
     let folders = assets[source].children
@@ -140,10 +140,10 @@ class DemoChooserAPI implements Client {
       if (folder.type === 'asset') throw new Error(`path ${path} refers to an asset but expected a folder`)
       folders = folder.children ?? []
     }
-    return folder as FolderWithChildren|PageWithChildren
+    return folder as FolderWithChildren | PageWithChildren
   }
 
-  collectItems (item: Asset|FolderWithChildren|PageWithChildren|RootPage|RootFolder) {
+  collectItems (item: Asset | FolderWithChildren | PageWithChildren | RootPage | RootFolder) {
     const ret = []
     if ('type' in item) ret.push(item)
     if ('children' in item && item.children.length) {
@@ -183,7 +183,7 @@ class DemoChooserAPI implements Client {
   }
 
   async upload (source: string, path: string, files: FileList) {
-    const folder = this.findFolder(source, path) as RootFolder|FolderWithChildren
+    const folder = this.findFolder(source, path) as RootFolder | FolderWithChildren
     if (!folder?.acceptsUpload) throw new Error('User may not upload to this folder')
     folder.children ??= []
     for (const file of Array.from(files)) {

@@ -7,7 +7,7 @@ export interface UISource extends Source {
 }
 
 export interface UIFolder extends Folder {
-  children?: (UIFolder|UIAsset)[]
+  children?: (UIFolder | UIAsset)[]
   open?: boolean
   loading?: boolean
 }
@@ -26,7 +26,7 @@ export interface RawURL {
   url: string
 }
 
-export type AnyUIItem = UIPage|UIFolder|UIAsset
+export type AnyUIItem = UIPage | UIFolder | UIAsset
 
 export interface IAssetStore {
   sources?: {
@@ -41,7 +41,7 @@ export interface IAssetStore {
 }
 
 export interface ChooserStoreOptions<F> {
-  filter?: (itm: AnyItem) => boolean|Promise<boolean>
+  filter?: (itm: AnyItem) => boolean | Promise<boolean>
   passthruFilters?: F
   activeTypes?: ChooserType[]
   activeSources?: string[]
@@ -135,7 +135,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     return item
   }
 
-  async open (folder: UIFolder|UIPage) {
+  async open (folder: UIFolder | UIPage) {
     return await this.openPath(folder.path)
   }
 
@@ -143,7 +143,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     const folder = this.itemByPath(this.value, path)
     if (!folder || folder.type === 'asset' || folder.open) return
     this.update(v => {
-      const folder = this.itemByPath(v, path) as UIFolder|UIPage
+      const folder = this.itemByPath(v, path) as UIFolder | UIPage
       folder.loading = true
       v.focus = folder.id
       return v
@@ -151,7 +151,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     try {
       const children = await filterAsync(await this.client.getChildren(this.getSource().name, path, this.options.passthruFilters), this.options.filter)
       this.update(v => {
-        const folder = this.itemByPath(v, path) as UIFolder|UIPage
+        const folder = this.itemByPath(v, path) as UIFolder | UIPage
         folder.open = true
         folder.loading = false
         folder.children = children as any
@@ -160,7 +160,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     } catch (e: any) {
       console.error(e)
       this.update(v => {
-        const folder = this.itemByPath(v, path) as UIFolder|UIPage
+        const folder = this.itemByPath(v, path) as UIFolder | UIPage
         folder.loading = false
         return v
       })
@@ -193,7 +193,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     })
   }
 
-  async close (folder: UIFolder|UIPage) {
+  async close (folder: UIFolder | UIPage) {
     return await this.closePath(folder.path)
   }
 
@@ -205,7 +205,7 @@ export class ChooserStore<F = any> extends SafeStore<IAssetStore> {
     })
   }
 
-  async toggle (folder: UIFolder|UIPage) {
+  async toggle (folder: UIFolder | UIPage) {
     if (folder.open) await this.close(folder)
     else await this.open(folder)
   }
