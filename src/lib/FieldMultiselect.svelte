@@ -24,8 +24,14 @@
     if (opts.length === 0) {
       opts = await getOptions('')
     }
-    for (const opt of opts) valueToLabel[opt.value] = opt.label || opt.value
-    valueToLabel = valueToLabel
+    let changed = false
+    for (const opt of opts) {
+      if (valueToLabel[opt.value] !== opt.label || opt.value) {
+        valueToLabel[opt.value] = opt.label || opt.value
+        changed = true
+      }
+    }
+    if (changed) valueToLabel = valueToLabel
     return opts
   }
 
