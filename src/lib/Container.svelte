@@ -2,7 +2,7 @@
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { eq } from '@txstate-mws/svelte-components'
   import InlineMessages from './InlineMessages.svelte'
-  import { isNotNull, randomid } from 'txstate-utils'
+  import { randomid } from 'txstate-utils'
 
   export let id: string|undefined = undefined
   export let descid: string|undefined = undefined
@@ -21,8 +21,8 @@
     <div id={descid} class="dialog-field-label">{label}{#if required}&nbsp;*{/if}</div>
   {/if}
   <div class="dialog-field-content">
-    {#if isNotNull(helptext)}
-    <div id={helptextid}>{helptext}</div>
+    {#if helptext}
+      <div id={helptextid} class="dialog-field-help">{helptext}</div>
     {/if}
     <slot {messagesid} {helptextid}/>
   </div>
@@ -92,7 +92,7 @@
     background-color: var(--dialog-field-bg2, #ffffff);
     color: var(--dialog-field-text2, inherit);
   }
-  .dialog-field-container :global(.field-help-text) {
+  .dialog-field-container :global(.dialog-field-help) {
     font-size: 0.9em;
     color: #595959;
   }
