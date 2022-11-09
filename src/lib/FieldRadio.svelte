@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import { randomid } from 'txstate-utils'
   import FieldStandard from './FieldStandard.svelte'
   import Radio from './Radio.svelte'
@@ -15,11 +14,16 @@
   export let required = false
   export let horizontal = false
   export let helptext: string | undefined = undefined
+  export let number = false
+  export let date = false
+  export let datetime = false
+  export let serialize: ((value: any) => string)|undefined = undefined
+  export let deserialize: ((value: string) => any)|undefined = undefined
   const groupid = randomid()
   const width = '100%'
 </script>
 
-<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:onBlur let:onChange let:helptextid>
+<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:helptextid>
   <div class="dialog-radio {className}" class:horizontal role="radiogroup" aria-labelledby={groupid} class:invalid>
     {#each choices as choice, idx}
       {@const radioid = `${path}.${idx}`}

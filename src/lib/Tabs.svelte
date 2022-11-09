@@ -1,23 +1,38 @@
 <script lang="ts">
-  import { modifierKey, resize } from '@txstate-mws/svelte-components'
-  import { setContext } from 'svelte'
+  import { type ElementOffsets, modifierKey, resize, offset } from '@txstate-mws/svelte-components'
+  import { Store } from '@txstate-mws/svelte-store'
+  import { getContext, setContext } from 'svelte'
   import { roundTo } from 'txstate-utils'
+  import { DIALOG_TABS_CONTEXT, type DialogTabContext } from './Dialog.svelte'
   import Icon from './Icon.svelte'
-  import { TabStore, TAB_CONTEXT } from './TabStore'
+  import { TabStore, TAB_CONTEXT, type TabDef } from './TabStore'
 
-  export let tabs: { title: string }[]
+  export let tabs: TabDef[]
   export let active: string|undefined = undefined
   export let store = new TabStore(tabs, active)
+  // TODO: react to tabs prop changing
 
+  const activeStore = new Store<ElementOffsets>({})
   const tabelements: HTMLElement[] = []
+  let activeelement: HTMLElement
   setContext(TAB_CONTEXT, { store, onClick, onKeyDown, tabelements })
-  const current = store.currentTitle()
+
+  const dialogContext = getContext<DialogTabContext>(DIALOG_TABS_CONTEXT)
+  dialogContext.onNext = () => { store.right() }
+  dialogContext.onPrev = () => { store.left() }
+  $: dialogContext.prevTitle = $store.prevTitle
+  $: dialogContext.nextTitle = $store.nextTitle
+  $: dialogContext.hasRequired = $store.requireNext
+  $: dialogContext.change($store)
+  setContext(DIALOG_TABS_CONTEXT, {}) // reset context so that any sub-tabs do NOT control the Dialog component
+
+  const currentTitle = store.currentTitle()
+  const currentIdx = store.currentIdx()
   const accordion = store.accordion()
   $: cols = Math.min(Math.floor($store.clientWidth / 90), $store.tabs.length)
   $: scalefactor = Math.min(roundTo($store.clientWidth / (cols * 130), 4), 1)
-  $: width = `calc(${100 / cols}% + 1px)`
-  $: widthleft = `${100 / cols}%`
   $: wrapping = cols !== $store.tabs.length
+  $: dialogContext.hasTabs = !$accordion
 
   function onClick (idx: number) {
     return () => store.activate(idx)
@@ -51,17 +66,32 @@
     return idx === (activeidx ?? 0)
   }
 
-  $: active = $current
+  const activeOversize = 2
+  async function reactToCurrent (..._: any) {
+    if (!activeelement) return
+    const tabelement = tabelements[$currentIdx]
+    if (!tabelement) return
+    const span = tabelement.querySelector(':scope > span') as HTMLSpanElement
+    if (!span) return
+    const left = span.offsetLeft - activeelement.offsetLeft - activeOversize
+    const width = span.offsetWidth + (activeOversize * 2)
+    activeelement.style.transform = `translateX(${left}px)`
+    activeelement.style.width = `${width}px`
+  }
+
+  $: active = $currentTitle
+  $: reactToCurrent($activeStore)
 </script>
 
 {#if !$accordion}
-  <ul use:resize={{ store }} class="dialog-tab-buttons" role="tablist">
+  <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
     {#each $store.tabs as tab, idx (tab.title)}
-    {@const active = isActive(idx, $store.current)}
-    {@const left = idx % cols === 0}
-    <li bind:this={tabelements[idx]} id={$store.tabids[tab.title]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} style:width={left ? widthleft : width} aria-selected={active} aria-controls={$store.panelids[tab.title]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={tab.icon} inline />{tab.title}</li>
+      {@const active = isActive(idx, $store.current)}
+      {@const left = idx % cols === 0}
+      <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.title]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.title]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
     {/each}
   </ul>
+  <div bind:this={activeelement} class="tabs-active"></div>
   <slot current={$store.current} />
 {:else}
   <div use:resize={{ store }} class="tabs-container">
@@ -71,6 +101,7 @@
 
 <style>
   .tabs-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     border-radius: var(--tabs-radius, 0.6em);
@@ -85,22 +116,38 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 0.9em;
   }
   li, .tabs-container :global(.tabs-tab) {
-    padding: var(--tabs-padding, 0.7em 1em);
+    padding: var(--tabs-padding-vert, 0.7em) var(--tabs-padding-hori, 1em);
     cursor: pointer;
     word-break: break-word;
-  }
-  li {
-    border: var(--tabs-border, 1px solid #666666);
-    border-top-left-radius: var(--tabs-radius, 0.6em);
-    border-top-right-radius: var(--tabs-radius, 0.6em);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--tabs-text, #363534)
   }
   li:not(.left) {
     margin-left: -1px;
   }
+
   li:global(.tabs-tab[aria-selected="true"]), .tabs-container :global(.tabs-tab[aria-selected="true"]) {
-    color: var(--tabs-active-text, #ffffff);
-    background-color: var(--tabs-active-bg, #333333);
+    font-weight: 700;
+  }
+
+  .tabs-active {
+    background: var(--dg-tabs-active, var(--dg-button-bg, #501214));
+    height: 3px;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 0px;
+    margin-top: calc(-1 * var(--tabs-padding-vert, 0.7em));
+    margin-bottom: var(--tabs-padding-vert, 0.7em);
+    transition: 0.2s transform;
+  }
+  @media (prefers-reduced-motion) {
+    .tabs-active {
+      transition: none;
+    }
   }
 </style>

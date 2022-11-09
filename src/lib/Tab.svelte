@@ -23,8 +23,9 @@
 <style>
   .tabs-panel {
     width: 100%;
-    border: var(--tabs-panel-border, var(--tabs-border, 1px solid #666666));
-    padding: var(--tabs-panel-padding, 1em);
+    min-height: 50vh;
+    border: var(--tabs-panel-border, var(--tabs-border, 0));
+    padding: var(--tabs-margin-top, 2em) var(--tabs-padding-hori, 0.7em) 0 var(--tabs-padding-hori, 0.7em);
   }
   .tabs-panel.accordion {
     border-left: 0;

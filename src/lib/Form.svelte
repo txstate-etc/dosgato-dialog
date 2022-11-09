@@ -20,8 +20,8 @@
   setContext(CHOOSER_API_CONTEXT, chooserClient)
 </script>
 
-<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting>
-  <slot {messages} {saved} {validating} {submitting} {valid} {invalid} />
+<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
+  <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} />
   <div class="form-errors" aria-live='assertive'>
     {#if messages.length}
       <ul>
@@ -47,7 +47,7 @@
     padding: 0;
   }
   .form-errors {
-    color: #9a3332;
+    color: var(--dg-danger-bg, #9a3332);
     padding: 1em;
   }
 </style>

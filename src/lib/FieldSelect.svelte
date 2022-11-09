@@ -1,6 +1,5 @@
 <script lang="ts">
   import { getDescribedBy } from '$lib'
-  import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''
   export { className as class }
@@ -16,9 +15,14 @@
   export let required = false
   export let inputelement: HTMLSelectElement = undefined
   export let helptext: string | undefined = undefined
+  export let number = false
+  export let date = false
+  export let datetime = false
+  export let serialize: ((value: any) => string)|undefined = undefined
+  export let deserialize: ((value: string) => any)|undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
   <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}

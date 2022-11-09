@@ -1,13 +1,13 @@
 <script lang="ts">
   import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
+  import apertureLight from '@iconify-icons/ph/aperture-light'
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { Form, FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker } from '$lib/index'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FormDialog } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   import FieldTextArea from '$lib/FieldTextArea.svelte'
   let store: FormStore
-
   async function submit (data) {
     return {
       success: true,
@@ -17,6 +17,7 @@
   }
 
   async function validate (data): Promise<Feedback[]> {
+    console.log('validate')
     return [{
       type: 'error',
       message: 'Nope',
@@ -28,7 +29,7 @@
     { title: 'Add More', icon: plusThick },
     { title: 'Text' },
     { title: 'Dates' },
-    { title: 'Selections' },
+    { title: 'Selections', required: true },
     { title: 'Checkboxes' }
   ]
 
@@ -41,7 +42,7 @@
 <h1>DosGato Dialog Example</h1>
 
 <main>
-<Form bind:store {submit} {validate} chooserClient={demoChooserAPI} let:saved>
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="normal" let:saved>
   <Tabs {tabs}>
     <Tab title="Add More">
       <FieldText path="test" label="Test" required />
@@ -86,7 +87,7 @@
     <button>Save</button>
     {#if saved}Save successful!{/if}
   </svelte:fragment>
-</Form>
+</FormDialog>
 </main>
 <aside>
   <pre>{JSON.stringify($store?.data, null, 2)}</pre>

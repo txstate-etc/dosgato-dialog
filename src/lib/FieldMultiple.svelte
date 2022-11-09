@@ -1,9 +1,11 @@
 <script lang="ts">
+  import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
   import { AddMore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
   import { getContext } from 'svelte'
   import { isNotNull } from 'txstate-utils'
+  import Button from './Button.svelte'
   import Container from './Container.svelte'
 
   export let path: string
@@ -15,6 +17,9 @@
   export let removable = false
   export let reorder = false
   export let conditional: boolean|undefined = undefined
+  export let addMoreText = 'Add'
+  export let maxedText = addMoreText
+  export let addMoreClass: string = undefined
 
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotNull).join('.')
@@ -33,7 +38,7 @@
 </script>
 
 <Container {label} {messages}>
-  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} addMoreClass="dialog-multiple-button" let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
+  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && index > 0}
     <div class="dialog-multiple" class:has-delete-icon={showDelete}>
@@ -45,29 +50,31 @@
         {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}>X</button>{/if}
       </div>{/if}
     </div>
+    <svelte:fragment slot="addbutton" let:maxed let:onClick>
+      <Button type="button" icon={plusCircleLight} class="{addMoreClass} dialog-multiple-button" disabled={maxed} on:click={onClick}>{maxed ? maxedText : addMoreText}</Button>
+    </svelte:fragment>
   </AddMore>
 </Container>
 
 <style>
   .dialog-multiple {
     position: relative;
-    border: var(--dialog-container-border, 1px solid #999999);
+    border: var(--dialog-container-border, 0);
     padding: var(--dialog-container-padding, 1em);
   }
   .dialog-multiple:not(:first-child) {
     border-top: 0;
   }
   .dialog-multiple:nth-of-type(even) {
-    background-color: var(--dialog-field-bg1, #e6e6e6);
+    background-color: var(--dialog-field-bg1, transparent);
     color: var(--dialog-field-text1, inherit);
   }
   .dialog-multiple:nth-of-type(odd) {
-    background-color: var(--dialog-field-bg2, #ffffff);
+    background-color: var(--dialog-field-bg2, transparent);
     color: var(--dialog-field-text2, inherit);
   }
   :global(.dialog-multiple-button) {
-    padding: 0.3em 0.4em;
-    margin-top: 0.5em;
+    margin-left: var(--dialog-container-padding, 1em);
   }
   .dialog-multiple.has-delete-icon {
     display: flex;

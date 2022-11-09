@@ -31,9 +31,6 @@
 
 <style>
   .dialog-field-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     border-bottom: var(--dialog-container-border, 1px solid #999999);
     padding: var(--dialog-container-padding, 1em) 0;
     --dialog-container-tab-correct: calc(-1 * var(--tabs-panel-padding, 1em));
@@ -66,30 +63,26 @@
   :global(.tabs-panel) .dialog-field-container :global(.dialog-field-container) {
     margin-left: 0;
   }
+  .dialog-field-label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 500;
+  }
   .dialog-field-content {
     position: relative;
-    width: max(70%, calc(100% - 20em));
-  }
-  .dialog-field-label {
-    width: min(30%, 20em);
-  }
-  :global([data-eq~="500px"]) .dialog-field-label {
-    width: 100%;
-    margin-bottom: 0.4em;
-  }
-  :global([data-eq~="500px"]) .dialog-field-content {
-    width: 100%;
   }
   .dialog-field-container :global(.dialog-input) {
     width: 100%;
-    padding: 0.4em 0.6em;
+    padding: 0.3em 0.5em;
+    border: 0;
+    border-radius: 0;
   }
   .dialog-field-container:nth-of-type(even) {
-    background-color: var(--dialog-field-bg1, #e6e6e6);
+    background-color: var(--dialog-field-bg1, transparent);
     color: var(--dialog-field-text1, inherit);
   }
   .dialog-field-container:nth-of-type(odd) {
-    background-color: var(--dialog-field-bg2, #ffffff);
+    background-color: var(--dialog-field-bg2, transparent);
     color: var(--dialog-field-text2, inherit);
   }
   .dialog-field-container :global(.dialog-field-help) {
