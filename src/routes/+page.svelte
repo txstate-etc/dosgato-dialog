@@ -8,6 +8,7 @@
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   import FieldTextArea from '$lib/FieldTextArea.svelte'
   let store: FormStore
+  let showdialog = true
   async function submit (data) {
     return {
       success: true,
@@ -42,7 +43,8 @@
 <h1>DosGato Dialog Example</h1>
 
 <main>
-<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="normal" let:saved>
+{#if showdialog}
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="normal" on:escape={() => { showdialog = false }} let:saved>
   <Tabs {tabs}>
     <Tab title="Add More">
       <FieldText path="test" label="Test" required />
@@ -88,6 +90,8 @@
     {#if saved}Save successful!{/if}
   </svelte:fragment>
 </FormDialog>
+{/if}
+<button on:click={() => { showdialog = true }}>Show Dialog</button>
 </main>
 <aside>
   <pre>{JSON.stringify($store?.data, null, 2)}</pre>

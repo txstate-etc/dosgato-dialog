@@ -11,9 +11,9 @@
   }
 </script>
 <script lang="ts">
-
   import arrowLeftLight from '@iconify-icons/ph/arrow-left-light'
   import arrowRightLight from '@iconify-icons/ph/arrow-right-light'
+  import xLight from '@iconify-icons/ph/x-light'
   import { Modal, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { createEventDispatcher, setContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
@@ -56,6 +56,9 @@
       <header id={labelid}>
         <Icon width="1.4em" {icon} inline />{title}
       </header>
+    {/if}
+    {#if escapable}
+      <button type="button" class="escape" on:click={() => dispatch('escape')}><Icon icon={xLight} width="2em" hiddenLabel="Close Dialog" /></button>
     {/if}
     <div id={descid} class="content">
       <slot></slot>
@@ -151,5 +154,14 @@
 
   footer.actions :global(.prev) {
     margin-right: auto;
+  }
+
+  .escape {
+    position: absolute;
+    top: 0.1em;
+    right: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
   }
 </style>
