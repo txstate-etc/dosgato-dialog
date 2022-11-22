@@ -1,49 +1,101 @@
 <script lang="ts">
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
-  import { keyby } from 'txstate-utils'
-  import { getDescribedBy } from '$lib'
+  import { getDescribedBy, Radio } from '$lib'
+  import { randomid } from 'txstate-utils'
 
   export let id: string | undefined = undefined
   let className = ''
   export { className as class }
   export let path: string
   export let options: ColorPickerOption[]
+  export let addAllOption: boolean = false
   export let label: string = ''
   export let required = false
-  export let disabled = false
   export let notNull = false
-  export let defaultValue: any = notNull ? options[0].value : undefined
+  export let defaultValue: any = notNull ? (addAllOption ? 'alternating' : options[0].value) : undefined
   export let conditional: boolean|undefined = undefined
-  export let placeholder: string = 'Select' + (label ? ' ' + label : '')
-  export let inputelement: HTMLSelectElement = undefined
   export let helptext: string | undefined = undefined
+  const groupid = randomid()
 
-  const colorsByValue = keyby(options, 'value')
 </script>
 
-<FieldStandard bind:id {path} {label} {required} {defaultValue} {conditional} {helptext} let:id let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid>
-  <div class="flex-color-container">
-    <div class="selected-color" style="background-color: { value ? colorsByValue[value].color : 'transparent' }"/>
-    <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid])}>
-      {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
-      {#each options as option (option.value) }
-        <option value={option.value} selected={value === option.value}>{option.name || option.value}</option>
-      {/each}
-    </select>
+<FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid>
+  <div class="color-container {className}" role="radiogroup" aria-labelledby={groupid} class:invalid class:valid>
+    {#if addAllOption}
+      <label for={`${path}.alt`} class="colorsel alternating">
+        <Radio id={`${path}.alt`} name={path} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid}/>
+        <span class="alternating-bg">
+          {#each options as option}
+            <span style={`background-color: ${option.color}`}></span>
+          {/each}
+        </span>
+        <span class="alternating-text">Alternating</span>
+      </label>
+    {/if}
+    {#each options as option, idx (option.value) }
+      {@const radioid = `${path}.${idx}`}
+      <label for={radioid} class="colorsel">
+        <Radio id={radioid} name={path} value={option.value} selected={value === option.value} {onChange} {onBlur} {helptextid}/>
+        <span style={`background-color: ${option.color}`}>{option.name || option.value}</span>
+      </label>
+    {/each}
   </div>
 </FieldStandard>
 
 <style>
-  .flex-color-container {
-    display: flex;
-    align-items: center;
+  .color-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  .selected-color {
-    height: 2em;
-    width: 2em;
-    margin-right: 1em;
-    border: 1px solid #6d6d6d;
-    border-radius: 3px;
+
+  label.colorsel :global(input[type="radio"]) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  label.colorsel :global(input[type="radio"] + span) {
+    display: inline-block;
+    font-weight: bold;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #D1D1D1;
+  }
+
+  label.colorsel :global(input[type="radio"]:checked + span) {
+    outline: 5px solid #93BBC4;
+  }
+
+  label.colorsel.alternating {
+    position: relative;
+  }
+
+  label.colorsel.alternating span.alternating-bg {
+    display: flex;
+    padding: 0;
+    height: 100%;
+  }
+
+  label.colorsel.alternating span.alternating-bg span {
+    width: 100%;
+  }
+
+  label.colorsel.alternating span.alternating-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, -1px -1px 0 #222;
   }
 </style>
