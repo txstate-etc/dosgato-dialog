@@ -21,7 +21,8 @@ module.exports = {
     '@typescript-eslint/require-await': 'off',
     '@typescript-eslint/return-await': ['error', 'always'],
     '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/prefer-readonly': ['off']
+    '@typescript-eslint/prefer-readonly': ['off'],
+		'@typescript-eslint/no-unnecessary-boolean-literal-compare': ['off']
   },
 	parserOptions: {
 		project: './tsconfig.json',

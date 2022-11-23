@@ -25,7 +25,7 @@
     <FieldText path="name" label="Text" helptext="Last, First Middle Initial"/>
     <FieldCheckbox path="pineapple" label="Pineapple" boxLabel="I like pineapple on pizza." helptext="There is no right answer"/>
     <FieldChoices label="Choose a Pie" path="choices" choices={[{ value: 'apple' }, { value: 'pecan' }, { value: 'pumpkin' }]} helptext="Pie options are seasonal."/>
-    <FieldChooserLink path="asset" label="Choose an Asset" images initialType='asset' initialSource="DosGato" helptext="Any image is fine, just pick one."/>
+    <FieldChooserLink path="asset" label="Choose an Asset" images initialSource="Assets" helptext="Any image is fine, just pick one."/>
     <FieldDate path="date" label="Choose a delivery day" helptext="Mondays are best" />
     <FieldDateTime path="datetime" label="Preferred appointment time" helptext="Please don't choose a time in the middle of the night" />
     <FieldNumber path="number" label="Lucky Number" helptext="Enter a whole number"/>

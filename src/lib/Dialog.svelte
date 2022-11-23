@@ -24,12 +24,13 @@
   export let initialfocus: string|undefined = undefined
   export let title = ''
   export let icon: IconifyIcon = undefined
-  export let size: 'tiny'|'small'|'normal'|'large' = 'normal'
+  export let size: 'tiny'|'small'|'normal'|'large'|'xl' = 'normal'
   export let cancelText: string|undefined = undefined
   export let continueText: string = 'Ok'
   export let continueIcon: IconifyIcon = undefined
   export let escapable = isNotBlank(cancelText)
   export let disabled = false
+  export let ignoreTabs = false
 
   export let labelid = randomid()
   export let descid = randomid()
@@ -64,15 +65,15 @@
       <slot></slot>
     </div>
     <footer class="actions">
-      <slot name="buttons" {nextTitle} {prevTitle} {hasRequired} onPrev={onPrev} onNext={onNext}>
-        {#if prevTitle}
+      <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext}>
+        {#if prevTitle && !ignoreTabs}
           <Button class="prev" disabled={!prevTitle} on:click={onPrev}><Icon icon={arrowLeftLight} inline /> Previous<ScreenReaderOnly> Tab ({prevTitle})</ScreenReaderOnly></Button>
         {/if}
         {#if isNotBlank(cancelText)}
           <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
         {/if}
-        <Button class="primary" disabled={disabled || hasRequired} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline />{continueText}</Button>
-        {#if nextTitle}
+        <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline />{continueText}</Button>
+        {#if nextTitle && !ignoreTabs}
           <Button class="next" disabled={!nextTitle} on:click={onNext}>Next<ScreenReaderOnly> Tab ({nextTitle})</ScreenReaderOnly> <Icon width="1.2em" icon={arrowRightLight} inline /></Button>
         {/if}
       </slot>
@@ -106,6 +107,10 @@
     width: 90vw;
     min-width: 300px;
     max-width: 1000px;
+  }
+  section.xl {
+    width: 95vw;
+    max-width: 2000px;
   }
 
   header {

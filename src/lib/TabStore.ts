@@ -1,11 +1,12 @@
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
-import type { ElementOffsets, ElementSize } from '@txstate-mws/svelte-components'
+import type { ElementSize } from '@txstate-mws/svelte-components'
 import { findIndex, randomid } from 'txstate-utils'
 import type { IconifyIcon } from '@iconify/svelte'
 
 export const TAB_CONTEXT = {}
 
 export interface TabDef {
+  name?: string
   title: string
   icon?: IconifyIcon
   required?: boolean
@@ -44,11 +45,21 @@ export class TabStore extends Store<ITabStore> {
   }
 
   set (v: ITabStore) {
+    v.tabids ??= {}
+    v.panelids ??= {}
+    for (const tab of v.tabs) {
+      v.tabids[tab.title] ??= randomid()
+      v.panelids[tab.title] ??= randomid()
+    }
     super.set(checkNext(v))
   }
 
   currentIdx () {
     return derivedStore(this, v => v.current)
+  }
+
+  currentName () {
+    return derivedStore(this, v => v.tabs[v.current].name ?? v.tabs[v.current].title)
   }
 
   currentTitle () {
@@ -85,5 +96,9 @@ export class TabStore extends Store<ITabStore> {
 
   activate (idx: number) {
     this.update(v => ({ ...v, current: Math.min(v.tabs.length, Math.max(0, idx)) }))
+  }
+
+  activateName (name: string) {
+    this.update(v => ({ ...v, current: findIndex(v.tabs, t => t.name === name) ?? findIndex(v.tabs, t => t.title === name) ?? v.current }))
   }
 }

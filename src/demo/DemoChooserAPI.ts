@@ -1,22 +1,22 @@
-import type { AnyUIItem } from '$lib'
-import type { Asset, ChooserType, Client, Folder, Page, Source } from '$lib/chooser/ChooserAPI'
-import { filterAsync, randomid } from 'txstate-utils'
+import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
+import { randomid } from 'txstate-utils'
 
+interface StoredAsset extends Omit<Asset, 'source'> {}
 interface RootFolder {
-  children?: (Asset | FolderWithChildren)[]
+  children?: (StoredAsset | FolderWithChildren)[]
   acceptsUpload?: boolean
 }
 interface RootPage {
   children?: PageWithChildren[]
 }
-interface FolderWithChildren extends Folder {
-  children?: (Asset | FolderWithChildren)[]
+interface FolderWithChildren extends Omit<Folder, 'source'> {
+  children?: (StoredAsset | FolderWithChildren)[]
 }
-interface PageWithChildren extends Page {
+interface PageWithChildren extends Omit<Page, 'source'> {
   children?: PageWithChildren[]
 }
 
-type AnyItem = Asset | FolderWithChildren | PageWithChildren
+type AnyStoredItem = StoredAsset | FolderWithChildren | PageWithChildren
 
 const assets: Record<string, RootFolder | RootPage> = {
   Assets: {
@@ -27,6 +27,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         name: 'biology',
         path: '/biology',
         acceptsUpload: true,
+        hasChildren: true,
         children: [
           {
             type: 'folder',
@@ -34,11 +35,12 @@ const assets: Record<string, RootFolder | RootPage> = {
             name: 'evolutionary',
             path: '/biology/evolutionary',
             acceptsUpload: false,
+            hasChildren: true,
             children: [
-              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
+              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
             ]
           },
-          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', acceptsUpload: false }
+          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', acceptsUpload: false, hasChildren: false }
         ]
       },
       {
@@ -47,8 +49,9 @@ const assets: Record<string, RootFolder | RootPage> = {
         name: 'chemistry',
         path: '/chemistry',
         acceptsUpload: true,
+        hasChildren: true,
         children: [
-          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', acceptsUpload: true }
+          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', acceptsUpload: true, hasChildren: false }
         ]
       },
       {
@@ -57,9 +60,10 @@ const assets: Record<string, RootFolder | RootPage> = {
         name: 'physics',
         path: '/physics',
         acceptsUpload: true,
+        hasChildren: true,
         children: [
-          { type: 'asset', id: 'asset-1', path: '/physics', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
-          { type: 'asset', id: 'asset-2', path: '/physics', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/blankpdf.pdf' }
+          { type: 'asset', id: 'asset-1', path: '/physics/cannondiagram.png', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
+          { type: 'asset', id: 'asset-2', path: '/physics/modernphysics.pdf', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/blankpdf.pdf' }
         ]
       }
     ]
@@ -76,6 +80,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         name: 'human-resources',
         url: 'https://example.org/human-resources.html',
         title: 'Human Resources',
+        hasChildren: true,
         children: [
           {
             type: 'page',
@@ -83,7 +88,8 @@ const assets: Record<string, RootFolder | RootPage> = {
             path: '/human-resources/about',
             name: 'about',
             url: 'https://example.org/human-resources/about.html',
-            title: 'About Us'
+            title: 'About Us',
+            hasChildren: false
           },
           {
             type: 'page',
@@ -91,7 +97,8 @@ const assets: Record<string, RootFolder | RootPage> = {
             path: '/human-resources/resources',
             name: 'resources',
             url: 'https://example.org/human-resources/resources.html',
-            title: 'Forms & Other Resources'
+            title: 'Forms & Other Resources',
+            hasChildren: false
           }
         ]
       },
@@ -101,7 +108,8 @@ const assets: Record<string, RootFolder | RootPage> = {
         path: '/history',
         name: 'history',
         url: 'https://example.org/history.html',
-        title: 'Department of History'
+        title: 'Department of History',
+        hasChildren: false
       },
       {
         type: 'page',
@@ -109,7 +117,8 @@ const assets: Record<string, RootFolder | RootPage> = {
         path: '/math',
         name: 'math',
         url: 'https://example.org/math.html',
-        title: 'Department of Mathematics'
+        title: 'Department of Mathematics',
+        hasChildren: false
       },
       {
         type: 'page',
@@ -117,7 +126,8 @@ const assets: Record<string, RootFolder | RootPage> = {
         path: '/vpit',
         name: 'vpit',
         url: 'https://example.org/vpit.html',
-        title: 'Information Technology'
+        title: 'Information Technology',
+        hasChildren: false
       }
     ]
   }
@@ -133,9 +143,9 @@ class DemoChooserAPI implements Client {
     if (path === '/') return assets[source]
     const parts = path.substring(1).split('/')
     let folders = assets[source].children
-    let folder: AnyItem
+    let folder: AnyStoredItem
     for (const part of parts) {
-      folder = (folders as AnyItem[]).find(f => f.name === part)
+      folder = (folders as AnyStoredItem[]).find(f => f.name === part)
       if (!folder) throw new Error(`path ${path} not found in source ${source}`)
       if (folder.type === 'asset') throw new Error(`path ${path} refers to an asset but expected a folder`)
       folders = folder.children ?? []
@@ -143,12 +153,12 @@ class DemoChooserAPI implements Client {
     return folder as FolderWithChildren | PageWithChildren
   }
 
-  collectItems (item: Asset | FolderWithChildren | PageWithChildren | RootPage | RootFolder) {
+  collectItems (item: StoredAsset | FolderWithChildren | PageWithChildren | RootPage | RootFolder, source: string): AnyItem[] {
     const ret = []
-    if ('type' in item) ret.push(item)
+    if ('type' in item) ret.push({ ...item, source })
     if ('children' in item && item.children.length) {
       for (const f of item.children) {
-        ret.push(...this.collectItems(f))
+        ret.push(...this.collectItems(f, source))
       }
     }
     return ret
@@ -156,27 +166,27 @@ class DemoChooserAPI implements Client {
 
   async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
-    return folder.children as AnyItem[] ?? []
+    return folder.children.map(c => ({ ...c, source })) as AnyItem[] ?? []
   }
 
   async find (source: string, path: string, searchstring: string) {
     const folder = this.findFolder(source, path)
-    const items = this.collectItems(folder)
+    const items = this.collectItems(folder, source)
     const search = searchstring.toLocaleLowerCase()
     return items.filter(a => a.name.toLocaleLowerCase().includes(search))
   }
 
-  async findById (id: string) {
-    for (const rootfolder of Object.values(assets)) {
-      const found = this.collectItems(rootfolder).find(a => a.id === id)
+  async findById (id: string): Promise<AnyItem | undefined> {
+    for (const [key, rootfolder] of Object.entries(assets)) {
+      const found = this.collectItems(rootfolder, key).find(a => a.id === id)
       if (found) return found
     }
     return undefined
   }
 
   async findByUrl (url: string) {
-    for (const rootfolder of Object.values(assets)) {
-      const found = this.collectItems(rootfolder).find(a => a.url === url)
+    for (const [source, rootfolder] of Object.entries(assets)) {
+      const found = this.collectItems(rootfolder, source).find(a => 'url' in a && a.url === url)
       if (found) return found
     }
     return undefined
@@ -188,7 +198,7 @@ class DemoChooserAPI implements Client {
     folder.children ??= []
     for (const file of Array.from(files)) {
       const isImage = file.type.startsWith('image')
-      const asset: Asset = { type: 'asset', id: randomid(), path, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', bytes: isImage ? 196672 : 1264, url: isImage ? '/static/demo-full.png' : '/static/blankpdf.pdf' }
+      const asset: StoredAsset = { type: 'asset', id: randomid(), path, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', bytes: isImage ? 196672 : 1264, url: isImage ? '/static/demo-full.png' : '/static/blankpdf.pdf' }
       if (isImage) {
         asset.image = {
           width: 909,

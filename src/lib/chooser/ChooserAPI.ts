@@ -51,23 +51,30 @@ interface Item {
    * PageLink (see dosgato-templating/src/links.ts)
    */
   id: string
+  /**
+   * path to the item, MUST include the item itself, so ends with /${name}
+   */
   path: string
   name: string
+  source: string
 }
 
 export interface Folder extends Item {
   type: 'folder'
+  hasChildren: boolean
   acceptsUpload: boolean // from the current authenticated user
 }
 
 export interface Page extends Item {
   type: 'page'
+  title?: string
+  hasChildren: boolean
   url: string
-  title: string
 }
 
 export interface Asset extends Item {
   type: 'asset'
+  title?: string
   mime: string
   bytes: number
   url: string

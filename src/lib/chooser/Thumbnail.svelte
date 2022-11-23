@@ -3,9 +3,10 @@
   import fileLinkOutline from '@iconify-icons/mdi/file-link-outline.js'
   import FileIcon from '$lib/FileIcon.svelte'
   import Icon from '$lib/Icon.svelte'
-  import type { AnyUIItem, RawURL } from './ChooserStore'
+  import type { AnyItem } from './ChooserAPI'
+  import type { RawURL } from './ChooserStore'
 
-  export let item: AnyUIItem|RawURL
+  export let item: AnyItem|RawURL
 </script>
 
 <div class="dialog-chooser-thumbnail">
@@ -28,12 +29,19 @@
     width: 100%;
     padding-top: 75%;
   }
-  img {
+  .dialog-chooser-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
   }
-  .dialog-chooser-thumbnail > * {
+  .dialog-chooser-thumbnail :global(svg) {
+    width: 60%;
+    height: 60%;
+    min-width: 4.5em;
+    min-height: 4.5em;
+    object-fit: scale-down;
+  }
+  .dialog-chooser-thumbnail > :global(*) {
     display: block;
     position: absolute;
     top: 50%;

@@ -1,11 +1,9 @@
-<script lang="ts" context="module">
-  import type { ChooserType, Client } from './chooser/ChooserAPI'
-</script>
 <script lang="ts">
   import { FORM_CONTEXT, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { randomid } from 'txstate-utils'
-  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type AnyUIItem, type RawURL } from './chooser'
+  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type RawURL } from './chooser'
+  import type { AnyItem, ChooserType, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
   import FieldStandard from './FieldStandard.svelte'
@@ -22,7 +20,6 @@
   export let assets = images
   export let folders = false
   export let urlEntry = false
-  export let initialType: ChooserType|undefined = undefined
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
   export let helptext: string | undefined = undefined
@@ -35,7 +32,7 @@
   const descid = randomid()
   let modalshown = false
   async function show () {
-    if (selectedAsset && selectedAsset.type !== 'raw') store.preview(selectedAsset)
+    if (selectedAsset && selectedAsset.type !== 'raw') store.setPreview(selectedAsset)
     modalshown = true
   }
   function hide () {
@@ -44,7 +41,7 @@
   function onChange (setVal: any) {
     return (e) => {
       selectedAsset = e.detail
-      setVal(e.detail.id)
+      setVal(selectedAsset?.id)
       hide()
     }
   }
@@ -53,7 +50,7 @@
     const url = this.value
     if (chooserClient.findByUrl) {
       const item = await chooserClient.findByUrl(url)
-      if (item) return store.preview(item)
+      if (item) return store.setPreview(item)
     }
     store.clearPreview()
     const newVal = chooserClient.urlToValue?.(url) ?? url
@@ -65,7 +62,7 @@
     formStore.setField(path, newVal)
   }
 
-  let selectedAsset: AnyUIItem|RawURL
+  let selectedAsset: AnyItem|RawURL
   async function updateSelected (..._: any) {
     if ($value && selectedAsset?.id !== $value) selectedAsset = await chooserClient.findById($value)
   }
@@ -79,12 +76,14 @@
       <Details item={selectedAsset} />
     </div>
   {/if}
-  <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
-  {#if urlEntry && !folders && selectedAsset?.type !== 'folder'}
-    <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry}><br>
-  {/if}
+  <div class="dialog-chooser-entry">
+    {#if urlEntry && !folders && selectedAsset?.type !== 'folder'}
+      <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry}>
+    {/if}
+    <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
+  </div>
   {#if modalshown}
-    <Chooser {store} {label} {initialType} {pages} {assets} {images} {initialSource} {initialPath} {folders} on:change={onChange(setVal)} on:escape={hide} />
+    <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
 </FieldStandard>
 
@@ -99,7 +98,10 @@
     padding-top: 0;
     height: 5em;
   }
+  .dialog-chooser-entry {
+    display: flex;
+  }
   input {
-    width: 100%;
+    flex-grow: 1;
   }
 </style>

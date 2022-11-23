@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type ElementOffsets, modifierKey, resize, offset } from '@txstate-mws/svelte-components'
   import { Store } from '@txstate-mws/svelte-store'
-  import { getContext, setContext } from 'svelte'
+  import { getContext, onMount, setContext } from 'svelte'
   import { roundTo } from 'txstate-utils'
   import { DIALOG_TABS_CONTEXT, type DialogTabContext } from './Dialog.svelte'
   import Icon from './Icon.svelte'
@@ -10,21 +10,21 @@
   export let tabs: TabDef[]
   export let active: string|undefined = undefined
   export let store = new TabStore(tabs, active)
-  // TODO: react to tabs prop changing
+  $: store.update(v => ({ ...v, tabs }))
 
   const activeStore = new Store<ElementOffsets>({})
   const tabelements: HTMLElement[] = []
   let activeelement: HTMLElement
   setContext(TAB_CONTEXT, { store, onClick, onKeyDown, tabelements })
 
-  const dialogContext = getContext<DialogTabContext>(DIALOG_TABS_CONTEXT)
+  const dialogContext = getContext<DialogTabContext>(DIALOG_TABS_CONTEXT) ?? { change: () => {} }
   dialogContext.onNext = () => { store.right() }
   dialogContext.onPrev = () => { store.left() }
   $: dialogContext.prevTitle = $store.prevTitle
   $: dialogContext.nextTitle = $store.nextTitle
   $: dialogContext.hasRequired = $store.requireNext
   $: dialogContext.change($store)
-  setContext(DIALOG_TABS_CONTEXT, {}) // reset context so that any sub-tabs do NOT control the Dialog component
+  setContext(DIALOG_TABS_CONTEXT, { change: () => {} }) // reset context so that any sub-tabs do NOT control the Dialog component
 
   const currentTitle = store.currentTitle()
   const currentIdx = store.currentIdx()
@@ -81,6 +81,7 @@
 
   $: active = $currentTitle
   $: reactToCurrent($activeStore)
+  onMount(reactToCurrent)
 </script>
 
 {#if !$accordion}
