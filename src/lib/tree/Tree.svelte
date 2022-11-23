@@ -18,6 +18,17 @@
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean|undefined = undefined
   export let enableResize = false
+  /**
+   * this `itemType` prop is here for typescript only
+   *
+   * it will allow users to specify T
+   *
+   * as of this comment svelte is able to determine T from the store prop
+   * ONLY when Tree is in the same codebase, but it cannot do it when in node_modules
+   *
+   * also not everyone will use the store prop
+   */
+  export const itemType: T = undefined
   export let fetchChildren: FetchChildrenFn<T>|undefined = undefined
   export let dragEligible: DragEligibleFn<T>|undefined = undefined
   export let moveHandler: MoveHandlerFn<T>|undefined = undefined
