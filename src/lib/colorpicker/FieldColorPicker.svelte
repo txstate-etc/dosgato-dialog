@@ -1,8 +1,8 @@
 <script lang="ts">
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
-  import { getDescribedBy, Radio } from '$lib'
-  import { randomid } from 'txstate-utils'
+  import { Radio } from '$lib'
+  import { randomid, shouldUseWhiteText } from 'txstate-utils'
 
   export let id: string | undefined = undefined
   let className = ''
@@ -27,17 +27,17 @@
         <Radio id={`${path}.alt`} name={path} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid}/>
         <span class="alternating-bg">
           {#each options as option}
-            <span style={`background-color: ${option.color}`}></span>
+            <span style:background-color={option.color}></span>
           {/each}
         </span>
-        <span class="alternating-text">Alternating</span>
+        <span class="picker-text">Alternating</span>
       </label>
     {/if}
     {#each options as option, idx (option.value) }
       {@const radioid = `${path}.${idx}`}
       <label for={radioid} class="colorsel">
         <Radio id={radioid} name={path} value={option.value} selected={value === option.value} {onChange} {onBlur} {helptextid}/>
-        <span style={`background-color: ${option.color}`}>{option.name || option.value}</span>
+        <span class="picker-text" style:background-color={option.color} class:dark={shouldUseWhiteText(option.color)}>{option.name || option.value}</span>
       </label>
     {/each}
   </div>
@@ -63,7 +63,6 @@
 
   label.colorsel :global(input[type="radio"] + span) {
     display: inline-block;
-    font-weight: bold;
     padding: 1rem;
     width: 100%;
     text-align: center;
@@ -73,6 +72,10 @@
 
   label.colorsel :global(input[type="radio"]:checked + span) {
     outline: 5px solid #93BBC4;
+  }
+
+  label.colorsel :global(input[type="radio"]:focus + span) {
+    outline: 5px solid blue;
   }
 
   label.colorsel.alternating {
@@ -89,13 +92,21 @@
     width: 100%;
   }
 
-  label.colorsel.alternating span.alternating-text {
+  label.colorsel.alternating span.picker-text {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  label .picker-text {
     font-weight: bold;
+    letter-spacing: 0.5px;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), 1px -1px 1px rgba(255, 255, 255, 0.6), -1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.6);
+  }
+  label .picker-text.dark, label.alternating .picker-text {
     color: white;
-    text-shadow: 1px 1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, -1px -1px 0 #222;
+    text-shadow: 1px 1px 1px #222, 1px -1px 1px #222, -1px 1px 1px #222, -1px -1px 1px #222;
   }
 </style>

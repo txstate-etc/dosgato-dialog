@@ -16,7 +16,7 @@
     "@iconify/svelte": "^3.0.0",
     "@iconify-icons/mdi": "^1.2.22",
     "@iconify-icons/ph": "^1.2.2",
-    "txstate-utils": "^1.7.12"
+    "txstate-utils": "^1.8.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
