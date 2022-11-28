@@ -95,7 +95,7 @@
   <section class="dialog-chooser-window">
     <header class="dialog-chooser-controls">
       {#if $sources.length > 1}
-        <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ id: s.name, title: s.label ?? s.name }))} />
+        <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ name: s.name, title: s.label ?? s.name }))} />
       {/if}
     </header>
     <section class="dialog-chooser-chooser">
