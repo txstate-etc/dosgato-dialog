@@ -58,7 +58,6 @@
   }
 
   async function openRecursive (pathSplit: string[], depth: number): Promise<TypedTreeItem<Page | Asset | Folder>> {
-    console.log($treeStore.rootItems)
     let curr = $treeStore.rootItems?.find(itm => itm.name === pathSplit[0])
     for (let i = 0; i < depth; i++) {
       curr = curr?.children?.find(c => c.name === pathSplit[i + 1])
@@ -87,7 +86,7 @@
   }
   onMount(async () => {
     await store.init({ images, pages, assets, folders, activeSources, initialSource, initialPath, passthruFilters, filter })
-    tabStore.activateName($source.name)
+    tabStore?.activateName($source.name)
     await selectPreview()
   })
 </script>
