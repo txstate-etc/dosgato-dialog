@@ -1,7 +1,7 @@
 import type { TypedTreeItem } from '$lib/tree/treestore.js'
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
 import { tick } from 'svelte'
-import { findIndex } from 'txstate-utils'
+import { findIndex, isBlank } from 'txstate-utils'
 import type { AnyItem, Asset, Client, ChooserType, Folder, Page, Source } from './ChooserAPI.js'
 
 export interface UISource extends Source {
@@ -115,9 +115,10 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
     this.update(v => ({ ...v, preview: undefined }))
   }
 
-  setSource (name: string, init?: boolean) {
+  setSource (name?: string, init?: boolean) {
     this.update(v => {
       if (!v.initialized && !init) return v
+      name ??= [...(v.sources?.page ?? []), ...(v.sources?.asset ?? [])].filter(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true)[0].name
       const pageSource = v.sources?.page.findIndex(s => s.name === name)
       const assetSource = v.sources?.asset.findIndex(s => s.name === name)
       if (pageSource >= 0) return { ...v, activetype: 'page', activesource: pageSource }
