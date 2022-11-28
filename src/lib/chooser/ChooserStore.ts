@@ -101,9 +101,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
       return { ...v, sources }
     })
     this.setSource(this.value.preview?.source ?? this.options.initialSource, true)
-    console.log('before initialized', this.value)
     await tick()
-    console.log('just before initialized')
     this.update(v => ({ ...v, initialized: true }))
   }
 

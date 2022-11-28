@@ -155,7 +155,6 @@
     if (e.shiftKey) {
       shiftClick()
     } else {
-      console.log('onCheckClick', isSelected)
       if (isSelected) dispatch('deselect', item)
       store.select(item, { clear: false, toggle: true })
     }
