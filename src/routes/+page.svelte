@@ -44,7 +44,7 @@
 
 <main>
 {#if showdialog}
-<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="normal" on:escape={() => { showdialog = false }} let:saved>
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved>
   <Tabs {tabs}>
     <Tab title="Add More">
       <FieldText path="test" label="Test" required />

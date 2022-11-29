@@ -18,11 +18,12 @@
   export let number = false
   export let date = false
   export let datetime = false
+  export let boolean = false
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize>
   <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
