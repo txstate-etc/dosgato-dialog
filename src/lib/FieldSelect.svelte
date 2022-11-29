@@ -22,11 +22,12 @@
   export let deserialize: ((value: string) => any)|undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize>
   <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
-      <option value={choice.value} disabled={choice.disabled} selected={value === choice.value}>{choice.label || choice.value}</option>
+      {@const serializedValue = serialize(choice.value)}
+      <option value={serializedValue} disabled={choice.disabled} selected={value === serializedValue}>{choice.label || serializedValue}</option>
     {/each}
   </select>
 </FieldStandard>

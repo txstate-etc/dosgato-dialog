@@ -23,13 +23,14 @@
   const width = '100%'
 </script>
 
-<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:helptextid>
+<FieldStandard bind:id descid={groupid} {label} {path} {required} {defaultValue} {conditional} {helptext} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:helptextid let:serialize>
   <div class="dialog-radio {className}" class:horizontal role="radiogroup" aria-labelledby={groupid} class:invalid>
     {#each choices as choice, idx}
       {@const radioid = `${path}.${idx}`}
+      {@const serializedValue = serialize(choice.value)}
       <label for={radioid} style:width>
-        <Radio id={radioid} name={path} value={choice.value} selected={value === choice.value} disabled={choice.disabled} {onChange} {onBlur} {helptextid}/>
-        <span>{choice.label || (typeof choice.value === 'string' ? choice.value : '')}</span>
+        <Radio id={radioid} name={path} value={serializedValue} selected={value === serializedValue} disabled={choice.disabled} {onChange} {onBlur} {helptextid}/>
+        <span>{choice.label || serializedValue}</span>
       </label>
     {/each}
   </div>

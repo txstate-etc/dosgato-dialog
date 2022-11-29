@@ -18,8 +18,8 @@
   export let helptext: string|undefined = undefined
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {serialize} {deserialize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid let:serialize let:deserialize>
   <Container {id} {label} {messages} {descid} {required} {helptext} let:messagesid let:helptextid>
-    <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid}/>
+    <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} {serialize} {deserialize} />
   </Container>
 </Field>
