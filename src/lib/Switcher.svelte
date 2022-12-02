@@ -15,7 +15,7 @@
   export let label: string
   export let required = false
   export let helptext: string|undefined = undefined
-  export let messages: Feedback[]
+  export let messages: Feedback[] = []
   export let iptValue = choices[0].value
   export let valid = false
   export let invalid = false
