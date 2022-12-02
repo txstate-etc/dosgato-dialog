@@ -26,11 +26,11 @@
   }
 
   const tabs = [
-    { title: 'Add More', icon: plusThick },
-    { title: 'Text' },
-    { title: 'Dates' },
-    { title: 'Selections', required: true },
-    { title: 'Checkboxes' }
+    { name: 'Add More', icon: plusThick },
+    { name: 'Text' },
+    { name: 'Dates' },
+    { name: 'Selections', required: true },
+    { name: 'Checkboxes' }
   ]
 
   onMount(() => {
@@ -45,7 +45,7 @@
 {#if showdialog}
 <FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved>
   <Tabs {tabs}>
-    <Tab title="Add More">
+    <Tab name="Add More">
       <FieldText path="test" label="Test" required />
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>
         <FieldText path="first" label="First Name" />
@@ -55,15 +55,15 @@
         <FieldText path="" label={'Name ' + index} />
       </FieldMultiple>
     </Tab>
-    <Tab title="Text">
+    <Tab name="Text">
       <FieldTextArea path="textarea" label="Textarea" rows={10} />
       <FieldCodeEditor path="code" label="CSS" language="css" rows={8} />
     </Tab>
-    <Tab title="Dates">
+    <Tab name="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} />
     </Tab>
-    <Tab title="Selections">
+    <Tab name="Selections">
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
       <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
@@ -80,7 +80,7 @@
       { value: 'Option 12' }, { value: 'Option 13' }, { value: 'Option 14' }, { value: 'Option 15' }, { value: 'Option 16' }]}
         defaultValue={['Option 5']}/>
     </Tab>
-    <Tab title="Checkboxes">
+    <Tab name="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
     </Tab>

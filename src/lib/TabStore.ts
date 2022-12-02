@@ -6,8 +6,8 @@ import type { IconifyIcon } from '@iconify/svelte'
 export const TAB_CONTEXT = {}
 
 export interface TabDef {
-  name?: string
-  title: string
+  name: string
+  title?: string
   icon?: IconifyIcon
   required?: boolean
 }
@@ -48,6 +48,7 @@ export class TabStore extends Store<ITabStore> {
     v.tabids ??= {}
     v.panelids ??= {}
     for (const tab of v.tabs) {
+      tab.title ??= tab.name
       v.tabids[tab.title] ??= randomid()
       v.panelids[tab.title] ??= randomid()
     }
@@ -59,7 +60,7 @@ export class TabStore extends Store<ITabStore> {
   }
 
   currentName () {
-    return derivedStore(this, v => v.tabs[v.current].name ?? v.tabs[v.current].title)
+    return derivedStore(this, v => v.tabs[v.current].name)
   }
 
   currentTitle () {
@@ -67,11 +68,11 @@ export class TabStore extends Store<ITabStore> {
   }
 
   currentTabId () {
-    return derivedStore(this, v => v.tabids[v.tabs[v.current].title])
+    return derivedStore(this, v => v.tabids[v.tabs[v.current].name])
   }
 
   currentPanelId () {
-    return derivedStore(this, v => v.panelids[v.tabs[v.current].title])
+    return derivedStore(this, v => v.panelids[v.tabs[v.current].name])
   }
 
   accordion () {
@@ -99,6 +100,6 @@ export class TabStore extends Store<ITabStore> {
   }
 
   activateName (name: string) {
-    this.update(v => ({ ...v, current: findIndex(v.tabs, t => t.name === name) ?? findIndex(v.tabs, t => t.title === name) ?? v.current }))
+    this.update(v => ({ ...v, current: findIndex(v.tabs, t => t.name === name) ?? v.current }))
   }
 }

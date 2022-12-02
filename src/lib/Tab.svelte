@@ -1,22 +1,27 @@
 <script lang="ts">
+  import { derivedStore } from '@txstate-mws/svelte-store'
   import { getContext } from 'svelte'
   import Icon from './Icon.svelte'
   import { TabStore, TAB_CONTEXT } from './TabStore'
 
-  export let title: string
+  export let name: string
 
   const { store, onClick, onKeyDown, tabelements } = getContext<{ store: TabStore, onClick: Function, onKeyDown: Function, tabelements: HTMLElement[] }>(TAB_CONTEXT)
   const accordion = store.accordion()
-  const current = store.currentTitle()
-  $: active = $current === title
-  const idx = $store.tabs.findIndex(t => t.title === title)
+  const current = store.currentName()
+  const def = derivedStore(store, v => v.tabs.find(t => t.name === name))
+  const title = derivedStore(def, 'title')
+  const tabid = derivedStore(store, v => v.tabids[name])
+  const panelid = derivedStore(store, v => v.panelids[name])
+  $: active = $current === name
+  const idx = $store.tabs.findIndex(t => t.name === name)
   const last = idx === $store.tabs.length - 1
 </script>
 
 {#if $accordion}
-  <div bind:this={tabelements[idx]} id={$store.tabids[title]} class="tabs-tab" class:last aria-selected={active} aria-controls={$store.panelids[title]} role="tab" tabindex={0} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={$store.tabs[idx].icon} inline />{title}<i class="tabs-accordion-arrow" aria-hidden="true"></i></div>
+  <div bind:this={tabelements[idx]} id={$tabid} class="tabs-tab" class:last aria-selected={active} aria-controls={$panelid} role="tab" tabindex={0} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={$store.tabs[idx].icon} inline />{$title}<i class="tabs-accordion-arrow" aria-hidden="true"></i></div>
 {/if}
-<div id={$store.panelids[title]} hidden={!active} role="tabpanel" tabindex="-1" aria-labelledby={$store.tabids[title]} class="tabs-panel" class:accordion={$accordion}>
+<div id={$panelid} hidden={!active} role="tabpanel" tabindex="-1" aria-labelledby={$tabid} class="tabs-panel" class:accordion={$accordion}>
   <slot />
 </div>
 
