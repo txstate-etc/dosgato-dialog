@@ -10,6 +10,7 @@
   export let tabs: TabDef[]
   export let active: string|undefined = undefined
   export let store = new TabStore(tabs, active)
+  export let disableDialogControl = false
   $: store.update(v => ({ ...v, tabs }))
 
   const activeStore = new Store<ElementOffsets>({})
@@ -17,14 +18,14 @@
   let activeelement: HTMLElement
   setContext(TAB_CONTEXT, { store, onClick, onKeyDown, tabelements })
 
-  const dialogContext = getContext<DialogTabContext>(DIALOG_TABS_CONTEXT) ?? { change: () => {} }
+  const dialogContext = (disableDialogControl ? undefined : getContext<DialogTabContext>(DIALOG_TABS_CONTEXT)) ?? { change: () => {} }
   dialogContext.onNext = () => { store.right() }
   dialogContext.onPrev = () => { store.left() }
   $: dialogContext.prevTitle = $store.prevTitle
   $: dialogContext.nextTitle = $store.nextTitle
   $: dialogContext.hasRequired = $store.requireNext
   $: dialogContext.change($store)
-  setContext(DIALOG_TABS_CONTEXT, { change: () => {} }) // reset context so that any sub-tabs do NOT control the Dialog component
+  if (!disableDialogControl) setContext(DIALOG_TABS_CONTEXT, { change: () => {} }) // reset context so that any sub-tabs do NOT control the Dialog component
 
   const currentTitle = store.currentTitle()
   const currentIdx = store.currentIdx()
