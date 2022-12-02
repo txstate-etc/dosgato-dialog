@@ -4,9 +4,8 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FormDialog } from '$lib'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
-  import FieldTextArea from '$lib/FieldTextArea.svelte'
   let store: FormStore
   let showdialog = true
   async function submit (data) {
@@ -58,6 +57,7 @@
     </Tab>
     <Tab title="Text">
       <FieldTextArea path="textarea" label="Textarea" rows={10} />
+      <FieldCodeEditor path="code" label="CSS" language="css" rows={8} />
     </Tab>
     <Tab title="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
