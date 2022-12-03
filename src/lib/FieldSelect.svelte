@@ -9,7 +9,7 @@
   export let placeholder: string = 'Select' + (label ? ' ' + label : '')
   export let notNull = false
   export let disabled = false
-  export let choices: { label?: string, value: string, disabled?: boolean }[]
+  export let choices: { label?: string, value: any, disabled?: boolean }[]
   export let defaultValue: any = notNull ? choices[0].value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
