@@ -1,8 +1,9 @@
 <script lang="ts">
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
-  import { nullableSerialize, nullableDeserialize, FORM_CONTEXT, FormStore } from '@txstate-mws/svelte-forms'
+  import { nullableSerialize, nullableDeserialize, FORM_CONTEXT, FormStore, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import CodeFlask from 'codeflask'
   import { getContext, onMount } from 'svelte'
+  import { isNotBlank } from 'txstate-utils'
   import { getDescribedBy, FieldStandard } from '$lib'
   let className = ''
   export { className as class }
@@ -11,7 +12,7 @@
   export let label: string = ''
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
-  export let rows: number|undefined = undefined
+  export let rows = 8
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
@@ -20,14 +21,14 @@
   export let language: 'js'|'css'|'html'
 
   const store = getContext<FormStore>(FORM_CONTEXT)
-  const value = store.getField<string | undefined>(path)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const value = store.getField<string | undefined>(finalPath)
 
   let editorelement: HTMLElement
   let flask: CodeFlask
-  let codeValue = ''
   onMount(() => {
     flask = new CodeFlask(editorelement, { language, lineNumbers: true, areaId: id })
-    flask.onUpdate(code => { codeValue = code })
     inputelement = editorelement.querySelector(`#${id}`)
     if (className) inputelement.classList.add(...className.split(' '))
     inputelement.addEventListener('change', onChange)
@@ -61,6 +62,7 @@
 
 <style>
   div {
+    position: relative;
     overflow: hidden;
     resize: vertical;
   }

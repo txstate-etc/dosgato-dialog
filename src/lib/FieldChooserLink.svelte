@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { FORM_CONTEXT, type FormStore } from '@txstate-mws/svelte-forms'
+  import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
-  import { randomid } from 'txstate-utils'
+  import { isNotBlank, randomid } from 'txstate-utils'
   import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type RawURL } from './chooser'
   import type { AnyItem, ChooserType, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
@@ -25,7 +25,9 @@
   export let helptext: string | undefined = undefined
 
   const formStore = getContext<FormStore>(FORM_CONTEXT)
-  const value = formStore.getField<string>(path)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const value = formStore.getField<string>(finalPath)
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
   const store = new ChooserStore(chooserClient)
 
@@ -59,7 +61,8 @@
       id: newVal,
       url
     }
-    formStore.setField(path, newVal)
+    formStore.setField(finalPath, newVal)
+    formStore.dirtyField(finalPath)
   }
 
   let selectedAsset: AnyItem|RawURL
