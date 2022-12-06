@@ -57,12 +57,29 @@ interface Item {
   path: string
   name: string
   source: string
+  /**
+   * Identifier for the urlEntry input
+   *
+   * When urlEntry prop is true, the user gets a text field where they can freely
+   * enter a string to identify the object being chosen. This value will be
+   * placed in that field when they use the chooser.
+   *
+   * It should be reversible with the `findByUrl` function provided by your chooser
+   * client, but note that the `findByUrl` function can accept multiple URLs that
+   * all point to the same resource. If the user types anything that can identify
+   * a resource, the resource will show up in the "Details" area, but the URL the user
+   * typed will NOT change to the one provided by this property. We try not
+   * to rewrite values in the form fields where possible, because it can disrupt the
+   * user's interaction.
+   */
+  url: string
 }
 
 export interface Folder extends Item {
   type: 'folder'
   hasChildren: boolean
   acceptsUpload: boolean // from the current authenticated user
+  url: string
 }
 
 export interface Page extends Item {

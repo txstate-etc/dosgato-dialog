@@ -18,7 +18,7 @@
     {/if}
   {:else if item.type === 'folder'}
     <Icon icon={folderOutline} width='5em' />
-  {:else}
+  {:else if item.id}
     <Icon icon={fileLinkOutline} width='5em' />
   {/if}
 </div>

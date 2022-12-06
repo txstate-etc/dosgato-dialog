@@ -26,6 +26,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         id: 'folder-1',
         name: 'biology',
         path: '/biology',
+        url: '/assets/biology',
         acceptsUpload: true,
         hasChildren: true,
         children: [
@@ -34,13 +35,14 @@ const assets: Record<string, RootFolder | RootPage> = {
             id: 'folder-4',
             name: 'evolutionary',
             path: '/biology/evolutionary',
+            url: '/assets/biology/evolutionary',
             acceptsUpload: false,
             hasChildren: true,
             children: [
               { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
             ]
           },
-          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', acceptsUpload: false, hasChildren: false }
+          { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', url: '/assets/biology/humananatomy', acceptsUpload: false, hasChildren: false }
         ]
       },
       {
@@ -48,10 +50,11 @@ const assets: Record<string, RootFolder | RootPage> = {
         id: 'folder-2',
         name: 'chemistry',
         path: '/chemistry',
+        url: '/assets/chemistry',
         acceptsUpload: true,
         hasChildren: true,
         children: [
-          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', acceptsUpload: true, hasChildren: false }
+          { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', url: '/assets/chemistry/organic', acceptsUpload: true, hasChildren: false }
         ]
       },
       {
@@ -59,6 +62,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         id: 'folder-3',
         name: 'physics',
         path: '/physics',
+        url: '/assets/physics',
         acceptsUpload: true,
         hasChildren: true,
         children: [

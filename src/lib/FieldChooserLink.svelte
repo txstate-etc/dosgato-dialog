@@ -3,7 +3,7 @@
   import { getContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type RawURL } from './chooser'
-  import type { AnyItem, ChooserType, Client } from './chooser/ChooserAPI'
+  import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
   import FieldStandard from './FieldStandard.svelte'
@@ -23,6 +23,8 @@
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
   export let helptext: string | undefined = undefined
+  // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
+  // choosing unacceptable mime types
 
   const formStore = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
@@ -50,18 +52,46 @@
 
   async function userUrlEntry () {
     const url = this.value
+    store.clearPreview()
+    let found = false
     if (chooserClient.findByUrl) {
       const item = await chooserClient.findByUrl(url)
-      if (item) return store.setPreview(item)
+      if (item) {
+        found = true
+        if (
+          (item.type === 'page' && !pages) || // they typed the URL for a page but we don't allow pages right now
+          (item.type === 'folder' && !folders) || // they typed the URL for an asset folder but not allowed
+          (item.type === 'asset' && !assets) || // they typed the URL for an asset but not allowed
+          (item.type === 'asset' && !item.image && images) // they typed the URL for a non-image asset but we only want images
+        ) {
+          selectedAsset = {
+            type: 'raw',
+            id: undefined,
+            url
+          }
+        } else {
+          selectedAsset = { ...item, url } as any
+        }
+      }
     }
-    store.clearPreview()
-    const newVal = chooserClient.urlToValue?.(url) ?? url
-    selectedAsset = {
-      type: 'raw',
-      id: newVal,
-      url
+    if (!found) {
+      try {
+        const _ = new URL(url)
+        const newVal = chooserClient.urlToValue?.(url) ?? url
+        selectedAsset = {
+          type: 'raw',
+          id: newVal,
+          url
+        }
+      } catch (e: any) {
+        selectedAsset = {
+          type: 'raw',
+          id: undefined,
+          url
+        }
+      }
     }
-    formStore.setField(finalPath, newVal)
+    formStore.setField(finalPath, selectedAsset?.id)
     formStore.dirtyField(finalPath)
   }
 
@@ -80,8 +110,8 @@
     </div>
   {/if}
   <div class="dialog-chooser-entry">
-    {#if urlEntry && !folders && selectedAsset?.type !== 'folder'}
-      <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry}>
+    {#if urlEntry}
+      <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:keyup={userUrlEntry}>
     {/if}
     <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
   </div>
