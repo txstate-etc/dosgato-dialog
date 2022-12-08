@@ -4,7 +4,7 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog } from '$lib'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldImageCropper } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   let store: FormStore
   let showdialog = true
@@ -17,7 +17,6 @@
   }
 
   async function validate (data): Promise<Feedback[]> {
-    console.log('validate')
     return [{
       type: 'error',
       message: 'Nope',
@@ -68,6 +67,7 @@
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
       <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
       <FieldChooserLink path="asset" label="Choose an Asset" pages assets urlEntry initialSource="Assets" initialPath="/chemistry/organic"></FieldChooserLink>
+      <FieldImageCropper path="crop" label="Image Crop" minSelection={0.5} selectionAspectRatio={1.0} imageSrc="https://placekitten.com/1600/900"/>
       <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
       <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
       <FieldColorPicker addAllOption notNull defaultValue="hotpink" path="color" label="Another Color" options={[{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]} helptext="Just pick something."/>
