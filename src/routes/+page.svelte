@@ -34,6 +34,7 @@
 
   onMount(() => {
     store.setField('asset', 'asset-1')
+    store.setField('asset', 'https://google.com')
   })
 </script>
 

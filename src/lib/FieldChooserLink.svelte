@@ -23,6 +23,8 @@
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
   export let helptext: string | undefined = undefined
+  export let selectedAsset: AnyItem|RawURL = undefined
+
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
 
@@ -95,9 +97,15 @@
     formStore.dirtyField(finalPath)
   }
 
-  let selectedAsset: AnyItem|RawURL
   async function updateSelected (..._: any) {
-    if ($value && selectedAsset?.id !== $value) selectedAsset = await chooserClient.findById($value)
+    if ($value && selectedAsset?.id !== $value) {
+      selectedAsset = await chooserClient.findById($value)
+      try {
+        if (!selectedAsset) selectedAsset = { type: 'raw', id: $value, url: chooserClient.valueToUrl?.($value) ?? $value }
+      } catch (e: any) {
+        console.error(e)
+      }
+    }
   }
   $: updateSelected($value)
 </script>

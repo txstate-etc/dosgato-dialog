@@ -1,3 +1,5 @@
+import type { RawURL } from './ChooserStore'
+
 export const CHOOSER_API_CONTEXT = {}
 export type ChooserType = 'asset' | 'page'
 export type AnyItem = Asset | Folder | Page
@@ -27,6 +29,13 @@ export interface Client<F = any> {
   // implement this function to convert a URL to the desired form value
   // for instance perhaps "http://google.com" -> "{ type: 'url', url: 'http://google.com' }"
   urlToValue?: (url: string) => string
+
+  /**
+   * If the form is preloaded with a raw URL, findById returns undefined, and the client implements
+   * urlToValue, we will need a way to decode/reverse what urlToValue does. This function should
+   * do that.
+   */
+  valueToUrl?: (value: string) => string
 
   // must accept a standard FileList object and upload the files to the service
   // should throw an error if the source/path does not accept uploads
