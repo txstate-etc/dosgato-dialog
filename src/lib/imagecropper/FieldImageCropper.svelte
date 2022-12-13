@@ -291,8 +291,8 @@
         <div bind:this={shieldDiv} class="divShield" class:visible={$selection.shieldVisible} ></div>
       </div>
       <div class="action-buttons">
-        <button class='btn-center-max' on:click={() => maximize(setVal)}>Center and Maximize</button>
-        <button class='btn-clear' on:click={() => reset(setVal)}>Clear</button>
+        <button type="button" class='btn-center-max' on:click={() => maximize(setVal)}>Center and Maximize</button>
+        <button type="button" class='btn-clear' on:click={() => reset(setVal)}>Clear</button>
       </div>
       <div class="cropper-instructions">
         Click and drag to select a section of your image to use.
