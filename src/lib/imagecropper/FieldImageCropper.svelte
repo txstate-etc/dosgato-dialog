@@ -46,6 +46,7 @@
   }
 
   const defaultSelection: ICropperStore = {
+    src: '',
     selection: {
       left: undefined,
       top: undefined,
@@ -68,7 +69,8 @@
   let imageHeight: number
 
   $: imageAspectRatio = imageWidth / imageHeight
-  $: maxContainerWidth = (image ? Math.min(image.width, 700) : '700')
+  $: maxContainerWidth = ((image && imageWidth > 0 && imageHeight > 0) ? Math.min(image.width, 700) : '700')
+  $: store.setSrc(imageSrc, imageWidth, imageHeight, selectionAspectRatio)
 
   const store = new ImageCropperStore(defaultSelection)
   const { selection, crop } = store
@@ -262,12 +264,13 @@
   }
 
   let storeInitialized = false
-  function init (value) {
-    if (!storeInitialized && imageWidth > 0) {
+  function init (value, setVal) {
+    if (!storeInitialized && imageWidth > 0 && imageHeight > 0) {
       if (value) {
         store.setCrop(value.imagecropleft, value.imagecroptop, value.imagecropright, value.imagecropbottom, imageWidth, imageHeight)
       } else {
         store.maximize(imageWidth, imageHeight, selectionAspectRatio)
+        setVal($crop)
       }
       storeInitialized = true
     }
@@ -276,7 +279,7 @@
 
 <FieldStandard bind:id {label} {path} {required} {conditional} {helptext} let:value let:setVal>
   {#if isNotBlank(imageSrc)}
-    {@const _ = init(value)}
+    {@const _ = init(value, setVal)}
     <div class="cropper-wrapper">
       <div class="crop-image-container" on:mousedown={startSelection} on:mouseup={onMouseUp(setVal)} on:mousemove={onMouseMove(setVal)} on:keydown={onKeyDown(setVal)} on:keyup={onKeyUp(setVal)} bind:clientWidth={imageWidth} bind:clientHeight={imageHeight} style="max-width: {maxContainerWidth}px">
         <img bind:this={image} class="crop-image" src={imageSrc} alt=""/>

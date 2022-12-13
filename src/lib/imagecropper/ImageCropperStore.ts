@@ -5,6 +5,14 @@ export class ImageCropperStore extends Store<ICropperStore> {
   selection = derivedStore(this, 'selection')
   crop = derivedStore(this, 'crop')
 
+  setSrc (src: string, imageWidth: number, imageHeight: number, selectionAspectRatio: number) {
+    this.maximize(imageWidth, imageHeight, selectionAspectRatio)
+    this.update(v => ({
+      ...v,
+      src
+    }))
+  }
+
   draw (left: number, top: number, width: number, height: number, imageWidth: number, imageHeight: number) {
     // calculate new values for crop
     const cropLeft = left / imageWidth
@@ -85,6 +93,7 @@ export class ImageCropperStore extends Store<ICropperStore> {
 
   reset () {
     this.update(v => ({
+      ...v,
       selection: {
         left: undefined,
         top: undefined,

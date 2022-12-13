@@ -17,6 +17,7 @@ export interface ICropSelection {
 }
 
 export interface ICropperStore {
+  src: string
   selection: ICropSelection
   crop: ImageCropperOutput
 }
