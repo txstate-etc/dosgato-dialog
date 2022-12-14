@@ -52,12 +52,19 @@
     }
   }
 
-  async function userUrlEntry () {
+  let timer: ReturnType<typeof setTimeout>
+  function userUrlEntry () {
+    clearTimeout(timer)
+    timer = setTimeout(userUrlEntryDebounced.bind(this), 300)
+  }
+
+  async function userUrlEntryDebounced () {
     const url = this.value
     store.clearPreview()
     let found = false
     if (chooserClient.findByUrl) {
       const item = await chooserClient.findByUrl(url)
+      if (url !== this.value) return
       if (item) {
         found = true
         if (
@@ -99,7 +106,10 @@
 
   async function updateSelected (..._: any) {
     if ($value && selectedAsset?.id !== $value) {
-      selectedAsset = await chooserClient.findById($value)
+      const valueBeforeFind = $value
+      const asset = await chooserClient.findById($value)
+      if ($value !== valueBeforeFind) return
+      selectedAsset = asset
       try {
         if (!selectedAsset) selectedAsset = { type: 'raw', id: $value, url: chooserClient.valueToUrl?.($value) ?? $value }
       } catch (e: any) {
