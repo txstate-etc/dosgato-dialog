@@ -67,8 +67,8 @@
   function onMouseUp (e: MouseEvent | TouchEvent) {
     if (!updateRect()) return
     store.endDrag()
-    const clientX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX
-    const clientY = e instanceof MouseEvent ? e.clientY : e.touches[0].clientY
+    const clientX = e instanceof MouseEvent ? e.clientX : e.changedTouches[0].clientX
+    const clientY = e instanceof MouseEvent ? e.clientY : e.changedTouches[0].clientY
     if (isInside(clientX, clientY)) {
       store.mouseMove(...relativeToRect(clientX, clientY))
       container?.querySelector<HTMLDivElement>('.selectionHilite')?.focus()
