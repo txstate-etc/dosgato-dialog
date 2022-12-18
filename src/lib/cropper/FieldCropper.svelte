@@ -114,10 +114,9 @@
     <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
       <img class="crop-image" src={imageSrc} alt="" />
       {#if $selection != null}
-        <div class='selectionBlock left' style:top="{$selection.top}px" style:width="{$selection.left}px" style:height="{$selection.bottom - $selection.top}px"></div>
-        <div class='selectionBlock right' style:top="{$selection.top}px" style:width="{$store.width - $selection.right}px" style:height="{$selection.bottom - $selection.top}px"></div>
-        <div class='selectionBlock top' style:height="{$selection.top}px"></div>
-        <div class='selectionBlock bottom' style:height="{$store.height - $selection.bottom}px"></div>
+        <div class='crop-bg'>
+          <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$output.left}% {$output.top}%, {100 - $output.right}% {$output.top}%, {100 - $output.right}% {100 - $output.bottom}%, {$output.left}% {100 - $output.bottom}%, {$output.left}% {$output.top}%)" />
+        </div>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <div class='selectionHilite' {id} tabindex="0" on:keydown={onKeyDown('move')}
           aria-labelledby={descid}
@@ -174,36 +173,18 @@
     position: relative;
     user-select: none;
   }
-  .crop-image-container .crop-image {
+  .crop-image {
     width: 100%;
     display: block;
-    position: relative;
     user-select: none;
   }
-
-  .selectionBlock {
+  .crop-bg {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-  }
-  .selectionBlock.top {
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  .selectionBlock.bottom {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  .selectionBlock.left {
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
-  .selectionBlock.right {
-    top: 0;
-    right: 0;
-    height: 100%;
   }
   .selectionHilite {
     position: absolute;
