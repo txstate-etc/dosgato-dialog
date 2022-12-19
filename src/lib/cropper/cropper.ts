@@ -134,10 +134,10 @@ export class CropperStore extends Store<ICropperStore> {
   convertToPct (sel: CropSelectionPx | undefined, width: number, height: number) {
     if (!sel) return undefined
     return {
-      left: Math.min(100, Math.max(0, 100.0 * sel.left / width)),
-      right: Math.min(100, Math.max(0, 100.0 * (width - sel.right) / width)),
-      top: Math.min(100, Math.max(0, 100.0 * sel.top / height)),
-      bottom: Math.min(100, Math.max(0, 100.0 * (height - sel.bottom) / height))
+      left: 100.0 * sel.left / width,
+      right: 100.0 * (width - sel.right) / width,
+      top: 100.0 * sel.top / height,
+      bottom: 100.0 * (height - sel.bottom) / height
     }
   }
 
@@ -151,12 +151,14 @@ export class CropperStore extends Store<ICropperStore> {
     }
   }
 
-  determineSelection (startX: number, startY: number, x: number, y: number, targetAspect: number): CropSelectionPx {
+  determineSelection (startX: number, startY: number, x: number, y: number, v: ICropperStore): CropSelectionPx {
+    x = Math.min(v.width, Math.max(0, x))
+    y = Math.min(v.height, Math.max(0, y))
     const dx = x - startX
     const dy = y - startY
     const dragar = Math.abs(dx / dy)
-    if (dragar > targetAspect) { // too wide, dy is dominant
-      const dragdx = Math.abs(dy * targetAspect)
+    if (dragar > v.targetAspect) { // too wide, dy is dominant
+      const dragdx = Math.abs(dy * v.targetAspect)
       return {
         left: dx < 0 ? startX - dragdx : startX,
         right: dx < 0 ? startX : startX + dragdx,
@@ -164,7 +166,7 @@ export class CropperStore extends Store<ICropperStore> {
         bottom: dy < 0 ? startY : y
       }
     } else { // too tall, dx is dominant
-      const dragdy = Math.abs(dx / targetAspect)
+      const dragdy = Math.abs(dx / v.targetAspect)
       return {
         left: dx < 0 ? x : startX,
         right: dx < 0 ? startX : x,
@@ -191,13 +193,13 @@ export class CropperStore extends Store<ICropperStore> {
           r.cursor = 'grabbing'
           const old = v.drag.selection
           if (v.drag.edge.left && v.drag.edge.top) { // expanding
-            s = this.determineSelection(v.drag.selection.right, v.drag.selection.bottom, x, y, v.targetAspect)
+            s = this.determineSelection(v.drag.selection.right, v.drag.selection.bottom, x, y, v)
           } else if (v.drag.edge.left && v.drag.edge.bottom) { // expanding
-            s = this.determineSelection(v.drag.selection.right, v.drag.selection.top, x, y, v.targetAspect)
+            s = this.determineSelection(v.drag.selection.right, v.drag.selection.top, x, y, v)
           } else if (v.drag.edge.right && v.drag.edge.top) { // expanding
-            s = this.determineSelection(v.drag.selection.left, v.drag.selection.bottom, x, y, v.targetAspect)
+            s = this.determineSelection(v.drag.selection.left, v.drag.selection.bottom, x, y, v)
           } else if (v.drag.edge.right && v.drag.edge.bottom) { // expanding
-            s = this.determineSelection(v.drag.selection.left, v.drag.selection.top, x, y, v.targetAspect)
+            s = this.determineSelection(v.drag.selection.left, v.drag.selection.top, x, y, v)
           } else { // moving
             const maxdx = Math.max(Math.min(v.width - old.right, dx), -1 * old.left)
             const maxdy = Math.max(Math.min(v.height - old.bottom, dy), -1 * old.top)
@@ -207,7 +209,7 @@ export class CropperStore extends Store<ICropperStore> {
             s.bottom = old.bottom + maxdy
           }
         } else { // drawing a new selection
-          s = this.determineSelection(v.drag.start.x, v.drag.start.y, x, y, v.targetAspect)
+          s = this.determineSelection(v.drag.start.x, v.drag.start.y, x, y, v)
         }
         return { ...r, selection: this.convertToPct(s, v.width, v.height) }
       } else {
@@ -251,10 +253,10 @@ export class CropperStore extends Store<ICropperStore> {
       const dx = by * v.targetAspect
       const dy = by / v.targetAspect
       let s: CropSelectionPx
-      if (type === 'tl') s = this.determineSelection(curr.right, curr.bottom, curr.left - dx, curr.top - dy, v.targetAspect)
-      else if (type === 'tr') s = this.determineSelection(curr.left, curr.bottom, curr.right + dx, curr.top - dy, v.targetAspect)
-      else if (type === 'bl') s = this.determineSelection(curr.right, curr.top, curr.left - dx, curr.bottom + dy, v.targetAspect)
-      else if (type === 'br') s = this.determineSelection(curr.left, curr.top, curr.right + dx, curr.bottom + dy, v.targetAspect)
+      if (type === 'tl') s = this.determineSelection(curr.right, curr.bottom, curr.left - dx, curr.top - dy, v)
+      else if (type === 'tr') s = this.determineSelection(curr.left, curr.bottom, curr.right + dx, curr.top - dy, v)
+      else if (type === 'bl') s = this.determineSelection(curr.right, curr.top, curr.left - dx, curr.bottom + dy, v)
+      else if (type === 'br') s = this.determineSelection(curr.left, curr.top, curr.right + dx, curr.bottom + dy, v)
       return { ...v, selection: this.convertToPct(s, v.width, v.height) }
     })
   }

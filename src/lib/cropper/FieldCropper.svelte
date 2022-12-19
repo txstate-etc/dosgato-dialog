@@ -106,63 +106,69 @@
   $: updateRect(container)
   const descid = randomid()
   const movedescid = randomid()
+  let focusWithin = false
 </script>
 
 <svelte:window on:mousemove={onMouseMove} on:mouseup={onMouseUp} on:touchend={onMouseUp} on:touchcancel={onMouseUp} />
 <FieldStandard bind:id {label} {path} {required} {conditional} {helptext} {descid} let:value let:setVal let:helptextid>
+  {@const _ = init(value, setVal)}
   {#if isNotBlank(imageSrc)}
-    <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
-      <img class="crop-image" src={imageSrc} alt="" />
-      {#if $selection != null}
-        <div class='crop-bg'>
-          <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$output.left}% {$output.top}%, {100 - $output.right}% {$output.top}%, {100 - $output.right}% {100 - $output.bottom}%, {$output.left}% {100 - $output.bottom}%, {$output.left}% {$output.top}%)" />
-        </div>
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <div class='selectionHilite' {id} tabindex="0" on:keydown={onKeyDown('move')}
-          aria-labelledby={descid}
-          aria-describedby="{movedescid} {helptextid ?? ''}"
-          style:left="{$selection.left}px"
-          style:top="{$selection.top}px"
-          style:width="{$selection.right - $selection.left}px"
-          style:height="{$selection.bottom - $selection.top}px"
-        >
-          <div id={movedescid}><ScreenReaderOnly>arrows move crop selection, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly></div>
-          <ScreenReaderOnly arialive="polite">top left x y coordinate is ({$selection.left}, {$selection.top}) bottom right x y coordinate is ({$selection.right}, {$selection.bottom})</ScreenReaderOnly>
-          <div class='selectionCorner tl'
-            tabindex="0"
-            on:keydown={onKeyDown('tl')}
-          >
-            <ScreenReaderOnly>arrows adjust crop size, bottom right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+    <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>
+      <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
+        <img class="crop-image" src={imageSrc} alt="" />
+        {#if $selection != null}
+          <div class='crop-bg'>
+            <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$output.left}% {$output.top}%, {100 - $output.right}% {$output.top}%, {100 - $output.right}% {100 - $output.bottom}%, {$output.left}% {100 - $output.bottom}%, {$output.left}% {$output.top}%)" />
           </div>
-          <div class='selectionCorner tr'
-            tabindex="0"
-            on:keydown={onKeyDown('tr')}
+          <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+          <div class='selectionHilite' {id} tabindex="0" on:keydown={onKeyDown('move')}
+            aria-labelledby={descid}
+            aria-describedby="{movedescid} {helptextid ?? ''}"
+            style:left="{$selection.left}px"
+            style:top="{$selection.top}px"
+            style:width="{$selection.right - $selection.left}px"
+            style:height="{$selection.bottom - $selection.top}px"
           >
-            <ScreenReaderOnly>arrows adjust crop size, bottom left is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            <ScreenReaderOnly id={movedescid}>arrows move crop selection, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            {#if focusWithin}
+              <ScreenReaderOnly arialive="polite">top left x y coordinate is ({Math.round($selection.left)}, {Math.round($selection.top)}) bottom right x y coordinate is ({Math.round($selection.right)}, {Math.round($selection.bottom)})</ScreenReaderOnly>
+              <ScreenReaderOnly arialive="polite">crop area is {Math.round($store.width)} pixels wide by {Math.round($store.height)} pixels tall</ScreenReaderOnly>
+            {/if}
+            <div class='selectionCorner tl'
+              tabindex="0"
+              on:keydown={onKeyDown('tl')}
+            >
+              <ScreenReaderOnly>arrows adjust crop size, bottom right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            </div>
+            <div class='selectionCorner tr'
+              tabindex="0"
+              on:keydown={onKeyDown('tr')}
+            >
+              <ScreenReaderOnly>arrows adjust crop size, bottom left is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            </div>
+            <div class='selectionCorner bl'
+              tabindex="0"
+              on:keydown={onKeyDown('bl')}
+            >
+              <ScreenReaderOnly>arrows adjust crop size, top right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            </div>
+            <div class='selectionCorner br'
+              tabindex="0"
+              on:keydown={onKeyDown('br')}
+            >
+              <ScreenReaderOnly>arrows adjust crop size, top left is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
+            </div>
           </div>
-          <div class='selectionCorner bl'
-            tabindex="0"
-            on:keydown={onKeyDown('bl')}
-          >
-            <ScreenReaderOnly>arrows adjust crop size, top right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
-          </div>
-          <div class='selectionCorner br'
-            tabindex="0"
-            on:keydown={onKeyDown('br')}
-          >
-            <ScreenReaderOnly>arrows adjust crop size, top left is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
-          </div>
-        </div>
-      {/if}
+        {/if}
+      </div>
+      <div class="action-buttons">
+        <button type="button" class='btn-center-max' on:click={onMaximize}>Center and Maximize</button>
+        <button type="button" class='btn-clear' on:click={() => store.reset()}>Clear</button>
+      </div>
+      <div class="cropper-instructions">
+        Click and drag to select a section of your image to use.
+      </div>
     </div>
-    <div class="action-buttons">
-      <button type="button" class='btn-center-max' on:click={onMaximize}>Center and Maximize</button>
-      <button type="button" class='btn-clear' on:click={() => store.reset()}>Clear</button>
-    </div>
-    <div class="cropper-instructions">
-      Click and drag to select a section of your image to use.
-    </div>
-    {@const _ = init(value, setVal)}
   {:else}
     Image not selected
   {/if}
