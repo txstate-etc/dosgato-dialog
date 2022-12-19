@@ -115,21 +115,19 @@ export class CropperStore extends Store<ICropperStore> {
   maximize () {
     this.update(v => {
       const ar = v.width / v.height
-      const s: CropSelectionPx = {} as any
+      const s: CropOutput = {} as any
       if (ar > v.targetAspect) { // draw area is wider than aspect, fill height
-        const w = v.height * v.targetAspect
-        s.left = (v.width - w) / 2
-        s.right = s.left + w
+        s.left = 100 * (ar - v.targetAspect) / (2 * ar)
+        s.right = s.left
         s.top = 0
-        s.bottom = v.height
+        s.bottom = 0
       } else { // draw area is taller than aspect, fill width
-        const h = v.width / v.targetAspect
         s.left = 0
-        s.right = v.width
-        s.top = (v.height - h) / 2
-        s.bottom = s.top + h
+        s.right = 0
+        s.top = 100 * (v.targetAspect - ar) / (2 * v.targetAspect)
+        s.bottom = s.top
       }
-      return { ...v, selection: this.convertToPct(s, v.width, v.height) }
+      return { ...v, selection: s }
     })
   }
 
