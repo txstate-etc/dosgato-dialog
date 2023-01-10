@@ -14,12 +14,13 @@
   export let boolean = false
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
+  export let finalize: ((value: any) => any)|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let helptext: string|undefined = undefined
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid let:serialize let:deserialize>
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} {finalize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid let:serialize let:deserialize>
   <Container {id} {label} {messages} {descid} {required} {helptext} let:messagesid let:helptextid>
     <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} {serialize} {deserialize} />
   </Container>
