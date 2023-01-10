@@ -27,7 +27,7 @@
     lastactive = items.length - [...items].reverse().findIndex(itm => !itm.disabled) - 1
     hilited = undefined
 
-    if (listboxElement) listboxElement.setAttribute('aria-activedescendant', null)
+    if (listboxElement) listboxElement.removeAttribute('aria-activedescendant')
   }
   $: reactToItems(items)
 
@@ -79,10 +79,10 @@
       e.preventDefault()
       if (items.length < 1) return
       if (multiselect) {
-        if (typeof hilited !== 'undefined') {
+        if (hilited != null) {
           if (selectedSet.has(items[hilited].value)) {
             // remove it from selected
-            selected = selected.filter(s => s.value !== items[hilited].value)
+            selected = selected.filter(s => s.value !== items[hilited!].value)
           } else {
             selected = [...selected, items[hilited]]
           }

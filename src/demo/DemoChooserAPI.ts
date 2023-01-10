@@ -148,7 +148,7 @@ class DemoChooserAPI implements Client {
     if (path === '/') return assets[source]
     const parts = path.substring(1).split('/')
     let folders = assets[source].children
-    let folder: AnyStoredItem
+    let folder: AnyStoredItem | undefined
     for (const part of parts) {
       folder = (folders as AnyStoredItem[]).find(f => f.name === part)
       if (!folder) throw new Error(`path ${path} not found in source ${source}`)
@@ -159,9 +159,9 @@ class DemoChooserAPI implements Client {
   }
 
   collectItems (item: StoredAsset | FolderWithChildren | PageWithChildren | RootPage | RootFolder, source: string): AnyItem[] {
-    const ret = []
+    const ret: AnyItem[] = []
     if ('type' in item) ret.push({ ...item, source })
-    if ('children' in item && item.children.length) {
+    if ('children' in item && item.children?.length) {
       for (const f of item.children) {
         ret.push(...this.collectItems(f, source))
       }
@@ -171,7 +171,7 @@ class DemoChooserAPI implements Client {
 
   async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
-    return folder.children.map(c => ({ ...c, source })) as AnyItem[] ?? []
+    return folder.children?.map(c => ({ ...c, source })) as AnyItem[] ?? []
   }
 
   async find (source: string, path: string, searchstring: string) {

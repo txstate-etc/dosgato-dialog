@@ -10,6 +10,6 @@
   $: store.setField(path, value)
 </script>
 
-<Field {path} {conditional} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value>
+<Field {path} {conditional} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value>
   <input type="hidden" name={path} {value} {id}>
 </Field>

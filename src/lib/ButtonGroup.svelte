@@ -2,7 +2,7 @@
   import { modifierKey, type PopupMenuItem } from '@txstate-mws/svelte-components'
   import { createEventDispatcher } from 'svelte'
 
-  export let name: string = undefined
+  export let name: string | undefined = undefined
   export let choices: PopupMenuItem[]
   export let value = choices[0].value
   export let groupid: string|undefined = undefined
@@ -14,7 +14,7 @@
 
   const dispatch = createEventDispatcher()
 
-  const elements = []
+  const elements: HTMLElement[] = []
 
   function update (newVal: string) {
     value = newVal

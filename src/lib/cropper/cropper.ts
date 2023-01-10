@@ -215,7 +215,7 @@ export class CropperStore extends Store<ICropperStore> {
       } else {
         r.cursor = 'crosshair'
         if (r.selection) {
-          const selection = this.convertToPx(r.selection, r.width, r.height)
+          const selection = this.convertToPx(r.selection, r.width, r.height)!
           const left = Math.abs(x - selection.left) < edgeSensitivity
           const top = Math.abs(y - selection.top) < edgeSensitivity
           const right = Math.abs(selection.right - x) < edgeSensitivity
@@ -233,7 +233,7 @@ export class CropperStore extends Store<ICropperStore> {
   move (dx: number, dy: number) {
     this.update(v => {
       if (!v.selection) return v
-      const selection = this.convertToPx(v.selection, v.width, v.height)
+      const selection = this.convertToPx(v.selection, v.width, v.height)!
       if (dx < 0 && Math.abs(dx) > selection.left) dx = -1 * selection.left
       if (dx > 0 && dx > v.width - selection.right) dx = v.width - selection.right
       if (dy < 0 && Math.abs(dy) > selection.top) dy = -1 * selection.top
@@ -249,7 +249,7 @@ export class CropperStore extends Store<ICropperStore> {
   expand (type: 'tl' | 'tr' | 'bl' | 'br', by: number) {
     this.update(v => {
       if (!v.selection) return v
-      const curr = this.convertToPx(v.selection, v.width, v.height)
+      const curr = this.convertToPx(v.selection, v.width, v.height)!
       const dx = by * v.targetAspect
       const dy = by / v.targetAspect
       let s: CropSelectionPx
@@ -257,7 +257,7 @@ export class CropperStore extends Store<ICropperStore> {
       else if (type === 'tr') s = this.determineSelection(curr.left, curr.bottom, curr.right + dx, curr.top - dy, v)
       else if (type === 'bl') s = this.determineSelection(curr.right, curr.top, curr.left - dx, curr.bottom + dy, v)
       else if (type === 'br') s = this.determineSelection(curr.left, curr.top, curr.right + dx, curr.bottom + dy, v)
-      return { ...v, selection: this.convertToPct(s, v.width, v.height) }
+      return { ...v, selection: this.convertToPct(s!, v.width, v.height) }
     })
   }
 }

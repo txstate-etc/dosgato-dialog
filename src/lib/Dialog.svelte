@@ -3,14 +3,15 @@
   export interface DialogTabContext {
     change: (..._: any) => void
     hasTabs?: boolean
-    prevTitle?: string,
-    nextTitle?: string,
-    hasRequired?: boolean,
+    prevTitle?: string
+    nextTitle?: string
+    hasRequired?: boolean
     onNext?: () => void
     onPrev?: () => void
   }
 </script>
 <script lang="ts">
+  import type { IconifyIcon } from '@iconify/svelte'
   import arrowLeftLight from '@iconify-icons/ph/arrow-left-light'
   import arrowRightLight from '@iconify-icons/ph/arrow-right-light'
   import xLight from '@iconify-icons/ph/x-light'
@@ -18,16 +19,15 @@
   import { createEventDispatcher, setContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Icon } from '$lib'
-  import type { IconifyIcon } from '@iconify/svelte'
   const dispatch = createEventDispatcher()
 
   export let initialfocus: string|undefined = undefined
   export let title = ''
-  export let icon: IconifyIcon = undefined
+  export let icon: IconifyIcon | undefined = undefined
   export let size: 'tiny'|'small'|'normal'|'large'|'xl' = 'normal'
-  export let cancelText: string|undefined = undefined
+  export let cancelText: string | undefined = undefined
   export let continueText: string = 'Ok'
-  export let continueIcon: IconifyIcon = undefined
+  export let continueIcon: IconifyIcon | undefined = undefined
   export let escapable = isNotBlank(cancelText)
   export let disabled = false
   export let ignoreTabs = false
@@ -35,14 +35,13 @@
   export let labelid = randomid()
   export let descid = randomid()
 
-
   const ctx: DialogTabContext = { change: onTabChange }
-  let hasTabs = false
+  let hasTabs: boolean | undefined = false
   let prevTitle: string | undefined
   let nextTitle: string | undefined
-  let hasRequired = false
-  let onPrev: () => void
-  let onNext: () => void
+  let hasRequired: boolean | undefined = false
+  let onPrev: (() => void) | undefined
+  let onNext: (() => void) | undefined
   function onTabChange () {
     ({ hasTabs, prevTitle, nextTitle, hasRequired, onPrev, onNext } = ctx)
   }
@@ -61,7 +60,7 @@
     {#if escapable}
       <button type="button" class="escape" on:click={() => dispatch('escape')}><Icon icon={xLight} width="2em" hiddenLabel="Close Dialog" /></button>
     {/if}
-    <div id={descid} class="content">
+    <div id={descid} class="dialog-content">
       <slot></slot>
     </div>
     <footer class="actions">
@@ -128,7 +127,8 @@
     margin-right: 0.4em;
   }
 
-  .content {
+  .dialog-content {
+    position: relative;
     margin: 0 -1em;
     padding: 1em;
     min-height: 5em;

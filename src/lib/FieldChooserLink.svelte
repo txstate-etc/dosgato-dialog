@@ -23,7 +23,7 @@
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
   export let helptext: string | undefined = undefined
-  export let selectedAsset: AnyItem|RawURL = undefined
+  export let selectedAsset: AnyItem|RawURL|undefined = undefined
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -73,6 +73,9 @@
           (item.type === 'asset' && !assets) || // they typed the URL for an asset but not allowed
           (item.type === 'asset' && !item.image && images) // they typed the URL for a non-image asset but we only want images
         ) {
+          // they entered something that is recognized but not allowed
+          // they can keep the typing they've done, but the id must be 'undefined' so that nothing
+          // is entered into the form data
           selectedAsset = {
             type: 'raw',
             id: undefined,
@@ -86,13 +89,15 @@
     if (!found) {
       try {
         const _ = new URL(url)
-        const newVal = chooserClient.urlToValue?.(url) ?? url
         selectedAsset = {
           type: 'raw',
-          id: newVal,
+          id: chooserClient.urlToValue?.(url) ?? url,
           url
         }
       } catch (e: any) {
+        // here we "select" a raw url so that we do not interrupt the users' typing, but
+        // we set its id to 'undefined' so that nothing makes it into the form until it's
+        // a valid URL
         selectedAsset = {
           type: 'raw',
           id: undefined,

@@ -4,14 +4,14 @@
   import { setContext } from 'svelte'
   import { CHOOSER_API_CONTEXT, type Client } from './chooser'
 
-  type T = $$Generic
-  type F = $$Generic
+  type T = $$Generic<any>
+  type F = $$Generic<any>
 
   let className = ''
   export { className as class }
-  export let submit: (state: T) => Promise<SubmitResponse<T>> = undefined
-  export let validate: (state: T) => Promise<Feedback[]> = undefined
-  export let store: FormStore<T> = undefined
+  export let submit: ((state: T) => Promise<SubmitResponse<T>>) | undefined = undefined
+  export let validate: ((state: T) => Promise<Feedback[]>) | undefined = undefined
+  export let store: FormStore<T> = undefined as any
   export let chooserClient: Client<F>|undefined = undefined
   export let autocomplete: string|undefined = undefined
   export let name: string|undefined = undefined
@@ -20,8 +20,8 @@
   setContext(CHOOSER_API_CONTEXT, chooserClient)
 </script>
 
-<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
-  <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} />
+<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
+  <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} {allMessages} {showingInlineErrors} />
   <div class="form-errors" aria-live='assertive'>
     {#if messages.length}
       <ul>
@@ -36,7 +36,7 @@
       This form contains validation errors. See inline messages for details.
     {/if}
   </div>
-  <slot name="submit" {saved} {validating} {submitting} {valid} {invalid} />
+  <slot name="submit" {saved} {validating} {submitting} {valid} {invalid} {allMessages} {showingInlineErrors} />
 </Form>
 
 <style>

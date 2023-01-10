@@ -23,7 +23,7 @@
   export let onBlur: any
   export let onSelect: any = undefined
   export let use: HTMLActionEntry[] = []
-  export let inputelement: HTMLInputElement = undefined
+  export let inputelement: HTMLInputElement = undefined as any
 
   $: descby = [helptextid, messagesid].filter(isNotBlank).join(' ')
 

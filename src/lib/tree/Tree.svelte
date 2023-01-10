@@ -25,7 +25,7 @@
    *
    * we are able to determine T from the store prop, but not everyone will use the store prop
    */
-  export const itemType: T = undefined
+  export const itemType: T | undefined = undefined
   export let fetchChildren: FetchChildrenFn<T>|undefined = undefined
   export let dragEligible: DragEligibleFn<T>|undefined = undefined
   export let moveHandler: MoveHandlerFn<T>|undefined = undefined

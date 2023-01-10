@@ -27,11 +27,11 @@
   $: dialogContext.change($store)
   if (!disableDialogControl) setContext(DIALOG_TABS_CONTEXT, { change: () => {} }) // reset context so that any sub-tabs do NOT control the Dialog component
 
-  const currentTitle = store.currentTitle()
+  const currentName = store.currentName()
   const currentIdx = store.currentIdx()
   const accordion = store.accordion()
-  $: cols = Math.min(Math.floor($store.clientWidth / 90), $store.tabs.length)
-  $: scalefactor = Math.min(roundTo($store.clientWidth / (cols * 130), 4), 1)
+  $: cols = Math.min(Math.floor(($store.clientWidth ?? 1024) / 90), $store.tabs.length)
+  $: scalefactor = Math.min(roundTo(($store.clientWidth ?? 1024) / (cols * 130), 4), 1)
   $: wrapping = cols !== $store.tabs.length
   $: dialogContext.hasTabs = !$accordion
 
@@ -80,17 +80,17 @@
     activeelement.style.width = `${width}px`
   }
 
-  $: active = $currentTitle
+  $: active = $currentName
   $: reactToCurrent($activeStore)
   onMount(reactToCurrent)
 </script>
 
 {#if !$accordion}
   <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
-    {#each $store.tabs as tab, idx (tab.title)}
+    {#each $store.tabs as tab, idx (tab.name)}
       {@const active = isActive(idx, $store.current)}
       {@const left = idx % cols === 0}
-      <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.title]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.title]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
+      <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
     {/each}
   </ul>
   <div bind:this={activeelement} class="tabs-active"></div>

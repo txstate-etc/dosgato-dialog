@@ -14,7 +14,7 @@
   export let step: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
-  export let inputelement: HTMLInputElement = undefined
+  export let inputelement: HTMLInputElement = undefined as any
   export let helptext: string | undefined = undefined
 </script>
 

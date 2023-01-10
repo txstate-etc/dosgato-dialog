@@ -11,7 +11,7 @@
   export let disabled = false
   export let valid = false
   export let invalid = false
-  export let inputelement: HTMLInputElement = undefined
+  export let inputelement: HTMLInputElement = undefined as any
   export let helptextid: string|undefined = undefined
 
   $: descby = [descid, messagesid, helptextid].filter(isNotBlank).join(' ')

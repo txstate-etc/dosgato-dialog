@@ -116,7 +116,7 @@
     <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>
       <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
         <img class="crop-image" src={imageSrc} alt="" />
-        {#if $selection != null}
+        {#if $selection && $output}
           <div class='crop-bg'>
             <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$output.left}% {$output.top}%, {100 - $output.right}% {$output.top}%, {100 - $output.right}% {100 - $output.bottom}%, {$output.left}% {100 - $output.bottom}%, {$output.left}% {$output.top}%)" />
           </div>

@@ -19,7 +19,7 @@
   export let iptValue = choices[0].value
   export let valid = false
   export let invalid = false
-  export let onBlur: (() => void | Promise<void>) = undefined
+  export let onBlur: (() => void | Promise<void>) | undefined = undefined
 
   const dispatch = createEventDispatcher()
   const store = new Store({ width: 1000 })

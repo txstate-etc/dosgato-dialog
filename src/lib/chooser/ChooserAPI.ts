@@ -1,5 +1,3 @@
-import type { RawURL } from './ChooserStore'
-
 export const CHOOSER_API_CONTEXT = {}
 export type ChooserType = 'asset' | 'page'
 export type AnyItem = Asset | Folder | Page

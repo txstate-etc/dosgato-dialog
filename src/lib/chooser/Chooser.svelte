@@ -47,7 +47,7 @@
   const selected = derivedStore<TypedTreeItem<Page | Folder | Asset> | undefined>(treeStore, 'selectedItems.0')
   $: store.setSource($currentName)
   $: selectPreview($preview, $source)
-  $: if (['asset', 'page'].includes($selected?.type)) store.setPreview($selected)
+  $: if (['asset', 'page'].includes($selected?.type!)) store.setPreview($selected)
 
   function onChoose () {
     dispatch('change', $store.preview)
@@ -62,7 +62,7 @@
     for (let i = 0; i < depth; i++) {
       curr = curr?.children?.find(c => c.name === pathSplit[i + 1])
     }
-    if (!curr) return
+    if (!curr) throw new Error('tried to open a path that does not exist')
     await treeStore.open(curr, false)
     if (depth + 1 >= pathSplit.length) return curr
     return await openRecursive(pathSplit, depth + 1)
@@ -86,7 +86,7 @@
   }
   onMount(async () => {
     await store.init({ images, pages, assets, folders, activeSources, initialSource, initialPath, passthruFilters, filter })
-    tabStore?.activateName($source.name)
+    if ($source?.name) tabStore?.activateName($source.name)
     await selectPreview()
   })
 </script>
@@ -110,7 +110,7 @@
         <Thumbnail item={$preview} />
         <Details item={$preview}>
           {#if $preview.type === 'folder'}
-            <li>{$selected.children?.length || 0} sub-items</li>
+            <li>{$selected?.children?.length ?? 0} sub-items</li>
           {/if}
         </Details>
       {/if}

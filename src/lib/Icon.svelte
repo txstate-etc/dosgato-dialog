@@ -3,7 +3,7 @@
   import type { IconifyIcon } from '@iconify/svelte'
   import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
   export let icon: IconifyIcon|undefined
-  export let hiddenLabel: string = undefined
+  export let hiddenLabel: string|undefined = undefined
   export let inline: boolean = false
   export let width: string|number = '1em'
   export let height: string|number = width

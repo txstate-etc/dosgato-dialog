@@ -53,7 +53,7 @@
   function valueToSelectedChoices (value: string[]) {
     // keep the selected options ordered as they were in the available options
     const valueSet = new Set(value)
-    const ret = []
+    const ret: PopupMenuItem[] = []
     for (const choice of choices) {
       if (valueSet.has(choice.value)) ret.push({ value: choice.value, label: choice.label || choice.value })
     }

@@ -285,7 +285,10 @@
       </div>
     {/each}
     <ScreenReaderOnly>
-      command enter select multiple, shift enter select all from last selection
+      up down to navigate
+      {#if item.hasChildren && showChildren}, left arrow to hide children{/if}
+      {#if item.hasChildren && !showChildren}, right arrow to show children{/if}
+      {#if $selected.size > 0}, command-enter to select multiple, shift-enter to select all from last selection{/if}
     </ScreenReaderOnly>
   </div>
   {#if showChildren && item.children}

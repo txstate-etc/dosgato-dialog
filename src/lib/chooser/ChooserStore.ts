@@ -10,7 +10,7 @@ export interface UISource extends Source {
 
 export interface RawURL {
   type: 'raw'
-  id: string
+  id: string | undefined
   url: string
 }
 
@@ -93,11 +93,11 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   async init (options: ChooserStoreOptions<F>) {
     this.setOptions(options)
     const [pageSources, assetSources] = await Promise.all([
-      this.options.pages ? this.client.getSources('page') : [],
-      this.options.assets ? this.client.getSources('asset') : []
+      this.options.pages ? this.client.getSources('page') : [] as Source[],
+      this.options.assets ? this.client.getSources('asset') : [] as Source[]
     ])
     this.update(v => {
-      const sources = { page: pageSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s)) ?? [], asset: assetSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s)) ?? [] }
+      const sources = { page: pageSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s.name)) ?? [], asset: assetSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s.name)) ?? [] }
       return { ...v, sources }
     })
     this.setSource(this.value.preview?.source ?? this.options.initialSource, true)
@@ -121,8 +121,8 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
       name ??= [...(v.sources?.page ?? []), ...(v.sources?.asset ?? [])].filter(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true)[0].name
       const pageSource = v.sources?.page.findIndex(s => s.name === name)
       const assetSource = v.sources?.asset.findIndex(s => s.name === name)
-      if (pageSource >= 0) return { ...v, activetype: 'page', activesource: pageSource }
-      else if (assetSource >= 0) return { ...v, activetype: 'asset', activesource: assetSource }
+      if ((pageSource ?? -1) >= 0) return { ...v, activetype: 'page', activesource: pageSource! }
+      else if ((assetSource ?? -1) >= 0) return { ...v, activetype: 'asset', activesource: assetSource! }
       return v
     })
   }

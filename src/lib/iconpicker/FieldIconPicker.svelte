@@ -126,7 +126,7 @@
           <div class="filters">
             <div class="search-wrapper">
               <input bind:value={searchVal} id="search_for" placeholder="Search Icons" on:keyup={onSearch}/>
-              <label for="search_for" class="fa fa-search" rel="tooltip" title="search"></label>
+              <label for="search_for" class="fa fa-search" title="search"></label>
             </div>
             <select bind:value={category} class="icon-category" aria-label="Select Category" on:change={onSelectCategory}>
               <option value="all">All</option>

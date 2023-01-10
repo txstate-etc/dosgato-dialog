@@ -19,7 +19,7 @@
   export let conditional: boolean|undefined = undefined
   export let addMoreText = 'Add'
   export let maxedText = addMoreText
-  export let addMoreClass: string = undefined
+  export let addMoreClass: string|undefined = undefined
 
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotNull).join('.')

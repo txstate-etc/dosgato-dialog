@@ -13,7 +13,7 @@
   export let defaultValue: any = notNull ? choices[0].value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
-  export let inputelement: HTMLSelectElement = undefined
+  export let inputelement: HTMLSelectElement = undefined as any
   export let helptext: string | undefined = undefined
   export let number = false
   export let date = false

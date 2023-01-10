@@ -10,7 +10,7 @@
   export let secondary = false
   export let describedby: string|undefined = undefined
   export let element: HTMLElement|undefined = undefined
-  export let icon: IconifyIcon = undefined
+  export let icon: IconifyIcon|undefined = undefined
   let className: string | undefined = undefined
   export { className as class }
 </script>

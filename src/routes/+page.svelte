@@ -4,11 +4,11 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldImageCropper, FieldCropper } from '$lib'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   let store: FormStore
   let showdialog = true
-  async function submit (data) {
+  async function submit (data: { crop: CropOutput }) {
     return {
       success: true,
       data,
@@ -16,7 +16,7 @@
     }
   }
 
-  async function validate (data): Promise<Feedback[]> {
+  async function validate (data: { crop: CropOutput }): Promise<Feedback[]> {
     return [{
       type: 'error',
       message: 'Nope',
@@ -32,12 +32,14 @@
     { name: 'Checkboxes' }
   ]
 
-  onMount(() => {
+  onMount(async () => {
     store.setField('asset', 'asset-1')
     store.setField('asset', 'https://google.com')
+    const { CropImage } = await import('./crop')
+    if (!window.customElements.get('crop-img')) window.customElements.define('crop-img', CropImage)
   })
 
-  let selectedAsset: any
+  let selectedAsset: AnyItem | RawURL
 </script>
 
 <svelte:head><title>DosGato Dialog Example</title></svelte:head>
@@ -45,12 +47,12 @@
 
 <main>
 {#if showdialog}
-<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved>
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data>
   <Tabs {tabs}>
     <Tab name="Add More">
-      <FieldText path="test" label="Test" required />
+      <FieldText path="test" label="Test" required/>
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>
-        <FieldText path="first" label="First Name" />
+        <FieldText path="first" label="First Name" helptext="This is some test helptext." />
         <FieldText path="last" label="Last Name" />
       </FieldMultiple>
       <FieldMultiple removable reorder path="multi_scalar" label="Just Names" initialState={'Barney'} let:index>
@@ -68,11 +70,12 @@
     <Tab name="Selections">
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
-      <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
       <FieldChooserLink path="asset" label="Choose an Asset" pages assets urlEntry initialSource="Assets" initialPath="/chemistry/organic"></FieldChooserLink>
       <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
-      <FieldCropper path="crop" label="Image Crop"  selectionAspectRatio={1.0} imageSrc="{selectedAsset?.url}"/>
-      <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
+      <FieldCropper path="crop" label="Image Crop"  selectionAspectRatio={3 / 2} imageSrc="{selectedAsset?.url}"/>
+      {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
+        <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
+      {/if}
       <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
       <FieldColorPicker addAllOption notNull defaultValue="hotpink" path="color" label="Another Color" options={[{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]} helptext="Just pick something."/>
       <FieldDualListbox
@@ -83,6 +86,8 @@
       { value: 'Option 6' }, { value: 'Option 7' }, { value: 'Option 8' }, { value: 'Option 9' }, { value: 'Option 10' }, { value: 'Option 11' },
       { value: 'Option 12' }, { value: 'Option 13' }, { value: 'Option 14' }, { value: 'Option 15' }, { value: 'Option 16' }]}
         defaultValue={['Option 5']}/>
+      <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
+      <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
     </Tab>
     <Tab name="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
@@ -115,5 +120,8 @@
   }
   aside pre {
     font-size: 0.75em;
+  }
+  crop-img {
+    padding-top: 56.25%;
   }
 </style>

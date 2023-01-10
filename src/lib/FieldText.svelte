@@ -16,10 +16,10 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
-  export let inputelement: HTMLInputElement = undefined
+  export let inputelement: HTMLInputElement = undefined as any
   export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
   <Input bind:inputelement {type} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid} {helptextid} {use}></Input>
 </FieldStandard>

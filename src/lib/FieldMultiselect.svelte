@@ -36,7 +36,10 @@
   const selectedStore = new Store<{ value: string, label: string }[]>([])
   let hasInit = !defaultValue.length
 
+  let inputelement: HTMLElement
+  let portal: HTMLElement | undefined
   onMount(async () => {
+    portal = inputelement.closest('.dialog-content') as HTMLElement
     await reactToValue(defaultValue)
     hasInit = true
   })
@@ -53,11 +56,12 @@
   }
 </script>
 
+<div bind:this={inputelement}></div>
 {#if hasInit}
   <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} let:value let:valid let:invalid let:id let:onBlur let:setVal>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} {disabled} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}></MultiSelect>
+      <MultiSelect {id} name={path} usePortal={portal} {disabled} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}></MultiSelect>
     </div>
   </FieldStandard>
 {/if}

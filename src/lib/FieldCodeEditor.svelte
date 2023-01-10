@@ -16,7 +16,7 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
-  export let inputelement: HTMLTextAreaElement = undefined
+  export let inputelement: HTMLTextAreaElement = undefined as any
   export let helptext: string | undefined = undefined
   export let language: 'js'|'css'|'html'
 
@@ -29,7 +29,7 @@
   let flask: CodeFlask
   onMount(() => {
     flask = new CodeFlask(editorelement, { language, lineNumbers: true, areaId: id })
-    inputelement = editorelement.querySelector(`#${id}`)
+    inputelement = editorelement.querySelector(`#${id}`) as HTMLTextAreaElement
     if (className) inputelement.classList.add(...className.split(' '))
     inputelement.addEventListener('change', onChange)
     updateValidState(invalid, messagesid)
@@ -49,12 +49,12 @@
     messagesid = messagesIdIn
     inputelement?.setAttribute('aria-invalid', String(!!invalid))
     const descby = getDescribedBy([messagesid, helptextid])
-    if (descby) inputelement?.setAttribute('aria-describedby', getDescribedBy([messagesid, helptextid]))
+    if (descby) inputelement?.setAttribute('aria-describedby', descby)
     else inputelement?.removeAttribute('aria-describedby')
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
   {@const _ = setSlotProps(helptextid, onChange)}
   {@const __ = updateValidState(invalid, messagesid)}
   <div bind:this={editorelement} style:height="{rows * 1.333}em" class:valid class:invalid on:paste on:focusout={onBlur} use:passActions={use}></div>

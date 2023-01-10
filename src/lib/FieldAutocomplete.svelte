@@ -4,6 +4,7 @@
   import { randomid } from 'txstate-utils'
   import { PopupMenu, ScreenReaderOnly, type PopupMenuItem } from '@txstate-mws/svelte-components'
   import { getDescribedBy } from '$lib'
+  import { onMount } from 'svelte'
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
@@ -16,7 +17,7 @@
   export let defaultValue: any = notNull ? choices[0].value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
-  export let inputelement: HTMLInputElement = undefined
+  export let inputelement: HTMLInputElement = undefined as any
   export let helptext: string | undefined = undefined
 
   let inputvalue = ''
@@ -58,12 +59,17 @@
     savedLabel = inputvalue
     set = true
   }
+
+  let portal: HTMLElement | undefined
+  onMount(() => {
+    portal = inputelement.closest('.dialog-content') as HTMLElement
+  })
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull && nullableSerialize} deserialize={!notNull && nullableDeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:setVal let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
   {@const _ = reactToInitialValue(value)}
   <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:change={onChange} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid])} on:keydown={checkifchanged}>
-  <PopupMenu bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
+  <PopupMenu bind:menuid align="bottomleft" usePortal={portal} items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   <ScreenReaderOnly arialive="polite" ariaatomic={true} id={liveTextId}>
     {filteredChoices.length} {filteredChoices.length === 1 ? 'option' : 'options'} available.
   </ScreenReaderOnly>

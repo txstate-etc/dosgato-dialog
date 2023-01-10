@@ -166,7 +166,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
 
       // if the focused item disappeared in the refresh, we need to replace it,
       // as without a focus the tree becomes invisible to keyboard nav
-      if (!this.value.itemsById[this.value.focused?.id]) this.focus(this.value.selectedItems.slice(-1)[0] ?? this.value.rootItems?.[0], true)
+      if (!this.value.itemsById[this.value.focused?.id ?? '']) this.focus(this.value.selectedItems.slice(-1)[0] ?? this.value.rootItems?.[0], true)
     } finally {
       if (item) item.loading = false
       this.value.loading = false
@@ -262,8 +262,8 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     const commonparent = this.findCommonParent([...selectedItems, item])
     try {
       const result = dropEffect === 'move'
-        ? await this.moveHandler(selectedItems, item, above)
-        : await this.copyHandler(selectedItems, item, above, userWantsRecursive)
+        ? await this.moveHandler?.(selectedItems, item, above)
+        : await this.copyHandler?.(selectedItems, item, above, userWantsRecursive)
       await this.openAndRefresh(item)
       await this.refresh(commonparent)
       return result

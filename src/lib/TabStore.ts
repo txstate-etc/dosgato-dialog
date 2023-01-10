@@ -13,7 +13,7 @@ export interface TabDef {
 }
 
 interface ITabStore extends ElementSize {
-  current?: number
+  current: number
   prevTitle?: string
   nextTitle?: string
   requireNext: boolean
@@ -23,23 +23,24 @@ interface ITabStore extends ElementSize {
   panelids: Record<string, string>
 }
 
-function checkNext (v: Partial<ITabStore>) {
-  v.visited = { ...v.visited, [v.tabs[v.current].title]: true }
+function checkNext (v: ITabStore) {
+  v.visited = { ...v.visited, [v.tabs[v.current].name]: true }
   v.prevTitle = v.current > 0 ? v.tabs[v.current - 1].title : undefined
   v.nextTitle = v.tabs.length - 1 > v.current ? v.tabs[v.current + 1].title : undefined
-  v.requireNext = v.tabs.some((t, i) => t.required && !v.visited[t.title])
-  return v as ITabStore
+  v.requireNext = v.tabs.some((t, i) => t.required && !v.visited[t.name])
+  return v
 }
 
 export class TabStore extends Store<ITabStore> {
   constructor (tabs: TabDef[], public initialTab?: string | undefined) {
-    const current = findIndex(tabs, t => t.title === initialTab, 0)
+    const current = findIndex(tabs, t => t.title === initialTab, 0) ?? 0
     super(checkNext({
       tabs,
       current,
       visited: {},
-      tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr.title]: randomid() }), {}),
-      panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr.title]: randomid() }), {}),
+      requireNext: false,
+      tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
+      panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
       clientWidth: 1024
     }))
   }
@@ -76,7 +77,7 @@ export class TabStore extends Store<ITabStore> {
   }
 
   accordion () {
-    return derivedStore(this, v => v.clientWidth < 500)
+    return derivedStore(this, v => v.clientWidth && v.clientWidth < 500)
   }
 
   left () {
