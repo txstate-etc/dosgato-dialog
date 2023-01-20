@@ -47,7 +47,7 @@
   const selected = derivedStore<TypedTreeItem<Page | Folder | Asset> | undefined>(treeStore, 'selectedItems.0')
   $: store.setSource($currentName)
   $: selectPreview($preview, $source)
-  $: if (['asset', 'page'].includes($selected?.type!)) store.setPreview($selected)
+  $: store.setPreview($selected)
 
   function onChoose () {
     dispatch('change', $store.preview)
