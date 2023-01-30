@@ -47,7 +47,7 @@
   .color-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   label.colorsel :global(input[type="radio"]) {
