@@ -46,7 +46,7 @@
   let container: HTMLDivElement
   function onMouseDown (e: MouseEvent | TouchEvent) {
     if (!updateRect()) return
-    if (e instanceof TouchEvent && e.touches.length > 1) return
+    if (window.TouchEvent && TouchEvent && e instanceof TouchEvent && e.touches.length > 1) return
     const clientX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX
     const clientY = e instanceof MouseEvent ? e.clientY : e.touches[0].clientY
     if (isInside(clientX, clientY)) {
@@ -57,7 +57,7 @@
 
   function onMouseMove (e: MouseEvent | TouchEvent) {
     if (!updateRect()) return
-    if (e instanceof TouchEvent && e.touches.length > 1) return
+    if (window.TouchEvent && e instanceof TouchEvent && e.touches.length > 1) return
     const clientX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX
     const clientY = e instanceof MouseEvent ? e.clientY : e.touches[0].clientY
     if (e instanceof MouseEvent && !e.buttons && $store.drag) store.endDrag()
