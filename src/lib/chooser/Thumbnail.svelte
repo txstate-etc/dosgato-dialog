@@ -7,12 +7,13 @@
   import type { RawURL } from './ChooserStore'
 
   export let item: AnyItem|RawURL
+  export let larger = false
 </script>
 
 <div class="dialog-chooser-thumbnail">
   {#if item.type === 'asset'}
     {#if item.image}
-      <img src={item.image.thumbnailUrl} alt="" />
+      <img src={(larger ? item.image.thumbnailUrl : item.image.previewUrl) ?? item.image.thumbnailUrl ?? item.url} alt="" />
     {:else}
       <FileIcon mime={item.mime} width='5em' />
     {/if}

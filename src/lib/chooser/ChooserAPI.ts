@@ -108,5 +108,8 @@ export interface Asset extends Item {
     // separate URL for smaller version for use in chooser UI
     // thumbnail should have the same aspect ratio as the full image
     thumbnailUrl?: string
+    // separate URL for medium size version for use in preview area of chooser UI
+    // should have the same aspect ratio as the full image
+    previewUrl?: string
   }
 }

@@ -107,7 +107,7 @@
     </section>
     <section class="dialog-chooser-preview" tabindex="-1">
       {#if $preview}
-        <Thumbnail item={$preview} />
+        <Thumbnail item={$preview} larger />
         <Details item={$preview}>
           {#if $preview.type === 'folder'}
             <li>{$selected?.children?.length ?? 0} sub-items</li>
