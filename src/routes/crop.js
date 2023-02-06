@@ -52,12 +52,12 @@ export class CropImage extends HTMLElement {
   }
 
   applyAttributes () {
-    const cx = this.nums.cropleft + (100 - this.nums.cropleft - this.nums.cropright) / 2
-    const cy = this.nums.croptop + (100 - this.nums.croptop - this.nums.cropbottom) / 2
+    const cx = 100 * (this.nums.cropleft + (1 - this.nums.cropleft - this.nums.cropright) / 2)
+    const cy = 100 * (this.nums.croptop + (1 - this.nums.croptop - this.nums.cropbottom) / 2)
     const rect = this.getBoundingClientRect()
     const style = this.getStyle()
-    const width = `${10000 / (100 - this.nums.cropleft - this.nums.cropright)}%`
-    const height = `${10000 / (100 - this.nums.croptop - this.nums.cropbottom)}%`
+    const width = `${100 / (1 - this.nums.cropleft - this.nums.cropright)}%`
+    const height = `${100 / (1 - this.nums.croptop - this.nums.cropbottom)}%`
     cancelAnimationFrame(this.timer)
     this.timer = requestAnimationFrame(() => {
       this.img.style.transform = this.supportsContainerQueries
@@ -80,7 +80,7 @@ export class CropImage extends HTMLElement {
   }
 
   getStyle () {
-    this.cropAspect = (100 - this.nums.cropleft - this.nums.cropright) * this.nums.imageaspect / (100 - this.nums.croptop - this.nums.cropbottom)
+    this.cropAspect = (1 - this.nums.cropleft - this.nums.cropright) * this.nums.imageaspect / (1 - this.nums.croptop - this.nums.cropbottom)
     const cropRatio = this.nums.cropaspectnumerator && this.nums.cropaspectdenominator ? `${this.nums.cropaspectnumerator} / ${this.nums.cropaspectdenominator}` : this.guessAR(this.cropAspect)
     return `
       :host {

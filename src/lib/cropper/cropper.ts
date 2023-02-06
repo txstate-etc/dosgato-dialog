@@ -58,6 +58,7 @@ export class CropperStore extends Store<ICropperStore> {
   })
 
   output = derivedStore(this, 'selection')
+  outputPct = derivedStore(this, v => v.selection ? ({ left: v.selection.left * 100, top: v.selection.top * 100, right: v.selection.right * 100, bottom: v.selection.bottom * 100 }) : undefined)
 
   constructor (initialValue: Omit<ICropperStore, 'cursor'>) {
     super({ ...initialValue, cursor: 'crosshair' })
@@ -117,14 +118,14 @@ export class CropperStore extends Store<ICropperStore> {
       const ar = v.width / v.height
       const s: CropOutput = {} as any
       if (ar > v.targetAspect) { // draw area is wider than aspect, fill height
-        s.left = 100 * (ar - v.targetAspect) / (2 * ar)
+        s.left = (ar - v.targetAspect) / (2 * ar)
         s.right = s.left
         s.top = 0
         s.bottom = 0
       } else { // draw area is taller than aspect, fill width
         s.left = 0
         s.right = 0
-        s.top = 100 * (v.targetAspect - ar) / (2 * v.targetAspect)
+        s.top = (v.targetAspect - ar) / (2 * v.targetAspect)
         s.bottom = s.top
       }
       return { ...v, selection: s }
@@ -134,20 +135,20 @@ export class CropperStore extends Store<ICropperStore> {
   convertToPct (sel: CropSelectionPx | undefined, width: number, height: number) {
     if (!sel) return undefined
     return {
-      left: 100.0 * sel.left / width,
-      right: 100.0 * (width - sel.right) / width,
-      top: 100.0 * sel.top / height,
-      bottom: 100.0 * (height - sel.bottom) / height
+      left: sel.left / width,
+      right: (width - sel.right) / width,
+      top: sel.top / height,
+      bottom: (height - sel.bottom) / height
     }
   }
 
   convertToPx (output: CropOutput | undefined, width: number, height: number) {
     if (!output) return undefined
     return {
-      left: output.left * width / 100.0,
-      right: width - output.right * width / 100.0,
-      top: output.top * height / 100.0,
-      bottom: height - output.bottom * height / 100.0
+      left: output.left * width,
+      right: width - output.right * width,
+      top: output.top * height,
+      bottom: height - output.bottom * height
     }
   }
 

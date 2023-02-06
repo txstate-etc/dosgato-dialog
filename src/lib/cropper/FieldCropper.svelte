@@ -15,7 +15,7 @@
   export let helptext: string | undefined = undefined
 
   const store = new CropperStore({ width: 0, height: 0, minSelection, targetAspect: selectionAspectRatio })
-  const { output, selection } = store
+  const { output, outputPct, selection } = store
 
   let setVal: (val: any) => void
   let value: CropOutput | undefined
@@ -116,9 +116,9 @@
     <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>
       <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
         <img class="crop-image" src={imageSrc} alt="" />
-        {#if $selection && $output}
+        {#if $selection && $outputPct}
           <div class='crop-bg'>
-            <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$output.left}% {$output.top}%, {100 - $output.right}% {$output.top}%, {100 - $output.right}% {100 - $output.bottom}%, {$output.left}% {100 - $output.bottom}%, {$output.left}% {$output.top}%)" />
+            <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$outputPct.left}% {$outputPct.top}%, {100 - $outputPct.right}% {$outputPct.top}%, {100 - $outputPct.right}% {100 - $outputPct.bottom}%, {$outputPct.left}% {100 - $outputPct.bottom}%, {$outputPct.left}% {$outputPct.top}%)" />
           </div>
           <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
           <div class='selectionHilite' {id} tabindex="0" on:keydown={onKeyDown('move')}
