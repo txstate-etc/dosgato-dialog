@@ -86,12 +86,12 @@ export class CropImage extends HTMLElement {
       :host {
         padding-top: ${Math.round(100000 / this.cropAspect) / 1000}%;
       }
-      @container (min-aspect-ratio: ${cropRatio}) {
+      @container (aspect-ratio > ${cropRatio}) {
         img {
           width: auto !important;
         }
       }
-      @container (max-aspect-ratio: ${cropRatio}) {
+      @container (aspect-ratio <= ${cropRatio}) {
         img {
           height: auto !important;
         }
