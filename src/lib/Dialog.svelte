@@ -50,7 +50,7 @@
   $: describedby = [title ? labelid : undefined, descid].filter(isNotBlank).join(' ')
 </script>
 
-<Modal {escapable} {initialfocus} hidefocus={false} on:escape>
+<Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
   <section class="{size}">
     {#if title || icon}
       <header id={labelid}>
