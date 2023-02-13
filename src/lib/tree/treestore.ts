@@ -164,6 +164,9 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
       }
       this.addLookup(children)
 
+      // if any selected items disappeared in the refresh, we need to remove them from the selection map
+      this.cleanSelected()
+
       // if the focused item disappeared in the refresh, we need to replace it,
       // as without a focus the tree becomes invisible to keyboard nav
       if (!this.value.itemsById[this.value.focused?.id ?? '']) this.focus(this.value.selectedItems.slice(-1)[0] ?? this.value.rootItems?.[0], true)
