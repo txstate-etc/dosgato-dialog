@@ -16,6 +16,9 @@ interface PageWithChildren extends Omit<Page, 'source'> {
   children?: PageWithChildren[]
 }
 
+type PageTreeTypes = RootPage | PageWithChildren
+type FolderTreeTypes = RootFolder | FolderWithChildren | PageTreeTypes
+
 type AnyStoredItem = StoredAsset | FolderWithChildren | PageWithChildren
 
 const assets: Record<string, RootFolder | RootPage> = {
@@ -144,7 +147,12 @@ class DemoChooserAPI implements Client {
     return [{ type: 'page', name: 'Pages' }] as Source[]
   }
 
-  findFolder (source: string, path: string): RootFolder | RootPage | FolderWithChildren | PageWithChildren {
+  /** If `path` is '/' returns the RootFolder or RootPage associated with `source`, else it traverses `path` camparing child
+   * object names to the parts of the path looking for the FolderWithChildren or PageWithChildren object that corresponds
+   * to `path` and returns any associated folder type objects found.
+   * @throws 'path `path` not found in source `source`' if no corresponding object is found.
+   * @throws 'path `path` refers to an asset but expected a folder' if the object found is not a type of folder object. */
+  findFolder (source: string, path: string): FolderTreeTypes {
     if (path === '/') return assets[source]
     const parts = path.substring(1).split('/')
     let folders = assets[source].children
@@ -158,7 +166,9 @@ class DemoChooserAPI implements Client {
     return folder as FolderWithChildren | PageWithChildren
   }
 
-  collectItems (item: StoredAsset | FolderWithChildren | PageWithChildren | RootPage | RootFolder, source: string): AnyItem[] {
+  /** Recursive function for building and returning a flat array of `item` and its recursive children
+   *  having `source` appended to every resulting object as an additional property. */
+  collectItems (item: StoredAsset | FolderTreeTypes, source: string): AnyItem[] {
     const ret: AnyItem[] = []
     if ('type' in item) ret.push({ ...item, source })
     if ('children' in item && item.children?.length) {
@@ -169,11 +179,14 @@ class DemoChooserAPI implements Client {
     return ret
   }
 
+  /** Returns any children of `path` as an AnyItem array with `source` added as a property to each child in the array.  */
   async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
     return folder.children?.map(c => ({ ...c, source })) as AnyItem[] ?? []
   }
 
+  /** Goes through all the items decending from path, under source, and case insensitively checks if their name includes
+   * `searchstring` - returning any items that do as an array of AnyItem.  */
   async find (source: string, path: string, searchstring: string) {
     const folder = this.findFolder(source, path)
     const items = this.collectItems(folder, source)
@@ -181,22 +194,30 @@ class DemoChooserAPI implements Client {
     return items.filter(a => a.name.toLocaleLowerCase().includes(search))
   }
 
+  /** Searches all items of assets, and their recursive children, for any item that has an id property matching `id`
+   * and returns a reference to the first one found - else `undefined`. */
   async findById (id: string): Promise<AnyItem | undefined> {
-    for (const [key, rootfolder] of Object.entries(assets)) {
-      const found = this.collectItems(rootfolder, key).find(a => a.id === id)
-      if (found) return found
-    }
-    return undefined
+    return await this.findBy(a => a.id === id)
   }
 
+  /** Searches all items of assets, and their recursive children, for any item that has a url property matching `url`
+   * and returns a reference to the first one found - else `undefined`. */
   async findByUrl (url: string) {
+    return await this.findBy(a => 'url' in a && a.url === url)
+  }
+
+  /** Searches all items of assets, and their recursive children, for any item that satisfies the passed in boolean
+   * function and returns a reference to the first one found - else `undefined`. */
+  private async findBy (fn: (a: AnyItem) => boolean) {
     for (const [source, rootfolder] of Object.entries(assets)) {
-      const found = this.collectItems(rootfolder, source).find(a => 'url' in a && a.url === url)
+      const found = this.collectItems(rootfolder, source).find(fn)
       if (found) return found
     }
     return undefined
   }
 
+  /** If a folder corresponds to `path` under `source` this will build StoredAsset objects from the `files` passed and simulate adding them to that folder's children in memory.
+   * @throws 'User may not upload to this folder` error if that folder doesn't acceptUpload. */
   async upload (source: string, path: string, files: FileList) {
     const folder = this.findFolder(source, path) as RootFolder | FolderWithChildren
     if (!folder?.acceptsUpload) throw new Error('User may not upload to this folder')
