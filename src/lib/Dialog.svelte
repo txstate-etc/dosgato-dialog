@@ -71,7 +71,9 @@
         {#if isNotBlank(cancelText)}
           <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
         {/if}
-        <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline />{continueText}</Button>
+        {#if isNotBlank(continueText)}
+          <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline />{continueText}</Button>
+        {/if}
         {#if nextTitle && !ignoreTabs}
           <Button class="next" disabled={!nextTitle} on:click={onNext}>Next<ScreenReaderOnly> Tab ({nextTitle})</ScreenReaderOnly> <Icon width="1.2em" icon={arrowRightLight} inline /></Button>
         {/if}
