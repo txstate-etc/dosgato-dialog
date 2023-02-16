@@ -14,6 +14,7 @@
   export let defaultValue: string[] = []
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let maxSelections = 0
   export let getOptions: (search: string) => Promise<PopupMenuItem[]>
 
   // each time we run getOptions we will save the value -> label mappings
@@ -61,7 +62,7 @@
   <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} let:value let:valid let:invalid let:id let:onBlur let:setVal>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} usePortal={portal} {disabled} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}></MultiSelect>
+      <MultiSelect {id} name={path} usePortal={portal} {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}></MultiSelect>
     </div>
   </FieldStandard>
 {/if}
