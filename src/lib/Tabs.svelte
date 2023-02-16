@@ -85,20 +85,24 @@
   onMount(reactToCurrent)
 </script>
 
-{#if !$accordion}
-  <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
-    {#each $store.tabs as tab, idx (tab.name)}
-      {@const active = isActive(idx, $store.current)}
-      {@const left = idx % cols === 0}
-      <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
-    {/each}
-  </ul>
-  <div bind:this={activeelement} class="tabs-active"></div>
-  <slot current={$store.current} />
-{:else}
-  <div use:resize={{ store }} class="tabs-container">
+{#if $store.tabs.length > 1}
+  {#if !$accordion}
+    <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
+      {#each $store.tabs as tab, idx (tab.name)}
+        {@const active = isActive(idx, $store.current)}
+        {@const left = idx % cols === 0}
+        <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
+      {/each}
+    </ul>
+    <div bind:this={activeelement} class="tabs-active"></div>
     <slot current={$store.current} />
-  </div>
+  {:else}
+    <div use:resize={{ store }} class="tabs-container">
+      <slot current={$store.current} />
+    </div>
+  {/if}
+{:else}
+  <slot current={$store.current} />
 {/if}
 
 <style>

@@ -18,12 +18,16 @@
   const last = idx === $store.tabs.length - 1
 </script>
 
-{#if $accordion}
-  <div bind:this={tabelements[idx]} id={$tabid} class="tabs-tab" class:last aria-selected={active} aria-controls={$panelid} role="tab" tabindex={0} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={$store.tabs[idx].icon} inline />{$title}<i class="tabs-accordion-arrow" aria-hidden="true"></i></div>
-{/if}
-<div id={$panelid} hidden={!active} role="tabpanel" tabindex="-1" aria-labelledby={$tabid} class="tabs-panel" class:accordion={$accordion}>
+{#if $store.tabs.length > 1}
+  {#if $accordion}
+    <div bind:this={tabelements[idx]} id={$tabid} class="tabs-tab" class:last aria-selected={active} aria-controls={$panelid} role="tab" tabindex={0} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><Icon icon={$store.tabs[idx].icon} inline />{$title}<i class="tabs-accordion-arrow" aria-hidden="true"></i></div>
+  {/if}
+  <div id={$panelid} hidden={!active} role="tabpanel" tabindex="-1" aria-labelledby={$tabid} class="tabs-panel" class:accordion={$accordion}>
+    <slot />
+  </div>
+{:else}
   <slot />
-</div>
+{/if}
 
 <style>
   .tabs-panel {
