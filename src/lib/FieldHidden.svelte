@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { Field, nullableSerialize, nullableDeserialize, FormStore, FORM_CONTEXT } from '@txstate-mws/svelte-forms'
+  import { Field, nullableSerialize, nullableDeserialize, FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
+  import { isNotBlank } from 'txstate-utils'
   export let id: string | undefined = undefined
   export let path: string
   export let value = ''
   export let notNull = false
   export let conditional: boolean|undefined = undefined
   const store = getContext<FormStore>(FORM_CONTEXT)
-  $: store.setField(path, value)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  $: store.setField(finalPath, value)
 </script>
 
 <Field {path} {conditional} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value>
