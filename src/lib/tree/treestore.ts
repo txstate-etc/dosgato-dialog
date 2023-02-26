@@ -371,7 +371,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   }
 
   pasteEligible (above = false) {
-    return this.value.copied.size && this.pasteEffect(above) !== 'none'
+    return this.value.copied.size && (this.value.cut ? this.pasteEffect(above) === 'move' : this.pasteEffect(above) !== 'none')
   }
 
   pasteEffect (above = false) {
