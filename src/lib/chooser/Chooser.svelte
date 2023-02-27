@@ -1,7 +1,7 @@
 <script lang="ts">
   import applicationOutline from '@iconify-icons/mdi/application-outline'
-  import folderLight from '@iconify-icons/ph/folder-light'
-  import folderNotchOpenLight from '@iconify-icons/ph/folder-notch-open-light'
+  import folderIcon from '@iconify-icons/ph/folder'
+  import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
   import { derivedStore } from '@txstate-mws/svelte-store'
   import { createEventDispatcher, getContext, onMount, setContext } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
@@ -101,7 +101,7 @@
     <section class="dialog-chooser-chooser">
       {#if $store.initialized}
         <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpenLight : folderLight) : applicationOutline), get: 'name' }
+          { label: 'Path', id: 'name', grow: 4, icon: item => item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : applicationOutline), get: 'name' }
         ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
       {/if}
     </section>

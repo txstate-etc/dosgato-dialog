@@ -1,50 +1,50 @@
 import type { IconifyIcon } from '@iconify/svelte'
-import archiveLight from '@iconify-icons/ph/archive-light.js'
-import fileCodeLight from '@iconify-icons/ph/file-code-light.js'
-import fileTextLight from '@iconify-icons/ph/file-text-light.js'
-import fileAudioLight from '@iconify-icons/ph/file-audio-light.js'
-import filePdfLight from '@iconify-icons/ph/file-pdf-light'
-import fileLight from '@iconify-icons/ph/file-light.js'
-import fileCsvLight from '@iconify-icons/ph/file-csv-light.js'
-import fileVideoLight from '@iconify-icons/ph/file-video-light.js'
-import fileImageLight from '@iconify-icons/ph/file-image-light.js'
-import microsoftExcel from '@iconify-icons/ph/file-xls-light.js'
-import microsoftWord from '@iconify-icons/ph/file-doc-light.js'
+import archive from '@iconify-icons/ph/archive.js'
+import fileCode from '@iconify-icons/ph/file-code.js'
+import fileText from '@iconify-icons/ph/file-text.js'
+import fileAudio from '@iconify-icons/ph/file-audio.js'
+import filePdf from '@iconify-icons/ph/file-pdf'
+import fileIcon from '@iconify-icons/ph/file.js'
+import fileCsv from '@iconify-icons/ph/file-csv.js'
+import fileVideo from '@iconify-icons/ph/file-video.js'
+import fileImage from '@iconify-icons/ph/file-image.js'
+import microsoftExcel from '@iconify-icons/ph/file-xls.js'
+import microsoftWord from '@iconify-icons/ph/file-doc.js'
 
 const fileIconsByMime: Record<string, IconifyIcon> = {
   'application/vnd.ms-excel': microsoftExcel,
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': microsoftExcel,
   'application/vnd.oasis.opendocument.spreadsheet': microsoftExcel,
-  'text/csv': fileCsvLight,
+  'text/csv': fileCsv,
   'application/msword': microsoftWord,
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document': microsoftWord,
   'application/vnd.oasis.opendocument.text': microsoftWord,
   'application/rtf': microsoftWord,
-  'application/pdf': filePdfLight,
-  'application/json': fileCodeLight,
-  'application/x-httpd-php': fileCodeLight,
-  'application/x-sh': fileCodeLight,
-  'application/xml': fileCodeLight,
-  'text/css': fileCodeLight,
-  'text/html': fileCodeLight,
-  'text/javascript': fileCodeLight,
-  'application/gzip': archiveLight,
-  'application/java-archive': archiveLight,
-  'application/zip': archiveLight,
-  'application/vnd.apple.installer+xml': archiveLight,
-  'application/vnd.rar': archiveLight,
-  'application/x-7z-compressed': archiveLight,
-  'application/x-bzip': archiveLight,
-  'application/x-bzip2': archiveLight,
-  'application/x-tar': archiveLight
+  'application/pdf': filePdf,
+  'application/json': fileCode,
+  'application/x-httpd-php': fileCode,
+  'application/x-sh': fileCode,
+  'application/xml': fileCode,
+  'text/css': fileCode,
+  'text/html': fileCode,
+  'text/javascript': fileCode,
+  'application/gzip': archive,
+  'application/java-archive': archive,
+  'application/zip': archive,
+  'application/vnd.apple.installer+xml': archive,
+  'application/vnd.rar': archive,
+  'application/x-7z-compressed': archive,
+  'application/x-bzip': archive,
+  'application/x-bzip2': archive,
+  'application/x-tar': archive
 }
 const prefixes: Record<string, IconifyIcon> = {
-  image: fileImageLight,
-  text: fileTextLight,
-  video: fileVideoLight,
-  audio: fileAudioLight
+  image: fileImage,
+  text: fileText,
+  video: fileVideo,
+  audio: fileAudio
 }
 
 export function iconForMime (mime: string) {
-  return fileIconsByMime[mime] ?? prefixes[mime.split('/', 2)[0]] ?? fileLight
+  return fileIconsByMime[mime] ?? prefixes[mime.split('/', 2)[0]] ?? fileIcon
 }
