@@ -58,6 +58,9 @@
       <FieldMultiple removable reorder path="multi_scalar" label="Just Names" initialState={'Barney'} let:index>
         <FieldText path="" label={'Name ' + index} />
       </FieldMultiple>
+      <FieldMultiple reorder path="images" label="Images" let:index>
+        <FieldChooserLink path="" assets urlEntry />
+      </FieldMultiple>
     </Tab>
     <Tab name="Text">
       <FieldTextArea path="textarea" label="Textarea" rows={10} />

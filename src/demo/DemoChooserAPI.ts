@@ -71,7 +71,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         children: [
           { type: 'asset', id: 'asset-1', path: '/physics/cannondiagram.png', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
           { type: 'asset', id: 'asset-2', path: '/physics/modernphysics.pdf', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/blankpdf.pdf' },
-          { type: 'asset', id: 'asset-3', path: '/physics/bobcat.jpg', name: 'bobcat.jpg', mime: 'image/jpeg', bytes: 3793056, url: '/bobcat.jpg', image: { width: 6016, height: 4016, thumbnailUrl: '/bobcat-thumbnail.jpg' } }
+          { type: 'asset', id: 'asset-4', path: '/physics/bobcat.jpg', name: 'bobcat.jpg', mime: 'image/jpeg', bytes: 3793056, url: '/bobcat.jpg', image: { width: 6016, height: 4016, thumbnailUrl: '/bobcat-thumbnail.jpg' } }
         ]
       }
     ]
