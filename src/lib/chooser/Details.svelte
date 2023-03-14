@@ -5,30 +5,72 @@
   export let item: AnyItem|RawURL
 </script>
 
-<ul class="dialog-chooser-info" aria-live="polite">
+<dl class="dialog-chooser-info" aria-live="polite">
   {#if item.type !== 'raw'}
-    <li>{item.path}</li>
+    <div class="top-row">
+      <dt>Name:</dt>
+      <dd>{item.path}</dd>
+    </div>
   {:else if item.id}
-    <li>External Link<br>{item.url}</li>
-  {/if}
-  {#if item.type === 'asset' && item.image}
-    <li>{item.image.width}x{item.image.height}</li>
-  {:else if item.type === 'page' && item.title}
-    <li>{item.title}</li>
-  {:else if item.type === 'folder'}
-    <li>{item.path}</li>
+    <div>
+      <dt>External Link:</dt>
+      <dd>{item.url}</dd>
+    </div>
   {/if}
   {#if item.type === 'asset'}
-    <li>{item.mime}</li>
-    <li>{bytesToHuman(item.bytes)}</li>
+    <div class="asset-properties">
+      {#if item.image}
+        <div>
+          <dt>Dimensions:</dt>
+          <dd>{item.image.width}x{item.image.height}</dd>
+        </div>
+      {/if}
+      <div>
+        <dt>File Type:</dt>
+        <dd>{item.mime}</dd>
+      </div>
+      <div>
+        <dt>File Size:</dt>
+        <dd>{bytesToHuman(item.bytes)}</dd>
+      </div>
+    </div>
+  {:else if item.type === 'page' && item.title}
+    <div>
+      <dt>Title:</dt>
+      <dd>{item.title}</dd>
+    </div>
+  {:else if item.type === 'folder'}
+    <div>
+      <dt>Path:</dt>
+      <dd>{item.path}</dd>
+    </div>
   {/if}
   <slot />
-</ul>
+</dl>
 
 <style>
   .dialog-chooser-info {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+  .dialog-chooser-info dt {
+    font-weight: bold;
+  }
+  .dialog-chooser-info dd {
+    margin: 0;
+  }
+  .top-row {
+    margin-bottom: 1em;
+  }
+  .asset-properties {
+    display: flex;
+    justify-content: space-between;
+  }
+  :global([data-eq~="1400px"]) .asset-properties {
+    flex-direction: column;
+  }
+  :global([data-eq~="1400px"]) .asset-properties div:not(:last-child){
+    margin-bottom: 1em;
   }
 </style>

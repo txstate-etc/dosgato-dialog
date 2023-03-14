@@ -15,7 +15,7 @@
   import arrowLeftLight from '@iconify-icons/ph/arrow-left-light'
   import arrowRightLight from '@iconify-icons/ph/arrow-right-light'
   import xLight from '@iconify-icons/ph/x-light'
-  import { Modal, ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { eq, Modal, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { createEventDispatcher, setContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Icon } from '$lib'
@@ -51,7 +51,7 @@
 </script>
 
 <Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
-  <section class="{size}">
+  <section class="{size}" use:eq>
     {#if title || icon}
       <header id={labelid}>
         <Icon width="1.4em" {icon} inline />{title}

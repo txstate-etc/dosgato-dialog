@@ -98,23 +98,28 @@
         <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ name: s.name, title: s.label ?? s.name }))} />
       {/if}
     </header>
-    <section class="dialog-chooser-chooser">
-      {#if $store.initialized}
-        <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : applicationOutline), get: 'name' }
-        ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
-      {/if}
-    </section>
-    <section class="dialog-chooser-preview" tabindex="-1">
-      {#if $preview}
-        <Thumbnail item={$preview} larger />
-        <Details item={$preview}>
-          {#if $preview.type === 'folder'}
-            <li>{$selected?.children?.length ?? 0} sub-items</li>
-          {/if}
-        </Details>
-      {/if}
-    </section>
+    <div class="dialog-chooser-body">
+      <section class="dialog-chooser-chooser">
+        {#if $store.initialized}
+          <Tree headers={[
+            { label: 'Path', id: 'name', grow: 4, icon: item => item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : applicationOutline), get: 'name' }
+          ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
+        {/if}
+      </section>
+      <section class="dialog-chooser-preview" tabindex="-1">
+        {#if $preview}
+          <Thumbnail item={$preview} larger />
+          <Details item={$preview}>
+            {#if $preview.type === 'folder'}
+              <div class="folder-info">
+                <dt>Contents:</dt>
+                <dd>{$selected?.children?.length ?? 0} sub-items</dd>
+              </div>
+            {/if}
+          </Details>
+        {/if}
+      </section>
+    </div>
   </section>
 </Dialog>
 
@@ -122,7 +127,6 @@
   .dialog-chooser-window {
     position: relative;
     height: 80vh;
-    display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: flex-end;
@@ -130,6 +134,10 @@
   }
   .dialog-chooser-window * {
     box-sizing: border-box;
+  }
+
+  .dialog-chooser-body {
+    display: flex;
   }
   .dialog-chooser-chooser {
     position: relative;
@@ -146,6 +154,12 @@
     height: calc(100% - 4em);
     padding: 1em;
     overflow-y: auto;
+  }
+  .folder-info dt {
+    font-weight: bold;
+  }
+  .folder-info dd {
+    margin: 0;
   }
   header {
     position: relative;
