@@ -10,10 +10,12 @@
   export let helptext: string|undefined = undefined
   export let messages: Feedback[]
   export let required = false
+  export let conditional: boolean|undefined = undefined
   let messagesid
   const helptextid = helptext ? randomid() : undefined
 </script>
 
+{#if conditional !== false}
 <div use:eq class="dialog-field-container">
   {#if descid == null}
     <label class="dialog-field-label" for={id}>{label}{#if required}&nbsp;*{/if}</label>
@@ -28,6 +30,7 @@
   </div>
   <InlineMessages bind:id={messagesid} {messages} />
 </div>
+{/if}
 
 <style>
   .dialog-field-container {
@@ -88,5 +91,6 @@
   .dialog-field-container :global(.dialog-field-help) {
     font-size: 0.9em;
     color: #595959;
+    margin-bottom: 0.3em;
   }
 </style>

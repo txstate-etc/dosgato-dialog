@@ -37,7 +37,7 @@
   $: messages = compact ? $messageStore : []
 </script>
 
-<Container {label} {messages}>
+<Container {label} {messages} {conditional}>
   <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && index > 0}
