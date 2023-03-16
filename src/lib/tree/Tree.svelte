@@ -2,10 +2,9 @@
   import { resize, type ElementSize } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
   import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
-  import { hashid } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
-  import { TreeStore, TREE_STORE_CONTEXT } from './treestore'
+  import { getHashId, TreeStore, TREE_STORE_CONTEXT } from './treestore'
   import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB } from './treestore'
 
   type T = $$Generic<TreeItemFromDB>
@@ -113,13 +112,13 @@
     const saveFocusId = $store.focused?.id
     await store.refresh()
     if ($store.focused?.id && $store.focused.id === saveFocusId) {
-      const el = document.getElementById(hashid($store.focused.id))
+      const el = document.getElementById(getHashId($store.focused.id))
       el?.scrollIntoView({ block: 'center' })
     }
     headerSizes.set(calcHeaderSizes()) // seems to need a kick on first mount
   })
   onDestroy(() => {
-    document.removeEventListener('dragend', onDragEnd)
+    if (typeof document !== 'undefined') document.removeEventListener('dragend', onDragEnd)
   })
   let hadFocus = false
   beforeUpdate(() => {
@@ -127,7 +126,7 @@
   })
   afterUpdate(() => {
     if ($store.focused?.id) {
-      const el = document.getElementById(hashid($store.focused.id))
+      const el = document.getElementById(getHashId($store.focused.id))
       if (el && hadFocus) {
         if (el !== document.activeElement) el.focus()
       }

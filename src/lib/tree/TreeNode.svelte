@@ -6,9 +6,9 @@
   import { modifierKey, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import type { Store } from '@txstate-mws/svelte-store'
   import { createEventDispatcher, getContext } from 'svelte'
-  import { hashid, isNotBlank, toArray } from 'txstate-utils'
+  import { isNotBlank, toArray } from 'txstate-utils'
   import { Icon } from '$lib'
-  import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader } from './treestore'
+  import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader, getHashId } from './treestore'
   import LoadIcon from './LoadIcon.svelte'
   import TreeCell from './TreeCell.svelte'
 
@@ -34,7 +34,7 @@
   let userWantsCopy = false
   $: isSelected = $selected.has(item.id)
   $: showChildren = !!item.open && !!item.children?.length
-  $: hashedId = hashid(item.id)
+  $: hashedId = getHashId(item.id)
   $: isDraggable = $draggable && ((isSelected && !$selectedUndraggable) || store.dragEligible([item], true) || store.dragEligible([item], false))
   $: dropZone = $dragging && store.dropEffect(item, false, userWantsCopy) !== 'none'
   $: dropDisabled = $dragging && !dropZone

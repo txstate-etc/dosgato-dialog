@@ -1,7 +1,8 @@
 import { ActiveStore, derivedStore } from '@txstate-mws/svelte-store'
 import type { IconifyIcon } from '@iconify/svelte'
 import type { SvelteComponent } from 'svelte'
-import { keyby } from 'txstate-utils'
+import { derived } from 'svelte/store'
+import { hashid, keyby } from 'txstate-utils'
 
 export const TREE_STORE_CONTEXT = {}
 
@@ -53,10 +54,12 @@ export interface TreeHeader<T extends TreeItemFromDB> {
   class?: (item: TypedTreeItem<T>) => string | string[]
 }
 
+const rootItems = v => v.rootItems
+
 export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<T>> {
   public treeElement?: HTMLElement
 
-  public rootItems = derivedStore(this, 'rootItems')
+  public rootItems = derived(this, rootItems)
   public draggable = derivedStore(this, v => v.draggable && !v.loading)
   public dragging = derivedStore(this, 'dragging')
   public selectedUndraggable = derivedStore(this, 'selectedUndraggable')
@@ -93,7 +96,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
 
   async visit (item: TypedTreeItem<T>, cb: (item: TypedTreeItem<T>) => Promise<void>) {
     await cb(item)
-    await Promise.all((item.children ?? []).map(async child => await this.visit(child, cb)))
+    await Promise.all((item.children ?? []).map(async child => { await this.visit(child, cb) }))
   }
 
   visitSync (item: TypedTreeItem<T>, cb: (item: TypedTreeItem<T>) => void) {
@@ -143,14 +146,16 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     try {
       const children = await this.fetch(item)
       // re-open any open children
-      await Promise.all(children.map(async (child: TypedTreeItem<T>) => await this.visit(child, async (child) => {
-        child.open = this.value.itemsById[child.id]?.open
-        if (child.open) {
-          child.children = await this.fetch(child)
-          child.hasChildren = child.children.length > 0
-          if (!child.hasChildren) child.open = false
-        }
-      })))
+      await Promise.all(children.map(async (child: TypedTreeItem<T>) => {
+        await this.visit(child, async (child) => {
+          child.open = this.value.itemsById[child.id]?.open
+          if (child.open) {
+            child.children = await this.fetch(child)
+            child.hasChildren = child.children.length > 0
+            if (!child.hasChildren) child.open = false
+          }
+        })
+      }))
 
       if (item) {
         this.visitSync(item, itm => { if (itm.id !== item.id) this.value.itemsById[itm.id] = undefined })
@@ -396,4 +401,10 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.value.headerWidthOverrides = {}
     this.trigger()
   }
+}
+
+export const hashedIds: Record<string, string> = {}
+export function getHashId (str: string) {
+  hashedIds[str] ??= hashid(str)
+  return hashedIds[str]
 }
