@@ -2,9 +2,10 @@
   import { MultiSelect } from '@txstate-mws/svelte-components'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
   import { Store } from '@txstate-mws/svelte-store'
-  import FieldStandard from './FieldStandard.svelte'
   import { onMount } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
+  import FieldStandard from './FieldStandard.svelte'
+  import { getDescribedBy } from './helpers'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -16,6 +17,9 @@
   export let required = false
   export let maxSelections = 0
   export let getOptions: (search: string) => Promise<PopupMenuItem[]>
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
+  export let helptext: string | undefined = undefined
 
   // each time we run getOptions we will save the value -> label mappings
   // that it finds, so that we can display labels on pills
@@ -59,10 +63,10 @@
 
 <div bind:this={inputelement}></div>
 {#if hasInit}
-  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} let:value let:valid let:invalid let:id let:onBlur let:setVal>
+  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} usePortal={portal} {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}></MultiSelect>
+      <MultiSelect {id} name={path} usePortal={portal} descid={getDescribedBy([messagesid, helptextid, extradescid])} {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur} />
     </div>
   </FieldStandard>
 {/if}

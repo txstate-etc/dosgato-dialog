@@ -1,11 +1,13 @@
 <script lang="ts">
   import menuRight from '@iconify-icons/mdi/menu-right.js'
   import menuLeft from '@iconify-icons/mdi/menu-left.js'
-  import FieldStandard from './FieldStandard.svelte'
   import { type PopupMenuItem, ScreenReaderOnly, modifierKey } from '@txstate-mws/svelte-components'
+  import { randomid } from 'txstate-utils'
+  import FieldStandard from './FieldStandard.svelte'
   import Icon from './Icon.svelte'
   import Listbox from './Listbox.svelte'
-  import { randomid } from 'txstate-utils'
+  import { getDescribedBy } from '$lib'
+
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
@@ -16,6 +18,9 @@
   export let defaultValue: string[] = []
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
+  export let helptext: string | undefined = undefined
 
   let itemsToAdd: PopupMenuItem[] = [] // the items selected in the left listbox
   let itemsToRemove: PopupMenuItem[] = [] // the items selected in the right listbox
@@ -80,12 +85,12 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} let:value let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:helptextid let:messagesid>
   <div {id} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
     <ScreenReaderOnly>
       <span aria-live="polite">{instructions}</span>
     </ScreenReaderOnly>
-    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} {descid} {valid} {invalid} on:change={e => { itemsToAdd = e.detail }} selected={itemsToAdd} on:blur={onBlur}/>
+    <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} {valid} {invalid} on:change={e => { itemsToAdd = e.detail }} selected={itemsToAdd} on:blur={onBlur}/>
     <div class="toolbar">
       <button type="button" class="toolbar-button" title="Move selection to {selectedLabel}" disabled={itemsToAdd.length === 0} on:click={addToSelected(value, setVal)}>
         <Icon icon={menuRight} width='3em'/>
@@ -94,7 +99,7 @@
         <Icon icon={menuLeft} width='3em'/>
       </button>
     </div>
-    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} {descid} {valid} {invalid} on:change={e => { itemsToRemove = e.detail }} selected={itemsToRemove} on:blur={onBlur}/>
+    <Listbox label={selectedLabel} multiselect={multiselect} items={valueToSelectedChoices(value)} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} {valid} {invalid} on:change={e => { itemsToRemove = e.detail }} selected={itemsToRemove} on:blur={onBlur}/>
   </div>
 </FieldStandard>
 

@@ -22,6 +22,8 @@
   export let urlEntry = false
   export let initialSource: string|undefined = undefined
   export let initialPath: string|undefined = undefined
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let selectedAsset: AnyItem|RawURL|undefined = undefined
 
@@ -125,7 +127,7 @@
   $: updateSelected($value)
 </script>
 
-<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
   {#if selectedAsset}
     <div class="dialog-chooser-container">
       <Thumbnail item={selectedAsset} />
@@ -136,7 +138,7 @@
     {#if urlEntry}
       <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:keyup={userUrlEntry}>
     {/if}
-    <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
+    <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
   </div>
   {#if modalshown}
     <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} on:change={onChange(setVal)} on:escape={hide} />

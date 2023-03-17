@@ -10,11 +10,12 @@
   export let onBlur: any = undefined
   export let messagesid: string|undefined = undefined
   export let helptextid: string|undefined = undefined
+  export let extradescid: string|undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false
 
-  $: descby = [messagesid, helptextid].filter(isNotBlank).join(' ')
+  $: descby = [messagesid, helptextid, extradescid].filter(isNotBlank).join(' ')
 </script>
 
 <input {id} type="radio" {name} class:valid class:invalid checked={selected} {disabled} aria-describedby={descby} {value} on:change={onChange} on:blur={onBlur}>

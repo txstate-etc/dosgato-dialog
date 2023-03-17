@@ -14,7 +14,9 @@
   export let horizontal = false
   export let label: string
   export let required = false
-  export let helptext: string|undefined = undefined
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
+  export let helptext: string | undefined = undefined
   export let messages: Feedback[] = []
   export let iptValue = choices[0].value
   export let valid = false
@@ -33,12 +35,12 @@
   $: columns = Math.floor($store.width / 250)
   $: width = (horizontal ? 100 / Math.min(choices.length, choices.length === 4 && columns === 3 ? 2 : columns) : 100) + '%'
 </script>
-<Container {id} {label} {messages} descid={groupid} {required} {helptext} let:helptextid>
+<Container {id} {label} {messages} descid={groupid} {required} {related} {helptext} let:helptextid>
   <div class="dialog-radio {className}" use:eq={{ store }} class:horizontal role="radiogroup" aria-labelledby={groupid} class:valid class:invalid>
     {#each choices as choice, idx}
       {@const radioid = `${groupid}.${idx}`}
       <label for={radioid} style:width>
-        <Radio id={radioid} {name} value={choice.value} selected={iptValue === choice.value} disabled={choice.disabled} {onChange} {onBlur} {helptextid}/>
+        <Radio id={radioid} {name} value={choice.value} selected={iptValue === choice.value} disabled={choice.disabled} {onChange} {onBlur} {helptextid} {extradescid} />
         <span>{choice.label || choice.value}</span>
       </label>
     {/each}

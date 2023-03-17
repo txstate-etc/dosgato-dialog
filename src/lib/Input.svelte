@@ -15,6 +15,7 @@
   export let step: number|undefined = undefined
   export let id: string|undefined = undefined
   export let disabled = false
+  export let extradescid: string|undefined = undefined
   export let messagesid: string|undefined = undefined
   export let helptextid: string|undefined = undefined
   export let valid = false
@@ -25,7 +26,7 @@
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLInputElement = undefined as any
 
-  $: descby = [helptextid, messagesid].filter(isNotBlank).join(' ')
+  $: descby = [messagesid, helptextid, extradescid].filter(isNotBlank).join(' ')
 
   function resolveMinMax (dt: any) {
     if (typeof dt === 'undefined') return undefined

@@ -1,9 +1,13 @@
+<script lang="ts" context="module">
+  export const DG_DIALOG_FIELD_MULTIPLE = {}
+  function noOp (..._: any[]) { return '' }
+</script>
 <script lang="ts">
   import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
   import { AddMore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
-  import { getContext } from 'svelte'
+  import { getContext, setContext } from 'svelte'
   import { isNotNull } from 'txstate-utils'
   import Button from './Button.svelte'
   import Container from './Container.svelte'
@@ -20,7 +24,11 @@
   export let addMoreText = 'Add'
   export let maxedText = addMoreText
   export let addMoreClass: string|undefined = undefined
+  export let related: true | number = 0
+  export let helptext: string | undefined = undefined
 
+  const fieldMultipleContext: { helptextid: string | undefined } = { helptextid: undefined }
+  setContext(DG_DIALOG_FIELD_MULTIPLE, fieldMultipleContext)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotNull).join('.')
   const store = getContext<FormStore>(FORM_CONTEXT)
@@ -37,13 +45,14 @@
   $: messages = compact ? $messageStore : []
 </script>
 
-<Container {label} {messages} {conditional}>
+<Container {label} {messages} {conditional} {related} {helptext} let:helptextid>
+  {noOp(fieldMultipleContext.helptextid = helptextid)}
   <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && index > 0}
     <div class="dialog-multiple" class:has-delete-icon={showDelete}>
       <div class="dialog-multiple-content">
-        <slot {path} {index} {value} {maxed} {maxLength} {currentLength} />
+        <slot {path} {index} {value} {maxed} {maxLength} {currentLength}/>
       </div>
       {#if showDelete || showMove}<div class="dialog-multiple-buttons">
         {#if reorder}<button bind:this={reorderelements[index]} class="dialog-multiple-move" type="button" aria-hidden={!showMove} disabled={!showMove} style:visibility={showMove ? 'visible' : 'hidden'} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}>^</button>{/if}

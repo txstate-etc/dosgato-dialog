@@ -144,6 +144,7 @@
   {/each}
 </div>
 {#if $rootItems?.length}
+  <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd}>
     {#each $rootItems as item, i (item.id)}
       <TreeNode

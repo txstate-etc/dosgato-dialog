@@ -18,6 +18,8 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let inputelement: HTMLInputElement = undefined as any
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 
   let inputvalue = ''
@@ -86,9 +88,9 @@
   })
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={finalserialize} deserialize={finaldeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:messagesid let:helptextid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={finalserialize} deserialize={finaldeserialize} let:value let:setVal let:valid let:invalid let:id let:onBlur let:messagesid let:helptextid>
   {@const _ = reactToValue(value, setVal)}
-  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:keyup={onKeyUp(setVal)} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid])}>
+  <input bind:this={inputelement} bind:value={inputvalue} {id} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:keyup={onKeyUp(setVal)} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
   <PopupMenu bind:menushown bind:menuid align="bottomleft" usePortal={portal} items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   <ScreenReaderOnly arialive="polite" ariaatomic={true} id={liveTextId}>
     {filteredChoices.length} {filteredChoices.length === 1 ? 'option' : 'options'} available.

@@ -6,6 +6,7 @@
   import { randomid } from 'txstate-utils'
   import Container from './Container.svelte'
   import Checkbox from './Checkbox.svelte'
+  import { getDescribedBy } from './helpers'
 
   let className = ''
   export { className as class }
@@ -17,6 +18,8 @@
   export let conditional: boolean|undefined = undefined
   export let maxwidth = 250
   export let leftToRight = false
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 
   const store = getContext<FormStore>(FORM_CONTEXT)
@@ -44,14 +47,14 @@
 </script>
 
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid>
-  <Container {id} {label} {messages} {descid} {helptext} let:messagesid let:helptextid>
+  <Container {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#each choices as choice, idx}
         {@const checkid = `${path}.${idx}`}
         {@const included = value && value.includes(choice.value)}
         {@const label = choice.label || (typeof choice.value === 'string' ? choice.value : '')}
         <label for={checkid} style:width style:order={orders[idx]}>
-          <Checkbox id={checkid} name={checkid} value={included} {messagesid} {helptextid} {descid} disabled={choice.disabled} onChange={() => onChangeCheckbox(setVal, choice, included)} {onBlur} />
+          <Checkbox id={checkid} name={checkid} value={included} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} disabled={choice.disabled} onChange={() => onChangeCheckbox(setVal, choice, included)} {onBlur} />
           <span>{label}</span>
         </label>
       {/each}

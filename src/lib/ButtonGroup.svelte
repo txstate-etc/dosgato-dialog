@@ -49,6 +49,7 @@
 {#if name}
   <input type="hidden" {name} {value}>
 {/if}
+<!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
 <ul class="dialog-btn-group" class:disabled class:valid class:invalid aria-disabled={disabled} role="radiogroup" aria-labelledby={groupid} on:blur>
   {#each choices as choice, i}
     {@const selected = choice.value === value}

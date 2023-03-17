@@ -16,11 +16,13 @@
   export let required = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLTextAreaElement = undefined as any
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  <textarea bind:this={inputelement} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={getDescribedBy([messagesid, helptextid])} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste {maxlength} use:passActions={use}></textarea>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
+  <textarea bind:this={inputelement} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste {maxlength} use:passActions={use}></textarea>
 </FieldStandard>
 
 <style>

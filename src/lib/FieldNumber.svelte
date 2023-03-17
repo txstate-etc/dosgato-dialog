@@ -15,9 +15,11 @@
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let inputelement: HTMLInputElement = undefined as any
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid>
-  <Input bind:inputelement type="number" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {helptextid}></Input>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid>
+  <Input bind:inputelement type="number" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {helptextid} {extradescid}></Input>
 </FieldStandard>

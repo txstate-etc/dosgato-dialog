@@ -87,6 +87,7 @@
 
 {#if $store.tabs.length > 1}
   {#if !$accordion}
+    <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
     <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
       {#each $store.tabs as tab, idx (tab.name)}
         {@const active = isActive(idx, $store.current)}

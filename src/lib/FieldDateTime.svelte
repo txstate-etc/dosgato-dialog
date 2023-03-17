@@ -13,9 +13,11 @@
   export let step: number|undefined = undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
+  export let related: true | number = 0
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid>
-  <Input type="datetime-local" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {helptextid}/>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid let:messagesid>
+  <Input type="datetime-local" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
 </FieldStandard>

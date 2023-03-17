@@ -114,6 +114,7 @@
 
 <div class="listbox-container" class:valid class:invalid>
   <span id={labelId}>{label}</span>
+  <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={listboxElement} role="listbox" id={listId} class="listbox-items" tabindex="0" aria-describedby={descid} aria-labelledby={labelId} aria-multiselectable={multiselect} on:keydown={onkeydown} on:focus={focusListbox}>
     {#each items as item, i (item.value)}
       <!-- svelte-ignore a11y-click-events-have-key-events -->

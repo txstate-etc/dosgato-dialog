@@ -50,8 +50,8 @@
 <FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data>
   <Tabs {tabs}>
     <Tab name="Add More">
-      <FieldText path="test" label="Test" required/>
-      <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} let:index>
+      <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it."/>
+      <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} helptext="test" let:index>
         <FieldText path="first" label="First Name" helptext="This is some test helptext." />
         <FieldText path="last" label="Last Name" />
       </FieldMultiple>
@@ -68,7 +68,7 @@
     </Tab>
     <Tab name="Dates">
       <FieldDate path="date" label="Just a Date" min={new Date()} />
-      <FieldDateTime path="datetime" label="Date & Time" min={new Date()} />
+      <FieldDateTime path="datetime" label="Date & Time" min={new Date()} related />
     </Tab>
     <Tab name="Selections">
       <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
