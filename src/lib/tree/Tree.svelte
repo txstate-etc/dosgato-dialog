@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resize, type ElementSize } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
-  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
+  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
   import { getHashId, TreeStore, TREE_STORE_CONTEXT } from './treestore'
@@ -107,15 +107,20 @@
     store.resetHeaderOverride()
   }
 
+  let mounted = false
   onMount(async () => {
     document.addEventListener('dragend', onDragEnd)
     const saveFocusId = $store.focused?.id
+    headerSizes.set(calcHeaderSizes()) // seems to need a kick on first mount
+    await new Promise(resolve => requestAnimationFrame(resolve))
+    // need to wait long enough for headers to redraw before trying to mount the rows
+    await new Promise(resolve => requestAnimationFrame(resolve))
+    mounted = true
     await store.refresh()
     if ($store.focused?.id && $store.focused.id === saveFocusId) {
       const el = document.getElementById(getHashId($store.focused.id))
       el?.scrollIntoView({ block: 'center' })
     }
-    headerSizes.set(calcHeaderSizes()) // seems to need a kick on first mount
   })
   onDestroy(() => {
     if (typeof document !== 'undefined') document.removeEventListener('dragend', onDragEnd)
@@ -143,7 +148,7 @@
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
-{#if $rootItems?.length}
+{#if mounted && $rootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd}>
     {#each $rootItems as item, i (item.id)}
