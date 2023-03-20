@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import { eq } from '@txstate-mws/svelte-components'
+  import { eq, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { randomid } from 'txstate-utils'
   import { getContext } from 'svelte'
   import { DG_DIALOG_FIELD_MULTIPLE } from './FieldMultiple.svelte'
@@ -22,6 +22,8 @@
   const helptextid = randomid()
   $: descids = getDescribedBy([helptext ? helptextid : undefined, dgMultipleContext?.helptextid])
   let showhelp = false
+  let helpelement: HTMLDivElement
+  $: needsShowHelp = needsShowHelp || (helpelement?.clientWidth < helpelement?.scrollWidth)
 </script>
 
 {#if conditional !== false}
@@ -34,7 +36,12 @@
   <div class="dialog-field-content">
     {#if helptext}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <div id={helptextid} class="dialog-field-help" class:expanded={showhelp} on:click={() => { showhelp = !showhelp }}>{helptext}</div>
+      <div bind:this={helpelement} id={helptextid} class="dialog-field-help" aria-expanded={needsShowHelp ? showhelp : undefined} class:needsShowHelp class:expanded={showhelp} on:click={() => { showhelp = !showhelp }}>
+        {helptext}
+        {#if needsShowHelp}
+          <button type="button" class="dialog-field-help-expand">Show {#if showhelp}Less{:else}More{/if}<ScreenReaderOnly>, ignore this, the help text it controls will be read to you as input description</ScreenReaderOnly></button>
+        {/if}
+      </div>
     {/if}
     <slot {messagesid} helptextid={descids} />
   </div>
@@ -120,10 +127,32 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    cursor: help;
   }
   .dialog-field-help.expanded {
     white-space: normal;
     max-height: fit-content;
+  }
+  .dialog-field-help.needsShowHelp {
+    padding-right: 6em;
+    cursor: help;
+  }
+  .dialog-field-help.expanded {
+    padding-right: 0;
+  }
+  .dialog-field-help:not(.expanded) .dialog-field-help-expand {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+  }
+  .dialog-field-help-expand {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .dialog-field-help-expand:hover {
+    text-decoration: none;
   }
 </style>
