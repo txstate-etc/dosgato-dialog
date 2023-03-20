@@ -116,11 +116,9 @@
     // need to wait long enough for headers to redraw before trying to mount the rows
     await new Promise(resolve => requestAnimationFrame(resolve))
     mounted = true
+    const el = saveFocusId ? document.getElementById(getHashId(saveFocusId)) : undefined
+    if ($store.focused?.id && $store.focused.id === saveFocusId) el?.scrollIntoView({ block: 'center' })
     await store.refresh()
-    if ($store.focused?.id && $store.focused.id === saveFocusId) {
-      const el = document.getElementById(getHashId($store.focused.id))
-      el?.scrollIntoView({ block: 'center' })
-    }
   })
   onDestroy(() => {
     if (typeof document !== 'undefined') document.removeEventListener('dragend', onDragEnd)
