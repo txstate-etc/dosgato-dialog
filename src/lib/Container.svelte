@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import { eq, ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { eq, resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { randomid } from 'txstate-utils'
   import { getContext } from 'svelte'
   import { DG_DIALOG_FIELD_MULTIPLE } from './FieldMultiple.svelte'
@@ -22,8 +22,13 @@
   const helptextid = randomid()
   $: descids = getDescribedBy([helptext ? helptextid : undefined, dgMultipleContext?.helptextid])
   let showhelp = false
-  let helpelement: HTMLDivElement
-  $: needsShowHelp = needsShowHelp || (helpelement?.clientWidth < helpelement?.scrollWidth)
+  let helpelement: HTMLSpanElement
+  let needsShowHelp = false
+  function setNeedsShowHelp (..._: any[]) {
+    needsShowHelp = (helpelement?.getClientRects().length ?? 0) > 1
+    if (!needsShowHelp) showhelp = false
+  }
+  $: setNeedsShowHelp(helpelement)
 </script>
 
 {#if conditional !== false}
@@ -36,8 +41,8 @@
   <div class="dialog-field-content">
     {#if helptext}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <div bind:this={helpelement} id={helptextid} class="dialog-field-help" aria-expanded={needsShowHelp ? showhelp : undefined} class:needsShowHelp class:expanded={showhelp} on:click={() => { showhelp = !showhelp }}>
-        {helptext}
+      <div use:resize={{ debounce: 10 }} on:resize={setNeedsShowHelp} id={helptextid} class="dialog-field-help" class:needsShowHelp class:expanded={showhelp} on:click={() => { if (needsShowHelp) showhelp = !showhelp }}>
+        <span bind:this={helpelement}>{helptext}</span>
         {#if needsShowHelp}
           <button type="button" class="dialog-field-help-expand">Show {#if showhelp}Less{:else}More{/if}<ScreenReaderOnly>, ignore this, the help text it controls will be read to you as input description</ScreenReaderOnly></button>
         {/if}

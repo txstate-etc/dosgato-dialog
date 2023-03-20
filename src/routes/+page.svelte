@@ -52,7 +52,7 @@
     <Tab name="Add More">
       <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it."/>
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} helptext="test" let:index>
-        <FieldText path="first" label="First Name" helptext="This is some test helptext." />
+        <FieldText path="first" label="First Name" helptext="This is some test helptext. It's a little long so we can test wrapping at different screen sizes." />
         <FieldText path="last" label="Last Name" />
       </FieldMultiple>
       <FieldMultiple removable reorder path="multi_scalar" label="Just Names" initialState={'Barney'} let:index>
