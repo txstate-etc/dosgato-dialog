@@ -24,7 +24,7 @@ export interface IAssetStore {
   activetype: ChooserType
   activesource: number
   initialized: boolean
-  preview?: AnyItem
+  preview?: AnyUIItem
 }
 
 export interface ChooserStoreOptions<F> {
@@ -68,7 +68,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   setOptions (options: ChooserStoreOptions<F>) {
     const userFilter = options.filter ?? nofilter
     const filter = options.images
-      ? (itm: AnyUIItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') && userFilter(itm)
+      ? async (itm: AnyUIItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') && await userFilter(itm)
       : userFilter
     this.options = {
       ...options,
@@ -105,8 +105,8 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
     this.update(v => ({ ...v, initialized: true }))
   }
 
-  setPreview (item?: AnyItem) {
-    if (!item) return this.clearPreview()
+  setPreview (item?: AnyUIItem) {
+    if (!item) { this.clearPreview(); return }
     if (item.type === 'folder' && !this.options.folders) return
     this.update(v => ({ ...v, preview: item }))
   }

@@ -1,8 +1,7 @@
 <script lang="ts">
-  import type { AnyItem } from './ChooserAPI'
-  import { bytesToHuman, type RawURL } from './ChooserStore'
+  import { bytesToHuman, type AnyUIItem, type RawURL } from './ChooserStore'
 
-  export let item: AnyItem|RawURL
+  export let item: AnyUIItem|RawURL
 </script>
 
 <dl class="dialog-chooser-info" aria-live="polite">
@@ -18,7 +17,7 @@
     </div>
   {/if}
   {#if item.type === 'asset'}
-    <div class="asset-properties">
+    <div class="horizontal-group">
       {#if item.image}
         <div>
           <dt>Dimensions:</dt>
@@ -35,14 +34,18 @@
       </div>
     </div>
   {:else if item.type === 'page' && item.title}
-    <div>
-      <dt>Title:</dt>
-      <dd>{item.title}</dd>
-    </div>
+    <dt>Title:</dt>
+    <dd>{item.title}</dd>
   {:else if item.type === 'folder'}
-    <div>
-      <dt>Path:</dt>
-      <dd>{item.path}</dd>
+    <div class="horizontal-group">
+      <div>
+        <dt>Path:</dt>
+        <dd>{item.path}</dd>
+      </div>
+      <div>
+        <dt>Contents:</dt>
+        <dd>{item.children?.length ?? 0} sub-items</dd>
+      </div>
     </div>
   {/if}
   <slot />
@@ -63,14 +66,14 @@
   .top-row {
     margin-bottom: 1em;
   }
-  .asset-properties {
+  .horizontal-group {
     display: flex;
     justify-content: space-between;
   }
-  :global([data-eq~="1400px"]) .asset-properties {
+  :global([data-eq~="1400px"]) .horizontal-group {
     flex-direction: column;
   }
-  :global([data-eq~="1400px"]) .asset-properties div:not(:last-child){
+  :global([data-eq~="1400px"]) .horizontal-group div:not(:last-child){
     margin-bottom: 1em;
   }
 </style>
