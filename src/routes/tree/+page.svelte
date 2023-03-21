@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Tree, type TreeItemFromDB } from '$lib'
+  import { Tree, TreeStore, type TreeItemFromDB } from '$lib'
   import { bytesToHuman, randomid } from 'txstate-utils'
 
   interface TestItem extends TreeItemFromDB {
@@ -24,10 +24,24 @@
     if (!item) return rootItems
     return item.dbChildren
   }
+  const treestore = new TreeStore(fetchChildren)
+  let showtree = true
 </script>
-<Tree {fetchChildren} headers={[
-  { id: 'name', label: 'Name', get: 'name' },
-  { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
-  { id: 'type', label: 'Type', get: 'type' },
-  { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
-]}/>
+<button type="button" on:click={() => { showtree = !showtree }}>Toggle</button>
+{#if showtree}
+  <Tree store={treestore} headers={[
+    { id: 'name', label: 'Name', get: 'name' },
+    { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
+    { id: 'type', label: 'Type', get: 'type' },
+    { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
+  ]}/>
+{/if}
+
+<style>
+  button {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 10000;
+  }
+</style>

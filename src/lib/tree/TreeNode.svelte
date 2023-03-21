@@ -5,7 +5,7 @@
   import menuRight from '@iconify-icons/mdi/menu-right'
   import { modifierKey, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import type { Store } from '@txstate-mws/svelte-store'
-  import { createEventDispatcher, getContext } from 'svelte'
+  import { createEventDispatcher, getContext, onMount } from 'svelte'
   import { isNotBlank, toArray } from 'txstate-utils'
   import { Icon } from '$lib'
   import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader, getHashId } from './treestore'
@@ -217,6 +217,10 @@
     if (!dropAbove) dragOverAbove = 0
     else dragOverAbove--
   }
+
+  onMount(() => {
+    if ($focused && $focused.id === item.id) nodeelement.scrollIntoView({ block: 'center' })
+  })
 
   $: if ($dragging) {
     dragOver = 0

@@ -110,14 +110,11 @@
   let mounted = false
   onMount(async () => {
     document.addEventListener('dragend', onDragEnd)
-    const saveFocusId = $store.focused?.id
     headerSizes.set(calcHeaderSizes()) // seems to need a kick on first mount
     await new Promise(resolve => requestAnimationFrame(resolve))
     // need to wait long enough for headers to redraw before trying to mount the rows
     await new Promise(resolve => requestAnimationFrame(resolve))
     mounted = true
-    const el = saveFocusId ? document.getElementById(getHashId(saveFocusId)) : undefined
-    if ($store.focused?.id && $store.focused.id === saveFocusId) el?.scrollIntoView({ block: 'center' })
     await store.refresh()
   })
   onDestroy(() => {
