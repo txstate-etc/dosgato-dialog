@@ -168,7 +168,7 @@
   .tree-header {
     display: flex;
     align-items: center;
-    background-color: var(--tree-head-bg, #555555);
+    background-color: var(--tree-head-bg, #757575);
     color: var(--tree-head-text, white);
     position: sticky;
     top: 0;

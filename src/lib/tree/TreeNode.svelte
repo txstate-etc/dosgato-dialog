@@ -352,7 +352,7 @@
     color: var(--tree-selected-text, inherit);
   }
   .tree-node.dragOver {
-    background-color: var(--tree-droppable, #555555);
+    background-color: var(--tree-droppable, #757575);
     color: var(--tree-droppable-text, white);
   }
   .tree-node.dropDisabled {
@@ -366,7 +366,7 @@
     height: 6px;
   }
   .drop-above.dragOverAbove {
-    background-color: var(--tree-droppable, #555555);
+    background-color: var(--tree-droppable, #757575);
   }
   li {
     position: relative;
