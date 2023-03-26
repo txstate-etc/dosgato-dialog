@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
 import { randomid } from 'txstate-utils'
 
@@ -32,6 +33,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         url: '/assets/biology',
         acceptsUpload: true,
         hasChildren: true,
+        childCount: 2,
         children: [
           {
             type: 'folder',
@@ -41,6 +43,7 @@ const assets: Record<string, RootFolder | RootPage> = {
             url: '/assets/biology/evolutionary',
             acceptsUpload: false,
             hasChildren: true,
+            childCount: 1,
             children: [
               { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
             ]
@@ -56,6 +59,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         url: '/assets/chemistry',
         acceptsUpload: true,
         hasChildren: true,
+        childCount: 1,
         children: [
           { type: 'folder', id: 'folder-6', name: 'organic', path: '/chemistry/organic', url: '/assets/chemistry/organic', acceptsUpload: true, hasChildren: false }
         ]
@@ -68,6 +72,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         url: '/assets/physics',
         acceptsUpload: true,
         hasChildren: true,
+        childCount: 4,
         children: [
           { type: 'asset', id: 'asset-1', path: '/physics/cannondiagram.png', name: 'cannondiagram.png', mime: 'image/png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
           { type: 'asset', id: 'asset-2', path: '/physics/modernphysics.pdf', name: 'modernphysics.pdf', mime: 'application/pdf', bytes: 1264, url: '/blankpdf.pdf' },
@@ -76,7 +81,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         ]
       }
     ]
-  },
+  } as RootFolder,
   Canto: {
     children: []
   },
@@ -139,7 +144,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         hasChildren: false
       }
     ]
-  }
+  } as RootPage
 }
 
 class DemoChooserAPI implements Client {
