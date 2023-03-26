@@ -409,12 +409,12 @@ export function getHashId (str: string) {
   return hashedIds[str]
 }
 
-const lazyEvent = new CustomEvent('lazy')
+const lazyEvent = typeof CustomEvent !== 'undefined' ? new CustomEvent('lazy') : undefined
 export const lazyObserver = typeof IntersectionObserver !== 'undefined'
   ? new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
-        entry.target.dispatchEvent(lazyEvent)
+        entry.target.dispatchEvent(lazyEvent!)
         lazyObserver!.unobserve(entry.target)
       }
     }
