@@ -1,7 +1,7 @@
 import type { TypedTreeItem } from '$lib/tree/treestore.js'
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
 import { tick } from 'svelte'
-import { findIndex, isBlank } from 'txstate-utils'
+import { findIndex } from 'txstate-utils'
 import type { AnyItem, Asset, Client, ChooserType, Folder, Page, Source } from './ChooserAPI.js'
 
 export interface UISource extends Source {
@@ -24,7 +24,7 @@ export interface IAssetStore {
   activetype: ChooserType
   activesource: number
   initialized: boolean
-  preview?: AnyUIItem
+  preview?: AnyItem | AnyUIItem
 }
 
 export interface ChooserStoreOptions<F> {
@@ -105,7 +105,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
     this.update(v => ({ ...v, initialized: true }))
   }
 
-  setPreview (item?: AnyUIItem) {
+  setPreview (item?: AnyItem | AnyUIItem) {
     if (!item) { this.clearPreview(); return }
     if (item.type === 'folder' && !this.options.folders) return
     this.update(v => ({ ...v, preview: item }))

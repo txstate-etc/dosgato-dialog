@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { bytesToHuman, type AnyUIItem, type RawURL } from './ChooserStore'
+  import type { AnyItem } from './ChooserAPI'
+  import { bytesToHuman, type RawURL } from './ChooserStore'
 
-  export let item: AnyUIItem|RawURL
+  export let item: AnyItem|RawURL
 </script>
 
 <dl class="dialog-chooser-info" aria-live="polite">
@@ -44,7 +45,7 @@
       </div>
       <div>
         <dt>Contents:</dt>
-        <dd>{item.children?.length ?? 0} sub-items</dd>
+        <dd>{item.childCount} sub-items</dd>
       </div>
     </div>
   {/if}

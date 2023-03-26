@@ -85,6 +85,7 @@ interface Item {
 export interface Folder extends Item {
   type: 'folder'
   hasChildren: boolean
+  childCount: number
   acceptsUpload: boolean // from the current authenticated user
   url: string
 }
