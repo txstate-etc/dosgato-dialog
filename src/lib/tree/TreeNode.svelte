@@ -8,7 +8,7 @@
   import { createEventDispatcher, getContext, onMount } from 'svelte'
   import { isNotBlank, toArray } from 'txstate-utils'
   import { Icon } from '$lib'
-  import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader, getHashId } from './treestore'
+  import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader, getHashId, lazyObserver } from './treestore'
   import LoadIcon from './LoadIcon.svelte'
   import TreeCell from './TreeCell.svelte'
 
@@ -218,8 +218,12 @@
     else dragOverAbove--
   }
 
-  onMount(() => {
+  let display = $focused && $focused.id === item.id
+  onMount(async () => {
     if ($focused && $focused.id === item.id) nodeelement.scrollIntoView({ block: 'center' })
+    nodeelement.addEventListener('lazy', () => { display = true })
+    lazyObserver!.observe(nodeelement)
+    return () => lazyObserver!.unobserve(nodeelement)
   })
 
   $: if ($dragging) {
@@ -266,6 +270,7 @@
     on:mousedown={e => { if (e.shiftKey) e.preventDefault() }}
     on:dblclick={onDblClick}
   >
+  {#if display}
     <!-- keyboard users have modifier keys, they don't ever focus the checkbox -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="checkbox" on:click={onCheckClick}>
@@ -294,6 +299,7 @@
       {#if item.hasChildren && !showChildren}, right arrow to show children{/if}
       {#if $selected.size > 0}, command-enter to select multiple, shift-enter to select all from last selection{/if}
     </ScreenReaderOnly>
+  {/if}
   </div>
   {#if showChildren && item.children}
     <ul role="group">
@@ -325,6 +331,7 @@
     border-bottom: var(--tree-border, 1px dashed #aaaaaa);
     width: 100%;
     overflow: hidden;
+    min-height: 2.9em;
   }
   :global(.resizing) .tree-node {
     cursor: col-resize;

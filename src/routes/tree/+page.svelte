@@ -11,7 +11,7 @@
   }
 
   const rootItems: TestItem[] = []
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 5000; i++) {
     const itm: TestItem = { id: randomid(), hasChildren: true, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [] }
     const numChildren = 1 + Math.floor(9 * Math.random())
     for (let i = 0; i < numChildren; i++) {
