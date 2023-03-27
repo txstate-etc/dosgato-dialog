@@ -331,7 +331,7 @@
     border-bottom: var(--tree-border, 1px dashed #aaaaaa);
     width: 100%;
     overflow: hidden;
-    min-height: 2.9em;
+    min-height: calc(2.7em + 2px);
   }
   :global(.resizing) .tree-node {
     cursor: col-resize;
@@ -364,6 +364,9 @@
   }
   .tree-node.dropDisabled {
     opacity: 0.6;
+  }
+  .tree-node :global(svg) {
+    display: block;
   }
   .drop-above {
     position: absolute;
