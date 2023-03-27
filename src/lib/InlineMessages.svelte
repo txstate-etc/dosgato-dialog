@@ -1,10 +1,13 @@
+<!-- @component
+  This renders the `Feedback` messages bound to it if there are any to display.
+-->
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { randomid } from 'txstate-utils'
   import InlineMessage from './InlineMessage.svelte'
 
-  export let id: string|undefined = randomid()
   export let messages: Feedback[]
+  export let id: string|undefined = randomid()
 
   const savedid = id
   $: id = messages.length ? savedid : undefined

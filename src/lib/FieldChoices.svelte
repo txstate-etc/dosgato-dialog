@@ -1,3 +1,9 @@
+<!-- @component
+  A Field component for dynamically rendering checkbox choices accross the available width of a `<div>`. If there are more
+  choices than the available width of the `<div>` will support then it will create multiple rows to render within using
+  flex. Ordering is top down by default but can be order horizontally by toggling `leftToRight`.
+  The value of the field will be an array corresponding to the values of the checkboxes that are checked.
+-->
 <script lang="ts">
   import { getContext } from 'svelte'
   import { Field, FORM_CONTEXT } from '@txstate-mws/svelte-forms'

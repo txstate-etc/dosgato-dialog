@@ -1,8 +1,14 @@
+<!-- @component
+  This is a wrapper component around iconify's [OfflineIcon](https://docs.iconify.design/icon-components/svelte/offline.html)
+  implementation of icons that adds a hidden label that can be read by screen readers. Useful for situations where aria-label
+  isn't supported, to provide in kind icon support, while still making use of aria attributes regardless of support.
+-->
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import type { IconifyIcon } from '@iconify/svelte'
   import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
   export let icon: IconifyIcon|undefined
+  /** Label used in a `<ScreenReaderOnly>`. */
   export let hiddenLabel: string|undefined = undefined
   export let inline: boolean = false
   export let width: string|number = '1em'

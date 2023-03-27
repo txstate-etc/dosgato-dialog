@@ -1,3 +1,7 @@
+<!-- @component
+  The purpose of `<Container>` is to provide common rendering for helptext, screen reader support,
+  and `Feedback` messages for its slotted components under a common `<div>` useful for form fields.
+-->
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { eq, resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
@@ -7,14 +11,20 @@
   import InlineMessages from './InlineMessages.svelte'
   import { getDescribedBy } from '$lib'
 
-  export let id: string|undefined = undefined
-  export let descid: string|undefined = undefined
+  /** A label for the Container `<div>`. */
   export let label: string
-  export let helptext: string|undefined = undefined
   export let messages: Feedback[]
+  /** If the input that's being built has an id pass it here so the label can point at it. */
+  export let id: string|undefined = undefined
+  /** If `descid` is defined then this assumes you've made an outside label referenced to by descid `<div id={descid}`.
+  Useful for things like checkboxes and radio buttons that have their own individual labels. */
+  export let descid: string|undefined = undefined
+  export let helptext: string|undefined = undefined
+  /** Syntactic sugar that toggles a '*' to be appended to label. */
   export let required = false
   export let related: true | number = 0
   export let conditional: boolean|undefined = undefined
+  /** The `id` of `<div>` messages are rendered in. */
   let messagesid
 
   const dgMultipleContext = getContext<{ helptextid: string | undefined } | undefined>(DG_DIALOG_FIELD_MULTIPLE)
