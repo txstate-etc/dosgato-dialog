@@ -11,6 +11,7 @@
   export let active: string|undefined = undefined
   export let store = new TabStore(tabs, active)
   export let disableDialogControl = false
+  export let accordionOnMobile = true
   $: store.update(v => ({ ...v, tabs }))
 
   const activeStore = new Store<ElementOffsets>({})
@@ -33,7 +34,7 @@
   $: cols = Math.min(Math.floor(($store.clientWidth ?? 1024) / 90), $store.tabs.length)
   $: scalefactor = Math.min(roundTo(($store.clientWidth ?? 1024) / (cols * 130), 4), 1)
   $: wrapping = cols !== $store.tabs.length
-  $: dialogContext.hasTabs = !$accordion
+  $: dialogContext.hasTabs = !$accordion || !accordionOnMobile
 
   function onClick (idx: number) {
     return () => store.activate(idx)
@@ -86,7 +87,7 @@
 </script>
 
 {#if $store.tabs.length > 1}
-  {#if !$accordion}
+  {#if !$accordion || !accordionOnMobile}
     <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
     <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
       {#each $store.tabs as tab, idx (tab.name)}
