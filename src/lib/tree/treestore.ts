@@ -268,6 +268,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.trigger()
     const selectedItems = Array.from(droppedItems.values())
     const commonparent = this.findCommonParent([...selectedItems, item])
+    this.focus(item, false)
     try {
       const result = dropEffect === 'move'
         ? await this.moveHandler?.(selectedItems, item, above)
