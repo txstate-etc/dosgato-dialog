@@ -32,6 +32,7 @@
   export let required = false
   /** Max number of selections to be allowed before disabling the input - 0 for unlimited. */
   export let maxSelections = 0
+  export let lookupByValue: (val: string) => Promise<PopupMenuItem | undefined> = async (val) => { const options = await getOptions(val); return options.find((opt) => opt.value === val) }
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
@@ -67,7 +68,10 @@
   // is currently unknown.
   async function reactToValue (value: string[]) {
     await Promise.all(value.map(async v => {
-      if (!valueToLabel[v]) await wrapGetOptions(v)
+      if (!valueToLabel[v]) {
+        const item = await lookupByValue(v)
+        if (item) valueToLabel[item.value] = item.label ?? item.value
+      }
     }))
     selectedStore.set(value.map(v => ({ value: v, label: valueToLabel[v] })).filter(v => isNotBlank(v.label)))
   }
