@@ -1,7 +1,8 @@
 <script lang="ts">
   import { resize, type ElementSize } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
-  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
+  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
+  import { toArray } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
   import { getHashId, TreeStore, TREE_STORE_CONTEXT } from './treestore'
@@ -15,6 +16,7 @@
   }
 
   export let headers: TreeHeader<T>[]
+  export let searchable: keyof T | ((item: T) => string | string[]) | undefined = undefined
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean|undefined = undefined
   export let enableResize = false
@@ -65,6 +67,25 @@
 
   function onDragEnd () {
     store.update(v => ({ ...v, dragging: false }))
+  }
+
+  let search = ''
+  let searchTimer = 0
+  $: searchableFn = searchable == null ? undefined : (typeof searchable === 'function' ? (itm: T) => toArray((searchable as any)(itm)) : (itm: T) => [itm[searchable as keyof T] as string])
+  function onKeyUp (e) {
+    if (!searchableFn) return
+    if (e.key.length === 1) {
+      search += e.key
+      const searchItems = $store.focused?.parent ? $store.focused.parent.children : $store.rootItems
+      const newFocus = searchItems?.find(itm => searchableFn!(itm).some(str => str.toLocaleLowerCase().startsWith(search.toLocaleLowerCase())))
+      if (newFocus) store.focus(newFocus)
+      clearTimeout(searchTimer)
+      searchTimer = setTimeout(() => { search = '' }, 4000)
+    } else if (e.key === 'Backspace') {
+      search = search.substring(0, search.length - 1)
+    } else if (e.key === 'Escape') {
+      search = ''
+    }
   }
 
   let dragheaderid: string | undefined
@@ -139,13 +160,13 @@
 <div class="tree-header" class:resizing={!!dragheaderid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined}>
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
   {#each headers as header, i (header.label)}
-    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}</div>
+    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && search}&nbsp;(searching: {search}){/if}</div>
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
 {#if mounted && $rootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
-  <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd}>
+  <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
     {#each $rootItems as item, i (item.id)}
       <TreeNode
         {item}

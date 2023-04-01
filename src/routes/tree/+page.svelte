@@ -34,7 +34,7 @@
     { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
-  ]}/>
+  ]} searchable="name"/>
 {/if}
 
 <style>
