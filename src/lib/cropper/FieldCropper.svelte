@@ -6,7 +6,7 @@
 
   export let id: string | undefined = undefined
   export let path: string
-  export let imageSrc: string
+  export let imageSrc: string | undefined
   export let selectionAspectRatio: number = 1
   export let minSelection: number = 0 // percentage of image, a value 0-1
   export let label: string = ''
@@ -110,7 +110,7 @@
 </script>
 
 <svelte:window on:mousemove={onMouseMove} on:mouseup={onMouseUp} on:touchend={onMouseUp} on:touchcancel={onMouseUp} />
-<FieldStandard bind:id {label} {path} {required} {conditional} {helptext} {descid} let:value let:setVal let:helptextid>
+<FieldStandard bind:id {label} {path} {required} conditional={conditional && isNotBlank(imageSrc)} {helptext} {descid} let:value let:setVal let:helptextid>
   {@const _ = init(value, setVal)}
   {#if isNotBlank(imageSrc)}
     <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>

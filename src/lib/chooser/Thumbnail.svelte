@@ -13,7 +13,7 @@
 <div class="dialog-chooser-thumbnail">
   {#if item.type === 'asset'}
     {#if item.image}
-      <img src={(larger ? item.image.thumbnailUrl : item.image.previewUrl) ?? item.image.thumbnailUrl ?? item.url} alt="" />
+      <img src={(larger ? (item.image.previewUrl ?? item.image.thumbnailUrl) : (item.image.thumbnailUrl ?? item.image.previewUrl)) ?? item.url} alt="" />
     {:else}
       <FileIcon mime={item.mime} width='5em' />
     {/if}
