@@ -4,9 +4,9 @@
   import FileIcon from '$lib/FileIcon.svelte'
   import Icon from '$lib/Icon.svelte'
   import type { AnyItem } from './ChooserAPI'
-  import type { RawURL } from './ChooserStore'
+  import type { BrokenURL, RawURL } from './ChooserStore'
 
-  export let item: AnyItem|RawURL
+  export let item: AnyItem|RawURL|BrokenURL
   export let larger = false
 </script>
 

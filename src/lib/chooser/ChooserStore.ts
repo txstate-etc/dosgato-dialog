@@ -14,6 +14,12 @@ export interface RawURL {
   url: string
 }
 
+export interface BrokenURL {
+  type: 'broken'
+  id: string
+  url: string
+}
+
 export type AnyUIItem = TypedTreeItem<Page | Asset | Folder>
 
 export interface IAssetStore {

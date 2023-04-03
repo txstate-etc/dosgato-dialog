@@ -29,11 +29,22 @@ export interface Client<F = any> {
   urlToValue?: (url: string) => string
 
   /**
-   * If the form is preloaded with a raw URL, findById returns undefined, and the client implements
-   * urlToValue, we will need a way to decode/reverse what urlToValue does. This function should
-   * do that.
+   * If the form is preloaded with an id for which findById returns undefined (e.g. it's a raw URL or
+   * an id that points at a temporarily unavailable resource), we need to show something in
+   * the urlEntry field to signify that there is a value we are keeping around. This function
+   * should do that as well as it can based on the id passed to it.
+   *
+   * For instance, if the id looks like an asset, valueToUrl could return /.assets/{id}, which
+   * would communicate to the user that an asset is currently selected, even though they can't see
+   * its preview at the moment. If they save the form, their selection will be preserved in case
+   * the resource comes back at some point (or maybe they just didn't have permission to see it).
+   *
+   * If the id means nothing you can return undefined and the input will show it directly.
+   *
+   * Note: If urlToValue was provided, at minimum this function should be able to recognize and
+   * undo values it generates.
    */
-  valueToUrl?: (value: string) => string
+  valueToUrl?: (value: string) => string | undefined
 
   // must accept a standard FileList object and upload the files to the service
   // should throw an error if the source/path does not accept uploads
@@ -112,5 +123,10 @@ export interface Asset extends Item {
     // separate URL for medium size version for use in preview area of chooser UI
     // should have the same aspect ratio as the full image
     previewUrl?: string
+    // separate URL for a tiny 20-50 pixel version to use in the chooser list in place of an icon
+    // may have any aspect ratio, will be cropped to fit
+    // leave undefined if no tiny size or non-animated version is available - performance may take
+    // a serious hit if we try to load dozens of high res images
+    tinyUrl?: string
   }
 }

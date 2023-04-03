@@ -1,20 +1,25 @@
 <script lang="ts">
   import type { AnyItem } from './ChooserAPI'
-  import { bytesToHuman, type RawURL } from './ChooserStore'
+  import { bytesToHuman, type BrokenURL, type RawURL } from './ChooserStore'
 
-  export let item: AnyItem|RawURL
+  export let item: AnyItem|RawURL|BrokenURL
 </script>
 
 <dl class="dialog-chooser-info" aria-live="polite">
-  {#if item.type !== 'raw'}
-    <div class="top-row">
-      <dt>Name:</dt>
-      <dd>{item.path}</dd>
-    </div>
-  {:else if item.id}
+  {#if item.type === 'raw' && item.id}
     <div>
       <dt>External Link:</dt>
       <dd>{item.url}</dd>
+    </div>
+  {:else if item.type === 'broken'}
+    <div>
+      <dt>Unknown Link (this resource may have been deleted):</dt>
+      <dd>{item.url}</dd>
+    </div>
+  {:else if item.type !== 'raw'}
+    <div class="top-row">
+      <dt>Name:</dt>
+      <dd>{item.path}</dd>
     </div>
   {/if}
   {#if item.type === 'asset'}

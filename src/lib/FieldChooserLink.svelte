@@ -2,7 +2,7 @@
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
-  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type RawURL } from './chooser'
+  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type BrokenURL, type RawURL } from './chooser'
   import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
@@ -25,7 +25,7 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
-  export let selectedAsset: AnyItem|RawURL|undefined = undefined
+  export let selectedAsset: AnyItem|RawURL|BrokenURL|undefined = undefined
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -40,7 +40,7 @@
   const descid = randomid()
   let modalshown = false
   async function show () {
-    if (selectedAsset && selectedAsset.type !== 'raw') store.setPreview(selectedAsset)
+    if (selectedAsset && selectedAsset.type !== 'raw' && selectedAsset.type !== 'broken') store.setPreview(selectedAsset)
     modalshown = true
   }
   function hide () {
@@ -90,27 +90,23 @@
     }
     if (!found) {
       try {
-        const _ = new URL(url)
         selectedAsset = {
           type: 'raw',
-          id: chooserClient.urlToValue?.(url) ?? url,
+          id: urlToValueCache[url] ?? chooserClient.urlToValue?.(new URL(url).toString()),
           url
         }
-      } catch (e: any) {
+      } catch {
         // here we "select" a raw url so that we do not interrupt the users' typing, but
         // we set its id to 'undefined' so that nothing makes it into the form until it's
         // a valid URL
-        selectedAsset = {
-          type: 'raw',
-          id: undefined,
-          url
-        }
+        selectedAsset = { type: 'raw', url, id: undefined }
       }
     }
     formStore.setField(finalPath, selectedAsset?.id)
     formStore.dirtyField(finalPath)
   }
 
+  const urlToValueCache: Record<string, string> = {}
   async function updateSelected (..._: any) {
     if ($value && selectedAsset?.id !== $value) {
       const valueBeforeFind = $value
@@ -118,7 +114,15 @@
       if ($value !== valueBeforeFind) return
       selectedAsset = asset
       try {
-        if (!selectedAsset) selectedAsset = { type: 'raw', id: $value, url: chooserClient.valueToUrl?.($value) ?? $value }
+        if (!selectedAsset) {
+          const urlFromValue = chooserClient.valueToUrl?.($value) ?? $value
+          try {
+            selectedAsset = { type: 'raw', id: $value, url: new URL(urlFromValue).toString() }
+          } catch {
+            selectedAsset = { type: 'broken', id: $value, url: $value }
+          }
+        }
+        urlToValueCache[selectedAsset.url] = $value
       } catch (e: any) {
         console.error(e)
       }
