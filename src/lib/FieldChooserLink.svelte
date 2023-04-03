@@ -1,3 +1,9 @@
+<script lang="ts" context="module">
+  function reconstructUrl (url: string) {
+    const urlToTest = (/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\.)+([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])/.test(url)) ? `https://${url}` : url
+    return new URL(urlToTest).toString()
+  }
+</script>
 <script lang="ts">
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
@@ -7,6 +13,7 @@
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
   import FieldStandard from './FieldStandard.svelte'
+  import InlineMessage from './InlineMessage.svelte'
   import { getDescribedBy } from '$lib'
 
   export let id: string | undefined = undefined
@@ -64,7 +71,6 @@
     const url = this.value
     store.clearPreview()
     if (isBlank(url)) {
-      console.log('isBlank url')
       selectedAsset = undefined
       formStore.setField(finalPath, undefined)
       return
@@ -95,17 +101,22 @@
       }
     }
     if (!found) {
-      try {
-        selectedAsset = {
-          type: 'raw',
-          id: urlToValueCache[url] ?? chooserClient.urlToValue?.(new URL(url).toString()) ?? new URL(url).toString(),
-          url
+      if (urlToValueCache[url]) {
+        selectedAsset = { type: 'raw', id: urlToValueCache[url], url }
+      } else {
+        try {
+          const reconstructed = reconstructUrl(url)
+          selectedAsset = {
+            type: 'raw',
+            id: chooserClient.urlToValue?.(reconstructed) ?? reconstructed,
+            url
+          }
+        } catch {
+          // here we "select" a raw url so that we do not interrupt the users' typing, but
+          // we set its id to 'undefined' so that nothing makes it into the form until it's
+          // a valid URL
+          selectedAsset = { type: 'raw', id: undefined, url }
         }
-      } catch {
-        // here we "select" a raw url so that we do not interrupt the users' typing, but
-        // we set its id to 'undefined' so that nothing makes it into the form until it's
-        // a valid URL
-        selectedAsset = { type: 'raw', id: undefined, url }
       }
     }
     formStore.setField(finalPath, selectedAsset?.id)
@@ -123,7 +134,7 @@
         if (!selectedAsset) {
           const urlFromValue = chooserClient.valueToUrl?.($value) ?? $value
           try {
-            selectedAsset = { type: 'raw', id: $value, url: new URL(urlFromValue).toString() }
+            selectedAsset = { type: 'raw', id: $value, url: reconstructUrl(urlFromValue) }
           } catch {
             selectedAsset = { type: 'broken', id: $value, url: $value }
           }
@@ -150,6 +161,9 @@
     {/if}
     <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
   </div>
+  {#if selectedAsset?.url.length && !selectedAsset.id}
+    <InlineMessage message={{ message: 'Entry does not match an internal resource and is not a valid URL. Nothing will be saved.', type: 'warning' }} />
+  {/if}
   {#if modalshown}
     <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
