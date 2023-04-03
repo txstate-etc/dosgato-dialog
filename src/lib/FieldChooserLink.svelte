@@ -1,7 +1,7 @@
 <script lang="ts">
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
-  import { isNotBlank, randomid } from 'txstate-utils'
+  import { isBlank, isNotBlank, randomid } from 'txstate-utils'
   import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type BrokenURL, type RawURL } from './chooser'
   import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
@@ -63,6 +63,12 @@
   async function userUrlEntryDebounced () {
     const url = this.value
     store.clearPreview()
+    if (isBlank(url)) {
+      console.log('isBlank url')
+      selectedAsset = undefined
+      formStore.setField(finalPath, undefined)
+      return
+    }
     let found = false
     if (chooserClient.findByUrl) {
       const item = await chooserClient.findByUrl(url)
@@ -92,14 +98,14 @@
       try {
         selectedAsset = {
           type: 'raw',
-          id: urlToValueCache[url] ?? chooserClient.urlToValue?.(new URL(url).toString()),
+          id: urlToValueCache[url] ?? chooserClient.urlToValue?.(new URL(url).toString()) ?? new URL(url).toString(),
           url
         }
       } catch {
         // here we "select" a raw url so that we do not interrupt the users' typing, but
         // we set its id to 'undefined' so that nothing makes it into the form until it's
         // a valid URL
-        selectedAsset = { type: 'raw', url, id: undefined }
+        selectedAsset = { type: 'raw', id: undefined, url }
       }
     }
     formStore.setField(finalPath, selectedAsset?.id)
@@ -132,7 +138,7 @@
 </script>
 
 <FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
-  {#if selectedAsset}
+  {#if selectedAsset?.id}
     <div class="dialog-chooser-container">
       <Thumbnail item={selectedAsset} />
       <Details item={selectedAsset} />
