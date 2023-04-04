@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+  import { isBlank } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''
@@ -23,9 +25,24 @@
   export let boolean = false
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
+
+  let val: any, stVal: (val: any) => void, finalDeserialize: (value: string) => any
+  function updateValue (valu: any, sVal: any, fDes: any) {
+    val = valu
+    stVal = sVal
+    finalDeserialize = fDes
+  }
+  function reactToChoices (..._: any[]) {
+    if (!stVal) return
+    if (!choices.length) stVal(finalDeserialize(''))
+    if (!choices.some(o => o.value === val)) stVal(notNull ? choices[0].value : finalDeserialize(''))
+  }
+  $: reactToChoices(choices)
+  onMount(reactToChoices)
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize let:deserialize let:setVal>
+  {@const _ = updateValue(value, setVal, deserialize)}
   <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}

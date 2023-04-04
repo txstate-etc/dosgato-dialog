@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Field } from '@txstate-mws/svelte-forms'
+  import { onMount } from 'svelte'
   import Switcher from './Switcher.svelte'
   let className = ''
   export { className as class }
@@ -21,8 +22,23 @@
   export let boolean = false
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
+
+  let val: any, stVal: (val: any) => void, finalDeserialize: (value: string) => any
+  function updateValue (valu: any, sVal: any, fDes: any) {
+    val = valu
+    stVal = sVal
+    finalDeserialize = fDes
+  }
+  function reactToChoices (..._: any[]) {
+    if (!stVal) return
+    if (!choices.length) stVal(finalDeserialize(''))
+    if (!choices.some(o => o.value === val)) stVal(notNull ? choices[0].value : finalDeserialize(''))
+  }
+  $: reactToChoices(choices)
+  onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize>
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize let:setVal let:deserialize>
+  {@const _ = updateValue(value, setVal, deserialize)}
   <Switcher bind:id class={className} name={path} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: serialize(c.value) }))} />
 </Field>

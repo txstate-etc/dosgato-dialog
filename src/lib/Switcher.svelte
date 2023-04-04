@@ -37,7 +37,7 @@
 </script>
 <Container {id} {label} {messages} descid={groupid} {required} {related} {helptext} let:helptextid>
   <div class="dialog-radio {className}" use:eq={{ store }} class:horizontal role="radiogroup" aria-labelledby={groupid} class:valid class:invalid>
-    {#each choices as choice, idx}
+    {#each choices as choice, idx (choice.value)}
       {@const radioid = `${groupid}.${idx}`}
       <label for={radioid} style:width>
         <Radio id={radioid} {name} value={choice.value} selected={iptValue === choice.value} disabled={choice.disabled} {onChange} {onBlur} {helptextid} {extradescid} />

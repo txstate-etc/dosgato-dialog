@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+  import { randomid, shouldUseWhiteText } from 'txstate-utils'
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
   import { Radio } from '$lib'
-  import { randomid, shouldUseWhiteText } from 'txstate-utils'
 
   export let id: string | undefined = undefined
   let className = ''
@@ -18,15 +19,28 @@
   export let helptext: string | undefined = undefined
   const groupid = randomid()
 
+  let val: any, stVal: (val: any) => void
+  function updateValue (valu: any, sVal: any) {
+    val = valu
+    stVal = sVal
+  }
+  function reactToOptions (..._: any[]) {
+    if (!stVal) return
+    if (!options.length) stVal(addAllOption ? 'alternating' : undefined)
+    if (val !== 'alternating' && !options.some(o => o.value === val)) stVal(notNull ? options[0].value : (addAllOption ? 'alternating' : undefined))
+  }
+  $: reactToOptions(options)
+  onMount(reactToOptions)
 </script>
 
-<FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid let:setVal>
+  {@const _ = updateValue(value, setVal)}
   <div class="color-container {className}" role="radiogroup" aria-labelledby={groupid} class:invalid class:valid>
     {#if addAllOption}
       <label for={`${path}.alt`} class="colorsel alternating">
         <Radio id={`${path}.alt`} name={path} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid}/>
         <span class="alternating-bg">
-          {#each options as option}
+          {#each options as option (option.value)}
             <span style:background-color={option.color}></span>
           {/each}
         </span>

@@ -5,7 +5,7 @@
   The value of the field will be an array corresponding to the values of the checkboxes that are checked.
 -->
 <script lang="ts">
-  import { getContext } from 'svelte'
+  import { getContext, onMount } from 'svelte'
   import { Field, FORM_CONTEXT } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
@@ -50,12 +50,27 @@
   }
 
   const descid = randomid()
+
+  let val: any, stVal: (val: any) => void
+  function updateValue (valu: any, sVal: any) {
+    val = valu
+    stVal = sVal
+  }
+  function reactToChoices (..._: any[]) {
+    if (!stVal) return
+    const choiceSet = new Set(choices?.map(c => c.value))
+    const filtered = val?.filter(v => choiceSet.has(v))
+    if (filtered?.length !== val?.length) stVal(filtered)
+  }
+  $: reactToChoices(choices)
+  onMount(reactToChoices)
 </script>
 
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid>
+  {@const _ = updateValue(value, setVal)}
   <Container {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
-      {#each choices as choice, idx}
+      {#each choices as choice, idx (choice.value)}
         {@const checkid = `${path}.${idx}`}
         {@const included = value && value.includes(choice.value)}
         {@const label = choice.label || (typeof choice.value === 'string' ? choice.value : '')}

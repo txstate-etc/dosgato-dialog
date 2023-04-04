@@ -51,7 +51,7 @@
 {/if}
 <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
 <ul class="dialog-btn-group" class:disabled class:valid class:invalid aria-disabled={disabled} role="radiogroup" aria-labelledby={groupid} on:blur>
-  {#each choices as choice, i}
+  {#each choices as choice, i (choice.value)}
     {@const selected = choice.value === value}
     <li bind:this={elements[i]} role="radio" class:selected aria-checked={selected} tabindex={selected ? 0 : -1} aria-controls={ariaControls} on:click={onClick(choice, i)} on:keydown={onKeyDown(choice, i)} on:blur aria-describedby="{groupid} {messagesid}">{choice.label || choice.value}</li>
   {/each}

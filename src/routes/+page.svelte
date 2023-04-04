@@ -32,6 +32,10 @@
     { name: 'Checkboxes' }
   ]
 
+  let colors = [{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]
+  let houses = [{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]
+  let colorpicker = [{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]
+
   onMount(async () => {
     store.setField('asset', 'asset-1')
     store.setField('asset', 'https://google.com')
@@ -71,8 +75,11 @@
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} related />
     </Tab>
     <Tab name="Selections">
-      <FieldSelect path="select" label="Choose Color" choices={[{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]} />
-      <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={[{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]} />
+      <FieldSelect path="select" label="Choose Color" choices={colors} />
+      <button type="button" on:click={() => { colors = colors.filter(c => c.value !== 'blue') }}>Remove Blue</button>
+      <button type="button" on:click={() => { houses = houses.filter(c => c.value !== 'ravenclaw') }}>Remove Ravenclaw</button>
+      <button type="button" on:click={() => { colorpicker = colorpicker.filter(c => c.value !== 'teal') }}>Remove Teal</button>
+      <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={houses} />
       <FieldChooserLink path="asset" label="Choose an Asset" pages assets urlEntry initialSource="Assets" initialPath="/chemistry/organic"></FieldChooserLink>
       <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
       <FieldCropper path="crop" label="Image Crop"  selectionAspectRatio={3 / 2} imageSrc="{selectedAsset?.url}"/>
@@ -80,7 +87,7 @@
         <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
       {/if}
       <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
-      <FieldColorPicker addAllOption notNull defaultValue="hotpink" path="color" label="Another Color" options={[{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]} helptext="Just pick something."/>
+      <FieldColorPicker addAllOption notNull defaultValue="hotpink" path="color" label="Another Color" options={colorpicker} helptext="Just pick something."/>
       <FieldDualListbox
         path="role"
         label="Roles"
