@@ -21,6 +21,7 @@ interface ITabStore extends ElementSize {
   visited: Record<string, boolean>
   tabids: Record<string, string>
   panelids: Record<string, string>
+  accordionOnMobile: boolean
 }
 
 function checkNext (v: ITabStore) {
@@ -41,7 +42,8 @@ export class TabStore extends Store<ITabStore> {
       requireNext: false,
       tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
       panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
-      clientWidth: 1024
+      clientWidth: 1024,
+      accordionOnMobile: true
     }))
   }
 
@@ -77,7 +79,7 @@ export class TabStore extends Store<ITabStore> {
   }
 
   accordion () {
-    return derivedStore(this, v => v.clientWidth && v.clientWidth < 500)
+    return derivedStore(this, v => v.accordionOnMobile && v.clientWidth && v.clientWidth < 500)
   }
 
   left () {
