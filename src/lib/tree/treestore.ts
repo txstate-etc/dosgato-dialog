@@ -1,8 +1,8 @@
-import { ActiveStore, derivedStore } from '@txstate-mws/svelte-store'
+import { ActiveStore, derivedStore, Store } from '@txstate-mws/svelte-store'
 import type { IconifyIcon } from '@iconify/svelte'
 import type { SvelteComponent } from 'svelte'
 import { derived } from 'svelte/store'
-import { hashid, isBlank, keyby, toArray } from 'txstate-utils'
+import { hashid, isBlank, isNotBlank, keyby, toArray } from 'txstate-utils'
 
 export const TREE_STORE_CONTEXT = {}
 
@@ -25,7 +25,6 @@ export interface ITreeStore<T extends TreeItemFromDB> {
   loading?: boolean
   rootItems?: TypedTreeItem<T>[]
   itemsById: Record<string, TypedTreeItem<T> | undefined>
-  filter?: string
   focused?: TypedTreeItem<T>
   selected: Map<string, TypedTreeItem<T>>
   selectedItems: TypedTreeItem<T>[]
@@ -60,7 +59,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public treeElement?: HTMLElement
 
   public rootItems = derivedStore(this, 'rootItems')
-  public filterTerm = derivedStore(this, 'filter')
+  public filterTerm = new Store('')
   public filteredRootItems = derived([this.rootItems, this.filterTerm], ([rootItems, filter]) => {
     if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return this.value.rootItems
     const ret: TypedTreeItem<T>[] = []
@@ -205,9 +204,8 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.refreshPromise = undefined
   }
 
-  filter (term: string | undefined, notify = true) {
-    this.value.filter = term?.toLocaleLowerCase()
-    if (notify) this.trigger()
+  filter (term: string | undefined) {
+    this.filterTerm.set(term?.toLocaleLowerCase() ?? '')
   }
 
   focus (item: TypedTreeItem<T> | undefined, notify = true) {
@@ -450,11 +448,11 @@ export function transformSearchable<T> (searchable: SearchableType<T>): undefine
     ? undefined
     : (
         typeof searchable === 'function'
-          ? (itm: T) => toArray((searchable as any)(itm))
+          ? (itm: T) => toArray((searchable as any)(itm)).filter(isNotBlank)
           : (
               Array.isArray(searchable)
-                ? (itm: T) => searchable.map(k => itm[k] as string)
-                : (itm: T) => [itm[searchable] as string]
+                ? (itm: T) => searchable.map(k => itm[k] as string).filter(isNotBlank)
+                : (itm: T) => isNotBlank(itm[searchable] as string | undefined) ? [itm[searchable] as string] : []
             )
       )
 }
