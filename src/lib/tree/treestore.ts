@@ -2,7 +2,7 @@ import { ActiveStore, derivedStore } from '@txstate-mws/svelte-store'
 import type { IconifyIcon } from '@iconify/svelte'
 import type { SvelteComponent } from 'svelte'
 import { derived } from 'svelte/store'
-import { hashid, keyby } from 'txstate-utils'
+import { hashid, keyby, toArray } from 'txstate-utils'
 
 export const TREE_STORE_CONTEXT = {}
 
@@ -421,3 +421,18 @@ export const lazyObserver = typeof IntersectionObserver !== 'undefined'
     }
   }, { rootMargin: '500px' })
   : undefined
+
+export type SearchableType<T> = keyof T | (keyof T)[] | ((item: T) => string | string[]) | undefined
+export function transformSearchable<T> (searchable: SearchableType<T>): undefined | ((itm: T) => string[]) {
+  return searchable == null
+    ? undefined
+    : (
+        typeof searchable === 'function'
+          ? (itm: T) => toArray((searchable as any)(itm))
+          : (
+              Array.isArray(searchable)
+                ? (itm: T) => searchable.map(k => itm[k] as string)
+                : (itm: T) => [itm[searchable] as string]
+            )
+      )
+}

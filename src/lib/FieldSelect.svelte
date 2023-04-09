@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { isBlank } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''

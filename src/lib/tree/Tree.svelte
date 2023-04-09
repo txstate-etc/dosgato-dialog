@@ -2,11 +2,10 @@
   import { resize, type ElementSize } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
   import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
-  import { toArray } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
-  import { getHashId, TreeStore, TREE_STORE_CONTEXT } from './treestore'
-  import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB } from './treestore'
+  import { getHashId, transformSearchable, TreeStore, TREE_STORE_CONTEXT } from './treestore'
+  import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB, SearchableType } from './treestore'
 
   type T = $$Generic<TreeItemFromDB>
 
@@ -16,7 +15,7 @@
   }
 
   export let headers: TreeHeader<T>[]
-  export let searchable: keyof T | ((item: T) => string | string[]) | undefined = undefined
+  export let searchable: SearchableType<T> = undefined
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean|undefined = undefined
   export let enableResize = false
@@ -71,7 +70,7 @@
 
   let search = ''
   let searchTimer = 0
-  $: searchableFn = searchable == null ? undefined : (typeof searchable === 'function' ? (itm: T) => toArray((searchable as any)(itm)) : (itm: T) => [itm[searchable as keyof T] as string])
+  $: searchableFn = transformSearchable(searchable)
   function onKeyUp (e) {
     if (!searchableFn) return
     if (e.key.length === 1) {
