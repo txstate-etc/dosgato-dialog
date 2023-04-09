@@ -1,7 +1,7 @@
 {
   "name": "@dosgato/dialog",
   "description": "A component library for building forms that edit a JSON document.",
-  "version": "0.0.58",
+  "version": "0.0.59",
   "scripts": {
     "prepublishOnly": "svelte-package",
     "dev": "vite dev --force",

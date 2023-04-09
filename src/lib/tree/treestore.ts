@@ -63,13 +63,21 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public filteredRootItems = derived([this.rootItems, this.filterTerm], ([rootItems, filter]) => {
     if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return this.value.rootItems
     const ret: TypedTreeItem<T>[] = []
+    const newselected: TypedTreeItem<T>[] = []
+    let foundfocus = false
     for (const itm of this.value.rootItems ?? []) {
       let found = false
       for (const val of this.searchableFn(itm)) {
         if (val.toLocaleLowerCase().startsWith(filter)) found = true
       }
-      if (found) ret.push(itm)
+      if (found) {
+        if (this.value.selected.has(itm.id)) newselected.push(itm)
+        if (this.value.focused?.id === itm.id) foundfocus = true
+        ret.push(itm)
+      }
     }
+    if (!foundfocus) this.focus(ret[0])
+    this.setSelected(newselected, {})
     return ret
   })
 
@@ -224,6 +232,12 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     if (toggle && selected && (!clear || numSelected === 1)) this.value.selected.delete(item.id)
     else this.value.selected.set(item.id, item)
     this.determineDraggable()
+    if (notify) this.trigger()
+  }
+
+  setSelected (items: TypedTreeItem<T>[], { notify = true }) {
+    this.value.selected.clear()
+    for (const itm of items) this.value.selected.set(itm.id, itm)
     if (notify) this.trigger()
   }
 
