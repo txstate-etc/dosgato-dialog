@@ -67,7 +67,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     for (const itm of this.value.rootItems ?? []) {
       let found = false
       for (const val of this.searchableFn(itm)) {
-        if (val.startsWith(filter)) found = true
+        if (val.toLocaleLowerCase().startsWith(filter)) found = true
       }
       if (found) ret.push(itm)
     }
@@ -206,7 +206,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   }
 
   filter (term: string | undefined, notify = true) {
-    this.value.filter = term
+    this.value.filter = term?.toLocaleLowerCase()
     if (notify) this.trigger()
   }
 

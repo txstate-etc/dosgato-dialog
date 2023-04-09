@@ -77,9 +77,9 @@
   function onKeyUp (e) {
     if (!store.searchableFn) return
     if (e.key.length === 1) {
-      search += e.key
+      search += e.key.toLocaleLowerCase()
       const searchItems = $store.focused?.parent ? $store.focused.parent.children : $store.rootItems
-      const newFocus = searchItems?.find(itm => store.searchableFn!(itm).some(str => str.toLocaleLowerCase().startsWith(search.toLocaleLowerCase())))
+      const newFocus = searchItems?.find(itm => store.searchableFn!(itm).some(str => str.toLocaleLowerCase().startsWith(search)))
       if (newFocus) store.focus(newFocus)
       clearTimeout(searchTimer)
       searchTimer = setTimeout(() => { search = '' }, 4000)
