@@ -446,7 +446,6 @@ export const lazyObserver = typeof IntersectionObserver !== 'undefined'
 
 export type SearchableType<T> = keyof T | (keyof T)[] | ((item: T) => string | string[]) | undefined
 export function transformSearchable<T> (searchable: SearchableType<T>): undefined | ((itm: T) => string[]) {
-  console.log('transformSearchable', searchable)
   return searchable == null
     ? undefined
     : (
