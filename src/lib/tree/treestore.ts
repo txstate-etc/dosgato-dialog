@@ -2,7 +2,7 @@ import { ActiveStore, derivedStore } from '@txstate-mws/svelte-store'
 import type { IconifyIcon } from '@iconify/svelte'
 import type { SvelteComponent } from 'svelte'
 import { derived } from 'svelte/store'
-import { hashid, keyby, toArray } from 'txstate-utils'
+import { hashid, isBlank, keyby, toArray } from 'txstate-utils'
 
 export const TREE_STORE_CONTEXT = {}
 
@@ -25,6 +25,7 @@ export interface ITreeStore<T extends TreeItemFromDB> {
   loading?: boolean
   rootItems?: TypedTreeItem<T>[]
   itemsById: Record<string, TypedTreeItem<T> | undefined>
+  filter?: string
   focused?: TypedTreeItem<T>
   selected: Map<string, TypedTreeItem<T>>
   selectedItems: TypedTreeItem<T>[]
@@ -41,6 +42,7 @@ export type DragEligibleFn<T extends TreeItemFromDB> = (selectedItems: TypedTree
 export type DropEffectFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsCopy: boolean) => 'move' | 'copy' | 'none'
 export type MoveHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean) => boolean | Promise<boolean>
 export type CopyHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsRecursive: boolean | undefined) => boolean | Promise<boolean>
+export type SearchableFn<T extends TreeItemFromDB> = (item: TypedTreeItem<T>) => string[]
 
 export interface TreeHeader<T extends TreeItemFromDB> {
   id: string
@@ -54,12 +56,24 @@ export interface TreeHeader<T extends TreeItemFromDB> {
   class?: (item: TypedTreeItem<T>) => string | string[]
 }
 
-const rootItems = v => v.rootItems
-
 export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<T>> {
   public treeElement?: HTMLElement
 
-  public rootItems = derived(this, rootItems)
+  public rootItems = derivedStore(this, 'rootItems')
+  public filterTerm = derivedStore(this, 'filter')
+  public filteredRootItems = derived([this.rootItems, this.filterTerm], ([rootItems, filter]) => {
+    if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return this.value.rootItems
+    const ret: TypedTreeItem<T>[] = []
+    for (const itm of this.value.rootItems ?? []) {
+      let found = false
+      for (const val of this.searchableFn(itm)) {
+        if (val.startsWith(filter)) found = true
+      }
+      if (found) ret.push(itm)
+    }
+    return ret
+  })
+
   public draggable = derivedStore(this, v => v.draggable && !v.loading)
   public dragging = derivedStore(this, 'dragging')
   public selectedUndraggable = derivedStore(this, 'selectedUndraggable')
@@ -72,17 +86,19 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public copyHandler?: CopyHandlerFn<T>
   public dragEligibleHandler?: DragEligibleFn<T>
   public dropEffectHandler?: DropEffectFn<T>
+  public searchableFn?: SearchableFn<T>
   public singleSelect?: boolean
 
   private refreshPromise?: Promise<void>
 
   constructor (
     public fetchChildren: FetchChildrenFn<T>,
-    { moveHandler, copyHandler, dragEligible, dropEffect, singleSelect }: {
+    { moveHandler, copyHandler, dragEligible, dropEffect, searchableFn, singleSelect }: {
       moveHandler?: MoveHandlerFn<T>
       copyHandler?: CopyHandlerFn<T>
       dragEligible?: DragEligibleFn<T>
       dropEffect?: DropEffectFn<T>
+      searchableFn?: SearchableFn<T>
       singleSelect?: boolean
     } = {}
   ) {
@@ -91,6 +107,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.copyHandler = copyHandler
     this.dragEligibleHandler = dragEligible
     this.dropEffectHandler = dropEffect
+    this.searchableFn = searchableFn
     this.singleSelect = singleSelect
   }
 
@@ -186,6 +203,11 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.refreshPromise ??= this.#refresh(item, skipNotify)
     await this.refreshPromise
     this.refreshPromise = undefined
+  }
+
+  filter (term: string | undefined, notify = true) {
+    this.value.filter = term
+    if (notify) this.trigger()
   }
 
   focus (item: TypedTreeItem<T> | undefined, notify = true) {
@@ -424,6 +446,7 @@ export const lazyObserver = typeof IntersectionObserver !== 'undefined'
 
 export type SearchableType<T> = keyof T | (keyof T)[] | ((item: T) => string | string[]) | undefined
 export function transformSearchable<T> (searchable: SearchableType<T>): undefined | ((itm: T) => string[]) {
+  console.log('transformSearchable', searchable)
   return searchable == null
     ? undefined
     : (

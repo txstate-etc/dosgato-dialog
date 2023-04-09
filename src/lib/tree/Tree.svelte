@@ -2,6 +2,7 @@
   import { resize, type ElementSize } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
   import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
+  import { isNotBlank } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
   import { getHashId, transformSearchable, TreeStore, TREE_STORE_CONTEXT } from './treestore'
@@ -16,6 +17,7 @@
 
   export let headers: TreeHeader<T>[]
   export let searchable: SearchableType<T> = undefined
+  export let filter = ''
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean|undefined = undefined
   export let enableResize = false
@@ -33,8 +35,9 @@
   export let copyHandler: CopyHandlerFn<T>|undefined = undefined
   export let dropEffect: DropEffectFn<T>|undefined = undefined
   export let store = new TreeStore<T>(fetchChildren!, { copyHandler, dragEligible, dropEffect, moveHandler })
+  if (searchable) store.searchableFn = transformSearchable(searchable)
   setContext(TREE_STORE_CONTEXT, store)
-  const { rootItems, headerOverride } = store
+  const { filteredRootItems, headerOverride } = store
 
   let checkboxelement: HTMLElement
   const headerelements: HTMLElement[] = []
@@ -70,13 +73,13 @@
 
   let search = ''
   let searchTimer = 0
-  $: searchableFn = transformSearchable(searchable)
+  $: store.filter(filter)
   function onKeyUp (e) {
-    if (!searchableFn) return
+    if (!store.searchableFn) return
     if (e.key.length === 1) {
       search += e.key
       const searchItems = $store.focused?.parent ? $store.focused.parent.children : $store.rootItems
-      const newFocus = searchItems?.find(itm => searchableFn!(itm).some(str => str.toLocaleLowerCase().startsWith(search.toLocaleLowerCase())))
+      const newFocus = searchItems?.find(itm => store.searchableFn!(itm).some(str => str.toLocaleLowerCase().startsWith(search.toLocaleLowerCase())))
       if (newFocus) store.focus(newFocus)
       clearTimeout(searchTimer)
       searchTimer = setTimeout(() => { search = '' }, 4000)
@@ -159,24 +162,24 @@
 <div class="tree-header" class:resizing={!!dragheaderid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined}>
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
   {#each headers as header, i (header.label)}
-    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && search}&nbsp;(searching: {search}){/if}</div>
+    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
-{#if mounted && $rootItems?.length}
+{#if mounted && $filteredRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
-    {#each $rootItems as item, i (item.id)}
+    {#each $filteredRootItems as item, i (item.id)}
       <TreeNode
         {item}
         {headers}
         {headerSizes}
         {nodeClass}
         posinset={i + 1}
-        setsize={$rootItems.length}
+        setsize={$filteredRootItems.length}
         level={item.level}
-        prev={$rootItems[i - 1]}
-        next={$rootItems[i + 1]}
+        prev={$filteredRootItems[i - 1]}
+        next={$filteredRootItems[i + 1]}
         on:choose
         on:deselect
       />

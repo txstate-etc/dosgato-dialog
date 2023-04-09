@@ -26,19 +26,23 @@
   }
   const treestore = new TreeStore(fetchChildren)
   let showtree = true
+  let filter = ''
 </script>
-<button type="button" on:click={() => { showtree = !showtree }}>Toggle</button>
+<div>
+  <input type="text" on:keyup={e => { filter = e.currentTarget?.value ?? '' }}/>
+  <button type="button" on:click={() => { showtree = !showtree }}>Toggle</button>
+</div>
 {#if showtree}
   <Tree store={treestore} headers={[
     { id: 'name', label: 'Name', get: 'name' },
     { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
-  ]} searchable="name"/>
+  ]} searchable="name" {filter}/>
 {/if}
 
 <style>
-  button {
+  div {
     position: fixed;
     top: 1em;
     right: 1em;
