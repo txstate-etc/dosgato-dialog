@@ -86,7 +86,6 @@
   section {
     position: relative;
     background-color: #f4f4f4;
-    padding: 1em;
     overflow: hidden;
   }
   section.tiny {
@@ -118,7 +117,6 @@
     display: flex;
     align-items: center;
     font-size: 1.1em;
-    margin: -1em;
     margin-bottom: 0;
     padding: 0.5em calc(var(--tabs-padding-hori, 1em) + 0.9em - 3px);
     background-color: var(--dg-dialog-header-bg, #DDDDDD);
@@ -131,7 +129,6 @@
 
   .dialog-content {
     position: relative;
-    margin: 0 -1em;
     padding: 1em;
     min-height: 5em;
     overflow: auto;
@@ -145,7 +142,6 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     background-color: var(--dg-dialog-footer-bg, #DDDDDD);
-    margin: -1em;
     margin-top: 0;
     padding: 0.5em 1em;
   }
