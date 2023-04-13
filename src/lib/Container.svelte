@@ -52,7 +52,7 @@
     {#if helptext}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <div use:resize={{ debounce: 10 }} on:resize={setNeedsShowHelp} id={helptextid} class="dialog-field-help" class:needsShowHelp class:expanded={showhelp} on:click={() => { if (needsShowHelp) showhelp = !showhelp }}>
-        <span bind:this={helpelement}>{helptext}</span>
+        <span bind:this={helpelement}>{@html helptext}</span>
         {#if needsShowHelp}
           <button type="button" class="dialog-field-help-expand">Show {#if showhelp}Less{:else}More{/if}<ScreenReaderOnly>, ignore this, the help text it controls will be read to you as input description</ScreenReaderOnly></button>
         {/if}
