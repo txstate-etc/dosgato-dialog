@@ -54,7 +54,7 @@
 <FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data>
   <Tabs {tabs}>
     <Tab name="Add More">
-      <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it."/>
+      <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it. <i>It also tests for allowance of html tags.</i>"/>
       <FieldMultiple path="multi" label="People" initialState={{ first: 'Barney', last: 'Fife' }} helptext="test" let:index>
         <FieldText path="first" label="First Name" helptext="This is some test helptext. It's a little long so we can test wrapping at different screen sizes." />
         <FieldText path="last" label="Last Name" />
