@@ -12,7 +12,7 @@
 </script>
 
 {#if header.icon}
-  <span class="icon"><Icon {icon} inline width="1.3em" /></span>
+  <span class="icon"><Icon {icon} inline width="1.5em" /></span>
 {/if}
 {#if header.component}
   <svelte:component this={headerComponent} {item} {header} />
