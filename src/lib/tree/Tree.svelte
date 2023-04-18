@@ -155,6 +155,7 @@
       }
     }
   })
+  $: myRootItems = $store && $filteredRootItems
 </script>
 
 <svelte:window on:mouseup={headerDragEnd} />
@@ -166,20 +167,20 @@
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
-{#if mounted && $filteredRootItems?.length}
+{#if mounted && myRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
-    {#each $filteredRootItems as item, i (item.id)}
+    {#each myRootItems as item, i (item.id)}
       <TreeNode
         {item}
         {headers}
         {headerSizes}
         {nodeClass}
         posinset={i + 1}
-        setsize={$filteredRootItems.length}
+        setsize={myRootItems.length}
         level={item.level}
-        prev={$filteredRootItems[i - 1]}
-        next={$filteredRootItems[i + 1]}
+        prev={myRootItems[i - 1]}
+        next={myRootItems[i + 1]}
         on:choose
         on:deselect
       />

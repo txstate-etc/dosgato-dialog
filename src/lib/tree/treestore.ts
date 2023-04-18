@@ -188,7 +188,6 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
         if (!item.hasChildren) item.open = false
       } else {
         this.value.itemsById = {}
-        for (const child of children) (child as unknown as TypedTreeItem<T>).level = 1
         this.value.rootItems = children
       }
       this.addLookup(children)
