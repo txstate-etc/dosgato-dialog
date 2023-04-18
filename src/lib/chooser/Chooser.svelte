@@ -90,7 +90,7 @@
   const previewId = randomid()
 </script>
 
-<Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel" on:continue={onChoose}>
+<Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
   <section class="dialog-chooser-window">
     <header class="dialog-chooser-controls">
       {#if $sources.length > 1}
@@ -116,7 +116,7 @@
       <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
     {/if}
     <Button cancel {describedby} on:click={() => dispatch('escape')}>Cancel</Button>
-    <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={() => dispatch('continue')}>Choose</Button>
+    <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
   </svelte:fragment>
   {#if showuploader && $selected?.type === 'folder' && chooserClient.upload}
     <UploadUI title="Upload to {$selected.path}" folder={$selected} uploader={chooserClient.upload.bind(chooserClient)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>

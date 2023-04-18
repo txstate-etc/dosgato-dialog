@@ -53,6 +53,8 @@
         data.append('file' + i, uploadList[i])
       }
 
+      // TODO: accept new list of children from uploader function and feed it
+      // to the tree instead of refreshing the tree
       await uploader(
         folder,
         uploadList,
