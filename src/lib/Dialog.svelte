@@ -64,7 +64,7 @@
       <slot></slot>
     </div>
     <footer class="actions">
-      <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext}>
+      <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
         {#if prevTitle && !ignoreTabs}
           <Button class="prev" disabled={!prevTitle} on:click={onPrev}><Icon icon={arrowLeftLight} inline /> Previous<ScreenReaderOnly> Tab ({prevTitle})</ScreenReaderOnly></Button>
         {/if}

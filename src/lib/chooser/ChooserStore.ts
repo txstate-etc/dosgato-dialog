@@ -1,8 +1,9 @@
-import type { TypedTreeItem } from '$lib/tree/treestore.js'
+import { TreeStore, type TypedTreeItem } from '$lib/tree/treestore.js'
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
 import { tick } from 'svelte'
 import { findIndex } from 'txstate-utils'
 import type { AnyItem, Asset, Client, ChooserType, Folder, Page, Source } from './ChooserAPI.js'
+import { TabStore } from '$lib/TabStore.js'
 
 export interface UISource extends Source {
   children?: AnyUIItem[]
@@ -83,9 +84,20 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
     }
   }
 
+  filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
+
+  async fetchChildren (item?: TypedTreeItem<Page | Folder | Asset>): Promise<AnyItem[]> {
+    const $source = this.getSource()
+    if (item?.type === 'asset' || !$source) return []
+    return await this.client.getChildren($source.name, item?.path ?? '/', this.filter)
+  }
+
+  treeStore = new TreeStore<Page | Folder | Asset>(this.fetchChildren.bind(this))
+
   sources = derivedStore(this, v => [...(v.sources?.page ?? []), ...(v.sources?.asset ?? [])].filter(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true))
   source = derivedStore(this, v => this.getSource(v))
   preview = derivedStore(this, 'preview')
+  selected = derivedStore<TypedTreeItem<Page | Folder | Asset> | undefined>(this.treeStore, 'selectedItems.0')
 
   getSource (state = this.value) {
     return state.sources?.[state.activetype]?.[state.activesource]
@@ -106,7 +118,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
       const sources = { page: pageSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s.name)) ?? [], asset: assetSources.filter(s => !this.options.activeSources || this.options.activeSources.has(s.name)) ?? [] }
       return { ...v, sources }
     })
-    this.setSource(this.value.preview?.source ?? this.options.initialSource, true)
+    this.setSource(this.options.initialSource, true)
     await tick()
     this.update(v => ({ ...v, initialized: true }))
   }

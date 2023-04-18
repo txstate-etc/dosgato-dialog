@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
+import type { TypedTreeItem } from '$lib'
 import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
 import { randomid } from 'txstate-utils'
 
@@ -176,7 +177,7 @@ class DemoChooserAPI implements Client {
    *  having `source` appended to every resulting object as an additional property. */
   collectItems (item: StoredAsset | FolderTreeTypes, source: string): AnyItem[] {
     const ret: AnyItem[] = []
-    if ('type' in item) ret.push({ ...item, source })
+    if ('type' in item) { (item as AnyItem).source = source; ret.push(item as AnyItem) }
     if ('children' in item && item.children?.length) {
       for (const f of item.children) {
         ret.push(...this.collectItems(f, source))
@@ -188,7 +189,8 @@ class DemoChooserAPI implements Client {
   /** Returns any children of `path` as an AnyItem array with `source` added as a property to each child in the array.  */
   async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
-    return folder.children?.map(c => ({ ...c, source })) as AnyItem[] ?? []
+    for (const c of folder.children ?? []) (c as AnyItem).source = source
+    return folder.children as AnyItem[] ?? []
   }
 
   /** Goes through all the items decending from path, under source, and case insensitively checks if their name includes
@@ -224,13 +226,14 @@ class DemoChooserAPI implements Client {
 
   /** If a folder corresponds to `path` under `source` this will build StoredAsset objects from the `files` passed and simulate adding them to that folder's children in memory.
    * @throws 'User may not upload to this folder` error if that folder doesn't acceptUpload. */
-  async upload (source: string, path: string, files: FileList) {
-    const folder = this.findFolder(source, path) as RootFolder | FolderWithChildren
+  async upload (folder: TypedTreeItem<Folder>, files: File[], progress: (ratio: number) => void) {
     if (!folder?.acceptsUpload) throw new Error('User may not upload to this folder')
     folder.children ??= []
-    for (const file of Array.from(files)) {
+    const inc = 1 / files.length
+    let ratio = 0
+    for (const file of files) {
       const isImage = file.type.startsWith('image')
-      const asset: StoredAsset = { type: 'asset', id: randomid(), path, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', bytes: isImage ? 196672 : 1264, url: isImage ? '/static/demo-full.png' : '/static/blankpdf.pdf' }
+      const asset: StoredAsset = { type: 'asset', id: randomid(), path: folder.path + '/' + file.name, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', bytes: isImage ? 196672 : 1264, url: '/static/' + file.name }
       if (isImage) {
         asset.image = {
           width: 909,
@@ -238,8 +241,13 @@ class DemoChooserAPI implements Client {
           thumbnailUrl: '/demo-thumb.png'
         }
       }
-      folder.children.push(asset)
+      folder.children.push(asset as any)
+      folder.childCount += 1
+      folder.hasChildren = true
+      ratio += inc
+      progress(ratio)
     }
+    return folder.children
   }
 }
 

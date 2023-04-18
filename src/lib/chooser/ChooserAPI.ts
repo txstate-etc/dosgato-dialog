@@ -46,10 +46,21 @@ export interface Client<F = any> {
    */
   valueToUrl?: (value: string) => string | undefined
 
-  // must accept a standard FileList object and upload the files to the service
-  // should throw an error if the source/path does not accept uploads
-  // the UI is responsible for refreshing the folder list after success
-  upload: (source: string, path: string, files: FileList) => Promise<void>
+  /**
+   * must accept a standard FileList object and upload the files to the service
+   * should throw an error if the source/path does not accept uploads the UI is
+   * responsible for refreshing the folder list after success
+   * should call the provided progress function as often as possible so that
+   * dosgato-dialog can keep the user informed
+   */
+  upload?: (folder: Folder, files: File[], progress: (ratio: number) => void) => Promise<(Asset | Folder)[] | undefined>
+
+  /**
+   * return whether the user is allowed to upload to the currently selected folder
+   * if this function is not provided it is assumed the answer is always yes
+   * may optionally return an array of accepted mime types for the folder
+   */
+  mayUpload?: (folder: Folder) => boolean | string[]
 }
 
 export interface Source {
