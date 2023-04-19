@@ -22,7 +22,7 @@
 
   const statuses = ['published', 'modified', 'unpublished']
 
-  function randomNumber(min, max) { // min and max included 
+  function randomNumber (min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
@@ -54,7 +54,7 @@
     { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'status', label: 'Status', fixed: '4em', icon: item => ({ icon: statusIcon[item.status], label: item.status }) },
-    { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() },
+    { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
   ]} searchable="name" {filter}/>
 {/if}
 

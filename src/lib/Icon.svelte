@@ -14,13 +14,12 @@
   export let inline: boolean = false
   export let width: string|number = '1em'
   export let height: string|number = width
-  export let vAlign: 'top'|'middle'|'bottom' = 'middle'
   export let tooltip: string | undefined = undefined
 </script>
 
 {#if icon}
   <Tooltip tip={tooltip} top>
-    <Icon {icon} {inline} {width} {height} {vAlign} aria-hidden={!hiddenLabel} />
+    <Icon {icon} {inline} {width} {height} aria-hidden={!hiddenLabel} />
   </Tooltip>
   {#if hiddenLabel}
     <ScreenReaderOnly>{hiddenLabel}</ScreenReaderOnly>
