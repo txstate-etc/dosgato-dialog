@@ -1,6 +1,9 @@
 <script lang="ts">
   import { Tree, TreeStore, type TreeItemFromDB } from '$lib'
   import { bytesToHuman, randomid } from 'txstate-utils'
+  import circleIcon from '@iconify-icons/mdi/circle'
+  import squareIcon from '@iconify-icons/mdi/square'
+  import triangleIcon from '@iconify-icons/mdi/triangle'
 
   interface TestItem extends TreeItemFromDB {
     name: string
@@ -8,14 +11,27 @@
     type: string
     modified: Date
     dbChildren: this[]
+    status: string
+  }
+
+  const statusIcon = {
+    published: triangleIcon,
+    modified: circleIcon,
+    unpublished: squareIcon
+  }
+
+  const statuses = ['published', 'modified', 'unpublished']
+
+  function randomNumber(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
   const rootItems: TestItem[] = []
-  for (let i = 0; i < 5000; i++) {
-    const itm: TestItem = { id: randomid(), hasChildren: true, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [] }
+  for (let i = 0; i < 10; i++) {
+    const itm: TestItem = { id: randomid(), hasChildren: true, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [], status: statuses[randomNumber(0, 2)] }
     const numChildren = 1 + Math.floor(9 * Math.random())
     for (let i = 0; i < numChildren; i++) {
-      itm.dbChildren.push({ id: randomid(), hasChildren: false, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [] })
+      itm.dbChildren.push({ id: randomid(), hasChildren: false, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [], status: statuses[randomNumber(0, 2)] })
     }
     rootItems.push(itm)
   }
@@ -37,7 +53,8 @@
     { id: 'name', label: 'Name', get: 'name' },
     { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
     { id: 'type', label: 'Type', get: 'type' },
-    { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
+    { id: 'status', label: 'Status', fixed: '4em', icon: item => ({ icon: statusIcon[item.status], label: item.status }) },
+    { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() },
   ]} searchable="name" {filter}/>
 {/if}
 

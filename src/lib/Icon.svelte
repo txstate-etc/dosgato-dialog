@@ -7,6 +7,7 @@
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import type { IconifyIcon } from '@iconify/svelte'
   import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import Tooltip from './Tooltip.svelte'
   export let icon: IconifyIcon|undefined
   /** Label used in a `<ScreenReaderOnly>`. */
   export let hiddenLabel: string|undefined = undefined
@@ -14,10 +15,13 @@
   export let width: string|number = '1em'
   export let height: string|number = width
   export let vAlign: 'top'|'middle'|'bottom' = 'middle'
+  export let tooltip: string | undefined = undefined
 </script>
 
 {#if icon}
-  <Icon {icon} {inline} {width} {height} {vAlign} aria-hidden={!hiddenLabel} />
+  <Tooltip tip={tooltip} top>
+    <Icon {icon} {inline} {width} {height} {vAlign} aria-hidden={!hiddenLabel} />
+  </Tooltip>
   {#if hiddenLabel}
     <ScreenReaderOnly>{hiddenLabel}</ScreenReaderOnly>
   {/if}

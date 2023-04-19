@@ -48,7 +48,7 @@ export interface TreeHeader<T extends TreeItemFromDB> {
   label: string
   fixed?: string
   grow?: number
-  icon?: IconifyIcon | ((item: TypedTreeItem<T>) => IconifyIcon | undefined)
+  icon?: { icon: IconifyIcon, label?: string | undefined } | ((item: TypedTreeItem<T>) => { icon: IconifyIcon, label?: string })
   get?: string
   render?: (item: TypedTreeItem<T>) => string
   component?: SvelteComponent
