@@ -100,7 +100,7 @@
     <section class="dialog-chooser-chooser">
       {#if $store.initialized}
         <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => item.type === 'asset' ? { icon: iconForMime(item.mime) } : (item.type === 'folder' ? (item.open ? { icon: folderNotchOpen } : { icon: folderIcon }) : { icon: applicationOutline }), get: 'name' }
+          { label: 'Path', id: 'name', grow: 4, icon: item => ({ icon: item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon ) : applicationOutline ) }), get: 'name' }
         ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
       {/if}
     </section>
