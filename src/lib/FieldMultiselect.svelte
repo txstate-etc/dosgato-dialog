@@ -37,13 +37,12 @@
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 
-  // Each time we run getOptions we will save the value -> label mappings
-  // that it finds, so that we can display labels on pills.
+  /** Each time we run getOptions we will save the value -> label mappings that it finds, so that we can display labels on pills. */
   const valueToLabel: Record<string, string> = {}
 
   async function wrapGetOptions (search: string) {
     const opts = await getOptions(search)
-    /** If no options are returned with the search term, we can end up with an infinite loop the first time reactToValue calls wrapGetOptions */
+    /* If no options are returned with the search term, we can end up with an infinite loop the first time reactToValue calls wrapGetOptions */
     // if (opts.length === 0) opts = await getOptions('')
     for (const opt of opts) {
       valueToLabel[opt.value] = opt.label || opt.value
@@ -62,10 +61,9 @@
     hasInit = true
   })
 
-  // If we get a value from the form that we haven't seen in the popup menu
-  // yet, we won't have a label for it.
-  // This function runs getOptions on any selected values for which the label
-  // is currently unknown.
+  /**
+  If we get a value from the form that we haven't seen in the popup menu yet, we won't have a label for it.
+  This function runs getOptions on any selected values for which the label is currently unknown. */
   async function reactToValue (value: string[]) {
     await Promise.all(value.map(async v => {
       if (!valueToLabel[v]) {
@@ -82,7 +80,11 @@
   <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} usePortal={portal} descid={getDescribedBy([messagesid, helptextid, extradescid])} {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions} on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur} />
+      <MultiSelect {id} name={path} usePortal={portal} descid={getDescribedBy([messagesid, helptextid, extradescid])}
+        {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions}
+        inputClass='multiselect-input'
+        on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}
+      />
     </div>
   </FieldStandard>
 {/if}
@@ -90,5 +92,8 @@
 <style>
   .invalid {
     --multiselect-border: 1px solid red;
+  }
+  :global(.multiselect-input) {
+    width: 100%
   }
 </style>
