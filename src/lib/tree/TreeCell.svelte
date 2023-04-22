@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { get, titleCase } from 'txstate-utils'
+  import type { IconifyIcon } from '@iconify/svelte'
+  import { get } from 'txstate-utils'
   import { Icon } from '$lib'
   import type { TreeHeader, TreeItemFromDB, TypedTreeItem } from './treestore'
 
@@ -7,14 +8,13 @@
 
   export let header: TreeHeader<T>
   export let item: TypedTreeItem<T>
-  $: icon = typeof header.icon === 'function' ? header.icon(item).icon : header.icon?.icon
-  $: iconLabel = typeof header.icon === 'function' ? header.icon(item).label : header.icon?.label
+  $: icon = (typeof header.icon === 'function' ? header.icon(item) : header.icon) as { icon: IconifyIcon, label: string } | undefined
   $: headerComponent = header.component as any
 </script>
 
-{#if header.icon}
+{#if icon}
   <span class="icon">
-    <Icon {icon} tooltip={iconLabel} inline width="1.5em" hiddenLabel={iconLabel} />
+    <Icon icon={icon.icon} tooltip={icon.label} inline width="1.5em" hiddenLabel={icon.label} />
   </span>
 {/if}
 {#if header.component}
