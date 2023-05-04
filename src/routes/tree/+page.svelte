@@ -40,13 +40,26 @@
     if (!item) return rootItems
     return item.dbChildren
   }
-  const treestore = new TreeStore(fetchChildren)
+
+  async function copyHandler (selectedItems: TestItem[], dropTarget: TestItem, above: boolean, userWantsRecursive: boolean = false) {
+    alert(`copying: ${userWantsRecursive ? 'recursive' : 'not recursive'}`)
+    return true
+  }
+
+  function dropEffect (selectedItems: TestItem[], dropTarget: TestItem, above: boolean, userWantsCopy: boolean) {
+    return 'copy' as 'copy' | 'move' | 'none' // won't let me just return copy... :-(
+  }
+
+  const treestore = new TreeStore(fetchChildren, { copyHandler, dropEffect })
   let showtree = true
   let filter = ''
 </script>
 <div>
   <input type="text" on:keyup={e => { filter = e.currentTarget?.value ?? '' }}/>
   <button type="button" on:click={() => { showtree = !showtree }}>Toggle</button>
+  <button type="button" on:click={() => { treestore.copy() }}>Copy</button>
+  <button type="button" on:click={() => { treestore.copy(true) }}>Copy With Chlidren</button>
+  <button type="button" on:click={() => { treestore.paste(false, $treestore.copyRecursive) }}>Paste</button>
 </div>
 {#if showtree}
   <Tree store={treestore} headers={[

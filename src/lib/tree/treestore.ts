@@ -30,6 +30,7 @@ export interface ITreeStore<T extends TreeItemFromDB> {
   selectedItems: TypedTreeItem<T>[]
   copied: Map<string, TypedTreeItem<T>>
   cut?: boolean
+  copyRecursive?: boolean
   draggable: boolean
   selectedUndraggable?: boolean
   dragging: boolean
@@ -388,10 +389,11 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     this.trigger()
   }
 
-  copy () {
+  copy (recursive = false) {
     if (!this.copyEligible()) return
     this.value.copied = new Map(this.value.selected)
     this.value.cut = false
+    this.value.copyRecursive = recursive
     this.trigger()
   }
 
@@ -406,6 +408,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   cancelCopy () {
     this.value.copied = new Map()
     this.value.cut = undefined
+    this.value.copyRecursive = undefined
     this.trigger()
   }
 
@@ -423,6 +426,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     const cut = this.value.cut
     this.value.copied = new Map()
     this.value.cut = undefined
+    this.value.copyRecursive = undefined
     return await this._drop(this.value.selectedItems[0], copied, above, !cut, userWantsRecursive)
   }
 
