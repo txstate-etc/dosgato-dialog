@@ -34,7 +34,7 @@
     width: 100%;
     min-height: 50vh;
     border: var(--tabs-panel-border, var(--tabs-border, 0));
-    padding: var(--tabs-margin-top, 2em) var(--tabs-padding-hori, 0.7em) 0 var(--tabs-padding-hori, 0.7em);
+    padding: var(--tabs-margin-top, 2em) var(--tabs-padding-hori, 0.7em) 0.5em var(--tabs-padding-hori, 0.7em);
   }
   .tabs-panel.accordion {
     border-left: 0;
