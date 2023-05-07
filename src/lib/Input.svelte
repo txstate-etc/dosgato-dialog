@@ -15,6 +15,7 @@
   export let step: number|undefined = undefined
   export let id: string|undefined = undefined
   export let disabled = false
+  export let autocomplete = 'off'
   export let extradescid: string|undefined = undefined
   export let messagesid: string|undefined = undefined
   export let helptextid: string|undefined = undefined
@@ -38,4 +39,5 @@
   $: maxStr = resolveMinMax(max)
 </script>
 
-<input bind:this={inputelement} {type} {id} class={className} autocomplete="off" data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
+<!-- svelte-ignore a11y-autocomplete-valid -->
+<input bind:this={inputelement} {type} {id} {autocomplete} class={className} data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>

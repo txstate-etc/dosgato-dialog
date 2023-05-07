@@ -27,7 +27,7 @@
   }
 
   const rootItems: TestItem[] = []
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 2000; i++) {
     const itm: TestItem = { id: randomid(), hasChildren: true, name: randomid(), size: Math.floor(10000 * Math.random()), type: 'page', modified: new Date(), dbChildren: [], status: statuses[randomNumber(0, 2)] }
     const numChildren = 1 + Math.floor(9 * Math.random())
     for (let i = 0; i < numChildren; i++) {
@@ -47,7 +47,7 @@
   }
 
   function dropEffect (selectedItems: TestItem[], dropTarget: TestItem, above: boolean, userWantsCopy: boolean) {
-    return 'copy' as 'copy' | 'move' | 'none' // won't let me just return copy... :-(
+    return 'copy' as const // won't let me just return copy... :-(
   }
 
   const treestore = new TreeStore(fetchChildren, { copyHandler, dropEffect })

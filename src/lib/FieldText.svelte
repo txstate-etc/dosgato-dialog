@@ -18,10 +18,11 @@
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLInputElement = undefined as any
   export let related: true | number = 0
+  export let autocomplete = 'off'
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  <Input bind:inputelement {type} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid} {helptextid} {extradescid} {use}></Input>
+  <Input bind:inputelement {type} {autocomplete} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid} {helptextid} {extradescid} {use}></Input>
 </FieldStandard>
