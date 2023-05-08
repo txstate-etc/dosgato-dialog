@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
   import { nullableSerialize, nullableDeserialize, FORM_CONTEXT, FormStore, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
-  import CodeFlask from 'codeflask'
+  import type { ViewUpdate } from '@codemirror/view'
   import { getContext, onMount } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
   import { getDescribedBy, FieldStandard } from '$lib'
@@ -28,23 +28,45 @@
   const value = store.getField<string | undefined>(finalPath)
 
   let editorelement: HTMLElement
-  let flask: CodeFlask
-  onMount(() => {
-    flask = new CodeFlask(editorelement, { language, lineNumbers: true, areaId: id })
+  let updateCode: (code: string) => void
+  onMount(async () => {
+    const { EditorView, minimalSetup } = await import('codemirror')
+    const { indentWithTab } = await import('@codemirror/commands')
+    const { lineNumbers, highlightActiveLine, highlightActiveLineGutter, keymap } = await import('@codemirror/view')
+    const { langmap } = await import('./langs.js')
+    const editor = new EditorView({
+      extensions: [
+        minimalSetup,
+        lineNumbers(),
+        highlightActiveLine(),
+        highlightActiveLineGutter(),
+        langmap[language],
+        keymap.of([indentWithTab]),
+        EditorView.updateListener.of((v: ViewUpdate) => {
+          if (v.docChanged) {
+            const newval = editor.state.doc.toString()
+            if ($value !== newval) mySetVal?.(newval)
+          }
+        })
+      ],
+      parent: editorelement
+    })
+    updateCode = code => {
+      if (editor.state.doc.toString() !== code) editor.update([editor.state.update({ changes: { from: 0, to: editor.state.doc.length, insert: code } })])
+    }
     inputelement = editorelement.querySelector(`#${id}`) as HTMLTextAreaElement
     if (className) inputelement.classList.add(...className.split(' '))
-    inputelement.addEventListener('change', onChange)
     updateValidState(invalid, messagesid)
   })
-  $: flask?.updateCode($value ?? '')
+  $: updateCode?.($value ?? '')
 
   let invalid: boolean
   let messagesid: string | undefined
   let helptextid: string | undefined
-  let onChange: (e?: any) => void
-  function setSlotProps (helptextidIn: string | undefined, onChangeIn: any) {
+  let mySetVal: (code?: any) => void
+  function setSlotProps (helptextidIn: string | undefined, setValIn: any) {
     helptextid = helptextidIn
-    onChange = onChangeIn
+    mySetVal = setValIn
   }
   function updateValidState (invalidIn: boolean | undefined, messagesIdIn: any) {
     invalid = !!invalidIn
@@ -56,16 +78,22 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  {@const _ = setSlotProps(helptextid, onChange)}
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
+  {@const _ = setSlotProps(helptextid, setVal)}
   {@const __ = updateValidState(invalid, messagesid)}
-  <div bind:this={editorelement} style:height="{rows * 1.333}em" class:valid class:invalid on:paste on:focusout={onBlur} use:passActions={use}></div>
+  <div bind:this={editorelement} style:--cm-editor-minh="{rows * 1.5}em" class:valid class:invalid on:paste on:focusout={onBlur} use:passActions={use}></div>
 </FieldStandard>
 
 <style>
   div {
-    position: relative;
-    overflow: hidden;
+    background-color: white;
+  }
+  div :global(.cm-content), div :global(.cm-gutter) {
+    min-height: var(--cm-editor-minh, 10em);
+  }
+
+  div :global(.cm-scroller) {
+    overflow: auto;
     resize: vertical;
   }
 </style>
