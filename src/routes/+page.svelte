@@ -6,6 +6,7 @@
   import { sleep } from 'txstate-utils'
   import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
+  import type { PopupMenuItem } from '@txstate-mws/svelte-components'
   let store: FormStore
   let showdialog = true
   async function submit (data: { crop: CropOutput }) {
@@ -32,7 +33,7 @@
     { name: 'Checkboxes' }
   ]
 
-  let colors = [{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]
+  let colors: PopupMenuItem[] = []
   let houses = [{ value: 'hufflepuff' }, { value: 'gryffindor' }, { value: 'ravenclaw' }, { value: 'slytherin' }]
   let colorpicker = [{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]
 
@@ -41,6 +42,7 @@
     store.setField('asset', 'https://google.com')
     const { CropImage } = await import('./crop')
     if (!window.customElements.get('crop-img')) window.customElements.define('crop-img', CropImage)
+    colors = [{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]
   })
 
   let selectedAsset: AnyItem | RawURL
@@ -75,7 +77,7 @@
       <FieldDateTime path="datetime" label="Date & Time" min={new Date()} related />
     </Tab>
     <Tab name="Selections">
-      <FieldSelect path="select" label="Choose Color" choices={colors} />
+      <FieldSelect path="select" label="Choose Color" choices={colors} notNull/>
       <button type="button" on:click={() => { colors = colors.filter(c => c.value !== 'blue') }}>Remove Blue</button>
       <button type="button" on:click={() => { houses = houses.filter(c => c.value !== 'ravenclaw') }}>Remove Ravenclaw</button>
       <button type="button" on:click={() => { colorpicker = colorpicker.filter(c => c.value !== 'teal') }}>Remove Teal</button>

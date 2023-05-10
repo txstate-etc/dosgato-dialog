@@ -11,7 +11,7 @@
   export let notNull = false
   export let disabled = false
   export let choices: { label?: string, value: any, disabled?: boolean }[]
-  export let defaultValue: any = notNull ? choices[0].value : undefined
+  export let defaultValue: any = notNull ? choices[0]?.value : undefined
   export let conditional: boolean|undefined = undefined
   export let required = false
   export let inputelement: HTMLSelectElement = undefined as any
@@ -33,8 +33,11 @@
   }
   function reactToChoices (..._: any[]) {
     if (!stVal) return
-    if (!choices.length) stVal(finalDeserialize(''))
-    if (!choices.some(o => o.value === val)) stVal(notNull ? choices[0].value : finalDeserialize(''))
+    if (!choices.length) {
+      stVal(finalDeserialize(''))
+      return
+    }
+    if (!choices.some(o => o.value === val)) stVal(notNull ? defaultValue : finalDeserialize(''))
   }
   $: reactToChoices(choices)
   onMount(reactToChoices)
