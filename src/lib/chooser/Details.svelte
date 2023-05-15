@@ -1,57 +1,56 @@
 <script lang="ts">
   import type { AnyItem } from './ChooserAPI'
-  import { bytesToHuman, type BrokenURL, type RawURL } from './ChooserStore'
+  import { bytesToHuman, cleanUrl, type BrokenURL, type RawURL } from './ChooserStore'
 
   export let item: AnyItem|RawURL|BrokenURL
+  export let singleLine = false
 </script>
 
-<dl class="dialog-chooser-info" aria-live="polite">
+<dl class="dialog-chooser-info" aria-live="polite" class:multiLine={!singleLine}>
   {#if item.type === 'raw' && item.id}
-    <div>
+    <div class="top-row">
       <dt>External Link:</dt>
-      <dd>{item.url}</dd>
+      <dd>{cleanUrl(item.url)}</dd>
     </div>
   {:else if item.type === 'broken'}
-    <div>
-      <dt>Unknown Link (this resource may have been deleted):</dt>
+    <div class="top-row">
+      <dt>Unknown Link (may have been deleted):</dt>
       <dd>{item.url}</dd>
     </div>
   {:else if item.type !== 'raw'}
     <div class="top-row">
       <dt>Name:</dt>
-      <dd>{item.path}</dd>
+      <dd>{item.name}</dd>
     </div>
   {/if}
   {#if item.type === 'asset'}
-    <div class="horizontal-group">
-      {#if item.image}
-        <div>
-          <dt>Dimensions:</dt>
-          <dd>{item.image.width}x{item.image.height}</dd>
-        </div>
-      {/if}
+    {#if item.image}
       <div>
-        <dt>File Type:</dt>
-        <dd>{item.mime}</dd>
+        <dt>Dimensions:</dt>
+        <dd>{item.image.width}x{item.image.height}</dd>
       </div>
-      <div>
-        <dt>File Size:</dt>
-        <dd>{bytesToHuman(item.bytes)}</dd>
-      </div>
+    {/if}
+    <div>
+      <dt>File Type:</dt>
+      <dd>{item.mime}</dd>
+    </div>
+    <div>
+      <dt>File Size:</dt>
+      <dd>{bytesToHuman(item.bytes)}</dd>
     </div>
   {:else if item.type === 'page' && item.title}
-    <dt>Title:</dt>
-    <dd>{item.title}</dd>
+    <div>
+      <dt>Title:</dt>
+      <dd>{item.title}</dd>
+    </div>
   {:else if item.type === 'folder'}
-    <div class="horizontal-group">
-      <div>
-        <dt>Path:</dt>
-        <dd>{item.path}</dd>
-      </div>
-      <div>
-        <dt>Contents:</dt>
-        <dd>{item.childCount} sub-items</dd>
-      </div>
+    <div>
+      <dt>Path:</dt>
+      <dd>{item.path}</dd>
+    </div>
+    <div>
+      <dt>Contents:</dt>
+      <dd>{item.childCount} sub-items</dd>
     </div>
   {/if}
   <slot />
@@ -59,6 +58,10 @@
 
 <style>
   .dialog-chooser-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1em 1.5em;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -69,17 +72,7 @@
   .dialog-chooser-info dd {
     margin: 0;
   }
-  .top-row {
-    margin-bottom: 1em;
-  }
-  .horizontal-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  :global([data-eq~="1400px"]) .horizontal-group {
-    flex-direction: column;
-  }
-  :global([data-eq~="1400px"]) .horizontal-group div:not(:last-child){
-    margin-bottom: 1em;
+  .multiLine .top-row {
+    width: 100%;
   }
 </style>

@@ -1,20 +1,14 @@
-<script lang="ts" context="module">
-  function reconstructUrl (url: string) {
-    const urlToTest = (/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\.)+([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])/.test(url)) ? `https://${url}` : url
-    return new URL(urlToTest).toString()
-  }
-</script>
 <script lang="ts">
+  import arrowClockwiseFill from '@iconify-icons/ph/arrow-clockwise-fill'
+  import deleteOutline from '@iconify-icons/mdi/delete-outline'
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { isBlank, isNotBlank, randomid } from 'txstate-utils'
-  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, type BrokenURL, type RawURL } from './chooser'
+  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, cleanUrl, type BrokenURL, type RawURL } from './chooser'
   import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
-  import FieldStandard from './FieldStandard.svelte'
-  import InlineMessage from './InlineMessage.svelte'
-  import { getDescribedBy } from '$lib'
+  import { getDescribedBy, FieldStandard, InlineMessage, Icon } from '$lib'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -69,6 +63,7 @@
 
   async function userUrlEntryDebounced () {
     const url = this.value
+    const cleanedUrl = cleanUrl(url)
     store.clearPreview()
     if (isBlank(url)) {
       selectedAsset = undefined
@@ -77,7 +72,8 @@
     }
     let found = false
     if (chooserClient.findByUrl) {
-      const item = await chooserClient.findByUrl(url)
+      let item = await chooserClient.findByUrl(url)
+      if (!item && isNotBlank(cleanedUrl)) item = await chooserClient.findByUrl(cleanedUrl)
       if (url !== this.value) return
       if (item) {
         found = true
@@ -104,18 +100,17 @@
       if (urlToValueCache[url]) {
         selectedAsset = { type: 'raw', id: urlToValueCache[url], url }
       } else {
-        try {
-          const reconstructed = reconstructUrl(url)
-          selectedAsset = {
-            type: 'raw',
-            id: chooserClient.urlToValue?.(reconstructed) ?? reconstructed,
-            url
-          }
-        } catch {
+        if (isBlank(cleanedUrl) || cleanedUrl.startsWith('/')) {
           // here we "select" a raw url so that we do not interrupt the users' typing, but
           // we set its id to 'undefined' so that nothing makes it into the form until it's
           // a valid URL
           selectedAsset = { type: 'raw', id: undefined, url }
+        } else {
+          selectedAsset = {
+            type: 'raw',
+            id: chooserClient.urlToValue?.(cleanedUrl) ?? cleanedUrl,
+            url
+          }
         }
       }
     }
@@ -133,13 +128,16 @@
       try {
         if (!selectedAsset) {
           const urlFromValue = chooserClient.valueToUrl?.($value) ?? $value
-          try {
-            selectedAsset = { type: 'raw', id: $value, url: reconstructUrl(urlFromValue) }
-          } catch {
-            selectedAsset = { type: 'broken', id: $value, url: $value }
+          const cleanedUrlFromValue = cleanUrl(urlFromValue)
+          if (isBlank(cleanedUrlFromValue)) {
+            selectedAsset = undefined
+          } else if (cleanedUrlFromValue.startsWith('/')) {
+            selectedAsset = { type: 'broken', id: $value, url: cleanedUrlFromValue }
+          } else {
+            selectedAsset = { type: 'raw', id: $value, url: cleanedUrlFromValue }
           }
         }
-        urlToValueCache[selectedAsset.url] = $value
+        if (selectedAsset) urlToValueCache[selectedAsset.url] = $value
       } catch (e: any) {
         console.error(e)
       }
@@ -152,15 +150,27 @@
   {#if selectedAsset?.id}
     <div class="dialog-chooser-container">
       <Thumbnail item={selectedAsset} />
-      <Details item={selectedAsset} />
+      <div class="dialog-chooser-right">
+        <Details item={selectedAsset} singleLine />
+        {#if !urlEntry}
+          <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+            <Icon icon={arrowClockwiseFill} /> Replace
+          </button>
+        {/if}
+        <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+          <Icon icon={deleteOutline} /> Remove
+        </button>
+    </div>
     </div>
   {/if}
-  <div class="dialog-chooser-entry">
-    {#if urlEntry}
-      <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:keyup={userUrlEntry}>
-    {/if}
-    <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
-  </div>
+  {#if urlEntry || !selectedAsset?.id}
+    <div class="dialog-chooser-entry">
+      {#if urlEntry}
+        <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:keyup={userUrlEntry}>
+      {/if}
+      <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
+    </div>
+  {/if}
   {#if selectedAsset?.url.length && !selectedAsset.id}
     <InlineMessage message={{ message: 'Entry does not match an internal resource and is not a valid URL. Nothing will be saved.', type: 'warning' }} />
   {/if}
@@ -172,6 +182,7 @@
 <style>
   .dialog-chooser-container {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 0.25em;
     font-size: 0.9em;
   }
@@ -179,6 +190,9 @@
     width: 8em;
     padding-top: 0;
     height: 5em;
+  }
+  .dialog-chooser-right button {
+    margin-top: 0.5em;
   }
   .dialog-chooser-entry {
     display: flex;
