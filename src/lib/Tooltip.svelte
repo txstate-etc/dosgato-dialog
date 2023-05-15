@@ -5,8 +5,6 @@
   export let bottom: boolean = false
   export let left: boolean = false
   export let active: boolean = false
-  export let color: string = "#fff"
-  let style = `background-color: ${color}; border: 1px solid black;`
 </script>
 
 <style>
