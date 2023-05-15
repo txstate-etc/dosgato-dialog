@@ -278,7 +278,7 @@
     </div>
     {#each headers as header, i (header.id)}
       <div
-        class={(header.class ? toArray(header.class(item)) : []).concat([header.id]).join(' ')}
+        class={(header.class ? toArray(header.class(item)) : []).concat([header.id, 'tree-cell']).join(' ')}
         style:width={$headerSizes?.[i] ?? '1px'}
         style:padding-left={i === 0 ? `calc(min(${(level - 1) * 1.6}em, ${(level - 1) * 2.7}vw) + 1.4em)` : undefined}
         class:left={i === 0}
@@ -392,6 +392,10 @@
     background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
     background-position: left top, right bottom, left bottom, right   top;
     animation: border-dance 1s infinite linear;
+  }
+  .tree-cell {
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   @keyframes border-dance {
     0% {
