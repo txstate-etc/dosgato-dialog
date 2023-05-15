@@ -49,7 +49,7 @@
   setContext(CHOOSER_API_CONTEXT, chooserClient)
 </script>
 
-<Dialog continueText="Save" continueIcon={contentSave} cancelText="Cancel" on:escape on:continue={onSubmit} {title} {icon} {size}>
+<Dialog continueText="Save" continueIcon={contentSave} cancelText="Cancel" on:escape on:continue={onSubmit} {title} {icon} {size} escapable={false}>
   <Form bind:store {submit} {validate} {chooserClient} {autocomplete} {name} {preload} on:saved let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
     <slot {messages} {allMessages} {saved} {validating} {submitting} {valid} {invalid} {data} {showingInlineErrors} />
   </Form>
