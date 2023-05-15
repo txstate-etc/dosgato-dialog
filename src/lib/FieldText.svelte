@@ -3,6 +3,9 @@
   import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import FieldStandard from './FieldStandard.svelte'
   import Input from './Input.svelte'
+  import MaxLength from './MaxLength.svelte'
+  import { isNotNull } from 'txstate-utils'
+
   let className = ''
   export { className as class }
   export let id: string | undefined = undefined
@@ -24,5 +27,8 @@
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  <Input bind:inputelement {type} {autocomplete} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {maxlength} {messagesid} {helptextid} {extradescid} {use}></Input>
+  <Input bind:inputelement {type} {autocomplete} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {messagesid} {helptextid} {extradescid} {use}></Input>
+  {#if isNotNull(maxlength)}
+    <MaxLength {value} {maxlength}/>
+  {/if}
 </FieldStandard>

@@ -69,6 +69,7 @@
       </FieldMultiple>
     </Tab>
     <Tab name="Text">
+      <FieldText path="charlimit" label="Character Limit" maxlength={10} />
       <FieldTextArea path="textarea" label="Textarea" rows={10} />
       <FieldCodeEditor path="code" label="CSS" language="css" rows={8} />
     </Tab>
