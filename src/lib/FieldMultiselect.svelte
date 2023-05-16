@@ -54,9 +54,7 @@
   let hasInit = !defaultValue.length
 
   let inputelement: HTMLElement
-  let portal: HTMLElement | undefined
   onMount(async () => {
-    portal = inputelement.closest('.dialog-content') as HTMLElement
     await reactToValue(defaultValue)
     hasInit = true
   })
@@ -80,7 +78,7 @@
   <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} usePortal={portal} descid={getDescribedBy([messagesid, helptextid, extradescid])}
+      <MultiSelect {id} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
         {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions}
         inputClass='multiselect-input'
         on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}
