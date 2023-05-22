@@ -37,7 +37,7 @@
       stVal(finalDeserialize(''))
       return
     }
-    if (!choices.some(o => o.value === val)) stVal(notNull ? defaultValue : finalDeserialize(''))
+    if (!choices.some(o => o.value === finalDeserialize(val))) stVal(notNull ? defaultValue : finalDeserialize(''))
   }
   $: reactToChoices(choices)
   onMount(reactToChoices)
