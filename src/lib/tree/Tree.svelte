@@ -163,7 +163,7 @@
 <div class="tree-header" class:resizing={!!dragheaderid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined}>
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
   {#each headers as header, i (header.label)}
-    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
+    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
