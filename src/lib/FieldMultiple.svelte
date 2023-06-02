@@ -50,7 +50,7 @@
   <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && index > 0}
-    <div class="dialog-multiple" class:has-delete-icon={showDelete}>
+    <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove}>
       <div class="dialog-multiple-content">
         <slot {path} {index} {value} {maxed} {maxLength} {currentLength}/>
       </div>
@@ -85,7 +85,7 @@
   :global(.dialog-multiple-button) {
     margin-left: var(--dialog-container-padding, 1em);
   }
-  .dialog-multiple.has-delete-icon {
+  .dialog-multiple.has-delete-icon, .dialog-multiple.has-move-icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
