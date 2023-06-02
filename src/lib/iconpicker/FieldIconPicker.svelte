@@ -153,7 +153,7 @@
       </div>
       <footer class="actions">
         <button type="button" aria-describedby="{labelid} {descid}" on:click={onCancel(value)}>Cancel</button>
-        <button type="button" aria-describedby="{labelid} {descid}" on:click={onSaveIconSelection(setVal)}>Save Changes</button>
+        <button type="button" aria-describedby="{labelid} {descid}" on:click={onSaveIconSelection(setVal)}>Save</button>
       </footer>
     </section>
   </Modal>
