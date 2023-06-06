@@ -147,13 +147,13 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
 }
 
 export function cleanUrl (url: string) {
-  if (url.startsWith('//')) url = 'https:' + url
+  if (url.startsWith('//')) url = 'http:' + url
   if (url.startsWith('/')) return url
   try {
     const _ = new URL(url)
     return url
   } catch (e: any) {
-    const fixed = 'https://' + url
+    const fixed = 'http://' + url
     try {
       const _ = new URL(fixed)
       return fixed
