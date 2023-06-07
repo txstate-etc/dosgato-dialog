@@ -135,6 +135,7 @@
   }
   input[type="file"] {
     opacity: 0;
+    display: block;
   }
   label {
     display: inline-block;
