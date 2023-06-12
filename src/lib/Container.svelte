@@ -141,11 +141,11 @@
     line-height: 1.25em;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    height: 1.25em;
   }
   .dialog-field-help.expanded {
-    white-space: normal;
     max-height: fit-content;
+    height: auto;
   }
   .dialog-field-help.needsShowHelp {
     padding-right: 6em;
