@@ -263,7 +263,9 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
 
   async openAndRefresh (item: TypedTreeItem<T>, notify = true) {
     await this.refresh(item, true)
-    this.value.itemsById[item.id]!.open = !!item.children?.length
+    const newItem = this.value.itemsById[item.id]!
+    newItem.open = !!newItem.children?.length
+    item.open = newItem.open
     if (notify) this.trigger()
   }
 
