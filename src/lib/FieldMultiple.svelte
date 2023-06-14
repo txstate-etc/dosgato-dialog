@@ -3,7 +3,10 @@
   function noOp (..._: any[]) { return '' }
 </script>
 <script lang="ts">
+  import caretCircleDown from '@iconify-icons/ph/caret-circle-down'
+  import caretCircleUp from '@iconify-icons/ph/caret-circle-up'
   import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
+  import xCircle from '@iconify-icons/ph/x-circle'
   import { AddMore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
@@ -11,6 +14,7 @@
   import { isNotNull } from 'txstate-utils'
   import Button from './Button.svelte'
   import Container from './Container.svelte'
+  import Icon from './Icon.svelte'
 
   export let path: string
   export let label: string
@@ -34,11 +38,26 @@
   const store = getContext<FormStore>(FORM_CONTEXT)
   const messageStore = derivedStore(store, ({ messages }) => messages.all.filter(m => m.path?.startsWith(finalPath)))
 
-  const reorderelements: HTMLButtonElement[] = []
-  function moveUpAndFocus (onMoveUp: Function, idx: number) {
+  const reorderupelements: HTMLButtonElement[] = []
+  const reorderdownelements: HTMLButtonElement[] = []
+  function moveUpAndFocus (onMove: Function, idx: number) {
     return () => {
-      onMoveUp()
-      reorderelements[idx - 1]?.focus()
+      onMove()
+      let newFocus = reorderupelements[idx - 1]
+      if (newFocus) {
+        if (newFocus.disabled) newFocus = reorderdownelements[idx - 1]
+        newFocus.focus()
+      }
+    }
+  }
+  function moveDownAndFocus (onMove: Function, idx: number) {
+    return () => {
+      onMove()
+      let newFocus = reorderdownelements[idx + 1]
+      if (newFocus) {
+        if (newFocus.disabled) newFocus = reorderupelements[idx + 1]
+        newFocus.focus()
+      }
     }
   }
 
@@ -47,16 +66,19 @@
 
 <Container {label} {messages} {conditional} {related} {helptext} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
-  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp>
+  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
-    {@const showMove = reorder && index > 0}
-    <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove}>
+    {@const showMove = reorder && currentLength > 1}
+    <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove} class:first={index === 0}>
       <div class="dialog-multiple-content">
         <slot {path} {index} {value} {maxed} {maxLength} {currentLength}/>
       </div>
       {#if showDelete || showMove}<div class="dialog-multiple-buttons">
-        {#if reorder}<button bind:this={reorderelements[index]} class="dialog-multiple-move" type="button" aria-hidden={!showMove} disabled={!showMove} style:visibility={showMove ? 'visible' : 'hidden'} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}>^</button>{/if}
-        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}>X</button>{/if}
+        {#if showMove}
+          <button bind:this={reorderdownelements[index]} class="dialog-multiple-move" type="button" disabled={index === currentLength - 1} on:click|preventDefault|stopPropagation={moveDownAndFocus(onMoveDown, index)}><Icon icon={caretCircleDown} hiddenLabel="move down in the list" /></button>
+          <button bind:this={reorderupelements[index]} class="dialog-multiple-move" type="button" disabled={index === 0} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}><Icon icon={caretCircleUp} hiddenLabel="move up in the list" /></button>
+        {/if}
+        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}><Icon icon={xCircle} hiddenLabel="remove from list" /></button>{/if}
       </div>{/if}
     </div>
     <svelte:fragment slot="addbutton" let:maxed let:onClick>
@@ -68,10 +90,10 @@
 <style>
   .dialog-multiple {
     position: relative;
-    border: var(--dialog-container-border, 0);
-    padding: var(--dialog-container-padding, 1em);
+    border: var(--dialog-container-border, 1px dashed #CCCCCC);
+    padding: var(--dialog-container-padding, 1.5em);
   }
-  .dialog-multiple:not(:first-child) {
+  .dialog-multiple:not(.first) {
     border-top: 0;
   }
   .dialog-multiple:nth-of-type(even) {
@@ -82,24 +104,17 @@
     background-color: var(--dialog-field-bg2, transparent);
     color: var(--dialog-field-text2, inherit);
   }
-  :global(.dialog-multiple-button) {
-    margin-left: var(--dialog-container-padding, 1em);
-  }
-  .dialog-multiple.has-delete-icon, .dialog-multiple.has-move-icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
   .dialog-multiple-buttons {
-    margin-left: 0.75em;
+    position: absolute;
+    top: 0;
+    right: 0.1em;
+    display: flex;
   }
   .dialog-multiple-buttons button {
-    margin-left: 0.2em;
-  }
-  .dialog-multiple-buttons button:first-child {
-    margin-left: 0;
-  }
-  .dialog-multiple-content {
-    flex-grow: 1;
+    border: 0;
+    background: transparent;
+    padding: 0.15em;
+    cursor: pointer;
+    font-size: 1.3em;
   }
 </style>
