@@ -142,7 +142,6 @@
     min-width: calc(100% - 21em);
     height: calc(100% - 4em);
     background-color: white;
-    padding: 0.5em;
     overflow: auto;
   }
   .dialog-chooser-preview {
