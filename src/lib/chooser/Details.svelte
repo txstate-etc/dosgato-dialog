@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { AnyItem } from './ChooserAPI'
-  import { bytesToHuman, cleanUrl, type BrokenURL, type RawURL } from './ChooserStore'
+  import { bytesToHuman, cleanUrl, type BrokenURL, type RawURL, humanFileType } from './ChooserStore'
 
   export let item: AnyItem|RawURL|BrokenURL
   export let singleLine = false
 </script>
 
-<dl class="dialog-chooser-info" aria-live="polite" class:multiLine={!singleLine}>
+<dl class="dialog-chooser-info" aria-live="polite" class:multiLine={!singleLine} class:asset={item.type === 'asset'}>
   {#if item.type === 'raw' && item.id}
     <div class="top-row">
       <dt>External Link:</dt>
@@ -32,7 +32,7 @@
     {/if}
     <div>
       <dt>File Type:</dt>
-      <dd>{item.mime}</dd>
+      <dd>{humanFileType(item.mime, item.extension)}</dd>
     </div>
     <div>
       <dt>File Size:</dt>
@@ -74,5 +74,13 @@
   }
   .multiLine .top-row {
     width: 100%;
+  }
+  .top-row {
+    max-width: calc(100% - 9em);
+  }
+  dl.asset .top-row {
+    max-width: calc(100% - 20em);
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 </style>

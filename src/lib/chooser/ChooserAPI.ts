@@ -123,6 +123,7 @@ export interface Asset extends Item {
   type: 'asset'
   title?: string
   mime: string
+  extension: string
   bytes: number
   url: string
   image?: {

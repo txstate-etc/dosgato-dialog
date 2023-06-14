@@ -29,6 +29,7 @@
     position: relative;
     width: 100%;
     padding-top: 75%;
+    margin-right: 0.5em;
   }
   .dialog-chooser-thumbnail img {
     width: 100%;

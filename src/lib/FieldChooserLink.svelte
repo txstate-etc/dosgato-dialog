@@ -195,6 +195,9 @@
     padding-top: 0;
     height: 5em;
   }
+  .dialog-chooser-right {
+    flex-grow: 1;
+  }
   .dialog-chooser-right button {
     margin-top: 0.5em;
   }
