@@ -101,7 +101,7 @@
   section.normal {
     width: 75vw;
     min-width: 250px;
-    max-width: 650px;
+    max-width: 750px;
   }
   section.large {
     width: 90vw;
@@ -129,11 +129,15 @@
 
   .dialog-content {
     position: relative;
-    padding: 1em;
+    padding: 0 2em;
     min-height: 5em;
     overflow: auto;
     background-color: var(--dg-dialog-content-bg, #f4f4f4);
     max-height: calc(100vh - 7em);
+  }
+
+  section.tiny .dialog-content, section.small .dialog-content {
+    padding: 0 1em;
   }
 
   footer {

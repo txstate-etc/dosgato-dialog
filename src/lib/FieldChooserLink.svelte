@@ -1,6 +1,7 @@
 <script lang="ts">
   import arrowClockwiseFill from '@iconify-icons/ph/arrow-clockwise-fill'
   import deleteOutline from '@iconify-icons/mdi/delete-outline'
+  import xCircle from '@iconify-icons/ph/x-circle'
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { isBlank, isNotBlank, randomid } from 'txstate-utils'
@@ -37,6 +38,7 @@
   const value = formStore.getField<string>(finalPath)
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
   const store = new ChooserStore(chooserClient)
+  let urlEntryInput: HTMLInputElement | undefined
 
   const descid = randomid()
   let modalshown = false
@@ -53,6 +55,10 @@
       setVal(selectedAsset?.id)
       hide()
     }
+  }
+  function clearUrlEntry () {
+    urlEntryInput!.value = ''
+    urlEntryInput!.dispatchEvent(new InputEvent('input'))
   }
 
   let timer: ReturnType<typeof setTimeout>
@@ -152,7 +158,7 @@
 
 <FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
   {#if selectedAsset?.id}
-    <div class="dialog-chooser-container">
+    <div class="dialog-chooser-container" class:urlEntry>
       <Thumbnail item={selectedAsset} />
       <div class="dialog-chooser-right">
         <Details item={selectedAsset} singleLine />
@@ -160,17 +166,20 @@
           <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
             <Icon icon={arrowClockwiseFill} /> Replace
           </button>
+          <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+            <Icon icon={deleteOutline} inline /> Remove
+          </button>
         {/if}
-        <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
-          <Icon icon={deleteOutline} /> Remove
-        </button>
     </div>
     </div>
   {/if}
   {#if urlEntry || !selectedAsset?.id}
     <div class="dialog-chooser-entry">
       {#if urlEntry}
-        <input type="text" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:keyup={userUrlEntry}>
+        <div class="dialog-chooser-entry-input">
+          <input bind:this={urlEntryInput} type="text" data-lpignore="true" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:input={userUrlEntry}>
+          <button type="button" on:click={clearUrlEntry}><Icon icon={xCircle} hiddenLabel="clear input" inline/></button>
+        </div>
       {/if}
       <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>Select {#if value}New{/if} {#if assets && pages}Link Target{:else if images}Image{:else if assets}Asset{:else}Page{/if}</button>
     </div>
@@ -189,22 +198,56 @@
     flex-wrap: wrap;
     margin-bottom: 0.25em;
     font-size: 0.9em;
+    align-items: center;
   }
   div.dialog-chooser-container > :global(.dialog-chooser-thumbnail) {
     width: 8em;
     padding-top: 0;
     height: 5em;
   }
+  div.dialog-chooser-container.urlEntry > :global(.dialog-chooser-thumbnail) {
+    width: 3em;
+    padding-top: 0;
+    height: 3em;
+  }
   .dialog-chooser-right {
+    max-width: calc(100% - 8.5em);
     flex-grow: 1;
   }
   .dialog-chooser-right button {
     margin-top: 0.5em;
+    border: 0;
+    font-weight: bold;
+    border-radius: 0.2em;
+    cursor: pointer;
+    padding: 0.4em;
+    background: none;
+  }
+  .dialog-chooser-right button:hover {
+    background-color: #cccccc;
   }
   .dialog-chooser-entry {
     display: flex;
+    align-items: flex-start;
+    margin-top: 0.2em;
   }
-  input {
+  .dialog-chooser-entry-input {
+    position: relative;
     flex-grow: 1;
+  }
+  .dialog-chooser-entry-input input {
+    width: 100%;
+    padding-right: 1.4em;
+  }
+  .dialog-chooser-entry-input button {
+    display: block;
+    border: 0;
+    background: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    line-height: 1;
   }
 </style>

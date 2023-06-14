@@ -22,20 +22,22 @@
 
 <Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} {allMessages} {showingInlineErrors} />
-  <div class="form-errors" aria-live='assertive'>
-    {#if messages.length}
-      <ul>
-        {#each messages as message}
-          <li>{message.message}</li>
-        {/each}
-        {#if showingInlineErrors}
-          <li>More errors. See inline messages for details.</li>
-        {/if}
-      </ul>
-    {:else if showingInlineErrors}
-      This form contains validation errors. See inline messages for details.
-    {/if}
-  </div>
+  {#if messages.length || showingInlineErrors}
+    <div class="form-errors" aria-live='assertive'>
+      {#if messages.length}
+        <ul>
+          {#each messages as message}
+            <li>{message.message}</li>
+          {/each}
+          {#if showingInlineErrors}
+            <li>More errors. See inline messages for details.</li>
+          {/if}
+        </ul>
+      {:else if showingInlineErrors}
+        This form contains validation errors. See inline messages for details.
+      {/if}
+    </div>
+  {/if}
   <slot name="submit" {saved} {validating} {submitting} {valid} {invalid} {allMessages} {showingInlineErrors} />
 </Form>
 

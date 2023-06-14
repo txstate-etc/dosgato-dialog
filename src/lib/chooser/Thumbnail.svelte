@@ -37,10 +37,8 @@
     object-fit: scale-down;
   }
   .dialog-chooser-thumbnail :global(svg) {
-    width: 60%;
-    height: 60%;
-    min-width: 4.5em;
-    min-height: 4.5em;
+    width: 80%;
+    height: 80%;
     object-fit: scale-down;
   }
   .dialog-chooser-thumbnail > :global(*) {

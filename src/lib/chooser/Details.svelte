@@ -61,7 +61,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 1em 1.5em;
+    gap: 1em;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -79,7 +79,7 @@
     max-width: calc(100% - 9em);
   }
   dl.asset .top-row {
-    max-width: calc(100% - 20em);
+    max-width: 30em;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
