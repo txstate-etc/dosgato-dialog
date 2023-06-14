@@ -120,7 +120,11 @@
 
   const urlToValueCache: Record<string, string> = {}
   async function updateSelected (..._: any) {
-    if ($value && selectedAsset?.id !== $value) {
+    if (selectedAsset?.id !== $value) {
+      if (!$value) {
+        selectedAsset = undefined
+        return
+      }
       const valueBeforeFind = $value
       const asset = await chooserClient.findById($value)
       if ($value !== valueBeforeFind) return
