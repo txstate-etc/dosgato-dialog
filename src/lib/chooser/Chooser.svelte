@@ -1,9 +1,9 @@
 <script lang="ts">
-  import applicationOutline from '@iconify-icons/mdi/application-outline'
+  import browserIcon from '@iconify-icons/ph/browser'
   import folderIcon from '@iconify-icons/ph/folder'
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
   import { createEventDispatcher, getContext, onMount, setContext } from 'svelte'
-  import { isNotBlank, randomid, sleep } from 'txstate-utils'
+  import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI } from '$lib'
   import { CHOOSER_API_CONTEXT, type AnyItem, type Client, type Folder, type Page, type Asset } from './ChooserAPI'
   import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
@@ -100,7 +100,7 @@
     <section class="dialog-chooser-chooser">
       {#if $store.initialized}
         <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => ({ icon: item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : applicationOutline) }), get: 'name' }
+          { label: 'Path', id: 'name', grow: 4, icon: item => ({ icon: item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : browserIcon) }), get: 'name' }
         ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
       {/if}
     </section>
