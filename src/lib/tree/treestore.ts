@@ -39,7 +39,7 @@ export interface ITreeStore<T extends TreeItemFromDB> {
 
 export type FetchChildrenFn<T extends TreeItemFromDB> = (item?: TypedTreeItem<T>) => Promise<T[]>
 export type DragEligibleFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], userWantsCopy: boolean) => boolean
-export type DropEffectFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsCopy: boolean) => 'move' | 'copy' | 'none'
+export type DropEffectFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsCopy: boolean, dragging: boolean) => 'move' | 'copy' | 'none'
 export type MoveHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean) => boolean | Promise<boolean>
 export type CopyHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsRecursive: boolean | undefined) => boolean | Promise<boolean>
 export type SearchableFn<T extends TreeItemFromDB> = (item: TypedTreeItem<T>) => string[]
@@ -363,7 +363,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   }
 
   protected _dropEffect (item: TypedTreeItem<T>, droppedItems: Map<string, TypedTreeItem<T>>, above: boolean, userWantsCopy: boolean) {
-    const handlerAnswer = this.dropEffectHandler?.(Array.from(droppedItems.values()), item, above, userWantsCopy) ?? 'move'
+    const handlerAnswer = this.dropEffectHandler?.(Array.from(droppedItems.values()), item, above, userWantsCopy, this.value.dragging) ?? 'move'
     if (handlerAnswer === 'none') return 'none'
     if (handlerAnswer === 'move') {
       // I could make the user's dropEffectHandler check this, but it's pretty universal that you
