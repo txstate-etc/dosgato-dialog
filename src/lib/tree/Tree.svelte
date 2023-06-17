@@ -155,7 +155,8 @@
       }
     }
   })
-  $: myRootItems = $store && $filteredRootItems
+  $: myRootItemIds = $store && $filteredRootItems
+  $: myRootItems = $store?.rootItems?.filter(r => myRootItemIds.has(r.id)) ?? []
 </script>
 
 <svelte:window on:mouseup={headerDragEnd} />

@@ -62,8 +62,8 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public rootItems = derivedStore(this, 'rootItems')
   public filterTerm = new Store('')
   public filteredRootItems = derived([this.rootItems, this.filterTerm], ([rootItems, filter]) => {
-    if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return this.value.rootItems
-    const ret: TypedTreeItem<T>[] = []
+    if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return new Set(this.value.rootItems?.map(r => r.id))
+    const ret = new Set<string>()
     const newselected: TypedTreeItem<T>[] = []
     let foundfocus = false
     for (const itm of this.value.rootItems ?? []) {
@@ -74,7 +74,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
       if (found) {
         if (this.value.selected.has(itm.id)) newselected.push(itm)
         if (this.value.focused?.id === itm.id) foundfocus = true
-        ret.push(itm)
+        ret.add(itm.id)
       }
     }
     if (!foundfocus) this.focus(ret[0])
@@ -263,9 +263,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
 
   async openAndRefresh (item: TypedTreeItem<T>, notify = true) {
     await this.refresh(item, true)
-    const newItem = this.value.itemsById[item.id]!
-    newItem.open = !!newItem.children?.length
-    item.open = newItem.open
+    item.open = !!item.children?.length
     if (notify) this.trigger()
   }
 
@@ -284,7 +282,6 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
 
   async viewUnder (item?: TypedTreeItem<T>) {
     if (item) await this.open(item)
-    this.trigger()
   }
 
   dragStart (item: TypedTreeItem<T>) {
