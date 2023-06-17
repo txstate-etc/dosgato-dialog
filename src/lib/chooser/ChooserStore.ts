@@ -164,8 +164,8 @@ export function cleanUrl (url: string) {
 }
 
 export function humanFileType (mime: string, extension: string) {
-  if (mime.startsWith('image/') || mime.startsWith('video/')) return mime
-  if (mime.startsWith('text/')) return 'text - ' + extension
+  if (mime.startsWith('image/') || mime.startsWith('video/')) return mime.split(';')[0]
   if (extension === 'js') return 'javascript'
+  if (mime.startsWith('text/')) return 'text - ' + extension
   return extension
 }
