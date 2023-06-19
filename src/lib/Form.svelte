@@ -48,6 +48,9 @@
   :global(.dialog-form) {
     padding: 0;
   }
+  :global(.dialog-content > .dialog-form) {
+    margin: -2em 0;
+  }
   .form-errors {
     color: var(--dg-danger-bg, #9a3332);
     padding: 1em;

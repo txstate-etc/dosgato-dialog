@@ -129,7 +129,7 @@
 
   .dialog-content {
     position: relative;
-    padding: 0 2em;
+    padding: 2em;
     min-height: 5em;
     overflow: auto;
     background-color: var(--dg-dialog-content-bg, #f4f4f4);
