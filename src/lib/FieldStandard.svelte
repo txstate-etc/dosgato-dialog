@@ -27,7 +27,7 @@
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
   /** If you need to do some processing just before submit or validate define that processing here. */
-  export let finalize: ((value: any) => any)|undefined = undefined
+  export let finalize: ((value: any, isSubmit: boolean) => any)|undefined = undefined
   /** If you specified a finalize, you probably need an initialize to invert it. */
   export let initialize: ((value: any) => any)|undefined = undefined
   export let conditional: boolean|undefined = undefined
