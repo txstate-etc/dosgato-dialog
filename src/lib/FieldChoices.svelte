@@ -51,7 +51,7 @@
 
   const descid = randomid()
 
-  let val: any, stVal: (val: any) => void
+  let val: any, stVal: (val: any, notDirty?: boolean) => void
   function updateValue (valu: any, sVal: any) {
     val = valu
     stVal = sVal
@@ -60,7 +60,7 @@
     if (!stVal) return
     const choiceSet = new Set(choices?.map(c => c.value))
     const filtered = val?.filter(v => choiceSet.has(v))
-    if (filtered?.length !== val?.length) stVal(filtered)
+    if (filtered?.length !== val?.length) stVal(filtered, true)
   }
   $: reactToChoices(choices)
   onMount(reactToChoices)

@@ -23,7 +23,7 @@
   export let serialize: ((value: any) => string)|undefined = undefined
   export let deserialize: ((value: string) => any)|undefined = undefined
 
-  let val: any, stVal: (val: any) => void, finalDeserialize: (value: string) => any
+  let val: any, stVal: (val: any, notDirty?: boolean) => void, finalDeserialize: (value: string) => any
   function updateValue (valu: any, sVal: any, fDes: any) {
     val = valu
     stVal = sVal
@@ -32,10 +32,10 @@
   function reactToChoices (..._: any[]) {
     if (!stVal) return
     if (!choices.length) {
-      stVal(finalDeserialize(''))
+      stVal(finalDeserialize(''), true)
       return
     }
-    if (!choices.some(o => o.value === finalDeserialize(val))) stVal(notNull ? defaultValue : finalDeserialize(''))
+    if (!choices.some(o => o.value === finalDeserialize(val))) stVal(notNull ? defaultValue : finalDeserialize(''), true)
   }
   $: reactToChoices(choices)
   onMount(reactToChoices)

@@ -19,15 +19,15 @@
   export let helptext: string | undefined = undefined
   const groupid = randomid()
 
-  let val: any, stVal: (val: any) => void
+  let val: any, stVal: (val: any, notDirty?: boolean) => void
   function updateValue (valu: any, sVal: any) {
     val = valu
     stVal = sVal
   }
   function reactToOptions (..._: any[]) {
     if (!stVal) return
-    if (!options.length) stVal(addAllOption ? 'alternating' : undefined)
-    if (val !== 'alternating' && !options.some(o => o.value === val)) stVal(notNull ? options[0].value : (addAllOption ? 'alternating' : undefined))
+    if (!options.length) stVal(addAllOption ? 'alternating' : undefined, true)
+    if (val !== 'alternating' && !options.some(o => o.value === val)) stVal(notNull ? options[0].value : (addAllOption ? 'alternating' : undefined), true)
   }
   $: reactToOptions(options)
   onMount(reactToOptions)
