@@ -2,6 +2,7 @@
   import menuRight from '@iconify-icons/mdi/menu-right.js'
   import menuLeft from '@iconify-icons/mdi/menu-left.js'
   import { type PopupMenuItem, ScreenReaderOnly, modifierKey } from '@txstate-mws/svelte-components'
+  import { arraySerialize } from '@txstate-mws/svelte-forms'
   import { randomid } from 'txstate-utils'
   import FieldStandard from './FieldStandard.svelte'
   import Icon from './Icon.svelte'
@@ -85,7 +86,7 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:helptextid let:messagesid>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:helptextid let:messagesid serialize={arraySerialize}>
   <div {id} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
     <ScreenReaderOnly>
       <span aria-live="polite">{instructions}</span>

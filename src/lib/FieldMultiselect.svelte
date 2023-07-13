@@ -9,6 +9,7 @@
 <script lang="ts">
   import { MultiSelect } from '@txstate-mws/svelte-components'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
+  import { arraySerialize } from '@txstate-mws/svelte-forms'
   import { Store } from '@txstate-mws/svelte-store'
   import { onMount } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
@@ -75,7 +76,7 @@
 
 <div bind:this={inputelement}></div>
 {#if hasInit}
-  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
+  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid serialize={arraySerialize}>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
       <MultiSelect {id} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}

@@ -6,7 +6,7 @@
 -->
 <script lang="ts">
   import { getContext, onMount } from 'svelte'
-  import { Field, FORM_CONTEXT } from '@txstate-mws/svelte-forms'
+  import { Field, FORM_CONTEXT, arraySerialize } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
   import { randomid } from 'txstate-utils'
@@ -66,7 +66,7 @@
   onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid>
+<Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
   {@const _ = updateValue(value, setVal)}
   <Container {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
