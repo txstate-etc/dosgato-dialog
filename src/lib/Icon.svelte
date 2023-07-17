@@ -19,9 +19,6 @@
 
 {#if icon}
   <Tooltip tip={tooltip} top>
-    <Icon {icon} {inline} {width} {height} aria-hidden={!hiddenLabel} />
+    <Icon {icon} {inline} {width} {height} aria-hidden={!hiddenLabel} aria-label={hiddenLabel}/>
   </Tooltip>
-  {#if hiddenLabel}
-    <ScreenReaderOnly>{hiddenLabel}</ScreenReaderOnly>
-  {/if}
 {/if}
