@@ -15,6 +15,8 @@
   import arrowLeftLight from '@iconify-icons/ph/arrow-left-light'
   import arrowRightLight from '@iconify-icons/ph/arrow-right-light'
   import xLight from '@iconify-icons/ph/x-light'
+  import arrowsOutSimple from '@iconify-icons/ph/arrows-out-simple'
+  import arrowsInSimple from '@iconify-icons/ph/arrows-in-simple'
   import { eq, Modal, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { createEventDispatcher, setContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
@@ -29,6 +31,7 @@
   export let continueText: string = 'Ok'
   export let continueIcon: IconifyIcon | undefined = undefined
   export let escapable = isNotBlank(cancelText)
+  export let expandable: boolean = false
   export let disabled = false
   export let ignoreTabs = false
 
@@ -42,6 +45,7 @@
   let hasRequired: boolean | undefined = false
   let onPrev: (() => void) | undefined
   let onNext: (() => void) | undefined
+  let expanded: boolean = false
   function onTabChange () {
     ({ hasTabs, prevTitle, nextTitle, hasRequired, onPrev, onNext } = ctx)
   }
@@ -51,15 +55,20 @@
 </script>
 
 <Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
-  <section class="{size}" use:eq>
+  <section class="{expanded ? 'xl' : size}" use:eq>
     {#if title || icon}
       <header id={labelid}>
         <Icon width="1.4em" {icon} inline />{title}
       </header>
     {/if}
-    {#if escapable}
-      <button type="button" class="escape" on:click={() => dispatch('escape')}><Icon icon={xLight} width="2em" hiddenLabel="Close Dialog" /></button>
-    {/if}
+    <div class="header-buttons">
+      {#if expandable && size !== 'xl'}
+        <button type="button" class="expand" on:click={() => { expanded = !expanded } }><Icon icon={expanded ? arrowsInSimple : arrowsOutSimple} width="2em" hiddenLabel={`${expanded ? 'Contract' : 'Expand'} dialog`}/></button>
+      {/if}
+      {#if escapable}
+        <button type="button" class="escape" on:click={() => dispatch('escape')}><Icon icon={xLight} width="2em" hiddenLabel="Close Dialog" /></button>
+      {/if}
+    </div>
     <div id={descid} class="dialog-content">
       <slot></slot>
     </div>
@@ -162,11 +171,12 @@
   footer.actions :global(.prev) {
     margin-right: auto;
   }
-
-  .escape {
+  .header-buttons {
     position: absolute;
     top: 0.1em;
     right: 0;
+  }
+  .header-buttons button {
     border: 0;
     background: none;
     cursor: pointer;
