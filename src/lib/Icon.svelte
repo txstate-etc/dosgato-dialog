@@ -6,15 +6,17 @@
 <script lang="ts">
   import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
   import type { IconifyIcon } from '@iconify/svelte'
-  import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import Tooltip from './Tooltip.svelte'
-  export let icon: IconifyIcon|undefined
+  export let icon: IconifyIcon | undefined
   /** Label used in a `<ScreenReaderOnly>`. */
   export let hiddenLabel: string|undefined = undefined
   export let inline: boolean = false
-  export let width: string|number = '1em'
-  export let height: string|number = width
+  export let width: string | number | undefined = undefined
+  export let height: string | number | undefined = undefined
   export let tooltip: string | undefined = undefined
+
+  // If neither is defined, set both to 1em
+  if (!width && !height) width = height = '1em'
 </script>
 
 {#if icon}
