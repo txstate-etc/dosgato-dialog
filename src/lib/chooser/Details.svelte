@@ -38,10 +38,18 @@
       <dt>File Size:</dt>
       <dd>{bytesToHuman(item.bytes)}</dd>
     </div>
+    <div>
+      <dt>Path:</dt>
+      <dd>{item.path}</dd>
+    </div>
   {:else if item.type === 'page' && item.title}
     <div>
       <dt>Title:</dt>
       <dd>{item.title}</dd>
+    </div>
+    <div>
+      <dt>Path:</dt>
+      <dd>{item.path}</dd>
     </div>
   {:else if item.type === 'folder'}
     <div>

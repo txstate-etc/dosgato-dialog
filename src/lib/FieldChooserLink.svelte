@@ -147,7 +147,13 @@
             selectedAsset = { type: 'raw', id: $value, url: cleanedUrlFromValue }
           }
         }
-        if (selectedAsset) urlToValueCache[selectedAsset.url] = $value
+        if (selectedAsset) {
+          urlToValueCache[selectedAsset.url] = $value
+          if (selectedAsset.type !== 'raw' && selectedAsset.type !== 'broken') {
+            initialPath = selectedAsset.path ?? initialPath
+            initialSource = selectedAsset.source ?? initialSource
+          }
+        }
       } catch (e: any) {
         console.error(e)
       }
