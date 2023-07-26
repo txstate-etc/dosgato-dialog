@@ -68,7 +68,7 @@
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'status', label: 'Status', fixed: '4em', icon: item => ({ icon: statusIcon[item.status], label: item.status }) },
     { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
-  ]} searchable="name" {filter}/>
+  ]} searchable="name" {filter} enableResize />
 {/if}
 
 <style>

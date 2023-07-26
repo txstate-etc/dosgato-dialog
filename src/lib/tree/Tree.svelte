@@ -90,21 +90,23 @@
     }
   }
 
-  let dragheaderid: string | undefined
-  let dragheaderidx: number | undefined
-  let dragtarget: HTMLElement | undefined
+  let dragtargetid: string | undefined
+  let rightoftargetid: string | undefined
   let widthStart: number
+  let width2Start: number
   let mouseStart: number
   function headerDragStart (header: TreeHeader<T>, idx: number) {
     return (e: MouseEvent | TouchEvent) => {
       if (!enableResize) return
-      dragtarget = headerelements[idx]
-      if (!dragtarget.isConnected) dragtarget = undefined
+      const dragtarget = headerelements[idx]
+      const rightoftarget = headerelements.find((e, i) => i > idx && e.isConnected)
+      if (!dragtarget?.isConnected || !rightoftarget) dragtargetid = undefined
       else {
         e.preventDefault()
-        dragheaderid = header.id
-        dragheaderidx = idx
+        dragtargetid = header.id
+        rightoftargetid = rightoftarget.getAttribute('id') ?? undefined
         widthStart = dragtarget.clientWidth
+        width2Start = rightoftarget.clientWidth
         mouseStart = e instanceof TouchEvent ? e.touches[0].screenX : e.screenX
       }
     }
@@ -112,18 +114,16 @@
 
   function headerDrag (e: MouseEvent | TouchEvent) {
     if (e instanceof TouchEvent && e.touches.length > 1) return
-    if (dragheaderid && dragheaderidx != null && dragtarget?.isConnected) {
-      for (let i = 0; i < dragheaderidx; i++) {
-        store.setHeaderOverride(headers[i].id, $headerSizes[i])
-      }
+    if (dragtargetid && rightoftargetid) {
       const screenX = e instanceof TouchEvent ? e.touches[0].screenX : e.screenX
-      store.setHeaderOverride(dragheaderid, `${widthStart - (mouseStart - screenX)}px`)
+      store.setHeaderOverride(dragtargetid, `${widthStart - (mouseStart - screenX)}px`)
+      store.setHeaderOverride(rightoftargetid, `${width2Start + (mouseStart - screenX)}px`)
     }
   }
 
   function headerDragEnd () {
-    dragtarget = undefined
-    dragheaderid = undefined
+    dragtargetid = undefined
+    rightoftargetid = undefined
   }
 
   function headerDragReset () {
@@ -161,16 +161,16 @@
 
 <svelte:window on:mouseup={headerDragEnd} />
 
-<div class="tree-header" class:resizing={!!dragheaderid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined}>
+<div class="tree-header" class:resizing={!!dragtargetid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined}>
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
   {#each headers as header, i (header.label)}
     <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
-    {#if enableResize && i !== headers.length - 1}<div class="tree-separator" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
+    {#if enableResize && i !== headers.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
 {#if mounted && myRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
-  <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragheaderid} on:mousemove={dragheaderid ? headerDrag : undefined} on:touchmove={dragheaderid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
+  <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragtargetid} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
     {#each myRootItems as item, i (item.id)}
       <TreeNode
         {item}
