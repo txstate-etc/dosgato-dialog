@@ -62,14 +62,14 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public rootItems = derivedStore(this, 'rootItems')
   public filterTerm = new Store('')
   public filteredRootItems = derived([this.rootItems, this.filterTerm], ([rootItems, filter]) => {
-    if (!this.searchableFn || !rootItems?.length || isBlank(filter)) return new Set(this.value.rootItems?.map(r => r.id))
+    if (!this.filterableFn || !rootItems?.length || isBlank(filter)) return new Set(this.value.rootItems?.map(r => r.id))
     const ret = new Set<string>()
     const newselected: TypedTreeItem<T>[] = []
     let foundfocus = false
     for (const itm of this.value.rootItems ?? []) {
       let found = false
-      for (const val of this.searchableFn(itm)) {
-        if (val.toLocaleLowerCase().startsWith(filter)) found = true
+      for (const val of this.filterableFn(itm)) {
+        if (val.toLocaleLowerCase().includes(filter)) found = true
       }
       if (found) {
         if (this.value.selected.has(itm.id)) newselected.push(itm)
@@ -95,6 +95,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public dragEligibleHandler?: DragEligibleFn<T>
   public dropEffectHandler?: DropEffectFn<T>
   public searchableFn?: SearchableFn<T>
+  public filterableFn?: SearchableFn<T>
   public singleSelect?: boolean
 
   private refreshPromise?: Promise<void>

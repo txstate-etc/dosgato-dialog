@@ -17,6 +17,7 @@
 
   export let headers: TreeHeader<T>[]
   export let searchable: SearchableType<T> = undefined
+  export let filterable: SearchableType<T> = searchable
   export let filter = ''
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean|undefined = undefined
@@ -36,6 +37,7 @@
   export let dropEffect: DropEffectFn<T>|undefined = undefined
   export let store = new TreeStore<T>(fetchChildren!, { copyHandler, dragEligible, dropEffect, moveHandler })
   if (searchable) store.searchableFn = transformSearchable(searchable)
+  if (filterable) store.filterableFn = transformSearchable(filterable)
   setContext(TREE_STORE_CONTEXT, store)
   const { filteredRootItems, headerOverride } = store
 
