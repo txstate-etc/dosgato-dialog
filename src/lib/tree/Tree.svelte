@@ -109,15 +109,15 @@
         rightoftargetid = rightoftarget.getAttribute('id') ?? undefined
         widthStart = dragtarget.clientWidth
         width2Start = rightoftarget.clientWidth
-        mouseStart = e instanceof TouchEvent ? e.touches[0].screenX : e.screenX
+        mouseStart = 'touches' in e ? e.touches[0].screenX : e.screenX
       }
     }
   }
 
   function headerDrag (e: MouseEvent | TouchEvent) {
-    if (e instanceof TouchEvent && e.touches.length > 1) return
+    if ('touches' in e && e.touches?.length > 1) return
     if (dragtargetid && rightoftargetid) {
-      const screenX = e instanceof TouchEvent ? e.touches[0].screenX : e.screenX
+      const screenX = 'touches' in e ? e.touches[0].screenX : e.screenX
       store.setHeaderOverride(dragtargetid, `${widthStart - (mouseStart - screenX)}px`)
       store.setHeaderOverride(rightoftargetid, `${width2Start + (mouseStart - screenX)}px`)
     }
