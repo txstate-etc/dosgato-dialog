@@ -231,7 +231,7 @@
     dragOverAbove = 0
   }
 </script>
-<li>
+<li role="presentation">
   {#if dropAbove}
     <div class="drop-above"
       class:dragOverAbove
