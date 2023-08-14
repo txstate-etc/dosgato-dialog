@@ -5,15 +5,32 @@
   import Icon from '$lib/Icon.svelte'
   import type { AnyItem } from './ChooserAPI'
   import type { BrokenURL, RawURL } from './ChooserStore'
+  import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { collapseIconSVG, expandIconSVG } from './icons'
+  import { createEventDispatcher } from 'svelte'
 
   export let item: AnyItem|RawURL|BrokenURL
   export let larger = false
-</script>
+  export let expandable = false
+  export let expanded = false
+  const dispatch = createEventDispatcher()
 
-<div class="dialog-chooser-thumbnail">
+  function toggleThumbnailSize () {
+    dispatch('thumbnailsizechage')
+  }
+</script>
+<div class="dialog-chooser-thumbnail" class:expanded>
   {#if item.type === 'asset'}
     {#if item.image}
-      <img src={(larger ? (item.image.previewUrl ?? item.image.thumbnailUrl) : (item.image.thumbnailUrl ?? item.image.previewUrl)) ?? item.url} alt="" />
+      <div style="position: relative; height: 100%;">
+        <img src={(larger ? (item.image.previewUrl ?? item.image.thumbnailUrl) : (item.image.thumbnailUrl ?? item.image.previewUrl)) ?? item.url} alt="" />
+        {#if expandable}
+          <button on:click={toggleThumbnailSize}>
+            {@html expanded ? collapseIconSVG : expandIconSVG}
+            <ScreenReaderOnly>{expanded ? 'View Image Details' : 'View Full Image'}</ScreenReaderOnly>
+          </button>
+        {/if}
+      </div>
     {:else}
       <FileIcon mime={item.mime} width='5em' />
     {/if}
@@ -28,13 +45,14 @@
   .dialog-chooser-thumbnail {
     position: relative;
     width: 100%;
-    padding-top: 75%;
     margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
   .dialog-chooser-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
+    object-position: top;
   }
   .dialog-chooser-thumbnail :global(svg) {
     width: 80%;
@@ -43,9 +61,18 @@
   }
   .dialog-chooser-thumbnail > :global(*) {
     display: block;
+  }
+  .dialog-chooser-thumbnail button {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: transparent;
+    width: 2.5em;
+    border: 0;
+  }
+  .dialog-chooser-thumbnail button :global(svg) {
+    width: 100%;
+    height: 100%;
   }
 </style>

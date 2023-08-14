@@ -204,7 +204,10 @@
     flex-wrap: wrap;
     margin-bottom: 0.25em;
     font-size: 0.9em;
-    align-items: center;
+    align-items: flex-start;
+  }
+  :global([data-eq~="400px"]) .dialog-chooser-container {
+    flex-direction: column;
   }
   div.dialog-chooser-container > :global(.dialog-chooser-thumbnail) {
     width: 8em;
@@ -219,6 +222,9 @@
   .dialog-chooser-right {
     max-width: calc(100% - 8.5em);
     flex-grow: 1;
+  }
+  :global([data-eq~="400px"]) .dialog-chooser-right {
+    max-width: unset;
   }
   .dialog-chooser-right button {
     margin-top: 0.5em;
@@ -255,5 +261,8 @@
     transform: translateY(-50%);
     cursor: pointer;
     line-height: 1;
+  }
+  :global([data-eq~="400px"] .dialog-chooser-container .dialog-chooser-thumbnail img) {
+    object-position: left;
   }
 </style>
