@@ -122,6 +122,16 @@
     max-width: 2000px;
   }
 
+  @media (max-width: 800px) {
+    section.small, section.normal, section.large, section.xl {
+      width: 95vw;
+      max-width: 2000px;
+    }
+    button.expand {
+      display: none;
+    }
+  }
+
   header {
     display: flex;
     align-items: center;
