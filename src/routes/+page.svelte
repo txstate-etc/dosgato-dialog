@@ -67,6 +67,9 @@
       <FieldMultiple reorder path="images" label="Images" let:index>
         <FieldChooserLink path="" assets urlEntry />
       </FieldMultiple>
+      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={(index) => { return { thing: `This will be thing ${index + 1}` } }}>
+        <FieldText path="thing" />
+      </FieldMultiple>
     </Tab>
     <Tab name="Text">
       <FieldText path="charlimit" label="Character Limit" maxlength={10} />

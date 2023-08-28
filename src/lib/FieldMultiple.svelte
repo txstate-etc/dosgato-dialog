@@ -18,7 +18,7 @@
 
   export let path: string
   export let label: string
-  export let initialState: any = undefined
+  export let initialState: any | ((index: number) => any) = undefined
   export let minLength = 1
   export let maxLength: number|undefined = undefined
   export let compact = false
