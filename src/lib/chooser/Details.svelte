@@ -18,7 +18,7 @@
       <dd>{item.url}</dd>
     </div>
   {:else if item.type !== 'raw'}
-    <div class="top-row">
+    <div class="top-row name">
       <dt>Name:</dt>
       <dd>{item.name}</dd>
     </div>

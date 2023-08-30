@@ -16,7 +16,7 @@
   const dispatch = createEventDispatcher()
 
   function toggleThumbnailSize () {
-    dispatch('thumbnailsizechage')
+    dispatch('thumbnailsizechange')
   }
 </script>
 <div class="dialog-chooser-thumbnail" class:expanded>
