@@ -143,7 +143,22 @@
     font-weight: 700;
   }
 
-  .tabs-active {
+  li.active span {
+    position: relative;
+  }
+
+  li.active span:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: var(--dg-tabs-active, var(--dg-button-bg, #501214));
+    width: 100%;
+    left: 0;
+    bottom: -3px;
+    border-radius: 2px;
+  }
+
+  /* .tabs-active {
     background: var(--dg-tabs-active, var(--dg-button-bg, #501214));
     height: 3px;
     border-radius: 2px;
@@ -157,5 +172,5 @@
     .tabs-active {
       transition: none;
     }
-  }
+  } */
 </style>
