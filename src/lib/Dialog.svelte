@@ -153,6 +153,7 @@
     overflow: auto;
     background-color: var(--dg-dialog-content-bg, #f4f4f4);
     max-height: calc(100vh - 7.5em);
+    max-height: calc(100dvh - 7.5em);
   }
 
   section.tiny .dialog-content, section.small .dialog-content {
