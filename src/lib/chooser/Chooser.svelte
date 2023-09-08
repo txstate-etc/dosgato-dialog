@@ -79,7 +79,6 @@
       store.setPreview(currentSelection)
       treeStore.select(currentSelection, { clear: true })
       await tick()
-      treeStore.trigger()
       const focusedElement = document.querySelector('.tree-node[tabindex="0"]')
       if (focusedElement?.classList.contains('tree-node')) focusedElement.scrollIntoView({ block: 'center' })
     }
