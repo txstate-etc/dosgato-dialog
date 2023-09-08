@@ -2,7 +2,7 @@
   import browserIcon from '@iconify-icons/ph/browser'
   import folderIcon from '@iconify-icons/ph/folder'
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
-  import { createEventDispatcher, getContext, onMount, setContext } from 'svelte'
+  import { createEventDispatcher, getContext, onMount, setContext, tick } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI } from '$lib'
   import { CHOOSER_API_CONTEXT, type AnyItem, type Client, type Folder, type Page, type Asset } from './ChooserAPI'
@@ -77,8 +77,11 @@
       treeStore.trigger()
       if (!currentSelection) return
       store.setPreview(currentSelection)
-      treeStore.select(currentSelection, {})
+      treeStore.select(currentSelection, { clear: true })
+      await tick()
       treeStore.trigger()
+      const focusedElement = document.querySelector('.tree-node[tabindex="0"]')
+      if (focusedElement?.classList.contains('tree-node')) focusedElement.scrollIntoView({ block: 'center' })
     }
   }
   onMount(async () => {
