@@ -16,8 +16,23 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
+  export let inputelement: HTMLInputElement
+  let showBadInputMessage = false
+
+  function wrapOnChange (onChange) {
+    showBadInputMessage = inputelement.validity.badInput
+    onChange()
+  }
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid let:messagesid>
-  <Input type="datetime-local" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
+  {#if showBadInputMessage}<div class="bad-input-warning" aria-live='polite'>{`Field ${label}`} must include both a date and time</div>{/if}
+  <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} {id} class="dialog-input {className}" onChange={() => { wrapOnChange(onChange) }} {onBlur} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
 </FieldStandard>
+
+<style>
+  .bad-input-warning {
+    margin-bottom: 0.3em;
+    color: var(--dg-danger-bg, #9a3332);
+  }
+</style>
