@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { type ElementOffsets, modifierKey, resize, offset } from '@txstate-mws/svelte-components'
+  import { type ElementOffsets, modifierKey, resize, offset, PopupMenu } from '@txstate-mws/svelte-components'
   import { Store } from '@txstate-mws/svelte-store'
-  import { getContext, onMount, setContext } from 'svelte'
+  import { getContext, onMount, setContext, tick } from 'svelte'
   import { roundTo } from 'txstate-utils'
   import { DIALOG_TABS_CONTEXT, type DialogTabContext } from './Dialog.svelte'
   import Icon from './Icon.svelte'
   import { TabStore, TAB_CONTEXT, type TabDef } from './TabStore'
+  import caretRightFill from '@iconify-icons/ph/caret-right-fill'
 
   export let tabs: TabDef[]
   export let active: string|undefined = undefined
@@ -16,7 +17,9 @@
 
   const activeStore = new Store<ElementOffsets>({})
   const tabelements: HTMLElement[] = []
+  let tabOverflowButton: HTMLButtonElement
   let activeelement: HTMLElement
+  let hiddenTabs: TabDef[] = []
   setContext(TAB_CONTEXT, { store, onClick, onKeyDown, tabelements })
 
   const dialogContext = (disableDialogControl ? undefined : getContext<DialogTabContext>(DIALOG_TABS_CONTEXT)) ?? { change: () => {} }
@@ -50,15 +53,19 @@
         store.activate(idx)
       } else if (e.key === 'ArrowLeft' && $store.current > 0) {
         store.left()
+        await tick()
         tabelements[$store.current].focus()
       } else if (e.key === 'ArrowRight' && $store.current < $store.tabs.length - 1) {
         store.right()
+        await tick()
         tabelements[$store.current].focus()
       } else if (e.key === 'Home' && $store.current > 0) {
         store.home()
+        await tick()
         tabelements[$store.current].focus()
       } else if (e.key === 'End' && $store.current < $store.tabs.length - 1) {
         store.end()
+        await tick()
         tabelements[$store.current].focus()
       }
     }
@@ -66,6 +73,18 @@
 
   function isActive (idx, activeidx) {
     return idx === (activeidx ?? 0)
+  }
+
+  function onOverflowChange (e: any) {
+    store.activateName(e.detail.value)
+  }
+
+  function tabIsHidden (index: number) {
+    if (!wrapping) return false
+    const left = Math.max($currentIdx - cols + 1, 0)
+    const right = Math.min(left + cols - 1)
+    // return (index !== $currentIdx && index >= cols) || (index === cols - 1 && $currentIdx > cols - 1)
+    return (index !== $currentIdx) && ((index < left) || (index > right))
   }
 
   const activeOversize = 2
@@ -79,11 +98,13 @@
     const width = span.offsetWidth + (activeOversize * 2)
     activeelement.style.transform = `translateX(${left}px)`
     activeelement.style.width = `${width}px`
+    hiddenTabs = $store.tabs.filter((tab, idx) => { return tabIsHidden(idx) })
   }
 
   $: active = $currentName
   $: reactToCurrent($activeStore)
   onMount(reactToCurrent)
+
 </script>
 
 {#if $store.tabs.length > 1}
@@ -92,9 +113,13 @@
     <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
       {#each $store.tabs as tab, idx (tab.name)}
         {@const active = isActive(idx, $store.current)}
-        {@const left = idx % cols === 0}
-        <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
+        {@const left = idx === 0}
+        <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active class:hidden={tabIsHidden(idx)} style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
       {/each}
+      {#if cols < $store.tabs.length}
+        <li class="overflow" role="presentation"><button bind:this={tabOverflowButton} type="button" tabindex="-1"><Icon icon={caretRightFill} hiddenLabel="More Tabs Menu" inline /></button></li>
+        <PopupMenu buttonelement={tabOverflowButton} items={hiddenTabs.map(t => ({ value: t.name }))} on:change={onOverflowChange}/>
+      {/if}
     </ul>
     <div bind:this={activeelement} class="tabs-active"></div>
     <slot current={$store.current} />
@@ -135,6 +160,21 @@
     font-weight: 500;
     color: var(--tabs-text, #363534)
   }
+  :global(.tabs-tab.hidden) {
+    display: none;
+  }
+  li.overflow {
+    min-width: 2em;
+    display: flex;
+    align-items: center;
+    background-color: transparent !important;
+    padding: 0;
+  }
+  li.overflow button {
+    background: none;
+    cursor: pointer;
+    border: 0;
+  }
   li:not(.left) {
     margin-left: -1px;
   }
@@ -157,20 +197,4 @@
     bottom: -3px;
     border-radius: 2px;
   }
-
-  /* .tabs-active {
-    background: var(--dg-tabs-active, var(--dg-button-bg, #501214));
-    height: 3px;
-    border-radius: 2px;
-    overflow: hidden;
-    width: 0px;
-    margin-top: calc(-1 * var(--tabs-padding-vert, 0.7em));
-    margin-bottom: var(--tabs-padding-vert, 0.7em);
-    transition: 0.2s transform;
-  }
-  @media (prefers-reduced-motion) {
-    .tabs-active {
-      transition: none;
-    }
-  } */
 </style>
