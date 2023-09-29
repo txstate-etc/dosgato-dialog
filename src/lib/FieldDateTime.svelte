@@ -16,7 +16,7 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
-  export let inputelement: HTMLInputElement
+  export let inputelement: HTMLInputElement = undefined!
   let showBadInputMessage = false
 
   function wrapOnChange (onChange) {
