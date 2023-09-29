@@ -16,12 +16,12 @@
 
   let className = ''
   export { className as class }
-  export let id: string|undefined = undefined
+  export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
   export let choices: { label?: string, value: any, disabled?: boolean }[]
   export let defaultValue: any = []
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let maxwidth = 250
   export let leftToRight = false
   export let related: true | number = 0
@@ -41,7 +41,7 @@
   }
   $: redoLayout(choices, cols)
 
-  function onChangeCheckbox (setVal: Function, choice: typeof choices[number], included: boolean) {
+  function onChangeCheckbox (setVal: (val: any) => void, choice: typeof choices[number], included: boolean) {
     setVal(v => {
       if (v == null) return included ? [] : [choice.value]
       if (included) return v.filter(s => s !== choice.value)
@@ -72,7 +72,7 @@
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#each choices as choice, idx (choice.value)}
         {@const checkid = `${path}.${idx}`}
-        {@const included = value && value.includes(choice.value)}
+        {@const included = value?.includes(choice.value)}
         {@const label = choice.label || (typeof choice.value === 'string' ? choice.value : '')}
         <label for={checkid} style:width style:order={orders[idx]}>
           <Checkbox id={checkid} name={checkid} value={included} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} disabled={choice.disabled} onChange={() => onChangeCheckbox(setVal, choice, included)} {onBlur} />

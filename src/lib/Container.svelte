@@ -15,15 +15,15 @@
   export let label: string
   export let messages: Feedback[]
   /** If the input that's being built has an id pass it here so the label can point at it. */
-  export let id: string|undefined = undefined
+  export let id: string | undefined = undefined
   /** If `descid` is defined then this assumes you've made an outside label referenced to by descid `<div id={descid}`.
   Useful for things like checkboxes and radio buttons that have their own individual labels. */
-  export let descid: string|undefined = undefined
-  export let helptext: string|undefined = undefined
+  export let descid: string | undefined = undefined
+  export let helptext: string | undefined = undefined
   /** Syntactic sugar that toggles a '*' to be appended to label. */
   export let required = false
   export let related: true | number = 0
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   /** The `id` of `<div>` messages are rendered in. */
   let messagesid
 
@@ -51,6 +51,7 @@
   <div class="dialog-field-content">
     {#if helptext}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div use:resize={{ debounce: 10 }} on:resize={setNeedsShowHelp} id={helptextid} class="dialog-field-help" class:needsShowHelp class:expanded={showhelp} on:click={() => { if (needsShowHelp) showhelp = !showhelp }}>
         <span bind:this={helpelement}>{@html helptext}</span>
         {#if needsShowHelp}

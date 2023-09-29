@@ -21,9 +21,9 @@
   export let posinset: number
   export let setsize: number
   export let level: number
-  export let next: TypedTreeItem<T>|undefined
-  export let prev: TypedTreeItem<T>|undefined
-  export let parent: TypedTreeItem<T>|undefined = undefined
+  export let next: TypedTreeItem<T> | undefined
+  export let prev: TypedTreeItem<T> | undefined
+  export let parent: TypedTreeItem<T> | undefined = undefined
 
   const store = getContext<TreeStore<T>>(TREE_STORE_CONTEXT)
   const { dragging, draggable, selectedUndraggable, selected, focused, copied, headerOverride } = store
@@ -48,7 +48,7 @@
       } else if (e.key === 'c') {
         store.copy()
       } else if (e.key === 'v') {
-        store.paste()
+        void store.paste()
       }
     } else if (e.key === 'Escape') {
       store.cancelCopy()
@@ -77,7 +77,7 @@
         const child = item.children[0]
         store.focus(child)
       } else {
-        store.open(item)
+        void store.open(item)
       }
     } else if (e.key === 'ArrowLeft') {
       e.preventDefault()
@@ -97,7 +97,7 @@
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       e.stopPropagation()
-      const anyprev = prev as any
+      const anyprev = prev
       const myprev = anyprev?.open && anyprev.children?.length && (!parent || parent.children?.some(c => c.id === anyprev.id)) ? anyprev.children[anyprev.children.length - 1] : prev
       if (myprev) {
         store.focus(myprev)
@@ -145,7 +145,7 @@
       const wasFocused = $store.focused?.id === item.id
       store.select(item, { clear: true, toggle: false })
       if (item.open && wasFocused && !item.loading) store.close(item)
-      else if (!item.open) store.open(item)
+      else if (!item.open) void store.open(item)
     }
   }
   function onCheckClick (e: MouseEvent) {
@@ -189,15 +189,15 @@
   }
   let dragOver = 0
   let dragOverAbove = 0
-  function onDrop (e: DragEvent) {
+  async function onDrop (e: DragEvent) {
     e.preventDefault()
     dragOver = 0
-    return store.drop(item, false, e.dataTransfer!.dropEffect === 'copy')
+    return await store.drop(item, false, e.dataTransfer!.dropEffect === 'copy')
   }
-  function onDropAbove (e: DragEvent) {
+  async function onDropAbove (e: DragEvent) {
     e.preventDefault()
     dragOverAbove = 0
-    return store.drop(item, true, e.dataTransfer!.dropEffect === 'copy')
+    return await store.drop(item, true, e.dataTransfer!.dropEffect === 'copy')
   }
   function onDragEnter (e: DragEvent) {
     if (!dropZone) dragOver = 0
@@ -219,7 +219,7 @@
   }
 
   let display = $focused && $focused.id === item.id
-  onMount(async () => {
+  onMount(() => {
     if ($focused && $focused.id === item.id) nodeelement.scrollIntoView({ block: 'center' })
     nodeelement.addEventListener('lazy', () => { display = true })
     lazyObserver!.observe(nodeelement)
@@ -233,6 +233,7 @@
 </script>
 <li role="presentation">
   {#if dropAbove}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="drop-above"
       class:dragOverAbove
       on:dragenter={onDragEnterAbove}
@@ -273,6 +274,7 @@
   {#if display}
     <!-- keyboard users have modifier keys, they don't ever focus the checkbox -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="checkbox" on:click={onCheckClick}>
       <Icon icon={isSelected ? checkboxOutline : checkboxBlankOutline } width="1.15em" inline />
     </div>
@@ -285,6 +287,7 @@
       >
         {#if i === 0 && item.hasChildren}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <span class="arrow" on:click={onClick}><Icon icon={item.open ? menuDown : menuRight} width="1.5em" inline /></span>
         {/if}
         <TreeCell {header} {item} />

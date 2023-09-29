@@ -38,8 +38,8 @@
   let colorpicker = [{ color: '#FF69B4', name: 'Hot Pink', value: 'hotpink' }, { color: '#008080', name: 'Teal', value: 'teal' }, { color: '#FEE440', name: 'Yellow', value: 'yellow' }, { color: '#6495ED', name: 'Cornflower', value: 'cornflower' }]
 
   onMount(async () => {
-    store.setField('asset', 'asset-1')
-    store.setField('asset', 'https://google.com')
+    void store.setField('asset', 'asset-1')
+    void store.setField('asset', 'https://google.com')
     const { CropImage } = await import('./crop')
     if (!window.customElements.get('crop-img')) window.customElements.define('crop-img', CropImage)
     colors = [{ value: 'red' }, { value: 'blue' }, { value: 'green', disabled: true }]
@@ -88,7 +88,7 @@
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={houses} />
       <FieldChooserLink path="asset" label="Choose an Asset" pages assets urlEntry initialSource="Assets" initialPath="/chemistry/organic"></FieldChooserLink>
       <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
-      <FieldCropper path="crop" label="Image Crop"  selectionAspectRatio={3 / 2} imageSrc="{selectedAsset?.url}"/>
+      <FieldCropper path="crop" label="Image Crop" selectionAspectRatio={3 / 2} imageSrc="{selectedAsset?.url}"/>
       {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
         <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
       {/if}
@@ -99,8 +99,8 @@
         label="Roles"
         multiselect={true}
         choices={[{ value: 'Option 1' }, { value: 'Option 2' }, { value: 'Option 3' }, { value: 'Option 4' }, { value: 'Option 5' },
-      { value: 'Option 6' }, { value: 'Option 7' }, { value: 'Option 8' }, { value: 'Option 9' }, { value: 'Option 10' }, { value: 'Option 11' },
-      { value: 'Option 12' }, { value: 'Option 13' }, { value: 'Option 14' }, { value: 'Option 15' }, { value: 'Option 16' }]}
+          { value: 'Option 6' }, { value: 'Option 7' }, { value: 'Option 8' }, { value: 'Option 9' }, { value: 'Option 10' }, { value: 'Option 11' },
+          { value: 'Option 12' }, { value: 'Option 13' }, { value: 'Option 14' }, { value: 'Option 15' }, { value: 'Option 16' }]}
         defaultValue={['Option 5']}/>
       <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
       <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />

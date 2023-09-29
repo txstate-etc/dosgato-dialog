@@ -8,7 +8,7 @@
   export let label: string
   export let multiselect: boolean = false
   export let selected: { value: string, label?: string }[] = []
-  export let descid: string|undefined = undefined
+  export let descid: string | undefined = undefined
   export let valid = false
   export let invalid = false
 
@@ -29,7 +29,7 @@
 
     if (listboxElement) listboxElement.removeAttribute('aria-activedescendant')
   }
-  $: reactToItems(items)
+  $: void reactToItems(items)
 
   const selectItem = (item: PopupMenuItem, index: number) => (e: MouseEvent) => {
     e.stopPropagation()

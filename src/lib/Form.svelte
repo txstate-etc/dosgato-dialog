@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { Form, FormStore } from '@txstate-mws/svelte-forms'
-  import type { Feedback, SubmitResponse } from '@txstate-mws/svelte-forms'
-  import { setContext } from 'svelte'
+  import { Form, type FormStore, type Feedback, type SubmitResponse } from '@txstate-mws/svelte-forms'
+    import { setContext } from 'svelte'
   import { CHOOSER_API_CONTEXT, type Client } from './chooser'
 
   type T = $$Generic<any>
@@ -12,10 +11,10 @@
   export let submit: ((state: T) => Promise<SubmitResponse<T>>) | undefined = undefined
   export let validate: ((state: T) => Promise<Feedback[]>) | undefined = undefined
   export let store: FormStore<T> = undefined as any
-  export let chooserClient: Client<F>|undefined = undefined
-  export let autocomplete: string|undefined = undefined
-  export let name: string|undefined = undefined
-  export let preload: T|undefined = undefined
+  export let chooserClient: Client<F> | undefined = undefined
+  export let autocomplete: string | undefined = undefined
+  export let name: string | undefined = undefined
+  export let preload: T | undefined = undefined
 
   setContext(CHOOSER_API_CONTEXT, chooserClient)
 </script>

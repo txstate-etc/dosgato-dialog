@@ -12,9 +12,9 @@
   export let label: string = ''
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
-  export let maxlength: number|undefined = undefined
-  export let rows: number|undefined = undefined
-  export let conditional: boolean|undefined = undefined
+  export let maxlength: number | undefined = undefined
+  export let rows: number | undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLTextAreaElement = undefined as any

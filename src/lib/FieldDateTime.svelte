@@ -8,10 +8,10 @@
   export let path: string
   export let label: string = ''
   export let defaultValue: any = undefined
-  export let min: Date|{ toJSDate: () => Date }|undefined = undefined
-  export let max: Date|{ toJSDate: () => Date }|undefined = undefined
-  export let step: number|undefined = undefined
-  export let conditional: boolean|undefined = undefined
+  export let min: Date | { toJSDate: () => Date } | undefined = undefined
+  export let max: Date | { toJSDate: () => Date } | undefined = undefined
+  export let step: number | undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined

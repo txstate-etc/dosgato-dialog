@@ -15,7 +15,7 @@
   export let disabled = false
   export let choices: { label?: string, value: string, disabled?: boolean }[]
   export let defaultValue: string | undefined = undefined
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let inputelement: HTMLInputElement = undefined as any
   export let related: true | number = 0

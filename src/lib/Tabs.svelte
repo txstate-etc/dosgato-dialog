@@ -9,7 +9,7 @@
   import caretRightFill from '@iconify-icons/ph/caret-right-fill'
 
   export let tabs: TabDef[]
-  export let active: string|undefined = undefined
+  export let active: string | undefined = undefined
   export let store = new TabStore(tabs, active)
   export let disableDialogControl = false
   export let accordionOnMobile = true
@@ -102,7 +102,7 @@
   }
 
   $: active = $currentName
-  $: reactToCurrent($activeStore)
+  $: void reactToCurrent($activeStore)
   onMount(reactToCurrent)
 
 </script>

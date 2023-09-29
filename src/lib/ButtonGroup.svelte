@@ -5,9 +5,9 @@
   export let name: string | undefined = undefined
   export let choices: PopupMenuItem[]
   export let value = choices[0].value
-  export let groupid: string|undefined = undefined
-  export let messagesid: string|undefined = undefined
-  export let ariaControls: string|undefined = undefined
+  export let groupid: string | undefined = undefined
+  export let messagesid: string | undefined = undefined
+  export let ariaControls: string | undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false

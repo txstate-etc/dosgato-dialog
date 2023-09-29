@@ -2,15 +2,15 @@
   import { isNotBlank } from 'txstate-utils'
 
 
-  export let id: string|undefined = undefined
+  export let id: string | undefined = undefined
   export let name: string
   export let value: string
   export let selected = false
   export let onChange: any = undefined
   export let onBlur: any = undefined
-  export let messagesid: string|undefined = undefined
-  export let helptextid: string|undefined = undefined
-  export let extradescid: string|undefined = undefined
+  export let messagesid: string | undefined = undefined
+  export let helptextid: string | undefined = undefined
+  export let extradescid: string | undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false

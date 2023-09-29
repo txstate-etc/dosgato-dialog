@@ -11,7 +11,7 @@
   export let minSelection: number = 0 // percentage of image, a value 0-1
   export let label: string = ''
   export let required = false
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
 
   const store = new CropperStore({ width: 0, height: 0, minSelection, targetAspect: selectionAspectRatio })
@@ -114,6 +114,7 @@
   {@const _ = init(value, setVal)}
   {#if isNotBlank(imageSrc)}
     <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
         <img class="crop-image" src={imageSrc} alt="" />
         {#if $selection && $outputPct}
@@ -121,6 +122,7 @@
             <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$outputPct.left}% {$outputPct.top}%, {100 - $outputPct.right}% {$outputPct.top}%, {100 - $outputPct.right}% {100 - $outputPct.bottom}%, {$outputPct.left}% {100 - $outputPct.bottom}%, {$outputPct.left}% {$outputPct.top}%)" />
           </div>
           <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div class='selectionHilite' {id} tabindex="0" on:keydown={onKeyDown('move')}
             aria-labelledby={descid}
             aria-describedby="{movedescid} {helptextid ?? ''}"
@@ -134,24 +136,28 @@
               <ScreenReaderOnly arialive="polite">top left x y coordinate is ({Math.round($selection.left)}, {Math.round($selection.top)}) bottom right x y coordinate is ({Math.round($selection.right)}, {Math.round($selection.bottom)})</ScreenReaderOnly>
               <ScreenReaderOnly arialive="polite">crop area is {Math.round($store.width)} pixels wide by {Math.round($store.height)} pixels tall</ScreenReaderOnly>
             {/if}
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class='selectionCorner tl'
               tabindex="0"
               on:keydown={onKeyDown('tl')}
             >
               <ScreenReaderOnly>arrows adjust crop size, bottom right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
             </div>
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class='selectionCorner tr'
               tabindex="0"
               on:keydown={onKeyDown('tr')}
             >
               <ScreenReaderOnly>arrows adjust crop size, bottom left is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
             </div>
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class='selectionCorner bl'
               tabindex="0"
               on:keydown={onKeyDown('bl')}
             >
               <ScreenReaderOnly>arrows adjust crop size, top right is fixed, hold shift and/or cmd/alt for bigger steps</ScreenReaderOnly>
             </div>
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class='selectionCorner br'
               tabindex="0"
               on:keydown={onKeyDown('br')}

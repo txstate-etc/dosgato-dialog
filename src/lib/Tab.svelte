@@ -2,11 +2,11 @@
   import { derivedStore } from '@txstate-mws/svelte-store'
   import { getContext } from 'svelte'
   import Icon from './Icon.svelte'
-  import { TabStore, TAB_CONTEXT } from './TabStore'
+  import { type TabStore, TAB_CONTEXT } from './TabStore'
 
   export let name: string
 
-  const { store, onClick, onKeyDown, tabelements } = getContext<{ store: TabStore, onClick: Function, onKeyDown: Function, tabelements: HTMLElement[] }>(TAB_CONTEXT)
+  const { store, onClick, onKeyDown, tabelements } = getContext<{ store: TabStore, onClick: (idx: number) => (() => void), onKeyDown: (idx: number) => (() => void), tabelements: HTMLElement[] }>(TAB_CONTEXT)
   const accordion = store.accordion()
   const current = store.currentName()
   const def = derivedStore(store, v => v.tabs.find(t => t.name === name))

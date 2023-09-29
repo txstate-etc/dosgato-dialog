@@ -4,7 +4,7 @@
   import { onMount } from 'svelte'
 
   export let path: string
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let length: number = 10
 
   let val: any, stVal: (val: any, notDirty?: boolean) => void

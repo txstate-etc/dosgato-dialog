@@ -9,7 +9,7 @@
   import { collapseIconSVG, expandIconSVG } from './icons'
   import { createEventDispatcher } from 'svelte'
 
-  export let item: AnyItem|RawURL|BrokenURL
+  export let item: AnyItem | RawURL | BrokenURL
   export let larger = false
   export let expandable = false
   export let expanded = false

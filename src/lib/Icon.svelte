@@ -9,7 +9,7 @@
   import Tooltip from './Tooltip.svelte'
   export let icon: IconifyIcon | undefined
   /** Label used in a `<ScreenReaderOnly>`. */
-  export let hiddenLabel: string|undefined = undefined
+  export let hiddenLabel: string | undefined = undefined
   export let inline: boolean = false
   export let width: string | number | undefined = undefined
   export let height: string | number | undefined = undefined

@@ -20,7 +20,7 @@
   export let filterable: SearchableType<T> = searchable
   export let filter = ''
   export let nodeClass: ((itm: T) => string) | undefined = undefined
-  export let singleSelect: boolean|undefined = undefined
+  export let singleSelect: boolean | undefined = undefined
   export let enableResize = false
   /**
    * this `itemType` prop is here for typescript only
@@ -30,11 +30,11 @@
    * we are able to determine T from the store prop, but not everyone will use the store prop
    */
   export const itemType: T | undefined = undefined
-  export let fetchChildren: FetchChildrenFn<T>|undefined = undefined
-  export let dragEligible: DragEligibleFn<T>|undefined = undefined
-  export let moveHandler: MoveHandlerFn<T>|undefined = undefined
-  export let copyHandler: CopyHandlerFn<T>|undefined = undefined
-  export let dropEffect: DropEffectFn<T>|undefined = undefined
+  export let fetchChildren: FetchChildrenFn<T> | undefined = undefined
+  export let dragEligible: DragEligibleFn<T> | undefined = undefined
+  export let moveHandler: MoveHandlerFn<T> | undefined = undefined
+  export let copyHandler: CopyHandlerFn<T> | undefined = undefined
+  export let dropEffect: DropEffectFn<T> | undefined = undefined
   export let store = new TreeStore<T>(fetchChildren!, { copyHandler, dragEligible, dropEffect, moveHandler })
   if (searchable) store.searchableFn = transformSearchable(searchable)
   if (filterable) store.filterableFn = transformSearchable(filterable)
@@ -167,6 +167,7 @@
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
   {#each headers as header, i (header.label)}
     <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     {#if enableResize && i !== headers.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>

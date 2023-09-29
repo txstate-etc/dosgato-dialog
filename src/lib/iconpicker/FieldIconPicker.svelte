@@ -10,7 +10,7 @@
   export let label: string = ''
   export let required = false
   export let defaultValue: { icon: string, prefix: string } = { icon: 'fa-graduation-cap', prefix: 'fas' }
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
 
   const labelid = randomid()
@@ -23,7 +23,7 @@
   const categoriesToIcons = keyby(IconCategories, 'key')
 
   for (const icon of FontAwesomeIcons) {
-    iconToPrefix[icon.class] = icon.free.indexOf('brands') > -1 ? 'fab' : 'fas'
+    iconToPrefix[icon.class] = icon.free.includes('brands') ? 'fab' : 'fas'
   }
 
   const iconElements: HTMLDivElement[] = []
@@ -39,7 +39,7 @@
     selected = { icon: iconClass, prefix: iconToPrefix[iconClass] }
   }
 
-  function onSaveIconSelection (setVal: Function) {
+  function onSaveIconSelection (setVal: (val: any) => void) {
     return function () {
       setVal(selected)
       category = 'all'
@@ -139,7 +139,7 @@
             <ScreenReaderOnly><legend class="sr-only">Icons</legend></ScreenReaderOnly>
             <div class="icon-picker-items" role="radiogroup">
               {#each visibleIcons as icon, idx (icon.class)}
-                <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)}  on:keydown={onKeyDown}>
+                <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)} on:keydown={onKeyDown}>
                   <Icon icon={`${iconToPrefix[icon.class] === 'fab' ? 'fa-brands' : 'fa-solid'}:${icon.class.slice(3)}`}/>
                   <ScreenReaderOnly>{icon.label}</ScreenReaderOnly>
                 </div>

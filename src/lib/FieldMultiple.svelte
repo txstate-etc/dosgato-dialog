@@ -20,14 +20,14 @@
   export let label: string
   export let initialState: any | ((index: number) => any) = undefined
   export let minLength = 1
-  export let maxLength: number|undefined = undefined
+  export let maxLength: number | undefined = undefined
   export let compact = false
   export let removable = false
   export let reorder = false
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let addMoreText = 'Add'
   export let maxedText = addMoreText
-  export let addMoreClass: string|undefined = undefined
+  export let addMoreClass: string | undefined = undefined
   export let related: true | number = 0
   export let helptext: string | undefined = undefined
 
@@ -40,7 +40,7 @@
 
   const reorderupelements: HTMLButtonElement[] = []
   const reorderdownelements: HTMLButtonElement[] = []
-  function moveUpAndFocus (onMove: Function, idx: number) {
+  function moveUpAndFocus (onMove: () => void, idx: number) {
     return () => {
       onMove()
       let newFocus = reorderupelements[idx - 1]
@@ -50,7 +50,7 @@
       }
     }
   }
-  function moveDownAndFocus (onMove: Function, idx: number) {
+  function moveDownAndFocus (onMove: () => void, idx: number) {
     return () => {
       onMove()
       let newFocus = reorderdownelements[idx + 1]

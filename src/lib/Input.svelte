@@ -9,16 +9,16 @@
   export let value: string
   export let type: string = 'text'
   export let allowlastpass = false
-  export let maxlength: number|undefined = undefined
-  export let min: string|Date|{ toJSDate: () => Date }|number|undefined = undefined
-  export let max: string|Date|{ toJSDate: () => Date }|number|undefined = undefined
-  export let step: number|undefined = undefined
-  export let id: string|undefined = undefined
+  export let maxlength: number | undefined = undefined
+  export let min: string | Date | { toJSDate: () => Date } | number | undefined = undefined
+  export let max: string | Date | { toJSDate: () => Date } | number | undefined = undefined
+  export let step: number | undefined = undefined
+  export let id: string | undefined = undefined
   export let disabled = false
   export let autocomplete = 'off'
-  export let extradescid: string|undefined = undefined
-  export let messagesid: string|undefined = undefined
-  export let helptextid: string|undefined = undefined
+  export let extradescid: string | undefined = undefined
+  export let messagesid: string | undefined = undefined
+  export let helptextid: string | undefined = undefined
   export let valid = false
   export let invalid = false
   export let onChange: any

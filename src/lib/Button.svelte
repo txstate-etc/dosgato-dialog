@@ -2,15 +2,15 @@
   import type { IconifyIcon } from '@iconify/svelte'
   import Icon from './Icon.svelte'
 
-  export let type: 'button'|'submit' = 'button'
+  export let type: 'button' | 'submit' = 'button'
   export let disabled = false
   export let compact = false
   export let cancel = false
   export let destructive = false
   export let secondary = false
-  export let describedby: string|undefined = undefined
-  export let element: HTMLElement|undefined = undefined
-  export let icon: IconifyIcon|undefined = undefined
+  export let describedby: string | undefined = undefined
+  export let element: HTMLElement | undefined = undefined
+  export let icon: IconifyIcon | undefined = undefined
   let className: string | undefined = undefined
   export { className as class }
 </script>

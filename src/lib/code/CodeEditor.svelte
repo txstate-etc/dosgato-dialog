@@ -7,7 +7,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let rows = 8
-  export let language: 'js'|'css'|'html'
+  export let language: 'js' | 'css' | 'html'
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLElement | undefined = undefined
   export let extradescid: string | undefined = undefined

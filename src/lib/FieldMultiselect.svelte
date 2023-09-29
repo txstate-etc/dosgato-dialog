@@ -29,7 +29,7 @@
   export let placeholder = ''
   export let disabled = false
   export let defaultValue: string[] = []
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   /** Max number of selections to be allowed before disabling the input - 0 for unlimited. */
   export let maxSelections = 0

@@ -2,7 +2,7 @@
   import type { AnyItem } from './ChooserAPI'
   import { bytesToHuman, cleanUrl, type BrokenURL, type RawURL, humanFileType } from './ChooserStore'
 
-  export let item: AnyItem|RawURL|BrokenURL
+  export let item: AnyItem | RawURL | BrokenURL
   export let singleLine = false
 </script>
 

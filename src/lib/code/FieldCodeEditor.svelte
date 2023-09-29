@@ -11,14 +11,14 @@
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
   export let rows = 8
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLElement = undefined as any
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
-  export let language: 'js'|'css'|'html'
+  export let language: 'js' | 'css' | 'html'
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>

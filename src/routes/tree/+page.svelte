@@ -59,7 +59,7 @@
   <button type="button" on:click={() => { showtree = !showtree }}>Toggle</button>
   <button type="button" on:click={() => { treestore.copy() }}>Copy</button>
   <button type="button" on:click={() => { treestore.copy(true) }}>Copy With Chlidren</button>
-  <button type="button" on:click={() => { treestore.paste(false, $treestore.copyRecursive) }}>Paste</button>
+  <button type="button" on:click={() => { void treestore.paste(false, $treestore.copyRecursive) }}>Paste</button>
 </div>
 {#if showtree}
   <Tree store={treestore} headers={[

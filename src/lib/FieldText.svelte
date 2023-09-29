@@ -15,8 +15,8 @@
   export let defaultValue: any = notNull ? '' : undefined
   export let type: string = 'text'
   export let allowlastpass = false
-  export let maxlength: number|undefined = undefined
-  export let conditional: boolean|undefined = undefined
+  export let maxlength: number | undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLInputElement = undefined as any

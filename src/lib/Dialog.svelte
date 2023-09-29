@@ -23,10 +23,10 @@
   import { Button, Icon } from '$lib'
   const dispatch = createEventDispatcher()
 
-  export let initialfocus: string|undefined = undefined
+  export let initialfocus: string | undefined = undefined
   export let title = ''
   export let icon: IconifyIcon | undefined = undefined
-  export let size: 'tiny'|'small'|'normal'|'large'|'xl' = 'normal'
+  export let size: 'tiny' | 'small' | 'normal' | 'large' | 'xl' = 'normal'
   export let cancelText: string | undefined = undefined
   export let continueText: string = 'Ok'
   export let continueIcon: IconifyIcon | undefined = undefined

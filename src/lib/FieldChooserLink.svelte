@@ -14,20 +14,20 @@
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
-  export let defaultValue: boolean|undefined = undefined
-  export let conditional: boolean|undefined = undefined
+  export let defaultValue: boolean | undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let images = false
   export let pages = false
   export let assets = images
   export let folders = false
   export let urlEntry = false
-  export let initialSource: string|undefined = undefined
-  export let initialPath: string|undefined = undefined
+  export let initialSource: string | undefined = undefined
+  export let initialPath: string | undefined = undefined
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
-  export let selectedAsset: AnyItem|RawURL|BrokenURL|undefined = undefined
+  export let selectedAsset: AnyItem | RawURL | BrokenURL | undefined = undefined
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -73,7 +73,7 @@
     store.clearPreview()
     if (isBlank(url)) {
       selectedAsset = undefined
-      formStore.setField(finalPath, undefined)
+      void formStore.setField(finalPath, undefined)
       return
     }
     let found = false
@@ -120,7 +120,7 @@
         }
       }
     }
-    formStore.setField(finalPath, selectedAsset?.id)
+    void formStore.setField(finalPath, selectedAsset?.id)
     formStore.dirtyField(finalPath)
   }
 
@@ -159,7 +159,7 @@
       }
     }
   }
-  $: updateSelected($value)
+  $: void updateSelected($value)
 </script>
 
 <FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>

@@ -15,17 +15,17 @@
 
   type F = $$Generic
 
-  export let label: string|undefined = undefined
+  export let label: string | undefined = undefined
   export let images = false
   export let pages = false
   export let assets = images
   export let folders = false
   export let required = false
-  export let initialSource: string|undefined = undefined
-  export let initialPath: string|undefined = undefined
-  export let activeSources: string[]|undefined = undefined
-  export let passthruFilters: F|undefined = undefined
-  export let filter: undefined|((item: AnyItem) => boolean|Promise<boolean>) = undefined
+  export let initialSource: string | undefined = undefined
+  export let initialPath: string | undefined = undefined
+  export let activeSources: string[] | undefined = undefined
+  export let passthruFilters: F | undefined = undefined
+  export let filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
   export let store = new ChooserStore<F>(chooserClient)
   store.filter = filter
 

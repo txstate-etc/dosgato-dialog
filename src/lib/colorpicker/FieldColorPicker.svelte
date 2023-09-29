@@ -15,7 +15,7 @@
   export let required = false
   export let notNull = false
   export let defaultValue: any = notNull ? (addAllOption ? 'alternating' : options[0].value) : undefined
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
   const groupid = randomid()
 
@@ -34,7 +34,7 @@
 </script>
 
 <FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid let:setVal>
-  {@const _ = updateValue(value, setVal)}
+  {@const _ = void updateValue(value, setVal)}
   <div class="container-query-wrapper">
     <div class="color-container {className}" role="radiogroup" aria-labelledby={groupid} class:invalid class:valid>
       {#if addAllOption}

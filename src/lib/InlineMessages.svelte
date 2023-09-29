@@ -7,7 +7,7 @@
   import InlineMessage from './InlineMessage.svelte'
 
   export let messages: Feedback[]
-  export let id: string|undefined = randomid()
+  export let id: string | undefined = randomid()
 
   const savedid = id
   $: id = messages.length ? savedid : undefined

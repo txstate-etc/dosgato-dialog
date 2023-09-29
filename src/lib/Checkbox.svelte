@@ -1,12 +1,12 @@
 <script lang="ts">
   import { isNotBlank } from 'txstate-utils'
 
-  export let id: string|undefined = undefined
+  export let id: string | undefined = undefined
   export let name: string
   export let value: boolean
   export let onChange: any = undefined
   export let onBlur: any = undefined
-  export let descid: string|undefined = undefined
+  export let descid: string | undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false

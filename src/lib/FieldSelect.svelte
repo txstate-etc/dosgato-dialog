@@ -12,7 +12,7 @@
   export let disabled = false
   export let choices: { label?: string, value: any, disabled?: boolean }[]
   export let defaultValue: any = notNull ? choices[0]?.value : undefined
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let inputelement: HTMLSelectElement = undefined as any
   export let related: true | number = 0
@@ -22,8 +22,8 @@
   export let date = false
   export let datetime = false
   export let boolean = false
-  export let serialize: ((value: any) => string)|undefined = undefined
-  export let deserialize: ((value: string) => any)|undefined = undefined
+  export let serialize: ((value: any) => string) | undefined = undefined
+  export let deserialize: ((value: string) => any) | undefined = undefined
 
   let val: any, stVal: (val: any, notDirty?: boolean) => void, finalDeserialize: (value: string) => any
   function updateValue (valu: any, sVal: any, fDes: any) {

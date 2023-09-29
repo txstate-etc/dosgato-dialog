@@ -28,15 +28,15 @@
   }
 
   export let submit: (state: T) => Promise<SubmitResponse<T>>
-  export let validate: undefined|((state: T) => Promise<Feedback[]>) = undefined
-  export let store: FormStore<T>|undefined = undefined
+  export let validate: undefined | ((state: T) => Promise<Feedback[]>) = undefined
+  export let store: FormStore<T> | undefined = undefined
   export let chooserClient: Client | undefined = undefined
-  export let autocomplete: string|undefined = undefined
-  export let name: string|undefined = undefined
+  export let autocomplete: string | undefined = undefined
+  export let name: string | undefined = undefined
   export let title: string = ''
-  export let icon: IconifyIcon|undefined = undefined
-  export let size: 'tiny'|'small'|'normal'|'large' = 'normal'
-  export let preload: T|undefined = undefined
+  export let icon: IconifyIcon | undefined = undefined
+  export let size: 'tiny' | 'small' | 'normal' | 'large' = 'normal'
+  export let preload: T | undefined = undefined
 
   const dispatch = createEventDispatcher()
 

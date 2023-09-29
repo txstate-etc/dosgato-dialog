@@ -17,7 +17,7 @@
   export let multiselect: boolean = false
   export let choices: PopupMenuItem[]
   export let defaultValue: string[] = []
-  export let conditional: boolean|undefined = undefined
+  export let conditional: boolean | undefined = undefined
   export let required = false
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
@@ -25,7 +25,7 @@
 
   let itemsToAdd: PopupMenuItem[] = [] // the items selected in the left listbox
   let itemsToRemove: PopupMenuItem[] = [] // the items selected in the right listbox
-  let instructions: String = 'test'
+  let instructions: string = 'test'
 
   $: {
     if (itemsToAdd.length === 1) instructions = `Press right arrow key to move selected ${sourceLabel} items to ${selectedLabel} items list.`
@@ -39,7 +39,7 @@
 
   const descid = randomid()
 
-  function addToSelected (value: string[], setVal: Function) {
+  function addToSelected (value: string[], setVal: (val: any) => void) {
     return () => {
       const selected = value.concat(itemsToAdd.map(item => item.value))
       itemsToAdd = []
@@ -47,7 +47,7 @@
     }
   }
 
-  function addToAvailable (value: string[], setVal: Function) {
+  function addToAvailable (value: string[], setVal: (val: any) => void) {
     return () => {
       const itemsToRemoveSet = new Set(itemsToRemove.map(i => i.value))
       const selected = value.filter(v => !itemsToRemoveSet.has(v))
@@ -67,10 +67,10 @@
   }
 
   function getAvailable (value: string[]) {
-    return choices.filter(choice => value.indexOf(choice.value) === -1)
+    return choices.filter(choice => !value.includes(choice.value))
   }
 
-  function onkeydown (value: string[], setVal: Function) {
+  function onkeydown (value: string[], setVal: (val: any) => void) {
     return (e) => {
       if (modifierKey(e)) return
       if (e.key === 'ArrowRight') {
@@ -87,6 +87,7 @@
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:helptextid let:messagesid serialize={arraySerialize}>
+  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <div {id} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
     <ScreenReaderOnly>
       <span aria-live="polite">{instructions}</span>
