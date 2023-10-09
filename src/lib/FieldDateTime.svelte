@@ -19,15 +19,16 @@
   export let inputelement: HTMLInputElement = undefined!
   let showBadInputMessage = false
 
-  function wrapOnChange (onChange) {
-    showBadInputMessage = inputelement.validity.badInput
-    onChange()
+  function wrapOnBlur (onBlur) {
+    const date = new Date(inputelement.value)
+    showBadInputMessage = inputelement.validity.badInput || !(date instanceof Date && !isNaN(date.valueOf()))
+    onBlur()
   }
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid let:messagesid>
   {#if showBadInputMessage}<div class="bad-input-warning" aria-live='polite'>{`Field ${label}`} must include both a date and time</div>{/if}
-  <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} {id} class="dialog-input {className}" onChange={() => { wrapOnChange(onChange) }} {onBlur} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
+  <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} {id} class="dialog-input {className}" onBlur={() => { wrapOnBlur(onBlur) }} {onChange} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
 </FieldStandard>
 
 <style>
