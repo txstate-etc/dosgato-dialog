@@ -74,6 +74,7 @@
   .dialog-field-container[data-related~="1"] {
     padding-top: 0;
     padding-left: calc(var(--dialog-container-padding, 1em) + var(--dialog-related-padding, 1em));
+    margin-top: -0.5em;
   }
   .dialog-field-container[data-related~="2"] {
     padding-left: calc(var(--dialog-container-padding, 1em) + (2 * var(--dialog-related-padding, 1em)));
