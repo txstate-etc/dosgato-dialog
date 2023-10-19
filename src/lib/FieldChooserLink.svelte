@@ -243,6 +243,11 @@
     align-items: flex-start;
     margin-top: 0.2em;
   }
+  .dialog-chooser-entry > button {
+    border-radius: 0.25em;
+    border: 1px solid #808080;
+    color: black;
+  }
   .dialog-chooser-entry-input {
     position: relative;
     flex-grow: 1;
@@ -261,6 +266,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     line-height: 1;
+    color: black;
   }
   :global([data-eq~="400px"] .dialog-chooser-container .dialog-chooser-thumbnail img) {
     object-position: left;

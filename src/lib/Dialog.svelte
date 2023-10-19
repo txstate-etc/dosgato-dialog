@@ -146,6 +146,10 @@
     margin-right: 0.4em;
   }
 
+  .header-buttons button {
+    color: black;
+  }
+
   .dialog-content {
     position: relative;
     padding: 2em;

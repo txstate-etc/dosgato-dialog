@@ -114,7 +114,7 @@
 
 <FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
   <Icon icon={`${value.prefix === 'fab' ? 'fa-brands' : 'fa-solid'}:${value.icon?.slice(3) ?? 'graduation-cap'}`}/>
-  <button type="button" id="btnSelectIcon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select New Icon</button>
+  <button type="button" id="btnSelectIcon" class="select-icon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select New Icon</button>
   {#if modalOpen}
   <Modal>
     <section>
@@ -162,6 +162,11 @@
 
 
 <style>
+  .select-icon {
+    border-radius: 0.25em;
+    border: 1px solid #808080;
+    color: black;
+  }
   section {
     position: relative;
     background-color: #f4f4f4;

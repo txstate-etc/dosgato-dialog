@@ -116,5 +116,9 @@
     padding: 0.15em;
     cursor: pointer;
     font-size: 1.3em;
+    color: black;
+  }
+  .dialog-multiple-buttons button:disabled {
+    color: #6d6d6d;
   }
 </style>

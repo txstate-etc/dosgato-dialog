@@ -53,3 +53,9 @@
     {/each}
   </select>
 </FieldStandard>
+
+<style>
+  select {
+    color: black;
+  }
+</style>

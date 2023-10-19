@@ -174,6 +174,7 @@
     background: none;
     cursor: pointer;
     border: 0;
+    color: black;
   }
   li:not(.left) {
     margin-left: -1px;
