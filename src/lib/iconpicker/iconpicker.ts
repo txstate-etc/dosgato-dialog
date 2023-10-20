@@ -1,24332 +1,31626 @@
+/*
+  Created from Font Awesome metadata. For the categories, the social media category needs to be created
+  manually because Font Awesome doesn't have that category.
+*/
+
 export const FontAwesomeIcons = [
   {
-    class: 'fa-500px',
+    class: "fa-0",
     search: {
-      terms: []
+      terms: [
+        "Digit Zero",
+        "nada",
+        "none",
+        "zero",
+        "zilch"
+      ]
     },
-    label: '500p',
+    label: "0",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-accessible-icon',
+    class: "fa-1",
     search: {
       terms: [
-        'accessibility',
-        'handicap',
-        'person',
-        'wheelchair',
-        'wheelchair-alt'
+        "Digit One",
+        "one"
       ]
     },
-    label: 'Accessible Icon',
+    label: "1",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-accusoft',
+    class: "fa-2",
     search: {
-      terms: []
+      terms: [
+        "Digit Two",
+        "two"
+      ]
     },
-    label: 'Accusoft',
+    label: "2",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-acquisitions-incorporated',
+    class: "fa-3",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'game',
-        'gaming',
-        'tabletop'
+        "Digit Three",
+        "three"
       ]
     },
-    label: 'Acquisitions Incorporated',
+    label: "3",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ad',
+    class: "fa-4",
     search: {
       terms: [
-        'advertisement',
-        'media',
-        'newspaper',
-        'promotion',
-        'publicity'
+        "Digit Four",
+        "four"
       ]
     },
-    label: 'Ad',
+    label: "4",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-address-book',
+    class: "fa-5",
     search: {
       terms: [
-        'contact',
-        'directory',
-        'index',
-        'little black book',
-        'rolodex'
+        "Digit Five",
+        "five"
       ]
     },
-    label: 'Address Book',
+    label: "5",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-address-card',
+    class: "fa-6",
     search: {
       terms: [
-        'about',
-        'contact',
-        'id',
-        'identification',
-        'postcard',
-        'profile'
+        "Digit Six",
+        "six"
       ]
     },
-    label: 'Address Card',
+    label: "6",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-adjust',
+    class: "fa-7",
     search: {
       terms: [
-        'contrast',
-        'dark',
-        'light',
-        'saturation'
+        "Digit Seven",
+        "seven"
       ]
     },
-    label: 'adjust',
+    label: "7",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-adn',
+    class: "fa-8",
     search: {
-      terms: []
+      terms: [
+        "Digit Eight",
+        "eight"
+      ]
     },
-    label: 'App.net',
+    label: "8",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-adversal',
+    class: "fa-9",
     search: {
-      terms: []
+      terms: [
+        "Digit Nine",
+        "nine"
+      ]
     },
-    label: 'Adversal',
+    label: "9",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-affiliatetheme',
+    class: "fa-42-group",
     search: {
       terms: []
-    },
-    label: 'affiliatetheme',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-air-freshener',
-    search: {
-      terms: [
-        'car',
-        'deodorize',
-        'fresh',
-        'pine',
-        'scent'
-      ]
     },
-    label: 'Air Freshener',
+    label: "42.group",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-airbnb',
+    class: "fa-500px",
     search: {
       terms: []
     },
-    label: 'Airbnb',
+    label: "500px",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-algolia',
+    class: "fa-a",
     search: {
-      terms: []
+      terms: [
+        "Latin Capital Letter A",
+        "Latin Small Letter A",
+        "letter"
+      ]
     },
-    label: 'Algolia',
+    label: "A",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-align-center',
+    class: "fa-accessible-icon",
     search: {
       terms: [
-        'format',
-        'middle',
-        'paragraph',
-        'text'
+        "accessibility",
+        "handicap",
+        "person",
+        "wheelchair",
+        "wheelchair-alt"
       ]
     },
-    label: 'align-center',
+    label: "Accessible Icon",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-align-justify',
+    class: "fa-accusoft",
     search: {
-      terms: [
-        'format',
-        'paragraph',
-        'text'
-      ]
+      terms: []
     },
-    label: 'align-justify',
+    label: "Accusoft",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-align-left',
+    class: "fa-address-book",
     search: {
       terms: [
-        'format',
-        'paragraph',
-        'text'
+        "contact",
+        "directory",
+        "index",
+        "little black book",
+        "rolodex"
       ]
     },
-    label: 'align-left',
+    label: "Address Book",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-align-right',
+    class: "fa-address-card",
     search: {
       terms: [
-        'format',
-        'paragraph',
-        'text'
+        "about",
+        "contact",
+        "id",
+        "identification",
+        "postcard",
+        "profile",
+        "registration"
       ]
     },
-    label: 'align-right',
+    label: "Address Card",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-alipay',
+    class: "fa-adn",
     search: {
       terms: []
     },
-    label: 'Alipay',
+    label: "App.net",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-allergies',
+    class: "fa-adversal",
     search: {
-      terms: [
-        'allergy',
-        'freckles',
-        'hand',
-        'hives',
-        'pox',
-        'skin',
-        'spots'
-      ]
+      terms: []
     },
-    label: 'Allergies',
+    label: "Adversal",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-amazon',
+    class: "fa-affiliatetheme",
     search: {
       terms: []
     },
-    label: 'Amazon',
+    label: "affiliatetheme",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-amazon-pay',
+    class: "fa-airbnb",
     search: {
       terms: []
     },
-    label: 'Amazon Pay',
+    label: "Airbnb",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-ambulance',
+    class: "fa-algolia",
     search: {
-      terms: [
-        'covid-19',
-        'emergency',
-        'emt',
-        'er',
-        'help',
-        'hospital',
-        'support',
-        'vehicle'
-      ]
+      terms: []
     },
-    label: 'ambulance',
+    label: "Algolia",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-american-sign-language-interpreting',
+    class: "fa-align-center",
     search: {
       terms: [
-        'asl',
-        'deaf',
-        'finger',
-        'hand',
-        'interpret',
-        'speak'
+        "format",
+        "middle",
+        "paragraph",
+        "text"
       ]
     },
-    label: 'American Sign Language Interpreting',
+    label: "Align Center",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-amilia',
+    class: "fa-align-justify",
     search: {
-      terms: []
+      terms: [
+        "format",
+        "paragraph",
+        "text"
+      ]
     },
-    label: 'Amilia',
+    label: "Align Justify",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-anchor',
+    class: "fa-align-left",
     search: {
       terms: [
-        'berth',
-        'boat',
-        'dock',
-        'embed',
-        'link',
-        'maritime',
-        'moor',
-        'secure'
+        "format",
+        "paragraph",
+        "text"
       ]
     },
-    label: 'Anchor',
+    label: "Align Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-android',
+    class: "fa-align-right",
     search: {
       terms: [
-        'robot'
+        "format",
+        "paragraph",
+        "text"
       ]
     },
-    label: 'Android',
+    label: "Align Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-angellist',
+    class: "fa-alipay",
     search: {
       terms: []
     },
-    label: 'AngelList',
+    label: "Alipay",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-angle-double-down',
+    class: "fa-amazon",
     search: {
-      terms: [
-        'arrows',
-        'caret',
-        'download',
-        'expand'
-      ]
+      terms: []
     },
-    label: 'Angle Double Down',
+    label: "Amazon",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-angle-double-left',
+    class: "fa-amazon-pay",
     search: {
-      terms: [
-        'arrows',
-        'back',
-        'caret',
-        'laquo',
-        'previous',
-        'quote'
-      ]
+      terms: []
     },
-    label: 'Angle Double Left',
+    label: "Amazon Pay",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-angle-double-right',
+    class: "fa-amilia",
     search: {
-      terms: [
-        'arrows',
-        'caret',
-        'forward',
-        'more',
-        'next',
-        'quote',
-        'raquo'
-      ]
+      terms: []
     },
-    label: 'Angle Double Right',
+    label: "Amilia",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-angle-double-up',
+    class: "fa-anchor",
     search: {
       terms: [
-        'arrows',
-        'caret',
-        'collapse',
-        'upload'
+        "anchor",
+        "berth",
+        "boat",
+        "dock",
+        "embed",
+        "link",
+        "maritime",
+        "moor",
+        "port",
+        "secure",
+        "ship",
+        "tool"
       ]
     },
-    label: 'Angle Double Up',
+    label: "Anchor",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-angle-down',
+    class: "fa-anchor-circle-check",
     search: {
       terms: [
-        'arrow',
-        'caret',
-        'download',
-        'expand'
+        "marina",
+        "not affected",
+        "ok",
+        "okay",
+        "port"
       ]
     },
-    label: 'angle-down',
+    label: "Anchor Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-angle-left',
+    class: "fa-anchor-circle-exclamation",
     search: {
       terms: [
-        'arrow',
-        'back',
-        'caret',
-        'less',
-        'previous'
+        "affected",
+        "marina",
+        "port"
       ]
     },
-    label: 'angle-left',
+    label: "Anchor Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-angle-right',
+    class: "fa-anchor-circle-xmark",
     search: {
       terms: [
-        'arrow',
-        'care',
-        'forward',
-        'more',
-        'next'
+        "destroy",
+        "marina",
+        "port"
       ]
     },
-    label: 'angle-right',
+    label: "Anchor Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-angle-up',
+    class: "fa-anchor-lock",
     search: {
       terms: [
-        'arrow',
-        'caret',
-        'collapse',
-        'upload'
+        "closed",
+        "lockdown",
+        "marina",
+        "port",
+        "quarantine"
       ]
     },
-    label: 'angle-up',
+    label: "Anchor Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-angry',
+    class: "fa-android",
     search: {
       terms: [
-        'disapprove',
-        'emoticon',
-        'face',
-        'mad',
-        'upset'
+        "robot"
       ]
     },
-    label: 'Angry Face',
+    label: "Android",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-angrycreative',
+    class: "fa-angellist",
     search: {
       terms: []
     },
-    label: 'Angry Creative',
+    label: "AngelList",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-angular',
+    class: "fa-angle-down",
     search: {
-      terms: []
+      terms: [
+        "Down Arrowhead",
+        "arrow",
+        "caret",
+        "download",
+        "expand"
+      ]
     },
-    label: 'Angular',
+    label: "Angle Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ankh',
+    class: "fa-angle-left",
     search: {
       terms: [
-        'amulet',
-        'copper',
-        'coptic christianity',
-        'copts',
-        'crux ansata',
-        'egypt',
-        'venus'
+        "Single Left-Pointing Angle Quotation Mark",
+        "arrow",
+        "back",
+        "caret",
+        "less",
+        "previous"
       ]
     },
-    label: 'Ankh',
+    label: "Angle Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-app-store',
+    class: "fa-angle-right",
     search: {
-      terms: []
+      terms: [
+        "Single Right-Pointing Angle Quotation Mark",
+        "arrow",
+        "care",
+        "forward",
+        "more",
+        "next"
+      ]
     },
-    label: 'App Store',
+    label: "Angle Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-app-store-ios',
+    class: "fa-angle-up",
     search: {
-      terms: []
+      terms: [
+        "Up Arrowhead",
+        "arrow",
+        "caret",
+        "collapse",
+        "upload"
+      ]
     },
-    label: 'iOS App Store',
+    label: "Angle Up",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-apper',
+    class: "fa-angles-down",
     search: {
-      terms: []
+      terms: [
+        "arrows",
+        "caret",
+        "download",
+        "expand"
+      ]
     },
-    label: 'Apper Systems AB',
+    label: "Angles Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-apple',
+    class: "fa-angles-left",
     search: {
       terms: [
-        'fruit',
-        'ios',
-        'mac',
-        'operating system',
-        'os',
-        'osx'
+        "Left-Pointing Double Angle Quotation Mark",
+        "arrows",
+        "back",
+        "caret",
+        "laquo",
+        "previous",
+        "quote"
       ]
     },
-    label: 'Apple',
+    label: "Angles Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-apple-alt',
+    class: "fa-angles-right",
     search: {
       terms: [
-        'fall',
-        'fruit',
-        'fuji',
-        'macintosh',
-        'orchard',
-        'seasonal',
-        'vegan'
+        "Right-Pointing Double Angle Quotation Mark",
+        "arrows",
+        "caret",
+        "forward",
+        "more",
+        "next",
+        "quote",
+        "raquo"
       ]
     },
-    label: 'Fruit Apple',
+    label: "Angles Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-apple-pay',
+    class: "fa-angles-up",
     search: {
-      terms: []
+      terms: [
+        "arrows",
+        "caret",
+        "collapse",
+        "upload"
+      ]
     },
-    label: 'Apple Pay',
+    label: "Angles Up",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-archive',
+    class: "fa-angrycreative",
     search: {
-      terms: [
-        'box',
-        'package',
-        'save',
-        'storage'
-      ]
+      terms: []
     },
-    label: 'Archive',
+    label: "Angry Creative",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-archway',
+    class: "fa-angular",
     search: {
-      terms: [
-        'arc',
-        'monument',
-        'road',
-        'street',
-        'tunnel'
-      ]
+      terms: []
     },
-    label: 'Archway',
+    label: "Angular",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-alt-circle-down',
+    class: "fa-ankh",
     search: {
       terms: [
-        'arrow-circle-o-down',
-        'download'
+        "Ankh",
+        "amulet",
+        "copper",
+        "coptic christianity",
+        "copts",
+        "crux ansata",
+        "egypt",
+        "venus"
       ]
     },
-    label: 'Alternate Arrow Circle Down',
+    label: "Ankh",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-alt-circle-left',
+    class: "fa-app-store",
     search: {
-      terms: [
-        'arrow-circle-o-left',
-        'back',
-        'previous'
-      ]
+      terms: []
     },
-    label: 'Alternate Arrow Circle Left',
+    label: "App Store",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-alt-circle-right',
+    class: "fa-app-store-ios",
     search: {
-      terms: [
-        'arrow-circle-o-right',
-        'forward',
-        'next'
-      ]
+      terms: []
     },
-    label: 'Alternate Arrow Circle Right',
+    label: "iOS App Store",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-alt-circle-up',
+    class: "fa-apper",
     search: {
-      terms: [
-        'arrow-circle-o-up'
-      ]
+      terms: []
     },
-    label: 'Alternate Arrow Circle Up',
+    label: "Apper Systems AB",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-circle-down',
+    class: "fa-apple",
     search: {
       terms: [
-        'download'
+        "fruit",
+        "ios",
+        "mac",
+        "operating system",
+        "os",
+        "osx"
       ]
     },
-    label: 'Arrow Circle Down',
+    label: "Apple",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-circle-left',
+    class: "fa-apple-pay",
     search: {
-      terms: [
-        'back',
-        'previous'
-      ]
+      terms: []
     },
-    label: 'Arrow Circle Left',
+    label: "Apple Pay",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-arrow-circle-right',
+    class: "fa-apple-whole",
     search: {
       terms: [
-        'forward',
-        'next'
+        "apple",
+        "fall",
+        "fruit",
+        "fuji",
+        "green",
+        "green apple",
+        "macintosh",
+        "orchard",
+        "red",
+        "red apple",
+        "seasonal",
+        "vegan"
       ]
     },
-    label: 'Arrow Circle Right',
+    label: "Apple Whole",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-circle-up',
+    class: "fa-archway",
     search: {
       terms: [
-        'upload'
+        "arc",
+        "monument",
+        "road",
+        "street",
+        "tunnel"
       ]
     },
-    label: 'Arrow Circle Up',
+    label: "Archway",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-down',
+    class: "fa-arrow-down",
     search: {
       terms: [
-        'download'
+        "Downwards Arrow",
+        "download"
       ]
     },
-    label: 'arrow-down',
+    label: "Arrow Down",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-left',
+    class: "fa-arrow-down-1-9",
     search: {
       terms: [
-        'back',
-        'previous'
+        "arrange",
+        "filter",
+        "numbers",
+        "order",
+        "sort-numeric-asc"
       ]
     },
-    label: 'arrow-left',
+    label: "Arrow Down 1 9",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-right',
+    class: "fa-arrow-down-9-1",
     search: {
       terms: [
-        'forward',
-        'next'
+        "arrange",
+        "filter",
+        "numbers",
+        "order",
+        "sort-numeric-asc"
       ]
     },
-    label: 'arrow-right',
+    label: "Arrow Down 9 1",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrow-up',
+    class: "fa-arrow-down-a-z",
     search: {
       terms: [
-        'forward',
-        'upload'
+        "alphabetical",
+        "arrange",
+        "filter",
+        "order",
+        "sort-alpha-asc"
       ]
     },
-    label: 'arrow-up',
+    label: "Arrow Down A Z",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrows-alt',
+    class: "fa-arrow-down-long",
     search: {
       terms: [
-        'arrow',
-        'arrows',
-        'bigger',
-        'enlarge',
-        'expand',
-        'fullscreen',
-        'move',
-        'position',
-        'reorder',
-        'resize'
+        "download",
+        "long-arrow-down"
       ]
     },
-    label: 'Alternate Arrows',
+    label: "Arrow Down Long",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrows-alt-h',
+    class: "fa-arrow-down-short-wide",
     search: {
       terms: [
-        'arrows-h',
-        'expand',
-        'horizontal',
-        'landscape',
-        'resize',
-        'wide'
+        "arrange",
+        "filter",
+        "order",
+        "sort-amount-asc"
       ]
     },
-    label: 'Alternate Arrows Horizontal',
+    label: "Arrow Down Short Wide",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-arrows-alt-v',
+    class: "fa-arrow-down-up-across-line",
     search: {
       terms: [
-        'arrows-v',
-        'expand',
-        'portrait',
-        'resize',
-        'tall',
-        'vertical'
+        "border",
+        "crossing",
+        "transfer"
       ]
     },
-    label: 'Alternate Arrows Vertical',
+    label: "Arrow Down Up Across Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-artstation',
+    class: "fa-arrow-down-up-lock",
     search: {
-      terms: []
+      terms: [
+        "border",
+        "closed",
+        "crossing",
+        "lockdown",
+        "quarantine",
+        "transfer"
+      ]
     },
-    label: 'Artstation',
+    label: "Arrow Down Up Lock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-assistive-listening-systems',
+    class: "fa-arrow-down-wide-short",
     search: {
       terms: [
-        'amplify',
-        'audio',
-        'deaf',
-        'ear',
-        'headset',
-        'hearing',
-        'sound'
+        "arrange",
+        "filter",
+        "number",
+        "order",
+        "sort-amount-asc"
       ]
     },
-    label: 'Assistive Listening Systems',
+    label: "Arrow Down Wide Short",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-asterisk',
+    class: "fa-arrow-down-z-a",
     search: {
       terms: [
-        'annotation',
-        'details',
-        'reference',
-        'star'
+        "alphabetical",
+        "arrange",
+        "filter",
+        "order",
+        "sort-alpha-asc"
       ]
     },
-    label: 'asterisk',
+    label: "Arrow Down Z A",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-asymmetrik',
+    class: "fa-arrow-left",
     search: {
-      terms: []
+      terms: [
+        "Leftwards Arrow",
+        "back",
+        "previous"
+      ]
     },
-    label: 'Asymmetrik, Ltd.',
+    label: "Arrow Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-at',
+    class: "fa-arrow-left-long",
     search: {
       terms: [
-        'address',
-        'author',
-        'e-mail',
-        'email',
-        'handle'
+        "back",
+        "long-arrow-left",
+        "previous"
       ]
     },
-    label: 'At',
+    label: "Arrow Left Long",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-atlas',
+    class: "fa-arrow-pointer",
     search: {
       terms: [
-        'book',
-        'directions',
-        'geography',
-        'globe',
-        'map',
-        'travel',
-        'wayfinding'
+        "arrow",
+        "cursor",
+        "select"
       ]
     },
-    label: 'Atlas',
+    label: "Arrow Pointer",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-atlassian',
+    class: "fa-arrow-right",
     search: {
-      terms: []
+      terms: [
+        "Rightwards Arrow",
+        "forward",
+        "next"
+      ]
     },
-    label: 'Atlassian',
+    label: "Arrow Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-atom',
+    class: "fa-arrow-right-arrow-left",
     search: {
       terms: [
-        'atheism',
-        'chemistry',
-        'electron',
-        'ion',
-        'isotope',
-        'neutron',
-        'nuclear',
-        'proton',
-        'science'
+        "Rightwards Arrow Over Leftwards Arrow",
+        "arrow",
+        "arrows",
+        "reciprocate",
+        "return",
+        "swap",
+        "transfer"
       ]
     },
-    label: 'Atom',
+    label: "Arrow Right Arrow Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-audible',
+    class: "fa-arrow-right-from-bracket",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "exit",
+        "leave",
+        "log out",
+        "logout"
+      ]
     },
-    label: 'Audible',
+    label: "Arrow Right From Bracket",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-audio-description',
+    class: "fa-arrow-right-long",
     search: {
       terms: [
-        'blind',
-        'narration',
-        'video',
-        'visual'
+        "forward",
+        "long-arrow-right",
+        "next"
       ]
     },
-    label: 'Audio Description',
+    label: "Arrow Right Long",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-autoprefixer',
+    class: "fa-arrow-right-to-bracket",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "enter",
+        "join",
+        "log in",
+        "login",
+        "sign in",
+        "sign up",
+        "sign-in",
+        "signin",
+        "signup"
+      ]
     },
-    label: 'Autoprefixer',
+    label: "Arrow Right To Bracket",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-avianex',
+    class: "fa-arrow-right-to-city",
     search: {
-      terms: []
+      terms: [
+        "building",
+        "city",
+        "exodus",
+        "rural",
+        "urban"
+      ]
     },
-    label: 'avianex',
+    label: "Arrow Right To City",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-aviato',
+    class: "fa-arrow-rotate-left",
     search: {
-      terms: []
+      terms: [
+        "Anticlockwise Open Circle Arrow",
+        "back",
+        "control z",
+        "exchange",
+        "oops",
+        "return",
+        "rotate",
+        "swap"
+      ]
     },
-    label: 'Aviato',
+    label: "Arrow Rotate Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-award',
+    class: "fa-arrow-rotate-right",
     search: {
       terms: [
-        'honor',
-        'praise',
-        'prize',
-        'recognition',
-        'ribbon',
-        'trophy'
+        "Clockwise Open Circle Arrow",
+        "forward",
+        "refresh",
+        "reload",
+        "repeat"
       ]
     },
-    label: 'Award',
+    label: "Arrow Rotate Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-aws',
+    class: "fa-arrow-trend-down",
     search: {
-      terms: []
+      terms: [
+        "line",
+        "stocks",
+        "trend"
+      ]
     },
-    label: 'Amazon Web Services (AWS)',
+    label: "Arrow Trend Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-baby',
+    class: "fa-arrow-trend-up",
     search: {
       terms: [
-        'child',
-        'diaper',
-        'doll',
-        'human',
-        'infant',
-        'kid',
-        'offspring',
-        'person',
-        'sprout'
+        "line",
+        "stocks",
+        "trend"
       ]
     },
-    label: 'Baby',
+    label: "Arrow Trend Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-baby-carriage',
+    class: "fa-arrow-turn-down",
     search: {
       terms: [
-        'buggy',
-        'carrier',
-        'infant',
-        'push',
-        'stroller',
-        'transportation',
-        'walk',
-        'wheels'
+        "arrow"
       ]
     },
-    label: 'Baby Carriage',
+    label: "Arrow Turn Down",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-backspace',
+    class: "fa-arrow-turn-up",
     search: {
       terms: [
-        'command',
-        'delete',
-        'erase',
-        'keyboard',
-        'undo'
+        "arrow"
       ]
     },
-    label: 'Backspace',
+    label: "Arrow Turn Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-backward',
+    class: "fa-arrow-up",
     search: {
       terms: [
-        'previous',
-        'rewind'
+        "Upwards Arrow",
+        "forward",
+        "upload"
       ]
     },
-    label: 'backward',
+    label: "Arrow Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bacon',
+    class: "fa-arrow-up-1-9",
     search: {
       terms: [
-        'blt',
-        'breakfast',
-        'ham',
-        'lard',
-        'meat',
-        'pancetta',
-        'pork',
-        'rasher'
+        "arrange",
+        "filter",
+        "numbers",
+        "order",
+        "sort-numeric-desc"
       ]
     },
-    label: 'Bacon',
+    label: "Arrow Up 1 9",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bacteria',
+    class: "fa-arrow-up-9-1",
     search: {
       terms: [
-        'antibiotic',
-        'antibody',
-        'covid-19',
-        'health',
-        'organism',
-        'sick'
+        "arrange",
+        "filter",
+        "numbers",
+        "order",
+        "sort-numeric-desc"
       ]
     },
-    label: 'Bacteria',
+    label: "Arrow Up 9 1",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bacterium',
+    class: "fa-arrow-up-a-z",
     search: {
       terms: [
-        'antibiotic',
-        'antibody',
-        'covid-19',
-        'health',
-        'organism',
-        'sick'
+        "alphabetical",
+        "arrange",
+        "filter",
+        "order",
+        "sort-alpha-desc"
       ]
     },
-    label: 'Bacterium',
+    label: "Arrow Up A Z",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bahai',
+    class: "fa-arrow-up-from-bracket",
     search: {
       terms: [
-        'bahai',
-        'bahá\'í',
-        'star'
+        "share",
+        "transfer",
+        "upload"
       ]
     },
-    label: 'Bahá\'í',
+    label: "Arrow Up From Bracket",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-balance-scale',
+    class: "fa-arrow-up-from-ground-water",
     search: {
       terms: [
-        'balanced',
-        'justice',
-        'legal',
-        'measure',
-        'weight'
+        "groundwater",
+        "spring",
+        "water supply",
+        "water table"
       ]
     },
-    label: 'Balance Scale',
+    label: "Arrow Up From Ground Water",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-balance-scale-left',
+    class: "fa-arrow-up-from-water-pump",
     search: {
       terms: [
-        'justice',
-        'legal',
-        'measure',
-        'unbalanced',
-        'weight'
+        "flood",
+        "groundwater",
+        "pump",
+        "submersible",
+        "sump pump"
       ]
     },
-    label: 'Balance Scale (Left-Weighted)',
+    label: "Arrow Up From Water Pump",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-balance-scale-right',
+    class: "fa-arrow-up-long",
     search: {
       terms: [
-        'justice',
-        'legal',
-        'measure',
-        'unbalanced',
-        'weight'
+        "long-arrow-up",
+        "upload"
       ]
     },
-    label: 'Balance Scale (Right-Weighted)',
+    label: "Arrow Up Long",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ban',
+    class: "fa-arrow-up-right-dots",
     search: {
       terms: [
-        'abort',
-        'ban',
-        'block',
-        'cancel',
-        'delete',
-        'hide',
-        'prohibit',
-        'remove',
-        'stop',
-        'trash'
+        "growth",
+        "increase",
+        "population"
       ]
     },
-    label: 'ban',
+    label: "Arrow Up Right Dots",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-band-aid',
+    class: "fa-arrow-up-right-from-square",
     search: {
       terms: [
-        'bandage',
-        'boo boo',
-        'first aid',
-        'ouch'
+        "new",
+        "open",
+        "send",
+        "share"
       ]
     },
-    label: 'Band-Aid',
+    label: "Arrow Up Right From Square",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bandcamp',
+    class: "fa-arrow-up-short-wide",
     search: {
-      terms: []
+      terms: [
+        "arrange",
+        "filter",
+        "order",
+        "sort-amount-desc"
+      ]
     },
-    label: 'Bandcamp',
+    label: "Arrow Up Short Wide",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-barcode',
+    class: "fa-arrow-up-wide-short",
     search: {
       terms: [
-        'info',
-        'laser',
-        'price',
-        'scan',
-        'upc'
+        "arrange",
+        "filter",
+        "order",
+        "sort-amount-desc"
       ]
     },
-    label: 'barcode',
+    label: "Arrow Up Wide Short",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bars',
+    class: "fa-arrow-up-z-a",
     search: {
       terms: [
-        'checklist',
-        'drag',
-        'hamburger',
-        'list',
-        'menu',
-        'nav',
-        'navigation',
-        'ol',
-        'reorder',
-        'settings',
-        'todo',
-        'ul'
+        "alphabetical",
+        "arrange",
+        "filter",
+        "order",
+        "sort-alpha-desc"
       ]
     },
-    label: 'Bars',
+    label: "Arrow Up Z A",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-baseball-ball',
+    class: "fa-arrows-down-to-line",
     search: {
       terms: [
-        'foul',
-        'hardball',
-        'league',
-        'leather',
-        'mlb',
-        'softball',
-        'sport'
+        "scale down",
+        "sink"
       ]
     },
-    label: 'Baseball Ball',
+    label: "Arrows Down To Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-basketball-ball',
+    class: "fa-arrows-down-to-people",
     search: {
       terms: [
-        'dribble',
-        'dunk',
-        'hoop',
-        'nba'
+        "affected",
+        "focus",
+        "targeted"
       ]
     },
-    label: 'Basketball Ball',
+    label: "Arrows Down To People",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bath',
+    class: "fa-arrows-left-right",
     search: {
       terms: [
-        'clean',
-        'shower',
-        'tub',
-        'wash'
+        "expand",
+        "horizontal",
+        "landscape",
+        "resize",
+        "wide"
       ]
     },
-    label: 'Bath',
+    label: "Arrows Left Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battery-empty',
+    class: "fa-arrows-left-right-to-line",
     search: {
       terms: [
-        'charge',
-        'dead',
-        'power',
-        'status'
+        "analysis",
+        "expand",
+        "gap"
       ]
     },
-    label: 'Battery Empty',
+    label: "Arrows Left Right To Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battery-full',
+    class: "fa-arrows-rotate",
     search: {
       terms: [
-        'charge',
-        'power',
-        'status'
+        "Clockwise Right and Left Semicircle Arrows",
+        "exchange",
+        "refresh",
+        "reload",
+        "rotate",
+        "swap"
       ]
     },
-    label: 'Battery Full',
+    label: "Arrows Rotate",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battery-half',
+    class: "fa-arrows-spin",
     search: {
       terms: [
-        'charge',
-        'power',
-        'status'
+        "cycle",
+        "rotate",
+        "spin",
+        "whirl"
       ]
     },
-    label: 'Battery 1/2 Full',
+    label: "Arrows Spin",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battery-quarter',
+    class: "fa-arrows-split-up-and-left",
     search: {
       terms: [
-        'charge',
-        'low',
-        'power',
-        'status'
+        "agile",
+        "split"
       ]
     },
-    label: 'Battery 1/4 Full',
+    label: "Arrows Split Up And Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battery-three-quarters',
+    class: "fa-arrows-to-circle",
     search: {
       terms: [
-        'charge',
-        'power',
-        'status'
+        "center",
+        "concentrate",
+        "coordinate",
+        "coordination",
+        "focal point",
+        "focus"
       ]
     },
-    label: 'Battery 3/4 Full',
+    label: "Arrows To Circle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-battle-net',
+    class: "fa-arrows-to-dot",
     search: {
-      terms: []
+      terms: [
+        "assembly point",
+        "center",
+        "condense",
+        "focus",
+        "minimize"
+      ]
     },
-    label: 'Battle.net',
+    label: "Arrows To Dot",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bed',
+    class: "fa-arrows-to-eye",
     search: {
       terms: [
-        'lodging',
-        'mattress',
-        'rest',
-        'sleep',
-        'travel'
+        "center",
+        "coordinated assessment",
+        "focus"
       ]
     },
-    label: 'Bed',
+    label: "Arrows To Eye",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-beer',
+    class: "fa-arrows-turn-right",
     search: {
       terms: [
-        'alcohol',
-        'ale',
-        'bar',
-        'beverage',
-        'brewery',
-        'drink',
-        'lager',
-        'liquor',
-        'mug',
-        'stein'
+        "arrows"
       ]
     },
-    label: 'beer',
+    label: "Arrows Turn Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-behance',
+    class: "fa-arrows-turn-to-dots",
     search: {
-      terms: []
+      terms: [
+        "destination",
+        "nexus"
+      ]
     },
-    label: 'Behance',
+    label: "Arrows Turn To Dots",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-behance-square',
+    class: "fa-arrows-up-down",
     search: {
-      terms: []
+      terms: [
+        "expand",
+        "portrait",
+        "resize",
+        "tall",
+        "vertical"
+      ]
     },
-    label: 'Behance Square',
+    label: "Arrows Up Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bell',
+    class: "fa-arrows-up-down-left-right",
     search: {
       terms: [
-        'alarm',
-        'alert',
-        'chime',
-        'notification',
-        'reminder'
+        "arrow",
+        "arrows",
+        "bigger",
+        "enlarge",
+        "expand",
+        "fullscreen",
+        "move",
+        "position",
+        "reorder",
+        "resize"
       ]
     },
-    label: 'bell',
+    label: "Arrows Up Down Left Right",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-bell-slash',
+    class: "fa-arrows-up-to-line",
     search: {
       terms: [
-        'alert',
-        'cancel',
-        'disabled',
-        'notification',
-        'off',
-        'reminder'
+        "rise",
+        "scale up"
       ]
     },
-    label: 'Bell Slash',
+    label: "Arrows Up To Line",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-bezier-curve',
+    class: "fa-artstation",
     search: {
-      terms: [
-        'curves',
-        'illustrator',
-        'lines',
-        'path',
-        'vector'
-      ]
+      terms: []
     },
-    label: 'Bezier Curve',
+    label: "Artstation",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-bible',
+    class: "fa-asterisk",
     search: {
       terms: [
-        'book',
-        'catholicism',
-        'christianity',
-        'god',
-        'holy'
+        "Asterisk",
+        "Heavy Asterisk",
+        "annotation",
+        "details",
+        "reference",
+        "star"
       ]
     },
-    label: 'Bible',
+    label: "Asterisk",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bicycle',
+    class: "fa-asymmetrik",
     search: {
-      terms: [
-        'bike',
-        'gears',
-        'pedal',
-        'transportation',
-        'vehicle'
-      ]
+      terms: []
     },
-    label: 'Bicycle',
+    label: "Asymmetrik, Ltd.",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-biking',
+    class: "fa-at",
     search: {
       terms: [
-        'bicycle',
-        'bike',
-        'cycle',
-        'cycling',
-        'ride',
-        'wheel'
+        "Commercial At",
+        "address",
+        "author",
+        "e-mail",
+        "email",
+        "fluctuate",
+        "handle"
       ]
     },
-    label: 'Biking',
+    label: "At",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bimobject',
+    class: "fa-atlassian",
     search: {
       terms: []
     },
-    label: 'BIMobject',
+    label: "Atlassian",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-binoculars',
+    class: "fa-atom",
     search: {
       terms: [
-        'glasses',
-        'magnify',
-        'scenic',
-        'spyglass',
-        'view'
+        "atheism",
+        "atheist",
+        "atom",
+        "atom symbol",
+        "chemistry",
+        "electron",
+        "ion",
+        "isotope",
+        "neutron",
+        "nuclear",
+        "proton",
+        "science"
       ]
     },
-    label: 'Binoculars',
+    label: "Atom",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-biohazard',
+    class: "fa-audible",
     search: {
-      terms: [
-        'covid-19',
-        'danger',
-        'dangerous',
-        'hazmat',
-        'medical',
-        'radioactive',
-        'toxic',
-        'waste',
-        'zombie'
-      ]
+      terms: []
     },
-    label: 'Biohazard',
+    label: "Audible",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-birthday-cake',
+    class: "fa-audio-description",
     search: {
       terms: [
-        'anniversary',
-        'bakery',
-        'candles',
-        'celebration',
-        'dessert',
-        'frosting',
-        'holiday',
-        'party',
-        'pastry'
+        "blind",
+        "narration",
+        "video",
+        "visual"
       ]
     },
-    label: 'Birthday Cake',
+    label: "Audio Description",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bitbucket',
+    class: "fa-austral-sign",
     search: {
       terms: [
-        'atlassian',
-        'bitbucket-square',
-        'git'
+        "Austral Sign",
+        "currency"
       ]
     },
-    label: 'Bitbucket',
+    label: "Austral Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bitcoin',
+    class: "fa-autoprefixer",
     search: {
       terms: []
     },
-    label: 'Bitcoin',
+    label: "Autoprefixer",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-bity',
+    class: "fa-avianex",
     search: {
       terms: []
     },
-    label: 'Bity',
+    label: "avianex",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-black-tie',
+    class: "fa-aviato",
     search: {
       terms: []
     },
-    label: 'Font Awesome Black Tie',
+    label: "Aviato",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-blackberry',
+    class: "fa-award",
     search: {
-      terms: []
+      terms: [
+        "honor",
+        "praise",
+        "prize",
+        "recognition",
+        "ribbon",
+        "trophy"
+      ]
     },
-    label: 'BlackBerry',
+    label: "Award",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-blender',
+    class: "fa-aws",
     search: {
-      terms: [
-        'cocktail',
-        'milkshake',
-        'mixer',
-        'puree',
-        'smoothie'
-      ]
+      terms: []
     },
-    label: 'Blender',
+    label: "Amazon Web Services (AWS)",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-blender-phone',
+    class: "fa-b",
     search: {
       terms: [
-        'appliance',
-        'cocktail',
-        'communication',
-        'fantasy',
-        'milkshake',
-        'mixer',
-        'puree',
-        'silly',
-        'smoothie'
+        "Latin Capital Letter B",
+        "Latin Small Letter B",
+        "letter"
       ]
     },
-    label: 'Blender Phone',
+    label: "B",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-blind',
+    class: "fa-baby",
     search: {
       terms: [
-        'cane',
-        'disability',
-        'person',
-        'sight'
+        "users-people"
       ]
     },
-    label: 'Blind',
+    label: "Baby",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-blog',
+    class: "fa-baby-carriage",
     search: {
       terms: [
-        'journal',
-        'log',
-        'online',
-        'personal',
-        'post',
-        'web 2.0',
-        'wordpress',
-        'writing'
+        "buggy",
+        "carrier",
+        "infant",
+        "push",
+        "stroller",
+        "transportation",
+        "walk",
+        "wheels"
       ]
     },
-    label: 'Blog',
+    label: "Baby Carriage",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-blogger',
+    class: "fa-backward",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "double",
+        "fast reverse button",
+        "previous",
+        "rewind"
+      ]
     },
-    label: 'Blogger',
+    label: "Backward",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-blogger-b',
+    class: "fa-backward-fast",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "beginning",
+        "first",
+        "last track button",
+        "previous",
+        "previous scene",
+        "previous track",
+        "rewind",
+        "start",
+        "triangle"
+      ]
     },
-    label: 'Blogger B',
+    label: "Backward Fast",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bluetooth',
+    class: "fa-backward-step",
     search: {
-      terms: []
+      terms: [
+        "beginning",
+        "first",
+        "previous",
+        "rewind",
+        "start"
+      ]
     },
-    label: 'Bluetooth',
+    label: "Backward Step",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bluetooth-b',
+    class: "fa-bacon",
     search: {
-      terms: []
+      terms: [
+        "bacon",
+        "blt",
+        "breakfast",
+        "food",
+        "ham",
+        "lard",
+        "meat",
+        "pancetta",
+        "pork",
+        "rasher"
+      ]
     },
-    label: 'Bluetooth',
+    label: "Bacon",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-bold',
+    class: "fa-bacteria",
     search: {
       terms: [
-        'emphasis',
-        'format',
-        'text'
+        "antibiotic",
+        "antibody",
+        "covid-19",
+        "health",
+        "organism",
+        "sick"
       ]
     },
-    label: 'bold',
+    label: "Bacteria",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bolt',
+    class: "fa-bacterium",
     search: {
       terms: [
-        'electricity',
-        'lightning',
-        'weather',
-        'zap'
+        "antibiotic",
+        "antibody",
+        "covid-19",
+        "health",
+        "organism",
+        "sick"
       ]
     },
-    label: 'Lightning Bolt',
+    label: "Bacterium",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bomb',
+    class: "fa-bag-shopping",
     search: {
       terms: [
-        'error',
-        'explode',
-        'fuse',
-        'grenade',
-        'warning'
+        "buy",
+        "checkout",
+        "grocery",
+        "payment",
+        "purchase"
       ]
     },
-    label: 'Bomb',
+    label: "Bag Shopping",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bone',
+    class: "fa-bahai",
     search: {
       terms: [
-        'calcium',
-        'dog',
-        'skeletal',
-        'skeleton',
-        'tibia'
+        "bahai",
+        "bahá'í",
+        "star"
       ]
     },
-    label: 'Bone',
+    label: "Bahai",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bong',
+    class: "fa-baht-sign",
     search: {
       terms: [
-        'aparatus',
-        'cannabis',
-        'marijuana',
-        'pipe',
-        'smoke',
-        'smoking'
+        "currency"
       ]
     },
-    label: 'Bong',
+    label: "Baht Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-book',
+    class: "fa-ban",
     search: {
       terms: [
-        'diary',
-        'documentation',
-        'journal',
-        'library',
-        'read'
+        "abort",
+        "ban",
+        "block",
+        "cancel",
+        "delete",
+        "entry",
+        "forbidden",
+        "hide",
+        "no",
+        "not",
+        "prohibit",
+        "prohibited",
+        "remove",
+        "stop",
+        "trash"
       ]
     },
-    label: 'book',
+    label: "Ban",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-book-dead',
+    class: "fa-ban-smoking",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'crossbones',
-        'd&d',
-        'dark arts',
-        'death',
-        'dnd',
-        'documentation',
-        'evil',
-        'fantasy',
-        'halloween',
-        'holiday',
-        'necronomicon',
-        'read',
-        'skull',
-        'spell'
+        "ban",
+        "cancel",
+        "forbidden",
+        "no",
+        "no smoking",
+        "non-smoking",
+        "not",
+        "prohibited",
+        "smoking"
       ]
     },
-    label: 'Book of the Dead',
+    label: "Ban Smoking",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-book-medical',
+    class: "fa-bandage",
     search: {
       terms: [
-        'diary',
-        'documentation',
-        'health',
-        'history',
-        'journal',
-        'library',
-        'read',
-        'record'
+        "adhesive bandage",
+        "bandage",
+        "boo boo",
+        "first aid",
+        "ouch"
       ]
     },
-    label: 'Medical Book',
+    label: "Bandage",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-book-open',
+    class: "fa-bandcamp",
     search: {
-      terms: [
-        'flyer',
-        'library',
-        'notebook',
-        'open book',
-        'pamphlet',
-        'reading'
-      ]
+      terms: []
     },
-    label: 'Book Open',
+    label: "Bandcamp",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-book-reader',
+    class: "fa-bangladeshi-taka-sign",
     search: {
       terms: [
-        'flyer',
-        'library',
-        'notebook',
-        'open book',
-        'pamphlet',
-        'reading'
+        "bdt",
+        "currency",
+        "tk"
       ]
     },
-    label: 'Book Reader',
+    label: "Bangladeshi Taka Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bookmark',
+    class: "fa-barcode",
     search: {
       terms: [
-        'favorite',
-        'marker',
-        'read',
-        'remember',
-        'save'
+        "info",
+        "laser",
+        "price",
+        "scan",
+        "upc"
       ]
     },
-    label: 'bookmark',
+    label: "Barcode",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-bootstrap',
+    class: "fa-bars",
     search: {
-      terms: []
+      terms: [
+        "checklist",
+        "drag",
+        "hamburger",
+        "list",
+        "menu",
+        "nav",
+        "navigation",
+        "ol",
+        "reorder",
+        "settings",
+        "todo",
+        "ul"
+      ]
     },
-    label: 'Bootstrap',
+    label: "Bars",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-border-all',
+    class: "fa-bars-progress",
     search: {
       terms: [
-        'cell',
-        'grid',
-        'outline',
-        'stroke',
-        'table'
+        "checklist",
+        "downloading",
+        "downloads",
+        "loading",
+        "poll",
+        "progress",
+        "project management",
+        "settings",
+        "to do"
       ]
     },
-    label: 'Border All',
+    label: "Bars Progress",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-border-none',
+    class: "fa-bars-staggered",
     search: {
       terms: [
-        'cell',
-        'grid',
-        'outline',
-        'stroke',
-        'table'
+        "flow",
+        "list",
+        "timeline"
       ]
     },
-    label: 'Border None',
+    label: "Bars Staggered",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-border-style',
+    class: "fa-baseball",
     search: {
-      terms: []
+      terms: [
+        "ball",
+        "baseball",
+        "foul",
+        "glove",
+        "hardball",
+        "league",
+        "leather",
+        "mlb",
+        "softball",
+        "sport",
+        "underarm"
+      ]
     },
-    label: 'Border Style',
+    label: "Baseball",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bowling-ball',
+    class: "fa-baseball-bat-ball",
     search: {
       terms: [
-        'alley',
-        'candlepin',
-        'gutter',
-        'lane',
-        'strike',
-        'tenpin'
+        "bat",
+        "league",
+        "mlb",
+        "slugger",
+        "softball",
+        "sport"
       ]
     },
-    label: 'Bowling Ball',
+    label: "Baseball Bat Ball",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-box',
+    class: "fa-basket-shopping",
     search: {
       terms: [
-        'archive',
-        'container',
-        'package',
-        'storage'
+        "buy",
+        "checkout",
+        "grocery",
+        "payment",
+        "purchase"
       ]
     },
-    label: 'Box',
+    label: "Basket Shopping",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-box-open',
+    class: "fa-basketball",
     search: {
       terms: [
-        'archive',
-        'container',
-        'package',
-        'storage',
-        'unpack'
+        "ball",
+        "basketball",
+        "dribble",
+        "dunk",
+        "hoop",
+        "nba"
       ]
     },
-    label: 'Box Open',
+    label: "Basketball",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-box-tissue',
+    class: "fa-bath",
     search: {
       terms: [
-        'cough',
-        'covid-19',
-        'kleenex',
-        'mucus',
-        'nose',
-        'sneeze',
-        'snot'
+        "bath",
+        "bathtub",
+        "clean",
+        "shower",
+        "tub",
+        "wash"
       ]
     },
-    label: 'Tissue Box',
+    label: "Bath",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-boxes',
+    class: "fa-battery-empty",
     search: {
       terms: [
-        'archives',
-        'inventory',
-        'storage',
-        'warehouse'
+        "charge",
+        "dead",
+        "power",
+        "status"
       ]
     },
-    label: 'Boxes',
+    label: "Battery Empty",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-braille',
+    class: "fa-battery-full",
     search: {
       terms: [
-        'alphabet',
-        'blind',
-        'dots',
-        'raised',
-        'vision'
+        "batter",
+        "battery",
+        "charge",
+        "power",
+        "status"
       ]
     },
-    label: 'Braille',
+    label: "Battery Full",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-brain',
+    class: "fa-battery-half",
     search: {
       terms: [
-        'cerebellum',
-        'gray matter',
-        'intellect',
-        'medulla oblongata',
-        'mind',
-        'noodle',
-        'wit'
+        "charge",
+        "power",
+        "status"
       ]
     },
-    label: 'Brain',
+    label: "Battery Half",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bread-slice',
+    class: "fa-battery-quarter",
     search: {
       terms: [
-        'bake',
-        'bakery',
-        'baking',
-        'dough',
-        'flour',
-        'gluten',
-        'grain',
-        'sandwich',
-        'sourdough',
-        'toast',
-        'wheat',
-        'yeast'
+        "charge",
+        "low",
+        "power",
+        "status"
       ]
     },
-    label: 'Bread Slice',
+    label: "Battery Quarter",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-briefcase',
+    class: "fa-battery-three-quarters",
     search: {
       terms: [
-        'bag',
-        'business',
-        'luggage',
-        'office',
-        'work'
+        "charge",
+        "power",
+        "status"
       ]
     },
-    label: 'Briefcase',
+    label: "Battery Three Quarters",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-briefcase-medical',
+    class: "fa-battle-net",
     search: {
-      terms: [
-        'doctor',
-        'emt',
-        'first aid',
-        'health'
-      ]
+      terms: []
     },
-    label: 'Medical Briefcase',
+    label: "Battle.net",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-broadcast-tower',
+    class: "fa-bed",
     search: {
       terms: [
-        'airwaves',
-        'antenna',
-        'radio',
-        'reception',
-        'waves'
+        "hospital",
+        "hotel",
+        "lodging",
+        "mattress",
+        "patient",
+        "person in bed",
+        "rest",
+        "sleep",
+        "travel"
       ]
     },
-    label: 'Broadcast Tower',
+    label: "Bed",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-broom',
+    class: "fa-bed-pulse",
     search: {
       terms: [
-        'clean',
-        'firebolt',
-        'fly',
-        'halloween',
-        'nimbus 2000',
-        'quidditch',
-        'sweep',
-        'witch'
+        "EKG",
+        "bed",
+        "electrocardiogram",
+        "health",
+        "hospital",
+        "life",
+        "patient",
+        "vital"
       ]
     },
-    label: 'Broom',
+    label: "Bed Pulse",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-brush',
+    class: "fa-beer-mug-empty",
     search: {
       terms: [
-        'art',
-        'bristles',
-        'color',
-        'handle',
-        'paint'
+        "alcohol",
+        "ale",
+        "bar",
+        "beverage",
+        "brew",
+        "brewery",
+        "drink",
+        "foam",
+        "lager",
+        "liquor",
+        "mug",
+        "stein"
       ]
     },
-    label: 'Brush',
+    label: "Beer Mug Empty",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-btc',
+    class: "fa-behance",
     search: {
       terms: []
     },
-    label: 'BTC',
+    label: "Behance",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-buffer',
+    class: "fa-bell",
     search: {
-      terms: []
+      terms: [
+        "alarm",
+        "alert",
+        "bel",
+        "bell",
+        "chime",
+        "notification",
+        "reminder"
+      ]
     },
-    label: 'Buffer',
+    label: "Bell",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-bug',
+    class: "fa-bell-concierge",
     search: {
       terms: [
-        'beetle',
-        'error',
-        'insect',
-        'report'
+        "attention",
+        "bell",
+        "bellhop",
+        "bellhop bell",
+        "hotel",
+        "receptionist",
+        "service",
+        "support"
       ]
     },
-    label: 'Bug',
+    label: "Bell Concierge",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-building',
+    class: "fa-bell-slash",
     search: {
       terms: [
-        'apartment',
-        'business',
-        'city',
-        'company',
-        'office',
-        'work'
+        "alert",
+        "bell",
+        "bell with slash",
+        "cancel",
+        "disabled",
+        "forbidden",
+        "mute",
+        "notification",
+        "off",
+        "quiet",
+        "reminder",
+        "silent"
       ]
     },
-    label: 'Building',
+    label: "Bell Slash",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-bullhorn',
+    class: "fa-bezier-curve",
     search: {
       terms: [
-        'announcement',
-        'broadcast',
-        'louder',
-        'megaphone',
-        'share'
+        "curves",
+        "illustrator",
+        "lines",
+        "path",
+        "vector"
       ]
     },
-    label: 'bullhorn',
+    label: "Bezier Curve",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bullseye',
+    class: "fa-bicycle",
     search: {
       terms: [
-        'archery',
-        'goal',
-        'objective',
-        'target'
+        "bicycle",
+        "bike",
+        "gears",
+        "pedal",
+        "transportation",
+        "vehicle"
       ]
     },
-    label: 'Bullseye',
+    label: "Bicycle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-burn',
+    class: "fa-bilibili",
     search: {
-      terms: [
-        'caliente',
-        'energy',
-        'fire',
-        'flame',
-        'gas',
-        'heat',
-        'hot'
-      ]
+      terms: []
     },
-    label: 'Burn',
+    label: "Bilibili",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-buromobelexperte',
+    class: "fa-bimobject",
     search: {
       terms: []
     },
-    label: 'Büromöbel-Experte GmbH & Co. KG.',
+    label: "BIMobject",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-bus',
+    class: "fa-binoculars",
     search: {
       terms: [
-        'public transportation',
-        'transportation',
-        'travel',
-        'vehicle'
+        "glasses",
+        "magnify",
+        "scenic",
+        "spyglass",
+        "view"
       ]
     },
-    label: 'Bus',
+    label: "Binoculars",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-bus-alt',
+    class: "fa-biohazard",
     search: {
       terms: [
-        'mta',
-        'public transportation',
-        'transportation',
-        'travel',
-        'vehicle'
+        "biohazard",
+        "covid-19",
+        "danger",
+        "dangerous",
+        "epidemic",
+        "hazmat",
+        "medical",
+        "pandemic",
+        "radioactive",
+        "sign",
+        "toxic",
+        "waste",
+        "zombie"
       ]
     },
-    label: 'Bus Alt',
+    label: "Biohazard",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-business-time',
+    class: "fa-bitbucket",
     search: {
       terms: [
-        'alarm',
-        'briefcase',
-        'business socks',
-        'clock',
-        'flight of the conchords',
-        'reminder',
-        'wednesday'
+        "atlassian",
+        "bitbucket-square",
+        "git"
       ]
     },
-    label: 'Business Time',
+    label: "Bitbucket",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-buy-n-large',
+    class: "fa-bitcoin",
     search: {
       terms: []
+    },
+    label: "Bitcoin",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-bitcoin-sign",
+    search: {
+      terms: [
+        "Bitcoin Sign",
+        "currency"
+      ]
     },
-    label: 'Buy n Large',
+    label: "Bitcoin Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-buysellads',
+    class: "fa-bity",
     search: {
       terms: []
     },
-    label: 'BuySellAds',
+    label: "Bity",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-calculator',
+    class: "fa-black-tie",
     search: {
-      terms: [
-        'abacus',
-        'addition',
-        'arithmetic',
-        'counting',
-        'math',
-        'multiplication',
-        'subtraction'
-      ]
+      terms: []
     },
-    label: 'Calculator',
+    label: "Font Awesome Black Tie",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-calendar',
+    class: "fa-blackberry",
     search: {
-      terms: [
-        'calendar-o',
-        'date',
-        'event',
-        'schedule',
-        'time',
-        'when'
-      ]
+      terms: []
     },
-    label: 'Calendar',
+    label: "BlackBerry",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-calendar-alt',
+    class: "fa-blender",
     search: {
       terms: [
-        'calendar',
-        'date',
-        'event',
-        'schedule',
-        'time',
-        'when'
+        "cocktail",
+        "milkshake",
+        "mixer",
+        "puree",
+        "smoothie"
       ]
     },
-    label: 'Alternate Calendar',
+    label: "Blender",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-calendar-check',
+    class: "fa-blender-phone",
     search: {
       terms: [
-        'accept',
-        'agree',
-        'appointment',
-        'confirm',
-        'correct',
-        'date',
-        'done',
-        'event',
-        'ok',
-        'schedule',
-        'select',
-        'success',
-        'tick',
-        'time',
-        'todo',
-        'when'
+        "appliance",
+        "cocktail",
+        "fantasy",
+        "milkshake",
+        "mixer",
+        "puree",
+        "silly",
+        "smoothie"
       ]
     },
-    label: 'Calendar Check',
+    label: "Blender Phone",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-calendar-day',
+    class: "fa-blog",
     search: {
       terms: [
-        'date',
-        'detail',
-        'event',
-        'focus',
-        'schedule',
-        'single day',
-        'time',
-        'today',
-        'when'
+        "journal",
+        "log",
+        "online",
+        "personal",
+        "post",
+        "web 2.0",
+        "wordpress",
+        "writing"
       ]
     },
-    label: 'Calendar with Day Focus',
+    label: "Blog",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-calendar-minus',
+    class: "fa-blogger",
     search: {
-      terms: [
-        'calendar',
-        'date',
-        'delete',
-        'event',
-        'negative',
-        'remove',
-        'schedule',
-        'time',
-        'when'
-      ]
+      terms: []
     },
-    label: 'Calendar Minus',
+    label: "Blogger",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-calendar-plus',
+    class: "fa-blogger-b",
     search: {
-      terms: [
-        'add',
-        'calendar',
-        'create',
-        'date',
-        'event',
-        'new',
-        'positive',
-        'schedule',
-        'time',
-        'when'
-      ]
+      terms: []
     },
-    label: 'Calendar Plus',
+    label: "Blogger B",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-calendar-times',
+    class: "fa-bluetooth",
     search: {
       terms: [
-        'archive',
-        'calendar',
-        'date',
-        'delete',
-        'event',
-        'remove',
-        'schedule',
-        'time',
-        'when',
-        'x'
+        "signal"
       ]
     },
-    label: 'Calendar Times',
+    label: "Bluetooth",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-calendar-week',
+    class: "fa-bluetooth-b",
     search: {
-      terms: [
-        'date',
-        'detail',
-        'event',
-        'focus',
-        'schedule',
-        'single week',
-        'time',
-        'today',
-        'when'
-      ]
+      terms: []
     },
-    label: 'Calendar with Week Focus',
+    label: "Bluetooth",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-camera',
+    class: "fa-bold",
     search: {
       terms: [
-        'image',
-        'lens',
-        'photo',
-        'picture',
-        'record',
-        'shutter',
-        'video'
+        "emphasis",
+        "format",
+        "text"
       ]
     },
-    label: 'camera',
+    label: "Bold",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-camera-retro',
+    class: "fa-bolt",
     search: {
       terms: [
-        'image',
-        'lens',
-        'photo',
-        'picture',
-        'record',
-        'shutter',
-        'video'
+        "charge",
+        "danger",
+        "electric",
+        "electricity",
+        "flash",
+        "high voltage",
+        "lightning",
+        "voltage",
+        "weather",
+        "zap"
       ]
     },
-    label: 'Retro Camera',
+    label: "Bolt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-campground',
+    class: "fa-bolt-lightning",
     search: {
       terms: [
-        'camping',
-        'fall',
-        'outdoors',
-        'teepee',
-        'tent',
-        'tipi'
+        "electricity",
+        "flash",
+        "lightning",
+        "weather",
+        "zap"
       ]
     },
-    label: 'Campground',
+    label: "Bolt Lightning",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-canadian-maple-leaf',
+    class: "fa-bomb",
     search: {
       terms: [
-        'canada',
-        'flag',
-        'flora',
-        'nature',
-        'plant'
+        "bomb",
+        "comic",
+        "error",
+        "explode",
+        "fuse",
+        "grenade",
+        "warning"
       ]
     },
-    label: 'Canadian Maple Leaf',
+    label: "Bomb",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-candy-cane',
+    class: "fa-bone",
     search: {
       terms: [
-        'candy',
-        'christmas',
-        'holiday',
-        'mint',
-        'peppermint',
-        'striped',
-        'xmas'
+        "bone",
+        "calcium",
+        "dog",
+        "skeletal",
+        "skeleton",
+        "tibia"
       ]
     },
-    label: 'Candy Cane',
+    label: "Bone",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cannabis',
+    class: "fa-bong",
     search: {
       terms: [
-        'bud',
-        'chronic',
-        'drugs',
-        'endica',
-        'endo',
-        'ganja',
-        'marijuana',
-        'mary jane',
-        'pot',
-        'reefer',
-        'sativa',
-        'spliff',
-        'weed',
-        'whacky-tabacky'
+        "aparatus",
+        "cannabis",
+        "marijuana",
+        "pipe",
+        "smoke",
+        "smoking"
       ]
     },
-    label: 'Cannabis',
+    label: "Bong",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-capsules',
+    class: "fa-book",
     search: {
       terms: [
-        'drugs',
-        'medicine',
-        'pills',
-        'prescription'
+        "book",
+        "cover",
+        "decorated",
+        "diary",
+        "documentation",
+        "journal",
+        "library",
+        "notebook",
+        "notebook with decorative cover",
+        "read",
+        "research"
       ]
     },
-    label: 'Capsules',
+    label: "Book",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-car',
+    class: "fa-book-atlas",
     search: {
       terms: [
-        'auto',
-        'automobile',
-        'sedan',
-        'transportation',
-        'travel',
-        'vehicle'
+        "book",
+        "directions",
+        "geography",
+        "globe",
+        "library",
+        "map",
+        "research",
+        "travel",
+        "wayfinding"
       ]
     },
-    label: 'Car',
+    label: "Book Atlas",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-car-alt',
+    class: "fa-book-bible",
     search: {
       terms: [
-        'auto',
-        'automobile',
-        'sedan',
-        'transportation',
-        'travel',
-        'vehicle'
+        "book",
+        "catholicism",
+        "christianity",
+        "god",
+        "holy"
       ]
     },
-    label: 'Alternate Car',
+    label: "Book Bible",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-car-battery',
+    class: "fa-book-bookmark",
     search: {
       terms: [
-        'auto',
-        'electric',
-        'mechanic',
-        'power'
+        "library",
+        "research"
       ]
     },
-    label: 'Car Battery',
+    label: "Book Bookmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-car-crash',
+    class: "fa-book-journal-whills",
     search: {
       terms: [
-        'accident',
-        'auto',
-        'automobile',
-        'insurance',
-        'sedan',
-        'transportation',
-        'vehicle',
-        'wreck'
+        "book",
+        "force",
+        "jedi",
+        "sith",
+        "star wars",
+        "yoda"
       ]
     },
-    label: 'Car Crash',
+    label: "Book Journal Whills",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-car-side',
+    class: "fa-book-medical",
     search: {
       terms: [
-        'auto',
-        'automobile',
-        'sedan',
-        'transportation',
-        'travel',
-        'vehicle'
+        "diary",
+        "documentation",
+        "health",
+        "history",
+        "journal",
+        "library",
+        "read",
+        "record",
+        "research"
       ]
     },
-    label: 'Car Side',
+    label: "Book Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-caravan',
+    class: "fa-book-open",
     search: {
       terms: [
-        'camper',
-        'motor home',
-        'rv',
-        'trailer',
-        'travel'
+        "Book",
+        "book",
+        "flyer",
+        "library",
+        "notebook",
+        "open",
+        "open book",
+        "pamphlet",
+        "reading",
+        "research"
       ]
     },
-    label: 'Caravan',
+    label: "Book Open",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-down',
+    class: "fa-book-open-reader",
     search: {
       terms: [
-        'arrow',
-        'dropdown',
-        'expand',
-        'menu',
-        'more',
-        'triangle'
+        "flyer",
+        "library",
+        "notebook",
+        "open book",
+        "pamphlet",
+        "reading",
+        "research"
       ]
     },
-    label: 'Caret Down',
+    label: "Book Open Reader",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-left',
+    class: "fa-book-quran",
     search: {
       terms: [
-        'arrow',
-        'back',
-        'previous',
-        'triangle'
+        "book",
+        "islam",
+        "muslim",
+        "religion"
       ]
     },
-    label: 'Caret Left',
+    label: "Book Quran",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-right',
+    class: "fa-book-skull",
     search: {
       terms: [
-        'arrow',
-        'forward',
-        'next',
-        'triangle'
+        "Dungeons & Dragons",
+        "crossbones",
+        "d&d",
+        "dark arts",
+        "death",
+        "dnd",
+        "documentation",
+        "evil",
+        "fantasy",
+        "halloween",
+        "holiday",
+        "library",
+        "necronomicon",
+        "read",
+        "research",
+        "skull",
+        "spell"
       ]
     },
-    label: 'Caret Right',
+    label: "Book Skull",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-square-down',
+    class: "fa-book-tanakh",
     search: {
       terms: [
-        'arrow',
-        'caret-square-o-down',
-        'dropdown',
-        'expand',
-        'menu',
-        'more',
-        'triangle'
+        "book",
+        "jewish",
+        "judaism",
+        "religion"
       ]
     },
-    label: 'Caret Square Down',
+    label: "Book Tanakh",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-square-left',
+    class: "fa-bookmark",
     search: {
       terms: [
-        'arrow',
-        'back',
-        'caret-square-o-left',
-        'previous',
-        'triangle'
+        "bookmark",
+        "favorite",
+        "library",
+        "mark",
+        "marker",
+        "read",
+        "remember",
+        "research",
+        "save"
       ]
     },
-    label: 'Caret Square Left',
+    label: "Bookmark",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-square-right',
+    class: "fa-bootstrap",
     search: {
-      terms: [
-        'arrow',
-        'caret-square-o-right',
-        'forward',
-        'next',
-        'triangle'
-      ]
+      terms: []
     },
-    label: 'Caret Square Right',
+    label: "Bootstrap",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-caret-square-up',
+    class: "fa-border-all",
     search: {
       terms: [
-        'arrow',
-        'caret-square-o-up',
-        'collapse',
-        'triangle',
-        'upload'
+        "cell",
+        "grid",
+        "outline",
+        "stroke",
+        "table"
       ]
     },
-    label: 'Caret Square Up',
+    label: "Border All",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-caret-up',
+    class: "fa-border-none",
     search: {
       terms: [
-        'arrow',
-        'collapse',
-        'triangle'
+        "cell",
+        "grid",
+        "outline",
+        "stroke",
+        "table"
       ]
     },
-    label: 'Caret Up',
+    label: "Border None",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-carrot',
+    class: "fa-border-top-left",
     search: {
       terms: [
-        'bugs bunny',
-        'orange',
-        'vegan',
-        'vegetable'
+        "cell",
+        "outline",
+        "stroke",
+        "table"
       ]
     },
-    label: 'Carrot',
+    label: "Border Top Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cart-arrow-down',
+    class: "fa-bore-hole",
     search: {
       terms: [
-        'download',
-        'save',
-        'shopping'
+        "bore",
+        "bury",
+        "drill",
+        "hole"
       ]
     },
-    label: 'Shopping Cart Arrow Down',
+    label: "Bore Hole",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cart-plus',
+    class: "fa-bots",
     search: {
-      terms: [
-        'add',
-        'create',
-        'new',
-        'positive',
-        'shopping'
-      ]
+      terms: []
     },
-    label: 'Add to Shopping Cart',
+    label: "Bots",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-cash-register',
+    class: "fa-bottle-droplet",
     search: {
       terms: [
-        'buy',
-        'cha-ching',
-        'change',
-        'checkout',
-        'commerce',
-        'leaerboard',
-        'machine',
-        'pay',
-        'payment',
-        'purchase',
-        'store'
+        "alcohol",
+        "drink",
+        "oil",
+        "olive oil",
+        "wine"
       ]
     },
-    label: 'Cash Register',
+    label: "Bottle Droplet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cat',
+    class: "fa-bottle-water",
     search: {
       terms: [
-        'feline',
-        'halloween',
-        'holiday',
-        'kitten',
-        'kitty',
-        'meow',
-        'pet'
+        "h2o",
+        "plastic",
+        "water"
       ]
     },
-    label: 'Cat',
+    label: "Bottle Water",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-amazon-pay',
+    class: "fa-bowl-food",
     search: {
-      terms: []
+      terms: [
+        "catfood",
+        "dogfood",
+        "food",
+        "rice"
+      ]
     },
-    label: 'Amazon Pay Credit Card',
+    label: "Bowl Food",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-amex',
+    class: "fa-bowl-rice",
     search: {
       terms: [
-        'amex'
+        "boiled",
+        "cooked",
+        "cooked rice",
+        "rice",
+        "steamed"
       ]
     },
-    label: 'American Express Credit Card',
+    label: "Bowl Rice",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-apple-pay',
+    class: "fa-bowling-ball",
     search: {
-      terms: []
+      terms: [
+        "alley",
+        "candlepin",
+        "gutter",
+        "lane",
+        "strike",
+        "tenpin"
+      ]
     },
-    label: 'Apple Pay Credit Card',
+    label: "Bowling Ball",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-diners-club',
+    class: "fa-box",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "box",
+        "container",
+        "package",
+        "parcel",
+        "storage"
+      ]
     },
-    label: 'Diner\'s Club Credit Card',
+    label: "Box",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-discover',
+    class: "fa-box-archive",
     search: {
-      terms: []
+      terms: [
+        "box",
+        "package",
+        "save",
+        "storage"
+      ]
     },
-    label: 'Discover Credit Card',
+    label: "Box Archive",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-jcb',
+    class: "fa-box-open",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "container",
+        "package",
+        "storage",
+        "unpack"
+      ]
     },
-    label: 'JCB Credit Card',
+    label: "Box Open",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-mastercard',
+    class: "fa-box-tissue",
     search: {
-      terms: []
+      terms: [
+        "cough",
+        "covid-19",
+        "kleenex",
+        "mucus",
+        "nose",
+        "sneeze",
+        "snot"
+      ]
     },
-    label: 'MasterCard Credit Card',
+    label: "Box Tissue",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-paypal',
+    class: "fa-boxes-packing",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "box",
+        "package",
+        "storage",
+        "supplies"
+      ]
     },
-    label: 'Paypal Credit Card',
+    label: "Boxes Packing",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-stripe',
+    class: "fa-boxes-stacked",
     search: {
-      terms: []
+      terms: [
+        "archives",
+        "inventory",
+        "storage",
+        "warehouse"
+      ]
     },
-    label: 'Stripe Credit Card',
+    label: "Boxes Stacked",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cc-visa',
+    class: "fa-braille",
     search: {
-      terms: []
+      terms: [
+        "alphabet",
+        "blind",
+        "dots",
+        "raised",
+        "vision"
+      ]
     },
-    label: 'Visa Credit Card',
+    label: "Braille",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-centercode',
+    class: "fa-brain",
     search: {
-      terms: []
+      terms: [
+        "brain",
+        "cerebellum",
+        "gray matter",
+        "intellect",
+        "intelligent",
+        "medulla oblongata",
+        "mind",
+        "noodle",
+        "wit"
+      ]
     },
-    label: 'Centercode',
+    label: "Brain",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-centos',
+    class: "fa-brazilian-real-sign",
     search: {
       terms: [
-        'linux',
-        'operating system',
-        'os'
+        "brazilian real sign",
+        "currency"
       ]
     },
-    label: 'Centos',
+    label: "Brazilian Real Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-certificate',
+    class: "fa-bread-slice",
     search: {
       terms: [
-        'badge',
-        'star',
-        'verified'
+        "bake",
+        "bakery",
+        "baking",
+        "dough",
+        "flour",
+        "gluten",
+        "grain",
+        "sandwich",
+        "sourdough",
+        "toast",
+        "wheat",
+        "yeast"
       ]
     },
-    label: 'certificate',
+    label: "Bread Slice",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chair',
+    class: "fa-bridge",
     search: {
       terms: [
-        'furniture',
-        'seat',
-        'sit'
+        "bridge",
+        "road"
       ]
     },
-    label: 'Chair',
+    label: "Bridge",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chalkboard',
+    class: "fa-bridge-circle-check",
     search: {
       terms: [
-        'blackboard',
-        'learning',
-        'school',
-        'teaching',
-        'whiteboard',
-        'writing'
+        "bridge",
+        "not affected",
+        "ok",
+        "okay",
+        "road"
       ]
     },
-    label: 'Chalkboard',
+    label: "Bridge Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chalkboard-teacher',
+    class: "fa-bridge-circle-exclamation",
     search: {
       terms: [
-        'blackboard',
-        'instructor',
-        'learning',
-        'professor',
-        'school',
-        'whiteboard',
-        'writing'
+        "affected",
+        "bridge",
+        "road"
       ]
     },
-    label: 'Chalkboard Teacher',
+    label: "Bridge Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-charging-station',
+    class: "fa-bridge-circle-xmark",
     search: {
       terms: [
-        'electric',
-        'ev',
-        'tesla',
-        'vehicle'
+        "bridge",
+        "destroy",
+        "road"
       ]
     },
-    label: 'Charging Station',
+    label: "Bridge Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chart-area',
+    class: "fa-bridge-lock",
     search: {
       terms: [
-        'analytics',
-        'area',
-        'chart',
-        'graph'
+        "bridge",
+        "closed",
+        "lockdown",
+        "quarantine",
+        "road"
       ]
     },
-    label: 'Area Chart',
+    label: "Bridge Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chart-bar',
+    class: "fa-bridge-water",
     search: {
       terms: [
-        'analytics',
-        'bar',
-        'chart',
-        'graph'
+        "bridge",
+        "road"
       ]
     },
-    label: 'Bar Chart',
+    label: "Bridge Water",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-chart-line',
+    class: "fa-briefcase",
     search: {
       terms: [
-        'activity',
-        'analytics',
-        'chart',
-        'dashboard',
-        'gain',
-        'graph',
-        'increase',
-        'line'
+        "bag",
+        "briefcas",
+        "briefcase",
+        "business",
+        "luggage",
+        "office",
+        "work"
       ]
     },
-    label: 'Line Chart',
+    label: "Briefcase",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chart-pie',
+    class: "fa-briefcase-medical",
     search: {
       terms: [
-        'analytics',
-        'chart',
-        'diagram',
-        'graph',
-        'pie'
+        "doctor",
+        "emt",
+        "first aid",
+        "health"
       ]
     },
-    label: 'Pie Chart',
+    label: "Briefcase Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-check',
+    class: "fa-broom",
     search: {
       terms: [
-        'accept',
-        'agree',
-        'checkmark',
-        'confirm',
-        'correct',
-        'done',
-        'notice',
-        'notification',
-        'notify',
-        'ok',
-        'select',
-        'success',
-        'tick',
-        'todo',
-        'yes'
+        "broom",
+        "clean",
+        "cleaning",
+        "firebolt",
+        "fly",
+        "halloween",
+        "nimbus 2000",
+        "quidditch",
+        "sweep",
+        "sweeping",
+        "witch"
       ]
     },
-    label: 'Check',
+    label: "Broom",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-check-circle',
+    class: "fa-broom-ball",
     search: {
       terms: [
-        'accept',
-        'agree',
-        'confirm',
-        'correct',
-        'done',
-        'ok',
-        'select',
-        'success',
-        'tick',
-        'todo',
-        'yes'
+        "ball",
+        "bludger",
+        "broom",
+        "golden snitch",
+        "harry potter",
+        "hogwarts",
+        "quaffle",
+        "sport",
+        "wizard"
       ]
     },
-    label: 'Check Circle',
+    label: "Broom Ball",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-check-double',
+    class: "fa-brush",
     search: {
       terms: [
-        'accept',
-        'agree',
-        'checkmark',
-        'confirm',
-        'correct',
-        'done',
-        'notice',
-        'notification',
-        'notify',
-        'ok',
-        'select',
-        'success',
-        'tick',
-        'todo'
+        "art",
+        "bristles",
+        "color",
+        "handle",
+        "paint"
       ]
     },
-    label: 'Double Check',
+    label: "Brush",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-check-square',
+    class: "fa-btc",
     search: {
-      terms: [
-        'accept',
-        'agree',
-        'checkmark',
-        'confirm',
-        'correct',
-        'done',
-        'ok',
-        'select',
-        'success',
-        'tick',
-        'todo',
-        'yes'
-      ]
+      terms: []
     },
-    label: 'Check Square',
+    label: "BTC",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-cheese',
+    class: "fa-bucket",
     search: {
       terms: [
-        'cheddar',
-        'curd',
-        'gouda',
-        'melt',
-        'parmesan',
-        'sandwich',
-        'swiss',
-        'wedge'
+        "bucket",
+        "pail",
+        "sandcastle"
       ]
     },
-    label: 'Cheese',
+    label: "Bucket",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess',
+    class: "fa-buffer",
     search: {
-      terms: [
-        'board',
-        'castle',
-        'checkmate',
-        'game',
-        'king',
-        'rook',
-        'strategy',
-        'tournament'
-      ]
+      terms: []
     },
-    label: 'Chess',
+    label: "Buffer",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-chess-bishop',
+    class: "fa-bug",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'strategy'
+        "beetle",
+        "error",
+        "glitch",
+        "insect",
+        "repair",
+        "report"
       ]
     },
-    label: 'Chess Bishop',
+    label: "Bug",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-board',
+    class: "fa-bug-slash",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'strategy'
+        "beetle",
+        "fix",
+        "glitch",
+        "insect",
+        "optimize",
+        "repair",
+        "report",
+        "warning"
       ]
     },
-    label: 'Chess Board',
+    label: "Bug Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-king',
+    class: "fa-bugs",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'strategy'
+        "bedbug",
+        "infestation",
+        "lice",
+        "plague",
+        "ticks"
       ]
     },
-    label: 'Chess King',
+    label: "Bugs",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-knight',
+    class: "fa-building",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'horse',
-        'strategy'
+        "apartment",
+        "building",
+        "business",
+        "city",
+        "company",
+        "office",
+        "office building",
+        "urban",
+        "work"
       ]
     },
-    label: 'Chess Knight',
+    label: "Building",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-pawn',
+    class: "fa-building-circle-arrow-right",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'strategy'
+        "building",
+        "city",
+        "distribution center",
+        "office"
       ]
     },
-    label: 'Chess Pawn',
+    label: "Building Circle Arrow Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-queen',
+    class: "fa-building-circle-check",
     search: {
       terms: [
-        'board',
-        'checkmate',
-        'game',
-        'strategy'
+        "building",
+        "city",
+        "not affected",
+        "office",
+        "ok",
+        "okay"
       ]
     },
-    label: 'Chess Queen',
+    label: "Building Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chess-rook',
+    class: "fa-building-circle-exclamation",
     search: {
       terms: [
-        'board',
-        'castle',
-        'checkmate',
-        'game',
-        'strategy'
+        "affected",
+        "building",
+        "city",
+        "office"
       ]
     },
-    label: 'Chess Rook',
+    label: "Building Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-circle-down',
+    class: "fa-building-circle-xmark",
     search: {
       terms: [
-        'arrow',
-        'download',
-        'dropdown',
-        'menu',
-        'more'
+        "building",
+        "city",
+        "destroy",
+        "office"
       ]
     },
-    label: 'Chevron Circle Down',
+    label: "Building Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-circle-left',
+    class: "fa-building-columns",
     search: {
       terms: [
-        'arrow',
-        'back',
-        'previous'
+        "bank",
+        "building",
+        "college",
+        "education",
+        "institution",
+        "museum",
+        "students"
       ]
     },
-    label: 'Chevron Circle Left',
+    label: "Building Columns",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-circle-right',
+    class: "fa-building-flag",
     search: {
       terms: [
-        'arrow',
-        'forward',
-        'next'
+        " city",
+        "building",
+        "diplomat",
+        "embassy",
+        "flag",
+        "headquarters",
+        "united nations"
       ]
     },
-    label: 'Chevron Circle Right',
+    label: "Building Flag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-circle-up',
+    class: "fa-building-lock",
     search: {
       terms: [
-        'arrow',
-        'collapse',
-        'upload'
+        "building",
+        "city",
+        "closed",
+        "lock",
+        "lockdown",
+        "quarantine",
+        "secure"
       ]
     },
-    label: 'Chevron Circle Up',
+    label: "Building Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-down',
+    class: "fa-building-ngo",
     search: {
       terms: [
-        'arrow',
-        'download',
-        'expand'
+        " city",
+        "building",
+        "non governmental organization",
+        "office"
       ]
     },
-    label: 'chevron-down',
+    label: "Building Ngo",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-left',
+    class: "fa-building-shield",
     search: {
       terms: [
-        'arrow',
-        'back',
-        'bracket',
-        'previous'
+        "building",
+        "city",
+        "police",
+        "protect",
+        "safety"
       ]
     },
-    label: 'chevron-left',
+    label: "Building Shield",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-right',
+    class: "fa-building-un",
     search: {
       terms: [
-        'arrow',
-        'bracket',
-        'forward',
-        'next'
+        "building",
+        "city",
+        "office",
+        "united nations"
       ]
     },
-    label: 'chevron-right',
+    label: "Building Un",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chevron-up',
+    class: "fa-building-user",
     search: {
       terms: [
-        'arrow',
-        'collapse',
-        'upload'
+        "apartment",
+        "building",
+        "city"
       ]
     },
-    label: 'chevron-up',
+    label: "Building User",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-child',
+    class: "fa-building-wheat",
     search: {
       terms: [
-        'boy',
-        'girl',
-        'kid',
-        'toddler',
-        'young'
+        "agriculture",
+        "building",
+        "city",
+        "usda"
       ]
     },
-    label: 'Child',
+    label: "Building Wheat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-chrome',
+    class: "fa-bullhorn",
     search: {
       terms: [
-        'browser'
+        "Bullhorn",
+        "announcement",
+        "broadcast",
+        "loud",
+        "louder",
+        "loudspeaker",
+        "megaphone",
+        "public address",
+        "share"
       ]
     },
-    label: 'Chrome',
+    label: "Bullhorn",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-chromecast',
+    class: "fa-bullseye",
     search: {
-      terms: []
+      terms: [
+        "archery",
+        "goal",
+        "objective",
+        "strategy",
+        "target"
+      ]
     },
-    label: 'Chromecast',
+    label: "Bullseye",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-church',
+    class: "fa-burger",
     search: {
       terms: [
-        'building',
-        'cathedral',
-        'chapel',
-        'community',
-        'religion'
+        "bacon",
+        "beef",
+        "burger",
+        "burger king",
+        "cheeseburger",
+        "fast food",
+        "grill",
+        "ground beef",
+        "mcdonalds",
+        "sandwich"
       ]
     },
-    label: 'Church',
+    label: "Burger",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-circle',
+    class: "fa-buromobelexperte",
     search: {
-      terms: [
-        'circle-thin',
-        'diameter',
-        'dot',
-        'ellipse',
-        'notification',
-        'round'
-      ]
+      terms: []
     },
-    label: 'Circle',
+    label: "Büromöbel-Experte GmbH & Co. KG.",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-circle-notch',
+    class: "fa-burst",
     search: {
       terms: [
-        'circle-o-notch',
-        'diameter',
-        'dot',
-        'ellipse',
-        'round',
-        'spinner'
+        "boom",
+        "crash",
+        "explosion"
       ]
     },
-    label: 'Circle Notched',
+    label: "Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-city',
+    class: "fa-bus",
     search: {
       terms: [
-        'buildings',
-        'busy',
-        'skyscrapers',
-        'urban',
-        'windows'
+        "bus",
+        "oncoming",
+        "oncoming bus",
+        "public transportation",
+        "transportation",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'City',
+    label: "Bus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-clinic-medical',
+    class: "fa-bus-simple",
     search: {
       terms: [
-        'covid-19',
-        'doctor',
-        'general practitioner',
-        'hospital',
-        'infirmary',
-        'medicine',
-        'office',
-        'outpatient'
+        "mta",
+        "public transportation",
+        "transportation",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'Medical Clinic',
+    label: "Bus Simple",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-clipboard',
+    class: "fa-business-time",
     search: {
       terms: [
-        'copy',
-        'notes',
-        'paste',
-        'record'
+        "alarm",
+        "briefcase",
+        "business socks",
+        "clock",
+        "flight of the conchords",
+        "reminder",
+        "wednesday"
       ]
     },
-    label: 'Clipboard',
+    label: "Business Time",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-clipboard-check',
+    class: "fa-buy-n-large",
     search: {
-      terms: [
-        'accept',
-        'agree',
-        'confirm',
-        'done',
-        'ok',
-        'select',
-        'success',
-        'tick',
-        'todo',
-        'yes'
-      ]
+      terms: []
     },
-    label: 'Clipboard with Check',
+    label: "Buy n Large",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-clipboard-list',
+    class: "fa-buysellads",
     search: {
-      terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'intinerary',
-        'ol',
-        'schedule',
-        'tick',
-        'todo',
-        'ul'
-      ]
+      terms: []
     },
-    label: 'Clipboard List',
+    label: "BuySellAds",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-clock',
+    class: "fa-c",
     search: {
       terms: [
-        'date',
-        'late',
-        'schedule',
-        'time',
-        'timer',
-        'timestamp',
-        'watch'
+        "Latin Capital Letter C",
+        "Latin Small Letter C",
+        "letter"
       ]
     },
-    label: 'Clock',
+    label: "C",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-clone',
+    class: "fa-cable-car",
     search: {
       terms: [
-        'arrange',
-        'copy',
-        'duplicate',
-        'paste'
+        "aerial tramway",
+        "cable",
+        "gondola",
+        "lift",
+        "mountain",
+        "mountain cableway",
+        "tram",
+        "tramway",
+        "trolley"
       ]
     },
-    label: 'Clone',
+    label: "Cable Car",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-closed-captioning',
+    class: "fa-cake-candles",
     search: {
       terms: [
-        'cc',
-        'deaf',
-        'hearing',
-        'subtitle',
-        'subtitling',
-        'text',
-        'video'
+        "anniversary",
+        "bakery",
+        "birthday",
+        "birthday cake",
+        "cake",
+        "candles",
+        "celebration",
+        "dessert",
+        "frosting",
+        "holiday",
+        "party",
+        "pastry",
+        "sweet"
       ]
     },
-    label: 'Closed Captioning',
+    label: "Cake Candles",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud',
+    class: "fa-calculator",
     search: {
       terms: [
-        'atmosphere',
-        'fog',
-        'overcast',
-        'save',
-        'upload',
-        'weather'
+        "Pocket Calculator",
+        "abacus",
+        "addition",
+        "arithmetic",
+        "counting",
+        "math",
+        "multiplication",
+        "subtraction"
       ]
     },
-    label: 'Cloud',
+    label: "Calculator",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-download-alt',
+    class: "fa-calendar",
     search: {
       terms: [
-        'download',
-        'export',
-        'save'
+        "calendar",
+        "calendar-o",
+        "date",
+        "day",
+        "event",
+        "month",
+        "schedule",
+        "tear-off calendar",
+        "time",
+        "when",
+        "year"
       ]
     },
-    label: 'Alternate Cloud Download',
+    label: "Calendar",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-meatball',
+    class: "fa-calendar-check",
     search: {
       terms: [
-        'FLDSMDFR',
-        'food',
-        'spaghetti',
-        'storm'
+        "accept",
+        "agree",
+        "appointment",
+        "confirm",
+        "correct",
+        "date",
+        "day",
+        "done",
+        "event",
+        "month",
+        "ok",
+        "schedule",
+        "select",
+        "success",
+        "tick",
+        "time",
+        "todo",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with (a chance of) Meatball',
+    label: "Calendar Check",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-moon',
+    class: "fa-calendar-day",
     search: {
       terms: [
-        'crescent',
-        'evening',
-        'lunar',
-        'night',
-        'partly cloudy',
-        'sky'
+        "date",
+        "day",
+        "detail",
+        "event",
+        "focus",
+        "month",
+        "schedule",
+        "single day",
+        "time",
+        "today",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with Moon',
+    label: "Calendar Day",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-moon-rain',
+    class: "fa-calendar-days",
     search: {
       terms: [
-        'crescent',
-        'evening',
-        'lunar',
-        'night',
-        'partly cloudy',
-        'precipitation',
-        'rain',
-        'sky',
-        'storm'
+        "calendar",
+        "date",
+        "day",
+        "event",
+        "month",
+        "schedule",
+        "time",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with Moon and Rain',
+    label: "Calendar Days",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-rain',
+    class: "fa-calendar-minus",
     search: {
       terms: [
-        'precipitation',
-        'rain',
-        'sky',
-        'storm'
+        "calendar",
+        "date",
+        "day",
+        "delete",
+        "event",
+        "month",
+        "negative",
+        "remove",
+        "schedule",
+        "time",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with Rain',
+    label: "Calendar Minus",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-showers-heavy',
+    class: "fa-calendar-plus",
     search: {
       terms: [
-        'precipitation',
-        'rain',
-        'sky',
-        'storm'
+        "add",
+        "calendar",
+        "create",
+        "date",
+        "day",
+        "event",
+        "month",
+        "new",
+        "positive",
+        "schedule",
+        "time",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with Heavy Showers',
+    label: "Calendar Plus",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-sun',
+    class: "fa-calendar-week",
     search: {
       terms: [
-        'clear',
-        'day',
-        'daytime',
-        'fall',
-        'outdoors',
-        'overcast',
-        'partly cloudy'
+        "date",
+        "day",
+        "detail",
+        "event",
+        "focus",
+        "month",
+        "schedule",
+        "single week",
+        "time",
+        "today",
+        "when",
+        "year"
       ]
     },
-    label: 'Cloud with Sun',
+    label: "Calendar Week",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-sun-rain',
+    class: "fa-calendar-xmark",
     search: {
       terms: [
-        'day',
-        'overcast',
-        'precipitation',
-        'storm',
-        'summer',
-        'sunshower'
+        "archive",
+        "calendar",
+        "date",
+        "day",
+        "delete",
+        "event",
+        "month",
+        "remove",
+        "schedule",
+        "time",
+        "when",
+        "x",
+        "year"
       ]
     },
-    label: 'Cloud with Sun and Rain',
+    label: "Calendar Xmark",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cloud-upload-alt',
+    class: "fa-camera",
     search: {
       terms: [
-        'cloud-upload',
-        'import',
-        'save',
-        'upload'
+        "image",
+        "lens",
+        "photo",
+        "picture",
+        "record",
+        "shutter",
+        "video"
       ]
     },
-    label: 'Alternate Cloud Upload',
+    label: "Camera",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloudflare',
+    class: "fa-camera-retro",
     search: {
-      terms: []
+      terms: [
+        "camera",
+        "image",
+        "lens",
+        "photo",
+        "picture",
+        "record",
+        "shutter",
+        "video"
+      ]
     },
-    label: 'Cloudflare',
+    label: "Camera Retro",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloudscale',
+    class: "fa-camera-rotate",
     search: {
-      terms: []
+      terms: [
+        "flip",
+        "front-facing",
+        "photo",
+        "selfie"
+      ]
     },
-    label: 'cloudscale.ch',
+    label: "Camera Rotate",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloudsmith',
+    class: "fa-campground",
     search: {
-      terms: []
+      terms: [
+        "camping",
+        "fall",
+        "outdoors",
+        "teepee",
+        "tent",
+        "tipi"
+      ]
     },
-    label: 'Cloudsmith',
+    label: "Campground",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cloudversify',
+    class: "fa-canadian-maple-leaf",
     search: {
-      terms: []
+      terms: [
+        "canada",
+        "flag",
+        "flora",
+        "nature",
+        "plant"
+      ]
     },
-    label: 'cloudversify',
+    label: "Canadian Maple Leaf",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-cocktail',
+    class: "fa-candy-cane",
     search: {
       terms: [
-        'alcohol',
-        'beverage',
-        'drink',
-        'gin',
-        'glass',
-        'margarita',
-        'martini',
-        'vodka'
+        "candy",
+        "christmas",
+        "holiday",
+        "mint",
+        "peppermint",
+        "striped",
+        "xmas"
       ]
     },
-    label: 'Cocktail',
+    label: "Candy Cane",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-code',
+    class: "fa-cannabis",
     search: {
       terms: [
-        'brackets',
-        'code',
-        'development',
-        'html'
+        "bud",
+        "chronic",
+        "drugs",
+        "endica",
+        "endo",
+        "ganja",
+        "marijuana",
+        "mary jane",
+        "pot",
+        "reefer",
+        "sativa",
+        "spliff",
+        "weed",
+        "whacky-tabacky"
       ]
     },
-    label: 'Code',
+    label: "Cannabis",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-code-branch',
+    class: "fa-capsules",
     search: {
       terms: [
-        'branch',
-        'code-fork',
-        'fork',
-        'git',
-        'github',
-        'rebase',
-        'svn',
-        'vcs',
-        'version'
+        "drugs",
+        "medicine",
+        "pills",
+        "prescription"
       ]
     },
-    label: 'Code Branch',
+    label: "Capsules",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-codepen',
+    class: "fa-car",
     search: {
-      terms: []
+      terms: [
+        "auto",
+        "automobile",
+        "car",
+        "oncoming",
+        "oncoming automobile",
+        "sedan",
+        "transportation",
+        "travel",
+        "vehicle"
+      ]
     },
-    label: 'Codepen',
+    label: "Car",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-codiepie',
+    class: "fa-car-battery",
     search: {
-      terms: []
+      terms: [
+        "auto",
+        "electric",
+        "mechanic",
+        "power"
+      ]
     },
-    label: 'Codie Pie',
+    label: "Car Battery",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-coffee',
+    class: "fa-car-burst",
     search: {
       terms: [
-        'beverage',
-        'breakfast',
-        'cafe',
-        'drink',
-        'fall',
-        'morning',
-        'mug',
-        'seasonal',
-        'tea'
+        "accident",
+        "auto",
+        "automobile",
+        "insurance",
+        "sedan",
+        "transportation",
+        "vehicle",
+        "wreck"
       ]
     },
-    label: 'Coffee',
+    label: "Car Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cog',
+    class: "fa-car-on",
     search: {
       terms: [
-        'gear',
-        'mechanical',
-        'settings',
-        'sprocket',
-        'wheel'
+        "alarm",
+        "car",
+        "carjack",
+        "warning"
       ]
     },
-    label: 'cog',
+    label: "Car On",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cogs',
+    class: "fa-car-rear",
     search: {
       terms: [
-        'gears',
-        'mechanical',
-        'settings',
-        'sprocket',
-        'wheel'
+        "auto",
+        "automobile",
+        "sedan",
+        "transportation",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'cogs',
+    label: "Car Rear",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-coins',
+    class: "fa-car-side",
     search: {
       terms: [
-        'currency',
-        'dime',
-        'financial',
-        'gold',
-        'money',
-        'penny'
+        "auto",
+        "automobile",
+        "car",
+        "sedan",
+        "transportation",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'Coins',
+    label: "Car Side",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-columns',
+    class: "fa-car-tunnel",
     search: {
       terms: [
-        'browser',
-        'dashboard',
-        'organize',
-        'panes',
-        'split'
+        "road",
+        "tunnel"
       ]
     },
-    label: 'Columns',
+    label: "Car Tunnel",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment',
+    class: "fa-caravan",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'note',
-        'notification',
-        'sms',
-        'speech',
-        'texting'
+        "camper",
+        "motor home",
+        "rv",
+        "trailer",
+        "travel"
       ]
     },
-    label: 'comment',
+    label: "Caravan",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment-alt',
+    class: "fa-caret-down",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'note',
-        'notification',
-        'sms',
-        'speech',
-        'texting'
+        "arrow",
+        "dropdown",
+        "expand",
+        "menu",
+        "more",
+        "triangle"
       ]
     },
-    label: 'Alternate Comment',
+    label: "Caret Down",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment-dollar',
+    class: "fa-caret-left",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'money',
-        'note',
-        'notification',
-        'pay',
-        'sms',
-        'speech',
-        'spend',
-        'texting',
-        'transfer'
+        "arrow",
+        "back",
+        "previous",
+        "triangle"
       ]
     },
-    label: 'Comment Dollar',
+    label: "Caret Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment-dots',
+    class: "fa-caret-right",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'more',
-        'note',
-        'notification',
-        'reply',
-        'sms',
-        'speech',
-        'texting'
+        "arrow",
+        "forward",
+        "next",
+        "triangle"
       ]
     },
-    label: 'Comment Dots',
+    label: "Caret Right",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment-medical',
+    class: "fa-caret-up",
     search: {
       terms: [
-        'advice',
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'diagnose',
-        'feedback',
-        'message',
-        'note',
-        'notification',
-        'prescription',
-        'sms',
-        'speech',
-        'texting'
+        "arrow",
+        "collapse",
+        "triangle"
       ]
     },
-    label: 'Alternate Medical Chat',
+    label: "Caret Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-comment-slash',
+    class: "fa-carrot",
     search: {
       terms: [
-        'bubble',
-        'cancel',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'mute',
-        'note',
-        'notification',
-        'quiet',
-        'sms',
-        'speech',
-        'texting'
+        "bugs bunny",
+        "carrot",
+        "food",
+        "orange",
+        "vegan",
+        "vegetable"
       ]
     },
-    label: 'Comment Slash',
+    label: "Carrot",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-comments',
+    class: "fa-cart-arrow-down",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'note',
-        'notification',
-        'sms',
-        'speech',
-        'texting'
+        "download",
+        "save",
+        "shopping"
       ]
     },
-    label: 'comments',
+    label: "Cart Arrow Down",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-comments-dollar',
+    class: "fa-cart-flatbed",
     search: {
       terms: [
-        'bubble',
-        'chat',
-        'commenting',
-        'conversation',
-        'feedback',
-        'message',
-        'money',
-        'note',
-        'notification',
-        'pay',
-        'sms',
-        'speech',
-        'spend',
-        'texting',
-        'transfer'
+        "carry",
+        "inventory",
+        "shipping",
+        "transport"
       ]
     },
-    label: 'Comments Dollar',
+    label: "Cart Flatbed",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-compact-disc',
+    class: "fa-cart-flatbed-suitcase",
     search: {
       terms: [
-        'album',
-        'bluray',
-        'cd',
-        'disc',
-        'dvd',
-        'media',
-        'movie',
-        'music',
-        'record',
-        'video',
-        'vinyl'
+        "airport",
+        "bag",
+        "baggage",
+        "suitcase",
+        "travel"
       ]
     },
-    label: 'Compact Disc',
+    label: "Cart Flatbed Suitcase",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-compass',
+    class: "fa-cart-plus",
     search: {
       terms: [
-        'directions',
-        'directory',
-        'location',
-        'menu',
-        'navigation',
-        'safari',
-        'travel'
+        "add",
+        "create",
+        "new",
+        "positive",
+        "shopping"
       ]
     },
-    label: 'Compass',
+    label: "Cart Plus",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-compress',
+    class: "fa-cart-shopping",
     search: {
       terms: [
-        'collapse',
-        'fullscreen',
-        'minimize',
-        'move',
-        'resize',
-        'shrink',
-        'smaller'
+        "buy",
+        "cart",
+        "checkout",
+        "grocery",
+        "payment",
+        "purchase",
+        "shopping",
+        "shopping cart",
+        "trolley"
       ]
     },
-    label: 'Compress',
+    label: "Cart Shopping",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-compress-alt',
+    class: "fa-cash-register",
     search: {
       terms: [
-        'collapse',
-        'fullscreen',
-        'minimize',
-        'move',
-        'resize',
-        'shrink',
-        'smaller'
+        "buy",
+        "cha-ching",
+        "change",
+        "checkout",
+        "commerce",
+        "leaerboard",
+        "machine",
+        "pay",
+        "payment",
+        "purchase",
+        "store"
       ]
     },
-    label: 'Alternate Compress',
+    label: "Cash Register",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-compress-arrows-alt',
+    class: "fa-cat",
     search: {
       terms: [
-        'collapse',
-        'fullscreen',
-        'minimize',
-        'move',
-        'resize',
-        'shrink',
-        'smaller'
+        "cat",
+        "feline",
+        "halloween",
+        "holiday",
+        "kitten",
+        "kitty",
+        "meow",
+        "pet"
       ]
     },
-    label: 'Alternate Compress Arrows',
+    label: "Cat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-concierge-bell',
+    class: "fa-cc-amazon-pay",
     search: {
-      terms: [
-        'attention',
-        'hotel',
-        'receptionist',
-        'service',
-        'support'
-      ]
+      terms: []
     },
-    label: 'Concierge Bell',
+    label: "Amazon Pay Credit Card",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-confluence',
+    class: "fa-cc-amex",
     search: {
       terms: [
-        'atlassian'
+        "amex"
       ]
     },
-    label: 'Confluence',
+    label: "American Express Credit Card",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-connectdevelop',
+    class: "fa-cc-apple-pay",
     search: {
       terms: []
     },
-    label: 'Connect Develop',
+    label: "Apple Pay Credit Card",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-contao',
+    class: "fa-cc-diners-club",
     search: {
       terms: []
     },
-    label: 'Contao',
+    label: "Diner's Club Credit Card",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-cookie',
+    class: "fa-cc-discover",
     search: {
-      terms: [
-        'baked good',
-        'chips',
-        'chocolate',
-        'eat',
-        'snack',
-        'sweet',
-        'treat'
+      terms: []
+    },
+    label: "Discover Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cc-jcb",
+    search: {
+      terms: []
+    },
+    label: "JCB Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cc-mastercard",
+    search: {
+      terms: []
+    },
+    label: "MasterCard Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cc-paypal",
+    search: {
+      terms: []
+    },
+    label: "Paypal Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cc-stripe",
+    search: {
+      terms: []
+    },
+    label: "Stripe Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cc-visa",
+    search: {
+      terms: []
+    },
+    label: "Visa Credit Card",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cedi-sign",
+    search: {
+      terms: [
+        "Cedi Sign",
+        "currency"
+      ]
+    },
+    label: "Cedi Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cent-sign",
+    search: {
+      terms: [
+        "Cent Sign",
+        "currency"
+      ]
+    },
+    label: "Cent Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-centercode",
+    search: {
+      terms: []
+    },
+    label: "Centercode",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-centos",
+    search: {
+      terms: [
+        "linux",
+        "operating system",
+        "os"
+      ]
+    },
+    label: "Centos",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-certificate",
+    search: {
+      terms: [
+        "badge",
+        "star",
+        "verified"
+      ]
+    },
+    label: "Certificate",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chair",
+    search: {
+      terms: [
+        "chair",
+        "furniture",
+        "seat",
+        "sit"
+      ]
+    },
+    label: "Chair",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chalkboard",
+    search: {
+      terms: [
+        "blackboard",
+        "learning",
+        "school",
+        "teaching",
+        "whiteboard",
+        "writing"
+      ]
+    },
+    label: "Chalkboard",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chalkboard-user",
+    search: {
+      terms: [
+        "blackboard",
+        "instructor",
+        "learning",
+        "professor",
+        "school",
+        "whiteboard",
+        "writing"
+      ]
+    },
+    label: "Chalkboard User",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-champagne-glasses",
+    search: {
+      terms: [
+        "alcohol",
+        "bar",
+        "beverage",
+        "celebrate",
+        "celebration",
+        "champagne",
+        "clink",
+        "clinking glasses",
+        "drink",
+        "glass",
+        "holiday",
+        "new year's eve",
+        "party",
+        "toast"
+      ]
+    },
+    label: "Champagne Glasses",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-charging-station",
+    search: {
+      terms: [
+        "electric",
+        "ev",
+        "tesla",
+        "vehicle"
+      ]
+    },
+    label: "Charging Station",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-area",
+    search: {
+      terms: [
+        "analytics",
+        "area",
+        "chart",
+        "graph"
+      ]
+    },
+    label: "Chart Area",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-bar",
+    search: {
+      terms: [
+        "analytics",
+        "bar",
+        "chart",
+        "graph"
+      ]
+    },
+    label: "Chart Bar",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-column",
+    search: {
+      terms: [
+        "bar",
+        "bar chart",
+        "chart",
+        "graph",
+        "track",
+        "trend"
+      ]
+    },
+    label: "Chart Column",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-gantt",
+    search: {
+      terms: [
+        "chart",
+        "graph",
+        "track",
+        "trend"
+      ]
+    },
+    label: "Chart Gantt",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-line",
+    search: {
+      terms: [
+        "activity",
+        "analytics",
+        "chart",
+        "dashboard",
+        "gain",
+        "graph",
+        "increase",
+        "line"
+      ]
+    },
+    label: "Chart Line",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-pie",
+    search: {
+      terms: [
+        "analytics",
+        "chart",
+        "diagram",
+        "graph",
+        "pie"
+      ]
+    },
+    label: "Chart Pie",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chart-simple",
+    search: {
+      terms: [
+        "analytics",
+        "bar",
+        "chart",
+        "column",
+        "graph",
+        "row",
+        "trend"
+      ]
+    },
+    label: "Chart Simple",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-check",
+    search: {
+      terms: [
+        "Check Mark",
+        "accept",
+        "agree",
+        "check",
+        "check mark",
+        "checkmark",
+        "confirm",
+        "correct",
+        "done",
+        "mark",
+        "notice",
+        "notification",
+        "notify",
+        "ok",
+        "select",
+        "success",
+        "tick",
+        "todo",
+        "yes",
+        "✓"
+      ]
+    },
+    label: "Check",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-check-double",
+    search: {
+      terms: [
+        "accept",
+        "agree",
+        "checkmark",
+        "confirm",
+        "correct",
+        "done",
+        "notice",
+        "notification",
+        "notify",
+        "ok",
+        "select",
+        "success",
+        "tick",
+        "todo"
+      ]
+    },
+    label: "Check Double",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-check-to-slot",
+    search: {
+      terms: [
+        "accept",
+        "cast",
+        "election",
+        "politics",
+        "positive",
+        "voting",
+        "yes"
+      ]
+    },
+    label: "Check To Slot",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cheese",
+    search: {
+      terms: [
+        "cheddar",
+        "curd",
+        "gouda",
+        "melt",
+        "parmesan",
+        "sandwich",
+        "swiss",
+        "wedge"
+      ]
+    },
+    label: "Cheese",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess",
+    search: {
+      terms: [
+        "board",
+        "castle",
+        "checkmate",
+        "game",
+        "king",
+        "rook",
+        "strategy",
+        "tournament"
+      ]
+    },
+    label: "Chess",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-bishop",
+    search: {
+      terms: [
+        "Black Chess Bishop",
+        "board",
+        "checkmate",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess Bishop",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-board",
+    search: {
+      terms: [
+        "board",
+        "checkmate",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess Board",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-king",
+    search: {
+      terms: [
+        "Black Chess King",
+        "board",
+        "checkmate",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess King",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-knight",
+    search: {
+      terms: [
+        "Black Chess Knight",
+        "board",
+        "checkmate",
+        "game",
+        "horse",
+        "strategy"
+      ]
+    },
+    label: "Chess Knight",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-pawn",
+    search: {
+      terms: [
+        "board",
+        "checkmate",
+        "chess",
+        "chess pawn",
+        "dupe",
+        "expendable",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess Pawn",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-queen",
+    search: {
+      terms: [
+        "Black Chess Queen",
+        "board",
+        "checkmate",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess Queen",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chess-rook",
+    search: {
+      terms: [
+        "Black Chess Rook",
+        "board",
+        "castle",
+        "checkmate",
+        "game",
+        "strategy"
+      ]
+    },
+    label: "Chess Rook",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chevron-down",
+    search: {
+      terms: [
+        "arrow",
+        "download",
+        "expand"
+      ]
+    },
+    label: "Chevron Down",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chevron-left",
+    search: {
+      terms: [
+        "Left-Pointing Angle Bracket",
+        "arrow",
+        "back",
+        "bracket",
+        "previous"
+      ]
+    },
+    label: "Chevron Left",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chevron-right",
+    search: {
+      terms: [
+        "Right-Pointing Angle Bracket",
+        "arrow",
+        "bracket",
+        "forward",
+        "next"
+      ]
+    },
+    label: "Chevron Right",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chevron-up",
+    search: {
+      terms: [
+        "arrow",
+        "collapse",
+        "upload"
+      ]
+    },
+    label: "Chevron Up",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-child",
+    search: {
+      terms: [
+        "boy",
+        "girl",
+        "kid",
+        "toddler",
+        "young",
+        "youth"
+      ]
+    },
+    label: "Child",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-child-combatant",
+    search: {
+      terms: [
+        "combatant"
+      ]
+    },
+    label: "Child Combatant",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-child-dress",
+    search: {
+      terms: [
+        "boy",
+        "girl",
+        "kid",
+        "toddler",
+        "young",
+        "youth"
+      ]
+    },
+    label: "Child Dress",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-child-reaching",
+    search: {
+      terms: [
+        "boy",
+        "girl",
+        "kid",
+        "toddler",
+        "young",
+        "youth"
+      ]
+    },
+    label: "Child Reaching",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-children",
+    search: {
+      terms: [
+        "boy",
+        "child",
+        "girl",
+        "kid",
+        "kids",
+        "young",
+        "youth"
+      ]
+    },
+    label: "Children",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-chrome",
+    search: {
+      terms: [
+        "browser"
+      ]
+    },
+    label: "Chrome",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-chromecast",
+    search: {
+      terms: []
+    },
+    label: "Chromecast",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-church",
+    search: {
+      terms: [
+        "Christian",
+        "building",
+        "cathedral",
+        "chapel",
+        "church",
+        "community",
+        "cross",
+        "religion"
+      ]
+    },
+    label: "Church",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle",
+    search: {
+      terms: [
+        "Black Circle",
+        "Black Large Circle",
+        "black circle",
+        "blue",
+        "blue circle",
+        "brown",
+        "brown circle",
+        "chart",
+        "circle",
+        "circle-thin",
+        "diameter",
+        "dot",
+        "ellipse",
+        "fill",
+        "geometric",
+        "green",
+        "green circle",
+        "notification",
+        "orange",
+        "orange circle",
+        "progress",
+        "purple",
+        "purple circle",
+        "red",
+        "red circle",
+        "round",
+        "white circle",
+        "yellow",
+        "yellow circle"
+      ]
+    },
+    label: "Circle",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-arrow-down",
+    search: {
+      terms: [
+        "download"
+      ]
+    },
+    label: "Circle Arrow Down",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-arrow-left",
+    search: {
+      terms: [
+        "back",
+        "previous"
+      ]
+    },
+    label: "Circle Arrow Left",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-arrow-right",
+    search: {
+      terms: [
+        "forward",
+        "next"
+      ]
+    },
+    label: "Circle Arrow Right",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-arrow-up",
+    search: {
+      terms: [
+        "upload"
+      ]
+    },
+    label: "Circle Arrow Up",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-check",
+    search: {
+      terms: [
+        "accept",
+        "affected",
+        "agree",
+        "clear",
+        "confirm",
+        "correct",
+        "done",
+        "ok",
+        "select",
+        "success",
+        "tick",
+        "todo",
+        "yes"
+      ]
+    },
+    label: "Circle Check",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-chevron-down",
+    search: {
+      terms: [
+        "arrow",
+        "download",
+        "dropdown",
+        "menu",
+        "more"
+      ]
+    },
+    label: "Circle Chevron Down",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-chevron-left",
+    search: {
+      terms: [
+        "arrow",
+        "back",
+        "previous"
+      ]
+    },
+    label: "Circle Chevron Left",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-chevron-right",
+    search: {
+      terms: [
+        "arrow",
+        "forward",
+        "next"
+      ]
+    },
+    label: "Circle Chevron Right",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-chevron-up",
+    search: {
+      terms: [
+        "arrow",
+        "collapse",
+        "upload"
+      ]
+    },
+    label: "Circle Chevron Up",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-dollar-to-slot",
+    search: {
+      terms: [
+        "contribute",
+        "generosity",
+        "gift",
+        "give"
+      ]
+    },
+    label: "Circle Dollar To Slot",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-dot",
+    search: {
+      terms: [
+        "bullseye",
+        "button",
+        "geometric",
+        "notification",
+        "radio",
+        "radio button",
+        "target"
+      ]
+    },
+    label: "Circle Dot",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-down",
+    search: {
+      terms: [
+        "arrow-circle-o-down",
+        "download"
+      ]
+    },
+    label: "Circle Down",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-exclamation",
+    search: {
+      terms: [
+        "affect",
+        "alert",
+        "damage",
+        "danger",
+        "error",
+        "important",
+        "notice",
+        "notification",
+        "notify",
+        "problem",
+        "warning"
+      ]
+    },
+    label: "Circle Exclamation",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-h",
+    search: {
+      terms: [
+        "Circled Latin Capital Letter H",
+        "clinic",
+        "covid-19",
+        "emergency",
+        "letter",
+        "map"
+      ]
+    },
+    label: "Circle H",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-half-stroke",
+    search: {
+      terms: [
+        "Circle with Left Half Black",
+        "adjust",
+        "chart",
+        "contrast",
+        "dark",
+        "fill",
+        "light",
+        "pie",
+        "progress",
+        "saturation"
+      ]
+    },
+    label: "Circle Half Stroke",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-info",
+    search: {
+      terms: [
+        "details",
+        "help",
+        "information",
+        "more",
+        "support"
+      ]
+    },
+    label: "Circle Info",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-left",
+    search: {
+      terms: [
+        "arrow-circle-o-left",
+        "back",
+        "previous"
+      ]
+    },
+    label: "Circle Left",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-minus",
+    search: {
+      terms: [
+        "delete",
+        "hide",
+        "negative",
+        "remove",
+        "shape",
+        "trash"
+      ]
+    },
+    label: "Circle Minus",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-nodes",
+    search: {
+      terms: [
+        "cluster",
+        "connect",
+        "network"
+      ]
+    },
+    label: "Circle Nodes",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-notch",
+    search: {
+      terms: [
+        "circle-o-notch",
+        "diameter",
+        "dot",
+        "ellipse",
+        "round",
+        "spinner"
+      ]
+    },
+    label: "Circle Notch",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-pause",
+    search: {
+      terms: [
+        "hold",
+        "wait"
+      ]
+    },
+    label: "Circle Pause",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-play",
+    search: {
+      terms: [
+        "audio",
+        "music",
+        "playing",
+        "sound",
+        "start",
+        "video"
+      ]
+    },
+    label: "Circle Play",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-plus",
+    search: {
+      terms: [
+        "add",
+        "create",
+        "expand",
+        "new",
+        "positive",
+        "shape"
+      ]
+    },
+    label: "Circle Plus",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-question",
+    search: {
+      terms: [
+        "help",
+        "information",
+        "support",
+        "unknown"
+      ]
+    },
+    label: "Circle Question",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-radiation",
+    search: {
+      terms: [
+        "danger",
+        "dangerous",
+        "deadly",
+        "hazard",
+        "nuclear",
+        "radioactive",
+        "sign",
+        "warning"
+      ]
+    },
+    label: "Circle Radiation",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-right",
+    search: {
+      terms: [
+        "arrow-circle-o-right",
+        "forward",
+        "next"
+      ]
+    },
+    label: "Circle Right",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-stop",
+    search: {
+      terms: [
+        "block",
+        "box",
+        "circle",
+        "square"
+      ]
+    },
+    label: "Circle Stop",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-up",
+    search: {
+      terms: [
+        "arrow-circle-o-up"
+      ]
+    },
+    label: "Circle Up",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-user",
+    search: {
+      terms: [
+        "users-people"
+      ]
+    },
+    label: "Circle User",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-circle-xmark",
+    search: {
+      terms: [
+        "close",
+        "cross",
+        "destroy",
+        "exit",
+        "incorrect",
+        "notice",
+        "notification",
+        "notify",
+        "problem",
+        "wrong",
+        "x"
+      ]
+    },
+    label: "Circle Xmark",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-city",
+    search: {
+      terms: [
+        "buildings",
+        "busy",
+        "city",
+        "cityscape",
+        "skyscrapers",
+        "urban",
+        "windows"
+      ]
+    },
+    label: "City",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clapperboard",
+    search: {
+      terms: [
+        "camera",
+        "clapper",
+        "clapper board",
+        "director",
+        "film",
+        "movie",
+        "record"
+      ]
+    },
+    label: "Clapperboard",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clipboard",
+    search: {
+      terms: [
+        "clipboar",
+        "clipboard",
+        "copy",
+        "notes",
+        "paste",
+        "record"
+      ]
+    },
+    label: "Clipboard",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clipboard-check",
+    search: {
+      terms: [
+        "accept",
+        "agree",
+        "confirm",
+        "done",
+        "ok",
+        "select",
+        "success",
+        "tick",
+        "todo",
+        "yes"
+      ]
+    },
+    label: "Clipboard Check",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clipboard-list",
+    search: {
+      terms: [
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "intinerary",
+        "ol",
+        "schedule",
+        "tick",
+        "todo",
+        "ul"
+      ]
+    },
+    label: "Clipboard List",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clipboard-question",
+    search: {
+      terms: [
+        "assistance",
+        "interview",
+        "query",
+        "question"
+      ]
+    },
+    label: "Clipboard Question",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clipboard-user",
+    search: {
+      terms: [
+        "attendance",
+        "record",
+        "roster",
+        "staff"
+      ]
+    },
+    label: "Clipboard User",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clock",
+    search: {
+      terms: [
+        "00",
+        "4",
+        "4:00",
+        "clock",
+        "date",
+        "four",
+        "four o’clock",
+        "hour",
+        "late",
+        "minute",
+        "o'clock",
+        "o’clock",
+        "schedule",
+        "ticking",
+        "time",
+        "timer",
+        "timestamp",
+        "watch"
+      ]
+    },
+    label: "Clock",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clock-rotate-left",
+    search: {
+      terms: [
+        "Rewind",
+        "clock",
+        "reverse",
+        "time",
+        "time machine",
+        "time travel"
+      ]
+    },
+    label: "Clock Rotate Left",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-clone",
+    search: {
+      terms: [
+        "arrange",
+        "copy",
+        "duplicate",
+        "paste"
+      ]
+    },
+    label: "Clone",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-closed-captioning",
+    search: {
+      terms: [
+        "cc",
+        "deaf",
+        "hearing",
+        "subtitle",
+        "subtitling",
+        "text",
+        "video"
+      ]
+    },
+    label: "Closed Captioning",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud",
+    search: {
+      terms: [
+        "atmosphere",
+        "cloud",
+        "fog",
+        "overcast",
+        "save",
+        "upload",
+        "weather"
+      ]
+    },
+    label: "Cloud",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-arrow-down",
+    search: {
+      terms: [
+        "download",
+        "export",
+        "save"
+      ]
+    },
+    label: "Cloud Arrow Down",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-arrow-up",
+    search: {
+      terms: [
+        "import",
+        "save",
+        "upload"
+      ]
+    },
+    label: "Cloud Arrow Up",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-bolt",
+    search: {
+      terms: [
+        "bolt",
+        "cloud",
+        "cloud with lightning",
+        "lightning",
+        "precipitation",
+        "rain",
+        "storm",
+        "weather"
+      ]
+    },
+    label: "Cloud Bolt",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-meatball",
+    search: {
+      terms: [
+        "FLDSMDFR",
+        "food",
+        "spaghetti",
+        "storm"
+      ]
+    },
+    label: "Cloud Meatball",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-moon",
+    search: {
+      terms: [
+        "crescent",
+        "evening",
+        "lunar",
+        "night",
+        "partly cloudy",
+        "sky"
+      ]
+    },
+    label: "Cloud Moon",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-moon-rain",
+    search: {
+      terms: [
+        "crescent",
+        "evening",
+        "lunar",
+        "night",
+        "partly cloudy",
+        "precipitation",
+        "rain",
+        "sky",
+        "storm"
+      ]
+    },
+    label: "Cloud Moon Rain",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-rain",
+    search: {
+      terms: [
+        "Rain",
+        "cloud",
+        "cloud with rain",
+        "precipitation",
+        "rain",
+        "sky",
+        "storm"
+      ]
+    },
+    label: "Cloud Rain",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-showers-heavy",
+    search: {
+      terms: [
+        "precipitation",
+        "rain",
+        "sky",
+        "storm"
+      ]
+    },
+    label: "Cloud Showers Heavy",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-showers-water",
+    search: {
+      terms: [
+        "cloud",
+        "deluge",
+        "flood",
+        "rain",
+        "storm",
+        "surge"
+      ]
+    },
+    label: "Cloud Showers Water",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-sun",
+    search: {
+      terms: [
+        "clear",
+        "cloud",
+        "day",
+        "daytime",
+        "fall",
+        "outdoors",
+        "overcast",
+        "partly cloudy",
+        "sun",
+        "sun behind cloud"
+      ]
+    },
+    label: "Cloud Sun",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloud-sun-rain",
+    search: {
+      terms: [
+        "cloud",
+        "day",
+        "overcast",
+        "precipitation",
+        "rain",
+        "storm",
+        "summer",
+        "sun",
+        "sun behind rain cloud",
+        "sunshower"
+      ]
+    },
+    label: "Cloud Sun Rain",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cloudflare",
+    search: {
+      terms: []
+    },
+    label: "Cloudflare",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cloudscale",
+    search: {
+      terms: []
+    },
+    label: "cloudscale.ch",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cloudsmith",
+    search: {
+      terms: []
+    },
+    label: "Cloudsmith",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cloudversify",
+    search: {
+      terms: []
+    },
+    label: "cloudversify",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-clover",
+    search: {
+      terms: [
+        "4",
+        "charm",
+        "clover",
+        "four",
+        "four leaf clover",
+        "four-leaf clover",
+        "leaf",
+        "leprechaun",
+        "luck",
+        "lucky"
+      ]
+    },
+    label: "Clover",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cmplid",
+    search: {
+      terms: []
+    },
+    label: "Cmplid",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-code",
+    search: {
+      terms: [
+        "brackets",
+        "code",
+        "development",
+        "html"
+      ]
+    },
+    label: "Code",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-branch",
+    search: {
+      terms: [
+        "branch",
+        "git",
+        "github",
+        "rebase",
+        "svn",
+        "vcs",
+        "version"
+      ]
+    },
+    label: "Code Branch",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-commit",
+    search: {
+      terms: [
+        "commit",
+        "git",
+        "github",
+        "hash",
+        "rebase",
+        "svn",
+        "vcs",
+        "version"
+      ]
+    },
+    label: "Code Commit",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-compare",
+    search: {
+      terms: [
+        "compare",
+        "git",
+        "github",
+        "svn",
+        "version"
+      ]
+    },
+    label: "Code Compare",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-fork",
+    search: {
+      terms: [
+        "fork",
+        "git",
+        "github",
+        "svn",
+        "version"
+      ]
+    },
+    label: "Code Fork",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-merge",
+    search: {
+      terms: [
+        "git",
+        "github",
+        "merge",
+        "pr",
+        "rebase",
+        "svn",
+        "vcs",
+        "version"
+      ]
+    },
+    label: "Code Merge",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-code-pull-request",
+    search: {
+      terms: [
+        "git",
+        "github",
+        "pr",
+        "svn",
+        "version"
+      ]
+    },
+    label: "Code Pull Request",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-codepen",
+    search: {
+      terms: []
+    },
+    label: "Codepen",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-codiepie",
+    search: {
+      terms: []
+    },
+    label: "Codie Pie",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-coins",
+    search: {
+      terms: [
+        "currency",
+        "dime",
+        "financial",
+        "gold",
+        "money",
+        "penny"
+      ]
+    },
+    label: "Coins",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-colon-sign",
+    search: {
+      terms: [
+        "Colon Sign",
+        "currency"
+      ]
+    },
+    label: "Colon Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment",
+    search: {
+      terms: [
+        "Right Speech Bubble",
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "note",
+        "notification",
+        "sms",
+        "speech",
+        "texting"
+      ]
+    },
+    label: "Comment",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment-dollar",
+    search: {
+      terms: [
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "money",
+        "note",
+        "notification",
+        "pay",
+        "sms",
+        "speech",
+        "spend",
+        "texting",
+        "transfer"
+      ]
+    },
+    label: "Comment Dollar",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment-dots",
+    search: {
+      terms: [
+        "balloon",
+        "bubble",
+        "chat",
+        "comic",
+        "commenting",
+        "conversation",
+        "dialog",
+        "feedback",
+        "message",
+        "more",
+        "note",
+        "notification",
+        "reply",
+        "sms",
+        "speech",
+        "speech balloon",
+        "texting"
+      ]
+    },
+    label: "Comment Dots",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment-medical",
+    search: {
+      terms: [
+        "advice",
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "diagnose",
+        "feedback",
+        "message",
+        "note",
+        "notification",
+        "prescription",
+        "sms",
+        "speech",
+        "texting"
+      ]
+    },
+    label: "Comment Medical",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment-slash",
+    search: {
+      terms: [
+        "bubble",
+        "cancel",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "mute",
+        "note",
+        "notification",
+        "quiet",
+        "sms",
+        "speech",
+        "texting"
+      ]
+    },
+    label: "Comment Slash",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comment-sms",
+    search: {
+      terms: [
+        "chat",
+        "conversation",
+        "message",
+        "mobile",
+        "notification",
+        "phone",
+        "sms",
+        "texting"
+      ]
+    },
+    label: "Comment Sms",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comments",
+    search: {
+      terms: [
+        "Two Speech Bubbles",
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "note",
+        "notification",
+        "sms",
+        "speech",
+        "texting"
+      ]
+    },
+    label: "Comments",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-comments-dollar",
+    search: {
+      terms: [
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "money",
+        "note",
+        "notification",
+        "pay",
+        "sms",
+        "speech",
+        "spend",
+        "texting",
+        "transfer"
+      ]
+    },
+    label: "Comments Dollar",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-compact-disc",
+    search: {
+      terms: [
+        "Optical Disc Icon",
+        "album",
+        "blu-ray",
+        "bluray",
+        "cd",
+        "computer",
+        "disc",
+        "disk",
+        "dvd",
+        "media",
+        "movie",
+        "music",
+        "optical",
+        "optical disk",
+        "record",
+        "video",
+        "vinyl"
+      ]
+    },
+    label: "Compact Disc",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-compass",
+    search: {
+      terms: [
+        "compass",
+        "directions",
+        "directory",
+        "location",
+        "magnetic",
+        "menu",
+        "navigation",
+        "orienteering",
+        "safari",
+        "travel"
+      ]
+    },
+    label: "Compass",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-compass-drafting",
+    search: {
+      terms: [
+        "design",
+        "map",
+        "mechanical drawing",
+        "plot",
+        "plotting"
+      ]
+    },
+    label: "Compass Drafting",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-compress",
+    search: {
+      terms: [
+        "collapse",
+        "fullscreen",
+        "minimize",
+        "move",
+        "resize",
+        "shrink",
+        "smaller"
+      ]
+    },
+    label: "Compress",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-computer",
+    search: {
+      terms: [
+        "computer",
+        "desktop",
+        "display",
+        "monitor",
+        "tower"
+      ]
+    },
+    label: "Computer",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-computer-mouse",
+    search: {
+      terms: [
+        "click",
+        "computer",
+        "computer mouse",
+        "cursor",
+        "input",
+        "peripheral"
+      ]
+    },
+    label: "Computer Mouse",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-confluence",
+    search: {
+      terms: [
+        "atlassian"
+      ]
+    },
+    label: "Confluence",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-connectdevelop",
+    search: {
+      terms: []
+    },
+    label: "Connect Develop",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-contao",
+    search: {
+      terms: []
+    },
+    label: "Contao",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cookie",
+    search: {
+      terms: [
+        "baked good",
+        "chips",
+        "chocolate",
+        "cookie",
+        "dessert",
+        "eat",
+        "snack",
+        "sweet",
+        "treat"
+      ]
+    },
+    label: "Cookie",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cookie-bite",
+    search: {
+      terms: [
+        "baked good",
+        "bitten",
+        "chips",
+        "chocolate",
+        "eat",
+        "snack",
+        "sweet",
+        "treat"
+      ]
+    },
+    label: "Cookie Bite",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-copy",
+    search: {
+      terms: [
+        "clone",
+        "duplicate",
+        "file",
+        "files-o",
+        "paper",
+        "paste"
+      ]
+    },
+    label: "Copy",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-copyright",
+    search: {
+      terms: [
+        "brand",
+        "c",
+        "copyright",
+        "mark",
+        "register",
+        "trademark"
+      ]
+    },
+    label: "Copyright",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cotton-bureau",
+    search: {
+      terms: [
+        "clothing",
+        "t-shirts",
+        "tshirts"
+      ]
+    },
+    label: "Cotton Bureau",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-couch",
+    search: {
+      terms: [
+        "chair",
+        "cushion",
+        "furniture",
+        "relax",
+        "sofa"
+      ]
+    },
+    label: "Couch",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cow",
+    search: {
+      terms: [
+        "agriculture",
+        "animal",
+        "beef",
+        "bovine",
+        "co",
+        "cow",
+        "farm",
+        "fauna",
+        "livestock",
+        "mammal",
+        "milk",
+        "moo"
+      ]
+    },
+    label: "Cow",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cpanel",
+    search: {
+      terms: []
+    },
+    label: "cPanel",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-by",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Attribution",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-nc",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Noncommercial",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-nc-eu",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Noncommercial (Euro Sign)",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-nc-jp",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Noncommercial (Yen Sign)",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-nd",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons No Derivative Works",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-pd",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Public Domain",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-pd-alt",
+    search: {
+      terms: []
+    },
+    label: "Alternate Creative Commons Public Domain",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-remix",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Remix",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-sa",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Share Alike",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-sampling",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Sampling",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-sampling-plus",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Sampling +",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-share",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons Share",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-creative-commons-zero",
+    search: {
+      terms: []
+    },
+    label: "Creative Commons CC0",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-credit-card",
+    search: {
+      terms: [
+        "buy",
+        "card",
+        "checkout",
+        "credit",
+        "credit card",
+        "credit-card-alt",
+        "debit",
+        "money",
+        "payment",
+        "purchase"
+      ]
+    },
+    label: "Credit Card",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-critical-role",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "game",
+        "gaming",
+        "tabletop"
+      ]
+    },
+    label: "Critical Role",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-crop",
+    search: {
+      terms: [
+        "design",
+        "frame",
+        "mask",
+        "resize",
+        "shrink"
+      ]
+    },
+    label: "Crop",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-crop-simple",
+    search: {
+      terms: [
+        "design",
+        "frame",
+        "mask",
+        "resize",
+        "shrink"
+      ]
+    },
+    label: "Crop Simple",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cross",
+    search: {
+      terms: [
+        "Christian",
+        "Heavy Latin Cross",
+        "catholicism",
+        "christianity",
+        "church",
+        "cross",
+        "jesus",
+        "latin cross",
+        "religion"
+      ]
+    },
+    label: "Cross",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-crosshairs",
+    search: {
+      terms: [
+        "aim",
+        "bullseye",
+        "gpd",
+        "picker",
+        "position"
+      ]
+    },
+    label: "Crosshairs",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-crow",
+    search: {
+      terms: [
+        "bird",
+        "bullfrog",
+        "fauna",
+        "halloween",
+        "holiday",
+        "toad"
+      ]
+    },
+    label: "Crow",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-crown",
+    search: {
+      terms: [
+        "award",
+        "clothing",
+        "crown",
+        "favorite",
+        "king",
+        "queen",
+        "royal",
+        "tiara"
+      ]
+    },
+    label: "Crown",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-crutch",
+    search: {
+      terms: [
+        "cane",
+        "injury",
+        "mobility",
+        "wheelchair"
+      ]
+    },
+    label: "Crutch",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cruzeiro-sign",
+    search: {
+      terms: [
+        "Cruzeiro Sign",
+        "currency"
+      ]
+    },
+    label: "Cruzeiro Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-css3",
+    search: {
+      terms: [
+        "code"
+      ]
+    },
+    label: "CSS 3 Logo",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-css3-alt",
+    search: {
+      terms: []
+    },
+    label: "Alternate CSS3 Logo",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-cube",
+    search: {
+      terms: [
+        "3d",
+        "block",
+        "dice",
+        "package",
+        "square",
+        "tesseract"
+      ]
+    },
+    label: "Cube",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cubes",
+    search: {
+      terms: [
+        "3d",
+        "block",
+        "dice",
+        "package",
+        "pyramid",
+        "square",
+        "stack",
+        "tesseract"
+      ]
+    },
+    label: "Cubes",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cubes-stacked",
+    search: {
+      terms: [
+        "blocks",
+        "cubes",
+        "sugar"
+      ]
+    },
+    label: "Cubes Stacked",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-cuttlefish",
+    search: {
+      terms: []
+    },
+    label: "Cuttlefish",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-d",
+    search: {
+      terms: [
+        "Latin Capital Letter D",
+        "Latin Small Letter D",
+        "letter"
+      ]
+    },
+    label: "D",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-d-and-d",
+    search: {
+      terms: []
+    },
+    label: "Dungeons & Dragons",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-d-and-d-beyond",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "gaming",
+        "tabletop"
+      ]
+    },
+    label: "D&D Beyond",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dailymotion",
+    search: {
+      terms: []
+    },
+    label: "dailymotion",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dashcube",
+    search: {
+      terms: []
+    },
+    label: "DashCube",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-database",
+    search: {
+      terms: [
+        "computer",
+        "development",
+        "directory",
+        "memory",
+        "storage"
+      ]
+    },
+    label: "Database",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-debian",
+    search: {
+      terms: []
+    },
+    label: "Debian",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-deezer",
+    search: {
+      terms: []
+    },
+    label: "Deezer",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-delete-left",
+    search: {
+      terms: [
+        "Erase to the Left",
+        "command",
+        "delete",
+        "erase",
+        "keyboard",
+        "undo"
+      ]
+    },
+    label: "Delete Left",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-delicious",
+    search: {
+      terms: []
+    },
+    label: "Delicious",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-democrat",
+    search: {
+      terms: [
+        "american",
+        "democratic party",
+        "donkey",
+        "election",
+        "left",
+        "left-wing",
+        "liberal",
+        "politics",
+        "usa"
+      ]
+    },
+    label: "Democrat",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-deploydog",
+    search: {
+      terms: []
+    },
+    label: "deploy.dog",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-deskpro",
+    search: {
+      terms: []
+    },
+    label: "Deskpro",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-desktop",
+    search: {
+      terms: [
+        "computer",
+        "cpu",
+        "demo",
+        "desktop",
+        "desktop computer",
+        "device",
+        "imac",
+        "machine",
+        "monitor",
+        "pc",
+        "screen"
+      ]
+    },
+    label: "Desktop",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dev",
+    search: {
+      terms: []
+    },
+    label: "DEV",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-deviantart",
+    search: {
+      terms: []
+    },
+    label: "deviantART",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dharmachakra",
+    search: {
+      terms: [
+        "Buddhist",
+        "buddhism",
+        "buddhist",
+        "dharma",
+        "religion",
+        "wheel",
+        "wheel of dharma"
+      ]
+    },
+    label: "Dharmachakra",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dhl",
+    search: {
+      terms: [
+        "Dalsey",
+        "Hillblom and Lynn",
+        "german",
+        "package",
+        "shipping"
+      ]
+    },
+    label: "DHL",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-diagram-next",
+    search: {
+      terms: [
+        "cells",
+        "chart",
+        "gantt",
+        "row",
+        "subtask",
+        "successor",
+        "table"
+      ]
+    },
+    label: "Diagram Next",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diagram-predecessor",
+    search: {
+      terms: [
+        "cells",
+        "chart",
+        "gantt",
+        "predecessor",
+        "previous",
+        "row",
+        "subtask",
+        "table"
+      ]
+    },
+    label: "Diagram Predecessor",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diagram-project",
+    search: {
+      terms: [
+        "chart",
+        "graph",
+        "network",
+        "pert"
+      ]
+    },
+    label: "Diagram Project",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diagram-successor",
+    search: {
+      terms: [
+        "cells",
+        "chart",
+        "gantt",
+        "next",
+        "row",
+        "subtask",
+        "successor",
+        "table"
+      ]
+    },
+    label: "Diagram Successor",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diamond",
+    search: {
+      terms: [
+        "card",
+        "cards",
+        "diamond suit",
+        "game",
+        "gem",
+        "gemstone",
+        "poker",
+        "suit"
+      ]
+    },
+    label: "Diamond",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diamond-turn-right",
+    search: {
+      terms: [
+        "map",
+        "navigation",
+        "sign",
+        "turn"
+      ]
+    },
+    label: "Diamond Turn Right",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-diaspora",
+    search: {
+      terms: []
+    },
+    label: "Diaspora",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dice",
+    search: {
+      terms: [
+        "chance",
+        "dice",
+        "die",
+        "gambling",
+        "game",
+        "game die",
+        "roll"
+      ]
+    },
+    label: "Dice",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-d20",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "chance",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice D20",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-d6",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "chance",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice D6",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-five",
+    search: {
+      terms: [
+        "Die Face-5",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice Five",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-four",
+    search: {
+      terms: [
+        "Die Face-4",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice Four",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-one",
+    search: {
+      terms: [
+        "Die Face-1",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice One",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-six",
+    search: {
+      terms: [
+        "Die Face-6",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice Six",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-three",
+    search: {
+      terms: [
+        "Die Face-3",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice Three",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dice-two",
+    search: {
+      terms: [
+        "Die Face-2",
+        "chance",
+        "gambling",
+        "game",
+        "roll"
+      ]
+    },
+    label: "Dice Two",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-digg",
+    search: {
+      terms: []
+    },
+    label: "Digg Logo",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-digital-ocean",
+    search: {
+      terms: []
+    },
+    label: "Digital Ocean",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-discord",
+    search: {
+      terms: []
+    },
+    label: "Discord",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-discourse",
+    search: {
+      terms: []
+    },
+    label: "Discourse",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-disease",
+    search: {
+      terms: [
+        "bacteria",
+        "cancer",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "illness",
+        "infection",
+        "pandemic",
+        "sickness",
+        "virus"
+      ]
+    },
+    label: "Disease",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-display",
+    search: {
+      terms: [
+        "Screen",
+        "computer",
+        "desktop",
+        "imac"
+      ]
+    },
+    label: "Display",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-divide",
+    search: {
+      terms: [
+        "Division Sign",
+        "arithmetic",
+        "calculus",
+        "divide",
+        "division",
+        "math",
+        "sign",
+        "÷"
+      ]
+    },
+    label: "Divide",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dna",
+    search: {
+      terms: [
+        "biologist",
+        "dna",
+        "double helix",
+        "evolution",
+        "gene",
+        "genetic",
+        "genetics",
+        "helix",
+        "life",
+        "molecule",
+        "protein"
+      ]
+    },
+    label: "Dna",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dochub",
+    search: {
+      terms: []
+    },
+    label: "DocHub",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-docker",
+    search: {
+      terms: []
+    },
+    label: "Docker",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dog",
+    search: {
+      terms: [
+        "animal",
+        "canine",
+        "dog",
+        "fauna",
+        "mammal",
+        "pet",
+        "pooch",
+        "puppy",
+        "woof"
+      ]
+    },
+    label: "Dog",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dollar-sign",
+    search: {
+      terms: [
+        "Dollar Sign",
+        "currency",
+        "dollar",
+        "heavy dollar sign",
+        "money"
+      ]
+    },
+    label: "Dollar Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dolly",
+    search: {
+      terms: [
+        "carry",
+        "shipping",
+        "transport"
+      ]
+    },
+    label: "Dolly",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dong-sign",
+    search: {
+      terms: [
+        "Dong Sign",
+        "currency"
+      ]
+    },
+    label: "Dong Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-door-closed",
+    search: {
+      terms: [
+        "doo",
+        "door",
+        "enter",
+        "exit",
+        "locked"
+      ]
+    },
+    label: "Door Closed",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-door-open",
+    search: {
+      terms: [
+        "enter",
+        "exit",
+        "welcome"
+      ]
+    },
+    label: "Door Open",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dove",
+    search: {
+      terms: [
+        "bird",
+        "dove",
+        "fauna",
+        "fly",
+        "flying",
+        "peace",
+        "war"
+      ]
+    },
+    label: "Dove",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-down-left-and-up-right-to-center",
+    search: {
+      terms: [
+        "collapse",
+        "fullscreen",
+        "minimize",
+        "move",
+        "resize",
+        "shrink",
+        "smaller"
+      ]
+    },
+    label: "Down Left And Up Right To Center",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-down-long",
+    search: {
+      terms: [
+        "download",
+        "long-arrow-down"
+      ]
+    },
+    label: "Down Long",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-download",
+    search: {
+      terms: [
+        "export",
+        "hard drive",
+        "save",
+        "transfer"
+      ]
+    },
+    label: "Download",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-draft2digital",
+    search: {
+      terms: []
+    },
+    label: "Draft2digital",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dragon",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "d&d",
+        "dnd",
+        "dragon",
+        "fairy tale",
+        "fantasy",
+        "fire",
+        "lizard",
+        "serpent"
+      ]
+    },
+    label: "Dragon",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-draw-polygon",
+    search: {
+      terms: [
+        "anchors",
+        "lines",
+        "object",
+        "render",
+        "shape"
+      ]
+    },
+    label: "Draw Polygon",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dribbble",
+    search: {
+      terms: []
+    },
+    label: "Dribbble",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dropbox",
+    search: {
+      terms: []
+    },
+    label: "Dropbox",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-droplet",
+    search: {
+      terms: [
+        "cold",
+        "color",
+        "comic",
+        "drop",
+        "droplet",
+        "raindrop",
+        "sweat",
+        "waterdrop"
+      ]
+    },
+    label: "Droplet",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-droplet-slash",
+    search: {
+      terms: [
+        "color",
+        "drop",
+        "droplet",
+        "raindrop",
+        "waterdrop"
+      ]
+    },
+    label: "Droplet Slash",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-drum",
+    search: {
+      terms: [
+        "drum",
+        "drumsticks",
+        "instrument",
+        "music",
+        "percussion",
+        "snare",
+        "sound"
+      ]
+    },
+    label: "Drum",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-drum-steelpan",
+    search: {
+      terms: [
+        "calypso",
+        "instrument",
+        "music",
+        "percussion",
+        "reggae",
+        "snare",
+        "sound",
+        "steel",
+        "tropical"
+      ]
+    },
+    label: "Drum Steelpan",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-drumstick-bite",
+    search: {
+      terms: [
+        "bone",
+        "chicken",
+        "leg",
+        "meat",
+        "poultry",
+        "turkey"
+      ]
+    },
+    label: "Drumstick Bite",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-drupal",
+    search: {
+      terms: []
+    },
+    label: "Drupal Logo",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-dumbbell",
+    search: {
+      terms: [
+        "exercise",
+        "gym",
+        "strength",
+        "weight",
+        "weight-lifting"
+      ]
+    },
+    label: "Dumbbell",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dumpster",
+    search: {
+      terms: [
+        "alley",
+        "bin",
+        "commercial",
+        "trash",
+        "waste"
+      ]
+    },
+    label: "Dumpster",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dumpster-fire",
+    search: {
+      terms: [
+        "alley",
+        "bin",
+        "commercial",
+        "danger",
+        "dangerous",
+        "euphemism",
+        "flame",
+        "heat",
+        "hot",
+        "trash",
+        "waste"
+      ]
+    },
+    label: "Dumpster Fire",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dungeon",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "building",
+        "d&d",
+        "dnd",
+        "door",
+        "entrance",
+        "fantasy",
+        "gate"
+      ]
+    },
+    label: "Dungeon",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-dyalog",
+    search: {
+      terms: []
+    },
+    label: "Dyalog",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-e",
+    search: {
+      terms: [
+        "Latin Capital Letter E",
+        "Latin Small Letter E",
+        "letter"
+      ]
+    },
+    label: "E",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ear-deaf",
+    search: {
+      terms: [
+        "ear",
+        "hearing",
+        "sign language"
+      ]
+    },
+    label: "Ear Deaf",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ear-listen",
+    search: {
+      terms: [
+        "amplify",
+        "audio",
+        "deaf",
+        "ear",
+        "headset",
+        "hearing",
+        "sound"
+      ]
+    },
+    label: "Ear Listen",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-earlybirds",
+    search: {
+      terms: []
+    },
+    label: "Earlybirds",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-earth-africa",
+    search: {
+      terms: [
+        "africa",
+        "all",
+        "country",
+        "earth",
+        "europe",
+        "global",
+        "globe",
+        "gps",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "online",
+        "place",
+        "planet",
+        "translate",
+        "travel",
+        "world"
+      ]
+    },
+    label: "Earth Africa",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-earth-americas",
+    search: {
+      terms: [
+        "all",
+        "america",
+        "country",
+        "earth",
+        "global",
+        "globe",
+        "gps",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "online",
+        "place",
+        "planet",
+        "translate",
+        "travel",
+        "world"
+      ]
+    },
+    label: "Earth Americas",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-earth-asia",
+    search: {
+      terms: [
+        "all",
+        "asia",
+        "australia",
+        "country",
+        "earth",
+        "global",
+        "globe",
+        "gps",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "online",
+        "place",
+        "planet",
+        "translate",
+        "travel",
+        "world"
+      ]
+    },
+    label: "Earth Asia",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-earth-europe",
+    search: {
+      terms: [
+        "all",
+        "country",
+        "earth",
+        "europe",
+        "global",
+        "globe",
+        "gps",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "online",
+        "place",
+        "planet",
+        "translate",
+        "travel",
+        "world"
+      ]
+    },
+    label: "Earth Europe",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-earth-oceania",
+    search: {
+      terms: [
+        "all",
+        "australia",
+        "country",
+        "earth",
+        "global",
+        "globe",
+        "gps",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "melanesia",
+        "micronesia",
+        "new zealand",
+        "online",
+        "place",
+        "planet",
+        "polynesia",
+        "translate",
+        "travel",
+        "world"
+      ]
+    },
+    label: "Earth Oceania",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ebay",
+    search: {
+      terms: []
+    },
+    label: "eBay",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-edge",
+    search: {
+      terms: [
+        "browser",
+        "ie"
+      ]
+    },
+    label: "Edge Browser",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-edge-legacy",
+    search: {
+      terms: []
+    },
+    label: "Edge Legacy Browser",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-egg",
+    search: {
+      terms: [
+        "breakfast",
+        "chicken",
+        "easter",
+        "egg",
+        "food",
+        "shell",
+        "yolk"
+      ]
+    },
+    label: "Egg",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eject",
+    search: {
+      terms: [
+        "abort",
+        "cancel",
+        "cd",
+        "discharge",
+        "eject",
+        "eject button"
+      ]
+    },
+    label: "Eject",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-elementor",
+    search: {
+      terms: []
+    },
+    label: "Elementor",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-elevator",
+    search: {
+      terms: [
+        "accessibility",
+        "elevator",
+        "hoist",
+        "lift",
+        "users-people"
+      ]
+    },
+    label: "Elevator",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ellipsis",
+    search: {
+      terms: [
+        "dots",
+        "drag",
+        "kebab",
+        "list",
+        "menu",
+        "nav",
+        "navigation",
+        "ol",
+        "pacman",
+        "reorder",
+        "settings",
+        "ul"
+      ]
+    },
+    label: "Ellipsis",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ellipsis-vertical",
+    search: {
+      terms: [
+        "dots",
+        "drag",
+        "kebab",
+        "list",
+        "menu",
+        "nav",
+        "navigation",
+        "ol",
+        "reorder",
+        "settings",
+        "ul"
+      ]
+    },
+    label: "Ellipsis Vertical",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-ello",
+    search: {
+      terms: []
+    },
+    label: "Ello",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-ember",
+    search: {
+      terms: []
+    },
+    label: "Ember",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-empire",
+    search: {
+      terms: []
+    },
+    label: "Galactic Empire",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-envelope",
+    search: {
+      terms: [
+        "Back of Envelope",
+        "e-mail",
+        "email",
+        "envelope",
+        "letter",
+        "mail",
+        "message",
+        "notification",
+        "support"
+      ]
+    },
+    label: "Envelope",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-envelope-circle-check",
+    search: {
+      terms: [
+        "check",
+        "email",
+        "envelope",
+        "mail",
+        "not affected",
+        "ok",
+        "okay",
+        "read",
+        "sent"
+      ]
+    },
+    label: "Envelope Circle Check",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-envelope-open",
+    search: {
+      terms: [
+        "e-mail",
+        "email",
+        "letter",
+        "mail",
+        "message",
+        "notification",
+        "support"
+      ]
+    },
+    label: "Envelope Open",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-envelope-open-text",
+    search: {
+      terms: [
+        "e-mail",
+        "email",
+        "letter",
+        "mail",
+        "message",
+        "notification",
+        "support"
+      ]
+    },
+    label: "Envelope Open Text",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-envelopes-bulk",
+    search: {
+      terms: [
+        "archive",
+        "envelope",
+        "letter",
+        "post office",
+        "postal",
+        "postcard",
+        "send",
+        "stamp",
+        "usps"
+      ]
+    },
+    label: "Envelopes Bulk",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-envira",
+    search: {
+      terms: [
+        "leaf"
+      ]
+    },
+    label: "Envira Gallery",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-equals",
+    search: {
+      terms: [
+        "Equals Sign",
+        "arithmetic",
+        "even",
+        "match",
+        "math"
+      ]
+    },
+    label: "Equals",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eraser",
+    search: {
+      terms: [
+        "art",
+        "delete",
+        "remove",
+        "rubber"
+      ]
+    },
+    label: "Eraser",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-erlang",
+    search: {
+      terms: []
+    },
+    label: "Erlang",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-ethereum",
+    search: {
+      terms: []
+    },
+    label: "Ethereum",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-ethernet",
+    search: {
+      terms: [
+        "cable",
+        "cat 5",
+        "cat 6",
+        "connection",
+        "hardware",
+        "internet",
+        "network",
+        "wired"
+      ]
+    },
+    label: "Ethernet",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-etsy",
+    search: {
+      terms: []
+    },
+    label: "Etsy",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-euro-sign",
+    search: {
+      terms: [
+        "Euro Sign",
+        "currency"
+      ]
+    },
+    label: "Euro Sign",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-evernote",
+    search: {
+      terms: []
+    },
+    label: "Evernote",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-exclamation",
+    search: {
+      terms: [
+        "!",
+        "Exclamation Mark",
+        "alert",
+        "danger",
+        "error",
+        "exclamation",
+        "important",
+        "mark",
+        "notice",
+        "notification",
+        "notify",
+        "outlined",
+        "problem",
+        "punctuation",
+        "red exclamation mark",
+        "warning",
+        "white exclamation mark"
+      ]
+    },
+    label: "Exclamation",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-expand",
+    search: {
+      terms: [
+        "bigger",
+        "crop",
+        "enlarge",
+        "focus",
+        "fullscreen",
+        "resize",
+        "viewfinder"
+      ]
+    },
+    label: "Expand",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-expeditedssl",
+    search: {
+      terms: []
+    },
+    label: "ExpeditedSSL",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-explosion",
+    search: {
+      terms: [
+        "blast",
+        "blowup",
+        "boom",
+        "crash",
+        "detonation",
+        "explosion"
+      ]
+    },
+    label: "Explosion",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eye",
+    search: {
+      terms: [
+        "body",
+        "eye",
+        "look",
+        "optic",
+        "see",
+        "seen",
+        "show",
+        "sight",
+        "views",
+        "visible"
+      ]
+    },
+    label: "Eye",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eye-dropper",
+    search: {
+      terms: [
+        "beaker",
+        "clone",
+        "color",
+        "copy",
+        "eyedropper",
+        "pipette"
+      ]
+    },
+    label: "Eye Dropper",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eye-low-vision",
+    search: {
+      terms: [
+        "blind",
+        "eye",
+        "sight"
+      ]
+    },
+    label: "Eye Low Vision",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-eye-slash",
+    search: {
+      terms: [
+        "blind",
+        "hide",
+        "show",
+        "toggle",
+        "unseen",
+        "views",
+        "visible",
+        "visiblity"
+      ]
+    },
+    label: "Eye Slash",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-f",
+    search: {
+      terms: [
+        "Latin Capital Letter F",
+        "Latin Small Letter F",
+        "letter"
+      ]
+    },
+    label: "F",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-angry",
+    search: {
+      terms: [
+        "angry",
+        "angry face",
+        "disapprove",
+        "emoticon",
+        "face",
+        "mad",
+        "upset"
+      ]
+    },
+    label: "Face Angry",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-dizzy",
+    search: {
+      terms: [
+        "dazed",
+        "dead",
+        "disapprove",
+        "emoticon",
+        "face"
+      ]
+    },
+    label: "Face Dizzy",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-flushed",
+    search: {
+      terms: [
+        "dazed",
+        "embarrassed",
+        "emoticon",
+        "face",
+        "flushed",
+        "flushed face"
+      ]
+    },
+    label: "Face Flushed",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-frown",
+    search: {
+      terms: [
+        "disapprove",
+        "emoticon",
+        "face",
+        "frown",
+        "frowning face",
+        "rating",
+        "sad"
+      ]
+    },
+    label: "Face Frown",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-frown-open",
+    search: {
+      terms: [
+        "disapprove",
+        "emoticon",
+        "face",
+        "frown",
+        "frowning face with open mouth",
+        "mouth",
+        "open",
+        "rating",
+        "sad"
+      ]
+    },
+    label: "Face Frown Open",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grimace",
+    search: {
+      terms: [
+        "cringe",
+        "emoticon",
+        "face",
+        "grimace",
+        "grimacing face",
+        "teeth"
+      ]
+    },
+    label: "Face Grimace",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "grin",
+        "grinning face",
+        "laugh",
+        "smile"
+      ]
+    },
+    label: "Face Grin",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-beam",
+    search: {
+      terms: [
+        "emoticon",
+        "eye",
+        "face",
+        "grinning face with smiling eyes",
+        "laugh",
+        "mouth",
+        "open",
+        "smile"
+      ]
+    },
+    label: "Face Grin Beam",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-beam-sweat",
+    search: {
+      terms: [
+        "cold",
+        "embarass",
+        "emoticon",
+        "face",
+        "grinning face with sweat",
+        "open",
+        "smile",
+        "sweat"
+      ]
+    },
+    label: "Face Grin Beam Sweat",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-hearts",
+    search: {
+      terms: [
+        "emoticon",
+        "eye",
+        "face",
+        "love",
+        "smile",
+        "smiling face with heart-eyes"
+      ]
+    },
+    label: "Face Grin Hearts",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-squint",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "grinning squinting face",
+        "laugh",
+        "mouth",
+        "satisfied",
+        "smile"
+      ]
+    },
+    label: "Face Grin Squint",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-squint-tears",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "floor",
+        "happy",
+        "laugh",
+        "rolling",
+        "rolling on the floor laughing",
+        "smile"
+      ]
+    },
+    label: "Face Grin Squint Tears",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-stars",
+    search: {
+      terms: [
+        "emoticon",
+        "eyes",
+        "face",
+        "grinning",
+        "star",
+        "star-struck",
+        "starry-eyed"
+      ]
+    },
+    label: "Face Grin Stars",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-tears",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "face",
+        "face with tears of joy",
+        "joy",
+        "laugh",
+        "tear"
+      ]
+    },
+    label: "Face Grin Tears",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-tongue",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "face",
+        "face with tongue",
+        "tongue"
+      ]
+    },
+    label: "Face Grin Tongue",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-tongue-squint",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "eye",
+        "face",
+        "horrible",
+        "squinting face with tongue",
+        "taste",
+        "tongue"
+      ]
+    },
+    label: "Face Grin Tongue Squint",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-tongue-wink",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "eye",
+        "face",
+        "joke",
+        "tongue",
+        "wink",
+        "winking face with tongue"
+      ]
+    },
+    label: "Face Grin Tongue Wink",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-wide",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "grinning face with big eyes",
+        "laugh",
+        "mouth",
+        "open",
+        "smile"
+      ]
+    },
+    label: "Face Grin Wide",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-grin-wink",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "flirt",
+        "laugh",
+        "smile"
+      ]
+    },
+    label: "Face Grin Wink",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-kiss",
+    search: {
+      terms: [
+        "beso",
+        "emoticon",
+        "face",
+        "kiss",
+        "kissing face",
+        "love",
+        "smooch"
+      ]
+    },
+    label: "Face Kiss",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-kiss-beam",
+    search: {
+      terms: [
+        "beso",
+        "emoticon",
+        "eye",
+        "face",
+        "kiss",
+        "kissing face with smiling eyes",
+        "love",
+        "smile",
+        "smooch"
+      ]
+    },
+    label: "Face Kiss Beam",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-kiss-wink-heart",
+    search: {
+      terms: [
+        "beso",
+        "emoticon",
+        "face",
+        "face blowing a kiss",
+        "kiss",
+        "love",
+        "smooch"
+      ]
+    },
+    label: "Face Kiss Wink Heart",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-laugh",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "face",
+        "laugh",
+        "smile"
+      ]
+    },
+    label: "Face Laugh",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-laugh-beam",
+    search: {
+      terms: [
+        "LOL",
+        "beaming face with smiling eyes",
+        "emoticon",
+        "eye",
+        "face",
+        "grin",
+        "happy",
+        "smile"
+      ]
+    },
+    label: "Face Laugh Beam",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-laugh-squint",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "face",
+        "happy",
+        "smile"
+      ]
+    },
+    label: "Face Laugh Squint",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-laugh-wink",
+    search: {
+      terms: [
+        "LOL",
+        "emoticon",
+        "face",
+        "happy",
+        "smile"
+      ]
+    },
+    label: "Face Laugh Wink",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-meh",
+    search: {
+      terms: [
+        "deadpan",
+        "emoticon",
+        "face",
+        "meh",
+        "neutral",
+        "neutral face",
+        "rating"
+      ]
+    },
+    label: "Face Meh",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-meh-blank",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "face without mouth",
+        "mouth",
+        "neutral",
+        "quiet",
+        "rating",
+        "silent"
+      ]
+    },
+    label: "Face Meh Blank",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-rolling-eyes",
+    search: {
+      terms: [
+        "emoticon",
+        "eyeroll",
+        "eyes",
+        "face",
+        "face with rolling eyes",
+        "neutral",
+        "rating",
+        "rolling"
+      ]
+    },
+    label: "Face Rolling Eyes",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-sad-cry",
+    search: {
+      terms: [
+        "cry",
+        "emoticon",
+        "face",
+        "loudly crying face",
+        "sad",
+        "sob",
+        "tear",
+        "tears"
+      ]
+    },
+    label: "Face Sad Cry",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-sad-tear",
+    search: {
+      terms: [
+        "cry",
+        "crying face",
+        "emoticon",
+        "face",
+        "sad",
+        "tear",
+        "tears"
+      ]
+    },
+    label: "Face Sad Tear",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-smile",
+    search: {
+      terms: [
+        "approve",
+        "emoticon",
+        "face",
+        "happy",
+        "rating",
+        "satisfied",
+        "slightly smiling face",
+        "smile"
+      ]
+    },
+    label: "Face Smile",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-smile-beam",
+    search: {
+      terms: [
+        "blush",
+        "emoticon",
+        "eye",
+        "face",
+        "happy",
+        "positive",
+        "smile",
+        "smiling face with smiling eyes"
+      ]
+    },
+    label: "Face Smile Beam",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-smile-wink",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "happy",
+        "hint",
+        "joke",
+        "wink",
+        "winking face"
+      ]
+    },
+    label: "Face Smile Wink",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-surprise",
+    search: {
+      terms: [
+        "emoticon",
+        "face",
+        "face with open mouth",
+        "mouth",
+        "open",
+        "shocked",
+        "sympathy"
+      ]
+    },
+    label: "Face Surprise",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-face-tired",
+    search: {
+      terms: [
+        "angry",
+        "emoticon",
+        "face",
+        "grumpy",
+        "tired",
+        "tired face",
+        "upset"
+      ]
+    },
+    label: "Face Tired",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-facebook",
+    search: {
+      terms: [
+        "facebook-official",
+        "social network"
+      ]
+    },
+    label: "Facebook",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-facebook-f",
+    search: {
+      terms: [
+        "facebook"
+      ]
+    },
+    label: "Facebook F",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-facebook-messenger",
+    search: {
+      terms: []
+    },
+    label: "Facebook Messenger",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-fan",
+    search: {
+      terms: [
+        "ac",
+        "air conditioning",
+        "blade",
+        "blower",
+        "cool",
+        "hot"
+      ]
+    },
+    label: "Fan",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fantasy-flight-games",
+    search: {
+      terms: [
+        "Dungeons & Dragons",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "game",
+        "gaming",
+        "tabletop"
+      ]
+    },
+    label: "Fantasy Flight-games",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-faucet",
+    search: {
+      terms: [
+        "covid-19",
+        "drinking",
+        "drip",
+        "house",
+        "hygiene",
+        "kitchen",
+        "potable",
+        "potable water",
+        "sanitation",
+        "sink",
+        "water"
+      ]
+    },
+    label: "Faucet",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-faucet-drip",
+    search: {
+      terms: [
+        "drinking",
+        "drip",
+        "house",
+        "hygiene",
+        "kitchen",
+        "potable",
+        "potable water",
+        "sanitation",
+        "sink",
+        "water"
+      ]
+    },
+    label: "Faucet Drip",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fax",
+    search: {
+      terms: [
+        "Fax Icon",
+        "business",
+        "communicate",
+        "copy",
+        "facsimile",
+        "fax",
+        "fax machine",
+        "send"
+      ]
+    },
+    label: "Fax",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-feather",
+    search: {
+      terms: [
+        "bird",
+        "feather",
+        "flight",
+        "light",
+        "plucked",
+        "plumage",
+        "quill",
+        "write"
+      ]
+    },
+    label: "Feather",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-feather-pointed",
+    search: {
+      terms: [
+        "bird",
+        "light",
+        "plucked",
+        "quill",
+        "write"
+      ]
+    },
+    label: "Feather Pointed",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fedex",
+    search: {
+      terms: [
+        "Federal Express",
+        "package",
+        "shipping"
+      ]
+    },
+    label: "FedEx",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-fedora",
+    search: {
+      terms: [
+        "linux",
+        "operating system",
+        "os"
+      ]
+    },
+    label: "Fedora",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-ferry",
+    search: {
+      terms: [
+        "barge",
+        "boat",
+        "carry",
+        "ferryboat",
+        "ship"
+      ]
+    },
+    label: "Ferry",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-figma",
+    search: {
+      terms: [
+        "app",
+        "design",
+        "interface"
+      ]
+    },
+    label: "Figma",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-file",
+    search: {
+      terms: [
+        "Empty Document",
+        "document",
+        "new",
+        "page",
+        "page facing up",
+        "pdf",
+        "resume"
+      ]
+    },
+    label: "File",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-arrow-down",
+    search: {
+      terms: [
+        "document",
+        "export",
+        "save"
+      ]
+    },
+    label: "File Arrow Down",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-arrow-up",
+    search: {
+      terms: [
+        "document",
+        "import",
+        "page",
+        "save"
+      ]
+    },
+    label: "File Arrow Up",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-audio",
+    search: {
+      terms: [
+        "document",
+        "mp3",
+        "music",
+        "page",
+        "play",
+        "sound"
+      ]
+    },
+    label: "File Audio",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-check",
+    search: {
+      terms: [
+        "document",
+        "file",
+        "not affected",
+        "ok",
+        "okay",
+        "paper"
+      ]
+    },
+    label: "File Circle Check",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-exclamation",
+    search: {
+      terms: [
+        "document",
+        "file",
+        "paper"
+      ]
+    },
+    label: "File Circle Exclamation",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-minus",
+    search: {
+      terms: [
+        "document",
+        "file",
+        "paper"
+      ]
+    },
+    label: "File Circle Minus",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-plus",
+    search: {
+      terms: [
+        "add",
+        "document",
+        "file",
+        "new",
+        "page",
+        "paper",
+        "pdf"
+      ]
+    },
+    label: "File Circle Plus",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-question",
+    search: {
+      terms: [
+        "document",
+        "file",
+        "paper"
+      ]
+    },
+    label: "File Circle Question",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-circle-xmark",
+    search: {
+      terms: [
+        "document",
+        "file",
+        "paper"
+      ]
+    },
+    label: "File Circle Xmark",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-code",
+    search: {
+      terms: [
+        "css",
+        "development",
+        "document",
+        "html"
+      ]
+    },
+    label: "File Code",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-contract",
+    search: {
+      terms: [
+        "agreement",
+        "binding",
+        "document",
+        "legal",
+        "signature"
+      ]
+    },
+    label: "File Contract",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-csv",
+    search: {
+      terms: [
+        "document",
+        "excel",
+        "numbers",
+        "spreadsheets",
+        "table"
+      ]
+    },
+    label: "File Csv",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-excel",
+    search: {
+      terms: [
+        "csv",
+        "document",
+        "numbers",
+        "spreadsheets",
+        "table"
+      ]
+    },
+    label: "File Excel",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-export",
+    search: {
+      terms: [
+        "download",
+        "save"
+      ]
+    },
+    label: "File Export",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-image",
+    search: {
+      terms: [
+        "Document with Picture",
+        "document",
+        "image",
+        "jpg",
+        "photo",
+        "png"
+      ]
+    },
+    label: "File Image",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-import",
+    search: {
+      terms: [
+        "copy",
+        "document",
+        "send",
+        "upload"
+      ]
+    },
+    label: "File Import",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-invoice",
+    search: {
+      terms: [
+        "account",
+        "bill",
+        "charge",
+        "document",
+        "payment",
+        "receipt"
+      ]
+    },
+    label: "File Invoice",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-invoice-dollar",
+    search: {
+      terms: [
+        "$",
+        "account",
+        "bill",
+        "charge",
+        "document",
+        "dollar-sign",
+        "money",
+        "payment",
+        "receipt",
+        "usd"
+      ]
+    },
+    label: "File Invoice Dollar",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-lines",
+    search: {
+      terms: [
+        "Document",
+        "Document with Text",
+        "document",
+        "file-text",
+        "invoice",
+        "new",
+        "page",
+        "pdf"
+      ]
+    },
+    label: "File Lines",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-medical",
+    search: {
+      terms: [
+        "document",
+        "health",
+        "history",
+        "prescription",
+        "record"
+      ]
+    },
+    label: "File Medical",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-pdf",
+    search: {
+      terms: [
+        "acrobat",
+        "document",
+        "preview",
+        "save"
+      ]
+    },
+    label: "File Pdf",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-pen",
+    search: {
+      terms: [
+        "edit",
+        "memo",
+        "pen",
+        "pencil",
+        "update",
+        "write"
+      ]
+    },
+    label: "File Pen",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-powerpoint",
+    search: {
+      terms: [
+        "display",
+        "document",
+        "keynote",
+        "presentation"
+      ]
+    },
+    label: "File Powerpoint",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-prescription",
+    search: {
+      terms: [
+        "document",
+        "drugs",
+        "medical",
+        "medicine",
+        "rx"
+      ]
+    },
+    label: "File Prescription",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-shield",
+    search: {
+      terms: [
+        "antivirus",
+        "data",
+        "document",
+        "protect",
+        "safe",
+        "safety",
+        "secure"
+      ]
+    },
+    label: "File Shield",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-signature",
+    search: {
+      terms: [
+        "John Hancock",
+        "contract",
+        "document",
+        "name"
+      ]
+    },
+    label: "File Signature",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-video",
+    search: {
+      terms: [
+        "document",
+        "m4v",
+        "movie",
+        "mp4",
+        "play"
+      ]
+    },
+    label: "File Video",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-waveform",
+    search: {
+      terms: [
+        "document",
+        "health",
+        "history",
+        "prescription",
+        "record"
+      ]
+    },
+    label: "File Waveform",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-word",
+    search: {
+      terms: [
+        "document",
+        "edit",
+        "page",
+        "text",
+        "writing"
+      ]
+    },
+    label: "File Word",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-file-zipper",
+    search: {
+      terms: [
+        ".zip",
+        "bundle",
+        "compress",
+        "compression",
+        "download",
+        "zip"
+      ]
+    },
+    label: "File Zipper",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fill",
+    search: {
+      terms: [
+        "bucket",
+        "color",
+        "paint",
+        "paint bucket"
+      ]
+    },
+    label: "Fill",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fill-drip",
+    search: {
+      terms: [
+        "bucket",
+        "color",
+        "drop",
+        "paint",
+        "paint bucket",
+        "spill"
+      ]
+    },
+    label: "Fill Drip",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-film",
+    search: {
+      terms: [
+        "cinema",
+        "film",
+        "film frames",
+        "frames",
+        "movie",
+        "strip",
+        "video"
+      ]
+    },
+    label: "Film",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-filter",
+    search: {
+      terms: [
+        "funnel",
+        "options",
+        "separate",
+        "sort"
+      ]
+    },
+    label: "Filter",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-filter-circle-dollar",
+    search: {
+      terms: [
+        "filter",
+        "money",
+        "options",
+        "separate",
+        "sort"
+      ]
+    },
+    label: "Filter Circle Dollar",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-filter-circle-xmark",
+    search: {
+      terms: [
+        "cancel",
+        "funnel",
+        "options",
+        "remove",
+        "separate",
+        "sort"
+      ]
+    },
+    label: "Filter Circle Xmark",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fingerprint",
+    search: {
+      terms: [
+        "human",
+        "id",
+        "identification",
+        "lock",
+        "smudge",
+        "touch",
+        "unique",
+        "unlock"
+      ]
+    },
+    label: "Fingerprint",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fire",
+    search: {
+      terms: [
+        "burn",
+        "caliente",
+        "fire",
+        "flame",
+        "heat",
+        "hot",
+        "popular",
+        "tool"
+      ]
+    },
+    label: "Fire",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fire-burner",
+    search: {
+      terms: [
+        "cook",
+        "fire",
+        "flame",
+        "kitchen",
+        "stove"
+      ]
+    },
+    label: "Fire Burner",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fire-extinguisher",
+    search: {
+      terms: [
+        "burn",
+        "caliente",
+        "extinguish",
+        "fire",
+        "fire extinguisher",
+        "fire fighter",
+        "flame",
+        "heat",
+        "hot",
+        "quench",
+        "rescue"
+      ]
+    },
+    label: "Fire Extinguisher",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fire-flame-curved",
+    search: {
+      terms: [
+        "burn",
+        "caliente",
+        "flame",
+        "heat",
+        "hot",
+        "popular"
+      ]
+    },
+    label: "Fire Flame Curved",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fire-flame-simple",
+    search: {
+      terms: [
+        "caliente",
+        "energy",
+        "fire",
+        "flame",
+        "gas",
+        "heat",
+        "hot"
+      ]
+    },
+    label: "Fire Flame Simple",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-firefox",
+    search: {
+      terms: [
+        "browser"
+      ]
+    },
+    label: "Firefox",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-firefox-browser",
+    search: {
+      terms: [
+        "browser"
+      ]
+    },
+    label: "Firefox Browser",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-first-order",
+    search: {
+      terms: []
+    },
+    label: "First Order",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-first-order-alt",
+    search: {
+      terms: []
+    },
+    label: "Alternate First Order",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-firstdraft",
+    search: {
+      terms: []
+    },
+    label: "firstdraft",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-fish",
+    search: {
+      terms: [
+        "Pisces",
+        "fauna",
+        "fish",
+        "gold",
+        "seafood",
+        "swimming",
+        "zodiac"
+      ]
+    },
+    label: "Fish",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fish-fins",
+    search: {
+      terms: [
+        "fish",
+        "fishery",
+        "pisces",
+        "seafood"
+      ]
+    },
+    label: "Fish Fins",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-flag",
+    search: {
+      terms: [
+        "black flag",
+        "country",
+        "notice",
+        "notification",
+        "notify",
+        "pole",
+        "report",
+        "symbol",
+        "waving"
       ]
     },
-    label: 'Cookie',
+    label: "Flag",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cookie-bite',
+    class: "fa-flag-checkered",
     search: {
       terms: [
-        'baked good',
-        'bitten',
-        'chips',
-        'chocolate',
-        'eat',
-        'snack',
-        'sweet',
-        'treat'
+        "checkered",
+        "chequered",
+        "chequered flag",
+        "finish",
+        "notice",
+        "notification",
+        "notify",
+        "pole",
+        "racing",
+        "report",
+        "start",
+        "symbol",
+        "win"
       ]
     },
-    label: 'Cookie Bite',
+    label: "Flag Checkered",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-copy',
+    class: "fa-flag-usa",
     search: {
       terms: [
-        'clone',
-        'duplicate',
-        'file',
-        'files-o',
-        'paper',
-        'paste'
+        "betsy ross",
+        "country",
+        "fla",
+        "flag: United States",
+        "old glory",
+        "stars",
+        "stripes",
+        "symbol"
       ]
     },
-    label: 'Copy',
+    label: "Flag Usa",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-copyright',
+    class: "fa-flask",
     search: {
       terms: [
-        'brand',
-        'mark',
-        'register',
-        'trademark'
+        "beaker",
+        "chemicals",
+        "experiment",
+        "experimental",
+        "labs",
+        "liquid",
+        "potion",
+        "science",
+        "vial"
       ]
     },
-    label: 'Copyright',
+    label: "Flask",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-cotton-bureau',
+    class: "fa-flask-vial",
     search: {
       terms: [
-        'clothing',
-        't-shirts',
-        'tshirts'
+        " beaker",
+        " chemicals",
+        " experiment",
+        " experimental",
+        " labs",
+        " liquid",
+        " science",
+        " vial",
+        "ampule",
+        "chemistry",
+        "lab",
+        "laboratory",
+        "potion",
+        "test",
+        "test tube"
       ]
+    },
+    label: "Flask Vial",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-flickr",
+    search: {
+      terms: []
+    },
+    label: "Flickr",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-flipboard",
+    search: {
+      terms: []
     },
-    label: 'Cotton Bureau',
+    label: "Flipboard",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-couch',
+    class: "fa-floppy-disk",
     search: {
       terms: [
-        'chair',
-        'cushion',
-        'furniture',
-        'relax',
-        'sofa'
+        "Black Hard Shell Floppy Disk",
+        "computer",
+        "disk",
+        "download",
+        "floppy",
+        "floppy disk",
+        "floppy-o"
       ]
     },
-    label: 'Couch',
+    label: "Floppy Disk",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cpanel',
+    class: "fa-florin-sign",
     search: {
-      terms: []
+      terms: [
+        "currency"
+      ]
     },
-    label: 'cPanel',
+    label: "Florin Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons',
+    class: "fa-fly",
     search: {
       terms: []
     },
-    label: 'Creative Commons',
+    label: "Fly",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-creative-commons-by',
+    class: "fa-folder",
     search: {
-      terms: []
+      terms: [
+        "Black Folder",
+        "archive",
+        "directory",
+        "document",
+        "file",
+        "file folder",
+        "folder"
+      ]
     },
-    label: 'Creative Commons Attribution',
+    label: "Folder",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-nc',
+    class: "fa-folder-closed",
     search: {
-      terms: []
+      terms: [
+        "file"
+      ]
     },
-    label: 'Creative Commons Noncommercial',
+    label: "Folder Closed",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-nc-eu',
+    class: "fa-folder-minus",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "delete",
+        "directory",
+        "document",
+        "file",
+        "negative",
+        "remove"
+      ]
     },
-    label: 'Creative Commons Noncommercial (Euro Sign)',
+    label: "Folder Minus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-nc-jp',
+    class: "fa-folder-open",
     search: {
-      terms: []
+      terms: [
+        "Open Folder",
+        "archive",
+        "directory",
+        "document",
+        "empty",
+        "file",
+        "folder",
+        "new",
+        "open",
+        "open file folder"
+      ]
     },
-    label: 'Creative Commons Noncommercial (Yen Sign)',
+    label: "Folder Open",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-nd',
+    class: "fa-folder-plus",
     search: {
-      terms: []
+      terms: [
+        "add",
+        "archive",
+        "create",
+        "directory",
+        "document",
+        "file",
+        "new",
+        "positive"
+      ]
     },
-    label: 'Creative Commons No Derivative Works',
+    label: "Folder Plus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-pd',
+    class: "fa-folder-tree",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "directory",
+        "document",
+        "file",
+        "search",
+        "structure"
+      ]
+    },
+    label: "Folder Tree",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-font",
+    search: {
+      terms: [
+        "alphabet",
+        "glyph",
+        "text",
+        "type",
+        "typeface"
+      ]
+    },
+    label: "Font",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-font-awesome",
+    search: {
+      terms: [
+        "awesome",
+        "flag",
+        "font",
+        "icons",
+        "typeface"
+      ]
     },
-    label: 'Creative Commons Public Domain',
+    label: "Font Awesome",
     free: [
-      'brands'
+      "brands",
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-pd-alt',
+    class: "fa-fonticons",
     search: {
       terms: []
     },
-    label: 'Alternate Creative Commons Public Domain',
+    label: "Fonticons",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-creative-commons-remix',
+    class: "fa-fonticons-fi",
     search: {
       terms: []
+    },
+    label: "Fonticons Fi",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-football",
+    search: {
+      terms: [
+        "american",
+        "american football",
+        "ball",
+        "fall",
+        "football",
+        "nfl",
+        "pigskin",
+        "seasonal"
+      ]
+    },
+    label: "Football",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-fort-awesome",
+    search: {
+      terms: [
+        "castle"
+      ]
+    },
+    label: "Fort Awesome",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-fort-awesome-alt",
+    search: {
+      terms: [
+        "castle"
+      ]
     },
-    label: 'Creative Commons Remix',
+    label: "Alternate Fort Awesome",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-creative-commons-sa',
+    class: "fa-forumbee",
     search: {
       terms: []
+    },
+    label: "Forumbee",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-forward",
+    search: {
+      terms: [
+        "arrow",
+        "double",
+        "fast",
+        "fast-forward button",
+        "forward",
+        "next",
+        "skip"
+      ]
+    },
+    label: "Forward",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-forward-fast",
+    search: {
+      terms: [
+        "arrow",
+        "end",
+        "last",
+        "next",
+        "next scene",
+        "next track",
+        "next track button",
+        "triangle"
+      ]
+    },
+    label: "Forward Fast",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-forward-step",
+    search: {
+      terms: [
+        "end",
+        "last",
+        "next"
+      ]
     },
-    label: 'Creative Commons Share Alike',
+    label: "Forward Step",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-sampling',
+    class: "fa-foursquare",
     search: {
       terms: []
+    },
+    label: "Foursquare",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-franc-sign",
+    search: {
+      terms: [
+        "French Franc Sign",
+        "currency"
+      ]
     },
-    label: 'Creative Commons Sampling',
+    label: "Franc Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-sampling-plus',
+    class: "fa-free-code-camp",
     search: {
       terms: []
     },
-    label: 'Creative Commons Sampling +',
+    label: "freeCodeCamp",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-creative-commons-share',
+    class: "fa-freebsd",
     search: {
       terms: []
+    },
+    label: "FreeBSD",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-frog",
+    search: {
+      terms: [
+        "amphibian",
+        "bullfrog",
+        "fauna",
+        "hop",
+        "kermit",
+        "kiss",
+        "prince",
+        "ribbit",
+        "toad",
+        "wart"
+      ]
     },
-    label: 'Creative Commons Share',
+    label: "Frog",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-creative-commons-zero',
+    class: "fa-fulcrum",
     search: {
       terms: []
     },
-    label: 'Creative Commons CC0',
+    label: "Fulcrum",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-credit-card',
+    class: "fa-futbol",
     search: {
       terms: [
-        'buy',
-        'checkout',
-        'credit-card-alt',
-        'debit',
-        'money',
-        'payment',
-        'purchase'
+        "ball",
+        "football",
+        "mls",
+        "soccer",
+        "soccer ball"
       ]
     },
-    label: 'Credit Card',
+    label: "Futbol",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-critical-role',
+    class: "fa-g",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'game',
-        'gaming',
-        'tabletop'
+        "Latin Capital Letter G",
+        "Latin Small Letter G",
+        "letter"
       ]
     },
-    label: 'Critical Role',
+    label: "G",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-crop',
+    class: "fa-galactic-republic",
     search: {
       terms: [
-        'design',
-        'frame',
-        'mask',
-        'resize',
-        'shrink'
+        "politics",
+        "star wars"
       ]
     },
-    label: 'crop',
+    label: "Galactic Republic",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-crop-alt',
+    class: "fa-galactic-senate",
     search: {
       terms: [
-        'design',
-        'frame',
-        'mask',
-        'resize',
-        'shrink'
+        "star wars"
       ]
     },
-    label: 'Alternate Crop',
+    label: "Galactic Senate",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-cross',
+    class: "fa-gamepad",
     search: {
       terms: [
-        'catholicism',
-        'christianity',
-        'church',
-        'jesus'
+        "arcade",
+        "controller",
+        "d-pad",
+        "joystick",
+        "video",
+        "video game"
       ]
     },
-    label: 'Cross',
+    label: "Gamepad",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-crosshairs',
+    class: "fa-gas-pump",
     search: {
       terms: [
-        'aim',
-        'bullseye',
-        'gpd',
-        'picker',
-        'position'
+        "car",
+        "diesel",
+        "fuel",
+        "fuel pump",
+        "fuelpump",
+        "gas",
+        "gasoline",
+        "petrol",
+        "pump",
+        "station"
       ]
     },
-    label: 'Crosshairs',
+    label: "Gas Pump",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-crow',
+    class: "fa-gauge",
     search: {
       terms: [
-        'bird',
-        'bullfrog',
-        'fauna',
-        'halloween',
-        'holiday',
-        'toad'
+        "dashboard",
+        "fast",
+        "odometer",
+        "speed",
+        "speedometer"
       ]
     },
-    label: 'Crow',
+    label: "Gauge",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-crown',
+    class: "fa-gauge-high",
     search: {
       terms: [
-        'award',
-        'favorite',
-        'king',
-        'queen',
-        'royal',
-        'tiara'
+        "dashboard",
+        "fast",
+        "odometer",
+        "speed",
+        "speedometer"
       ]
     },
-    label: 'Crown',
+    label: "Gauge High",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-crutch',
+    class: "fa-gauge-simple",
     search: {
       terms: [
-        'cane',
-        'injury',
-        'mobility',
-        'wheelchair'
+        "dashboard",
+        "fast",
+        "odometer",
+        "speed",
+        "speedometer"
       ]
     },
-    label: 'Crutch',
+    label: "Gauge Simple",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-css3',
+    class: "fa-gauge-simple-high",
     search: {
       terms: [
-        'code'
+        "dashboard",
+        "fast",
+        "odometer",
+        "speed",
+        "speedometer"
       ]
     },
-    label: 'CSS 3 Logo',
+    label: "Gauge Simple High",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-css3-alt',
+    class: "fa-gavel",
     search: {
-      terms: []
+      terms: [
+        "hammer",
+        "judge",
+        "law",
+        "lawyer",
+        "opinion"
+      ]
+    },
+    label: "Gavel",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-gear",
+    search: {
+      terms: [
+        "cog",
+        "cogwheel",
+        "gear",
+        "mechanical",
+        "settings",
+        "sprocket",
+        "tool",
+        "wheel"
+      ]
     },
-    label: 'Alternate CSS3 Logo',
+    label: "Gear",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-cube',
+    class: "fa-gears",
     search: {
       terms: [
-        '3d',
-        'block',
-        'dice',
-        'package',
-        'square',
-        'tesseract'
+        "gears",
+        "mechanical",
+        "settings",
+        "sprocket",
+        "wheel"
       ]
     },
-    label: 'Cube',
+    label: "Gears",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cubes',
+    class: "fa-gem",
     search: {
       terms: [
-        '3d',
-        'block',
-        'dice',
-        'package',
-        'pyramid',
-        'square',
-        'stack',
-        'tesseract'
+        "diamond",
+        "gem",
+        "gem stone",
+        "jewel",
+        "jewelry",
+        "sapphire",
+        "stone",
+        "treasure"
       ]
     },
-    label: 'Cubes',
+    label: "Gem",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-cut',
+    class: "fa-genderless",
     search: {
       terms: [
-        'clip',
-        'scissors',
-        'snip'
+        "androgynous",
+        "asexual",
+        "gender",
+        "sexless"
       ]
     },
-    label: 'Cut',
+    label: "Genderless",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-cuttlefish',
+    class: "fa-get-pocket",
     search: {
       terms: []
     },
-    label: 'Cuttlefish',
+    label: "Get Pocket",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-d-and-d',
+    class: "fa-gg",
     search: {
       terms: []
     },
-    label: 'Dungeons & Dragons',
+    label: "GG Currency",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-d-and-d-beyond',
+    class: "fa-gg-circle",
     search: {
+      terms: []
+    },
+    label: "GG Currency Circle",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-ghost",
+    search: {
+      terms: [
+        "apparition",
+        "blinky",
+        "clyde",
+        "creature",
+        "face",
+        "fairy tale",
+        "fantasy",
+        "floating",
+        "ghost",
+        "halloween",
+        "holiday",
+        "inky",
+        "monster",
+        "pacman",
+        "pinky",
+        "spirit"
+      ]
+    },
+    label: "Ghost",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-gift",
+    search: {
+      terms: [
+        "box",
+        "celebration",
+        "christmas",
+        "generosity",
+        "gift",
+        "giving",
+        "holiday",
+        "party",
+        "present",
+        "wrapped",
+        "wrapped gift",
+        "xmas"
+      ]
+    },
+    label: "Gift",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-gifts",
+    search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'gaming',
-        'tabletop'
+        "christmas",
+        "generosity",
+        "giving",
+        "holiday",
+        "party",
+        "present",
+        "wrapped",
+        "xmas"
       ]
     },
-    label: 'D&D Beyond',
+    label: "Gifts",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-dailymotion',
+    class: "fa-git",
     search: {
       terms: []
     },
-    label: 'dailymotion',
+    label: "Git",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-dashcube',
+    class: "fa-git-alt",
     search: {
       terms: []
     },
-    label: 'DashCube',
+    label: "Git Alt",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-database',
+    class: "fa-github",
     search: {
       terms: [
-        'computer',
-        'development',
-        'directory',
-        'memory',
-        'storage'
+        "octocat"
       ]
     },
-    label: 'Database',
+    label: "GitHub",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-deaf',
+    class: "fa-github-alt",
     search: {
       terms: [
-        'ear',
-        'hearing',
-        'sign language'
+        "octocat"
       ]
     },
-    label: 'Deaf',
+    label: "Alternate GitHub",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-deezer',
+    class: "fa-gitkraken",
     search: {
       terms: []
+    },
+    label: "GitKraken",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-gitlab",
+    search: {
+      terms: [
+        "Axosoft"
+      ]
     },
-    label: 'Deezer',
+    label: "GitLab",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-delicious',
+    class: "fa-gitter",
     search: {
       terms: []
+    },
+    label: "Gitter",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-glass-water",
+    search: {
+      terms: [
+        "potable",
+        "water"
+      ]
+    },
+    label: "Glass Water",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-glass-water-droplet",
+    search: {
+      terms: [
+        "potable",
+        "water"
+      ]
     },
-    label: 'Delicious',
+    label: "Glass Water Droplet",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-democrat',
+    class: "fa-glasses",
     search: {
       terms: [
-        'american',
-        'democratic party',
-        'donkey',
-        'election',
-        'left',
-        'left-wing',
-        'liberal',
-        'politics',
-        'usa'
+        "hipster",
+        "nerd",
+        "reading",
+        "sight",
+        "spectacles",
+        "vision"
       ]
     },
-    label: 'Democrat',
+    label: "Glasses",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-deploydog',
+    class: "fa-glide",
     search: {
       terms: []
     },
-    label: 'deploy.dog',
+    label: "Glide",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-deskpro',
+    class: "fa-glide-g",
     search: {
       terms: []
     },
-    label: 'Deskpro',
+    label: "Glide G",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-desktop',
+    class: "fa-globe",
     search: {
       terms: [
-        'computer',
-        'cpu',
-        'demo',
-        'desktop',
-        'device',
-        'imac',
-        'machine',
-        'monitor',
-        'pc',
-        'screen'
+        "all",
+        "coordinates",
+        "country",
+        "earth",
+        "global",
+        "globe",
+        "globe with meridians",
+        "gps",
+        "internet",
+        "language",
+        "localize",
+        "location",
+        "map",
+        "meridians",
+        "network",
+        "online",
+        "place",
+        "planet",
+        "translate",
+        "travel",
+        "world"
       ]
     },
-    label: 'Desktop',
+    label: "Globe",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dev',
+    class: "fa-gofore",
     search: {
       terms: []
     },
-    label: 'DEV',
+    label: "Gofore",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-deviantart',
+    class: "fa-golang",
     search: {
       terms: []
     },
-    label: 'deviantART',
+    label: "Go",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-dharmachakra',
+    class: "fa-golf-ball-tee",
     search: {
       terms: [
-        'buddhism',
-        'buddhist',
-        'wheel of dharma'
+        "caddy",
+        "eagle",
+        "putt",
+        "tee"
       ]
+    },
+    label: "Golf Ball Tee",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-goodreads",
+    search: {
+      terms: []
+    },
+    label: "Goodreads",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-goodreads-g",
+    search: {
+      terms: []
+    },
+    label: "Goodreads G",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-google",
+    search: {
+      terms: []
+    },
+    label: "Google Logo",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-google-drive",
+    search: {
+      terms: []
+    },
+    label: "Google Drive",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-google-pay",
+    search: {
+      terms: []
+    },
+    label: "Google Pay",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-google-play",
+    search: {
+      terms: []
     },
-    label: 'Dharmachakra',
+    label: "Google Play",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-dhl',
+    class: "fa-google-plus",
     search: {
       terms: [
-        'Dalsey',
-        'Hillblom and Lynn',
-        'german',
-        'package',
-        'shipping'
+        "google-plus-circle",
+        "google-plus-official"
       ]
     },
-    label: 'DHL',
+    label: "Google Plus",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-diagnoses',
+    class: "fa-google-plus-g",
     search: {
       terms: [
-        'analyze',
-        'detect',
-        'diagnosis',
-        'examine',
-        'medicine'
+        "google-plus",
+        "social network"
       ]
     },
-    label: 'Diagnoses',
+    label: "Google Plus G",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-diaspora',
+    class: "fa-google-wallet",
     search: {
       terms: []
     },
-    label: 'Diaspora',
+    label: "Google Wallet",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-dice',
+    class: "fa-gopuram",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "building",
+        "entrance",
+        "hinduism",
+        "temple",
+        "tower"
       ]
     },
-    label: 'Dice',
+    label: "Gopuram",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-d20',
+    class: "fa-graduation-cap",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'chance',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'gambling',
-        'game',
-        'roll'
+        "cap",
+        "celebration",
+        "ceremony",
+        "clothing",
+        "college",
+        "graduate",
+        "graduation",
+        "graduation cap",
+        "hat",
+        "learning",
+        "school",
+        "student"
       ]
     },
-    label: 'Dice D20',
+    label: "Graduation Cap",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-d6',
+    class: "fa-gratipay",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'chance',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'gambling',
-        'game',
-        'roll'
+        "favorite",
+        "heart",
+        "like",
+        "love"
       ]
     },
-    label: 'Dice D6',
+    label: "Gratipay (Gittip)",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-dice-five',
+    class: "fa-grav",
     search: {
-      terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
-      ]
+      terms: []
     },
-    label: 'Dice Five',
+    label: "Grav",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-dice-four',
+    class: "fa-greater-than",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "Greater-Than Sign",
+        "arithmetic",
+        "compare",
+        "math"
       ]
     },
-    label: 'Dice Four',
+    label: "Greater Than",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-one',
+    class: "fa-greater-than-equal",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "arithmetic",
+        "compare",
+        "math"
       ]
     },
-    label: 'Dice One',
+    label: "Greater Than Equal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-six',
+    class: "fa-grip",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "affordance",
+        "drag",
+        "drop",
+        "grab",
+        "handle"
       ]
     },
-    label: 'Dice Six',
+    label: "Grip",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-three',
+    class: "fa-grip-lines",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "affordance",
+        "drag",
+        "drop",
+        "grab",
+        "handle"
       ]
     },
-    label: 'Dice Three',
+    label: "Grip Lines",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dice-two',
+    class: "fa-grip-lines-vertical",
     search: {
       terms: [
-        'chance',
-        'gambling',
-        'game',
-        'roll'
+        "affordance",
+        "drag",
+        "drop",
+        "grab",
+        "handle"
       ]
     },
-    label: 'Dice Two',
+    label: "Grip Lines Vertical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-digg',
+    class: "fa-grip-vertical",
     search: {
-      terms: []
+      terms: [
+        "affordance",
+        "drag",
+        "drop",
+        "grab",
+        "handle"
+      ]
     },
-    label: 'Digg Logo',
+    label: "Grip Vertical",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-digital-ocean',
+    class: "fa-gripfire",
     search: {
       terms: []
     },
-    label: 'Digital Ocean',
+    label: "Gripfire, Inc.",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-digital-tachograph',
+    class: "fa-group-arrows-rotate",
     search: {
       terms: [
-        'data',
-        'distance',
-        'speed',
-        'tachometer'
+        "community",
+        "engagement",
+        "spin",
+        "sync"
       ]
     },
-    label: 'Digital Tachograph',
+    label: "Group Arrows Rotate",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-directions',
+    class: "fa-grunt",
     search: {
-      terms: [
-        'map',
-        'navigation',
-        'sign',
-        'turn'
-      ]
+      terms: []
     },
-    label: 'Directions',
+    label: "Grunt",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-discord',
+    class: "fa-guarani-sign",
     search: {
-      terms: []
+      terms: [
+        "Guarani Sign",
+        "currency"
+      ]
     },
-    label: 'Discord',
+    label: "Guarani Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-discourse',
+    class: "fa-guilded",
     search: {
       terms: []
     },
-    label: 'Discourse',
+    label: "Guilded",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-disease',
+    class: "fa-guitar",
     search: {
       terms: [
-        'bacteria',
-        'cancer',
-        'covid-19',
-        'illness',
-        'infection',
-        'sickness',
-        'virus'
+        "acoustic",
+        "instrument",
+        "music",
+        "rock",
+        "rock and roll",
+        "song",
+        "strings"
       ]
     },
-    label: 'Disease',
+    label: "Guitar",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-divide',
+    class: "fa-gulp",
     search: {
-      terms: [
-        'arithmetic',
-        'calculus',
-        'division',
-        'math'
-      ]
+      terms: []
     },
-    label: 'Divide',
+    label: "Gulp",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-dizzy',
+    class: "fa-gun",
     search: {
       terms: [
-        'dazed',
-        'dead',
-        'disapprove',
-        'emoticon',
-        'face'
+        "firearm",
+        "pistol",
+        "weapon"
       ]
     },
-    label: 'Dizzy Face',
+    label: "Gun",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-dna',
+    class: "fa-h",
     search: {
       terms: [
-        'double helix',
-        'genetic',
-        'helix',
-        'molecule',
-        'protein'
+        "Latin Capital Letter H",
+        "Latin Small Letter H",
+        "letter"
       ]
     },
-    label: 'DNA',
+    label: "H",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dochub',
+    class: "fa-hacker-news",
     search: {
       terms: []
     },
-    label: 'DocHub',
+    label: "Hacker News",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-docker',
+    class: "fa-hackerrank",
     search: {
       terms: []
     },
-    label: 'Docker',
+    label: "Hackerrank",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-dog',
+    class: "fa-hammer",
     search: {
       terms: [
-        'animal',
-        'canine',
-        'fauna',
-        'mammal',
-        'pet',
-        'pooch',
-        'puppy',
-        'woof'
+        "admin",
+        "fix",
+        "hammer",
+        "recovery",
+        "repair",
+        "settings",
+        "tool"
       ]
     },
-    label: 'Dog',
+    label: "Hammer",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dollar-sign',
+    class: "fa-hamsa",
     search: {
       terms: [
-        '$',
-        'cost',
-        'dollar-sign',
-        'money',
-        'price',
-        'usd'
+        "amulet",
+        "christianity",
+        "islam",
+        "jewish",
+        "judaism",
+        "muslim",
+        "protection"
       ]
     },
-    label: 'Dollar Sign',
+    label: "Hamsa",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dolly',
+    class: "fa-hand",
     search: {
       terms: [
-        'carry',
-        'shipping',
-        'transport'
+        "Raised Hand",
+        "backhand",
+        "game",
+        "halt",
+        "palm",
+        "raised",
+        "raised back of hand",
+        "roshambo",
+        "stop"
       ]
     },
-    label: 'Dolly',
+    label: "Hand",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dolly-flatbed',
+    class: "fa-hand-back-fist",
     search: {
       terms: [
-        'carry',
-        'inventory',
-        'shipping',
-        'transport'
+        "fist",
+        "game",
+        "roshambo"
       ]
     },
-    label: 'Dolly Flatbed',
+    label: "Hand Back Fist",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-donate',
+    class: "fa-hand-dots",
     search: {
       terms: [
-        'contribute',
-        'generosity',
-        'gift',
-        'give'
+        "allergy",
+        "freckles",
+        "hand",
+        "hives",
+        "palm",
+        "pox",
+        "skin",
+        "spots"
       ]
     },
-    label: 'Donate',
+    label: "Hand Dots",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-door-closed',
+    class: "fa-hand-fist",
     search: {
       terms: [
-        'enter',
-        'exit',
-        'locked'
+        "Dungeons & Dragons",
+        "clenched",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "fist",
+        "hand",
+        "ki",
+        "monk",
+        "punch",
+        "raised fist",
+        "resist",
+        "strength",
+        "unarmed combat"
       ]
     },
-    label: 'Door Closed',
+    label: "Hand Fist",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-door-open',
+    class: "fa-hand-holding",
     search: {
       terms: [
-        'enter',
-        'exit',
-        'welcome'
+        "carry",
+        "lift"
       ]
     },
-    label: 'Door Open',
+    label: "Hand Holding",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dot-circle',
+    class: "fa-hand-holding-dollar",
     search: {
       terms: [
-        'bullseye',
-        'notification',
-        'target'
+        "$",
+        "carry",
+        "dollar sign",
+        "donation",
+        "giving",
+        "lift",
+        "money",
+        "price"
       ]
     },
-    label: 'Dot Circle',
+    label: "Hand Holding Dollar",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-dove',
+    class: "fa-hand-holding-droplet",
     search: {
       terms: [
-        'bird',
-        'fauna',
-        'flying',
-        'peace',
-        'war'
+        "carry",
+        "covid-19",
+        "drought",
+        "grow",
+        "lift",
+        "sanitation"
       ]
     },
-    label: 'Dove',
+    label: "Hand Holding Droplet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-download',
+    class: "fa-hand-holding-hand",
     search: {
       terms: [
-        'export',
-        'hard drive',
-        'save',
-        'transfer'
+        "care",
+        "give",
+        "help",
+        "hold",
+        "protect"
       ]
     },
-    label: 'Download',
+    label: "Hand Holding Hand",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-draft2digital',
+    class: "fa-hand-holding-heart",
     search: {
-      terms: []
-    },
-    label: 'Draft2digital',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-drafting-compass',
-    search: {
       terms: [
-        'design',
-        'map',
-        'mechanical drawing',
-        'plot',
-        'plotting'
+        "carry",
+        "charity",
+        "gift",
+        "lift",
+        "package"
       ]
     },
-    label: 'Drafting Compass',
+    label: "Hand Holding Heart",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dragon',
+    class: "fa-hand-holding-medical",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'fire',
-        'lizard',
-        'serpent'
+        "care",
+        "covid-19",
+        "donate",
+        "help"
       ]
     },
-    label: 'Dragon',
+    label: "Hand Holding Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-draw-polygon',
+    class: "fa-hand-lizard",
     search: {
       terms: [
-        'anchors',
-        'lines',
-        'object',
-        'render',
-        'shape'
+        "game",
+        "roshambo"
       ]
     },
-    label: 'Draw Polygon',
+    label: "Hand Lizard",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dribbble',
+    class: "fa-hand-middle-finger",
     search: {
-      terms: []
+      terms: [
+        "finger",
+        "flip the bird",
+        "gesture",
+        "hand",
+        "hate",
+        "middle finger",
+        "rude"
+      ]
     },
-    label: 'Dribbble',
+    label: "Hand Middle Finger",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-dribbble-square',
+    class: "fa-hand-peace",
     search: {
-      terms: []
+      terms: [
+        "hand",
+        "rest",
+        "truce",
+        "v",
+        "victory",
+        "victory hand"
+      ]
     },
-    label: 'Dribbble Square',
+    label: "Hand Peace",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dropbox',
+    class: "fa-hand-point-down",
     search: {
-      terms: []
+      terms: [
+        "finger",
+        "hand-o-down",
+        "point"
+      ]
     },
-    label: 'Dropbox',
+    label: "Hand Point Down",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-drum',
+    class: "fa-hand-point-left",
     search: {
       terms: [
-        'instrument',
-        'music',
-        'percussion',
-        'snare',
-        'sound'
+        "back",
+        "finger",
+        "hand-o-left",
+        "left",
+        "point",
+        "previous"
       ]
     },
-    label: 'Drum',
+    label: "Hand Point Left",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-drum-steelpan',
+    class: "fa-hand-point-right",
     search: {
       terms: [
-        'calypso',
-        'instrument',
-        'music',
-        'percussion',
-        'reggae',
-        'snare',
-        'sound',
-        'steel',
-        'tropical'
+        "finger",
+        "forward",
+        "hand-o-right",
+        "next",
+        "point",
+        "right"
       ]
     },
-    label: 'Drum Steelpan',
+    label: "Hand Point Right",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-drumstick-bite',
+    class: "fa-hand-point-up",
     search: {
       terms: [
-        'bone',
-        'chicken',
-        'leg',
-        'meat',
-        'poultry',
-        'turkey'
+        "finger",
+        "hand",
+        "hand-o-up",
+        "index",
+        "index pointing up",
+        "point",
+        "up"
       ]
     },
-    label: 'Drumstick with Bite Taken Out',
+    label: "Hand Point Up",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-drupal',
+    class: "fa-hand-pointer",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "cursor",
+        "select"
+      ]
     },
-    label: 'Drupal Logo',
+    label: "Hand Pointer",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dumbbell',
+    class: "fa-hand-scissors",
     search: {
       terms: [
-        'exercise',
-        'gym',
-        'strength',
-        'weight',
-        'weight-lifting'
+        "cut",
+        "game",
+        "roshambo"
       ]
     },
-    label: 'Dumbbell',
+    label: "Hand Scissors",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dumpster',
+    class: "fa-hand-sparkles",
     search: {
       terms: [
-        'alley',
-        'bin',
-        'commercial',
-        'trash',
-        'waste'
+        "clean",
+        "covid-19",
+        "hygiene",
+        "magic",
+        "palm",
+        "soap",
+        "wash"
       ]
     },
-    label: 'Dumpster',
+    label: "Hand Sparkles",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dumpster-fire',
+    class: "fa-hand-spock",
     search: {
       terms: [
-        'alley',
-        'bin',
-        'commercial',
-        'danger',
-        'dangerous',
-        'euphemism',
-        'flame',
-        'heat',
-        'hot',
-        'trash',
-        'waste'
+        "finger",
+        "hand",
+        "live long",
+        "palm",
+        "prosper",
+        "salute",
+        "spock",
+        "star trek",
+        "vulcan",
+        "vulcan salute"
       ]
     },
-    label: 'Dumpster Fire',
+    label: "Hand Spock",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-dungeon',
+    class: "fa-handcuffs",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'building',
-        'd&d',
-        'dnd',
-        'door',
-        'entrance',
-        'fantasy',
-        'gate'
+        "arrest",
+        "criminal",
+        "handcuffs",
+        "jail",
+        "lock",
+        "police",
+        "wrist"
       ]
     },
-    label: 'Dungeon',
+    label: "Handcuffs",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-dyalog',
+    class: "fa-hands",
     search: {
-      terms: []
+      terms: [
+        "Translate",
+        "asl",
+        "deaf",
+        "hands"
+      ]
     },
-    label: 'Dyalog',
+    label: "Hands",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-earlybirds',
+    class: "fa-hands-asl-interpreting",
     search: {
-      terms: []
+      terms: [
+        "asl",
+        "deaf",
+        "finger",
+        "hand",
+        "interpret",
+        "speak"
+      ]
     },
-    label: 'Earlybirds',
+    label: "Hands Asl Interpreting",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ebay',
+    class: "fa-hands-bound",
     search: {
-      terms: []
+      terms: [
+        "abduction",
+        "bound",
+        "handcuff",
+        "wrist"
+      ]
     },
-    label: 'eBay',
+    label: "Hands Bound",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-edge',
+    class: "fa-hands-bubbles",
     search: {
       terms: [
-        'browser',
-        'ie'
+        "covid-19",
+        "hygiene",
+        "soap",
+        "wash"
       ]
     },
-    label: 'Edge Browser',
+    label: "Hands Bubbles",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-edge-legacy',
+    class: "fa-hands-clapping",
     search: {
-      terms: []
+      terms: [
+        "applause",
+        "clap",
+        "clapping hands",
+        "hand"
+      ]
     },
-    label: 'Edge Legacy Browser',
+    label: "Hands Clapping",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-edit',
+    class: "fa-hands-holding",
     search: {
       terms: [
-        'edit',
-        'pen',
-        'pencil',
-        'update',
-        'write'
+        "carry",
+        "hold",
+        "lift"
       ]
     },
-    label: 'Edit',
+    label: "Hands Holding",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-egg',
+    class: "fa-hands-holding-child",
     search: {
       terms: [
-        'breakfast',
-        'chicken',
-        'easter',
-        'shell',
-        'yolk'
+        "care",
+        "give",
+        "help",
+        "hold",
+        "protect"
       ]
     },
-    label: 'Egg',
+    label: "Hands Holding Child",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-eject',
+    class: "fa-hands-holding-circle",
     search: {
       terms: [
-        'abort',
-        'cancel',
-        'cd',
-        'discharge'
+        "circle",
+        "gift",
+        "protection"
       ]
     },
-    label: 'eject',
+    label: "Hands Holding Circle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-elementor',
+    class: "fa-hands-praying",
     search: {
-      terms: []
+      terms: [
+        "kneel",
+        "preach",
+        "religion",
+        "worship"
+      ]
     },
-    label: 'Elementor',
+    label: "Hands Praying",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ellipsis-h',
+    class: "fa-handshake",
     search: {
       terms: [
-        'dots',
-        'drag',
-        'kebab',
-        'list',
-        'menu',
-        'nav',
-        'navigation',
-        'ol',
-        'reorder',
-        'settings',
-        'ul'
+        "agreement",
+        "greeting",
+        "meeting",
+        "partnership"
       ]
     },
-    label: 'Horizontal Ellipsis',
+    label: "Handshake",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-ellipsis-v',
+    class: "fa-handshake-angle",
     search: {
       terms: [
-        'dots',
-        'drag',
-        'kebab',
-        'list',
-        'menu',
-        'nav',
-        'navigation',
-        'ol',
-        'reorder',
-        'settings',
-        'ul'
+        "aid",
+        "assistance",
+        "handshake",
+        "partnership",
+        "volunteering"
       ]
     },
-    label: 'Vertical Ellipsis',
+    label: "Handshake Angle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ello',
+    class: "fa-handshake-simple",
     search: {
-      terms: []
+      terms: [
+        "agreement",
+        "greeting",
+        "hand",
+        "handshake",
+        "meeting",
+        "partnership",
+        "shake"
+      ]
     },
-    label: 'Ello',
+    label: "Handshake Simple",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ember',
+    class: "fa-handshake-simple-slash",
     search: {
-      terms: []
+      terms: [
+        "broken",
+        "covid-19",
+        "social distance"
+      ]
     },
-    label: 'Ember',
+    label: "Handshake Simple Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-empire',
+    class: "fa-handshake-slash",
     search: {
-      terms: []
+      terms: [
+        "broken",
+        "covid-19",
+        "social distance"
+      ]
     },
-    label: 'Galactic Empire',
+    label: "Handshake Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-envelope',
+    class: "fa-hanukiah",
     search: {
       terms: [
-        'e-mail',
-        'email',
-        'letter',
-        'mail',
-        'message',
-        'notification',
-        'support'
+        "candelabrum",
+        "candle",
+        "candlestick",
+        "hanukkah",
+        "jewish",
+        "judaism",
+        "light",
+        "menorah",
+        "religion"
       ]
     },
-    label: 'Envelope',
+    label: "Hanukiah",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-envelope-open',
+    class: "fa-hard-drive",
     search: {
       terms: [
-        'e-mail',
-        'email',
-        'letter',
-        'mail',
-        'message',
-        'notification',
-        'support'
+        "Hard Disk",
+        "cpu",
+        "hard drive",
+        "harddrive",
+        "machine",
+        "save",
+        "storage"
       ]
     },
-    label: 'Envelope Open',
+    label: "Hard Drive",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-envelope-open-text',
+    class: "fa-hashnode",
     search: {
-      terms: [
-        'e-mail',
-        'email',
-        'letter',
-        'mail',
-        'message',
-        'notification',
-        'support'
-      ]
+      terms: []
     },
-    label: 'Envelope Open-text',
+    label: "Hashnode",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-envelope-square',
+    class: "fa-hashtag",
     search: {
       terms: [
-        'e-mail',
-        'email',
-        'letter',
-        'mail',
-        'message',
-        'notification',
-        'support'
+        "Number Sign",
+        "Twitter",
+        "instagram",
+        "pound",
+        "social media",
+        "tag"
       ]
     },
-    label: 'Envelope Square',
+    label: "Hashtag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-envira',
+    class: "fa-hat-cowboy",
     search: {
       terms: [
-        'leaf'
+        "buckaroo",
+        "horse",
+        "jackeroo",
+        "john b.",
+        "old west",
+        "pardner",
+        "ranch",
+        "rancher",
+        "rodeo",
+        "western",
+        "wrangler"
       ]
     },
-    label: 'Envira Gallery',
+    label: "Hat Cowboy",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-equals',
+    class: "fa-hat-cowboy-side",
     search: {
       terms: [
-        'arithmetic',
-        'even',
-        'match',
-        'math'
+        "buckaroo",
+        "horse",
+        "jackeroo",
+        "john b.",
+        "old west",
+        "pardner",
+        "ranch",
+        "rancher",
+        "rodeo",
+        "western",
+        "wrangler"
       ]
     },
-    label: 'Equals',
+    label: "Hat Cowboy Side",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-eraser',
+    class: "fa-hat-wizard",
     search: {
       terms: [
-        'art',
-        'delete',
-        'remove',
-        'rubber'
+        "Dungeons & Dragons",
+        "accessory",
+        "buckle",
+        "clothing",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "halloween",
+        "head",
+        "holiday",
+        "mage",
+        "magic",
+        "pointy",
+        "witch"
       ]
     },
-    label: 'eraser',
+    label: "Hat Wizard",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-erlang',
+    class: "fa-head-side-cough",
     search: {
-      terms: []
+      terms: [
+        "cough",
+        "covid-19",
+        "germs",
+        "lungs",
+        "respiratory",
+        "sick"
+      ]
     },
-    label: 'Erlang',
+    label: "Head Side Cough",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ethereum',
+    class: "fa-head-side-cough-slash",
     search: {
-      terms: []
+      terms: [
+        "cough",
+        "covid-19",
+        "germs",
+        "lungs",
+        "respiratory",
+        "sick"
+      ]
     },
-    label: 'Ethereum',
+    label: "Head Side Cough Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ethernet',
+    class: "fa-head-side-mask",
     search: {
       terms: [
-        'cable',
-        'cat 5',
-        'cat 6',
-        'connection',
-        'hardware',
-        'internet',
-        'network',
-        'wired'
+        "breath",
+        "coronavirus",
+        "covid-19",
+        "filter",
+        "flu",
+        "infection",
+        "pandemic",
+        "respirator",
+        "virus"
       ]
     },
-    label: 'Ethernet',
+    label: "Head Side Mask",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-etsy',
+    class: "fa-head-side-virus",
     search: {
-      terms: []
+      terms: [
+        "cold",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "infection",
+        "pandemic",
+        "sick"
+      ]
     },
-    label: 'Etsy',
+    label: "Head Side Virus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-euro-sign',
+    class: "fa-heading",
     search: {
       terms: [
-        'currency',
-        'dollar',
-        'exchange',
-        'money'
+        "format",
+        "header",
+        "text",
+        "title"
       ]
     },
-    label: 'Euro Sign',
+    label: "Heading",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-evernote',
+    class: "fa-headphones",
     search: {
-      terms: []
+      terms: [
+        "audio",
+        "earbud",
+        "headphone",
+        "listen",
+        "music",
+        "sound",
+        "speaker"
+      ]
     },
-    label: 'Evernote',
+    label: "Headphones",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-exchange-alt',
+    class: "fa-headphones-simple",
     search: {
       terms: [
-        'arrow',
-        'arrows',
-        'exchange',
-        'reciprocate',
-        'return',
-        'swap',
-        'transfer'
+        "audio",
+        "listen",
+        "music",
+        "sound",
+        "speaker"
       ]
     },
-    label: 'Alternate Exchange',
+    label: "Headphones Simple",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-exclamation',
+    class: "fa-headset",
     search: {
       terms: [
-        'alert',
-        'danger',
-        'error',
-        'important',
-        'notice',
-        'notification',
-        'notify',
-        'problem',
-        'warning'
+        "audio",
+        "gamer",
+        "gaming",
+        "listen",
+        "live chat",
+        "microphone",
+        "shot caller",
+        "sound",
+        "support",
+        "telemarketer"
       ]
     },
-    label: 'exclamation',
+    label: "Headset",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-exclamation-circle',
+    class: "fa-heart",
     search: {
       terms: [
-        'alert',
-        'danger',
-        'error',
-        'important',
-        'notice',
-        'notification',
-        'notify',
-        'problem',
-        'warning'
+        "black",
+        "black heart",
+        "blue",
+        "blue heart",
+        "brown",
+        "brown heart",
+        "card",
+        "evil",
+        "favorite",
+        "game",
+        "green",
+        "green heart",
+        "heart",
+        "heart suit",
+        "like",
+        "love",
+        "orange",
+        "orange heart",
+        "purple",
+        "purple heart",
+        "red heart",
+        "relationship",
+        "valentine",
+        "white",
+        "white heart",
+        "wicked",
+        "yellow",
+        "yellow heart"
       ]
     },
-    label: 'Exclamation Circle',
+    label: "Heart",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-exclamation-triangle',
+    class: "fa-heart-circle-bolt",
     search: {
       terms: [
-        'alert',
-        'danger',
-        'error',
-        'important',
-        'notice',
-        'notification',
-        'notify',
-        'problem',
-        'warning'
+        "cardiogram",
+        "ekg",
+        "electric",
+        "heart",
+        "love",
+        "pacemaker"
       ]
     },
-    label: 'Exclamation Triangle',
+    label: "Heart Circle Bolt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-expand',
+    class: "fa-heart-circle-check",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'fullscreen',
-        'resize'
+        "favorite",
+        "heart",
+        "love",
+        "not affected",
+        "ok",
+        "okay"
       ]
     },
-    label: 'Expand',
+    label: "Heart Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-expand-alt',
+    class: "fa-heart-circle-exclamation",
     search: {
       terms: [
-        'arrows',
-        'bigger',
-        'enlarge',
-        'fullscreen',
-        'resize'
+        "favorite",
+        "heart",
+        "love"
       ]
     },
-    label: 'Alternate Expand',
+    label: "Heart Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-expand-arrows-alt',
+    class: "fa-heart-circle-minus",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'fullscreen',
-        'move',
-        'resize'
+        "favorite",
+        "heart",
+        "love"
       ]
     },
-    label: 'Alternate Expand Arrows',
+    label: "Heart Circle Minus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-expeditedssl',
+    class: "fa-heart-circle-plus",
     search: {
-      terms: []
+      terms: [
+        "favorite",
+        "heart",
+        "love"
+      ]
     },
-    label: 'ExpeditedSSL',
+    label: "Heart Circle Plus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-external-link-alt',
+    class: "fa-heart-circle-xmark",
     search: {
       terms: [
-        'external-link',
-        'new',
-        'open',
-        'share'
+        "favorite",
+        "heart",
+        "love"
       ]
     },
-    label: 'Alternate External Link',
+    label: "Heart Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-external-link-square-alt',
+    class: "fa-heart-crack",
     search: {
       terms: [
-        'external-link-square',
-        'new',
-        'open',
-        'share'
+        "break",
+        "breakup",
+        "broken",
+        "broken heart",
+        "crushed",
+        "dislike",
+        "dumped",
+        "grief",
+        "love",
+        "lovesick",
+        "relationship",
+        "sad"
       ]
     },
-    label: 'Alternate External Link Square',
+    label: "Heart Crack",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-eye',
+    class: "fa-heart-pulse",
     search: {
       terms: [
-        'look',
-        'optic',
-        'see',
-        'seen',
-        'show',
-        'sight',
-        'views',
-        'visible'
+        "ekg",
+        "electrocardiogram",
+        "health",
+        "lifeline",
+        "vital signs"
       ]
     },
-    label: 'Eye',
+    label: "Heart Pulse",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-eye-dropper',
+    class: "fa-helicopter",
     search: {
       terms: [
-        'beaker',
-        'clone',
-        'color',
-        'copy',
-        'eyedropper',
-        'pipette'
+        "airwolf",
+        "apache",
+        "chopper",
+        "flight",
+        "fly",
+        "helicopter",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'Eye Dropper',
+    label: "Helicopter",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-eye-slash',
+    class: "fa-helicopter-symbol",
     search: {
       terms: [
-        'blind',
-        'hide',
-        'show',
-        'toggle',
-        'unseen',
-        'views',
-        'visible',
-        'visiblity'
+        "chopper",
+        "helicopter",
+        "landing pad",
+        "whirlybird"
       ]
     },
-    label: 'Eye Slash',
+    label: "Helicopter Symbol",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-facebook',
+    class: "fa-helmet-safety",
     search: {
       terms: [
-        'facebook-official',
-        'social network'
+        "construction",
+        "hardhat",
+        "helmet",
+        "safety"
       ]
     },
-    label: 'Facebook',
+    label: "Helmet Safety",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-facebook-f',
+    class: "fa-helmet-un",
     search: {
       terms: [
-        'facebook'
+        "helmet",
+        "united nations"
       ]
     },
-    label: 'Facebook F',
+    label: "Helmet Un",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-facebook-messenger',
+    class: "fa-highlighter",
     search: {
-      terms: []
+      terms: [
+        "edit",
+        "marker",
+        "sharpie",
+        "update",
+        "write"
+      ]
     },
-    label: 'Facebook Messenger',
+    label: "Highlighter",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-facebook-square',
+    class: "fa-hill-avalanche",
     search: {
       terms: [
-        'social network'
+        "mudslide",
+        "snow",
+        "winter"
       ]
     },
-    label: 'Facebook Square',
+    label: "Hill Avalanche",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-fan',
+    class: "fa-hill-rockslide",
     search: {
       terms: [
-        'ac',
-        'air conditioning',
-        'blade',
-        'blower',
-        'cool',
-        'hot'
+        "mudslide"
       ]
     },
-    label: 'Fan',
+    label: "Hill Rockslide",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fantasy-flight-games',
+    class: "fa-hippo",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'game',
-        'gaming',
-        'tabletop'
+        "animal",
+        "fauna",
+        "hippo",
+        "hippopotamus",
+        "hungry",
+        "mammal"
       ]
     },
-    label: 'Fantasy Flight-games',
+    label: "Hippo",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-fast-backward',
+    class: "fa-hips",
     search: {
-      terms: [
-        'beginning',
-        'first',
-        'previous',
-        'rewind',
-        'start'
-      ]
+      terms: []
     },
-    label: 'fast-backward',
+    label: "Hips",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-fast-forward',
+    class: "fa-hire-a-helper",
     search: {
-      terms: [
-        'end',
-        'last',
-        'next'
-      ]
+      terms: []
     },
-    label: 'fast-forward',
+    label: "HireAHelper",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-faucet',
+    class: "fa-hive",
     search: {
-      terms: [
-        'covid-19',
-        'drip',
-        'house',
-        'hygiene',
-        'kitchen',
-        'sink',
-        'water'
-      ]
+      terms: []
     },
-    label: 'Faucet',
+    label: "Hive Blockchain Network",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-fax',
+    class: "fa-hockey-puck",
     search: {
       terms: [
-        'business',
-        'communicate',
-        'copy',
-        'facsimile',
-        'send'
+        "ice",
+        "nhl",
+        "sport"
       ]
     },
-    label: 'Fax',
+    label: "Hockey Puck",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-feather',
+    class: "fa-holly-berry",
     search: {
       terms: [
-        'bird',
-        'light',
-        'plucked',
-        'quill',
-        'write'
+        "catwoman",
+        "christmas",
+        "decoration",
+        "flora",
+        "halle",
+        "holiday",
+        "ororo munroe",
+        "plant",
+        "storm",
+        "xmas"
       ]
     },
-    label: 'Feather',
+    label: "Holly Berry",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-feather-alt',
+    class: "fa-hooli",
     search: {
-      terms: [
-        'bird',
-        'light',
-        'plucked',
-        'quill',
-        'write'
-      ]
+      terms: []
     },
-    label: 'Alternate Feather',
+    label: "Hooli",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-fedex',
+    class: "fa-hornbill",
     search: {
-      terms: [
-        'Federal Express',
-        'package',
-        'shipping'
-      ]
+      terms: []
     },
-    label: 'FedEx',
+    label: "Hornbill",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-fedora',
+    class: "fa-horse",
     search: {
       terms: [
-        'linux',
-        'operating system',
-        'os'
+        "equestrian",
+        "equus",
+        "fauna",
+        "horse",
+        "mammmal",
+        "mare",
+        "neigh",
+        "pony",
+        "racehorse",
+        "racing"
       ]
     },
-    label: 'Fedora',
+    label: "Horse",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-female',
+    class: "fa-horse-head",
     search: {
       terms: [
-        'human',
-        'person',
-        'profile',
-        'user',
-        'woman'
+        "equus",
+        "fauna",
+        "mammmal",
+        "mare",
+        "neigh",
+        "pony"
       ]
     },
-    label: 'Female',
+    label: "Horse Head",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fighter-jet',
+    class: "fa-hospital",
     search: {
       terms: [
-        'airplane',
-        'fast',
-        'fly',
-        'goose',
-        'maverick',
-        'plane',
-        'quick',
-        'top gun',
-        'transportation',
-        'travel'
+        "building",
+        "covid-19",
+        "doctor",
+        "emergency room",
+        "hospital",
+        "medical center",
+        "medicine"
       ]
     },
-    label: 'fighter-jet',
+    label: "Hospital",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-figma',
+    class: "fa-hospital-user",
     search: {
       terms: [
-        'app',
-        'design',
-        'interface'
+        "covid-19",
+        "doctor",
+        "network",
+        "patient",
+        "primary care"
       ]
     },
-    label: 'Figma',
+    label: "Hospital User",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-file',
+    class: "fa-hot-tub-person",
     search: {
       terms: [
-        'document',
-        'new',
-        'page',
-        'pdf',
-        'resume'
+        "jacuzzi",
+        "spa"
       ]
     },
-    label: 'File',
+    label: "Hot Tub Person",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-alt',
+    class: "fa-hotdog",
     search: {
       terms: [
-        'document',
-        'file-text',
-        'invoice',
-        'new',
-        'page',
-        'pdf'
+        "bun",
+        "chili",
+        "frankfurt",
+        "frankfurter",
+        "hot dog",
+        "hotdog",
+        "kosher",
+        "polish",
+        "sandwich",
+        "sausage",
+        "vienna",
+        "weiner"
       ]
     },
-    label: 'Alternate File',
+    label: "Hotdog",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-archive',
+    class: "fa-hotel",
     search: {
       terms: [
-        '.zip',
-        'bundle',
-        'compress',
-        'compression',
-        'download',
-        'zip'
+        "building",
+        "hotel",
+        "inn",
+        "lodging",
+        "motel",
+        "resort",
+        "travel"
       ]
     },
-    label: 'Archive File',
+    label: "Hotel",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-audio',
+    class: "fa-hotjar",
     search: {
-      terms: [
-        'document',
-        'mp3',
-        'music',
-        'page',
-        'play',
-        'sound'
-      ]
+      terms: []
     },
-    label: 'Audio File',
+    label: "Hotjar",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-file-code',
+    class: "fa-hourglass",
     search: {
       terms: [
-        'css',
-        'development',
-        'document',
-        'html'
+        "hour",
+        "hourglass",
+        "hourglass not done",
+        "minute",
+        "sand",
+        "stopwatch",
+        "time",
+        "timer"
       ]
     },
-    label: 'Code File',
+    label: "Hourglass",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-file-contract',
+    class: "fa-hourglass-end",
     search: {
       terms: [
-        'agreement',
-        'binding',
-        'document',
-        'legal',
-        'signature'
+        "hour",
+        "hourglass done",
+        "minute",
+        "sand",
+        "stopwatch",
+        "time",
+        "timer"
       ]
     },
-    label: 'File Contract',
+    label: "Hourglass End",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-csv',
+    class: "fa-hourglass-half",
     search: {
       terms: [
-        'document',
-        'excel',
-        'numbers',
-        'spreadsheets',
-        'table'
+        "hour",
+        "minute",
+        "sand",
+        "stopwatch",
+        "time"
       ]
     },
-    label: 'File CSV',
+    label: "Hourglass Half",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-file-download',
+    class: "fa-hourglass-start",
     search: {
       terms: [
-        'document',
-        'export',
-        'save'
+        "hour",
+        "minute",
+        "sand",
+        "stopwatch",
+        "time"
       ]
     },
-    label: 'File Download',
+    label: "Hourglass Start",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-excel',
+    class: "fa-house",
     search: {
       terms: [
-        'csv',
-        'document',
-        'numbers',
-        'spreadsheets',
-        'table'
+        "abode",
+        "building",
+        "home",
+        "house",
+        "main",
+        "residence"
       ]
     },
-    label: 'Excel File',
+    label: "House",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-export',
+    class: "fa-house-chimney",
     search: {
       terms: [
-        'download',
-        'save'
+        "abode",
+        "building",
+        "chimney",
+        "house",
+        "main",
+        "residence",
+        "smokestack"
       ]
     },
-    label: 'File Export',
+    label: "House Chimney",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-image',
+    class: "fa-house-chimney-crack",
     search: {
       terms: [
-        'document',
-        'image',
-        'jpg',
-        'photo',
-        'png'
+        "building",
+        "devastation",
+        "disaster",
+        "earthquake",
+        "home",
+        "insurance"
       ]
     },
-    label: 'Image File',
+    label: "House Chimney Crack",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-import',
+    class: "fa-house-chimney-medical",
     search: {
       terms: [
-        'copy',
-        'document',
-        'send',
-        'upload'
+        "covid-19",
+        "doctor",
+        "general practitioner",
+        "hospital",
+        "infirmary",
+        "medicine",
+        "office",
+        "outpatient"
       ]
     },
-    label: 'File Import',
+    label: "House Chimney Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-invoice',
+    class: "fa-house-chimney-user",
     search: {
       terms: [
-        'account',
-        'bill',
-        'charge',
-        'document',
-        'payment',
-        'receipt'
+        "covid-19",
+        "home",
+        "isolation",
+        "quarantine"
       ]
     },
-    label: 'File Invoice',
+    label: "House Chimney User",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-invoice-dollar',
+    class: "fa-house-chimney-window",
     search: {
       terms: [
-        '$',
-        'account',
-        'bill',
-        'charge',
-        'document',
-        'dollar-sign',
-        'money',
-        'payment',
-        'receipt',
-        'usd'
+        "abode",
+        "building",
+        "family",
+        "home",
+        "residence"
       ]
     },
-    label: 'File Invoice with US Dollar',
+    label: "House Chimney Window",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-medical',
+    class: "fa-house-circle-check",
     search: {
       terms: [
-        'document',
-        'health',
-        'history',
-        'prescription',
-        'record'
+        "abode",
+        "home",
+        "house",
+        "not affected",
+        "ok",
+        "okay"
       ]
     },
-    label: 'Medical File',
+    label: "House Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-medical-alt',
+    class: "fa-house-circle-exclamation",
     search: {
       terms: [
-        'document',
-        'health',
-        'history',
-        'prescription',
-        'record'
+        "abode",
+        "affected",
+        "home",
+        "house"
       ]
     },
-    label: 'Alternate Medical File',
+    label: "House Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-pdf',
+    class: "fa-house-circle-xmark",
     search: {
       terms: [
-        'acrobat',
-        'document',
-        'preview',
-        'save'
+        "abode",
+        "destroy",
+        "home",
+        "house"
       ]
     },
-    label: 'PDF File',
+    label: "House Circle Xmark",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-powerpoint',
+    class: "fa-house-crack",
     search: {
       terms: [
-        'display',
-        'document',
-        'keynote',
-        'presentation'
+        "building",
+        "devastation",
+        "disaster",
+        "earthquake",
+        "home",
+        "insurance"
       ]
     },
-    label: 'Powerpoint File',
+    label: "House Crack",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-prescription',
+    class: "fa-house-fire",
     search: {
       terms: [
-        'document',
-        'drugs',
-        'medical',
-        'medicine',
-        'rx'
+        "burn",
+        "emergency",
+        "home"
       ]
     },
-    label: 'File Prescription',
+    label: "House Fire",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-signature',
+    class: "fa-house-flag",
     search: {
       terms: [
-        'John Hancock',
-        'contract',
-        'document',
-        'name'
+        "camp",
+        "home"
       ]
     },
-    label: 'File Signature',
+    label: "House Flag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-upload',
+    class: "fa-house-flood-water",
     search: {
       terms: [
-        'document',
-        'import',
-        'page',
-        'save'
+        "damage",
+        "flood",
+        "water"
       ]
     },
-    label: 'File Upload',
+    label: "House Flood Water",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-video',
+    class: "fa-house-flood-water-circle-arrow-right",
     search: {
       terms: [
-        'document',
-        'm4v',
-        'movie',
-        'mp4',
-        'play'
+        "damage",
+        "flood",
+        "water"
       ]
     },
-    label: 'Video File',
+    label: "House Flood Water Circle Arrow Right",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-file-word',
+    class: "fa-house-laptop",
     search: {
       terms: [
-        'document',
-        'edit',
-        'page',
-        'text',
-        'writing'
+        "computer",
+        "covid-19",
+        "device",
+        "office",
+        "remote",
+        "work from home"
       ]
     },
-    label: 'Word File',
+    label: "House Laptop",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-fill',
+    class: "fa-house-lock",
     search: {
       terms: [
-        'bucket',
-        'color',
-        'paint',
-        'paint bucket'
+        "closed",
+        "home",
+        "house",
+        "lockdown",
+        "quarantine"
       ]
     },
-    label: 'Fill',
+    label: "House Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fill-drip',
+    class: "fa-house-medical",
     search: {
       terms: [
-        'bucket',
-        'color',
-        'drop',
-        'paint',
-        'paint bucket',
-        'spill'
+        "covid-19",
+        "doctor",
+        "facility",
+        "general practitioner",
+        "health",
+        "hospital",
+        "infirmary",
+        "medicine",
+        "office",
+        "outpatient"
       ]
     },
-    label: 'Fill Drip',
+    label: "House Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-film',
+    class: "fa-house-medical-circle-check",
     search: {
       terms: [
-        'cinema',
-        'movie',
-        'strip',
-        'video'
+        "clinic",
+        "hospital",
+        "not affected",
+        "ok",
+        "okay"
       ]
     },
-    label: 'Film',
+    label: "House Medical Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-filter',
+    class: "fa-house-medical-circle-exclamation",
     search: {
       terms: [
-        'funnel',
-        'options',
-        'separate',
-        'sort'
+        "affected",
+        "clinic",
+        "hospital"
       ]
     },
-    label: 'Filter',
+    label: "House Medical Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fingerprint',
+    class: "fa-house-medical-circle-xmark",
     search: {
       terms: [
-        'human',
-        'id',
-        'identification',
-        'lock',
-        'smudge',
-        'touch',
-        'unique',
-        'unlock'
+        "clinic",
+        "destroy",
+        "hospital"
       ]
     },
-    label: 'Fingerprint',
+    label: "House Medical Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fire',
+    class: "fa-house-medical-flag",
     search: {
       terms: [
-        'burn',
-        'caliente',
-        'flame',
-        'heat',
-        'hot',
-        'popular'
+        "clinic",
+        "hospital",
+        "mash"
       ]
     },
-    label: 'fire',
+    label: "House Medical Flag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fire-alt',
+    class: "fa-house-signal",
     search: {
       terms: [
-        'burn',
-        'caliente',
-        'flame',
-        'heat',
-        'hot',
-        'popular'
+        "abode",
+        "building",
+        "connect",
+        "family",
+        "home",
+        "residence",
+        "smart home",
+        "wifi"
       ]
     },
-    label: 'Alternate Fire',
+    label: "House Signal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fire-extinguisher',
+    class: "fa-house-tsunami",
     search: {
       terms: [
-        'burn',
-        'caliente',
-        'fire fighter',
-        'flame',
-        'heat',
-        'hot',
-        'rescue'
+        "damage",
+        "flood",
+        "tidal wave",
+        "wave"
       ]
     },
-    label: 'fire-extinguisher',
+    label: "House Tsunami",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-firefox',
+    class: "fa-house-user",
     search: {
       terms: [
-        'browser'
+        "house"
       ]
     },
-    label: 'Firefox',
+    label: "House User",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-firefox-browser',
+    class: "fa-houzz",
     search: {
-      terms: [
-        'browser'
-      ]
+      terms: []
     },
-    label: 'Firefox Browser',
+    label: "Houzz",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-first-aid',
+    class: "fa-hryvnia-sign",
     search: {
       terms: [
-        'emergency',
-        'emt',
-        'health',
-        'medical',
-        'rescue'
+        "Hryvnia Sign",
+        "currency"
       ]
     },
-    label: 'First Aid',
+    label: "Hryvnia Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-first-order',
+    class: "fa-html5",
     search: {
       terms: []
     },
-    label: 'First Order',
+    label: "HTML 5 Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-first-order-alt',
+    class: "fa-hubspot",
     search: {
       terms: []
     },
-    label: 'Alternate First Order',
+    label: "HubSpot",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-firstdraft',
+    class: "fa-hurricane",
     search: {
-      terms: []
+      terms: [
+        "coriolis effect",
+        "eye",
+        "storm",
+        "tropical cyclone",
+        "typhoon"
+      ]
     },
-    label: 'firstdraft',
+    label: "Hurricane",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-fish',
+    class: "fa-i",
     search: {
       terms: [
-        'fauna',
-        'gold',
-        'seafood',
-        'swimming'
+        "Latin Capital Letter I",
+        "Latin Small Letter I",
+        "letter"
       ]
     },
-    label: 'Fish',
+    label: "I",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-fist-raised',
+    class: "fa-i-cursor",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'hand',
-        'ki',
-        'monk',
-        'resist',
-        'strength',
-        'unarmed combat'
+        "editing",
+        "i-beam",
+        "type",
+        "writing"
       ]
     },
-    label: 'Raised Fist',
+    label: "I Cursor",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-flag',
+    class: "fa-ice-cream",
     search: {
       terms: [
-        'country',
-        'notice',
-        'notification',
-        'notify',
-        'pole',
-        'report',
-        'symbol'
+        "chocolate",
+        "cone",
+        "cream",
+        "dessert",
+        "frozen",
+        "ice",
+        "ice cream",
+        "scoop",
+        "sorbet",
+        "sweet",
+        "vanilla",
+        "yogurt"
       ]
     },
-    label: 'flag',
+    label: "Ice Cream",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-flag-checkered',
+    class: "fa-icicles",
     search: {
       terms: [
-        'notice',
-        'notification',
-        'notify',
-        'pole',
-        'racing',
-        'report',
-        'symbol'
+        "cold",
+        "frozen",
+        "hanging",
+        "ice",
+        "seasonal",
+        "sharp"
       ]
     },
-    label: 'flag-checkered',
+    label: "Icicles",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-flag-usa',
+    class: "fa-icons",
     search: {
       terms: [
-        'betsy ross',
-        'country',
-        'old glory',
-        'stars',
-        'stripes',
-        'symbol'
+        "bolt",
+        "emoji",
+        "heart",
+        "image",
+        "music",
+        "photo",
+        "symbols"
       ]
     },
-    label: 'United States of America Flag',
+    label: "Icons",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-flask',
+    class: "fa-id-badge",
     search: {
       terms: [
-        'beaker',
-        'experimental',
-        'labs',
-        'science'
+        "address",
+        "contact",
+        "identification",
+        "license",
+        "profile"
       ]
     },
-    label: 'Flask',
+    label: "Id Badge",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-flickr',
+    class: "fa-id-card",
     search: {
-      terms: []
+      terms: [
+        "contact",
+        "demographics",
+        "document",
+        "identification",
+        "issued",
+        "profile",
+        "registration"
+      ]
+    },
+    label: "Id Card",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-id-card-clip",
+    search: {
+      terms: [
+        "contact",
+        "demographics",
+        "document",
+        "identification",
+        "issued",
+        "profile"
+      ]
     },
-    label: 'Flickr',
+    label: "Id Card Clip",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-flipboard',
+    class: "fa-ideal",
     search: {
       terms: []
     },
-    label: 'Flipboard',
+    label: "iDeal",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-flushed',
+    class: "fa-igloo",
     search: {
       terms: [
-        'embarrassed',
-        'emoticon',
-        'face'
+        "dome",
+        "dwelling",
+        "eskimo",
+        "home",
+        "house",
+        "ice",
+        "snow"
       ]
     },
-    label: 'Flushed Face',
+    label: "Igloo",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-fly',
+    class: "fa-image",
     search: {
-      terms: []
+      terms: [
+        "album",
+        "landscape",
+        "photo",
+        "picture"
+      ]
     },
-    label: 'Fly',
+    label: "Image",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-folder',
+    class: "fa-image-portrait",
     search: {
       terms: [
-        'archive',
-        'directory',
-        'document',
-        'file'
+        "id",
+        "image",
+        "photo",
+        "picture",
+        "selfie"
       ]
     },
-    label: 'Folder',
+    label: "Image Portrait",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-folder-minus',
+    class: "fa-images",
     search: {
       terms: [
-        'archive',
-        'delete',
-        'directory',
-        'document',
-        'file',
-        'negative',
-        'remove'
+        "album",
+        "landscape",
+        "photo",
+        "picture"
       ]
+    },
+    label: "Images",
+    free: [
+      "regular",
+      "solid"
+    ]
+  },
+  {
+    class: "fa-imdb",
+    search: {
+      terms: []
     },
-    label: 'Folder Minus',
+    label: "IMDB",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-folder-open',
+    class: "fa-inbox",
     search: {
       terms: [
-        'archive',
-        'directory',
-        'document',
-        'empty',
-        'file',
-        'new'
+        "archive",
+        "desk",
+        "email",
+        "mail",
+        "message"
       ]
     },
-    label: 'Folder Open',
+    label: "Inbox",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-folder-plus',
+    class: "fa-indent",
     search: {
       terms: [
-        'add',
-        'archive',
-        'create',
-        'directory',
-        'document',
-        'file',
-        'new',
-        'positive'
+        "align",
+        "justify",
+        "paragraph",
+        "tab"
       ]
     },
-    label: 'Folder Plus',
+    label: "Indent",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-font',
+    class: "fa-indian-rupee-sign",
     search: {
       terms: [
-        'alphabet',
-        'glyph',
-        'text',
-        'type',
-        'typeface'
+        "Indian Rupee Sign",
+        "currency"
       ]
     },
-    label: 'font',
+    label: "Indian Rupee Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-font-awesome',
+    class: "fa-industry",
     search: {
       terms: [
-        'meanpath'
+        "building",
+        "factory",
+        "industrial",
+        "manufacturing",
+        "mill",
+        "warehouse"
       ]
     },
-    label: 'Font Awesome',
+    label: "Industry",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-font-awesome-alt',
+    class: "fa-infinity",
     search: {
-      terms: []
+      terms: [
+        "Infinity",
+        "eternity",
+        "forever",
+        "infinity",
+        "math",
+        "unbounded",
+        "universal"
+      ]
     },
-    label: 'Alternate Font Awesome',
+    label: "Infinity",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-font-awesome-flag',
+    class: "fa-info",
     search: {
-      terms: []
+      terms: [
+        "details",
+        "help",
+        "information",
+        "more",
+        "support"
+      ]
     },
-    label: 'Font Awesome Flag',
+    label: "Info",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-fonticons',
+    class: "fa-instagram",
     search: {
       terms: []
     },
-    label: 'Fonticons',
+    label: "Instagram",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-fonticons-fi',
+    class: "fa-instalod",
     search: {
       terms: []
     },
-    label: 'Fonticons Fi',
+    label: "InstaLOD",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-football-ball',
+    class: "fa-intercom",
     search: {
       terms: [
-        'ball',
-        'fall',
-        'nfl',
-        'pigskin',
-        'seasonal'
+        "app",
+        "customer",
+        "messenger"
       ]
     },
-    label: 'Football Ball',
+    label: "Intercom",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-fort-awesome',
+    class: "fa-internet-explorer",
     search: {
       terms: [
-        'castle'
+        "browser",
+        "ie"
       ]
     },
-    label: 'Fort Awesome',
+    label: "Internet-explorer",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-fort-awesome-alt',
+    class: "fa-invision",
     search: {
       terms: [
-        'castle'
+        "app",
+        "design",
+        "interface"
       ]
     },
-    label: 'Alternate Fort Awesome',
+    label: "InVision",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-forumbee',
+    class: "fa-ioxhost",
     search: {
       terms: []
     },
-    label: 'Forumbee',
+    label: "ioxhost",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-forward',
+    class: "fa-italic",
     search: {
       terms: [
-        'forward',
-        'next',
-        'skip'
+        "edit",
+        "emphasis",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'forward',
+    label: "Italic",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-foursquare',
+    class: "fa-itch-io",
     search: {
       terms: []
     },
-    label: 'Foursquare',
+    label: "itch.io",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-free-code-camp',
+    class: "fa-itunes",
     search: {
       terms: []
     },
-    label: 'freeCodeCamp',
+    label: "iTunes",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-freebsd',
+    class: "fa-itunes-note",
     search: {
       terms: []
     },
-    label: 'FreeBSD',
+    label: "Itunes Note",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-frog',
+    class: "fa-j",
     search: {
       terms: [
-        'amphibian',
-        'bullfrog',
-        'fauna',
-        'hop',
-        'kermit',
-        'kiss',
-        'prince',
-        'ribbit',
-        'toad',
-        'wart'
+        "Latin Capital Letter J",
+        "Latin Small Letter J",
+        "letter"
       ]
     },
-    label: 'Frog',
+    label: "J",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-frown',
+    class: "fa-jar",
     search: {
       terms: [
-        'disapprove',
-        'emoticon',
-        'face',
-        'rating',
-        'sad'
+        "jam",
+        "jelly",
+        "storage"
       ]
     },
-    label: 'Frowning Face',
+    label: "Jar",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-frown-open',
+    class: "fa-jar-wheat",
     search: {
       terms: [
-        'disapprove',
-        'emoticon',
-        'face',
-        'rating',
-        'sad'
+        "flour",
+        "storage"
       ]
     },
-    label: 'Frowning Face With Open Mouth',
+    label: "Jar Wheat",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-fulcrum',
+    class: "fa-java",
     search: {
       terms: []
-    },
-    label: 'Fulcrum',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-funnel-dollar',
-    search: {
-      terms: [
-        'filter',
-        'money',
-        'options',
-        'separate',
-        'sort'
-      ]
     },
-    label: 'Funnel Dollar',
+    label: "Java",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-futbol',
+    class: "fa-jedi",
     search: {
       terms: [
-        'ball',
-        'football',
-        'mls',
-        'soccer'
+        "crest",
+        "force",
+        "sith",
+        "skywalker",
+        "star wars",
+        "yoda"
       ]
     },
-    label: 'Futbol',
+    label: "Jedi",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-galactic-republic',
+    class: "fa-jedi-order",
     search: {
       terms: [
-        'politics',
-        'star wars'
+        "star wars"
       ]
     },
-    label: 'Galactic Republic',
+    label: "Jedi Order",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-galactic-senate',
+    class: "fa-jenkins",
     search: {
-      terms: [
-        'star wars'
-      ]
+      terms: []
     },
-    label: 'Galactic Senate',
+    label: "Jenkis",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gamepad',
+    class: "fa-jet-fighter",
     search: {
       terms: [
-        'arcade',
-        'controller',
-        'd-pad',
-        'joystick',
-        'video',
-        'video game'
+        "airforce",
+        "airplane",
+        "airport",
+        "fast",
+        "fly",
+        "goose",
+        "marines",
+        "maverick",
+        "military",
+        "plane",
+        "quick",
+        "top gun",
+        "transportation",
+        "travel"
       ]
     },
-    label: 'Gamepad',
+    label: "Jet Fighter",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gas-pump',
+    class: "fa-jet-fighter-up",
     search: {
       terms: [
-        'car',
-        'fuel',
-        'gasoline',
-        'petrol'
+        "airforce",
+        "airplane",
+        "airport",
+        "fast",
+        "fly",
+        "goose",
+        "marines",
+        "maverick",
+        "military",
+        "plane",
+        "quick",
+        "top gun",
+        "transportation",
+        "travel"
       ]
     },
-    label: 'Gas Pump',
+    label: "Jet Fighter Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gavel',
+    class: "fa-jira",
     search: {
       terms: [
-        'hammer',
-        'judge',
-        'law',
-        'lawyer',
-        'opinion'
+        "atlassian"
       ]
     },
-    label: 'Gavel',
+    label: "Jira",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-gem',
+    class: "fa-joget",
     search: {
-      terms: [
-        'diamond',
-        'jewelry',
-        'sapphire',
-        'stone',
-        'treasure'
-      ]
+      terms: []
     },
-    label: 'Gem',
+    label: "Joget",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-genderless',
+    class: "fa-joint",
     search: {
       terms: [
-        'androgynous',
-        'asexual',
-        'sexless'
+        "blunt",
+        "cannabis",
+        "doobie",
+        "drugs",
+        "marijuana",
+        "roach",
+        "smoke",
+        "smoking",
+        "spliff"
       ]
     },
-    label: 'Genderless',
+    label: "Joint",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-get-pocket',
+    class: "fa-joomla",
     search: {
       terms: []
     },
-    label: 'Get Pocket',
+    label: "Joomla Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gg',
+    class: "fa-js",
     search: {
       terms: []
     },
-    label: 'GG Currency',
+    label: "JavaScript (JS)",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gg-circle',
+    class: "fa-jsfiddle",
     search: {
       terms: []
     },
-    label: 'GG Currency Circle',
+    label: "jsFiddle",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-ghost',
+    class: "fa-jug-detergent",
     search: {
       terms: [
-        'apparition',
-        'blinky',
-        'clyde',
-        'floating',
-        'halloween',
-        'holiday',
-        'inky',
-        'pinky',
-        'spirit'
+        "detergent",
+        "laundry",
+        "soap",
+        "wash"
       ]
     },
-    label: 'Ghost',
+    label: "Jug Detergent",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gift',
+    class: "fa-k",
     search: {
       terms: [
-        'christmas',
-        'generosity',
-        'giving',
-        'holiday',
-        'party',
-        'present',
-        'wrapped',
-        'xmas'
+        "Latin Capital Letter K",
+        "Latin Small Letter K",
+        "letter"
       ]
     },
-    label: 'gift',
+    label: "K",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gifts',
+    class: "fa-kaaba",
     search: {
       terms: [
-        'christmas',
-        'generosity',
-        'giving',
-        'holiday',
-        'party',
-        'present',
-        'wrapped',
-        'xmas'
+        "Muslim",
+        "building",
+        "cube",
+        "islam",
+        "kaaba",
+        "muslim",
+        "religion"
       ]
     },
-    label: 'Gifts',
+    label: "Kaaba",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-git',
+    class: "fa-kaggle",
     search: {
       terms: []
     },
-    label: 'Git',
+    label: "Kaggle",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-git-alt',
+    class: "fa-key",
     search: {
-      terms: []
+      terms: [
+        "key",
+        "lock",
+        "password",
+        "private",
+        "secret",
+        "unlock"
+      ]
     },
-    label: 'Git Alt',
+    label: "Key",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-git-square',
+    class: "fa-keybase",
     search: {
       terms: []
     },
-    label: 'Git Square',
+    label: "Keybase",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-github',
+    class: "fa-keyboard",
     search: {
       terms: [
-        'octocat'
+        "accessory",
+        "computer",
+        "edit",
+        "input",
+        "keyboard",
+        "text",
+        "type",
+        "write"
       ]
     },
-    label: 'GitHub',
+    label: "Keyboard",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-github-alt',
+    class: "fa-keycdn",
     search: {
-      terms: [
-        'octocat'
-      ]
+      terms: []
     },
-    label: 'Alternate GitHub',
+    label: "KeyCDN",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-github-square',
+    class: "fa-khanda",
     search: {
       terms: [
-        'octocat'
+        "Adi Shakti",
+        "chakkar",
+        "sikh",
+        "sikhism",
+        "sword"
       ]
     },
-    label: 'GitHub Square',
+    label: "Khanda",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-gitkraken',
+    class: "fa-kickstarter",
     search: {
       terms: []
     },
-    label: 'GitKraken',
+    label: "Kickstarter",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gitlab',
+    class: "fa-kickstarter-k",
     search: {
-      terms: [
-        'Axosoft'
-      ]
+      terms: []
     },
-    label: 'GitLab',
+    label: "Kickstarter K",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gitter',
+    class: "fa-kip-sign",
     search: {
-      terms: []
+      terms: [
+        "Kip Sign",
+        "currency"
+      ]
     },
-    label: 'Gitter',
+    label: "Kip Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-glass-cheers',
+    class: "fa-kit-medical",
     search: {
       terms: [
-        'alcohol',
-        'bar',
-        'beverage',
-        'celebration',
-        'champagne',
-        'clink',
-        'drink',
-        'holiday',
-        'new year\'s eve',
-        'party',
-        'toast'
+        "emergency",
+        "emt",
+        "health",
+        "medical",
+        "rescue"
       ]
     },
-    label: 'Glass Cheers',
+    label: "Kit Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-glass-martini',
+    class: "fa-kitchen-set",
     search: {
       terms: [
-        'alcohol',
-        'bar',
-        'beverage',
-        'drink',
-        'liquor'
+        "chef",
+        "cook",
+        "cup",
+        "kitchen",
+        "pan",
+        "pot",
+        "skillet"
       ]
     },
-    label: 'Martini Glass',
+    label: "Kitchen Set",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-glass-martini-alt',
+    class: "fa-kiwi-bird",
     search: {
       terms: [
-        'alcohol',
-        'bar',
-        'beverage',
-        'drink',
-        'liquor'
+        "bird",
+        "fauna",
+        "new zealand"
       ]
     },
-    label: 'Alternate Glass Martini',
+    label: "Kiwi Bird",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-glass-whiskey',
+    class: "fa-korvue",
     search: {
-      terms: [
-        'alcohol',
-        'bar',
-        'beverage',
-        'bourbon',
-        'drink',
-        'liquor',
-        'neat',
-        'rye',
-        'scotch',
-        'whisky'
-      ]
+      terms: []
     },
-    label: 'Glass Whiskey',
+    label: "KORVUE",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-glasses',
+    class: "fa-l",
     search: {
       terms: [
-        'hipster',
-        'nerd',
-        'reading',
-        'sight',
-        'spectacles',
-        'vision'
+        "Latin Capital Letter L",
+        "Latin Small Letter L",
+        "letter"
       ]
     },
-    label: 'Glasses',
+    label: "L",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-glide',
+    class: "fa-land-mine-on",
     search: {
-      terms: []
+      terms: [
+        "bomb",
+        "danger",
+        "explosion",
+        "war"
+      ]
     },
-    label: 'Glide',
+    label: "Land Mine On",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-glide-g',
+    class: "fa-landmark",
     search: {
-      terms: []
+      terms: [
+        "building",
+        "classical",
+        "historic",
+        "memorable",
+        "monument",
+        "museum",
+        "politics"
+      ]
     },
-    label: 'Glide G',
+    label: "Landmark",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-globe',
+    class: "fa-landmark-dome",
     search: {
       terms: [
-        'all',
-        'coordinates',
-        'country',
-        'earth',
-        'global',
-        'gps',
-        'language',
-        'localize',
-        'location',
-        'map',
-        'online',
-        'place',
-        'planet',
-        'translate',
-        'travel',
-        'world'
+        "building",
+        "historic",
+        "memorable",
+        "monument",
+        "politics"
       ]
     },
-    label: 'Globe',
+    label: "Landmark Dome",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-globe-africa',
+    class: "fa-landmark-flag",
     search: {
       terms: [
-        'all',
-        'country',
-        'earth',
-        'global',
-        'gps',
-        'language',
-        'localize',
-        'location',
-        'map',
-        'online',
-        'place',
-        'planet',
-        'translate',
-        'travel',
-        'world'
+        "capitol",
+        "flag",
+        "landmark",
+        "memorial"
       ]
     },
-    label: 'Globe with Africa shown',
+    label: "Landmark Flag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-globe-americas',
+    class: "fa-language",
     search: {
       terms: [
-        'all',
-        'country',
-        'earth',
-        'global',
-        'gps',
-        'language',
-        'localize',
-        'location',
-        'map',
-        'online',
-        'place',
-        'planet',
-        'translate',
-        'travel',
-        'world'
+        "dialect",
+        "idiom",
+        "localize",
+        "speech",
+        "translate",
+        "vernacular"
       ]
     },
-    label: 'Globe with Americas shown',
+    label: "Language",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-globe-asia',
+    class: "fa-laptop",
     search: {
       terms: [
-        'all',
-        'country',
-        'earth',
-        'global',
-        'gps',
-        'language',
-        'localize',
-        'location',
-        'map',
-        'online',
-        'place',
-        'planet',
-        'translate',
-        'travel',
-        'world'
+        "computer",
+        "cpu",
+        "dell",
+        "demo",
+        "device",
+        "laptop",
+        "mac",
+        "macbook",
+        "machine",
+        "pc",
+        "personal"
       ]
     },
-    label: 'Globe with Asia shown',
+    label: "Laptop",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-globe-europe',
+    class: "fa-laptop-code",
     search: {
       terms: [
-        'all',
-        'country',
-        'earth',
-        'global',
-        'gps',
-        'language',
-        'localize',
-        'location',
-        'map',
-        'online',
-        'place',
-        'planet',
-        'translate',
-        'travel',
-        'world'
+        "computer",
+        "cpu",
+        "dell",
+        "demo",
+        "develop",
+        "device",
+        "mac",
+        "macbook",
+        "machine",
+        "pc"
       ]
     },
-    label: 'Globe with Europe shown',
+    label: "Laptop Code",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gofore',
+    class: "fa-laptop-file",
     search: {
-      terms: []
+      terms: [
+        "computer",
+        "education",
+        "laptop",
+        "learning",
+        "remote work"
+      ]
     },
-    label: 'Gofore',
+    label: "Laptop File",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-golf-ball',
+    class: "fa-laptop-medical",
     search: {
       terms: [
-        'caddy',
-        'eagle',
-        'putt',
-        'tee'
+        "computer",
+        "device",
+        "ehr",
+        "electronic health records",
+        "history"
       ]
     },
-    label: 'Golf Ball',
+    label: "Laptop Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-goodreads',
+    class: "fa-laravel",
     search: {
       terms: []
     },
-    label: 'Goodreads',
+    label: "Laravel",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-goodreads-g',
+    class: "fa-lari-sign",
     search: {
-      terms: []
+      terms: [
+        "Lari Sign",
+        "currency"
+      ]
     },
-    label: 'Goodreads G',
+    label: "Lari Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-google',
+    class: "fa-lastfm",
     search: {
       terms: []
     },
-    label: 'Google Logo',
+    label: "last.fm",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-google-drive',
+    class: "fa-layer-group",
     search: {
-      terms: []
+      terms: [
+        "arrange",
+        "develop",
+        "layers",
+        "map",
+        "stack"
+      ]
     },
-    label: 'Google Drive',
+    label: "Layer Group",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-google-pay',
+    class: "fa-leaf",
     search: {
-      terms: []
+      terms: [
+        "eco",
+        "flora",
+        "nature",
+        "plant",
+        "vegan"
+      ]
     },
-    label: 'Google Pay',
+    label: "Leaf",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-google-play',
+    class: "fa-leanpub",
     search: {
       terms: []
     },
-    label: 'Google Play',
+    label: "Leanpub",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-google-plus',
+    class: "fa-left-long",
     search: {
       terms: [
-        'google-plus-circle',
-        'google-plus-official'
+        "back",
+        "long-arrow-left",
+        "previous"
       ]
     },
-    label: 'Google Plus',
+    label: "Left Long",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-google-plus-g',
+    class: "fa-left-right",
     search: {
       terms: [
-        'google-plus',
-        'social network'
+        "arrow",
+        "arrows-h",
+        "expand",
+        "horizontal",
+        "landscape",
+        "left-right arrow",
+        "resize",
+        "wide"
       ]
     },
-    label: 'Google Plus G',
+    label: "Left Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-google-plus-square',
+    class: "fa-lemon",
     search: {
       terms: [
-        'social network'
+        "citrus",
+        "fruit",
+        "lemon",
+        "lemonade",
+        "lime",
+        "tart"
       ]
     },
-    label: 'Google Plus Square',
+    label: "Lemon",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-google-wallet',
+    class: "fa-less",
     search: {
       terms: []
     },
-    label: 'Google Wallet',
+    label: "Less",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-gopuram',
+    class: "fa-less-than",
     search: {
       terms: [
-        'building',
-        'entrance',
-        'hinduism',
-        'temple',
-        'tower'
+        "Less-Than Sign",
+        "arithmetic",
+        "compare",
+        "math"
       ]
     },
-    label: 'Gopuram',
+    label: "Less Than",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-graduation-cap',
+    class: "fa-less-than-equal",
     search: {
       terms: [
-        'ceremony',
-        'college',
-        'graduate',
-        'learning',
-        'school',
-        'student'
+        "arithmetic",
+        "compare",
+        "math"
       ]
     },
-    label: 'Graduation Cap',
+    label: "Less Than Equal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gratipay',
+    class: "fa-life-ring",
     search: {
       terms: [
-        'favorite',
-        'heart',
-        'like',
-        'love'
+        "coast guard",
+        "help",
+        "overboard",
+        "save",
+        "support"
       ]
-    },
-    label: 'Gratipay (Gittip)',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-grav',
-    search: {
-      terms: []
     },
-    label: 'Grav',
+    label: "Life Ring",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-greater-than',
+    class: "fa-lightbulb",
     search: {
       terms: [
-        'arithmetic',
-        'compare',
-        'math'
+        "  comic",
+        "  electric",
+        "  idea",
+        "  innovation",
+        "  inspiration",
+        "  light",
+        "  light bulb",
+        " bulb",
+        "bulb",
+        "comic",
+        "electric",
+        "energy",
+        "idea",
+        "inspiration",
+        "mechanical"
       ]
     },
-    label: 'Greater Than',
+    label: "Lightbulb",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-greater-than-equal',
+    class: "fa-line",
     search: {
-      terms: [
-        'arithmetic',
-        'compare',
-        'math'
-      ]
+      terms: []
     },
-    label: 'Greater Than Equal To',
+    label: "Line",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-grimace',
+    class: "fa-lines-leaning",
     search: {
       terms: [
-        'cringe',
-        'emoticon',
-        'face',
-        'teeth'
+        "canted",
+        "domino",
+        "falling",
+        "resilience",
+        "resilient",
+        "tipped"
       ]
     },
-    label: 'Grimacing Face',
+    label: "Lines Leaning",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin',
+    class: "fa-link",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'laugh',
-        'smile'
+        "attach",
+        "attachment",
+        "chain",
+        "connect",
+        "lin",
+        "link"
       ]
     },
-    label: 'Grinning Face',
+    label: "Link",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-alt',
+    class: "fa-link-slash",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'laugh',
-        'smile'
+        "attachment",
+        "chain",
+        "chain-broken",
+        "remove"
       ]
     },
-    label: 'Alternate Grinning Face',
+    label: "Link Slash",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-beam',
+    class: "fa-linkedin",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'laugh',
-        'smile'
+        "linkedin-square"
       ]
     },
-    label: 'Grinning Face With Smiling Eyes',
+    label: "LinkedIn",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-grin-beam-sweat',
+    class: "fa-linkedin-in",
     search: {
       terms: [
-        'embarass',
-        'emoticon',
-        'face',
-        'smile'
+        "linkedin"
       ]
     },
-    label: 'Grinning Face With Sweat',
+    label: "LinkedIn In",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-grin-hearts',
+    class: "fa-linode",
     search: {
-      terms: [
-        'emoticon',
-        'face',
-        'love',
-        'smile'
-      ]
+      terms: []
     },
-    label: 'Smiling Face With Heart-Eyes',
+    label: "Linode",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-grin-squint',
+    class: "fa-linux",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'laugh',
-        'smile'
+        "tux"
       ]
     },
-    label: 'Grinning Squinting Face',
+    label: "Linux",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-grin-squint-tears',
+    class: "fa-lira-sign",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'happy',
-        'smile'
+        "Lira Sign",
+        "currency"
       ]
     },
-    label: 'Rolling on the Floor Laughing',
+    label: "Lira Sign",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-stars',
+    class: "fa-list",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'star-struck'
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "ol",
+        "todo",
+        "ul"
       ]
     },
-    label: 'Star-Struck',
+    label: "List",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-tears',
+    class: "fa-list-check",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face'
+        "checklist",
+        "downloading",
+        "downloads",
+        "loading",
+        "progress",
+        "project management",
+        "settings",
+        "to do"
       ]
     },
-    label: 'Face With Tears of Joy',
+    label: "List Check",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-tongue',
+    class: "fa-list-ol",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face'
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "numbers",
+        "ol",
+        "todo",
+        "ul"
       ]
     },
-    label: 'Face With Tongue',
+    label: "List Ol",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-tongue-squint',
+    class: "fa-list-ul",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face'
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "ol",
+        "todo",
+        "ul"
       ]
     },
-    label: 'Squinting Face With Tongue',
+    label: "List Ul",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-tongue-wink',
+    class: "fa-litecoin-sign",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face'
+        "currency"
       ]
     },
-    label: 'Winking Face With Tongue',
+    label: "Litecoin Sign",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grin-wink',
+    class: "fa-location-arrow",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'flirt',
-        'laugh',
-        'smile'
+        "address",
+        "compass",
+        "coordinate",
+        "direction",
+        "gps",
+        "map",
+        "navigation",
+        "place"
       ]
     },
-    label: 'Grinning Winking Face',
+    label: "Location Arrow",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-grip-horizontal',
+    class: "fa-location-crosshairs",
     search: {
       terms: [
-        'affordance',
-        'drag',
-        'drop',
-        'grab',
-        'handle'
+        "address",
+        "coordinate",
+        "direction",
+        "gps",
+        "location",
+        "map",
+        "navigation",
+        "place",
+        "where"
       ]
     },
-    label: 'Grip Horizontal',
+    label: "Location Crosshairs",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-grip-lines',
+    class: "fa-location-dot",
     search: {
       terms: [
-        'affordance',
-        'drag',
-        'drop',
-        'grab',
-        'handle'
+        "address",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "navigation",
+        "paper",
+        "pin",
+        "place",
+        "point of interest",
+        "position",
+        "route",
+        "travel"
       ]
     },
-    label: 'Grip Lines',
+    label: "Location Dot",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-grip-lines-vertical',
+    class: "fa-location-pin",
     search: {
       terms: [
-        'affordance',
-        'drag',
-        'drop',
-        'grab',
-        'handle'
+        "address",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "navigation",
+        "paper",
+        "pin",
+        "place",
+        "point of interest",
+        "position",
+        "route",
+        "travel"
       ]
     },
-    label: 'Grip Lines Vertical',
+    label: "Location Pin",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-grip-vertical',
+    class: "fa-location-pin-lock",
     search: {
       terms: [
-        'affordance',
-        'drag',
-        'drop',
-        'grab',
-        'handle'
+        "closed",
+        "lockdown",
+        "map",
+        "quarantine"
       ]
-    },
-    label: 'Grip Vertical',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-gripfire',
-    search: {
-      terms: []
     },
-    label: 'Gripfire, Inc.',
+    label: "Location Pin Lock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-grunt',
+    class: "fa-lock",
     search: {
-      terms: []
+      terms: [
+        "admin",
+        "closed",
+        "lock",
+        "locked",
+        "open",
+        "password",
+        "private",
+        "protect",
+        "security"
+      ]
     },
-    label: 'Grunt',
+    label: "Lock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-guilded',
+    class: "fa-lock-open",
     search: {
-      terms: []
+      terms: [
+        "admin",
+        "lock",
+        "open",
+        "password",
+        "private",
+        "protect",
+        "security",
+        "unlock"
+      ]
     },
-    label: 'Guilded',
+    label: "Lock Open",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-guitar',
+    class: "fa-locust",
     search: {
       terms: [
-        'acoustic',
-        'instrument',
-        'music',
-        'rock',
-        'rock and roll',
-        'song',
-        'strings'
+        "horde",
+        "infestation",
+        "locust",
+        "plague",
+        "swarm"
       ]
     },
-    label: 'Guitar',
+    label: "Locust",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-gulp',
+    class: "fa-lungs",
     search: {
-      terms: []
+      terms: [
+        "air",
+        "breath",
+        "covid-19",
+        "exhalation",
+        "inhalation",
+        "lungs",
+        "organ",
+        "respiration",
+        "respiratory"
+      ]
     },
-    label: 'Gulp',
+    label: "Lungs",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-h-square',
+    class: "fa-lungs-virus",
     search: {
       terms: [
-        'directions',
-        'emergency',
-        'hospital',
-        'hotel',
-        'map'
+        "breath",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "infection",
+        "pandemic",
+        "respiratory",
+        "sick"
       ]
     },
-    label: 'H Square',
+    label: "Lungs Virus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hacker-news',
+    class: "fa-lyft",
     search: {
       terms: []
     },
-    label: 'Hacker News',
+    label: "lyft",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-hacker-news-square',
+    class: "fa-m",
     search: {
-      terms: []
+      terms: [
+        "Latin Capital Letter M",
+        "Latin Small Letter M",
+        "letter"
+      ]
     },
-    label: 'Hacker News Square',
+    label: "M",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-hackerrank',
+    class: "fa-magento",
     search: {
       terms: []
     },
-    label: 'Hackerrank',
+    label: "Magento",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-hamburger',
+    class: "fa-magnet",
     search: {
       terms: [
-        'bacon',
-        'beef',
-        'burger',
-        'burger king',
-        'cheeseburger',
-        'fast food',
-        'grill',
-        'ground beef',
-        'mcdonalds',
-        'sandwich'
+        "Attract",
+        "attraction",
+        "horseshoe",
+        "lodestone",
+        "magnet",
+        "magnetic",
+        "tool"
       ]
     },
-    label: 'Hamburger',
+    label: "Magnet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hammer',
+    class: "fa-magnifying-glass",
     search: {
       terms: [
-        'admin',
-        'fix',
-        'repair',
-        'settings',
-        'tool'
+        "bigger",
+        "enlarge",
+        "find",
+        "glass",
+        "magnify",
+        "magnifying",
+        "magnifying glass tilted left",
+        "preview",
+        "search",
+        "tool",
+        "zoom"
       ]
     },
-    label: 'Hammer',
+    label: "Magnifying Glass",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hamsa',
+    class: "fa-magnifying-glass-arrow-right",
     search: {
       terms: [
-        'amulet',
-        'christianity',
-        'islam',
-        'jewish',
-        'judaism',
-        'muslim',
-        'protection'
+        "find",
+        "next",
+        "search"
       ]
     },
-    label: 'Hamsa',
+    label: "Magnifying Glass Arrow Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-holding',
+    class: "fa-magnifying-glass-chart",
     search: {
       terms: [
-        'carry',
-        'lift'
+        " data",
+        " graph",
+        " intelligence",
+        "analysis",
+        "chart",
+        "market"
       ]
     },
-    label: 'Hand Holding',
+    label: "Magnifying Glass Chart",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-holding-heart',
+    class: "fa-magnifying-glass-dollar",
     search: {
       terms: [
-        'carry',
-        'charity',
-        'gift',
-        'lift',
-        'package'
+        "bigger",
+        "enlarge",
+        "find",
+        "magnify",
+        "money",
+        "preview",
+        "zoom"
       ]
     },
-    label: 'Hand Holding Heart',
+    label: "Magnifying Glass Dollar",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-holding-medical',
+    class: "fa-magnifying-glass-location",
     search: {
       terms: [
-        'care',
-        'covid-19',
-        'donate',
-        'help'
+        "bigger",
+        "enlarge",
+        "find",
+        "magnify",
+        "preview",
+        "zoom"
       ]
     },
-    label: 'Hand Holding Medical Cross',
+    label: "Magnifying Glass Location",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-holding-usd',
+    class: "fa-magnifying-glass-minus",
     search: {
       terms: [
-        '$',
-        'carry',
-        'dollar sign',
-        'donation',
-        'giving',
-        'lift',
-        'money',
-        'price'
+        "minify",
+        "negative",
+        "smaller",
+        "zoom",
+        "zoom out"
       ]
     },
-    label: 'Hand Holding US Dollar',
+    label: "Magnifying Glass Minus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-holding-water',
+    class: "fa-magnifying-glass-plus",
     search: {
       terms: [
-        'carry',
-        'covid-19',
-        'drought',
-        'grow',
-        'lift'
+        "bigger",
+        "enlarge",
+        "magnify",
+        "positive",
+        "zoom",
+        "zoom in"
       ]
     },
-    label: 'Hand Holding Water',
+    label: "Magnifying Glass Plus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-lizard',
+    class: "fa-mailchimp",
     search: {
-      terms: [
-        'game',
-        'roshambo'
-      ]
+      terms: []
     },
-    label: 'Lizard (Hand)',
+    label: "Mailchimp",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-hand-middle-finger',
+    class: "fa-manat-sign",
     search: {
       terms: [
-        'flip the bird',
-        'gesture',
-        'hate',
-        'rude'
+        "Manat Sign",
+        "currency"
       ]
     },
-    label: 'Hand with Middle Finger Raised',
+    label: "Manat Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-paper',
+    class: "fa-mandalorian",
     search: {
-      terms: [
-        'game',
-        'halt',
-        'roshambo',
-        'stop'
-      ]
+      terms: []
     },
-    label: 'Paper (Hand)',
+    label: "Mandalorian",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-hand-peace',
+    class: "fa-map",
     search: {
       terms: [
-        'rest',
-        'truce'
+        "address",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "navigation",
+        "paper",
+        "pin",
+        "place",
+        "point of interest",
+        "position",
+        "route",
+        "travel",
+        "world",
+        "world map"
       ]
     },
-    label: 'Peace (Hand)',
+    label: "Map",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-point-down',
+    class: "fa-map-location",
     search: {
       terms: [
-        'finger',
-        'hand-o-down',
-        'point'
+        "address",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "navigation",
+        "paper",
+        "pin",
+        "place",
+        "point of interest",
+        "position",
+        "route",
+        "travel"
       ]
     },
-    label: 'Hand Pointing Down',
+    label: "Map Location",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-point-left',
+    class: "fa-map-location-dot",
     search: {
       terms: [
-        'back',
-        'finger',
-        'hand-o-left',
-        'left',
-        'point',
-        'previous'
+        "address",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "navigation",
+        "paper",
+        "pin",
+        "place",
+        "point of interest",
+        "position",
+        "route",
+        "travel"
       ]
     },
-    label: 'Hand Pointing Left',
+    label: "Map Location Dot",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-point-right',
+    class: "fa-map-pin",
     search: {
       terms: [
-        'finger',
-        'forward',
-        'hand-o-right',
-        'next',
-        'point',
-        'right'
+        "address",
+        "agree",
+        "coordinates",
+        "destination",
+        "gps",
+        "localize",
+        "location",
+        "map",
+        "marker",
+        "navigation",
+        "pin",
+        "place",
+        "position",
+        "pushpin",
+        "round pushpin",
+        "travel"
       ]
     },
-    label: 'Hand Pointing Right',
+    label: "Map Pin",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-point-up',
+    class: "fa-markdown",
     search: {
-      terms: [
-        'finger',
-        'hand-o-up',
-        'point'
-      ]
+      terms: []
     },
-    label: 'Hand Pointing Up',
+    label: "Markdown",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-hand-pointer',
+    class: "fa-marker",
     search: {
       terms: [
-        'arrow',
-        'cursor',
-        'select'
+        "design",
+        "edit",
+        "sharpie",
+        "update",
+        "write"
       ]
     },
-    label: 'Pointer (Hand)',
+    label: "Marker",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-rock',
+    class: "fa-mars",
     search: {
       terms: [
-        'fist',
-        'game',
-        'roshambo'
+        "gender",
+        "male",
+        "male sign",
+        "man"
       ]
     },
-    label: 'Rock (Hand)',
+    label: "Mars",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-scissors',
+    class: "fa-mars-and-venus",
     search: {
       terms: [
-        'cut',
-        'game',
-        'roshambo'
+        "Male and Female Sign",
+        "female",
+        "gender",
+        "intersex",
+        "male",
+        "transgender"
       ]
     },
-    label: 'Scissors (Hand)',
+    label: "Mars And Venus",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-sparkles',
+    class: "fa-mars-and-venus-burst",
     search: {
       terms: [
-        'clean',
-        'covid-19',
-        'hygiene',
-        'magic',
-        'soap',
-        'wash'
+        "gender",
+        "violence"
       ]
     },
-    label: 'Hand Sparkles',
+    label: "Mars And Venus Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hand-spock',
+    class: "fa-mars-double",
     search: {
       terms: [
-        'live long',
-        'prosper',
-        'salute',
-        'star trek',
-        'vulcan'
+        "Doubled Male Sign",
+        "gay",
+        "gender",
+        "male",
+        "men"
       ]
     },
-    label: 'Spock (Hand)',
+    label: "Mars Double",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hands',
+    class: "fa-mars-stroke",
     search: {
       terms: [
-        'carry',
-        'hold',
-        'lift'
+        "Male with Stroke Sign",
+        "gender",
+        "transgender"
       ]
     },
-    label: 'Hands',
+    label: "Mars Stroke",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hands-helping',
+    class: "fa-mars-stroke-right",
     search: {
       terms: [
-        'aid',
-        'assistance',
-        'handshake',
-        'partnership',
-        'volunteering'
+        "Horizontal Male with Stroke Sign",
+        "gender"
       ]
     },
-    label: 'Helping Hands',
+    label: "Mars Stroke Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hands-wash',
+    class: "fa-mars-stroke-up",
     search: {
       terms: [
-        'covid-19',
-        'hygiene',
-        'soap',
-        'wash'
+        "Vertical Male with Stroke Sign",
+        "gender"
       ]
     },
-    label: 'Hands Wash',
+    label: "Mars Stroke Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-handshake',
+    class: "fa-martini-glass",
     search: {
       terms: [
-        'agreement',
-        'greeting',
-        'meeting',
-        'partnership'
+        "alcohol",
+        "bar",
+        "beverage",
+        "cocktail",
+        "cocktail glass",
+        "drink",
+        "glass",
+        "liquor"
       ]
     },
-    label: 'Handshake',
+    label: "Martini Glass",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-handshake-alt-slash',
+    class: "fa-martini-glass-citrus",
     search: {
       terms: [
-        'broken',
-        'covid-19',
-        'social distance'
+        "alcohol",
+        "beverage",
+        "drink",
+        "gin",
+        "glass",
+        "margarita",
+        "martini",
+        "vodka"
       ]
     },
-    label: 'Handshake Alternate Slash',
+    label: "Martini Glass Citrus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-handshake-slash',
+    class: "fa-martini-glass-empty",
     search: {
       terms: [
-        'broken',
-        'covid-19',
-        'social distance'
+        "alcohol",
+        "bar",
+        "beverage",
+        "drink",
+        "liquor"
       ]
     },
-    label: 'Handshake Slash',
+    label: "Martini Glass Empty",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hanukiah',
+    class: "fa-mask",
     search: {
       terms: [
-        'candle',
-        'hanukkah',
-        'jewish',
-        'judaism',
-        'light'
+        "carnivale",
+        "costume",
+        "disguise",
+        "halloween",
+        "secret",
+        "super hero"
       ]
     },
-    label: 'Hanukiah',
+    label: "Mask",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hard-hat',
+    class: "fa-mask-face",
     search: {
       terms: [
-        'construction',
-        'hardhat',
-        'helmet',
-        'safety'
+        "breath",
+        "coronavirus",
+        "covid-19",
+        "filter",
+        "flu",
+        "infection",
+        "pandemic",
+        "respirator",
+        "virus"
       ]
     },
-    label: 'Hard Hat',
+    label: "Mask Face",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hashtag',
+    class: "fa-mask-ventilator",
     search: {
       terms: [
-        'Twitter',
-        'instagram',
-        'pound',
-        'social media',
-        'tag'
+        "breath",
+        "gas",
+        "mask",
+        "oxygen",
+        "respirator",
+        "ventilator"
       ]
     },
-    label: 'Hashtag',
+    label: "Mask Ventilator",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hat-cowboy',
+    class: "fa-masks-theater",
     search: {
       terms: [
-        'buckaroo',
-        'horse',
-        'jackeroo',
-        'john b.',
-        'old west',
-        'pardner',
-        'ranch',
-        'rancher',
-        'rodeo',
-        'western',
-        'wrangler'
+        "art",
+        "comedy",
+        "mask",
+        "perform",
+        "performing",
+        "performing arts",
+        "theater",
+        "theatre",
+        "tragedy"
       ]
     },
-    label: 'Cowboy Hat',
+    label: "Masks Theater",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hat-cowboy-side',
+    class: "fa-mastodon",
     search: {
-      terms: [
-        'buckaroo',
-        'horse',
-        'jackeroo',
-        'john b.',
-        'old west',
-        'pardner',
-        'ranch',
-        'rancher',
-        'rodeo',
-        'western',
-        'wrangler'
-      ]
+      terms: []
     },
-    label: 'Cowboy Hat Side',
+    label: "Mastodon",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hat-wizard',
+    class: "fa-mattress-pillow",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'accessory',
-        'buckle',
-        'clothing',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'halloween',
-        'head',
-        'holiday',
-        'mage',
-        'magic',
-        'pointy',
-        'witch'
+        "air mattress",
+        "mattress",
+        "pillow",
+        "rest",
+        "sleep"
       ]
     },
-    label: 'Wizard\'s Hat',
+    label: "Mattress Pillow",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hdd',
+    class: "fa-maxcdn",
     search: {
-      terms: [
-        'cpu',
-        'hard drive',
-        'harddrive',
-        'machine',
-        'save',
-        'storage'
-      ]
+      terms: []
     },
-    label: 'HDD',
+    label: "MaxCDN",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-head-side-cough',
+    class: "fa-maximize",
     search: {
       terms: [
-        'cough',
-        'covid-19',
-        'germs',
-        'lungs',
-        'respiratory',
-        'sick'
+        "bigger",
+        "enlarge",
+        "fullscreen",
+        "move",
+        "resize"
       ]
     },
-    label: 'Head Side Cough',
+    label: "Maximize",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-head-side-cough-slash',
+    class: "fa-mdb",
     search: {
-      terms: [
-        'cough',
-        'covid-19',
-        'germs',
-        'lungs',
-        'respiratory',
-        'sick'
-      ]
+      terms: []
     },
-    label: 'Head Side-cough-slash',
+    label: "Material Design for Bootstrap",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-head-side-mask',
+    class: "fa-medal",
     search: {
       terms: [
-        'breath',
-        'covid-19',
-        'filter',
-        'respirator',
-        'virus'
+        "award",
+        "medal",
+        "ribbon",
+        "sports medal",
+        "star",
+        "trophy"
       ]
     },
-    label: 'Head Side Mask',
+    label: "Medal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-head-side-virus',
+    class: "fa-medapps",
     search: {
-      terms: [
-        'cold',
-        'covid-19',
-        'flu',
-        'sick'
-      ]
+      terms: []
     },
-    label: 'Head Side Virus',
+    label: "MedApps",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-heading',
+    class: "fa-medium",
     search: {
-      terms: [
-        'format',
-        'header',
-        'text',
-        'title'
-      ]
+      terms: []
     },
-    label: 'heading',
+    label: "Medium",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-headphones',
+    class: "fa-medrt",
     search: {
-      terms: [
-        'audio',
-        'listen',
-        'music',
-        'sound',
-        'speaker'
-      ]
+      terms: []
     },
-    label: 'headphones',
+    label: "MRT",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-headphones-alt',
+    class: "fa-meetup",
     search: {
-      terms: [
-        'audio',
-        'listen',
-        'music',
-        'sound',
-        'speaker'
-      ]
+      terms: []
     },
-    label: 'Alternate Headphones',
+    label: "Meetup",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-headset',
+    class: "fa-megaport",
     search: {
-      terms: [
-        'audio',
-        'gamer',
-        'gaming',
-        'listen',
-        'live chat',
-        'microphone',
-        'shot caller',
-        'sound',
-        'support',
-        'telemarketer'
-      ]
+      terms: []
     },
-    label: 'Headset',
+    label: "Megaport",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-heart',
+    class: "fa-memory",
     search: {
       terms: [
-        'favorite',
-        'like',
-        'love',
-        'relationship',
-        'valentine'
+        "DIMM",
+        "RAM",
+        "hardware",
+        "storage",
+        "technology"
       ]
     },
-    label: 'Heart',
+    label: "Memory",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-heart-broken',
+    class: "fa-mendeley",
     search: {
-      terms: [
-        'breakup',
-        'crushed',
-        'dislike',
-        'dumped',
-        'grief',
-        'love',
-        'lovesick',
-        'relationship',
-        'sad'
-      ]
+      terms: []
     },
-    label: 'Heart Broken',
+    label: "Mendeley",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-heartbeat',
+    class: "fa-menorah",
     search: {
       terms: [
-        'ekg',
-        'electrocardiogram',
-        'health',
-        'lifeline',
-        'vital signs'
+        "candle",
+        "hanukkah",
+        "jewish",
+        "judaism",
+        "light"
       ]
     },
-    label: 'Heartbeat',
+    label: "Menorah",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-helicopter',
+    class: "fa-mercury",
     search: {
       terms: [
-        'airwolf',
-        'apache',
-        'chopper',
-        'flight',
-        'fly',
-        'travel'
+        "Mercury",
+        "gender",
+        "hybrid",
+        "transgender"
       ]
     },
-    label: 'Helicopter',
+    label: "Mercury",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-highlighter',
+    class: "fa-message",
     search: {
       terms: [
-        'edit',
-        'marker',
-        'sharpie',
-        'update',
-        'write'
+        "bubble",
+        "chat",
+        "commenting",
+        "conversation",
+        "feedback",
+        "message",
+        "note",
+        "notification",
+        "sms",
+        "speech",
+        "texting"
       ]
     },
-    label: 'Highlighter',
+    label: "Message",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-hiking',
+    class: "fa-meta",
     search: {
-      terms: [
-        'activity',
-        'backpack',
-        'fall',
-        'fitness',
-        'outdoors',
-        'person',
-        'seasonal',
-        'walking'
-      ]
+      terms: []
     },
-    label: 'Hiking',
+    label: "Meta",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hippo',
+    class: "fa-meteor",
     search: {
       terms: [
-        'animal',
-        'fauna',
-        'hippopotamus',
-        'hungry',
-        'mammal'
+        "armageddon",
+        "asteroid",
+        "comet",
+        "shooting star",
+        "space"
       ]
     },
-    label: 'Hippo',
+    label: "Meteor",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hips',
+    class: "fa-microblog",
     search: {
       terms: []
     },
-    label: 'Hips',
+    label: "Micro.blog",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-hire-a-helper',
+    class: "fa-microchip",
     search: {
-      terms: []
+      terms: [
+        "cpu",
+        "hardware",
+        "processor",
+        "technology"
+      ]
     },
-    label: 'HireAHelper',
+    label: "Microchip",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-history',
+    class: "fa-microphone",
     search: {
       terms: [
-        'Rewind',
-        'clock',
-        'reverse',
-        'time',
-        'time machine'
+        "address",
+        "audio",
+        "information",
+        "podcast",
+        "public",
+        "record",
+        "sing",
+        "sound",
+        "voice"
       ]
     },
-    label: 'History',
+    label: "Microphone",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hive',
+    class: "fa-microphone-lines",
     search: {
-      terms: []
+      terms: [
+        "audio",
+        "mic",
+        "microphone",
+        "music",
+        "podcast",
+        "record",
+        "sing",
+        "sound",
+        "studio",
+        "studio microphone",
+        "voice"
+      ]
     },
-    label: 'Hive Blockchain Network',
+    label: "Microphone Lines",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-hockey-puck',
+    class: "fa-microphone-lines-slash",
     search: {
       terms: [
-        'ice',
-        'nhl',
-        'sport'
+        "audio",
+        "disable",
+        "mute",
+        "podcast",
+        "record",
+        "sing",
+        "sound",
+        "voice"
       ]
     },
-    label: 'Hockey Puck',
+    label: "Microphone Lines Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-holly-berry',
+    class: "fa-microphone-slash",
     search: {
       terms: [
-        'catwoman',
-        'christmas',
-        'decoration',
-        'flora',
-        'halle',
-        'holiday',
-        'ororo munroe',
-        'plant',
-        'storm',
-        'xmas'
+        "audio",
+        "disable",
+        "mute",
+        "podcast",
+        "record",
+        "sing",
+        "sound",
+        "voice"
       ]
     },
-    label: 'Holly Berry',
+    label: "Microphone Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-home',
+    class: "fa-microscope",
     search: {
       terms: [
-        'abode',
-        'building',
-        'house',
-        'main'
+        "covid-19",
+        "electron",
+        "lens",
+        "microscope",
+        "optics",
+        "science",
+        "shrink",
+        "testing",
+        "tool"
       ]
     },
-    label: 'home',
+    label: "Microscope",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hooli',
+    class: "fa-microsoft",
     search: {
       terms: []
     },
-    label: 'Hooli',
+    label: "Microsoft",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-hornbill',
+    class: "fa-mill-sign",
     search: {
-      terms: []
+      terms: [
+        "Mill Sign",
+        "currency"
+      ]
     },
-    label: 'Hornbill',
+    label: "Mill Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-horse',
+    class: "fa-minimize",
     search: {
       terms: [
-        'equus',
-        'fauna',
-        'mammmal',
-        'mare',
-        'neigh',
-        'pony'
+        "collapse",
+        "fullscreen",
+        "minimize",
+        "move",
+        "resize",
+        "shrink",
+        "smaller"
       ]
     },
-    label: 'Horse',
+    label: "Minimize",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-horse-head',
+    class: "fa-minus",
     search: {
       terms: [
-        'equus',
-        'fauna',
-        'mammmal',
-        'mare',
-        'neigh',
-        'pony'
+        "En Dash",
+        "Minus Sign",
+        "collapse",
+        "delete",
+        "hide",
+        "math",
+        "minify",
+        "minus",
+        "negative",
+        "remove",
+        "sign",
+        "trash",
+        "−"
       ]
     },
-    label: 'Horse Head',
+    label: "Minus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hospital',
+    class: "fa-mitten",
     search: {
       terms: [
-        'building',
-        'covid-19',
-        'emergency room',
-        'medical center'
+        "clothing",
+        "cold",
+        "glove",
+        "hands",
+        "knitted",
+        "seasonal",
+        "warmth"
       ]
     },
-    label: 'hospital',
+    label: "Mitten",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hospital-alt',
+    class: "fa-mix",
     search: {
-      terms: [
-        'building',
-        'covid-19',
-        'emergency room',
-        'medical center'
-      ]
+      terms: []
     },
-    label: 'Alternate Hospital',
+    label: "Mix",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hospital-symbol',
+    class: "fa-mixcloud",
     search: {
-      terms: [
-        'clinic',
-        'covid-19',
-        'emergency',
-        'map'
-      ]
+      terms: []
     },
-    label: 'Hospital Symbol',
+    label: "Mixcloud",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hospital-user',
+    class: "fa-mixer",
     search: {
-      terms: [
-        'covid-19',
-        'doctor',
-        'network',
-        'patient',
-        'primary care'
-      ]
+      terms: []
     },
-    label: 'Hospital with User',
+    label: "Mixer",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hot-tub',
+    class: "fa-mizuni",
     search: {
-      terms: [
-        'bath',
-        'jacuzzi',
-        'massage',
-        'sauna',
-        'spa'
-      ]
+      terms: []
     },
-    label: 'Hot Tub',
+    label: "Mizuni",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hotdog',
+    class: "fa-mobile",
     search: {
       terms: [
-        'bun',
-        'chili',
-        'frankfurt',
-        'frankfurter',
-        'kosher',
-        'polish',
-        'sandwich',
-        'sausage',
-        'vienna',
-        'weiner'
+        "android",
+        "call",
+        "cell",
+        "cell phone",
+        "device",
+        "mobile",
+        "mobile phone",
+        "number",
+        "phone",
+        "screen",
+        "telephone",
+        "text"
       ]
     },
-    label: 'Hot Dog',
+    label: "Mobile",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hotel',
+    class: "fa-mobile-button",
     search: {
       terms: [
-        'building',
-        'inn',
-        'lodging',
-        'motel',
-        'resort',
-        'travel'
+        "apple",
+        "call",
+        "cell phone",
+        "device",
+        "iphone",
+        "number",
+        "screen",
+        "telephone"
       ]
     },
-    label: 'Hotel',
+    label: "Mobile Button",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hotjar',
+    class: "fa-mobile-retro",
     search: {
-      terms: []
+      terms: [
+        "cellphone",
+        "cellular",
+        "phone"
+      ]
     },
-    label: 'Hotjar',
+    label: "Mobile Retro",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-hourglass',
+    class: "fa-mobile-screen",
     search: {
       terms: [
-        'hour',
-        'minute',
-        'sand',
-        'stopwatch',
-        'time'
+        "android",
+        "call",
+        "cell phone",
+        "device",
+        "number",
+        "screen",
+        "telephone",
+        "text"
       ]
     },
-    label: 'Hourglass',
+    label: "Mobile Screen",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-hourglass-end',
+    class: "fa-mobile-screen-button",
     search: {
       terms: [
-        'hour',
-        'minute',
-        'sand',
-        'stopwatch',
-        'time'
+        "apple",
+        "call",
+        "cell phone",
+        "device",
+        "iphone",
+        "number",
+        "screen",
+        "telephone"
       ]
     },
-    label: 'Hourglass End',
+    label: "Mobile Screen Button",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-hourglass-half',
+    class: "fa-modx",
     search: {
-      terms: [
-        'hour',
-        'minute',
-        'sand',
-        'stopwatch',
-        'time'
-      ]
+      terms: []
+    },
+    label: "MODX",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-monero",
+    search: {
+      terms: []
     },
-    label: 'Hourglass Half',
+    label: "Monero",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-hourglass-start',
+    class: "fa-money-bill",
     search: {
       terms: [
-        'hour',
-        'minute',
-        'sand',
-        'stopwatch',
-        'time'
+        "buy",
+        "cash",
+        "checkout",
+        "money",
+        "payment",
+        "price",
+        "purchase"
       ]
     },
-    label: 'Hourglass Start',
+    label: "Money Bill",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-house-damage',
+    class: "fa-money-bill-1",
     search: {
       terms: [
-        'building',
-        'devastation',
-        'disaster',
-        'home',
-        'insurance'
+        "buy",
+        "cash",
+        "checkout",
+        "money",
+        "payment",
+        "price",
+        "purchase"
       ]
     },
-    label: 'Damaged House',
+    label: "Money Bill 1",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-house-user',
+    class: "fa-money-bill-1-wave",
     search: {
       terms: [
-        'covid-19',
-        'home',
-        'isolation',
-        'quarantine'
+        "buy",
+        "cash",
+        "checkout",
+        "money",
+        "payment",
+        "price",
+        "purchase"
       ]
     },
-    label: 'House User',
+    label: "Money Bill 1 Wave",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-houzz',
+    class: "fa-money-bill-transfer",
     search: {
-      terms: []
+      terms: [
+        "bank",
+        "conversion",
+        "deposit",
+        "money",
+        "transfer",
+        "withdrawal"
+      ]
     },
-    label: 'Houzz',
+    label: "Money Bill Transfer",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-hryvnia',
+    class: "fa-money-bill-trend-up",
     search: {
       terms: [
-        'currency',
-        'money',
-        'ukraine',
-        'ukrainian'
+        "bank",
+        "bonds",
+        "inflation",
+        "market",
+        "stocks",
+        "trade"
       ]
     },
-    label: 'Hryvnia',
+    label: "Money Bill Trend Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-html5',
+    class: "fa-money-bill-wave",
     search: {
-      terms: []
+      terms: [
+        "buy",
+        "cash",
+        "checkout",
+        "money",
+        "payment",
+        "price",
+        "purchase"
+      ]
     },
-    label: 'HTML 5 Logo',
+    label: "Money Bill Wave",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-hubspot',
+    class: "fa-money-bill-wheat",
     search: {
-      terms: []
+      terms: [
+        "agribusiness",
+        "agriculture",
+        "farming",
+        "food",
+        "livelihood",
+        "subsidy"
+      ]
     },
-    label: 'HubSpot',
+    label: "Money Bill Wheat",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-i-cursor',
+    class: "fa-money-bills",
     search: {
       terms: [
-        'editing',
-        'i-beam',
-        'type',
-        'writing'
+        "atm",
+        "cash",
+        "money",
+        "moolah"
       ]
     },
-    label: 'I Beam Cursor',
+    label: "Money Bills",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ice-cream',
+    class: "fa-money-check",
     search: {
       terms: [
-        'chocolate',
-        'cone',
-        'dessert',
-        'frozen',
-        'scoop',
-        'sorbet',
-        'vanilla',
-        'yogurt'
+        "bank check",
+        "buy",
+        "checkout",
+        "cheque",
+        "money",
+        "payment",
+        "price",
+        "purchase"
       ]
     },
-    label: 'Ice Cream',
+    label: "Money Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-icicles',
+    class: "fa-money-check-dollar",
     search: {
       terms: [
-        'cold',
-        'frozen',
-        'hanging',
-        'ice',
-        'seasonal',
-        'sharp'
+        "bank check",
+        "buy",
+        "checkout",
+        "cheque",
+        "money",
+        "payment",
+        "price",
+        "purchase"
       ]
     },
-    label: 'Icicles',
+    label: "Money Check Dollar",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-icons',
+    class: "fa-monument",
     search: {
       terms: [
-        'bolt',
-        'emoji',
-        'heart',
-        'image',
-        'music',
-        'photo',
-        'symbols'
+        "building",
+        "historic",
+        "landmark",
+        "memorable"
       ]
     },
-    label: 'Icons',
+    label: "Monument",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-id-badge',
+    class: "fa-moon",
     search: {
       terms: [
-        'address',
-        'contact',
-        'identification',
-        'license',
-        'profile'
+        "Power Sleep Symbol",
+        "contrast",
+        "crescent",
+        "crescent moon",
+        "dark",
+        "lunar",
+        "moon",
+        "night"
       ]
     },
-    label: 'Identification Badge',
+    label: "Moon",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-id-card',
+    class: "fa-mortar-pestle",
     search: {
       terms: [
-        'contact',
-        'demographics',
-        'document',
-        'identification',
-        'issued',
-        'profile'
+        "crush",
+        "culinary",
+        "grind",
+        "medical",
+        "mix",
+        "pharmacy",
+        "prescription",
+        "spices"
       ]
     },
-    label: 'Identification Card',
+    label: "Mortar Pestle",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-id-card-alt',
+    class: "fa-mosque",
     search: {
       terms: [
-        'contact',
-        'demographics',
-        'document',
-        'identification',
-        'issued',
-        'profile'
+        "Muslim",
+        "building",
+        "islam",
+        "landmark",
+        "mosque",
+        "muslim",
+        "religion"
       ]
     },
-    label: 'Alternate Identification Card',
+    label: "Mosque",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ideal',
+    class: "fa-mosquito",
     search: {
-      terms: []
+      terms: [
+        "bite",
+        "bug",
+        "mosquito",
+        "west nile"
+      ]
     },
-    label: 'iDeal',
+    label: "Mosquito",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-igloo',
+    class: "fa-mosquito-net",
     search: {
       terms: [
-        'dome',
-        'dwelling',
-        'eskimo',
-        'home',
-        'house',
-        'ice',
-        'snow'
+        "bite",
+        "malaria",
+        "mosquito",
+        "net"
       ]
     },
-    label: 'Igloo',
+    label: "Mosquito Net",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-image',
+    class: "fa-motorcycle",
     search: {
       terms: [
-        'album',
-        'landscape',
-        'photo',
-        'picture'
+        "bike",
+        "machine",
+        "motorcycle",
+        "racing",
+        "transportation",
+        "vehicle"
       ]
     },
-    label: 'Image',
+    label: "Motorcycle",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-images',
+    class: "fa-mound",
     search: {
       terms: [
-        'album',
-        'landscape',
-        'photo',
-        'picture'
+        "barrier",
+        "hill",
+        "pitcher",
+        "speedbump"
       ]
     },
-    label: 'Images',
+    label: "Mound",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-imdb',
+    class: "fa-mountain",
     search: {
-      terms: []
+      terms: [
+        "cold",
+        "glacier",
+        "hiking",
+        "hill",
+        "landscape",
+        "mountain",
+        "snow",
+        "snow-capped mountain",
+        "travel",
+        "view"
+      ]
     },
-    label: 'IMDB',
+    label: "Mountain",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-inbox',
+    class: "fa-mountain-city",
     search: {
       terms: [
-        'archive',
-        'desk',
-        'email',
-        'mail',
-        'message'
+        "location",
+        "rural",
+        "urban"
       ]
     },
-    label: 'inbox',
+    label: "Mountain City",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-indent',
+    class: "fa-mountain-sun",
     search: {
       terms: [
-        'align',
-        'justify',
-        'paragraph',
-        'tab'
+        "country",
+        "hiking",
+        "landscape",
+        "rural",
+        "travel",
+        "view"
       ]
     },
-    label: 'Indent',
+    label: "Mountain Sun",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-industry',
+    class: "fa-mug-hot",
     search: {
       terms: [
-        'building',
-        'factory',
-        'industrial',
-        'manufacturing',
-        'mill',
-        'warehouse'
+        "beverage",
+        "caliente",
+        "cocoa",
+        "coffee",
+        "cup",
+        "drink",
+        "holiday",
+        "hot",
+        "hot beverage",
+        "hot chocolate",
+        "steam",
+        "steaming",
+        "tea",
+        "warmth"
       ]
     },
-    label: 'Industry',
+    label: "Mug Hot",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-infinity',
+    class: "fa-mug-saucer",
     search: {
       terms: [
-        'eternity',
-        'forever',
-        'math'
+        "beverage",
+        "breakfast",
+        "cafe",
+        "drink",
+        "fall",
+        "morning",
+        "mug",
+        "seasonal",
+        "tea"
       ]
     },
-    label: 'Infinity',
+    label: "Mug Saucer",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-info',
+    class: "fa-music",
     search: {
       terms: [
-        'details',
-        'help',
-        'information',
-        'more',
-        'support'
+        "lyrics",
+        "melody",
+        "music",
+        "musical note",
+        "note",
+        "sing",
+        "sound"
       ]
     },
-    label: 'Info',
+    label: "Music",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-info-circle',
+    class: "fa-n",
     search: {
       terms: [
-        'details',
-        'help',
-        'information',
-        'more',
-        'support'
+        "Latin Capital Letter N",
+        "Latin Small Letter N",
+        "letter",
+        "nay",
+        "no"
       ]
     },
-    label: 'Info Circle',
+    label: "N",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-innosoft',
+    class: "fa-naira-sign",
     search: {
-      terms: []
+      terms: [
+        "Naira Sign",
+        "currency"
+      ]
     },
-    label: 'Innosoft',
+    label: "Naira Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-instagram',
+    class: "fa-napster",
     search: {
       terms: []
     },
-    label: 'Instagram',
+    label: "Napster",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-instagram-square',
+    class: "fa-neos",
     search: {
       terms: []
     },
-    label: 'Instagram Square',
+    label: "Neos",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-instalod',
+    class: "fa-network-wired",
     search: {
-      terms: []
+      terms: [
+        "computer",
+        "connect",
+        "ethernet",
+        "internet",
+        "intranet"
+      ]
     },
-    label: 'InstaLOD',
+    label: "Network Wired",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-intercom',
+    class: "fa-neuter",
     search: {
       terms: [
-        'app',
-        'customer',
-        'messenger'
+        "Neuter",
+        "gender"
       ]
     },
-    label: 'Intercom',
+    label: "Neuter",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-internet-explorer',
+    class: "fa-newspaper",
     search: {
       terms: [
-        'browser',
-        'ie'
+        "article",
+        "editorial",
+        "headline",
+        "journal",
+        "journalism",
+        "news",
+        "newspaper",
+        "paper",
+        "press"
       ]
     },
-    label: 'Internet-explorer',
+    label: "Newspaper",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-invision',
+    class: "fa-nfc-directional",
     search: {
       terms: [
-        'app',
-        'design',
-        'interface'
+        "connect",
+        "data",
+        "near field communication",
+        "nfc",
+        "scan",
+        "signal",
+        "transfer",
+        "wireless"
       ]
     },
-    label: 'InVision',
+    label: "NFC Directional",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-ioxhost',
+    class: "fa-nfc-symbol",
     search: {
-      terms: []
+      terms: [
+        "connect",
+        "data",
+        "near field communication",
+        "nfc",
+        "scan",
+        "signal",
+        "transfer",
+        "wireless"
+      ]
     },
-    label: 'ioxhost',
+    label: "Nfc Symbol",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-italic',
+    class: "fa-nimblr",
     search: {
-      terms: [
-        'edit',
-        'emphasis',
-        'font',
-        'format',
-        'text',
-        'type'
-      ]
+      terms: []
     },
-    label: 'italic',
+    label: "Nimblr",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-itch-io',
+    class: "fa-node",
     search: {
       terms: []
     },
-    label: 'itch.io',
+    label: "Node.js",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-itunes',
+    class: "fa-node-js",
     search: {
       terms: []
     },
-    label: 'iTunes',
+    label: "Node.js JS",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-itunes-note',
+    class: "fa-not-equal",
     search: {
-      terms: []
+      terms: [
+        "arithmetic",
+        "compare",
+        "math"
+      ]
     },
-    label: 'Itunes Note',
+    label: "Not Equal",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-java',
+    class: "fa-notdef",
     search: {
-      terms: []
+      terms: [
+        "close",
+        "missing"
+      ]
     },
-    label: 'Java',
+    label: "Notdef",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-jedi',
+    class: "fa-note-sticky",
     search: {
       terms: [
-        'crest',
-        'force',
-        'sith',
-        'skywalker',
-        'star wars',
-        'yoda'
+        "message",
+        "note",
+        "paper",
+        "reminder",
+        "sticker"
       ]
     },
-    label: 'Jedi',
+    label: "Note Sticky",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-jedi-order',
+    class: "fa-notes-medical",
     search: {
       terms: [
-        'star wars'
+        "clipboard",
+        "doctor",
+        "ehr",
+        "health",
+        "history",
+        "records"
       ]
     },
-    label: 'Jedi Order',
+    label: "Notes Medical",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-jenkins',
+    class: "fa-npm",
     search: {
       terms: []
     },
-    label: 'Jenkis',
+    label: "npm",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-jira',
+    class: "fa-ns8",
     search: {
-      terms: [
-        'atlassian'
-      ]
+      terms: []
     },
-    label: 'Jira',
+    label: "NS8",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-joget',
+    class: "fa-nutritionix",
     search: {
       terms: []
     },
-    label: 'Joget',
+    label: "Nutritionix",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-joint',
+    class: "fa-o",
     search: {
       terms: [
-        'blunt',
-        'cannabis',
-        'doobie',
-        'drugs',
-        'marijuana',
-        'roach',
-        'smoke',
-        'smoking',
-        'spliff'
+        "Latin Capital Letter O",
+        "Latin Small Letter O",
+        "letter"
       ]
     },
-    label: 'Joint',
+    label: "O",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-joomla',
+    class: "fa-object-group",
     search: {
-      terms: []
+      terms: [
+        "combine",
+        "copy",
+        "design",
+        "merge",
+        "select"
+      ]
     },
-    label: 'Joomla Logo',
+    label: "Object Group",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-journal-whills',
+    class: "fa-object-ungroup",
     search: {
       terms: [
-        'book',
-        'force',
-        'jedi',
-        'sith',
-        'star wars',
-        'yoda'
+        "copy",
+        "design",
+        "merge",
+        "select",
+        "separate"
       ]
     },
-    label: 'Journal of the Whills',
+    label: "Object Ungroup",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-js',
+    class: "fa-octopus-deploy",
     search: {
       terms: []
     },
-    label: 'JavaScript (JS)',
+    label: "Octopus Deploy",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-js-square',
+    class: "fa-odnoklassniki",
     search: {
       terms: []
     },
-    label: 'JavaScript (JS) Square',
+    label: "Odnoklassniki",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-jsfiddle',
+    class: "fa-odysee",
     search: {
       terms: []
     },
-    label: 'jsFiddle',
+    label: "Odysee",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-kaaba',
+    class: "fa-oil-can",
     search: {
       terms: [
-        'building',
-        'cube',
-        'islam',
-        'muslim'
+        "auto",
+        "crude",
+        "gasoline",
+        "grease",
+        "lubricate",
+        "petroleum"
       ]
     },
-    label: 'Kaaba',
+    label: "Oil Can",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-kaggle',
+    class: "fa-oil-well",
     search: {
-      terms: []
+      terms: [
+        "drill",
+        "oil",
+        "rig"
+      ]
     },
-    label: 'Kaggle',
+    label: "Oil Well",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-key',
+    class: "fa-old-republic",
     search: {
       terms: [
-        'lock',
-        'password',
-        'private',
-        'secret',
-        'unlock'
+        "politics",
+        "star wars"
       ]
     },
-    label: 'key',
+    label: "Old Republic",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-keybase',
+    class: "fa-om",
     search: {
-      terms: []
+      terms: [
+        "Hindu",
+        "buddhism",
+        "hinduism",
+        "jainism",
+        "mantra",
+        "om",
+        "religion"
+      ]
     },
-    label: 'Keybase',
+    label: "Om",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-keyboard',
+    class: "fa-opencart",
     search: {
-      terms: [
-        'accessory',
-        'edit',
-        'input',
-        'text',
-        'type',
-        'write'
-      ]
+      terms: []
     },
-    label: 'Keyboard',
+    label: "OpenCart",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-keycdn',
+    class: "fa-openid",
     search: {
       terms: []
     },
-    label: 'KeyCDN',
+    label: "OpenID",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-khanda',
+    class: "fa-opera",
     search: {
-      terms: [
-        'chakkar',
-        'sikh',
-        'sikhism',
-        'sword'
-      ]
+      terms: []
     },
-    label: 'Khanda',
+    label: "Opera",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-kickstarter',
+    class: "fa-optin-monster",
     search: {
       terms: []
     },
-    label: 'Kickstarter',
+    label: "Optin Monster",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-kickstarter-k',
+    class: "fa-orcid",
     search: {
       terms: []
     },
-    label: 'Kickstarter K',
+    label: "ORCID",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-kiss',
+    class: "fa-osi",
     search: {
-      terms: [
-        'beso',
-        'emoticon',
-        'face',
-        'love',
-        'smooch'
-      ]
+      terms: []
     },
-    label: 'Kissing Face',
+    label: "Open Source Initiative",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-kiss-beam',
+    class: "fa-otter",
     search: {
       terms: [
-        'beso',
-        'emoticon',
-        'face',
-        'love',
-        'smooch'
+        "animal",
+        "badger",
+        "fauna",
+        "fishing",
+        "fur",
+        "mammal",
+        "marten",
+        "otter",
+        "playful"
       ]
     },
-    label: 'Kissing Face With Smiling Eyes',
+    label: "Otter",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-kiss-wink-heart',
+    class: "fa-outdent",
     search: {
       terms: [
-        'beso',
-        'emoticon',
-        'face',
-        'love',
-        'smooch'
+        "align",
+        "justify",
+        "paragraph",
+        "tab"
       ]
     },
-    label: 'Face Blowing a Kiss',
+    label: "Outdent",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-kiwi-bird',
+    class: "fa-p",
     search: {
       terms: [
-        'bird',
-        'fauna',
-        'new zealand'
+        "Latin Capital Letter P",
+        "Latin Small Letter P",
+        "letter"
       ]
     },
-    label: 'Kiwi Bird',
+    label: "P",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-korvue',
+    class: "fa-padlet",
     search: {
       terms: []
     },
-    label: 'KORVUE',
+    label: "Padlet",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-landmark',
+    class: "fa-page4",
     search: {
-      terms: [
-        'building',
-        'historic',
-        'memorable',
-        'monument',
-        'politics'
-      ]
+      terms: []
     },
-    label: 'Landmark',
+    label: "page4 Corporation",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-language',
+    class: "fa-pagelines",
     search: {
       terms: [
-        'dialect',
-        'idiom',
-        'localize',
-        'speech',
-        'translate',
-        'vernacular'
+        "eco",
+        "flora",
+        "leaf",
+        "leaves",
+        "nature",
+        "plant",
+        "tree"
       ]
     },
-    label: 'Language',
+    label: "Pagelines",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-laptop',
+    class: "fa-pager",
     search: {
       terms: [
-        'computer',
-        'cpu',
-        'dell',
-        'demo',
-        'device',
-        'mac',
-        'macbook',
-        'machine',
-        'pc'
+        "beeper",
+        "cell phone",
+        "communication",
+        "page",
+        "pager"
       ]
     },
-    label: 'Laptop',
+    label: "Pager",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-laptop-code',
+    class: "fa-paint-roller",
     search: {
       terms: [
-        'computer',
-        'cpu',
-        'dell',
-        'demo',
-        'develop',
-        'device',
-        'mac',
-        'macbook',
-        'machine',
-        'pc'
+        "acrylic",
+        "art",
+        "brush",
+        "color",
+        "fill",
+        "paint",
+        "pigment",
+        "watercolor"
       ]
     },
-    label: 'Laptop Code',
+    label: "Paint Roller",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-laptop-house',
+    class: "fa-paintbrush",
     search: {
       terms: [
-        'computer',
-        'covid-19',
-        'device',
-        'office',
-        'remote',
-        'work from home'
+        "acrylic",
+        "art",
+        "brush",
+        "color",
+        "fill",
+        "paint",
+        "paintbrush",
+        "painting",
+        "pigment",
+        "watercolor"
       ]
     },
-    label: 'Laptop House',
+    label: "Paintbrush",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-laptop-medical',
+    class: "fa-palette",
     search: {
       terms: [
-        'computer',
-        'device',
-        'ehr',
-        'electronic health records',
-        'history'
+        "acrylic",
+        "art",
+        "artist palette",
+        "brush",
+        "color",
+        "fill",
+        "museum",
+        "paint",
+        "painting",
+        "palette",
+        "pigment",
+        "watercolor"
       ]
     },
-    label: 'Laptop Medical',
+    label: "Palette",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-laravel',
+    class: "fa-palfed",
     search: {
       terms: []
     },
-    label: 'Laravel',
+    label: "Palfed",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-lastfm',
+    class: "fa-pallet",
     search: {
-      terms: []
+      terms: [
+        "archive",
+        "box",
+        "inventory",
+        "shipping",
+        "warehouse"
+      ]
     },
-    label: 'last.fm',
+    label: "Pallet",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-lastfm-square',
+    class: "fa-panorama",
     search: {
-      terms: []
+      terms: [
+        "image",
+        "landscape",
+        "photo",
+        "wide"
+      ]
     },
-    label: 'last.fm Square',
+    label: "Panorama",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-laugh',
+    class: "fa-paper-plane",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face',
-        'laugh',
-        'smile'
+        "air",
+        "float",
+        "fold",
+        "mail",
+        "paper",
+        "send"
       ]
     },
-    label: 'Grinning Face With Big Eyes',
+    label: "Paper Plane",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-laugh-beam',
+    class: "fa-paperclip",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face',
-        'happy',
-        'smile'
+        "attach",
+        "attachment",
+        "connect",
+        "link",
+        "papercli",
+        "paperclip"
       ]
     },
-    label: 'Laugh Face with Beaming Eyes',
+    label: "Paperclip",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-laugh-squint',
+    class: "fa-parachute-box",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face',
-        'happy',
-        'smile'
+        "aid",
+        "assistance",
+        "goods",
+        "relief",
+        "rescue",
+        "supplies"
       ]
     },
-    label: 'Laughing Squinting Face',
+    label: "Parachute Box",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-laugh-wink',
+    class: "fa-paragraph",
     search: {
       terms: [
-        'LOL',
-        'emoticon',
-        'face',
-        'happy',
-        'smile'
+        "Pilcrow Sign",
+        "edit",
+        "format",
+        "text",
+        "writing"
       ]
     },
-    label: 'Laughing Winking Face',
+    label: "Paragraph",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-layer-group',
+    class: "fa-passport",
     search: {
       terms: [
-        'arrange',
-        'develop',
-        'layers',
-        'map',
-        'stack'
+        "document",
+        "id",
+        "identification",
+        "issued",
+        "travel"
       ]
     },
-    label: 'Layer Group',
+    label: "Passport",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-leaf',
+    class: "fa-paste",
     search: {
       terms: [
-        'eco',
-        'flora',
-        'nature',
-        'plant',
-        'vegan'
+        "clipboard",
+        "copy",
+        "document",
+        "paper"
       ]
     },
-    label: 'leaf',
+    label: "Paste",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-leanpub',
+    class: "fa-patreon",
     search: {
       terms: []
     },
-    label: 'Leanpub',
+    label: "Patreon",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-lemon',
+    class: "fa-pause",
     search: {
       terms: [
-        'citrus',
-        'lemonade',
-        'lime',
-        'tart'
+        "bar",
+        "double",
+        "hold",
+        "pause",
+        "pause button",
+        "vertical",
+        "wait"
       ]
     },
-    label: 'Lemon',
+    label: "Pause",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-less',
+    class: "fa-paw",
     search: {
-      terms: []
+      terms: [
+        "animal",
+        "cat",
+        "dog",
+        "pet",
+        "print"
+      ]
     },
-    label: 'Less',
+    label: "Paw",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-less-than',
+    class: "fa-paypal",
     search: {
-      terms: [
-        'arithmetic',
-        'compare',
-        'math'
-      ]
+      terms: []
     },
-    label: 'Less Than',
+    label: "Paypal",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-less-than-equal',
+    class: "fa-peace",
     search: {
       terms: [
-        'arithmetic',
-        'compare',
-        'math'
+        "peace",
+        "peace symbol",
+        "serenity",
+        "tranquility",
+        "truce",
+        "war"
       ]
     },
-    label: 'Less Than Equal To',
+    label: "Peace",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-level-down-alt',
+    class: "fa-pen",
     search: {
       terms: [
-        'arrow',
-        'level-down'
+        "ballpoint",
+        "design",
+        "edit",
+        "pen",
+        "update",
+        "write"
       ]
     },
-    label: 'Alternate Level Down',
+    label: "Pen",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-level-up-alt',
+    class: "fa-pen-clip",
     search: {
       terms: [
-        'arrow',
-        'level-up'
+        "design",
+        "edit",
+        "update",
+        "write"
       ]
     },
-    label: 'Alternate Level Up',
+    label: "Pen Clip",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-life-ring',
+    class: "fa-pen-fancy",
     search: {
       terms: [
-        'coast guard',
-        'help',
-        'overboard',
-        'save',
-        'support'
+        "black nib",
+        "design",
+        "edit",
+        "fountain",
+        "fountain pen",
+        "nib",
+        "pen",
+        "update",
+        "write"
       ]
     },
-    label: 'Life Ring',
+    label: "Pen Fancy",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-lightbulb',
+    class: "fa-pen-nib",
     search: {
       terms: [
-        'energy',
-        'idea',
-        'inspiration',
-        'light'
+        "design",
+        "edit",
+        "fountain pen",
+        "update",
+        "write"
       ]
     },
-    label: 'Lightbulb',
+    label: "Pen Nib",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-line',
+    class: "fa-pen-ruler",
     search: {
-      terms: []
+      terms: [
+        "design",
+        "draft",
+        "draw",
+        "pencil"
+      ]
     },
-    label: 'Line',
+    label: "Pen Ruler",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-link',
+    class: "fa-pen-to-square",
     search: {
       terms: [
-        'attach',
-        'attachment',
-        'chain',
-        'connect'
+        "edit",
+        "pen",
+        "pencil",
+        "update",
+        "write"
       ]
     },
-    label: 'Link',
+    label: "Pen To Square",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-linkedin',
+    class: "fa-pencil",
     search: {
       terms: [
-        'linkedin-square'
+        "Lower Left Pencil",
+        "design",
+        "draw",
+        "edit",
+        "lead",
+        "pencil",
+        "update",
+        "write"
       ]
     },
-    label: 'LinkedIn',
+    label: "Pencil",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-linkedin-in',
+    class: "fa-people-arrows",
     search: {
       terms: [
-        'linkedin'
+        "distance",
+        "isolation",
+        "separate",
+        "social distancing",
+        "users-people"
       ]
     },
-    label: 'LinkedIn In',
+    label: "People Arrows",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-linode',
+    class: "fa-people-carry-box",
     search: {
-      terms: []
+      terms: [
+        "users-people"
+      ]
     },
-    label: 'Linode',
+    label: "People Carry Box",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-linux',
+    class: "fa-people-group",
     search: {
       terms: [
-        'tux'
+        "family",
+        "group",
+        "team"
       ]
     },
-    label: 'Linux',
+    label: "People Group",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-lira-sign',
+    class: "fa-people-line",
     search: {
       terms: [
-        'currency',
-        'money',
-        'try',
-        'turkish'
+        "group",
+        "need"
       ]
     },
-    label: 'Turkish Lira Sign',
+    label: "People Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-list',
+    class: "fa-people-pulling",
     search: {
       terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'ol',
-        'todo',
-        'ul'
+        "forced return",
+        "yanking"
       ]
     },
-    label: 'List',
+    label: "People Pulling",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-list-alt',
+    class: "fa-people-robbery",
     search: {
       terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'ol',
-        'todo',
-        'ul'
+        "criminal",
+        "hands up",
+        "looting",
+        "robbery",
+        "steal"
       ]
     },
-    label: 'Alternate List',
+    label: "People Robbery",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-list-ol',
+    class: "fa-people-roof",
     search: {
       terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'numbers',
-        'ol',
-        'todo',
-        'ul'
+        "family",
+        "group",
+        "manage",
+        "people",
+        "safe",
+        "shelter"
       ]
     },
-    label: 'list-ol',
+    label: "People Roof",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-list-ul',
+    class: "fa-pepper-hot",
     search: {
       terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'ol',
-        'todo',
-        'ul'
+        "buffalo wings",
+        "capsicum",
+        "chili",
+        "chilli",
+        "habanero",
+        "hot",
+        "hot pepper",
+        "jalapeno",
+        "mexican",
+        "pepper",
+        "spicy",
+        "tabasco",
+        "vegetable"
       ]
     },
-    label: 'list-ul',
+    label: "Pepper Hot",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-location-arrow',
+    class: "fa-perbyte",
     search: {
-      terms: [
-        'address',
-        'compass',
-        'coordinate',
-        'direction',
-        'gps',
-        'map',
-        'navigation',
-        'place'
-      ]
+      terms: []
     },
-    label: 'location-arrow',
+    label: "PerByte",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-lock',
+    class: "fa-percent",
     search: {
       terms: [
-        'admin',
-        'lock',
-        'open',
-        'password',
-        'private',
-        'protect',
-        'security'
+        "Percent Sign",
+        "discount",
+        "fraction",
+        "proportion",
+        "rate",
+        "ratio"
       ]
     },
-    label: 'lock',
+    label: "Percent",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-lock-open',
+    class: "fa-periscope",
     search: {
-      terms: [
-        'admin',
-        'lock',
-        'open',
-        'password',
-        'private',
-        'protect',
-        'security'
-      ]
+      terms: []
     },
-    label: 'Lock Open',
+    label: "Periscope",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-long-arrow-alt-down',
+    class: "fa-person",
     search: {
       terms: [
-        'download',
-        'long-arrow-down'
+        "man",
+        "person standing",
+        "stand",
+        "standing",
+        "woman"
       ]
     },
-    label: 'Alternate Long Arrow Down',
+    label: "Person",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-long-arrow-alt-left',
+    class: "fa-person-arrow-down-to-line",
     search: {
       terms: [
-        'back',
-        'long-arrow-left',
-        'previous'
+        "ground",
+        "indigenous",
+        "native"
       ]
     },
-    label: 'Alternate Long Arrow Left',
+    label: "Person Arrow Down To Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-long-arrow-alt-right',
+    class: "fa-person-arrow-up-from-line",
     search: {
       terms: [
-        'forward',
-        'long-arrow-right',
-        'next'
+        "population",
+        "rise"
       ]
     },
-    label: 'Alternate Long Arrow Right',
+    label: "Person Arrow Up From Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-long-arrow-alt-up',
+    class: "fa-person-biking",
     search: {
       terms: [
-        'long-arrow-up',
-        'upload'
+        "bicycle",
+        "bike",
+        "biking",
+        "cyclist",
+        "pedal",
+        "person biking",
+        "summer",
+        "wheel"
       ]
     },
-    label: 'Alternate Long Arrow Up',
+    label: "Person Biking",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-low-vision',
+    class: "fa-person-booth",
     search: {
       terms: [
-        'blind',
-        'eye',
-        'sight'
+        "changing room",
+        "curtain",
+        "vote",
+        "voting"
       ]
     },
-    label: 'Low Vision',
+    label: "Person Booth",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-luggage-cart',
+    class: "fa-person-breastfeeding",
     search: {
       terms: [
-        'bag',
-        'baggage',
-        'suitcase',
-        'travel'
+        "baby",
+        "child",
+        "infant",
+        "mother",
+        "nutrition",
+        "sustenance"
       ]
     },
-    label: 'Luggage Cart',
+    label: "Person Breastfeeding",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-lungs',
+    class: "fa-person-burst",
     search: {
       terms: [
-        'air',
-        'breath',
-        'covid-19',
-        'organ',
-        'respiratory'
+        "abuse",
+        "accident",
+        "crash",
+        "explode",
+        "violence"
       ]
     },
-    label: 'Lungs',
+    label: "Person Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-lungs-virus',
+    class: "fa-person-cane",
     search: {
       terms: [
-        'breath',
-        'covid-19',
-        'respiratory',
-        'sick'
+        "aging",
+        "cane",
+        "elderly",
+        "old",
+        "staff"
       ]
     },
-    label: 'Lungs Virus',
+    label: "Person Cane",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-lyft',
+    class: "fa-person-chalkboard",
     search: {
-      terms: []
+      terms: [
+        "blackboard",
+        "instructor",
+        "keynote",
+        "lesson",
+        "presentation",
+        "teacher"
+      ]
     },
-    label: 'lyft',
+    label: "Person Chalkboard",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-magento',
+    class: "fa-person-circle-check",
     search: {
-      terms: []
+      terms: [
+        "approved",
+        "not affected",
+        "ok",
+        "okay"
+      ]
     },
-    label: 'Magento',
+    label: "Person Circle Check",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-magic',
+    class: "fa-person-circle-exclamation",
     search: {
       terms: [
-        'autocomplete',
-        'automatic',
-        'mage',
-        'magic',
-        'spell',
-        'wand',
-        'witch',
-        'wizard'
+        "affected",
+        "alert",
+        "lost",
+        "missing"
       ]
     },
-    label: 'magic',
+    label: "Person Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-magnet',
+    class: "fa-person-circle-minus",
     search: {
       terms: [
-        'Attract',
-        'lodestone',
-        'tool'
+        "delete",
+        "remove"
       ]
     },
-    label: 'magnet',
+    label: "Person Circle Minus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mail-bulk',
+    class: "fa-person-circle-plus",
     search: {
       terms: [
-        'archive',
-        'envelope',
-        'letter',
-        'post office',
-        'postal',
-        'postcard',
-        'send',
-        'stamp',
-        'usps'
+        "add",
+        "found"
       ]
     },
-    label: 'Mail Bulk',
+    label: "Person Circle Plus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mailchimp',
+    class: "fa-person-circle-question",
     search: {
-      terms: []
+      terms: [
+        "lost",
+        "missing"
+      ]
     },
-    label: 'Mailchimp',
+    label: "Person Circle Question",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-male',
+    class: "fa-person-circle-xmark",
     search: {
       terms: [
-        'human',
-        'man',
-        'person',
-        'profile',
-        'user'
+        "dead",
+        "removed"
       ]
     },
-    label: 'Male',
+    label: "Person Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mandalorian',
+    class: "fa-person-digging",
     search: {
-      terms: []
+      terms: [
+        "bury",
+        "construction",
+        "debris",
+        "dig",
+        "men at work"
+      ]
     },
-    label: 'Mandalorian',
+    label: "Person Digging",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-map',
+    class: "fa-person-dots-from-line",
     search: {
       terms: [
-        'address',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'navigation',
-        'paper',
-        'pin',
-        'place',
-        'point of interest',
-        'position',
-        'route',
-        'travel'
+        "allergy",
+        "diagnosis"
       ]
     },
-    label: 'Map',
+    label: "Person Dots From Line",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-marked',
+    class: "fa-person-dress",
     search: {
       terms: [
-        'address',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'navigation',
-        'paper',
-        'pin',
-        'place',
-        'point of interest',
-        'position',
-        'route',
-        'travel'
+        "man",
+        "skirt",
+        "woman"
       ]
     },
-    label: 'Map Marked',
+    label: "Person Dress",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-marked-alt',
+    class: "fa-person-dress-burst",
     search: {
       terms: [
-        'address',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'navigation',
-        'paper',
-        'pin',
-        'place',
-        'point of interest',
-        'position',
-        'route',
-        'travel'
+        "abuse",
+        "accident",
+        "crash",
+        "explode",
+        "violence"
       ]
     },
-    label: 'Alternate Map Marked',
+    label: "Person Dress Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-marker',
+    class: "fa-person-drowning",
     search: {
       terms: [
-        'address',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'navigation',
-        'paper',
-        'pin',
-        'place',
-        'point of interest',
-        'position',
-        'route',
-        'travel'
+        "drown",
+        "emergency",
+        "swim"
       ]
     },
-    label: 'map-marker',
+    label: "Person Drowning",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-marker-alt',
+    class: "fa-person-falling",
     search: {
       terms: [
-        'address',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'navigation',
-        'paper',
-        'pin',
-        'place',
-        'point of interest',
-        'position',
-        'route',
-        'travel'
+        "accident",
+        "fall",
+        "trip"
       ]
     },
-    label: 'Alternate Map Marker',
+    label: "Person Falling",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-pin',
+    class: "fa-person-falling-burst",
     search: {
       terms: [
-        'address',
-        'agree',
-        'coordinates',
-        'destination',
-        'gps',
-        'localize',
-        'location',
-        'map',
-        'marker',
-        'navigation',
-        'pin',
-        'place',
-        'position',
-        'travel'
+        "accident",
+        "crash",
+        "death",
+        "fall",
+        "homicide",
+        "murder"
       ]
     },
-    label: 'Map Pin',
+    label: "Person Falling Burst",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-map-signs',
+    class: "fa-person-half-dress",
     search: {
       terms: [
-        'directions',
-        'directory',
-        'map',
-        'signage',
-        'wayfinding'
+        "gender",
+        "man",
+        "restroom",
+        "transgender",
+        "woman"
       ]
     },
-    label: 'Map Signs',
+    label: "Person Half Dress",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-markdown',
+    class: "fa-person-harassing",
     search: {
-      terms: []
+      terms: [
+        "abuse",
+        "scream",
+        "shame",
+        "shout",
+        "yell"
+      ]
     },
-    label: 'Markdown',
+    label: "Person Harassing",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-marker',
+    class: "fa-person-hiking",
     search: {
       terms: [
-        'design',
-        'edit',
-        'sharpie',
-        'update',
-        'write'
+        "autumn",
+        "fall",
+        "hike",
+        "mountain",
+        "outdoors",
+        "summer",
+        "walk"
       ]
     },
-    label: 'Marker',
+    label: "Person Hiking",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mars',
+    class: "fa-person-military-pointing",
     search: {
       terms: [
-        'male'
+        "army",
+        "customs",
+        "guard"
       ]
     },
-    label: 'Mars',
+    label: "Person Military Pointing",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mars-double',
+    class: "fa-person-military-rifle",
     search: {
-      terms: []
+      terms: [
+        "armed forces",
+        "army",
+        "military",
+        "rifle",
+        "war"
+      ]
     },
-    label: 'Mars Double',
+    label: "Person Military Rifle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mars-stroke',
+    class: "fa-person-military-to-person",
     search: {
-      terms: []
+      terms: [
+        "civilian",
+        "coordination",
+        "military"
+      ]
     },
-    label: 'Mars Stroke',
+    label: "Person Military To Person",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mars-stroke-h',
+    class: "fa-person-praying",
     search: {
-      terms: []
+      terms: [
+        "kneel",
+        "place of worship",
+        "religion",
+        "thank",
+        "worship"
+      ]
     },
-    label: 'Mars Stroke Horizontal',
+    label: "Person Praying",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mars-stroke-v',
+    class: "fa-person-pregnant",
     search: {
-      terms: []
+      terms: [
+        "baby",
+        "birth",
+        "child",
+        "pregnant",
+        "pregnant woman",
+        "woman"
+      ]
     },
-    label: 'Mars Stroke Vertical',
+    label: "Person Pregnant",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mask',
+    class: "fa-person-rays",
     search: {
       terms: [
-        'carnivale',
-        'costume',
-        'disguise',
-        'halloween',
-        'secret',
-        'super hero'
+        "affected",
+        "focus",
+        "shine"
       ]
     },
-    label: 'Mask',
+    label: "Person Rays",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mastodon',
+    class: "fa-person-rifle",
     search: {
-      terms: []
+      terms: [
+        "army",
+        "combatant",
+        "gun",
+        "military",
+        "rifle",
+        "war"
+      ]
     },
-    label: 'Mastodon',
+    label: "Person Rifle",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-maxcdn',
+    class: "fa-person-running",
     search: {
-      terms: []
+      terms: [
+        "exit",
+        "flee",
+        "marathon",
+        "person running",
+        "race",
+        "running"
+      ]
     },
-    label: 'MaxCDN',
+    label: "Person Running",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-mdb',
+    class: "fa-person-shelter",
     search: {
-      terms: []
+      terms: [
+        "house",
+        "inside",
+        "roof",
+        "safe",
+        "safety",
+        "shelter"
+      ]
     },
-    label: 'Material Design for Bootstrap',
+    label: "Person Shelter",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-medal',
+    class: "fa-person-skating",
     search: {
       terms: [
-        'award',
-        'ribbon',
-        'star',
-        'trophy'
+        "figure skating",
+        "ice",
+        "olympics",
+        "rink",
+        "skate",
+        "winter"
       ]
     },
-    label: 'Medal',
+    label: "Person Skating",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-medapps',
+    class: "fa-person-skiing",
     search: {
-      terms: []
+      terms: [
+        "downhill",
+        "olympics",
+        "ski",
+        "skier",
+        "snow",
+        "winter"
+      ]
     },
-    label: 'MedApps',
+    label: "Person Skiing",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-medium',
+    class: "fa-person-skiing-nordic",
     search: {
-      terms: []
+      terms: [
+        "cross country",
+        "olympics",
+        "winter"
+      ]
     },
-    label: 'Medium',
+    label: "Person Skiing Nordic",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-medium-m',
+    class: "fa-person-snowboarding",
     search: {
-      terms: []
+      terms: [
+        "olympics",
+        "ski",
+        "snow",
+        "snowboard",
+        "snowboarder",
+        "winter"
+      ]
     },
-    label: 'Medium M',
+    label: "Person Snowboarding",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-medkit',
+    class: "fa-person-swimming",
     search: {
       terms: [
-        'first aid',
-        'firstaid',
-        'health',
-        'help',
-        'support'
+        "ocean",
+        "person swimming",
+        "pool",
+        "sea",
+        "swim",
+        "water"
       ]
     },
-    label: 'medkit',
+    label: "Person Swimming",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-medrt',
+    class: "fa-person-through-window",
     search: {
-      terms: []
+      terms: [
+        "door",
+        "exit",
+        "forced entry",
+        "leave",
+        "robbery",
+        "steal",
+        "window"
+      ]
     },
-    label: 'MRT',
+    label: "Person Through Window",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-meetup',
+    class: "fa-person-walking",
     search: {
-      terms: []
+      terms: [
+        "crosswalk",
+        "exercise",
+        "hike",
+        "move",
+        "person walking",
+        "walk",
+        "walking"
+      ]
     },
-    label: 'Meetup',
+    label: "Person Walking",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-megaport',
+    class: "fa-person-walking-arrow-loop-left",
     search: {
-      terms: []
+      terms: [
+        "population return",
+        "return"
+      ]
     },
-    label: 'Megaport',
+    label: "Person Walking Arrow Loop Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-meh',
+    class: "fa-person-walking-arrow-right",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'neutral',
-        'rating'
+        "exit",
+        "internally displaced",
+        "leave",
+        "refugee"
       ]
     },
-    label: 'Neutral Face',
+    label: "Person Walking Arrow Right",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-meh-blank',
+    class: "fa-person-walking-dashed-line-arrow-right",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'neutral',
-        'rating'
+        "exit",
+        "refugee"
       ]
     },
-    label: 'Face Without Mouth',
+    label: "Person Walking Dashed Line Arrow Right",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-meh-rolling-eyes',
+    class: "fa-person-walking-luggage",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'neutral',
-        'rating'
+        "bag",
+        "baggage",
+        "briefcase",
+        "carry-on",
+        "deployment",
+        "rolling"
       ]
     },
-    label: 'Face With Rolling Eyes',
+    label: "Person Walking Luggage",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-memory',
+    class: "fa-person-walking-with-cane",
     search: {
       terms: [
-        'DIMM',
-        'RAM',
-        'hardware',
-        'storage',
-        'technology'
+        "blind",
+        "cane"
       ]
     },
-    label: 'Memory',
+    label: "Person Walking With Cane",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mendeley',
+    class: "fa-peseta-sign",
     search: {
-      terms: []
+      terms: [
+        "Peseta Sign",
+        "currency"
+      ]
     },
-    label: 'Mendeley',
+    label: "Peseta Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-menorah',
+    class: "fa-peso-sign",
     search: {
       terms: [
-        'candle',
-        'hanukkah',
-        'jewish',
-        'judaism',
-        'light'
+        "Peso Sign",
+        "currency"
       ]
     },
-    label: 'Menorah',
+    label: "Peso Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mercury',
+    class: "fa-phabricator",
     search: {
-      terms: [
-        'transgender'
-      ]
+      terms: []
     },
-    label: 'Mercury',
+    label: "Phabricator",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-meteor',
+    class: "fa-phoenix-framework",
     search: {
-      terms: [
-        'armageddon',
-        'asteroid',
-        'comet',
-        'shooting star',
-        'space'
-      ]
+      terms: []
     },
-    label: 'Meteor',
+    label: "Phoenix Framework",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-microblog',
+    class: "fa-phoenix-squadron",
     search: {
       terms: []
     },
-    label: 'Micro.blog',
+    label: "Phoenix Squadron",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-microchip',
+    class: "fa-phone",
     search: {
       terms: [
-        'cpu',
-        'hardware',
-        'processor',
-        'technology'
+        "Left Hand Telephone Receiver",
+        "call",
+        "earphone",
+        "number",
+        "phone",
+        "receiver",
+        "support",
+        "telephone",
+        "telephone receiver",
+        "voice"
       ]
     },
-    label: 'Microchip',
+    label: "Phone",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-microphone',
+    class: "fa-phone-flip",
     search: {
       terms: [
-        'audio',
-        'podcast',
-        'record',
-        'sing',
-        'sound',
-        'voice'
+        "Right Hand Telephone Receiver",
+        "call",
+        "earphone",
+        "number",
+        "support",
+        "telephone",
+        "voice"
       ]
     },
-    label: 'microphone',
+    label: "Phone Flip",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-microphone-alt',
+    class: "fa-phone-slash",
     search: {
       terms: [
-        'audio',
-        'podcast',
-        'record',
-        'sing',
-        'sound',
-        'voice'
+        "call",
+        "cancel",
+        "earphone",
+        "mute",
+        "number",
+        "support",
+        "telephone",
+        "voice"
       ]
     },
-    label: 'Alternate Microphone',
+    label: "Phone Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-microphone-alt-slash',
+    class: "fa-phone-volume",
     search: {
       terms: [
-        'audio',
-        'disable',
-        'mute',
-        'podcast',
-        'record',
-        'sing',
-        'sound',
-        'voice'
+        "call",
+        "earphone",
+        "number",
+        "sound",
+        "support",
+        "telephone",
+        "voice",
+        "volume-control-phone"
       ]
     },
-    label: 'Alternate Microphone Slash',
+    label: "Phone Volume",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-microphone-slash',
+    class: "fa-photo-film",
     search: {
       terms: [
-        'audio',
-        'disable',
-        'mute',
-        'podcast',
-        'record',
-        'sing',
-        'sound',
-        'voice'
+        "av",
+        "film",
+        "image",
+        "library",
+        "media"
       ]
     },
-    label: 'Microphone Slash',
+    label: "Photo Film",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-microscope',
+    class: "fa-php",
     search: {
-      terms: [
-        'covid-19',
-        'electron',
-        'lens',
-        'optics',
-        'science',
-        'shrink'
-      ]
+      terms: []
     },
-    label: 'Microscope',
+    label: "PHP",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-microsoft',
+    class: "fa-pied-piper",
     search: {
       terms: []
     },
-    label: 'Microsoft',
+    label: "Pied Piper Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-minus',
+    class: "fa-pied-piper-alt",
     search: {
-      terms: [
-        'collapse',
-        'delete',
-        'hide',
-        'minify',
-        'negative',
-        'remove',
-        'trash'
-      ]
+      terms: []
     },
-    label: 'minus',
+    label: "Alternate Pied Piper Logo (Old)",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-minus-circle',
+    class: "fa-pied-piper-hat",
     search: {
       terms: [
-        'delete',
-        'hide',
-        'negative',
-        'remove',
-        'shape',
-        'trash'
+        "clothing"
       ]
     },
-    label: 'Minus Circle',
+    label: "Pied Piper Hat (Old)",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-minus-square',
+    class: "fa-pied-piper-pp",
     search: {
-      terms: [
-        'collapse',
-        'delete',
-        'hide',
-        'minify',
-        'negative',
-        'remove',
-        'shape',
-        'trash'
-      ]
+      terms: []
     },
-    label: 'Minus Square',
+    label: "Pied Piper PP Logo (Old)",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-mitten',
+    class: "fa-piggy-bank",
     search: {
       terms: [
-        'clothing',
-        'cold',
-        'glove',
-        'hands',
-        'knitted',
-        'seasonal',
-        'warmth'
+        "bank",
+        "save",
+        "savings"
       ]
     },
-    label: 'Mitten',
+    label: "Piggy Bank",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mix',
+    class: "fa-pills",
     search: {
-      terms: []
+      terms: [
+        "drugs",
+        "medicine",
+        "prescription",
+        "tablets"
+      ]
     },
-    label: 'Mix',
+    label: "Pills",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-mixcloud',
+    class: "fa-pinterest",
     search: {
       terms: []
     },
-    label: 'Mixcloud',
+    label: "Pinterest",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-mixer',
+    class: "fa-pinterest-p",
     search: {
       terms: []
     },
-    label: 'Mixer',
+    label: "Pinterest P",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-mizuni',
+    class: "fa-pix",
     search: {
       terms: []
     },
-    label: 'Mizuni',
+    label: "Pix",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-mobile',
+    class: "fa-pizza-slice",
     search: {
       terms: [
-        'apple',
-        'call',
-        'cell phone',
-        'cellphone',
-        'device',
-        'iphone',
-        'number',
-        'screen',
-        'telephone'
+        "cheese",
+        "chicago",
+        "italian",
+        "mozzarella",
+        "new york",
+        "pepperoni",
+        "pie",
+        "slice",
+        "teenage mutant ninja turtles",
+        "tomato"
       ]
     },
-    label: 'Mobile Phone',
+    label: "Pizza Slice",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mobile-alt',
+    class: "fa-place-of-worship",
     search: {
       terms: [
-        'apple',
-        'call',
-        'cell phone',
-        'cellphone',
-        'device',
-        'iphone',
-        'number',
-        'screen',
-        'telephone'
+        "building",
+        "church",
+        "holy",
+        "mosque",
+        "synagogue"
       ]
-    },
-    label: 'Alternate Mobile',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-modx',
-    search: {
-      terms: []
     },
-    label: 'MODX',
+    label: "Place Of Worship",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-monero',
+    class: "fa-plane",
     search: {
-      terms: []
+      terms: [
+        "airplane",
+        "airport",
+        "destination",
+        "fly",
+        "location",
+        "mode",
+        "travel",
+        "trip"
+      ]
     },
-    label: 'Monero',
+    label: "Plane",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-bill',
+    class: "fa-plane-arrival",
     search: {
       terms: [
-        'buy',
-        'cash',
-        'checkout',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "aeroplane",
+        "airplane",
+        "airplane arrival",
+        "airport",
+        "arrivals",
+        "arriving",
+        "destination",
+        "fly",
+        "land",
+        "landing",
+        "location",
+        "mode",
+        "travel",
+        "trip"
       ]
     },
-    label: 'Money Bill',
+    label: "Plane Arrival",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-bill-alt',
+    class: "fa-plane-circle-check",
     search: {
       terms: [
-        'buy',
-        'cash',
-        'checkout',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "airplane",
+        "airport",
+        "flight",
+        "fly",
+        "not affected",
+        "ok",
+        "okay",
+        "travel"
       ]
     },
-    label: 'Alternate Money Bill',
+    label: "Plane Circle Check",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-bill-wave',
+    class: "fa-plane-circle-exclamation",
     search: {
       terms: [
-        'buy',
-        'cash',
-        'checkout',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "affected",
+        "airplane",
+        "airport",
+        "flight",
+        "fly",
+        "travel"
       ]
     },
-    label: 'Wavy Money Bill',
+    label: "Plane Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-bill-wave-alt',
+    class: "fa-plane-circle-xmark",
     search: {
       terms: [
-        'buy',
-        'cash',
-        'checkout',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "airplane",
+        "airport",
+        "destroy",
+        "flight",
+        "fly",
+        "travel"
       ]
     },
-    label: 'Alternate Wavy Money Bill',
+    label: "Plane Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-check',
+    class: "fa-plane-departure",
     search: {
       terms: [
-        'bank check',
-        'buy',
-        'checkout',
-        'cheque',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "aeroplane",
+        "airplane",
+        "airplane departure",
+        "airport",
+        "check-in",
+        "departing",
+        "departure",
+        "departures",
+        "destination",
+        "fly",
+        "location",
+        "mode",
+        "take off",
+        "taking off",
+        "travel",
+        "trip"
       ]
     },
-    label: 'Money Check',
+    label: "Plane Departure",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-money-check-alt',
+    class: "fa-plane-lock",
     search: {
       terms: [
-        'bank check',
-        'buy',
-        'checkout',
-        'cheque',
-        'money',
-        'payment',
-        'price',
-        'purchase'
+        "airplane",
+        "airport",
+        "closed",
+        "flight",
+        "fly",
+        "lockdown",
+        "quarantine",
+        "travel"
       ]
     },
-    label: 'Alternate Money Check',
+    label: "Plane Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-monument',
+    class: "fa-plane-slash",
     search: {
       terms: [
-        'building',
-        'historic',
-        'landmark',
-        'memorable'
+        "airplane mode",
+        "airport",
+        "canceled",
+        "covid-19",
+        "delayed",
+        "grounded",
+        "travel"
       ]
     },
-    label: 'Monument',
+    label: "Plane Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-moon',
+    class: "fa-plane-up",
     search: {
       terms: [
-        'contrast',
-        'crescent',
-        'dark',
-        'lunar',
-        'night'
+        "airplane",
+        "airport",
+        "internet",
+        "signal",
+        "sky",
+        "wifi",
+        "wireless"
       ]
     },
-    label: 'Moon',
+    label: "Plane Up",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-mortar-pestle',
+    class: "fa-plant-wilt",
     search: {
       terms: [
-        'crush',
-        'culinary',
-        'grind',
-        'medical',
-        'mix',
-        'pharmacy',
-        'prescription',
-        'spices'
+        "drought",
+        "planting",
+        "vegetation",
+        "wilt"
       ]
     },
-    label: 'Mortar Pestle',
+    label: "Plant Wilt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mosque',
+    class: "fa-plate-wheat",
     search: {
       terms: [
-        'building',
-        'islam',
-        'landmark',
-        'muslim'
+        "bowl",
+        "hunger",
+        "rations",
+        "wheat"
       ]
     },
-    label: 'Mosque',
+    label: "Plate Wheat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-motorcycle',
+    class: "fa-play",
     search: {
       terms: [
-        'bike',
-        'machine',
-        'transportation',
-        'vehicle'
+        "arrow",
+        "audio",
+        "music",
+        "play",
+        "play button",
+        "playing",
+        "right",
+        "sound",
+        "start",
+        "triangle",
+        "video"
       ]
     },
-    label: 'Motorcycle',
+    label: "Play",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mountain',
+    class: "fa-playstation",
     search: {
-      terms: [
-        'glacier',
-        'hiking',
-        'hill',
-        'landscape',
-        'travel',
-        'view'
-      ]
+      terms: []
     },
-    label: 'Mountain',
+    label: "PlayStation",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-mouse',
+    class: "fa-plug",
     search: {
       terms: [
-        'click',
-        'computer',
-        'cursor',
-        'input',
-        'peripheral'
+        "connect",
+        "electric",
+        "electric plug",
+        "electricity",
+        "online",
+        "plug",
+        "power"
       ]
     },
-    label: 'Mouse',
+    label: "Plug",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mouse-pointer',
+    class: "fa-plug-circle-bolt",
     search: {
       terms: [
-        'arrow',
-        'cursor',
-        'select'
+        "electric",
+        "electricity",
+        "plug",
+        "power"
       ]
     },
-    label: 'Mouse Pointer',
+    label: "Plug Circle Bolt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-mug-hot',
+    class: "fa-plug-circle-check",
     search: {
       terms: [
-        'caliente',
-        'cocoa',
-        'coffee',
-        'cup',
-        'drink',
-        'holiday',
-        'hot chocolate',
-        'steam',
-        'tea',
-        'warmth'
+        "electric",
+        "electricity",
+        "not affected",
+        "ok",
+        "okay",
+        "plug",
+        "power"
       ]
     },
-    label: 'Mug Hot',
+    label: "Plug Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-music',
+    class: "fa-plug-circle-exclamation",
     search: {
       terms: [
-        'lyrics',
-        'melody',
-        'note',
-        'sing',
-        'sound'
+        "affected",
+        "electric",
+        "electricity",
+        "plug",
+        "power"
       ]
     },
-    label: 'Music',
+    label: "Plug Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-napster',
+    class: "fa-plug-circle-minus",
     search: {
-      terms: []
+      terms: [
+        "electric",
+        "electricity",
+        "plug",
+        "power"
+      ]
     },
-    label: 'Napster',
+    label: "Plug Circle Minus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-neos',
+    class: "fa-plug-circle-plus",
     search: {
-      terms: []
+      terms: [
+        "electric",
+        "electricity",
+        "plug",
+        "power"
+      ]
     },
-    label: 'Neos',
+    label: "Plug Circle Plus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-network-wired',
+    class: "fa-plug-circle-xmark",
     search: {
       terms: [
-        'computer',
-        'connect',
-        'ethernet',
-        'internet',
-        'intranet'
+        "destroy",
+        "electric",
+        "electricity",
+        "outage",
+        "plug",
+        "power"
       ]
     },
-    label: 'Wired Network',
+    label: "Plug Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-neuter',
+    class: "fa-plus",
     search: {
-      terms: []
+      terms: [
+        "+",
+        "Plus Sign",
+        "add",
+        "create",
+        "expand",
+        "math",
+        "new",
+        "plus",
+        "positive",
+        "shape",
+        "sign"
+      ]
     },
-    label: 'Neuter',
+    label: "Plus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-newspaper',
+    class: "fa-plus-minus",
     search: {
       terms: [
-        'article',
-        'editorial',
-        'headline',
-        'journal',
-        'journalism',
-        'news',
-        'press'
+        "Plus-Minus Sign",
+        "add",
+        "math",
+        "subtract"
       ]
     },
-    label: 'Newspaper',
+    label: "Plus Minus",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-nimblr',
+    class: "fa-podcast",
     search: {
-      terms: []
+      terms: [
+        "audio",
+        "broadcast",
+        "music",
+        "sound"
+      ]
     },
-    label: 'Nimblr',
+    label: "Podcast",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-node',
+    class: "fa-poo",
     search: {
-      terms: []
+      terms: [
+        "crap",
+        "dung",
+        "face",
+        "monster",
+        "pile of poo",
+        "poo",
+        "poop",
+        "shit",
+        "smile",
+        "turd"
+      ]
     },
-    label: 'Node.js',
+    label: "Poo",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-node-js',
+    class: "fa-poo-storm",
     search: {
-      terms: []
+      terms: [
+        "bolt",
+        "cloud",
+        "euphemism",
+        "lightning",
+        "mess",
+        "poop",
+        "shit",
+        "turd"
+      ]
     },
-    label: 'Node.js JS',
+    label: "Poo Storm",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-not-equal',
+    class: "fa-poop",
     search: {
       terms: [
-        'arithmetic',
-        'compare',
-        'math'
+        "crap",
+        "poop",
+        "shit",
+        "smile",
+        "turd"
       ]
     },
-    label: 'Not Equal',
+    label: "Poop",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-notes-medical',
+    class: "fa-power-off",
     search: {
       terms: [
-        'clipboard',
-        'doctor',
-        'ehr',
-        'health',
-        'history',
-        'records'
+        "Power Symbol",
+        "cancel",
+        "computer",
+        "on",
+        "reboot",
+        "restart"
       ]
     },
-    label: 'Medical Notes',
+    label: "Power Off",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-npm',
+    class: "fa-prescription",
     search: {
-      terms: []
+      terms: [
+        "drugs",
+        "medical",
+        "medicine",
+        "pharmacy",
+        "rx"
+      ]
     },
-    label: 'npm',
+    label: "Prescription",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ns8',
+    class: "fa-prescription-bottle",
     search: {
-      terms: []
+      terms: [
+        "drugs",
+        "medical",
+        "medicine",
+        "pharmacy",
+        "rx"
+      ]
     },
-    label: 'NS8',
+    label: "Prescription Bottle",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-nutritionix',
+    class: "fa-prescription-bottle-medical",
     search: {
-      terms: []
+      terms: [
+        "drugs",
+        "medical",
+        "medicine",
+        "pharmacy",
+        "rx"
+      ]
     },
-    label: 'Nutritionix',
+    label: "Prescription Bottle Medical",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-object-group',
+    class: "fa-print",
     search: {
       terms: [
-        'combine',
-        'copy',
-        'design',
-        'merge',
-        'select'
+        "Print Screen Symbol",
+        "Printer Icon",
+        "business",
+        "computer",
+        "copy",
+        "document",
+        "office",
+        "paper",
+        "printer"
       ]
     },
-    label: 'Object Group',
+    label: "Print",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-object-ungroup',
+    class: "fa-product-hunt",
     search: {
-      terms: [
-        'copy',
-        'design',
-        'merge',
-        'select',
-        'separate'
-      ]
+      terms: []
     },
-    label: 'Object Ungroup',
+    label: "Product Hunt",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-octopus-deploy',
+    class: "fa-pump-medical",
     search: {
-      terms: []
+      terms: [
+        "anti-bacterial",
+        "clean",
+        "covid-19",
+        "disinfect",
+        "hygiene",
+        "medical grade",
+        "sanitizer",
+        "soap"
+      ]
     },
-    label: 'Octopus Deploy',
+    label: "Pump Medical",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-odnoklassniki',
+    class: "fa-pump-soap",
     search: {
-      terms: []
+      terms: [
+        "anti-bacterial",
+        "clean",
+        "covid-19",
+        "disinfect",
+        "hygiene",
+        "sanitizer",
+        "soap"
+      ]
     },
-    label: 'Odnoklassniki',
+    label: "Pump Soap",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-odnoklassniki-square',
+    class: "fa-pushed",
     search: {
       terms: []
     },
-    label: 'Odnoklassniki Square',
+    label: "Pushed",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-oil-can',
+    class: "fa-puzzle-piece",
     search: {
       terms: [
-        'auto',
-        'crude',
-        'gasoline',
-        'grease',
-        'lubricate',
-        'petroleum'
+        "add-on",
+        "addon",
+        "clue",
+        "game",
+        "interlocking",
+        "jigsaw",
+        "piece",
+        "puzzle",
+        "puzzle piece",
+        "section"
       ]
     },
-    label: 'Oil Can',
+    label: "Puzzle Piece",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-old-republic',
+    class: "fa-python",
     search: {
-      terms: [
-        'politics',
-        'star wars'
-      ]
+      terms: []
     },
-    label: 'Old Republic',
+    label: "Python",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-om',
+    class: "fa-q",
     search: {
       terms: [
-        'buddhism',
-        'hinduism',
-        'jainism',
-        'mantra'
+        "Latin Capital Letter Q",
+        "Latin Small Letter Q",
+        "letter"
       ]
     },
-    label: 'Om',
+    label: "Q",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-opencart',
+    class: "fa-qq",
     search: {
       terms: []
     },
-    label: 'OpenCart',
+    label: "QQ",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-openid',
+    class: "fa-qrcode",
     search: {
-      terms: []
+      terms: [
+        "barcode",
+        "info",
+        "information",
+        "scan"
+      ]
     },
-    label: 'OpenID',
+    label: "Qrcode",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-opera',
+    class: "fa-question",
     search: {
-      terms: []
+      terms: [
+        "?",
+        "Question Mark",
+        "help",
+        "information",
+        "mark",
+        "outlined",
+        "punctuation",
+        "question",
+        "red question mark",
+        "support",
+        "unknown",
+        "white question mark"
+      ]
     },
-    label: 'Opera',
+    label: "Question",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-optin-monster',
+    class: "fa-quinscape",
     search: {
       terms: []
     },
-    label: 'Optin Monster',
+    label: "QuinScape",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-orcid',
+    class: "fa-quora",
     search: {
       terms: []
     },
-    label: 'ORCID',
+    label: "Quora",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-osi',
+    class: "fa-quote-left",
     search: {
-      terms: []
+      terms: [
+        "Left Double Quotation Mark",
+        "mention",
+        "note",
+        "phrase",
+        "text",
+        "type"
+      ]
     },
-    label: 'Open Source Initiative',
+    label: "Quote Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-otter',
+    class: "fa-quote-right",
     search: {
       terms: [
-        'animal',
-        'badger',
-        'fauna',
-        'fur',
-        'mammal',
-        'marten'
+        "Right Double Quotation Mark",
+        "mention",
+        "note",
+        "phrase",
+        "text",
+        "type"
       ]
     },
-    label: 'Otter',
+    label: "Quote Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-outdent',
+    class: "fa-r",
     search: {
       terms: [
-        'align',
-        'justify',
-        'paragraph',
-        'tab'
+        "Latin Capital Letter R",
+        "Latin Small Letter R",
+        "letter"
       ]
     },
-    label: 'Outdent',
+    label: "R",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-page4',
+    class: "fa-r-project",
     search: {
       terms: []
     },
-    label: 'page4 Corporation',
+    label: "R Project",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-pagelines',
+    class: "fa-radiation",
     search: {
       terms: [
-        'eco',
-        'flora',
-        'leaf',
-        'leaves',
-        'nature',
-        'plant',
-        'tree'
+        "danger",
+        "dangerous",
+        "deadly",
+        "hazard",
+        "nuclear",
+        "radioactive",
+        "warning"
       ]
     },
-    label: 'Pagelines',
+    label: "Radiation",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pager',
+    class: "fa-radio",
     search: {
       terms: [
-        'beeper',
-        'cellphone',
-        'communication'
+        "am",
+        "broadcast",
+        "fm",
+        "frequency",
+        "music",
+        "news",
+        "radio",
+        "receiver",
+        "transmitter",
+        "tuner",
+        "video"
       ]
     },
-    label: 'Pager',
+    label: "Radio",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-paint-brush',
+    class: "fa-rainbow",
     search: {
       terms: [
-        'acrylic',
-        'art',
-        'brush',
-        'color',
-        'fill',
-        'paint',
-        'pigment',
-        'watercolor'
+        "gold",
+        "leprechaun",
+        "prism",
+        "rain",
+        "rainbow",
+        "sky"
       ]
     },
-    label: 'Paint Brush',
+    label: "Rainbow",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-paint-roller',
+    class: "fa-ranking-star",
     search: {
       terms: [
-        'acrylic',
-        'art',
-        'brush',
-        'color',
-        'fill',
-        'paint',
-        'pigment',
-        'watercolor'
+        "chart",
+        "first place",
+        "podium",
+        "rank",
+        "win"
       ]
     },
-    label: 'Paint Roller',
+    label: "Ranking Star",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-palette',
+    class: "fa-raspberry-pi",
     search: {
-      terms: [
-        'acrylic',
-        'art',
-        'brush',
-        'color',
-        'fill',
-        'paint',
-        'pigment',
-        'watercolor'
-      ]
+      terms: []
     },
-    label: 'Palette',
+    label: "Raspberry Pi",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-palfed',
+    class: "fa-ravelry",
     search: {
       terms: []
     },
-    label: 'Palfed',
+    label: "Ravelry",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-pallet',
+    class: "fa-react",
     search: {
-      terms: [
-        'archive',
-        'box',
-        'inventory',
-        'shipping',
-        'warehouse'
-      ]
+      terms: []
     },
-    label: 'Pallet',
+    label: "React",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-paper-plane',
+    class: "fa-reacteurope",
     search: {
-      terms: [
-        'air',
-        'float',
-        'fold',
-        'mail',
-        'paper',
-        'send'
-      ]
+      terms: []
     },
-    label: 'Paper Plane',
+    label: "ReactEurope",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-paperclip',
+    class: "fa-readme",
     search: {
-      terms: [
-        'attach',
-        'attachment',
-        'connect',
-        'link'
-      ]
+      terms: []
     },
-    label: 'Paperclip',
+    label: "ReadMe",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-parachute-box',
+    class: "fa-rebel",
     search: {
-      terms: [
-        'aid',
-        'assistance',
-        'rescue',
-        'supplies'
-      ]
+      terms: []
     },
-    label: 'Parachute Box',
+    label: "Rebel Alliance",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-paragraph',
+    class: "fa-receipt",
     search: {
       terms: [
-        'edit',
-        'format',
-        'text',
-        'writing'
+        "accounting",
+        "bookkeeping",
+        "check",
+        "evidence",
+        "invoice",
+        "money",
+        "pay",
+        "proof",
+        "receipt",
+        "table"
       ]
     },
-    label: 'paragraph',
+    label: "Receipt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-parking',
+    class: "fa-record-vinyl",
     search: {
       terms: [
-        'auto',
-        'car',
-        'garage',
-        'meter'
+        "LP",
+        "album",
+        "analog",
+        "music",
+        "phonograph",
+        "sound"
       ]
     },
-    label: 'Parking',
+    label: "Record Vinyl",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-passport',
+    class: "fa-rectangle-ad",
     search: {
       terms: [
-        'document',
-        'id',
-        'identification',
-        'issued',
-        'travel'
+        "advertisement",
+        "media",
+        "newspaper",
+        "promotion",
+        "publicity"
       ]
     },
-    label: 'Passport',
+    label: "Rectangle Ad",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pastafarianism',
+    class: "fa-rectangle-list",
     search: {
       terms: [
-        'agnosticism',
-        'atheism',
-        'flying spaghetti monster',
-        'fsm'
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "ol",
+        "todo",
+        "ul"
       ]
     },
-    label: 'Pastafarianism',
+    label: "Rectangle List",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-paste',
+    class: "fa-rectangle-xmark",
     search: {
       terms: [
-        'clipboard',
-        'copy',
-        'document',
-        'paper'
+        "browser",
+        "cancel",
+        "computer",
+        "development"
       ]
-    },
-    label: 'Paste',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-patreon',
-    search: {
-      terms: []
     },
-    label: 'Patreon',
+    label: "Rectangle Xmark",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-pause',
+    class: "fa-recycle",
     search: {
       terms: [
-        'hold',
-        'wait'
+        "Recycling Symbol For Generic Materials",
+        "Universal Recycling Symbol",
+        "Waste",
+        "compost",
+        "garbage",
+        "recycle",
+        "recycling symbol",
+        "reuse",
+        "trash"
       ]
     },
-    label: 'pause',
+    label: "Recycle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pause-circle',
+    class: "fa-red-river",
     search: {
-      terms: [
-        'hold',
-        'wait'
-      ]
+      terms: []
     },
-    label: 'Pause Circle',
+    label: "red river",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-paw',
+    class: "fa-reddit",
     search: {
-      terms: [
-        'animal',
-        'cat',
-        'dog',
-        'pet',
-        'print'
-      ]
+      terms: []
     },
-    label: 'Paw',
+    label: "reddit Logo",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-paypal',
+    class: "fa-reddit-alien",
     search: {
       terms: []
     },
-    label: 'Paypal',
+    label: "reddit Alien",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-peace',
+    class: "fa-redhat",
     search: {
       terms: [
-        'serenity',
-        'tranquility',
-        'truce',
-        'war'
+        "linux",
+        "operating system",
+        "os"
       ]
     },
-    label: 'Peace',
+    label: "Redhat",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-pen',
+    class: "fa-registered",
     search: {
       terms: [
-        'design',
-        'edit',
-        'update',
-        'write'
+        "copyright",
+        "mark",
+        "r",
+        "registered",
+        "trademark"
       ]
     },
-    label: 'Pen',
+    label: "Registered",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-pen-alt',
+    class: "fa-renren",
     search: {
-      terms: [
-        'design',
-        'edit',
-        'update',
-        'write'
-      ]
+      terms: []
     },
-    label: 'Alternate Pen',
+    label: "Renren",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-pen-fancy',
+    class: "fa-repeat",
     search: {
       terms: [
-        'design',
-        'edit',
-        'fountain pen',
-        'update',
-        'write'
+        "arrow",
+        "clockwise",
+        "flip",
+        "reload",
+        "repeat",
+        "repeat button",
+        "rewind",
+        "switch"
       ]
     },
-    label: 'Pen Fancy',
+    label: "Repeat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pen-nib',
+    class: "fa-reply",
     search: {
       terms: [
-        'design',
-        'edit',
-        'fountain pen',
-        'update',
-        'write'
+        "mail",
+        "message",
+        "respond"
       ]
     },
-    label: 'Pen Nib',
+    label: "Reply",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pen-square',
+    class: "fa-reply-all",
     search: {
       terms: [
-        'edit',
-        'pencil-square',
-        'update',
-        'write'
+        "mail",
+        "message",
+        "respond"
       ]
     },
-    label: 'Pen Square',
+    label: "Reply All",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pencil-alt',
+    class: "fa-replyd",
     search: {
-      terms: [
-        'design',
-        'edit',
-        'pencil',
-        'update',
-        'write'
-      ]
+      terms: []
     },
-    label: 'Alternate Pencil',
+    label: "replyd",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-pencil-ruler',
+    class: "fa-republican",
     search: {
       terms: [
-        'design',
-        'draft',
-        'draw',
-        'pencil'
+        "american",
+        "conservative",
+        "election",
+        "elephant",
+        "politics",
+        "republican party",
+        "right",
+        "right-wing",
+        "usa"
       ]
     },
-    label: 'Pencil Ruler',
+    label: "Republican",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-penny-arcade',
+    class: "fa-researchgate",
     search: {
-      terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'game',
-        'gaming',
-        'pax',
-        'tabletop'
-      ]
+      terms: []
     },
-    label: 'Penny Arcade',
+    label: "Researchgate",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-people-arrows',
+    class: "fa-resolving",
     search: {
-      terms: [
-        'covid-19',
-        'personal space',
-        'social distance',
-        'space',
-        'spread',
-        'users'
-      ]
+      terms: []
     },
-    label: 'People Arrows',
+    label: "Resolving",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-people-carry',
+    class: "fa-restroom",
     search: {
       terms: [
-        'box',
-        'carry',
-        'fragile',
-        'help',
-        'movers',
-        'package'
+        "bathroom",
+        "toilet",
+        "water closet",
+        "wc"
       ]
     },
-    label: 'People Carry',
+    label: "Restroom",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pepper-hot',
+    class: "fa-retweet",
     search: {
       terms: [
-        'buffalo wings',
-        'capsicum',
-        'chili',
-        'chilli',
-        'habanero',
-        'jalapeno',
-        'mexican',
-        'spicy',
-        'tabasco',
-        'vegetable'
+        "refresh",
+        "reload",
+        "share",
+        "swap"
       ]
     },
-    label: 'Hot Pepper',
+    label: "Retweet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-perbyte',
+    class: "fa-rev",
     search: {
       terms: []
     },
-    label: 'PerByte',
+    label: "Rev.io",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-percent',
+    class: "fa-ribbon",
     search: {
       terms: [
-        'discount',
-        'fraction',
-        'proportion',
-        'rate',
-        'ratio'
+        "badge",
+        "cause",
+        "celebration",
+        "lapel",
+        "pin",
+        "reminder",
+        "reminder ribbon",
+        "ribbon"
       ]
     },
-    label: 'Percent',
+    label: "Ribbon",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-percentage',
+    class: "fa-right-from-bracket",
     search: {
       terms: [
-        'discount',
-        'fraction',
-        'proportion',
-        'rate',
-        'ratio'
+        "arrow",
+        "exit",
+        "leave",
+        "log out",
+        "logout",
+        "sign-out"
       ]
-    },
-    label: 'Percentage',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-periscope',
-    search: {
-      terms: []
     },
-    label: 'Periscope',
+    label: "Right From Bracket",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-person-booth',
+    class: "fa-right-left",
     search: {
       terms: [
-        'changing',
-        'changing room',
-        'election',
-        'human',
-        'person',
-        'vote',
-        'voting'
-      ]
-    },
-    label: 'Person Entering Booth',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-phabricator',
-    search: {
-      terms: []
+        "arrow",
+        "arrows",
+        "exchange",
+        "reciprocate",
+        "return",
+        "swap",
+        "transfer"
+      ]
     },
-    label: 'Phabricator',
+    label: "Right Left",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-phoenix-framework',
+    class: "fa-right-long",
     search: {
-      terms: []
+      terms: [
+        "forward",
+        "long-arrow-right",
+        "next"
+      ]
     },
-    label: 'Phoenix Framework',
+    label: "Right Long",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-phoenix-squadron',
+    class: "fa-right-to-bracket",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "enter",
+        "join",
+        "log in",
+        "login",
+        "sign in",
+        "sign up",
+        "sign-in",
+        "signin",
+        "signup"
+      ]
     },
-    label: 'Phoenix Squadron',
+    label: "Right To Bracket",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone',
+    class: "fa-ring",
     search: {
       terms: [
-        'call',
-        'earphone',
-        'number',
-        'support',
-        'telephone',
-        'voice'
+        "Dungeons & Dragons",
+        "Gollum",
+        "band",
+        "binding",
+        "d&d",
+        "dnd",
+        "engagement",
+        "fantasy",
+        "gold",
+        "jewelry",
+        "marriage",
+        "precious"
       ]
     },
-    label: 'Phone',
+    label: "Ring",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone-alt',
+    class: "fa-road",
     search: {
       terms: [
-        'call',
-        'earphone',
-        'number',
-        'support',
-        'telephone',
-        'voice'
+        "highway",
+        "map",
+        "motorway",
+        "pavement",
+        "road",
+        "route",
+        "street",
+        "travel"
       ]
     },
-    label: 'Alternate Phone',
+    label: "Road",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone-slash',
+    class: "fa-road-barrier",
     search: {
       terms: [
-        'call',
-        'cancel',
-        'earphone',
-        'mute',
-        'number',
-        'support',
-        'telephone',
-        'voice'
+        "block",
+        "border",
+        "no entry",
+        "roadblock"
       ]
     },
-    label: 'Phone Slash',
+    label: "Road Barrier",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone-square',
+    class: "fa-road-bridge",
     search: {
       terms: [
-        'call',
-        'earphone',
-        'number',
-        'support',
-        'telephone',
-        'voice'
+        "bridge",
+        "infrastructure",
+        "road",
+        "travel"
       ]
     },
-    label: 'Phone Square',
+    label: "Road Bridge",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone-square-alt',
+    class: "fa-road-circle-check",
     search: {
       terms: [
-        'call',
-        'earphone',
-        'number',
-        'support',
-        'telephone',
-        'voice'
+        "freeway",
+        "highway",
+        "not affected",
+        "ok",
+        "okay",
+        "pavement",
+        "road"
       ]
     },
-    label: 'Alternate Phone Square',
+    label: "Road Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-phone-volume',
+    class: "fa-road-circle-exclamation",
     search: {
       terms: [
-        'call',
-        'earphone',
-        'number',
-        'sound',
-        'support',
-        'telephone',
-        'voice',
-        'volume-control-phone'
+        "affected",
+        "freeway",
+        "highway",
+        "pavement",
+        "road"
       ]
     },
-    label: 'Phone Volume',
+    label: "Road Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-photo-video',
+    class: "fa-road-circle-xmark",
     search: {
       terms: [
-        'av',
-        'film',
-        'image',
-        'library',
-        'media'
+        "destroy",
+        "freeway",
+        "highway",
+        "pavement",
+        "road"
       ]
     },
-    label: 'Photo Video',
+    label: "Road Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-php',
+    class: "fa-road-lock",
     search: {
-      terms: []
+      terms: [
+        "closed",
+        "freeway",
+        "highway",
+        "lockdown",
+        "pavement",
+        "quarantine",
+        "road"
+      ]
     },
-    label: 'PHP',
+    label: "Road Lock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pied-piper',
+    class: "fa-road-spikes",
     search: {
-      terms: []
+      terms: [
+        "barrier",
+        "roadblock",
+        "spikes"
+      ]
     },
-    label: 'Pied Piper Logo',
+    label: "Road Spikes",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pied-piper-alt',
+    class: "fa-robot",
     search: {
-      terms: []
+      terms: [
+        "android",
+        "automate",
+        "computer",
+        "cyborg",
+        "face",
+        "monster",
+        "robot"
+      ]
     },
-    label: 'Alternate Pied Piper Logo (Old)',
+    label: "Robot",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pied-piper-hat',
+    class: "fa-rocket",
     search: {
       terms: [
-        'clothing'
+        "aircraft",
+        "app",
+        "jet",
+        "launch",
+        "nasa",
+        "space"
       ]
     },
-    label: 'Pied Piper Hat (Old)',
+    label: "Rocket",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pied-piper-pp',
+    class: "fa-rocketchat",
     search: {
       terms: []
     },
-    label: 'Pied Piper PP Logo (Old)',
+    label: "Rocket.Chat",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-pied-piper-square',
+    class: "fa-rockrms",
     search: {
       terms: []
     },
-    label: 'Pied Piper Square Logo (Old)',
+    label: "Rockrms",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-piggy-bank',
+    class: "fa-rotate",
     search: {
       terms: [
-        'bank',
-        'save',
-        'savings'
+        "anticlockwise",
+        "arrow",
+        "counterclockwise",
+        "counterclockwise arrows button",
+        "exchange",
+        "refresh",
+        "reload",
+        "rotate",
+        "swap",
+        "withershins"
       ]
     },
-    label: 'Piggy Bank',
+    label: "Rotate",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pills',
+    class: "fa-rotate-left",
     search: {
       terms: [
-        'drugs',
-        'medicine',
-        'prescription',
-        'tablets'
+        "back",
+        "control z",
+        "exchange",
+        "oops",
+        "return",
+        "swap"
       ]
     },
-    label: 'Pills',
+    label: "Rotate Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pinterest',
+    class: "fa-rotate-right",
     search: {
-      terms: []
+      terms: [
+        "forward",
+        "refresh",
+        "reload",
+        "repeat"
+      ]
     },
-    label: 'Pinterest',
+    label: "Rotate Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pinterest-p',
+    class: "fa-route",
     search: {
-      terms: []
+      terms: [
+        "directions",
+        "navigation",
+        "travel"
+      ]
     },
-    label: 'Pinterest P',
+    label: "Route",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pinterest-square',
+    class: "fa-rss",
     search: {
-      terms: []
+      terms: [
+        "blog",
+        "feed",
+        "journal",
+        "news",
+        "writing"
+      ]
     },
-    label: 'Pinterest Square',
+    label: "Rss",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-pizza-slice',
+    class: "fa-ruble-sign",
     search: {
       terms: [
-        'cheese',
-        'chicago',
-        'italian',
-        'mozzarella',
-        'new york',
-        'pepperoni',
-        'pie',
-        'slice',
-        'teenage mutant ninja turtles',
-        'tomato'
+        "Ruble Sign",
+        "currency"
       ]
     },
-    label: 'Pizza Slice',
+    label: "Ruble Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-place-of-worship',
+    class: "fa-rug",
     search: {
       terms: [
-        'building',
-        'church',
-        'holy',
-        'mosque',
-        'synagogue'
+        "blanket",
+        "carpet",
+        "rug",
+        "textile"
       ]
     },
-    label: 'Place of Worship',
+    label: "Rug",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plane',
+    class: "fa-ruler",
     search: {
       terms: [
-        'airplane',
-        'destination',
-        'fly',
-        'location',
-        'mode',
-        'travel',
-        'trip'
+        "design",
+        "draft",
+        "length",
+        "measure",
+        "planning",
+        "ruler",
+        "straight edge",
+        "straight ruler"
       ]
     },
-    label: 'plane',
+    label: "Ruler",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plane-arrival',
+    class: "fa-ruler-combined",
     search: {
       terms: [
-        'airplane',
-        'arriving',
-        'destination',
-        'fly',
-        'land',
-        'landing',
-        'location',
-        'mode',
-        'travel',
-        'trip'
+        "design",
+        "draft",
+        "length",
+        "measure",
+        "planning"
       ]
     },
-    label: 'Plane Arrival',
+    label: "Ruler Combined",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plane-departure',
+    class: "fa-ruler-horizontal",
     search: {
       terms: [
-        'airplane',
-        'departing',
-        'destination',
-        'fly',
-        'location',
-        'mode',
-        'take off',
-        'taking off',
-        'travel',
-        'trip'
+        "design",
+        "draft",
+        "length",
+        "measure",
+        "planning"
       ]
     },
-    label: 'Plane Departure',
+    label: "Ruler Horizontal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plane-slash',
+    class: "fa-ruler-vertical",
     search: {
       terms: [
-        'airplane mode',
-        'canceled',
-        'covid-19',
-        'delayed',
-        'grounded',
-        'travel'
+        "design",
+        "draft",
+        "length",
+        "measure",
+        "planning"
       ]
     },
-    label: 'Plane Slash',
+    label: "Ruler Vertical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-play',
+    class: "fa-rupee-sign",
     search: {
       terms: [
-        'audio',
-        'music',
-        'playing',
-        'sound',
-        'start',
-        'video'
+        "Rupee Sign",
+        "currency"
       ]
     },
-    label: 'play',
+    label: "Rupee Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-play-circle',
+    class: "fa-rupiah-sign",
     search: {
       terms: [
-        'audio',
-        'music',
-        'playing',
-        'sound',
-        'start',
-        'video'
+        "currency"
       ]
     },
-    label: 'Play Circle',
+    label: "Rupiah Sign",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-playstation',
+    class: "fa-rust",
     search: {
       terms: []
     },
-    label: 'PlayStation',
+    label: "Rust",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-plug',
+    class: "fa-s",
     search: {
       terms: [
-        'connect',
-        'electric',
-        'online',
-        'power'
+        "Latin Capital Letter S",
+        "Latin Small Letter S",
+        "letter"
       ]
     },
-    label: 'Plug',
+    label: "S",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plus',
+    class: "fa-sack-dollar",
     search: {
       terms: [
-        'add',
-        'create',
-        'expand',
-        'new',
-        'positive',
-        'shape'
+        "bag",
+        "burlap",
+        "cash",
+        "dollar",
+        "money",
+        "money bag",
+        "moneybag",
+        "robber",
+        "santa",
+        "usd"
       ]
     },
-    label: 'plus',
+    label: "Sack Dollar",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plus-circle',
+    class: "fa-sack-xmark",
     search: {
       terms: [
-        'add',
-        'create',
-        'expand',
-        'new',
-        'positive',
-        'shape'
+        "bag",
+        "burlap",
+        "rations"
       ]
     },
-    label: 'Plus Circle',
+    label: "Sack Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-plus-square',
+    class: "fa-safari",
     search: {
       terms: [
-        'add',
-        'create',
-        'expand',
-        'new',
-        'positive',
-        'shape'
+        "browser"
       ]
     },
-    label: 'Plus Square',
+    label: "Safari",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-podcast',
+    class: "fa-sailboat",
     search: {
       terms: [
-        'audio',
-        'broadcast',
-        'music',
-        'sound'
+        "dinghy",
+        "mast",
+        "sailboat",
+        "sailing",
+        "yacht"
       ]
     },
-    label: 'Podcast',
+    label: "Sailboat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-poll',
+    class: "fa-salesforce",
     search: {
-      terms: [
-        'results',
-        'survey',
-        'trend',
-        'vote',
-        'voting'
-      ]
+      terms: []
     },
-    label: 'Poll',
+    label: "Salesforce",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-poll-h',
+    class: "fa-sass",
     search: {
-      terms: [
-        'results',
-        'survey',
-        'trend',
-        'vote',
-        'voting'
-      ]
+      terms: []
     },
-    label: 'Poll H',
+    label: "Sass",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-poo',
+    class: "fa-satellite",
     search: {
       terms: [
-        'crap',
-        'poop',
-        'shit',
-        'smile',
-        'turd'
+        "communications",
+        "hardware",
+        "orbit",
+        "satellite",
+        "space"
       ]
     },
-    label: 'Poo',
+    label: "Satellite",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-poo-storm',
+    class: "fa-satellite-dish",
     search: {
       terms: [
-        'bolt',
-        'cloud',
-        'euphemism',
-        'lightning',
-        'mess',
-        'poop',
-        'shit',
-        'turd'
+        "SETI",
+        "antenna",
+        "communications",
+        "dish",
+        "hardware",
+        "radar",
+        "receiver",
+        "satellite",
+        "satellite antenna",
+        "saucer",
+        "signal",
+        "space"
       ]
     },
-    label: 'Poo Storm',
+    label: "Satellite Dish",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-poop',
+    class: "fa-scale-balanced",
     search: {
       terms: [
-        'crap',
-        'poop',
-        'shit',
-        'smile',
-        'turd'
+        "Libra",
+        "balance",
+        "balance scale",
+        "balanced",
+        "justice",
+        "law",
+        "legal",
+        "measure",
+        "rule",
+        "scale",
+        "weight",
+        "zodiac"
       ]
     },
-    label: 'Poop',
+    label: "Scale Balanced",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-portrait',
+    class: "fa-scale-unbalanced",
     search: {
       terms: [
-        'id',
-        'image',
-        'photo',
-        'picture',
-        'selfie'
+        "justice",
+        "legal",
+        "measure",
+        "unbalanced",
+        "weight"
       ]
     },
-    label: 'Portrait',
+    label: "Scale Unbalanced",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pound-sign',
+    class: "fa-scale-unbalanced-flip",
     search: {
       terms: [
-        'currency',
-        'gbp',
-        'money'
+        "justice",
+        "legal",
+        "measure",
+        "unbalanced",
+        "weight"
       ]
     },
-    label: 'Pound Sign',
+    label: "Scale Unbalanced Flip",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-power-off',
+    class: "fa-schlix",
     search: {
-      terms: [
-        'cancel',
-        'computer',
-        'on',
-        'reboot',
-        'restart'
-      ]
+      terms: []
     },
-    label: 'Power Off',
+    label: "SCHLIX",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-pray',
+    class: "fa-school",
     search: {
       terms: [
-        'kneel',
-        'preach',
-        'religion',
-        'worship'
+        "building",
+        "education",
+        "learn",
+        "school",
+        "student",
+        "teacher"
       ]
     },
-    label: 'Pray',
+    label: "School",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-praying-hands',
+    class: "fa-school-circle-check",
     search: {
       terms: [
-        'kneel',
-        'preach',
-        'religion',
-        'worship'
+        "not affected",
+        "ok",
+        "okay",
+        "schoolhouse"
       ]
     },
-    label: 'Praying Hands',
+    label: "School Circle Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-prescription',
+    class: "fa-school-circle-exclamation",
     search: {
       terms: [
-        'drugs',
-        'medical',
-        'medicine',
-        'pharmacy',
-        'rx'
+        "affected",
+        "schoolhouse"
       ]
     },
-    label: 'Prescription',
+    label: "School Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-prescription-bottle',
+    class: "fa-school-circle-xmark",
     search: {
       terms: [
-        'drugs',
-        'medical',
-        'medicine',
-        'pharmacy',
-        'rx'
+        "destroy",
+        "schoolhouse"
       ]
     },
-    label: 'Prescription Bottle',
+    label: "School Circle Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-prescription-bottle-alt',
+    class: "fa-school-flag",
     search: {
       terms: [
-        'drugs',
-        'medical',
-        'medicine',
-        'pharmacy',
-        'rx'
+        "educate",
+        "flag",
+        "school",
+        "schoolhouse"
       ]
     },
-    label: 'Alternate Prescription Bottle',
+    label: "School Flag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-print',
+    class: "fa-school-lock",
     search: {
       terms: [
-        'business',
-        'copy',
-        'document',
-        'office',
-        'paper'
+        "closed",
+        "lockdown",
+        "quarantine",
+        "schoolhouse"
       ]
     },
-    label: 'print',
+    label: "School Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-procedures',
+    class: "fa-scissors",
     search: {
       terms: [
-        'EKG',
-        'bed',
-        'electrocardiogram',
-        'health',
-        'hospital',
-        'life',
-        'patient',
-        'vital'
+        "Black Safety Scissors",
+        "White Scissors",
+        "clip",
+        "cutting",
+        "scissors",
+        "snip",
+        "tool"
       ]
     },
-    label: 'Procedures',
+    label: "Scissors",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-product-hunt',
+    class: "fa-screenpal",
     search: {
       terms: []
     },
-    label: 'Product Hunt',
+    label: "Screenpal",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-project-diagram',
+    class: "fa-screwdriver",
     search: {
       terms: [
-        'chart',
-        'graph',
-        'network',
-        'pert'
+        "admin",
+        "fix",
+        "mechanic",
+        "repair",
+        "screw",
+        "screwdriver",
+        "settings",
+        "tool"
       ]
     },
-    label: 'Project Diagram',
+    label: "Screwdriver",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pump-medical',
+    class: "fa-screwdriver-wrench",
     search: {
       terms: [
-        'anti-bacterial',
-        'clean',
-        'covid-19',
-        'disinfect',
-        'hygiene',
-        'medical grade',
-        'sanitizer',
-        'soap'
+        "admin",
+        "fix",
+        "repair",
+        "screwdriver",
+        "settings",
+        "tools",
+        "wrench"
       ]
     },
-    label: 'Pump Medical',
+    label: "Screwdriver Wrench",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-pump-soap',
+    class: "fa-scribd",
     search: {
-      terms: [
-        'anti-bacterial',
-        'clean',
-        'covid-19',
-        'disinfect',
-        'hygiene',
-        'sanitizer',
-        'soap'
-      ]
+      terms: []
     },
-    label: 'Pump Soap',
+    label: "Scribd",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-pushed',
+    class: "fa-scroll",
     search: {
-      terms: []
+      terms: [
+        "Dungeons & Dragons",
+        "announcement",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "paper",
+        "script",
+        "scroll"
+      ]
     },
-    label: 'Pushed',
+    label: "Scroll",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-puzzle-piece',
+    class: "fa-scroll-torah",
     search: {
       terms: [
-        'add-on',
-        'addon',
-        'game',
-        'section'
+        "book",
+        "jewish",
+        "judaism",
+        "religion",
+        "scroll"
       ]
     },
-    label: 'Puzzle Piece',
+    label: "Scroll Torah",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-python',
+    class: "fa-sd-card",
     search: {
-      terms: []
+      terms: [
+        "image",
+        "memory",
+        "photo",
+        "save"
+      ]
     },
-    label: 'Python',
+    label: "Sd Card",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-qq',
+    class: "fa-searchengin",
     search: {
       terms: []
     },
-    label: 'QQ',
+    label: "Searchengin",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-qrcode',
+    class: "fa-section",
     search: {
       terms: [
-        'barcode',
-        'info',
-        'information',
-        'scan'
+        "Section Sign",
+        "law",
+        "legal",
+        "silcrow"
       ]
     },
-    label: 'qrcode',
+    label: "Section",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-question',
+    class: "fa-seedling",
     search: {
       terms: [
-        'help',
-        'information',
-        'support',
-        'unknown'
+        "environment",
+        "flora",
+        "grow",
+        "plant",
+        "sapling",
+        "seedling",
+        "vegan",
+        "young"
       ]
     },
-    label: 'Question',
+    label: "Seedling",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-question-circle',
+    class: "fa-sellcast",
     search: {
       terms: [
-        'help',
-        'information',
-        'support',
-        'unknown'
+        "eercast"
       ]
+    },
+    label: "Sellcast",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-sellsy",
+    search: {
+      terms: []
     },
-    label: 'Question Circle',
+    label: "Sellsy",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-quidditch',
+    class: "fa-server",
     search: {
       terms: [
-        'ball',
-        'bludger',
-        'broom',
-        'golden snitch',
-        'harry potter',
-        'hogwarts',
-        'quaffle',
-        'sport',
-        'wizard'
+        "computer",
+        "cpu",
+        "database",
+        "hardware",
+        "network"
       ]
     },
-    label: 'Quidditch',
+    label: "Server",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-quinscape',
+    class: "fa-servicestack",
     search: {
       terms: []
     },
-    label: 'QuinScape',
+    label: "Servicestack",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-quora',
+    class: "fa-shapes",
     search: {
-      terms: []
+      terms: [
+        "blocks",
+        "build",
+        "circle",
+        "square",
+        "triangle"
+      ]
     },
-    label: 'Quora',
+    label: "Shapes",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-quote-left',
+    class: "fa-share",
     search: {
       terms: [
-        'mention',
-        'note',
-        'phrase',
-        'text',
-        'type'
+        "forward",
+        "save",
+        "send",
+        "social"
       ]
     },
-    label: 'quote-left',
+    label: "Share",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-quote-right',
+    class: "fa-share-from-square",
     search: {
       terms: [
-        'mention',
-        'note',
-        'phrase',
-        'text',
-        'type'
+        "forward",
+        "save",
+        "send",
+        "social"
       ]
     },
-    label: 'quote-right',
+    label: "Share From Square",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-quran',
+    class: "fa-share-nodes",
     search: {
       terms: [
-        'book',
-        'islam',
-        'muslim',
-        'religion'
+        "forward",
+        "save",
+        "send",
+        "social"
       ]
     },
-    label: 'Quran',
+    label: "Share Nodes",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-r-project',
+    class: "fa-sheet-plastic",
     search: {
-      terms: []
+      terms: [
+        "plastic",
+        "plastic wrap",
+        "protect",
+        "tarp",
+        "tarpaulin",
+        "waterproof"
+      ]
     },
-    label: 'R Project',
+    label: "Sheet Plastic",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-radiation',
+    class: "fa-shekel-sign",
     search: {
       terms: [
-        'danger',
-        'dangerous',
-        'deadly',
-        'hazard',
-        'nuclear',
-        'radioactive',
-        'warning'
+        "New Sheqel Sign",
+        "currency",
+        "ils",
+        "money"
       ]
     },
-    label: 'Radiation',
+    label: "Shekel Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-radiation-alt',
+    class: "fa-shield",
     search: {
       terms: [
-        'danger',
-        'dangerous',
-        'deadly',
-        'hazard',
-        'nuclear',
-        'radioactive',
-        'warning'
+        "achievement",
+        "armor",
+        "award",
+        "block",
+        "cleric",
+        "defend",
+        "defense",
+        "holy",
+        "paladin",
+        "protect",
+        "safety",
+        "security",
+        "shield",
+        "weapon",
+        "winner"
       ]
     },
-    label: 'Alternate Radiation',
+    label: "Shield",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-rainbow',
+    class: "fa-shield-cat",
     search: {
       terms: [
-        'gold',
-        'leprechaun',
-        'prism',
-        'rain',
-        'sky'
+        "animal",
+        "feline",
+        "pet",
+        "protect",
+        "safety",
+        "veterinary"
       ]
     },
-    label: 'Rainbow',
+    label: "Shield Cat",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-random',
+    class: "fa-shield-dog",
     search: {
       terms: [
-        'arrows',
-        'shuffle',
-        'sort',
-        'swap',
-        'switch',
-        'transfer'
+        "animal",
+        "canine",
+        "pet",
+        "protect",
+        "safety",
+        "veterinary"
       ]
     },
-    label: 'random',
+    label: "Shield Dog",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-raspberry-pi',
+    class: "fa-shield-halved",
     search: {
-      terms: []
+      terms: [
+        "achievement",
+        "armor",
+        "award",
+        "block",
+        "cleric",
+        "defend",
+        "defense",
+        "holy",
+        "paladin",
+        "security",
+        "shield",
+        "weapon",
+        "winner"
+      ]
     },
-    label: 'Raspberry Pi',
+    label: "Shield Halved",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ravelry',
+    class: "fa-shield-heart",
     search: {
-      terms: []
+      terms: [
+        "love",
+        "protect",
+        "safe",
+        "safety",
+        "shield"
+      ]
     },
-    label: 'Ravelry',
+    label: "Shield Heart",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-react',
+    class: "fa-shield-virus",
     search: {
-      terms: []
+      terms: [
+        "antibodies",
+        "barrier",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "health",
+        "infection",
+        "pandemic",
+        "protect",
+        "safety",
+        "vaccine"
+      ]
     },
-    label: 'React',
+    label: "Shield Virus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-reacteurope',
+    class: "fa-ship",
     search: {
-      terms: []
+      terms: [
+        "boat",
+        "passenger",
+        "sea",
+        "ship",
+        "water"
+      ]
     },
-    label: 'ReactEurope',
+    label: "Ship",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-readme',
+    class: "fa-shirt",
     search: {
-      terms: []
+      terms: [
+        "clothing",
+        "fashion",
+        "garment",
+        "shirt",
+        "short sleeve",
+        "t-shirt",
+        "tshirt"
+      ]
     },
-    label: 'ReadMe',
+    label: "Shirt",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-rebel',
+    class: "fa-shirtsinbulk",
     search: {
       terms: []
     },
-    label: 'Rebel Alliance',
+    label: "Shirts in Bulk",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-receipt',
+    class: "fa-shoe-prints",
     search: {
       terms: [
-        'check',
-        'invoice',
-        'money',
-        'pay',
-        'table'
+        "feet",
+        "footprints",
+        "steps",
+        "walk"
       ]
     },
-    label: 'Receipt',
+    label: "Shoe Prints",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-record-vinyl',
+    class: "fa-shop",
     search: {
       terms: [
-        'LP',
-        'album',
-        'analog',
-        'music',
-        'phonograph',
-        'sound'
+        "bodega",
+        "building",
+        "buy",
+        "market",
+        "purchase",
+        "shopping",
+        "store"
       ]
     },
-    label: 'Record Vinyl',
+    label: "Shop",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-recycle',
+    class: "fa-shop-lock",
     search: {
       terms: [
-        'Waste',
-        'compost',
-        'garbage',
-        'reuse',
-        'trash'
+        "bodega",
+        "building",
+        "buy",
+        "closed",
+        "lock",
+        "lockdown",
+        "market",
+        "purchase",
+        "quarantine",
+        "shop",
+        "shopping",
+        "store"
       ]
     },
-    label: 'Recycle',
+    label: "Shop Lock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-red-river',
+    class: "fa-shop-slash",
     search: {
-      terms: []
+      terms: [
+        "building",
+        "buy",
+        "closed",
+        "covid-19",
+        "purchase",
+        "shopping"
+      ]
     },
-    label: 'red river',
+    label: "Shop Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-reddit',
+    class: "fa-shopify",
     search: {
       terms: []
     },
-    label: 'reddit Logo',
+    label: "Shopify",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-reddit-alien',
+    class: "fa-shopware",
     search: {
       terms: []
     },
-    label: 'reddit Alien',
+    label: "Shopware",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-reddit-square',
+    class: "fa-shower",
     search: {
-      terms: []
+      terms: [
+        "bath",
+        "clean",
+        "faucet",
+        "shower",
+        "water"
+      ]
     },
-    label: 'reddit Square',
+    label: "Shower",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-redhat',
+    class: "fa-shrimp",
     search: {
       terms: [
-        'linux',
-        'operating system',
-        'os'
+        "allergy",
+        "crustacean",
+        "prawn",
+        "seafood",
+        "shellfish",
+        "shrimp",
+        "tail"
       ]
     },
-    label: 'Redhat',
+    label: "Shrimp",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-redo',
+    class: "fa-shuffle",
     search: {
       terms: [
-        'forward',
-        'refresh',
-        'reload',
-        'repeat'
+        "arrow",
+        "arrows",
+        "crossed",
+        "shuffle",
+        "shuffle tracks button",
+        "sort",
+        "swap",
+        "switch",
+        "transfer"
       ]
     },
-    label: 'Redo',
+    label: "Shuffle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-redo-alt',
+    class: "fa-shuttle-space",
     search: {
       terms: [
-        'forward',
-        'refresh',
-        'reload',
-        'repeat'
+        "astronaut",
+        "machine",
+        "nasa",
+        "rocket",
+        "space",
+        "transportation"
       ]
     },
-    label: 'Alternate Redo',
+    label: "Shuttle Space",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-registered',
+    class: "fa-sign-hanging",
     search: {
       terms: [
-        'copyright',
-        'mark',
-        'trademark'
+        "directions",
+        "real estate",
+        "signage",
+        "wayfinding"
       ]
     },
-    label: 'Registered Trademark',
+    label: "Sign Hanging",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-remove-format',
+    class: "fa-signal",
     search: {
       terms: [
-        'cancel',
-        'font',
-        'format',
-        'remove',
-        'style',
-        'text'
+        "antenna",
+        "antenna bars",
+        "bar",
+        "bars",
+        "cell",
+        "graph",
+        "mobile",
+        "online",
+        "phone",
+        "reception",
+        "status"
       ]
     },
-    label: 'Remove Format',
+    label: "Signal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-renren',
+    class: "fa-signature",
     search: {
-      terms: []
+      terms: [
+        "John Hancock",
+        "cursive",
+        "name",
+        "writing"
+      ]
     },
-    label: 'Renren',
+    label: "Signature",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-reply',
+    class: "fa-signs-post",
     search: {
       terms: [
-        'mail',
-        'message',
-        'respond'
+        "directions",
+        "directory",
+        "map",
+        "signage",
+        "wayfinding"
       ]
     },
-    label: 'Reply',
+    label: "Signs Post",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-reply-all',
+    class: "fa-sim-card",
     search: {
       terms: [
-        'mail',
-        'message',
-        'respond'
+        "hard drive",
+        "hardware",
+        "portable",
+        "storage",
+        "technology",
+        "tiny"
       ]
     },
-    label: 'reply-all',
+    label: "Sim Card",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-replyd',
+    class: "fa-simplybuilt",
     search: {
       terms: []
     },
-    label: 'replyd',
+    label: "SimplyBuilt",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-republican',
+    class: "fa-sink",
     search: {
       terms: [
-        'american',
-        'conservative',
-        'election',
-        'elephant',
-        'politics',
-        'republican party',
-        'right',
-        'right-wing',
-        'usa'
+        "bathroom",
+        "covid-19",
+        "faucet",
+        "kitchen",
+        "wash"
       ]
     },
-    label: 'Republican',
+    label: "Sink",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-researchgate',
+    class: "fa-sistrix",
     search: {
       terms: []
     },
-    label: 'Researchgate',
+    label: "SISTRIX",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-resolving',
+    class: "fa-sitemap",
     search: {
-      terms: []
-    },
-    label: 'Resolving',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-restroom',
-    search: {
       terms: [
-        'bathroom',
-        'john',
-        'loo',
-        'potty',
-        'washroom',
-        'waste',
-        'wc'
+        "directory",
+        "hierarchy",
+        "ia",
+        "information architecture",
+        "organization"
       ]
     },
-    label: 'Restroom',
+    label: "Sitemap",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-retweet',
+    class: "fa-sith",
     search: {
-      terms: [
-        'refresh',
-        'reload',
-        'share',
-        'swap'
-      ]
+      terms: []
     },
-    label: 'Retweet',
+    label: "Sith",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-rev',
+    class: "fa-sitrox",
     search: {
       terms: []
     },
-    label: 'Rev.io',
+    label: "Sitrox",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-ribbon',
+    class: "fa-sketch",
     search: {
       terms: [
-        'badge',
-        'cause',
-        'lapel',
-        'pin'
+        "app",
+        "design",
+        "interface"
       ]
     },
-    label: 'Ribbon',
+    label: "Sketch",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-ring',
+    class: "fa-skull",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'Gollum',
-        'band',
-        'binding',
-        'd&d',
-        'dnd',
-        'engagement',
-        'fantasy',
-        'gold',
-        'jewelry',
-        'marriage',
-        'precious'
+        "bones",
+        "death",
+        "face",
+        "fairy tale",
+        "monster",
+        "skeleton",
+        "skull",
+        "x-ray",
+        "yorick"
       ]
     },
-    label: 'Ring',
+    label: "Skull",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-road',
+    class: "fa-skull-crossbones",
     search: {
       terms: [
-        'highway',
-        'map',
-        'pavement',
-        'route',
-        'street',
-        'travel'
+        "Black Skull and Crossbones",
+        "Dungeons & Dragons",
+        "alert",
+        "bones",
+        "crossbones",
+        "d&d",
+        "danger",
+        "dangerous area",
+        "dead",
+        "deadly",
+        "death",
+        "dnd",
+        "face",
+        "fantasy",
+        "halloween",
+        "holiday",
+        "jolly-roger",
+        "monster",
+        "pirate",
+        "poison",
+        "skeleton",
+        "skull",
+        "skull and crossbones",
+        "warning"
       ]
     },
-    label: 'road',
+    label: "Skull Crossbones",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-robot',
+    class: "fa-skyatlas",
     search: {
-      terms: [
-        'android',
-        'automate',
-        'computer',
-        'cyborg'
-      ]
+      terms: []
     },
-    label: 'Robot',
+    label: "skyatlas",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-rocket',
+    class: "fa-skype",
     search: {
-      terms: [
-        'aircraft',
-        'app',
-        'jet',
-        'launch',
-        'nasa',
-        'space'
-      ]
+      terms: []
     },
-    label: 'rocket',
+    label: "Skype",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-rocketchat',
+    class: "fa-slack",
     search: {
-      terms: []
+      terms: [
+        "anchor",
+        "hash",
+        "hashtag"
+      ]
     },
-    label: 'Rocket.Chat',
+    label: "Slack Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-rockrms',
+    class: "fa-slash",
     search: {
-      terms: []
+      terms: [
+        "cancel",
+        "close",
+        "mute",
+        "off",
+        "stop",
+        "x"
+      ]
     },
-    label: 'Rockrms',
+    label: "Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-route',
+    class: "fa-sleigh",
     search: {
       terms: [
-        'directions',
-        'navigation',
-        'travel'
+        "christmas",
+        "claus",
+        "fly",
+        "holiday",
+        "santa",
+        "sled",
+        "snow",
+        "xmas"
       ]
     },
-    label: 'Route',
+    label: "Sleigh",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-rss',
+    class: "fa-sliders",
     search: {
       terms: [
-        'blog',
-        'feed',
-        'journal',
-        'news',
-        'writing'
+        "adjust",
+        "settings",
+        "sliders",
+        "toggle"
       ]
     },
-    label: 'rss',
+    label: "Sliders",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-rss-square',
+    class: "fa-slideshare",
     search: {
-      terms: [
-        'blog',
-        'feed',
-        'journal',
-        'news',
-        'writing'
-      ]
+      terms: []
     },
-    label: 'RSS Square',
+    label: "Slideshare",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-ruble-sign',
+    class: "fa-smog",
     search: {
       terms: [
-        'currency',
-        'money',
-        'rub'
+        "dragon",
+        "fog",
+        "haze",
+        "pollution",
+        "smoke",
+        "weather"
       ]
     },
-    label: 'Ruble Sign',
+    label: "Smog",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ruler',
+    class: "fa-smoking",
     search: {
       terms: [
-        'design',
-        'draft',
-        'length',
-        'measure',
-        'planning'
+        "cancer",
+        "cigarette",
+        "nicotine",
+        "smoking",
+        "smoking status",
+        "tobacco"
       ]
     },
-    label: 'Ruler',
+    label: "Smoking",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ruler-combined',
+    class: "fa-snapchat",
     search: {
-      terms: [
-        'design',
-        'draft',
-        'length',
-        'measure',
-        'planning'
-      ]
+      terms: []
     },
-    label: 'Ruler Combined',
+    label: "Snapchat",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-ruler-horizontal',
+    class: "fa-snowflake",
     search: {
       terms: [
-        'design',
-        'draft',
-        'length',
-        'measure',
-        'planning'
+        "Heavy Chevron Snowflake",
+        "cold",
+        "precipitation",
+        "rain",
+        "snow",
+        "snowfall",
+        "snowflake",
+        "winter"
       ]
     },
-    label: 'Ruler Horizontal',
+    label: "Snowflake",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-ruler-vertical',
+    class: "fa-snowman",
     search: {
       terms: [
-        'design',
-        'draft',
-        'length',
-        'measure',
-        'planning'
+        "cold",
+        "decoration",
+        "frost",
+        "frosty",
+        "holiday",
+        "snow",
+        "snowman",
+        "snowman without snow"
       ]
     },
-    label: 'Ruler Vertical',
+    label: "Snowman",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-running',
+    class: "fa-snowplow",
     search: {
       terms: [
-        'exercise',
-        'health',
-        'jog',
-        'person',
-        'run',
-        'sport',
-        'sprint'
+        "clean up",
+        "cold",
+        "road",
+        "storm",
+        "winter"
       ]
     },
-    label: 'Running',
+    label: "Snowplow",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-rupee-sign',
+    class: "fa-soap",
     search: {
       terms: [
-        'currency',
-        'indian',
-        'inr',
-        'money'
+        "bar",
+        "bathing",
+        "bubbles",
+        "clean",
+        "cleaning",
+        "covid-19",
+        "hygiene",
+        "lather",
+        "soap",
+        "soapdish",
+        "wash"
       ]
     },
-    label: 'Indian Rupee Sign',
+    label: "Soap",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-rust',
+    class: "fa-socks",
     search: {
-      terms: []
+      terms: [
+        "business socks",
+        "business time",
+        "clothing",
+        "feet",
+        "flight of the conchords",
+        "socks",
+        "stocking",
+        "wednesday"
+      ]
     },
-    label: 'Rust',
+    label: "Socks",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sad-cry',
+    class: "fa-solar-panel",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'tear',
-        'tears'
+        "clean",
+        "eco-friendly",
+        "energy",
+        "green",
+        "sun"
       ]
     },
-    label: 'Crying Face',
+    label: "Solar Panel",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-sad-tear',
+    class: "fa-sort",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'tear',
-        'tears'
+        "filter",
+        "order"
       ]
     },
-    label: 'Loudly Crying Face',
+    label: "Sort",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-safari',
+    class: "fa-sort-down",
     search: {
       terms: [
-        'browser'
+        "arrow",
+        "descending",
+        "filter",
+        "order",
+        "sort-desc"
       ]
     },
-    label: 'Safari',
+    label: "Sort Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-salesforce',
+    class: "fa-sort-up",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "ascending",
+        "filter",
+        "order",
+        "sort-asc"
+      ]
     },
-    label: 'Salesforce',
+    label: "Sort Up",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sass',
+    class: "fa-soundcloud",
     search: {
       terms: []
     },
-    label: 'Sass',
+    label: "SoundCloud",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-satellite',
+    class: "fa-sourcetree",
     search: {
-      terms: [
-        'communications',
-        'hardware',
-        'orbit',
-        'space'
-      ]
+      terms: []
     },
-    label: 'Satellite',
+    label: "Sourcetree",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-satellite-dish',
+    class: "fa-spa",
     search: {
       terms: [
-        'SETI',
-        'communications',
-        'hardware',
-        'receiver',
-        'saucer',
-        'signal',
-        'space'
+        "flora",
+        "massage",
+        "mindfulness",
+        "plant",
+        "wellness"
       ]
     },
-    label: 'Satellite Dish',
+    label: "Spa",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-save',
+    class: "fa-space-awesome",
     search: {
       terms: [
-        'disk',
-        'download',
-        'floppy',
-        'floppy-o'
+        "adventure",
+        "rocket",
+        "ship",
+        "shuttle"
       ]
-    },
-    label: 'Save',
-    free: [
-      'solid',
-      'regular'
-    ]
-  },
-  {
-    class: 'fa-schlix',
-    search: {
-      terms: []
     },
-    label: 'SCHLIX',
+    label: "Space Awesome",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-school',
+    class: "fa-spaghetti-monster-flying",
     search: {
       terms: [
-        'building',
-        'education',
-        'learn',
-        'student',
-        'teacher'
+        "agnosticism",
+        "atheism",
+        "flying spaghetti monster",
+        "fsm"
       ]
     },
-    label: 'School',
+    label: "Spaghetti Monster Flying",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-screwdriver',
+    class: "fa-speakap",
     search: {
-      terms: [
-        'admin',
-        'fix',
-        'mechanic',
-        'repair',
-        'settings',
-        'tool'
-      ]
+      terms: []
     },
-    label: 'Screwdriver',
+    label: "Speakap",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-scribd',
+    class: "fa-speaker-deck",
     search: {
       terms: []
     },
-    label: 'Scribd',
+    label: "Speaker Deck",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-scroll',
+    class: "fa-spell-check",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'announcement',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'paper',
-        'script'
+        "dictionary",
+        "edit",
+        "editor",
+        "grammar",
+        "text"
       ]
     },
-    label: 'Scroll',
+    label: "Spell Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sd-card',
+    class: "fa-spider",
     search: {
       terms: [
-        'image',
-        'memory',
-        'photo',
-        'save'
+        "arachnid",
+        "bug",
+        "charlotte",
+        "crawl",
+        "eight",
+        "halloween",
+        "insect",
+        "spider"
       ]
     },
-    label: 'Sd Card',
+    label: "Spider",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-search',
+    class: "fa-spinner",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'find',
-        'magnify',
-        'preview',
-        'zoom'
+        "circle",
+        "loading",
+        "progress"
       ]
     },
-    label: 'search',
+    label: "Spinner",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-search-dollar',
+    class: "fa-splotch",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'find',
-        'magnify',
-        'money',
-        'preview',
-        'zoom'
+        "Ink",
+        "blob",
+        "blotch",
+        "glob",
+        "stain"
       ]
     },
-    label: 'Search Dollar',
+    label: "Splotch",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-search-location',
+    class: "fa-spoon",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'find',
-        'magnify',
-        'preview',
-        'zoom'
+        "cutlery",
+        "dining",
+        "scoop",
+        "silverware",
+        "spoon",
+        "tableware"
       ]
     },
-    label: 'Search Location',
+    label: "Spoon",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-search-minus',
+    class: "fa-spotify",
     search: {
-      terms: [
-        'minify',
-        'negative',
-        'smaller',
-        'zoom',
-        'zoom out'
-      ]
+      terms: []
     },
-    label: 'Search Minus',
+    label: "Spotify",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-search-plus',
+    class: "fa-spray-can",
     search: {
       terms: [
-        'bigger',
-        'enlarge',
-        'magnify',
-        'positive',
-        'zoom',
-        'zoom in'
+        "Paint",
+        "aerosol",
+        "design",
+        "graffiti",
+        "tag"
       ]
     },
-    label: 'Search Plus',
+    label: "Spray Can",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-searchengin',
+    class: "fa-spray-can-sparkles",
     search: {
-      terms: []
+      terms: [
+        "car",
+        "clean",
+        "deodorize",
+        "fresh",
+        "pine",
+        "scent"
+      ]
     },
-    label: 'Searchengin',
+    label: "Spray Can Sparkles",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-seedling',
+    class: "fa-square",
     search: {
       terms: [
-        'flora',
-        'grow',
-        'plant',
-        'vegan'
+        "Black Square",
+        "black medium square",
+        "block",
+        "box",
+        "geometric",
+        "shape",
+        "square",
+        "white medium square"
       ]
     },
-    label: 'Seedling',
+    label: "Square",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-sellcast',
+    class: "fa-square-arrow-up-right",
     search: {
       terms: [
-        'eercast'
+        "diagonal",
+        "new",
+        "open",
+        "send",
+        "share"
       ]
     },
-    label: 'Sellcast',
+    label: "Square Arrow Up Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sellsy',
+    class: "fa-square-behance",
     search: {
       terms: []
     },
-    label: 'Sellsy',
+    label: "Behance Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-server',
+    class: "fa-square-caret-down",
     search: {
       terms: [
-        'computer',
-        'cpu',
-        'database',
-        'hardware',
-        'network'
+        "arrow",
+        "caret-square-o-down",
+        "dropdown",
+        "expand",
+        "menu",
+        "more",
+        "triangle"
       ]
-    },
-    label: 'Server',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-servicestack',
-    search: {
-      terms: []
     },
-    label: 'Servicestack',
+    label: "Square Caret Down",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-shapes',
+    class: "fa-square-caret-left",
     search: {
       terms: [
-        'blocks',
-        'build',
-        'circle',
-        'square',
-        'triangle'
+        "arrow",
+        "back",
+        "caret-square-o-left",
+        "previous",
+        "triangle"
       ]
     },
-    label: 'Shapes',
+    label: "Square Caret Left",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-share',
+    class: "fa-square-caret-right",
     search: {
       terms: [
-        'forward',
-        'save',
-        'send',
-        'social'
+        "arrow",
+        "caret-square-o-right",
+        "forward",
+        "next",
+        "triangle"
       ]
     },
-    label: 'Share',
+    label: "Square Caret Right",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-share-alt',
+    class: "fa-square-caret-up",
     search: {
       terms: [
-        'forward',
-        'save',
-        'send',
-        'social'
+        "arrow",
+        "caret-square-o-up",
+        "collapse",
+        "triangle",
+        "upload"
       ]
     },
-    label: 'Alternate Share',
+    label: "Square Caret Up",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-share-alt-square',
+    class: "fa-square-check",
     search: {
       terms: [
-        'forward',
-        'save',
-        'send',
-        'social'
+        "accept",
+        "agree",
+        "box",
+        "button",
+        "check",
+        "check box with check",
+        "check mark button",
+        "checkmark",
+        "confirm",
+        "correct",
+        "done",
+        "mark",
+        "ok",
+        "select",
+        "success",
+        "tick",
+        "todo",
+        "yes",
+        "✓"
       ]
     },
-    label: 'Alternate Share Square',
+    label: "Square Check",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-share-square',
+    class: "fa-square-dribbble",
     search: {
-      terms: [
-        'forward',
-        'save',
-        'send',
-        'social'
-      ]
+      terms: []
     },
-    label: 'Share Square',
+    label: "Dribbble Square",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-shekel-sign',
+    class: "fa-square-envelope",
     search: {
       terms: [
-        'currency',
-        'ils',
-        'money'
+        "e-mail",
+        "email",
+        "letter",
+        "mail",
+        "message",
+        "notification",
+        "support"
       ]
     },
-    label: 'Shekel Sign',
+    label: "Square Envelope",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-shield-alt',
+    class: "fa-square-facebook",
     search: {
       terms: [
-        'achievement',
-        'award',
-        'block',
-        'defend',
-        'security',
-        'winner'
+        "social network"
       ]
     },
-    label: 'Alternate Shield',
+    label: "Facebook Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shield-virus',
+    class: "fa-square-font-awesome",
     search: {
-      terms: [
-        'antibodies',
-        'barrier',
-        'covid-19',
-        'health',
-        'protect'
-      ]
+      terms: []
     },
-    label: 'Shield Virus',
+    label: "Font Awesome in Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-ship',
+    class: "fa-square-font-awesome-stroke",
     search: {
-      terms: [
-        'boat',
-        'sea',
-        'water'
-      ]
+      terms: []
     },
-    label: 'Ship',
+    label: "Font Awesome in Square with Stroke Outline",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shipping-fast',
+    class: "fa-square-full",
     search: {
       terms: [
-        'express',
-        'fedex',
-        'mail',
-        'overnight',
-        'package',
-        'ups'
+        "black large square",
+        "block",
+        "blue",
+        "blue square",
+        "box",
+        "brown",
+        "brown square",
+        "geometric",
+        "green",
+        "green square",
+        "orange",
+        "orange square",
+        "purple",
+        "purple square",
+        "red",
+        "red square",
+        "shape",
+        "square",
+        "white large square",
+        "yellow",
+        "yellow square"
       ]
     },
-    label: 'Shipping Fast',
+    label: "Square Full",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-shirtsinbulk',
+    class: "fa-square-git",
     search: {
       terms: []
     },
-    label: 'Shirts in Bulk',
+    label: "Git Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-shoe-prints',
+    class: "fa-square-github",
     search: {
       terms: [
-        'feet',
-        'footprints',
-        'steps',
-        'walk'
+        "octocat"
       ]
     },
-    label: 'Shoe Prints',
+    label: "GitHub Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shopify',
+    class: "fa-square-gitlab",
     search: {
       terms: []
     },
-    label: 'Shopify',
+    label: "Square Gitlab",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-shopping-bag',
+    class: "fa-square-google-plus",
     search: {
       terms: [
-        'buy',
-        'checkout',
-        'grocery',
-        'payment',
-        'purchase'
+        "social network"
       ]
     },
-    label: 'Shopping Bag',
+    label: "Google Plus Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shopping-basket',
+    class: "fa-square-h",
     search: {
       terms: [
-        'buy',
-        'checkout',
-        'grocery',
-        'payment',
-        'purchase'
+        "directions",
+        "emergency",
+        "hospital",
+        "hotel",
+        "letter",
+        "map"
       ]
     },
-    label: 'Shopping Basket',
+    label: "Square H",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-shopping-cart',
+    class: "fa-square-hacker-news",
     search: {
-      terms: [
-        'buy',
-        'checkout',
-        'grocery',
-        'payment',
-        'purchase'
-      ]
+      terms: []
     },
-    label: 'shopping-cart',
+    label: "Hacker News Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shopware',
+    class: "fa-square-instagram",
     search: {
       terms: []
     },
-    label: 'Shopware',
+    label: "Instagram Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-shower',
+    class: "fa-square-js",
     search: {
-      terms: [
-        'bath',
-        'clean',
-        'faucet',
-        'water'
-      ]
+      terms: []
     },
-    label: 'Shower',
+    label: "JavaScript (JS) Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-shuttle-van',
+    class: "fa-square-lastfm",
     search: {
-      terms: [
-        'airport',
-        'machine',
-        'public-transportation',
-        'transportation',
-        'travel',
-        'vehicle'
-      ]
+      terms: []
     },
-    label: 'Shuttle Van',
+    label: "last.fm Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sign',
+    class: "fa-square-minus",
     search: {
       terms: [
-        'directions',
-        'real estate',
-        'signage',
-        'wayfinding'
+        "collapse",
+        "delete",
+        "hide",
+        "minify",
+        "negative",
+        "remove",
+        "shape",
+        "trash"
       ]
     },
-    label: 'Sign',
+    label: "Square Minus",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-sign-in-alt',
+    class: "fa-square-nfi",
     search: {
       terms: [
-        'arrow',
-        'enter',
-        'join',
-        'log in',
-        'login',
-        'sign in',
-        'sign up',
-        'sign-in',
-        'signin',
-        'signup'
+        "non-food item",
+        "supplies"
       ]
     },
-    label: 'Alternate Sign In',
+    label: "Square Nfi",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sign-language',
+    class: "fa-square-odnoklassniki",
     search: {
-      terms: [
-        'Translate',
-        'asl',
-        'deaf',
-        'hands'
-      ]
+      terms: []
     },
-    label: 'Sign Language',
+    label: "Odnoklassniki Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sign-out-alt',
+    class: "fa-square-parking",
     search: {
       terms: [
-        'arrow',
-        'exit',
-        'leave',
-        'log out',
-        'logout',
-        'sign-out'
+        "auto",
+        "car",
+        "garage",
+        "meter",
+        "parking"
       ]
     },
-    label: 'Alternate Sign Out',
+    label: "Square Parking",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-signal',
+    class: "fa-square-pen",
     search: {
       terms: [
-        'bars',
-        'graph',
-        'online',
-        'reception',
-        'status'
+        "edit",
+        "pencil-square",
+        "update",
+        "write"
       ]
     },
-    label: 'signal',
+    label: "Square Pen",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-signature',
+    class: "fa-square-person-confined",
     search: {
       terms: [
-        'John Hancock',
-        'cursive',
-        'name',
-        'writing'
+        "captivity",
+        "confined"
       ]
     },
-    label: 'Signature',
+    label: "Square Person Confined",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sim-card',
+    class: "fa-square-phone",
     search: {
       terms: [
-        'hard drive',
-        'hardware',
-        'portable',
-        'storage',
-        'technology',
-        'tiny'
+        "call",
+        "earphone",
+        "number",
+        "support",
+        "telephone",
+        "voice"
       ]
-    },
-    label: 'SIM Card',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-simplybuilt',
-    search: {
-      terms: []
     },
-    label: 'SimplyBuilt',
+    label: "Square Phone",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sink',
+    class: "fa-square-phone-flip",
     search: {
       terms: [
-        'bathroom',
-        'covid-19',
-        'faucet',
-        'kitchen',
-        'wash'
+        "call",
+        "earphone",
+        "number",
+        "support",
+        "telephone",
+        "voice"
       ]
     },
-    label: 'Sink',
+    label: "Square Phone Flip",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sistrix',
+    class: "fa-square-pied-piper",
     search: {
       terms: []
-    },
-    label: 'SISTRIX',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-sitemap',
-    search: {
-      terms: [
-        'directory',
-        'hierarchy',
-        'ia',
-        'information architecture',
-        'organization'
-      ]
     },
-    label: 'Sitemap',
+    label: "Pied Piper Square Logo (Old)",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sith',
+    class: "fa-square-pinterest",
     search: {
       terms: []
     },
-    label: 'Sith',
+    label: "Pinterest Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-skating',
+    class: "fa-square-plus",
     search: {
       terms: [
-        'activity',
-        'figure skating',
-        'fitness',
-        'ice',
-        'person',
-        'winter'
+        "add",
+        "create",
+        "expand",
+        "new",
+        "positive",
+        "shape"
       ]
     },
-    label: 'Skating',
+    label: "Square Plus",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-sketch',
+    class: "fa-square-poll-horizontal",
     search: {
       terms: [
-        'app',
-        'design',
-        'interface'
+        "chart",
+        "graph",
+        "results",
+        "survey",
+        "trend",
+        "vote",
+        "voting"
       ]
     },
-    label: 'Sketch',
+    label: "Square Poll Horizontal",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-skiing',
+    class: "fa-square-poll-vertical",
     search: {
       terms: [
-        'activity',
-        'downhill',
-        'fast',
-        'fitness',
-        'olympics',
-        'outdoors',
-        'person',
-        'seasonal',
-        'slalom'
+        "chart",
+        "graph",
+        "results",
+        "survey",
+        "trend",
+        "vote",
+        "voting"
       ]
     },
-    label: 'Skiing',
+    label: "Square Poll Vertical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-skiing-nordic',
+    class: "fa-square-reddit",
     search: {
-      terms: [
-        'activity',
-        'cross country',
-        'fitness',
-        'outdoors',
-        'person',
-        'seasonal'
-      ]
+      terms: []
     },
-    label: 'Skiing Nordic',
+    label: "reddit Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-skull',
+    class: "fa-square-root-variable",
     search: {
       terms: [
-        'bones',
-        'skeleton',
-        'x-ray',
-        'yorick'
+        "arithmetic",
+        "calculus",
+        "division",
+        "math"
       ]
     },
-    label: 'Skull',
+    label: "Square Root Variable",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-skull-crossbones',
+    class: "fa-square-rss",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'alert',
-        'bones',
-        'd&d',
-        'danger',
-        'dead',
-        'deadly',
-        'death',
-        'dnd',
-        'fantasy',
-        'halloween',
-        'holiday',
-        'jolly-roger',
-        'pirate',
-        'poison',
-        'skeleton',
-        'warning'
+        "blog",
+        "feed",
+        "journal",
+        "news",
+        "writing"
       ]
     },
-    label: 'Skull & Crossbones',
+    label: "Square Rss",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-skyatlas',
+    class: "fa-square-share-nodes",
     search: {
-      terms: []
+      terms: [
+        "forward",
+        "save",
+        "send",
+        "social"
+      ]
     },
-    label: 'skyatlas',
+    label: "Square Share Nodes",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-skype',
+    class: "fa-square-snapchat",
     search: {
       terms: []
     },
-    label: 'Skype',
+    label: "Snapchat Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-slack',
+    class: "fa-square-steam",
     search: {
-      terms: [
-        'anchor',
-        'hash',
-        'hashtag'
-      ]
+      terms: []
     },
-    label: 'Slack Logo',
+    label: "Steam Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-slack-hash',
+    class: "fa-square-threads",
     search: {
-      terms: [
-        'anchor',
-        'hash',
-        'hashtag'
-      ]
+      terms: []
     },
-    label: 'Slack Hashtag',
+    label: "Square Threads",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-slash',
+    class: "fa-square-tumblr",
     search: {
-      terms: [
-        'cancel',
-        'close',
-        'mute',
-        'off',
-        'stop',
-        'x'
-      ]
+      terms: []
     },
-    label: 'Slash',
+    label: "Tumblr Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sleigh',
+    class: "fa-square-twitter",
     search: {
       terms: [
-        'christmas',
-        'claus',
-        'fly',
-        'holiday',
-        'santa',
-        'sled',
-        'snow',
-        'xmas'
+        "social network",
+        "tweet"
       ]
     },
-    label: 'Sleigh',
+    label: "Square Twitter",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sliders-h',
+    class: "fa-square-up-right",
     search: {
       terms: [
-        'adjust',
-        'settings',
-        'sliders',
-        'toggle'
+        "arrow",
+        "diagonal",
+        "direction",
+        "external-link-square",
+        "intercardinal",
+        "new",
+        "northeast",
+        "open",
+        "share",
+        "up-right arrow"
       ]
     },
-    label: 'Horizontal Sliders',
+    label: "Square Up Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-slideshare',
+    class: "fa-square-viadeo",
     search: {
       terms: []
     },
-    label: 'Slideshare',
+    label: "Viadeo Square",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-smile',
+    class: "fa-square-vimeo",
     search: {
-      terms: [
-        'approve',
-        'emoticon',
-        'face',
-        'happy',
-        'rating',
-        'satisfied'
-      ]
+      terms: []
     },
-    label: 'Smiling Face',
+    label: "Vimeo Square",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-smile-beam',
+    class: "fa-square-virus",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'happy',
-        'positive'
+        "coronavirus",
+        "covid-19",
+        "disease",
+        "flu",
+        "infection",
+        "pandemic"
       ]
     },
-    label: 'Beaming Face With Smiling Eyes',
+    label: "Square Virus",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-smile-wink',
+    class: "fa-square-whatsapp",
     search: {
-      terms: [
-        'emoticon',
-        'face',
-        'happy',
-        'hint',
-        'joke'
-      ]
+      terms: []
     },
-    label: 'Winking Face',
+    label: "What's App Square",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-smog',
+    class: "fa-square-x-twitter",
     search: {
       terms: [
-        'dragon',
-        'fog',
-        'haze',
-        'pollution',
-        'smoke',
-        'weather'
+        " elon",
+        " x",
+        "twitter"
       ]
     },
-    label: 'Smog',
+    label: "Square X Twitter",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-smoking',
+    class: "fa-square-xing",
     search: {
-      terms: [
-        'cancer',
-        'cigarette',
-        'nicotine',
-        'smoking status',
-        'tobacco'
-      ]
+      terms: []
     },
-    label: 'Smoking',
+    label: "Xing Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-smoking-ban',
+    class: "fa-square-xmark",
     search: {
       terms: [
-        'ban',
-        'cancel',
-        'no smoking',
-        'non-smoking'
+        "close",
+        "cross",
+        "cross mark button",
+        "incorrect",
+        "mark",
+        "notice",
+        "notification",
+        "notify",
+        "problem",
+        "square",
+        "window",
+        "wrong",
+        "x",
+        "×"
       ]
     },
-    label: 'Smoking Ban',
+    label: "Square Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sms',
+    class: "fa-square-youtube",
     search: {
-      terms: [
-        'chat',
-        'conversation',
-        'message',
-        'mobile',
-        'notification',
-        'phone',
-        'sms',
-        'texting'
-      ]
+      terms: []
     },
-    label: 'SMS',
+    label: "YouTube Square",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-snapchat',
+    class: "fa-squarespace",
     search: {
       terms: []
     },
-    label: 'Snapchat',
+    label: "Squarespace",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-snapchat-ghost',
+    class: "fa-stack-exchange",
     search: {
       terms: []
     },
-    label: 'Snapchat Ghost',
+    label: "Stack Exchange",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-snapchat-square',
+    class: "fa-stack-overflow",
     search: {
       terms: []
     },
-    label: 'Snapchat Square',
+    label: "Stack Overflow",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-snowboarding',
+    class: "fa-stackpath",
     search: {
-      terms: [
-        'activity',
-        'fitness',
-        'olympics',
-        'outdoors',
-        'person'
-      ]
+      terms: []
     },
-    label: 'Snowboarding',
+    label: "Stackpath",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-snowflake',
+    class: "fa-staff-snake",
     search: {
       terms: [
-        'precipitation',
-        'rain',
-        'winter'
+        "asclepius",
+        "asklepian",
+        "health",
+        "serpent",
+        "wellness"
       ]
     },
-    label: 'Snowflake',
+    label: "Staff Snake",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-snowman',
+    class: "fa-stairs",
     search: {
       terms: [
-        'decoration',
-        'frost',
-        'frosty',
-        'holiday'
+        "exit",
+        "steps",
+        "up"
       ]
     },
-    label: 'Snowman',
+    label: "Stairs",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-snowplow',
+    class: "fa-stamp",
     search: {
       terms: [
-        'clean up',
-        'cold',
-        'road',
-        'storm',
-        'winter'
+        "art",
+        "certificate",
+        "imprint",
+        "rubber",
+        "seal"
       ]
     },
-    label: 'Snowplow',
+    label: "Stamp",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-soap',
+    class: "fa-stapler",
     search: {
       terms: [
-        'bubbles',
-        'clean',
-        'covid-19',
-        'hygiene',
-        'wash'
+        "desktop",
+        "milton",
+        "office",
+        "paperclip",
+        "staple"
       ]
     },
-    label: 'Soap',
+    label: "Stapler",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-socks',
+    class: "fa-star",
     search: {
       terms: [
-        'business socks',
-        'business time',
-        'clothing',
-        'feet',
-        'flight of the conchords',
-        'wednesday'
+        "achievement",
+        "award",
+        "favorite",
+        "important",
+        "night",
+        "rating",
+        "score",
+        "star"
       ]
     },
-    label: 'Socks',
+    label: "Star",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-solar-panel',
+    class: "fa-star-and-crescent",
     search: {
       terms: [
-        'clean',
-        'eco-friendly',
-        'energy',
-        'green',
-        'sun'
+        "Muslim",
+        "islam",
+        "muslim",
+        "religion",
+        "star and crescent"
       ]
     },
-    label: 'Solar Panel',
+    label: "Star And Crescent",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort',
+    class: "fa-star-half",
     search: {
       terms: [
-        'filter',
-        'order'
+        "achievement",
+        "award",
+        "rating",
+        "score",
+        "star-half-empty",
+        "star-half-full"
       ]
     },
-    label: 'Sort',
+    label: "Star Half",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-alpha-down',
+    class: "fa-star-half-stroke",
     search: {
       terms: [
-        'alphabetical',
-        'arrange',
-        'filter',
-        'order',
-        'sort-alpha-asc'
+        "achievement",
+        "award",
+        "rating",
+        "score",
+        "star-half-empty",
+        "star-half-full"
       ]
     },
-    label: 'Sort Alphabetical Down',
+    label: "Star Half Stroke",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-alpha-down-alt',
+    class: "fa-star-of-david",
     search: {
       terms: [
-        'alphabetical',
-        'arrange',
-        'filter',
-        'order',
-        'sort-alpha-asc'
+        "David",
+        "Jew",
+        "Jewish",
+        "jewish",
+        "judaism",
+        "religion",
+        "star",
+        "star of David"
       ]
     },
-    label: 'Alternate Sort Alphabetical Down',
+    label: "Star Of David",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-alpha-up',
+    class: "fa-star-of-life",
     search: {
       terms: [
-        'alphabetical',
-        'arrange',
-        'filter',
-        'order',
-        'sort-alpha-desc'
+        "doctor",
+        "emt",
+        "first aid",
+        "health",
+        "medical"
       ]
     },
-    label: 'Sort Alphabetical Up',
+    label: "Star Of Life",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-alpha-up-alt',
+    class: "fa-staylinked",
     search: {
-      terms: [
-        'alphabetical',
-        'arrange',
-        'filter',
-        'order',
-        'sort-alpha-desc'
-      ]
+      terms: []
     },
-    label: 'Alternate Sort Alphabetical Up',
+    label: "StayLinked",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sort-amount-down',
+    class: "fa-steam",
     search: {
-      terms: [
-        'arrange',
-        'filter',
-        'number',
-        'order',
-        'sort-amount-asc'
-      ]
+      terms: []
     },
-    label: 'Sort Amount Down',
+    label: "Steam",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sort-amount-down-alt',
+    class: "fa-steam-symbol",
     search: {
-      terms: [
-        'arrange',
-        'filter',
-        'order',
-        'sort-amount-asc'
-      ]
+      terms: []
     },
-    label: 'Alternate Sort Amount Down',
+    label: "Steam Symbol",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sort-amount-up',
+    class: "fa-sterling-sign",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'order',
-        'sort-amount-desc'
+        "Pound Sign",
+        "currency"
       ]
     },
-    label: 'Sort Amount Up',
+    label: "Sterling Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-amount-up-alt',
+    class: "fa-stethoscope",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'order',
-        'sort-amount-desc'
+        "covid-19",
+        "diagnosis",
+        "doctor",
+        "general practitioner",
+        "heart",
+        "hospital",
+        "infirmary",
+        "medicine",
+        "office",
+        "outpatient",
+        "stethoscope"
       ]
     },
-    label: 'Alternate Sort Amount Up',
+    label: "Stethoscope",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-down',
+    class: "fa-sticker-mule",
     search: {
-      terms: [
-        'arrow',
-        'descending',
-        'filter',
-        'order',
-        'sort-desc'
-      ]
+      terms: []
     },
-    label: 'Sort Down (Descending)',
+    label: "Sticker Mule",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-sort-numeric-down',
+    class: "fa-stop",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'numbers',
-        'order',
-        'sort-numeric-asc'
+        "block",
+        "box",
+        "square",
+        "stop",
+        "stop button"
       ]
     },
-    label: 'Sort Numeric Down',
+    label: "Stop",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-numeric-down-alt',
+    class: "fa-stopwatch",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'numbers',
-        'order',
-        'sort-numeric-asc'
+        "clock",
+        "reminder",
+        "stopwatch",
+        "time"
       ]
     },
-    label: 'Alternate Sort Numeric Down',
+    label: "Stopwatch",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-numeric-up',
+    class: "fa-stopwatch-20",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'numbers',
-        'order',
-        'sort-numeric-desc'
+        "ABCs",
+        "countdown",
+        "covid-19",
+        "happy birthday",
+        "i will survive",
+        "reminder",
+        "seconds",
+        "time",
+        "timer"
       ]
     },
-    label: 'Sort Numeric Up',
+    label: "Stopwatch 20",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-numeric-up-alt',
+    class: "fa-store",
     search: {
       terms: [
-        'arrange',
-        'filter',
-        'numbers',
-        'order',
-        'sort-numeric-desc'
+        "bodega",
+        "building",
+        "buy",
+        "market",
+        "purchase",
+        "shopping",
+        "store"
       ]
     },
-    label: 'Alternate Sort Numeric Up',
+    label: "Store",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sort-up',
+    class: "fa-store-slash",
     search: {
       terms: [
-        'arrow',
-        'ascending',
-        'filter',
-        'order',
-        'sort-asc'
+        "building",
+        "buy",
+        "closed",
+        "covid-19",
+        "purchase",
+        "shopping"
       ]
-    },
-    label: 'Sort Up (Ascending)',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-soundcloud',
-    search: {
-      terms: []
     },
-    label: 'SoundCloud',
+    label: "Store Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sourcetree',
+    class: "fa-strava",
     search: {
       terms: []
     },
-    label: 'Sourcetree',
+    label: "Strava",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-spa',
+    class: "fa-street-view",
     search: {
       terms: [
-        'flora',
-        'massage',
-        'mindfulness',
-        'plant',
-        'wellness'
+        "directions",
+        "location",
+        "map",
+        "navigation"
       ]
     },
-    label: 'Spa',
+    label: "Street View",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-space-shuttle',
+    class: "fa-strikethrough",
     search: {
       terms: [
-        'astronaut',
-        'machine',
-        'nasa',
-        'rocket',
-        'space',
-        'transportation'
+        "cancel",
+        "edit",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'Space Shuttle',
+    label: "Strikethrough",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-speakap',
+    class: "fa-stripe",
     search: {
       terms: []
     },
-    label: 'Speakap',
+    label: "Stripe",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-speaker-deck',
+    class: "fa-stripe-s",
     search: {
       terms: []
     },
-    label: 'Speaker Deck',
+    label: "Stripe S",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-spell-check',
+    class: "fa-stroopwafel",
     search: {
       terms: [
-        'dictionary',
-        'edit',
-        'editor',
-        'grammar',
-        'text'
+        "caramel",
+        "cookie",
+        "dessert",
+        "sweets",
+        "waffle"
       ]
     },
-    label: 'Spell Check',
+    label: "Stroopwafel",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-spider',
+    class: "fa-stubber",
     search: {
-      terms: [
-        'arachnid',
-        'bug',
-        'charlotte',
-        'crawl',
-        'eight',
-        'halloween'
-      ]
+      terms: []
     },
-    label: 'Spider',
+    label: "Stubber",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-spinner',
+    class: "fa-studiovinari",
     search: {
-      terms: [
-        'circle',
-        'loading',
-        'progress'
-      ]
+      terms: []
     },
-    label: 'Spinner',
+    label: "Studio Vinari",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-splotch',
+    class: "fa-stumbleupon",
     search: {
-      terms: [
-        'Ink',
-        'blob',
-        'blotch',
-        'glob',
-        'stain'
-      ]
+      terms: []
     },
-    label: 'Splotch',
+    label: "StumbleUpon Logo",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-spotify',
+    class: "fa-stumbleupon-circle",
     search: {
       terms: []
     },
-    label: 'Spotify',
+    label: "StumbleUpon Circle",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-spray-can',
+    class: "fa-subscript",
     search: {
       terms: [
-        'Paint',
-        'aerosol',
-        'design',
-        'graffiti',
-        'tag'
+        "edit",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'Spray Can',
+    label: "Subscript",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-square',
+    class: "fa-suitcase",
     search: {
       terms: [
-        'block',
-        'box',
-        'shape'
+        "baggage",
+        "luggage",
+        "move",
+        "packing",
+        "suitcase",
+        "travel",
+        "trip"
       ]
     },
-    label: 'Square',
+    label: "Suitcase",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-square-full',
+    class: "fa-suitcase-medical",
     search: {
       terms: [
-        'block',
-        'box',
-        'shape'
+        "first aid",
+        "firstaid",
+        "health",
+        "help",
+        "medical",
+        "supply",
+        "support"
       ]
     },
-    label: 'Square Full',
+    label: "Suitcase Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-square-root-alt',
+    class: "fa-suitcase-rolling",
     search: {
       terms: [
-        'arithmetic',
-        'calculus',
-        'division',
-        'math'
+        "baggage",
+        "luggage",
+        "move",
+        "suitcase",
+        "travel",
+        "trip"
       ]
-    },
-    label: 'Alternate Square Root',
-    free: [
-      'solid'
-    ]
-  },
-  {
-    class: 'fa-squarespace',
-    search: {
-      terms: []
-    },
-    label: 'Squarespace',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-stack-exchange',
-    search: {
-      terms: []
     },
-    label: 'Stack Exchange',
+    label: "Suitcase Rolling",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-stack-overflow',
+    class: "fa-sun",
     search: {
-      terms: []
-    },
-    label: 'Stack Overflow',
-    free: [
-      'brands'
-    ]
-  },
-  {
-    class: 'fa-stackpath',
-    search: {
-      terms: []
+      terms: [
+        "bright",
+        "brighten",
+        "contrast",
+        "day",
+        "lighter",
+        "rays",
+        "sol",
+        "solar",
+        "star",
+        "sun",
+        "sunny",
+        "weather"
+      ]
     },
-    label: 'Stackpath',
+    label: "Sun",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-stamp',
+    class: "fa-sun-plant-wilt",
     search: {
       terms: [
-        'art',
-        'certificate',
-        'imprint',
-        'rubber',
-        'seal'
+        "arid",
+        "droop",
+        "drought"
       ]
     },
-    label: 'Stamp',
+    label: "Sun Plant Wilt",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-star',
+    class: "fa-superpowers",
     search: {
-      terms: [
-        'achievement',
-        'award',
-        'favorite',
-        'important',
-        'night',
-        'rating',
-        'score'
-      ]
+      terms: []
     },
-    label: 'Star',
+    label: "Superpowers",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-star-and-crescent',
+    class: "fa-superscript",
     search: {
       terms: [
-        'islam',
-        'muslim',
-        'religion'
+        "edit",
+        "exponential",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'Star and Crescent',
+    label: "Superscript",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-star-half',
+    class: "fa-supple",
     search: {
-      terms: [
-        'achievement',
-        'award',
-        'rating',
-        'score',
-        'star-half-empty',
-        'star-half-full'
-      ]
+      terms: []
     },
-    label: 'star-half',
+    label: "Supple",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-star-half-alt',
+    class: "fa-suse",
     search: {
       terms: [
-        'achievement',
-        'award',
-        'rating',
-        'score',
-        'star-half-empty',
-        'star-half-full'
+        "linux",
+        "operating system",
+        "os"
       ]
     },
-    label: 'Alternate Star Half',
+    label: "Suse",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-star-of-david',
+    class: "fa-swatchbook",
     search: {
       terms: [
-        'jewish',
-        'judaism',
-        'religion'
+        "Pantone",
+        "color",
+        "design",
+        "hue",
+        "palette"
       ]
     },
-    label: 'Star of David',
+    label: "Swatchbook",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-star-of-life',
+    class: "fa-swift",
     search: {
-      terms: [
-        'doctor',
-        'emt',
-        'first aid',
-        'health',
-        'medical'
-      ]
+      terms: []
     },
-    label: 'Star of Life',
+    label: "Swift",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-staylinked',
+    class: "fa-symfony",
     search: {
       terms: []
     },
-    label: 'StayLinked',
+    label: "Symfony",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-steam',
+    class: "fa-synagogue",
     search: {
-      terms: []
+      terms: [
+        "Jew",
+        "Jewish",
+        "building",
+        "jewish",
+        "judaism",
+        "religion",
+        "star of david",
+        "synagogue",
+        "temple"
+      ]
     },
-    label: 'Steam',
+    label: "Synagogue",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-steam-square',
+    class: "fa-syringe",
     search: {
-      terms: []
+      terms: [
+        "covid-19",
+        "doctor",
+        "immunizations",
+        "medical",
+        "medicine",
+        "needle",
+        "shot",
+        "sick",
+        "syringe",
+        "vaccinate",
+        "vaccine"
+      ]
     },
-    label: 'Steam Square',
+    label: "Syringe",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-steam-symbol',
+    class: "fa-t",
     search: {
-      terms: []
+      terms: [
+        "Latin Capital Letter T",
+        "Latin Small Letter T",
+        "letter"
+      ]
     },
-    label: 'Steam Symbol',
+    label: "T",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-step-backward',
+    class: "fa-table",
     search: {
       terms: [
-        'beginning',
-        'first',
-        'previous',
-        'rewind',
-        'start'
+        "data",
+        "excel",
+        "spreadsheet"
       ]
     },
-    label: 'step-backward',
+    label: "Table",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-step-forward',
+    class: "fa-table-cells",
     search: {
       terms: [
-        'end',
-        'last',
-        'next'
+        "blocks",
+        "boxes",
+        "grid",
+        "squares"
       ]
     },
-    label: 'step-forward',
+    label: "Table Cells",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-stethoscope',
+    class: "fa-table-cells-large",
     search: {
       terms: [
-        'covid-19',
-        'diagnosis',
-        'doctor',
-        'general practitioner',
-        'hospital',
-        'infirmary',
-        'medicine',
-        'office',
-        'outpatient'
+        "blocks",
+        "boxes",
+        "grid",
+        "squares"
       ]
     },
-    label: 'Stethoscope',
+    label: "Table Cells Large",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sticker-mule',
+    class: "fa-table-columns",
     search: {
-      terms: []
+      terms: [
+        "browser",
+        "dashboard",
+        "organize",
+        "panes",
+        "split"
+      ]
     },
-    label: 'Sticker Mule',
+    label: "Table Columns",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-sticky-note',
+    class: "fa-table-list",
     search: {
       terms: [
-        'message',
-        'note',
-        'paper',
-        'reminder',
-        'sticker'
+        "checklist",
+        "completed",
+        "done",
+        "finished",
+        "ol",
+        "todo",
+        "ul"
       ]
     },
-    label: 'Sticky Note',
+    label: "Table List",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-stop',
+    class: "fa-table-tennis-paddle-ball",
     search: {
       terms: [
-        'block',
-        'box',
-        'square'
+        "ball",
+        "bat",
+        "game",
+        "paddle",
+        "ping pong",
+        "table tennis"
       ]
     },
-    label: 'stop',
+    label: "Table Tennis Paddle Ball",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-stop-circle',
+    class: "fa-tablet",
     search: {
       terms: [
-        'block',
-        'box',
-        'circle',
-        'square'
+        "device",
+        "kindle",
+        "screen"
       ]
     },
-    label: 'Stop Circle',
+    label: "Tablet",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-stopwatch',
+    class: "fa-tablet-button",
     search: {
       terms: [
-        'clock',
-        'reminder',
-        'time'
+        "apple",
+        "device",
+        "ipad",
+        "kindle",
+        "screen"
       ]
     },
-    label: 'Stopwatch',
+    label: "Tablet Button",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-stopwatch-20',
+    class: "fa-tablet-screen-button",
     search: {
       terms: [
-        'ABCs',
-        'countdown',
-        'covid-19',
-        'happy birthday',
-        'i will survive',
-        'reminder',
-        'seconds',
-        'time',
-        'timer'
+        "apple",
+        "device",
+        "ipad",
+        "kindle",
+        "screen"
       ]
     },
-    label: 'Stopwatch 20',
+    label: "Tablet Screen Button",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-store',
+    class: "fa-tablets",
     search: {
       terms: [
-        'building',
-        'buy',
-        'purchase',
-        'shopping'
+        "drugs",
+        "medicine",
+        "pills",
+        "prescription"
       ]
     },
-    label: 'Store',
+    label: "Tablets",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-store-alt',
+    class: "fa-tachograph-digital",
     search: {
       terms: [
-        'building',
-        'buy',
-        'purchase',
-        'shopping'
+        "data",
+        "distance",
+        "speed",
+        "tachometer"
       ]
     },
-    label: 'Alternate Store',
+    label: "Tachograph Digital",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-store-alt-slash',
+    class: "fa-tag",
     search: {
       terms: [
-        'building',
-        'buy',
-        'closed',
-        'covid-19',
-        'purchase',
-        'shopping'
+        "discount",
+        "labe",
+        "label",
+        "price",
+        "shopping"
       ]
     },
-    label: 'Alternate Store Slash',
+    label: "Tag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-store-slash',
+    class: "fa-tags",
     search: {
       terms: [
-        'building',
-        'buy',
-        'closed',
-        'covid-19',
-        'purchase',
-        'shopping'
+        "discount",
+        "label",
+        "price",
+        "shopping"
       ]
     },
-    label: 'Store Slash',
+    label: "Tags",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-strava',
+    class: "fa-tape",
     search: {
-      terms: []
+      terms: [
+        "design",
+        "package",
+        "sticky"
+      ]
     },
-    label: 'Strava',
+    label: "Tape",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-stream',
+    class: "fa-tarp",
     search: {
       terms: [
-        'flow',
-        'list',
-        'timeline'
+        "protection",
+        "tarp",
+        "tent",
+        "waterproof"
       ]
     },
-    label: 'Stream',
+    label: "Tarp",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-street-view',
+    class: "fa-tarp-droplet",
     search: {
       terms: [
-        'directions',
-        'location',
-        'map',
-        'navigation'
+        "protection",
+        "tarp",
+        "tent",
+        "waterproof"
       ]
     },
-    label: 'Street View',
+    label: "Tarp Droplet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-strikethrough',
+    class: "fa-taxi",
     search: {
       terms: [
-        'cancel',
-        'edit',
-        'font',
-        'format',
-        'text',
-        'type'
+        "cab",
+        "cabbie",
+        "car",
+        "car service",
+        "lyft",
+        "machine",
+        "oncoming",
+        "oncoming taxi",
+        "taxi",
+        "transportation",
+        "travel",
+        "uber",
+        "vehicle"
       ]
     },
-    label: 'Strikethrough',
+    label: "Taxi",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-stripe',
+    class: "fa-teamspeak",
     search: {
       terms: []
     },
-    label: 'Stripe',
+    label: "Teamspeak",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-stripe-s',
+    class: "fa-teeth",
     search: {
-      terms: []
+      terms: [
+        "bite",
+        "dental",
+        "dentist",
+        "gums",
+        "mouth",
+        "smile",
+        "tooth"
+      ]
     },
-    label: 'Stripe S',
+    label: "Teeth",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-stroopwafel',
+    class: "fa-teeth-open",
     search: {
       terms: [
-        'caramel',
-        'cookie',
-        'dessert',
-        'sweets',
-        'waffle'
+        "dental",
+        "dentist",
+        "gums bite",
+        "mouth",
+        "smile",
+        "tooth"
       ]
     },
-    label: 'Stroopwafel',
+    label: "Teeth Open",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-studiovinari',
+    class: "fa-telegram",
     search: {
       terms: []
     },
-    label: 'Studio Vinari',
+    label: "Telegram",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-stumbleupon',
+    class: "fa-temperature-arrow-down",
     search: {
-      terms: []
+      terms: [
+        "air conditioner",
+        "cold",
+        "heater",
+        "mercury",
+        "thermometer",
+        "winter"
+      ]
     },
-    label: 'StumbleUpon Logo',
+    label: "Temperature Arrow Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-stumbleupon-circle',
+    class: "fa-temperature-arrow-up",
     search: {
-      terms: []
+      terms: [
+        "air conditioner",
+        "cold",
+        "heater",
+        "mercury",
+        "thermometer",
+        "winter"
+      ]
     },
-    label: 'StumbleUpon Circle',
+    label: "Temperature Arrow Up",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-subscript',
+    class: "fa-temperature-empty",
     search: {
       terms: [
-        'edit',
-        'font',
-        'format',
-        'text',
-        'type'
+        "cold",
+        "mercury",
+        "status",
+        "temperature"
       ]
     },
-    label: 'subscript',
+    label: "Temperature Empty",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-subway',
+    class: "fa-temperature-full",
     search: {
       terms: [
-        'machine',
-        'railway',
-        'train',
-        'transportation',
-        'vehicle'
+        "fever",
+        "hot",
+        "mercury",
+        "status",
+        "temperature"
       ]
     },
-    label: 'Subway',
+    label: "Temperature Full",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-suitcase',
+    class: "fa-temperature-half",
     search: {
       terms: [
-        'baggage',
-        'luggage',
-        'move',
-        'suitcase',
-        'travel',
-        'trip'
+        "mercury",
+        "status",
+        "temperature",
+        "thermometer",
+        "weather"
       ]
     },
-    label: 'Suitcase',
+    label: "Temperature Half",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-suitcase-rolling',
+    class: "fa-temperature-high",
     search: {
       terms: [
-        'baggage',
-        'luggage',
-        'move',
-        'suitcase',
-        'travel',
-        'trip'
+        "cook",
+        "covid-19",
+        "mercury",
+        "summer",
+        "thermometer",
+        "warm"
       ]
     },
-    label: 'Suitcase Rolling',
+    label: "Temperature High",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sun',
+    class: "fa-temperature-low",
     search: {
       terms: [
-        'brighten',
-        'contrast',
-        'day',
-        'lighter',
-        'sol',
-        'solar',
-        'star',
-        'weather'
+        "cold",
+        "cool",
+        "covid-19",
+        "mercury",
+        "thermometer",
+        "winter"
       ]
     },
-    label: 'Sun',
+    label: "Temperature Low",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-superpowers',
+    class: "fa-temperature-quarter",
     search: {
-      terms: []
+      terms: [
+        "mercury",
+        "status",
+        "temperature"
+      ]
     },
-    label: 'Superpowers',
+    label: "Temperature Quarter",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-superscript',
+    class: "fa-temperature-three-quarters",
     search: {
       terms: [
-        'edit',
-        'exponential',
-        'font',
-        'format',
-        'text',
-        'type'
+        "mercury",
+        "status",
+        "temperature"
       ]
     },
-    label: 'superscript',
+    label: "Temperature Three Quarters",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-supple',
+    class: "fa-tencent-weibo",
     search: {
       terms: []
     },
-    label: 'Supple',
+    label: "Tencent Weibo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-surprise',
+    class: "fa-tenge-sign",
     search: {
       terms: [
-        'emoticon',
-        'face',
-        'shocked'
+        "Tenge Sign",
+        "currency"
       ]
     },
-    label: 'Hushed Face',
+    label: "Tenge Sign",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-suse',
+    class: "fa-tent",
     search: {
       terms: [
-        'linux',
-        'operating system',
-        'os'
+        "bivouac",
+        "campground",
+        "refugee",
+        "shelter",
+        "tent"
       ]
     },
-    label: 'Suse',
+    label: "Tent",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-swatchbook',
+    class: "fa-tent-arrow-down-to-line",
     search: {
       terms: [
-        'Pantone',
-        'color',
-        'design',
-        'hue',
-        'palette'
+        "permanent",
+        "refugee",
+        "shelter"
       ]
     },
-    label: 'Swatchbook',
+    label: "Tent Arrow Down To Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-swift',
+    class: "fa-tent-arrow-left-right",
     search: {
-      terms: []
+      terms: [
+        "refugee",
+        "shelter",
+        "transition"
+      ]
     },
-    label: 'Swift',
+    label: "Tent Arrow Left Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-swimmer',
+    class: "fa-tent-arrow-turn-left",
     search: {
       terms: [
-        'athlete',
-        'head',
-        'man',
-        'olympics',
-        'person',
-        'pool',
-        'water'
+        "refugee",
+        "shelter",
+        "temporary"
       ]
     },
-    label: 'Swimmer',
+    label: "Tent Arrow Turn Left",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-swimming-pool',
+    class: "fa-tent-arrows-down",
     search: {
       terms: [
-        'ladder',
-        'recreation',
-        'swim',
-        'water'
+        "refugee",
+        "shelter",
+        "spontaneous"
       ]
     },
-    label: 'Swimming Pool',
+    label: "Tent Arrows Down",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-symfony',
+    class: "fa-tents",
     search: {
-      terms: []
+      terms: [
+        "bivouac",
+        "campground",
+        "refugee",
+        "shelter",
+        "tent"
+      ]
     },
-    label: 'Symfony',
+    label: "Tents",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-synagogue',
+    class: "fa-terminal",
     search: {
       terms: [
-        'building',
-        'jewish',
-        'judaism',
-        'religion',
-        'star of david',
-        'temple'
+        "code",
+        "coding",
+        "command",
+        "console",
+        "development",
+        "prompt",
+        "terminal"
       ]
     },
-    label: 'Synagogue',
+    label: "Terminal",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sync',
+    class: "fa-text-height",
     search: {
       terms: [
-        'exchange',
-        'refresh',
-        'reload',
-        'rotate',
-        'swap'
+        "edit",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'Sync',
+    label: "Text Height",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-sync-alt',
+    class: "fa-text-slash",
     search: {
       terms: [
-        'exchange',
-        'refresh',
-        'reload',
-        'rotate',
-        'swap'
+        "cancel",
+        "font",
+        "format",
+        "remove",
+        "style",
+        "text"
       ]
     },
-    label: 'Alternate Sync',
+    label: "Text Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-syringe',
+    class: "fa-text-width",
     search: {
       terms: [
-        'covid-19',
-        'doctor',
-        'immunizations',
-        'medical',
-        'needle'
+        "edit",
+        "font",
+        "format",
+        "text",
+        "type"
       ]
     },
-    label: 'Syringe',
+    label: "Text Width",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-table',
+    class: "fa-the-red-yeti",
     search: {
-      terms: [
-        'data',
-        'excel',
-        'spreadsheet'
-      ]
+      terms: []
     },
-    label: 'table',
+    label: "The Red Yeti",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-table-tennis',
+    class: "fa-themeco",
     search: {
-      terms: [
-        'ball',
-        'paddle',
-        'ping pong'
-      ]
+      terms: []
     },
-    label: 'Table Tennis',
+    label: "Themeco",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tablet',
+    class: "fa-themeisle",
     search: {
-      terms: [
-        'apple',
-        'device',
-        'ipad',
-        'kindle',
-        'screen'
-      ]
+      terms: []
     },
-    label: 'tablet',
+    label: "ThemeIsle",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tablet-alt',
+    class: "fa-thermometer",
     search: {
       terms: [
-        'apple',
-        'device',
-        'ipad',
-        'kindle',
-        'screen'
+        "covid-19",
+        "mercury",
+        "status",
+        "temperature"
       ]
     },
-    label: 'Alternate Tablet',
+    label: "Thermometer",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tablets',
+    class: "fa-think-peaks",
     search: {
-      terms: [
-        'drugs',
-        'medicine',
-        'pills',
-        'prescription'
-      ]
+      terms: []
     },
-    label: 'Tablets',
+    label: "Think Peaks",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tachometer-alt',
+    class: "fa-threads",
     search: {
-      terms: [
-        'dashboard',
-        'fast',
-        'odometer',
-        'speed',
-        'speedometer'
-      ]
+      terms: []
     },
-    label: 'Alternate Tachometer',
+    label: "Threads",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tag',
+    class: "fa-thumbs-down",
     search: {
       terms: [
-        'discount',
-        'label',
-        'price',
-        'shopping'
+        "-1",
+        "disagree",
+        "disapprove",
+        "dislike",
+        "down",
+        "hand",
+        "social",
+        "thumb",
+        "thumbs down",
+        "thumbs-o-down"
       ]
     },
-    label: 'tag',
+    label: "Thumbs Down",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-tags',
+    class: "fa-thumbs-up",
     search: {
       terms: [
-        'discount',
-        'label',
-        'price',
-        'shopping'
+        "+1",
+        "agree",
+        "approve",
+        "favorite",
+        "hand",
+        "like",
+        "ok",
+        "okay",
+        "social",
+        "success",
+        "thumb",
+        "thumbs up",
+        "thumbs-o-up",
+        "up",
+        "yes",
+        "you got it dude"
       ]
     },
-    label: 'tags',
+    label: "Thumbs Up",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-tape',
+    class: "fa-thumbtack",
     search: {
       terms: [
-        'design',
-        'package',
-        'sticky'
+        "Black Pushpin",
+        "coordinates",
+        "location",
+        "marker",
+        "pin",
+        "pushpin",
+        "thumb-tack"
       ]
     },
-    label: 'Tape',
+    label: "Thumbtack",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tasks',
+    class: "fa-ticket",
     search: {
       terms: [
-        'checklist',
-        'downloading',
-        'downloads',
-        'loading',
-        'progress',
-        'project management',
-        'settings',
-        'to do'
+        "admission",
+        "admission tickets",
+        "movie",
+        "pass",
+        "support",
+        "ticket"
       ]
     },
-    label: 'Tasks',
+    label: "Ticket",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-taxi',
+    class: "fa-ticket-simple",
     search: {
       terms: [
-        'cab',
-        'cabbie',
-        'car',
-        'car service',
-        'lyft',
-        'machine',
-        'transportation',
-        'travel',
-        'uber',
-        'vehicle'
+        "movie",
+        "pass",
+        "support",
+        "ticket"
       ]
     },
-    label: 'Taxi',
+    label: "Ticket Simple",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-teamspeak',
+    class: "fa-tiktok",
     search: {
       terms: []
     },
-    label: 'TeamSpeak',
+    label: "TikTok",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-teeth',
+    class: "fa-timeline",
     search: {
       terms: [
-        'bite',
-        'dental',
-        'dentist',
-        'gums',
-        'mouth',
-        'smile',
-        'tooth'
+        "chronological",
+        "deadline",
+        "history",
+        "linear"
       ]
     },
-    label: 'Teeth',
+    label: "Timeline",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-teeth-open',
+    class: "fa-toggle-off",
     search: {
       terms: [
-        'dental',
-        'dentist',
-        'gums bite',
-        'mouth',
-        'smile',
-        'tooth'
+        "button",
+        "off",
+        "on",
+        "switch"
       ]
     },
-    label: 'Teeth Open',
+    label: "Toggle Off",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-telegram',
+    class: "fa-toggle-on",
     search: {
-      terms: []
+      terms: [
+        "button",
+        "off",
+        "on",
+        "switch"
+      ]
     },
-    label: 'Telegram',
+    label: "Toggle On",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-telegram-plane',
+    class: "fa-toilet",
     search: {
-      terms: []
+      terms: [
+        "bathroom",
+        "flush",
+        "john",
+        "loo",
+        "pee",
+        "plumbing",
+        "poop",
+        "porcelain",
+        "potty",
+        "restroom",
+        "throne",
+        "toile",
+        "toilet",
+        "washroom",
+        "waste",
+        "wc"
+      ]
     },
-    label: 'Telegram Plane',
+    label: "Toilet",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-temperature-high',
+    class: "fa-toilet-paper",
     search: {
       terms: [
-        'cook',
-        'covid-19',
-        'mercury',
-        'summer',
-        'thermometer',
-        'warm'
+        "bathroom",
+        "covid-19",
+        "halloween",
+        "holiday",
+        "lavatory",
+        "paper towels",
+        "prank",
+        "privy",
+        "restroom",
+        "roll",
+        "roll of paper",
+        "toilet",
+        "toilet paper",
+        "wipe"
       ]
     },
-    label: 'High Temperature',
+    label: "Toilet Paper",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-temperature-low',
+    class: "fa-toilet-paper-slash",
     search: {
       terms: [
-        'cold',
-        'cool',
-        'covid-19',
-        'mercury',
-        'thermometer',
-        'winter'
+        "bathroom",
+        "covid-19",
+        "halloween",
+        "holiday",
+        "lavatory",
+        "leaves",
+        "prank",
+        "privy",
+        "restroom",
+        "roll",
+        "toilet",
+        "trouble",
+        "ut oh",
+        "wipe"
       ]
     },
-    label: 'Low Temperature',
+    label: "Toilet Paper Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tencent-weibo',
+    class: "fa-toilet-portable",
     search: {
-      terms: []
+      terms: [
+        "outhouse",
+        "toilet"
+      ]
     },
-    label: 'Tencent Weibo',
+    label: "Toilet Portable",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-tenge',
+    class: "fa-toilets-portable",
     search: {
       terms: [
-        'currency',
-        'kazakhstan',
-        'money',
-        'price'
+        "outhouse",
+        "toilet"
       ]
     },
-    label: 'Tenge',
+    label: "Toilets Portable",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-terminal',
+    class: "fa-toolbox",
     search: {
       terms: [
-        'code',
-        'command',
-        'console',
-        'development',
-        'prompt'
+        "admin",
+        "chest",
+        "container",
+        "fix",
+        "mechanic",
+        "repair",
+        "settings",
+        "tool",
+        "toolbox",
+        "tools"
       ]
     },
-    label: 'Terminal',
+    label: "Toolbox",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-text-height',
+    class: "fa-tooth",
     search: {
       terms: [
-        'edit',
-        'font',
-        'format',
-        'text',
-        'type'
+        "bicuspid",
+        "dental",
+        "dentist",
+        "molar",
+        "mouth",
+        "teeth",
+        "tooth"
       ]
     },
-    label: 'text-height',
+    label: "Tooth",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-text-width',
+    class: "fa-torii-gate",
     search: {
       terms: [
-        'edit',
-        'font',
-        'format',
-        'text',
-        'type'
+        "building",
+        "religion",
+        "shinto",
+        "shinto shrine",
+        "shintoism",
+        "shrine"
       ]
     },
-    label: 'Text Width',
+    label: "Torii Gate",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-th',
+    class: "fa-tornado",
     search: {
       terms: [
-        'blocks',
-        'boxes',
-        'grid',
-        'squares'
+        "cloud",
+        "cyclone",
+        "dorothy",
+        "landspout",
+        "tornado",
+        "toto",
+        "twister",
+        "vortext",
+        "waterspout",
+        "weather",
+        "whirlwind"
       ]
     },
-    label: 'th',
+    label: "Tornado",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-th-large',
+    class: "fa-tower-broadcast",
     search: {
       terms: [
-        'blocks',
-        'boxes',
-        'grid',
-        'squares'
+        "airwaves",
+        "antenna",
+        "communication",
+        "emergency",
+        "radio",
+        "reception",
+        "waves"
       ]
     },
-    label: 'th-large',
+    label: "Tower Broadcast",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-th-list',
+    class: "fa-tower-cell",
     search: {
       terms: [
-        'checklist',
-        'completed',
-        'done',
-        'finished',
-        'ol',
-        'todo',
-        'ul'
+        "airwaves",
+        "antenna",
+        "communication",
+        "radio",
+        "reception",
+        "waves"
       ]
     },
-    label: 'th-list',
+    label: "Tower Cell",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-the-red-yeti',
+    class: "fa-tower-observation",
     search: {
-      terms: []
+      terms: [
+        "fire tower",
+        "view"
+      ]
     },
-    label: 'The Red Yeti',
+    label: "Tower Observation",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-theater-masks',
+    class: "fa-tractor",
     search: {
       terms: [
-        'comedy',
-        'perform',
-        'theatre',
-        'tragedy'
+        "agriculture",
+        "farm",
+        "tractor",
+        "vehicle"
       ]
     },
-    label: 'Theater Masks',
+    label: "Tractor",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-themeco',
+    class: "fa-trade-federation",
     search: {
       terms: []
     },
-    label: 'Themeco',
+    label: "Trade Federation",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-themeisle',
+    class: "fa-trademark",
     search: {
-      terms: []
+      terms: [
+        "copyright",
+        "mark",
+        "register",
+        "symbol",
+        "tm",
+        "trade mark",
+        "trademark"
+      ]
     },
-    label: 'ThemeIsle',
+    label: "Trademark",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer',
+    class: "fa-traffic-light",
     search: {
       terms: [
-        'covid-19',
-        'mercury',
-        'status',
-        'temperature'
+        "direction",
+        "light",
+        "road",
+        "signal",
+        "traffic",
+        "travel",
+        "vertical traffic light"
       ]
     },
-    label: 'Thermometer',
+    label: "Traffic Light",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer-empty',
+    class: "fa-trailer",
     search: {
       terms: [
-        'cold',
-        'mercury',
-        'status',
-        'temperature'
+        "carry",
+        "haul",
+        "moving",
+        "travel"
       ]
     },
-    label: 'Thermometer Empty',
+    label: "Trailer",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer-full',
+    class: "fa-train",
     search: {
       terms: [
-        'fever',
-        'hot',
-        'mercury',
-        'status',
-        'temperature'
+        "bullet",
+        "commute",
+        "locomotive",
+        "railway",
+        "subway",
+        "train"
       ]
     },
-    label: 'Thermometer Full',
+    label: "Train",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer-half',
+    class: "fa-train-subway",
     search: {
       terms: [
-        'mercury',
-        'status',
-        'temperature'
+        "machine",
+        "railway",
+        "train",
+        "transportation",
+        "vehicle"
       ]
     },
-    label: 'Thermometer 1/2 Full',
+    label: "Train Subway",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer-quarter',
+    class: "fa-train-tram",
     search: {
       terms: [
-        'mercury',
-        'status',
-        'temperature'
+        "crossing",
+        "machine",
+        "mountains",
+        "seasonal",
+        "tram",
+        "transportation",
+        "trolleybus"
       ]
     },
-    label: 'Thermometer 1/4 Full',
+    label: "Train Tram",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-thermometer-three-quarters',
+    class: "fa-transgender",
     search: {
       terms: [
-        'mercury',
-        'status',
-        'temperature'
+        "female",
+        "gender",
+        "intersex",
+        "male",
+        "transgender",
+        "transgender symbol"
       ]
     },
-    label: 'Thermometer 3/4 Full',
+    label: "Transgender",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-think-peaks',
+    class: "fa-trash",
     search: {
-      terms: []
+      terms: [
+        "delete",
+        "garbage",
+        "hide",
+        "remove"
+      ]
     },
-    label: 'Think Peaks',
+    label: "Trash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-thumbs-down',
+    class: "fa-trash-arrow-up",
     search: {
       terms: [
-        'disagree',
-        'disapprove',
-        'dislike',
-        'hand',
-        'social',
-        'thumbs-o-down'
+        "back",
+        "control z",
+        "delete",
+        "garbage",
+        "hide",
+        "oops",
+        "remove",
+        "undo"
       ]
     },
-    label: 'thumbs-down',
+    label: "Trash Arrow Up",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-thumbs-up',
+    class: "fa-trash-can",
     search: {
       terms: [
-        'agree',
-        'approve',
-        'favorite',
-        'hand',
-        'like',
-        'ok',
-        'okay',
-        'social',
-        'success',
-        'thumbs-o-up',
-        'yes',
-        'you got it dude'
+        "delete",
+        "garbage",
+        "hide",
+        "remove",
+        "trash-o"
       ]
     },
-    label: 'thumbs-up',
+    label: "Trash Can",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-thumbtack',
+    class: "fa-trash-can-arrow-up",
     search: {
       terms: [
-        'coordinates',
-        'location',
-        'marker',
-        'pin',
-        'thumb-tack'
+        "back",
+        "control z",
+        "delete",
+        "garbage",
+        "hide",
+        "oops",
+        "remove",
+        "undo"
       ]
     },
-    label: 'Thumbtack',
+    label: "Trash Can Arrow Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ticket-alt',
+    class: "fa-tree",
     search: {
       terms: [
-        'movie',
-        'pass',
-        'support',
-        'ticket'
+        "bark",
+        "evergreen tree",
+        "fall",
+        "flora",
+        "forest",
+        "nature",
+        "plant",
+        "seasonal",
+        "tree"
       ]
     },
-    label: 'Alternate Ticket',
+    label: "Tree",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tiktok',
+    class: "fa-tree-city",
     search: {
-      terms: []
+      terms: [
+        "building",
+        "city",
+        "urban"
+      ]
     },
-    label: 'TikTok',
+    label: "Tree City",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-times',
+    class: "fa-trello",
     search: {
       terms: [
-        'close',
-        'cross',
-        'error',
-        'exit',
-        'incorrect',
-        'notice',
-        'notification',
-        'notify',
-        'problem',
-        'wrong',
-        'x'
+        "atlassian"
       ]
     },
-    label: 'Times',
+    label: "Trello",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-times-circle',
+    class: "fa-triangle-exclamation",
     search: {
       terms: [
-        'close',
-        'cross',
-        'exit',
-        'incorrect',
-        'notice',
-        'notification',
-        'notify',
-        'problem',
-        'wrong',
-        'x'
+        "alert",
+        "danger",
+        "error",
+        "important",
+        "notice",
+        "notification",
+        "notify",
+        "problem",
+        "warnin",
+        "warning"
       ]
     },
-    label: 'Times Circle',
+    label: "Triangle Exclamation",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-tint',
+    class: "fa-trophy",
     search: {
       terms: [
-        'color',
-        'drop',
-        'droplet',
-        'raindrop',
-        'waterdrop'
+        "achievement",
+        "award",
+        "cup",
+        "game",
+        "prize",
+        "trophy",
+        "winner"
       ]
     },
-    label: 'tint',
+    label: "Trophy",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tint-slash',
+    class: "fa-trowel",
     search: {
       terms: [
-        'color',
-        'drop',
-        'droplet',
-        'raindrop',
-        'waterdrop'
+        "build",
+        "construction",
+        "tool"
       ]
     },
-    label: 'Tint Slash',
+    label: "Trowel",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tired',
+    class: "fa-trowel-bricks",
     search: {
       terms: [
-        'angry',
-        'emoticon',
-        'face',
-        'grumpy',
-        'upset'
+        "build",
+        "construction",
+        "reconstruction",
+        "tool"
       ]
     },
-    label: 'Tired Face',
+    label: "Trowel Bricks",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-toggle-off',
+    class: "fa-truck",
     search: {
       terms: [
-        'switch'
+        "Black Truck",
+        "cargo",
+        "delivery",
+        "delivery truck",
+        "shipping",
+        "truck",
+        "vehicle"
       ]
     },
-    label: 'Toggle Off',
+    label: "Truck",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-toggle-on',
+    class: "fa-truck-arrow-right",
     search: {
       terms: [
-        'switch'
+        "access",
+        "fast",
+        "shipping",
+        "transport"
       ]
     },
-    label: 'Toggle On',
+    label: "Truck Arrow Right",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-toilet',
+    class: "fa-truck-droplet",
     search: {
       terms: [
-        'bathroom',
-        'flush',
-        'john',
-        'loo',
-        'pee',
-        'plumbing',
-        'poop',
-        'porcelain',
-        'potty',
-        'restroom',
-        'throne',
-        'washroom',
-        'waste',
-        'wc'
+        "thirst",
+        "truck",
+        "water",
+        "water supply"
       ]
     },
-    label: 'Toilet',
+    label: "Truck Droplet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-toilet-paper',
+    class: "fa-truck-fast",
     search: {
       terms: [
-        'bathroom',
-        'covid-19',
-        'halloween',
-        'holiday',
-        'lavatory',
-        'prank',
-        'restroom',
-        'roll'
+        "express",
+        "fedex",
+        "mail",
+        "overnight",
+        "package",
+        "ups"
       ]
     },
-    label: 'Toilet Paper',
+    label: "Truck Fast",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-toilet-paper-slash',
+    class: "fa-truck-field",
     search: {
       terms: [
-        'bathroom',
-        'covid-19',
-        'halloween',
-        'holiday',
-        'lavatory',
-        'leaves',
-        'prank',
-        'restroom',
-        'roll',
-        'trouble',
-        'ut oh'
+        "supplies",
+        "truck"
       ]
     },
-    label: 'Toilet Paper Slash',
+    label: "Truck Field",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-toolbox',
+    class: "fa-truck-field-un",
     search: {
       terms: [
-        'admin',
-        'container',
-        'fix',
-        'repair',
-        'settings',
-        'tools'
+        "supplies",
+        "truck",
+        "united nations"
       ]
     },
-    label: 'Toolbox',
+    label: "Truck Field Un",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tools',
+    class: "fa-truck-front",
     search: {
       terms: [
-        'admin',
-        'fix',
-        'repair',
-        'screwdriver',
-        'settings',
-        'tools',
-        'wrench'
+        "shuttle",
+        "truck",
+        "van"
       ]
     },
-    label: 'Tools',
+    label: "Truck Front",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tooth',
+    class: "fa-truck-medical",
     search: {
       terms: [
-        'bicuspid',
-        'dental',
-        'dentist',
-        'molar',
-        'mouth',
-        'teeth'
+        "ambulance",
+        "clinic",
+        "covid-19",
+        "emergency",
+        "emt",
+        "er",
+        "help",
+        "hospital",
+        "mobile",
+        "support",
+        "vehicle"
       ]
     },
-    label: 'Tooth',
+    label: "Truck Medical",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-torah',
+    class: "fa-truck-monster",
     search: {
       terms: [
-        'book',
-        'jewish',
-        'judaism',
-        'religion',
-        'scroll'
+        "offroad",
+        "vehicle",
+        "wheel"
       ]
     },
-    label: 'Torah',
+    label: "Truck Monster",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-torii-gate',
+    class: "fa-truck-moving",
     search: {
       terms: [
-        'building',
-        'shintoism'
+        "cargo",
+        "inventory",
+        "rental",
+        "vehicle"
       ]
     },
-    label: 'Torii Gate',
+    label: "Truck Moving",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tractor',
+    class: "fa-truck-pickup",
     search: {
       terms: [
-        'agriculture',
-        'farm',
-        'vehicle'
+        "cargo",
+        "pick-up",
+        "pickup",
+        "pickup truck",
+        "truck",
+        "vehicle"
       ]
     },
-    label: 'Tractor',
+    label: "Truck Pickup",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-trade-federation',
+    class: "fa-truck-plane",
     search: {
-      terms: []
+      terms: [
+        "airplane",
+        "plane",
+        "transportation",
+        "truck",
+        "vehicle"
+      ]
     },
-    label: 'Trade Federation',
+    label: "Truck Plane",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-trademark',
+    class: "fa-truck-ramp-box",
     search: {
       terms: [
-        'copyright',
-        'register',
-        'symbol'
+        "box",
+        "cargo",
+        "delivery",
+        "inventory",
+        "moving",
+        "rental",
+        "vehicle"
       ]
     },
-    label: 'Trademark',
+    label: "Truck Ramp Box",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-traffic-light',
+    class: "fa-tty",
     search: {
       terms: [
-        'direction',
-        'road',
-        'signal',
-        'travel'
+        "communication",
+        "deaf",
+        "telephone",
+        "teletypewriter",
+        "text"
       ]
     },
-    label: 'Traffic Light',
+    label: "Tty",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-trailer',
+    class: "fa-tumblr",
     search: {
-      terms: [
-        'carry',
-        'haul',
-        'moving',
-        'travel'
-      ]
+      terms: []
     },
-    label: 'Trailer',
+    label: "Tumblr",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-train',
+    class: "fa-turkish-lira-sign",
     search: {
       terms: [
-        'bullet',
-        'commute',
-        'locomotive',
-        'railway',
-        'subway'
+        "Turkish Lira Sign",
+        "currency"
       ]
     },
-    label: 'Train',
+    label: "Turkish Lira Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tram',
+    class: "fa-turn-down",
     search: {
       terms: [
-        'crossing',
-        'machine',
-        'mountains',
-        'seasonal',
-        'transportation'
+        "arrow",
+        "down",
+        "level-down",
+        "right arrow curving down"
       ]
     },
-    label: 'Tram',
+    label: "Turn Down",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-transgender',
+    class: "fa-turn-up",
     search: {
       terms: [
-        'intersex'
+        "arrow",
+        "level-up",
+        "right arrow curving up"
       ]
     },
-    label: 'Transgender',
+    label: "Turn Up",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-transgender-alt',
+    class: "fa-tv",
     search: {
       terms: [
-        'intersex'
+        "computer",
+        "display",
+        "monitor",
+        "television"
       ]
     },
-    label: 'Alternate Transgender',
+    label: "Tv",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-trash',
+    class: "fa-twitch",
     search: {
-      terms: [
-        'delete',
-        'garbage',
-        'hide',
-        'remove'
-      ]
+      terms: []
     },
-    label: 'Trash',
+    label: "Twitch",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-trash-alt',
+    class: "fa-twitter",
     search: {
       terms: [
-        'delete',
-        'garbage',
-        'hide',
-        'remove',
-        'trash-o'
+        "social network",
+        "tweet"
       ]
     },
-    label: 'Alternate Trash',
+    label: "Twitter",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-trash-restore',
+    class: "fa-typo3",
     search: {
-      terms: [
-        'back',
-        'control z',
-        'oops',
-        'undo'
-      ]
+      terms: []
     },
-    label: 'Trash Restore',
+    label: "Typo3",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-trash-restore-alt',
+    class: "fa-u",
     search: {
       terms: [
-        'back',
-        'control z',
-        'oops',
-        'undo'
+        "Latin Capital Letter U",
+        "Latin Small Letter U",
+        "letter"
       ]
     },
-    label: 'Alternative Trash Restore',
+    label: "U",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tree',
+    class: "fa-uber",
     search: {
-      terms: [
-        'bark',
-        'fall',
-        'flora',
-        'forest',
-        'nature',
-        'plant',
-        'seasonal'
-      ]
+      terms: []
     },
-    label: 'Tree',
+    label: "Uber",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-trello',
+    class: "fa-ubuntu",
     search: {
       terms: [
-        'atlassian'
+        "linux",
+        "operating system",
+        "os"
       ]
     },
-    label: 'Trello',
+    label: "Ubuntu",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-trophy',
+    class: "fa-uikit",
     search: {
-      terms: [
-        'achievement',
-        'award',
-        'cup',
-        'game',
-        'winner'
-      ]
+      terms: []
     },
-    label: 'trophy',
+    label: "UIkit",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-truck',
+    class: "fa-umbraco",
     search: {
-      terms: [
-        'cargo',
-        'delivery',
-        'shipping',
-        'vehicle'
-      ]
+      terms: []
     },
-    label: 'truck',
+    label: "Umbraco",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-truck-loading',
+    class: "fa-umbrella",
     search: {
       terms: [
-        'box',
-        'cargo',
-        'delivery',
-        'inventory',
-        'moving',
-        'rental',
-        'vehicle'
+        "protection",
+        "rain",
+        "storm",
+        "wet"
       ]
     },
-    label: 'Truck Loading',
+    label: "Umbrella",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-truck-monster',
+    class: "fa-umbrella-beach",
     search: {
       terms: [
-        'offroad',
-        'vehicle',
-        'wheel'
+        "beach",
+        "beach with umbrella",
+        "protection",
+        "recreation",
+        "sand",
+        "shade",
+        "summer",
+        "sun",
+        "umbrella"
       ]
     },
-    label: 'Truck Monster',
+    label: "Umbrella Beach",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-truck-moving',
+    class: "fa-uncharted",
     search: {
-      terms: [
-        'cargo',
-        'inventory',
-        'rental',
-        'vehicle'
-      ]
+      terms: []
     },
-    label: 'Truck Moving',
+    label: "Uncharted Software",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-truck-pickup',
+    class: "fa-underline",
     search: {
       terms: [
-        'cargo',
-        'vehicle'
+        "edit",
+        "emphasis",
+        "format",
+        "text",
+        "writing"
       ]
     },
-    label: 'Truck Side',
+    label: "Underline",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-tshirt',
+    class: "fa-uniregistry",
     search: {
-      terms: [
-        'clothing',
-        'fashion',
-        'garment',
-        'shirt'
-      ]
+      terms: []
     },
-    label: 'T-Shirt',
+    label: "Uniregistry",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tty',
+    class: "fa-unity",
     search: {
-      terms: [
-        'communication',
-        'deaf',
-        'telephone',
-        'teletypewriter',
-        'text'
-      ]
+      terms: []
     },
-    label: 'TTY',
+    label: "Unity 3D",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-tumblr',
+    class: "fa-universal-access",
     search: {
-      terms: []
+      terms: [
+        "users-people"
+      ]
     },
-    label: 'Tumblr',
+    label: "Universal Access",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-tumblr-square',
+    class: "fa-unlock",
     search: {
-      terms: []
+      terms: [
+        "admin",
+        "lock",
+        "open",
+        "password",
+        "private",
+        "protect",
+        "unlock",
+        "unlocked"
+      ]
     },
-    label: 'Tumblr Square',
+    label: "Unlock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-tv',
+    class: "fa-unlock-keyhole",
     search: {
       terms: [
-        'computer',
-        'display',
-        'monitor',
-        'television'
+        "admin",
+        "lock",
+        "password",
+        "private",
+        "protect"
       ]
     },
-    label: 'Television',
+    label: "Unlock Keyhole",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-twitch',
+    class: "fa-unsplash",
     search: {
       terms: []
     },
-    label: 'Twitch',
+    label: "Unsplash",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-twitter',
+    class: "fa-untappd",
     search: {
-      terms: [
-        'social network',
-        'tweet'
-      ]
+      terms: []
     },
-    label: 'Twitter',
+    label: "Untappd",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-twitter-square',
+    class: "fa-up-down",
     search: {
       terms: [
-        'social network',
-        'tweet'
+        "Up Down Black Arrow",
+        "arrow",
+        "arrows-v",
+        "expand",
+        "portrait",
+        "resize",
+        "tall",
+        "up-down arrow",
+        "vertical"
       ]
     },
-    label: 'Twitter Square',
+    label: "Up Down",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-typo3',
+    class: "fa-up-down-left-right",
     search: {
-      terms: []
+      terms: [
+        "arrow",
+        "arrows",
+        "bigger",
+        "enlarge",
+        "expand",
+        "fullscreen",
+        "move",
+        "position",
+        "reorder",
+        "resize"
+      ]
     },
-    label: 'Typo3',
+    label: "Up Down Left Right",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-uber',
+    class: "fa-up-long",
     search: {
-      terms: []
+      terms: [
+        "long-arrow-up",
+        "upload"
+      ]
     },
-    label: 'Uber',
+    label: "Up Long",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ubuntu',
+    class: "fa-up-right-and-down-left-from-center",
     search: {
       terms: [
-        'linux',
-        'operating system',
-        'os'
+        "arrows",
+        "bigger",
+        "enlarge",
+        "fullscreen",
+        "resize"
       ]
     },
-    label: 'Ubuntu',
+    label: "Up Right And Down Left From Center",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-uikit',
+    class: "fa-up-right-from-square",
     search: {
-      terms: []
+      terms: [
+        "external-link",
+        "new",
+        "open",
+        "share"
+      ]
     },
-    label: 'UIkit',
+    label: "Up Right From Square",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-umbraco',
+    class: "fa-upload",
     search: {
-      terms: []
+      terms: [
+        "hard drive",
+        "import",
+        "publish"
+      ]
     },
-    label: 'Umbraco',
+    label: "Upload",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-umbrella',
+    class: "fa-ups",
     search: {
       terms: [
-        'protection',
-        'rain',
-        'storm',
-        'wet'
+        "United Parcel Service",
+        "package",
+        "shipping"
       ]
     },
-    label: 'Umbrella',
+    label: "UPS",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-umbrella-beach',
+    class: "fa-usb",
     search: {
-      terms: [
-        'protection',
-        'recreation',
-        'sand',
-        'shade',
-        'summer',
-        'sun'
-      ]
+      terms: []
     },
-    label: 'Umbrella Beach',
+    label: "USB",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-uncharted',
+    class: "fa-user",
     search: {
-      terms: []
+      terms: [
+        "adult",
+        "bust",
+        "bust in silhouette",
+        "gender-neutral",
+        "person",
+        "profile",
+        "silhouette",
+        "unspecified gender",
+        "users-people"
+      ]
     },
-    label: 'Uncharted Software',
+    label: "User",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-underline',
+    class: "fa-user-astronaut",
     search: {
       terms: [
-        'edit',
-        'emphasis',
-        'format',
-        'text',
-        'writing'
+        "avatar",
+        "clothing",
+        "cosmonaut",
+        "nasa",
+        "space",
+        "suit"
       ]
     },
-    label: 'Underline',
+    label: "User Astronaut",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-undo',
+    class: "fa-user-check",
     search: {
       terms: [
-        'back',
-        'control z',
-        'exchange',
-        'oops',
-        'return',
-        'rotate',
-        'swap'
+        "users-people"
       ]
     },
-    label: 'Undo',
+    label: "User Check",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-undo-alt',
+    class: "fa-user-clock",
     search: {
       terms: [
-        'back',
-        'control z',
-        'exchange',
-        'oops',
-        'return',
-        'swap'
+        "users-people"
       ]
     },
-    label: 'Alternate Undo',
+    label: "User Clock",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-uniregistry',
+    class: "fa-user-doctor",
     search: {
-      terms: []
+      terms: [
+        "covid-19",
+        "health",
+        "job",
+        "medical",
+        "nurse",
+        "occupation",
+        "physician",
+        "profile",
+        "surgeon",
+        "worker"
+      ]
     },
-    label: 'Uniregistry',
+    label: "User Doctor",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-unity',
+    class: "fa-user-gear",
     search: {
-      terms: []
+      terms: [
+        "users-people"
+      ]
     },
-    label: 'Unity 3D',
+    label: "User Gear",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-universal-access',
+    class: "fa-user-graduate",
     search: {
       terms: [
-        'accessibility',
-        'hearing',
-        'person',
-        'seeing',
-        'visual impairment'
+        "users-people"
       ]
     },
-    label: 'Universal Access',
+    label: "User Graduate",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-university',
+    class: "fa-user-group",
     search: {
       terms: [
-        'bank',
-        'building',
-        'college',
-        'higher education - students',
-        'institution'
+        "bust",
+        "busts in silhouette",
+        "silhouette",
+        "users-people"
       ]
     },
-    label: 'University',
+    label: "User Group",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-unlink',
+    class: "fa-user-injured",
     search: {
       terms: [
-        'attachment',
-        'chain',
-        'chain-broken',
-        'remove'
+        "users-people"
       ]
     },
-    label: 'unlink',
+    label: "User Injured",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-unlock',
+    class: "fa-user-large",
     search: {
       terms: [
-        'admin',
-        'lock',
-        'password',
-        'private',
-        'protect'
+        "users-people"
       ]
     },
-    label: 'unlock',
+    label: "User Large",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-unlock-alt',
+    class: "fa-user-large-slash",
     search: {
       terms: [
-        'admin',
-        'lock',
-        'password',
-        'private',
-        'protect'
+        "users-people"
       ]
     },
-    label: 'Alternate Unlock',
+    label: "User Large Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-unsplash',
+    class: "fa-user-lock",
     search: {
-      terms: []
+      terms: [
+        "users-people"
+      ]
     },
-    label: 'Unsplash',
+    label: "User Lock",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-untappd',
+    class: "fa-user-minus",
     search: {
-      terms: []
+      terms: [
+        "delete",
+        "negative",
+        "remove"
+      ]
     },
-    label: 'Untappd',
+    label: "User Minus",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-upload',
+    class: "fa-user-ninja",
     search: {
       terms: [
-        'hard drive',
-        'import',
-        'publish'
+        "assassin",
+        "avatar",
+        "dangerous",
+        "deadly",
+        "fighter",
+        "hidden",
+        "ninja",
+        "sneaky",
+        "stealth"
       ]
     },
-    label: 'Upload',
+    label: "User Ninja",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-ups',
+    class: "fa-user-nurse",
     search: {
       terms: [
-        'United Parcel Service',
-        'package',
-        'shipping'
+        "covid-19",
+        "doctor",
+        "health",
+        "md",
+        "medical",
+        "midwife",
+        "physician",
+        "practitioner",
+        "surgeon",
+        "worker"
       ]
     },
-    label: 'UPS',
+    label: "User Nurse",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-usb',
+    class: "fa-user-pen",
     search: {
-      terms: []
+      terms: [
+        "users-people"
+      ]
     },
-    label: 'USB',
+    label: "User Pen",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-user',
+    class: "fa-user-plus",
     search: {
       terms: [
-        'account',
-        'avatar',
-        'head',
-        'human',
-        'man',
-        'person',
-        'profile'
+        "add",
+        "avatar",
+        "positive",
+        "sign up",
+        "signup",
+        "team"
       ]
     },
-    label: 'User',
+    label: "User Plus",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-alt',
+    class: "fa-user-secret",
     search: {
       terms: [
-        'account',
-        'avatar',
-        'head',
-        'human',
-        'man',
-        'person',
-        'profile'
+        "detective",
+        "sleuth",
+        "spy",
+        "users-people"
       ]
     },
-    label: 'Alternate User',
+    label: "User Secret",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-alt-slash',
+    class: "fa-user-shield",
     search: {
       terms: [
-        'account',
-        'avatar',
-        'head',
-        'human',
-        'man',
-        'person',
-        'profile'
+        "protect",
+        "safety"
       ]
     },
-    label: 'Alternate User Slash',
+    label: "User Shield",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-astronaut',
+    class: "fa-user-slash",
     search: {
       terms: [
-        'avatar',
-        'clothing',
-        'cosmonaut',
-        'nasa',
-        'space',
-        'suit'
+        "ban",
+        "delete",
+        "remove"
       ]
     },
-    label: 'User Astronaut',
+    label: "User Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-check',
+    class: "fa-user-tag",
     search: {
       terms: [
-        'accept',
-        'check',
-        'person',
-        'verified'
+        "users-people"
       ]
     },
-    label: 'User Check',
+    label: "User Tag",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-circle',
+    class: "fa-user-tie",
     search: {
       terms: [
-        'account',
-        'avatar',
-        'head',
-        'human',
-        'man',
-        'person',
-        'profile'
+        "avatar",
+        "business",
+        "clothing",
+        "formal",
+        "professional",
+        "suit"
       ]
     },
-    label: 'User Circle',
+    label: "User Tie",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-clock',
+    class: "fa-user-xmark",
     search: {
       terms: [
-        'alert',
-        'person',
-        'remind',
-        'time'
+        "archive",
+        "delete",
+        "remove",
+        "x"
       ]
     },
-    label: 'User Clock',
+    label: "User Xmark",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-cog',
+    class: "fa-users",
     search: {
       terms: [
-        'admin',
-        'cog',
-        'person',
-        'settings'
+        "users-people"
       ]
     },
-    label: 'User Cog',
+    label: "Users",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-edit',
+    class: "fa-users-between-lines",
     search: {
       terms: [
-        'edit',
-        'pen',
-        'pencil',
-        'person',
-        'update',
-        'write'
+        "covered",
+        "group",
+        "people"
       ]
     },
-    label: 'User Edit',
+    label: "Users Between Lines",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-friends',
+    class: "fa-users-gear",
     search: {
       terms: [
-        'group',
-        'people',
-        'person',
-        'team',
-        'users'
+        "users-people"
       ]
     },
-    label: 'User Friends',
+    label: "Users Gear",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-graduate',
+    class: "fa-users-line",
     search: {
       terms: [
-        'cap',
-        'clothing',
-        'commencement',
-        'gown',
-        'graduation',
-        'person',
-        'student'
+        "group",
+        "need",
+        "people"
       ]
     },
-    label: 'User Graduate',
+    label: "Users Line",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-injured',
+    class: "fa-users-rays",
     search: {
       terms: [
-        'cast',
-        'injury',
-        'ouch',
-        'patient',
-        'person',
-        'sling'
+        "affected",
+        "focused",
+        "group",
+        "people"
       ]
     },
-    label: 'User Injured',
+    label: "Users Rays",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-lock',
+    class: "fa-users-rectangle",
     search: {
       terms: [
-        'admin',
-        'lock',
-        'person',
-        'private',
-        'unlock'
+        "focus",
+        "group",
+        "people",
+        "reached"
       ]
     },
-    label: 'User Lock',
+    label: "Users Rectangle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-md',
+    class: "fa-users-slash",
     search: {
       terms: [
-        'covid-19',
-        'job',
-        'medical',
-        'nurse',
-        'occupation',
-        'physician',
-        'profile',
-        'surgeon'
+        "users-people"
       ]
     },
-    label: 'Doctor',
+    label: "Users Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-minus',
+    class: "fa-users-viewfinder",
     search: {
       terms: [
-        'delete',
-        'negative',
-        'remove'
+        "focus",
+        "group",
+        "people",
+        "targeted"
       ]
     },
-    label: 'User Minus',
+    label: "Users Viewfinder",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-ninja',
+    class: "fa-usps",
     search: {
       terms: [
-        'assassin',
-        'avatar',
-        'dangerous',
-        'deadly',
-        'sneaky'
+        "american",
+        "package",
+        "shipping",
+        "usa"
       ]
     },
-    label: 'User Ninja',
+    label: "United States Postal Service",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-user-nurse',
+    class: "fa-ussunnah",
     search: {
-      terms: [
-        'covid-19',
-        'doctor',
-        'midwife',
-        'practitioner',
-        'surgeon'
-      ]
+      terms: []
     },
-    label: 'Nurse',
+    label: "us-Sunnah Foundation",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-user-plus',
+    class: "fa-utensils",
     search: {
       terms: [
-        'add',
-        'avatar',
-        'positive',
-        'sign up',
-        'signup',
-        'team'
+        "cooking",
+        "cutlery",
+        "dining",
+        "dinner",
+        "eat",
+        "food",
+        "fork",
+        "fork and knife",
+        "knife",
+        "restaurant"
       ]
     },
-    label: 'User Plus',
+    label: "Utensils",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-secret',
+    class: "fa-v",
     search: {
       terms: [
-        'clothing',
-        'coat',
-        'hat',
-        'incognito',
-        'person',
-        'privacy',
-        'spy',
-        'whisper'
+        "Latin Capital Letter V",
+        "Latin Small Letter V",
+        "letter"
       ]
     },
-    label: 'User Secret',
+    label: "V",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-shield',
+    class: "fa-vaadin",
     search: {
-      terms: [
-        'admin',
-        'person',
-        'private',
-        'protect',
-        'safe'
-      ]
+      terms: []
     },
-    label: 'User Shield',
+    label: "Vaadin",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-user-slash',
+    class: "fa-van-shuttle",
     search: {
       terms: [
-        'ban',
-        'delete',
-        'remove'
+        "airport",
+        "bus",
+        "machine",
+        "minibus",
+        "public-transportation",
+        "transportation",
+        "travel",
+        "vehicle"
       ]
     },
-    label: 'User Slash',
+    label: "Van Shuttle",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-tag',
+    class: "fa-vault",
     search: {
       terms: [
-        'avatar',
-        'discount',
-        'label',
-        'person',
-        'role',
-        'special'
+        "bank",
+        "important",
+        "lock",
+        "money",
+        "safe"
       ]
     },
-    label: 'User Tag',
+    label: "Vault",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-tie',
+    class: "fa-vector-square",
     search: {
       terms: [
-        'avatar',
-        'business',
-        'clothing',
-        'formal',
-        'professional',
-        'suit'
+        "anchors",
+        "lines",
+        "object",
+        "render",
+        "shape"
       ]
     },
-    label: 'User Tie',
+    label: "Vector Square",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-user-times',
+    class: "fa-venus",
     search: {
       terms: [
-        'archive',
-        'delete',
-        'remove',
-        'x'
+        "female",
+        "female sign",
+        "gender",
+        "woman"
       ]
     },
-    label: 'Remove User',
+    label: "Venus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-users',
+    class: "fa-venus-double",
     search: {
       terms: [
-        'friends',
-        'group',
-        'people',
-        'persons',
-        'profiles',
-        'team'
+        "Doubled Female Sign",
+        "female",
+        "gender",
+        "lesbian"
       ]
     },
-    label: 'Users',
+    label: "Venus Double",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-users-cog',
+    class: "fa-venus-mars",
     search: {
       terms: [
-        'admin',
-        'cog',
-        'group',
-        'person',
-        'settings',
-        'team'
+        "Interlocked Female and Male Sign",
+        "female",
+        "gender",
+        "heterosexual",
+        "male"
       ]
     },
-    label: 'Users Cog',
+    label: "Venus Mars",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-users-slash',
+    class: "fa-vest",
     search: {
       terms: [
-        'disband',
-        'friends',
-        'group',
-        'people',
-        'persons',
-        'profiles',
-        'separate',
-        'team',
-        'ungroup'
+        "biker",
+        "fashion",
+        "style"
       ]
     },
-    label: 'Users Slash',
+    label: "Vest",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-usps',
+    class: "fa-vest-patches",
     search: {
       terms: [
-        'american',
-        'package',
-        'shipping',
-        'usa'
+        "biker",
+        "fashion",
+        "style"
       ]
     },
-    label: 'United States Postal Service',
+    label: "Vest Patches",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-ussunnah',
+    class: "fa-viacoin",
     search: {
       terms: []
     },
-    label: 'us-Sunnah Foundation',
+    label: "Viacoin",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-utensil-spoon',
+    class: "fa-viadeo",
     search: {
-      terms: [
-        'cutlery',
-        'dining',
-        'scoop',
-        'silverware',
-        'spoon'
-      ]
+      terms: []
     },
-    label: 'Utensil Spoon',
+    label: "Viadeo",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-utensils',
+    class: "fa-vial",
     search: {
       terms: [
-        'cutlery',
-        'dining',
-        'dinner',
-        'eat',
-        'food',
-        'fork',
-        'knife',
-        'restaurant'
+        "ampule",
+        "chemist",
+        "chemistry",
+        "experiment",
+        "lab",
+        "sample",
+        "science",
+        "test",
+        "test tube"
       ]
     },
-    label: 'Utensils',
+    label: "Vial",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vaadin',
+    class: "fa-vial-circle-check",
     search: {
-      terms: []
+      terms: [
+        "ampule",
+        "chemist",
+        "chemistry",
+        "not affected",
+        "ok",
+        "okay",
+        "success",
+        "test tube",
+        "tube",
+        "vaccine"
+      ]
     },
-    label: 'Vaadin',
+    label: "Vial Circle Check",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-vector-square',
+    class: "fa-vial-virus",
     search: {
       terms: [
-        'anchors',
-        'lines',
-        'object',
-        'render',
-        'shape'
+        "ampule",
+        "coronavirus",
+        "covid-19",
+        "flue",
+        "infection",
+        "lab",
+        "laboratory",
+        "pandemic",
+        "test",
+        "test tube",
+        "vaccine"
       ]
     },
-    label: 'Vector Square',
+    label: "Vial Virus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-venus',
+    class: "fa-vials",
     search: {
       terms: [
-        'female'
+        "ampule",
+        "experiment",
+        "lab",
+        "sample",
+        "science",
+        "test",
+        "test tube"
       ]
     },
-    label: 'Venus',
+    label: "Vials",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-venus-double',
+    class: "fa-viber",
     search: {
-      terms: [
-        'female'
-      ]
+      terms: []
     },
-    label: 'Venus Double',
+    label: "Viber",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-venus-mars',
+    class: "fa-video",
     search: {
       terms: [
-        'Gender'
+        "camera",
+        "film",
+        "movie",
+        "record",
+        "video-camera"
       ]
     },
-    label: 'Venus Mars',
+    label: "Video",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vest',
+    class: "fa-video-slash",
     search: {
       terms: [
-        'biker',
-        'fashion',
-        'style'
+        "add",
+        "create",
+        "film",
+        "new",
+        "positive",
+        "record",
+        "video"
       ]
     },
-    label: 'vest',
+    label: "Video Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vest-patches',
+    class: "fa-vihara",
     search: {
       terms: [
-        'biker',
-        'fashion',
-        'style'
+        "buddhism",
+        "buddhist",
+        "building",
+        "monastery"
       ]
     },
-    label: 'vest-patches',
+    label: "Vihara",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-viacoin',
+    class: "fa-vimeo",
     search: {
       terms: []
     },
-    label: 'Viacoin',
+    label: "Vimeo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-viadeo',
+    class: "fa-vimeo-v",
     search: {
-      terms: []
+      terms: [
+        "vimeo"
+      ]
     },
-    label: 'Viadeo',
+    label: "Vimeo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-viadeo-square',
+    class: "fa-vine",
     search: {
       terms: []
     },
-    label: 'Viadeo Square',
+    label: "Vine",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-vial',
+    class: "fa-virus",
     search: {
       terms: [
-        'experiment',
-        'lab',
-        'sample',
-        'science',
-        'test',
-        'test tube'
+        "bug",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "health",
+        "infection",
+        "pandemic",
+        "sick",
+        "vaccine",
+        "viral"
       ]
     },
-    label: 'Vial',
+    label: "Virus",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vials',
+    class: "fa-virus-covid",
     search: {
       terms: [
-        'experiment',
-        'lab',
-        'sample',
-        'science',
-        'test',
-        'test tube'
+        "bug",
+        "covid-19",
+        "flu",
+        "health",
+        "infection",
+        "pandemic",
+        "vaccine",
+        "viral",
+        "virus"
       ]
     },
-    label: 'Vials',
+    label: "Virus Covid",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-viber',
+    class: "fa-virus-covid-slash",
     search: {
-      terms: []
+      terms: [
+        "bug",
+        "covid-19",
+        "flu",
+        "health",
+        "infection",
+        "pandemic",
+        "vaccine",
+        "viral",
+        "virus"
+      ]
     },
-    label: 'Viber',
+    label: "Virus Covid Slash",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-video',
+    class: "fa-virus-slash",
     search: {
       terms: [
-        'camera',
-        'film',
-        'movie',
-        'record',
-        'video-camera'
+        "bug",
+        "coronavirus",
+        "covid-19",
+        "cure",
+        "eliminate",
+        "flu",
+        "health",
+        "infection",
+        "pandemic",
+        "sick",
+        "vaccine",
+        "viral"
       ]
     },
-    label: 'Video',
+    label: "Virus Slash",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-video-slash',
+    class: "fa-viruses",
     search: {
       terms: [
-        'add',
-        'create',
-        'film',
-        'new',
-        'positive',
-        'record',
-        'video'
+        "bugs",
+        "coronavirus",
+        "covid-19",
+        "flu",
+        "health",
+        "infection",
+        "multiply",
+        "pandemic",
+        "sick",
+        "spread",
+        "vaccine",
+        "viral"
       ]
     },
-    label: 'Video Slash',
+    label: "Viruses",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vihara',
+    class: "fa-vk",
     search: {
-      terms: [
-        'buddhism',
-        'buddhist',
-        'building',
-        'monastery'
-      ]
+      terms: []
     },
-    label: 'Vihara',
+    label: "VK",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-vimeo',
+    class: "fa-vnv",
     search: {
       terms: []
     },
-    label: 'Vimeo',
+    label: "VNV",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-vimeo-square',
+    class: "fa-voicemail",
     search: {
-      terms: []
+      terms: [
+        "answer",
+        "inbox",
+        "message",
+        "phone"
+      ]
     },
-    label: 'Vimeo Square',
+    label: "Voicemail",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-vimeo-v',
+    class: "fa-volcano",
     search: {
       terms: [
-        'vimeo'
+        "caldera",
+        "eruption",
+        "lava",
+        "magma",
+        "mountain",
+        "smoke",
+        "volcano"
       ]
     },
-    label: 'Vimeo',
+    label: "Volcano",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-vine',
+    class: "fa-volleyball",
     search: {
-      terms: []
+      terms: [
+        "ball",
+        "beach",
+        "game",
+        "olympics",
+        "sport",
+        "volleyball"
+      ]
     },
-    label: 'Vine',
+    label: "Volleyball",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-virus',
+    class: "fa-volume-high",
     search: {
       terms: [
-        'bug',
-        'covid-19',
-        'flu',
-        'health',
-        'sick',
-        'viral'
+        "audio",
+        "higher",
+        "loud",
+        "louder",
+        "music",
+        "sound",
+        "speaker",
+        "speaker high volume"
       ]
     },
-    label: 'Virus',
+    label: "Volume High",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-virus-slash',
+    class: "fa-volume-low",
     search: {
       terms: [
-        'bug',
-        'covid-19',
-        'cure',
-        'eliminate',
-        'flu',
-        'health',
-        'sick',
-        'viral'
+        "audio",
+        "lower",
+        "music",
+        "quieter",
+        "soft",
+        "sound",
+        "speaker",
+        "speaker low volume"
       ]
     },
-    label: 'Virus Slash',
+    label: "Volume Low",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-viruses',
+    class: "fa-volume-off",
     search: {
       terms: [
-        'bugs',
-        'covid-19',
-        'flu',
-        'health',
-        'multiply',
-        'sick',
-        'spread',
-        'viral'
+        "audio",
+        "ban",
+        "music",
+        "mute",
+        "quiet",
+        "silent",
+        "sound"
       ]
     },
-    label: 'Viruses',
+    label: "Volume Off",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vk',
+    class: "fa-volume-xmark",
     search: {
-      terms: []
+      terms: [
+        "audio",
+        "music",
+        "quiet",
+        "sound",
+        "speaker"
+      ]
     },
-    label: 'VK',
+    label: "Volume Xmark",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-vnv',
+    class: "fa-vr-cardboard",
     search: {
-      terms: []
+      terms: [
+        "3d",
+        "augment",
+        "google",
+        "reality",
+        "virtual"
+      ]
     },
-    label: 'VNV',
+    label: "Vr Cardboard",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-voicemail',
+    class: "fa-vuejs",
     search: {
-      terms: [
-        'answer',
-        'inbox',
-        'message',
-        'phone'
-      ]
+      terms: []
     },
-    label: 'Voicemail',
+    label: "Vue.js",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-volleyball-ball',
+    class: "fa-w",
     search: {
       terms: [
-        'beach',
-        'olympics',
-        'sport'
+        "Latin Capital Letter W",
+        "Latin Small Letter W",
+        "letter"
       ]
     },
-    label: 'Volleyball Ball',
+    label: "W",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-volume-down',
+    class: "fa-walkie-talkie",
     search: {
       terms: [
-        'audio',
-        'lower',
-        'music',
-        'quieter',
-        'sound',
-        'speaker'
+        "communication",
+        "copy",
+        "intercom",
+        "over",
+        "portable",
+        "radio",
+        "two way radio"
       ]
     },
-    label: 'Volume Down',
+    label: "Walkie Talkie",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-volume-mute',
+    class: "fa-wallet",
     search: {
       terms: [
-        'audio',
-        'music',
-        'quiet',
-        'sound',
-        'speaker'
+        "billfold",
+        "cash",
+        "currency",
+        "money"
       ]
     },
-    label: 'Volume Mute',
+    label: "Wallet",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-volume-off',
+    class: "fa-wand-magic",
     search: {
       terms: [
-        'audio',
-        'ban',
-        'music',
-        'mute',
-        'quiet',
-        'silent',
-        'sound'
+        "autocomplete",
+        "automatic",
+        "mage",
+        "magic",
+        "spell",
+        "wand",
+        "witch",
+        "wizard"
       ]
     },
-    label: 'Volume Off',
+    label: "Wand Magic",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-volume-up',
+    class: "fa-wand-magic-sparkles",
     search: {
       terms: [
-        'audio',
-        'higher',
-        'louder',
-        'music',
-        'sound',
-        'speaker'
+        "auto",
+        "magic",
+        "magic wand",
+        "trick",
+        "witch",
+        "wizard"
       ]
     },
-    label: 'Volume Up',
+    label: "Wand Magic Sparkles",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vote-yea',
+    class: "fa-wand-sparkles",
     search: {
       terms: [
-        'accept',
-        'cast',
-        'election',
-        'politics',
-        'positive',
-        'yes'
+        "autocomplete",
+        "automatic",
+        "fantasy",
+        "halloween",
+        "holiday",
+        "magic",
+        "weapon",
+        "witch",
+        "wizard"
       ]
     },
-    label: 'Vote Yea',
+    label: "Wand Sparkles",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vr-cardboard',
+    class: "fa-warehouse",
     search: {
       terms: [
-        '3d',
-        'augment',
-        'google',
-        'reality',
-        'virtual'
+        "building",
+        "capacity",
+        "garage",
+        "inventory",
+        "storage"
       ]
     },
-    label: 'Cardboard VR',
+    label: "Warehouse",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-vuejs',
+    class: "fa-watchman-monitoring",
     search: {
       terms: []
     },
-    label: 'Vue.js',
+    label: "Watchman Monitoring",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-walking',
+    class: "fa-water",
     search: {
       terms: [
-        'exercise',
-        'health',
-        'pedometer',
-        'person',
-        'steps'
+        "lake",
+        "liquid",
+        "ocean",
+        "sea",
+        "swim",
+        "wet"
       ]
     },
-    label: 'Walking',
+    label: "Water",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-wallet',
+    class: "fa-water-ladder",
     search: {
       terms: [
-        'billfold',
-        'cash',
-        'currency',
-        'money'
+        "ladder",
+        "recreation",
+        "swim",
+        "water"
       ]
     },
-    label: 'Wallet',
+    label: "Water Ladder",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-warehouse',
+    class: "fa-wave-square",
     search: {
       terms: [
-        'building',
-        'capacity',
-        'garage',
-        'inventory',
-        'storage'
+        "frequency",
+        "pulse",
+        "signal"
       ]
+    },
+    label: "Wave Square",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-waze",
+    search: {
+      terms: []
+    },
+    label: "Waze",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-weebly",
+    search: {
+      terms: []
     },
-    label: 'Warehouse',
+    label: "Weebly",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-watchman-monitoring',
+    class: "fa-weibo",
     search: {
       terms: []
     },
-    label: 'Watchman Monitoring',
+    label: "Weibo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-water',
+    class: "fa-weight-hanging",
     search: {
       terms: [
-        'lake',
-        'liquid',
-        'ocean',
-        'sea',
-        'swim',
-        'wet'
+        "anvil",
+        "heavy",
+        "measurement"
       ]
     },
-    label: 'Water',
+    label: "Weight Hanging",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-wave-square',
+    class: "fa-weight-scale",
     search: {
       terms: [
-        'frequency',
-        'pulse',
-        'signal'
+        "health",
+        "measurement",
+        "scale",
+        "weight"
       ]
     },
-    label: 'Square Wave',
+    label: "Weight Scale",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-waze',
+    class: "fa-weixin",
     search: {
       terms: []
     },
-    label: 'Waze',
+    label: "Weixin (WeChat)",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-weebly',
+    class: "fa-whatsapp",
     search: {
       terms: []
     },
-    label: 'Weebly',
+    label: "What's App",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-weibo',
+    class: "fa-wheat-awn",
     search: {
-      terms: []
+      terms: [
+        "agriculture",
+        "autumn",
+        "fall",
+        "farming",
+        "grain"
+      ]
     },
-    label: 'Weibo',
+    label: "Wheat Awn",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-weight',
+    class: "fa-wheat-awn-circle-exclamation",
     search: {
       terms: [
-        'health',
-        'measurement',
-        'scale',
-        'weight'
+        "affected",
+        "famine",
+        "food",
+        "gluten",
+        "hunger",
+        "starve",
+        "straw"
       ]
     },
-    label: 'Weight',
+    label: "Wheat Awn Circle Exclamation",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-weight-hanging',
+    class: "fa-wheelchair",
     search: {
       terms: [
-        'anvil',
-        'heavy',
-        'measurement'
+        "users-people"
       ]
     },
-    label: 'Hanging Weight',
+    label: "Wheelchair",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-weixin',
+    class: "fa-wheelchair-move",
     search: {
-      terms: []
+      terms: [
+        "access",
+        "handicap",
+        "impairment",
+        "physical",
+        "wheelchair symbol"
+      ]
     },
-    label: 'Weixin (WeChat)',
+    label: "Wheelchair Move",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-whatsapp',
+    class: "fa-whiskey-glass",
     search: {
-      terms: []
+      terms: [
+        "alcohol",
+        "bar",
+        "beverage",
+        "bourbon",
+        "drink",
+        "glass",
+        "liquor",
+        "neat",
+        "rye",
+        "scotch",
+        "shot",
+        "tumbler",
+        "tumbler glass",
+        "whisky"
+      ]
     },
-    label: 'What\'s App',
+    label: "Whiskey Glass",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-whatsapp-square',
+    class: "fa-whmcs",
     search: {
       terms: []
     },
-    label: 'What\'s App Square',
+    label: "WHMCS",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wheelchair',
+    class: "fa-wifi",
     search: {
       terms: [
-        'accessible',
-        'handicap',
-        'person'
+        "connection",
+        "hotspot",
+        "internet",
+        "network",
+        "wireless"
       ]
     },
-    label: 'Wheelchair',
+    label: "Wifi",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-whmcs',
+    class: "fa-wikipedia-w",
     search: {
       terms: []
     },
-    label: 'WHMCS',
+    label: "Wikipedia W",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wifi',
+    class: "fa-wind",
     search: {
       terms: [
-        'connection',
-        'hotspot',
-        'internet',
-        'network',
-        'wireless'
+        "air",
+        "blow",
+        "breeze",
+        "fall",
+        "seasonal",
+        "weather"
       ]
     },
-    label: 'WiFi',
+    label: "Wind",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-wikipedia-w',
+    class: "fa-window-maximize",
     search: {
-      terms: []
+      terms: [
+        "Maximize",
+        "browser",
+        "computer",
+        "development",
+        "expand"
+      ]
     },
-    label: 'Wikipedia W',
+    label: "Window Maximize",
     free: [
-      'brands'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-wind',
+    class: "fa-window-minimize",
     search: {
       terms: [
-        'air',
-        'blow',
-        'breeze',
-        'fall',
-        'seasonal',
-        'weather'
+        "Minimize",
+        "browser",
+        "collapse",
+        "computer",
+        "development"
       ]
     },
-    label: 'Wind',
+    label: "Window Minimize",
     free: [
-      'solid'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-window-close',
+    class: "fa-window-restore",
     search: {
       terms: [
-        'browser',
-        'cancel',
-        'computer',
-        'development'
+        "browser",
+        "computer",
+        "development"
       ]
     },
-    label: 'Window Close',
+    label: "Window Restore",
     free: [
-      'solid',
-      'regular'
+      "regular",
+      "solid"
     ]
   },
   {
-    class: 'fa-window-maximize',
+    class: "fa-windows",
     search: {
       terms: [
-        'browser',
-        'computer',
-        'development',
-        'expand'
+        "microsoft",
+        "operating system",
+        "os"
       ]
     },
-    label: 'Window Maximize',
+    label: "Windows",
     free: [
-      'solid',
-      'regular'
+      "brands"
     ]
   },
   {
-    class: 'fa-window-minimize',
+    class: "fa-wine-bottle",
     search: {
       terms: [
-        'browser',
-        'collapse',
-        'computer',
-        'development'
+        "alcohol",
+        "beverage",
+        "cabernet",
+        "drink",
+        "glass",
+        "grapes",
+        "merlot",
+        "sauvignon"
       ]
     },
-    label: 'Window Minimize',
+    label: "Wine Bottle",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-window-restore',
+    class: "fa-wine-glass",
     search: {
       terms: [
-        'browser',
-        'computer',
-        'development'
+        "alcohol",
+        "bar",
+        "beverage",
+        "cabernet",
+        "drink",
+        "glass",
+        "grapes",
+        "merlot",
+        "sauvignon",
+        "wine",
+        "wine glass"
       ]
     },
-    label: 'Window Restore',
+    label: "Wine Glass",
     free: [
-      'solid',
-      'regular'
+      "solid"
     ]
   },
   {
-    class: 'fa-windows',
+    class: "fa-wine-glass-empty",
     search: {
       terms: [
-        'microsoft',
-        'operating system',
-        'os'
+        "alcohol",
+        "beverage",
+        "cabernet",
+        "drink",
+        "grapes",
+        "merlot",
+        "sauvignon"
       ]
     },
-    label: 'Windows',
+    label: "Wine Glass Empty",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-wine-bottle',
+    class: "fa-wirsindhandwerk",
     search: {
-      terms: [
-        'alcohol',
-        'beverage',
-        'cabernet',
-        'drink',
-        'glass',
-        'grapes',
-        'merlot',
-        'sauvignon'
-      ]
+      terms: []
     },
-    label: 'Wine Bottle',
+    label: "wirsindhandwerk",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-wine-glass',
+    class: "fa-wix",
     search: {
-      terms: [
-        'alcohol',
-        'beverage',
-        'cabernet',
-        'drink',
-        'grapes',
-        'merlot',
-        'sauvignon'
-      ]
+      terms: []
     },
-    label: 'Wine Glass',
+    label: "Wix",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-wine-glass-alt',
+    class: "fa-wizards-of-the-coast",
     search: {
       terms: [
-        'alcohol',
-        'beverage',
-        'cabernet',
-        'drink',
-        'grapes',
-        'merlot',
-        'sauvignon'
+        "Dungeons & Dragons",
+        "d&d",
+        "dnd",
+        "fantasy",
+        "game",
+        "gaming",
+        "tabletop"
       ]
+    },
+    label: "Wizards of the Coast",
+    free: [
+      "brands"
+    ]
+  },
+  {
+    class: "fa-wodu",
+    search: {
+      terms: []
     },
-    label: 'Alternate Wine Glas',
+    label: "Wodu",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-wix',
+    class: "fa-wolf-pack-battalion",
     search: {
       terms: []
     },
-    label: 'Wix',
+    label: "Wolf Pack Battalion",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wizards-of-the-coast',
+    class: "fa-won-sign",
     search: {
       terms: [
-        'Dungeons & Dragons',
-        'd&d',
-        'dnd',
-        'fantasy',
-        'game',
-        'gaming',
-        'tabletop'
+        "Won Sign",
+        "currency"
       ]
     },
-    label: 'Wizards of the Coast',
+    label: "Won Sign",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-wodu',
+    class: "fa-wordpress",
     search: {
       terms: []
     },
-    label: 'Wodu',
+    label: "WordPress Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wolf-pack-battalion',
+    class: "fa-wordpress-simple",
     search: {
       terms: []
     },
-    label: 'Wolf Pack Battalion',
+    label: "Wordpress Simple",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-won-sign',
+    class: "fa-worm",
     search: {
       terms: [
-        'currency',
-        'krw',
-        'money'
+        "dirt",
+        "garden",
+        "worm",
+        "wriggle"
       ]
     },
-    label: 'Won Sign',
+    label: "Worm",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-wordpress',
+    class: "fa-wpbeginner",
     search: {
       terms: []
     },
-    label: 'WordPress Logo',
+    label: "WPBeginner",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wordpress-simple',
+    class: "fa-wpexplorer",
     search: {
       terms: []
     },
-    label: 'Wordpress Simple',
+    label: "WPExplorer",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wpbeginner',
+    class: "fa-wpforms",
     search: {
       terms: []
     },
-    label: 'WPBeginner',
+    label: "WPForms",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wpexplorer',
+    class: "fa-wpressr",
     search: {
-      terms: []
+      terms: [
+        "rendact"
+      ]
     },
-    label: 'WPExplorer',
+    label: "wpressr",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-wpforms',
+    class: "fa-wrench",
     search: {
-      terms: []
+      terms: [
+        "construction",
+        "fix",
+        "mechanic",
+        "plumbing",
+        "settings",
+        "spanner",
+        "tool",
+        "update",
+        "wrench"
+      ]
     },
-    label: 'WPForms',
+    label: "Wrench",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-wpressr',
+    class: "fa-x",
     search: {
       terms: [
-        'rendact'
+        "Latin Capital Letter X",
+        "Latin Small Letter X",
+        "letter"
       ]
     },
-    label: 'wpressr',
+    label: "X",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-wrench',
+    class: "fa-x-ray",
     search: {
       terms: [
-        'construction',
-        'fix',
-        'mechanic',
-        'plumbing',
-        'settings',
-        'spanner',
-        'tool',
-        'update'
+        "health",
+        "medical",
+        "radiological images",
+        "radiology",
+        "skeleton"
       ]
     },
-    label: 'Wrench',
+    label: "X Ray",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-x-ray',
+    class: "fa-x-twitter",
     search: {
       terms: [
-        'health',
-        'medical',
-        'radiological images',
-        'radiology',
-        'skeleton'
+        "  elon",
+        " twitter",
+        " x"
       ]
     },
-    label: 'X-Ray',
+    label: "X Twitter",
     free: [
-      'solid'
+      "brands"
     ]
   },
   {
-    class: 'fa-xbox',
+    class: "fa-xbox",
     search: {
       terms: []
     },
-    label: 'Xbox',
+    label: "Xbox",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-xing',
+    class: "fa-xing",
     search: {
       terms: []
     },
-    label: 'Xing',
+    label: "Xing",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-xing-square',
+    class: "fa-xmark",
     search: {
-      terms: []
+      terms: [
+        "Cancellation X",
+        "Multiplication Sign",
+        "Multiplication X",
+        "cancel",
+        "close",
+        "cross",
+        "cross mark",
+        "error",
+        "exit",
+        "incorrect",
+        "mark",
+        "multiplication",
+        "multiply",
+        "notice",
+        "notification",
+        "notify",
+        "problem",
+        "sign",
+        "wrong",
+        "x",
+        "×"
+      ]
+    },
+    label: "Xmark",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-xmarks-lines",
+    search: {
+      terms: [
+        "barricade",
+        "barrier",
+        "fence",
+        "poison",
+        "roadblock"
+      ]
+    },
+    label: "Xmarks Lines",
+    free: [
+      "solid"
+    ]
+  },
+  {
+    class: "fa-y",
+    search: {
+      terms: [
+        "Latin Capital Letter Y",
+        "Latin Small Letter Y",
+        "letter",
+        "yay",
+        "yes"
+      ]
     },
-    label: 'Xing Square',
+    label: "Y",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-y-combinator',
+    class: "fa-y-combinator",
     search: {
       terms: []
     },
-    label: 'Y Combinator',
+    label: "Y Combinator",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yahoo',
+    class: "fa-yahoo",
     search: {
       terms: []
     },
-    label: 'Yahoo Logo',
+    label: "Yahoo Logo",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yammer',
+    class: "fa-yammer",
     search: {
       terms: []
     },
-    label: 'Yammer',
+    label: "Yammer",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yandex',
+    class: "fa-yandex",
     search: {
       terms: []
     },
-    label: 'Yandex',
+    label: "Yandex",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yandex-international',
+    class: "fa-yandex-international",
     search: {
       terms: []
     },
-    label: 'Yandex International',
+    label: "Yandex International",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yarn',
+    class: "fa-yarn",
     search: {
       terms: []
     },
-    label: 'Yarn',
+    label: "Yarn",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yelp',
+    class: "fa-yelp",
     search: {
       terms: []
     },
-    label: 'Yelp',
+    label: "Yelp",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-yen-sign',
+    class: "fa-yen-sign",
     search: {
       terms: [
-        'currency',
-        'jpy',
-        'money'
+        "Yen Sign",
+        "currency"
       ]
     },
-    label: 'Yen Sign',
+    label: "Yen Sign",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-yin-yang',
+    class: "fa-yin-yang",
     search: {
       terms: [
-        'daoism',
-        'opposites',
-        'taoism'
+        "daoism",
+        "opposites",
+        "religion",
+        "tao",
+        "taoism",
+        "taoist",
+        "yang",
+        "yin",
+        "yin yang"
       ]
     },
-    label: 'Yin Yang',
+    label: "Yin Yang",
     free: [
-      'solid'
+      "solid"
     ]
   },
   {
-    class: 'fa-yoast',
+    class: "fa-yoast",
     search: {
       terms: []
     },
-    label: 'Yoast',
+    label: "Yoast",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-youtube',
+    class: "fa-youtube",
     search: {
       terms: [
-        'film',
-        'video',
-        'youtube-play',
-        'youtube-square'
+        "film",
+        "video",
+        "youtube-play",
+        "youtube-square"
       ]
     },
-    label: 'YouTube',
+    label: "YouTube",
     free: [
-      'brands'
+      "brands"
     ]
   },
   {
-    class: 'fa-youtube-square',
+    class: "fa-z",
     search: {
-      terms: []
+      terms: [
+        "Latin Capital Letter Z",
+        "Latin Small Letter Z",
+        "letter"
+      ]
     },
-    label: 'YouTube Square',
+    label: "Z",
     free: [
-      'brands'
+      "solid"
     ]
   },
   {
-    class: 'fa-zhihu',
+    class: "fa-zhihu",
     search: {
       terms: []
     },
-    label: 'Zhihu',
+    label: "Zhihu",
     free: [
-      'brands'
+      "brands"
     ]
   }
 ]
 
 export const IconCategories = [
   {
-    key: 'accessibility',
-    label: 'Accessibility',
-    icons: [
-      'fa-accessible-icon',
-      'fa-american-sign-language-interpreting',
-      'fa-assistive-listening-systems',
-      'fa-audio-description',
-      'fa-blind',
-      'fa-braille',
-      'fa-closed-captioning',
-      'fa-deaf',
-      'fa-low-vision',
-      'fa-phone-volume',
-      'fa-question-circle',
-      'fa-sign-language',
-      'fa-tty',
-      'fa-universal-access',
-      'fa-wheelchair'
-    ]
+      key: "accessibility",
+      label: "Accessibility",
+      icons: [
+          "fa-accessible-icon",
+          "fa-address-card",
+          "fa-audio-description",
+          "fa-braille",
+          "fa-circle-info",
+          "fa-circle-question",
+          "fa-closed-captioning",
+          "fa-ear-deaf",
+          "fa-ear-listen",
+          "fa-eye",
+          "fa-eye-low-vision",
+          "fa-fingerprint",
+          "fa-hands",
+          "fa-hands-asl-interpreting",
+          "fa-handshake-angle",
+          "fa-person-cane",
+          "fa-person-walking-with-cane",
+          "fa-phone-volume",
+          "fa-question",
+          "fa-tty",
+          "fa-universal-access",
+          "fa-wheelchair",
+          "fa-wheelchair-move"
+      ]
   },
   {
-    key: 'alert',
-    label: 'Alert',
-    icons: [
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-exclamation',
-      'fa-exclamation-circle',
-      'fa-exclamation-triangle',
-      'fa-radiation',
-      'fa-radiation-alt',
-      'fa-skull-crossbones'
-    ]
+      key: "alert",
+      label: "Alert",
+      icons: [
+          "fa-bell",
+          "fa-bell-slash",
+          "fa-circle-exclamation",
+          "fa-circle-radiation",
+          "fa-exclamation",
+          "fa-question",
+          "fa-radiation",
+          "fa-skull-crossbones",
+          "fa-triangle-exclamation"
+      ]
   },
   {
-    key: 'animals',
-    label: 'Animals',
-    icons: [
-      'fa-cat',
-      'fa-crow',
-      'fa-dog',
-      'fa-dove',
-      'fa-dragon',
-      'fa-feather',
-      'fa-feather-alt',
-      'fa-fish',
-      'fa-frog',
-      'fa-hippo',
-      'fa-horse',
-      'fa-horse-head',
-      'fa-kiwi-bird',
-      'fa-otter',
-      'fa-paw',
-      'fa-spider'
-    ]
+      key: "alphabet",
+      label: "Alphabet",
+      icons: [
+          "fa-a",
+          "fa-address-card",
+          "fa-b",
+          "fa-c",
+          "fa-circle-h",
+          "fa-d",
+          "fa-e",
+          "fa-f",
+          "fa-g",
+          "fa-h",
+          "fa-i",
+          "fa-j",
+          "fa-k",
+          "fa-l",
+          "fa-m",
+          "fa-n",
+          "fa-o",
+          "fa-p",
+          "fa-q",
+          "fa-r",
+          "fa-s",
+          "fa-square-h",
+          "fa-t",
+          "fa-u",
+          "fa-v",
+          "fa-w",
+          "fa-x",
+          "fa-y",
+          "fa-z"
+      ]
   },
   {
-    key: 'arrows',
-    label: 'Arrows',
-    icons: [
-      'fa-angle-double-down',
-      'fa-angle-double-left',
-      'fa-angle-double-right',
-      'fa-angle-double-up',
-      'fa-angle-down',
-      'fa-angle-left',
-      'fa-angle-right',
-      'fa-angle-up',
-      'fa-arrow-alt-circle-down',
-      'fa-arrow-alt-circle-left',
-      'fa-arrow-alt-circle-right',
-      'fa-arrow-alt-circle-up',
-      'fa-arrow-circle-down',
-      'fa-arrow-circle-left',
-      'fa-arrow-circle-right',
-      'fa-arrow-circle-up',
-      'fa-arrow-down',
-      'fa-arrow-left',
-      'fa-arrow-right',
-      'fa-arrow-up',
-      'fa-arrows-alt',
-      'fa-arrows-alt-h',
-      'fa-arrows-alt-v',
-      'fa-caret-down',
-      'fa-caret-left',
-      'fa-caret-right',
-      'fa-caret-square-down',
-      'fa-caret-square-left',
-      'fa-caret-square-right',
-      'fa-caret-square-up',
-      'fa-caret-up',
-      'fa-cart-arrow-down',
-      'fa-chart-line',
-      'fa-chevron-circle-down',
-      'fa-chevron-circle-left',
-      'fa-chevron-circle-right',
-      'fa-chevron-circle-up',
-      'fa-chevron-down',
-      'fa-chevron-left',
-      'fa-chevron-right',
-      'fa-chevron-up',
-      'fa-cloud-download-alt',
-      'fa-cloud-upload-alt',
-      'fa-compress-alt',
-      'fa-compress-arrows-alt',
-      'fa-download',
-      'fa-exchange-alt',
-      'fa-expand-alt',
-      'fa-expand-arrows-alt',
-      'fa-external-link-alt',
-      'fa-external-link-square-alt',
-      'fa-hand-point-down',
-      'fa-hand-point-left',
-      'fa-hand-point-right',
-      'fa-hand-point-up',
-      'fa-hand-pointer',
-      'fa-history',
-      'fa-level-down-alt',
-      'fa-level-up-alt',
-      'fa-location-arrow',
-      'fa-long-arrow-alt-down',
-      'fa-long-arrow-alt-left',
-      'fa-long-arrow-alt-right',
-      'fa-long-arrow-alt-up',
-      'fa-mouse-pointer',
-      'fa-play',
-      'fa-random',
-      'fa-recycle',
-      'fa-redo',
-      'fa-redo-alt',
-      'fa-reply',
-      'fa-reply-all',
-      'fa-retweet',
-      'fa-share',
-      'fa-share-square',
-      'fa-sign-in-alt',
-      'fa-sign-out-alt',
-      'fa-sort',
-      'fa-sort-alpha-down',
-      'fa-sort-alpha-down-alt',
-      'fa-sort-alpha-up',
-      'fa-sort-alpha-up-alt',
-      'fa-sort-amount-down',
-      'fa-sort-amount-down-alt',
-      'fa-sort-amount-up',
-      'fa-sort-amount-up-alt',
-      'fa-sort-down',
-      'fa-sort-numeric-down',
-      'fa-sort-numeric-down-alt',
-      'fa-sort-numeric-up',
-      'fa-sort-numeric-up-alt',
-      'fa-sort-up',
-      'fa-sync',
-      'fa-sync-alt',
-      'fa-text-height',
-      'fa-text-width',
-      'fa-undo',
-      'fa-undo-alt',
-      'fa-upload'
-    ]
+      key: "animals",
+      label: "Animals",
+      icons: [
+          "fa-bugs",
+          "fa-cat",
+          "fa-cow",
+          "fa-crow",
+          "fa-dog",
+          "fa-dove",
+          "fa-dragon",
+          "fa-feather",
+          "fa-feather-pointed",
+          "fa-fish",
+          "fa-fish-fins",
+          "fa-frog",
+          "fa-hippo",
+          "fa-horse",
+          "fa-horse-head",
+          "fa-kiwi-bird",
+          "fa-locust",
+          "fa-mosquito",
+          "fa-otter",
+          "fa-paw",
+          "fa-shield-cat",
+          "fa-shield-dog",
+          "fa-shrimp",
+          "fa-spider",
+          "fa-worm"
+      ]
   },
   {
-    key: 'audio-video',
-    label: 'Audio & Video',
-    icons: [
-      'fa-audio-description',
-      'fa-backward',
-      'fa-broadcast-tower',
-      'fa-circle',
-      'fa-closed-captioning',
-      'fa-compress',
-      'fa-compress-alt',
-      'fa-compress-arrows-alt',
-      'fa-eject',
-      'fa-expand',
-      'fa-expand-alt',
-      'fa-expand-arrows-alt',
-      'fa-fast-backward',
-      'fa-fast-forward',
-      'fa-file-audio',
-      'fa-file-video',
-      'fa-film',
-      'fa-forward',
-      'fa-headphones',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-microphone-alt-slash',
-      'fa-microphone-slash',
-      'fa-music',
-      'fa-pause',
-      'fa-pause-circle',
-      'fa-phone-volume',
-      'fa-photo-video',
-      'fa-play',
-      'fa-play-circle',
-      'fa-podcast',
-      'fa-random',
-      'fa-redo',
-      'fa-redo-alt',
-      'fa-rss',
-      'fa-rss-square',
-      'fa-step-backward',
-      'fa-step-forward',
-      'fa-stop',
-      'fa-stop-circle',
-      'fa-sync',
-      'fa-sync-alt',
-      'fa-tv',
-      'fa-undo',
-      'fa-undo-alt',
-      'fa-video',
-      'fa-volume-down',
-      'fa-volume-mute',
-      'fa-volume-off',
-      'fa-volume-up',
-      'fa-youtube'
-    ]
+      key: "arrows",
+      label: "Arrows",
+      icons: [
+          "fa-angle-down",
+          "fa-angle-left",
+          "fa-angle-right",
+          "fa-angle-up",
+          "fa-angles-down",
+          "fa-angles-left",
+          "fa-angles-right",
+          "fa-angles-up",
+          "fa-arrow-down",
+          "fa-arrow-down-1-9",
+          "fa-arrow-down-9-1",
+          "fa-arrow-down-a-z",
+          "fa-arrow-down-long",
+          "fa-arrow-down-short-wide",
+          "fa-arrow-down-up-across-line",
+          "fa-arrow-down-up-lock",
+          "fa-arrow-down-wide-short",
+          "fa-arrow-down-z-a",
+          "fa-arrow-left",
+          "fa-arrow-left-long",
+          "fa-arrow-pointer",
+          "fa-arrow-right",
+          "fa-arrow-right-arrow-left",
+          "fa-arrow-right-from-bracket",
+          "fa-arrow-right-long",
+          "fa-arrow-right-to-bracket",
+          "fa-arrow-rotate-left",
+          "fa-arrow-rotate-right",
+          "fa-arrow-trend-down",
+          "fa-arrow-trend-up",
+          "fa-arrow-turn-down",
+          "fa-arrow-turn-up",
+          "fa-arrow-up",
+          "fa-arrow-up-1-9",
+          "fa-arrow-up-9-1",
+          "fa-arrow-up-a-z",
+          "fa-arrow-up-from-bracket",
+          "fa-arrow-up-long",
+          "fa-arrow-up-right-dots",
+          "fa-arrow-up-right-from-square",
+          "fa-arrow-up-short-wide",
+          "fa-arrow-up-wide-short",
+          "fa-arrow-up-z-a",
+          "fa-arrows-down-to-line",
+          "fa-arrows-left-right",
+          "fa-arrows-left-right-to-line",
+          "fa-arrows-rotate",
+          "fa-arrows-spin",
+          "fa-arrows-split-up-and-left",
+          "fa-arrows-to-circle",
+          "fa-arrows-to-dot",
+          "fa-arrows-to-eye",
+          "fa-arrows-turn-right",
+          "fa-arrows-turn-to-dots",
+          "fa-arrows-up-down",
+          "fa-arrows-up-down-left-right",
+          "fa-arrows-up-to-line",
+          "fa-caret-down",
+          "fa-caret-left",
+          "fa-caret-right",
+          "fa-caret-up",
+          "fa-chevron-down",
+          "fa-chevron-left",
+          "fa-chevron-right",
+          "fa-chevron-up",
+          "fa-circle-arrow-down",
+          "fa-circle-arrow-left",
+          "fa-circle-arrow-right",
+          "fa-circle-arrow-up",
+          "fa-circle-chevron-down",
+          "fa-circle-chevron-left",
+          "fa-circle-chevron-right",
+          "fa-circle-chevron-up",
+          "fa-circle-down",
+          "fa-circle-left",
+          "fa-circle-right",
+          "fa-circle-up",
+          "fa-clock-rotate-left",
+          "fa-cloud-arrow-down",
+          "fa-cloud-arrow-up",
+          "fa-down-left-and-up-right-to-center",
+          "fa-down-long",
+          "fa-download",
+          "fa-left-long",
+          "fa-left-right",
+          "fa-location-arrow",
+          "fa-maximize",
+          "fa-recycle",
+          "fa-repeat",
+          "fa-reply",
+          "fa-reply-all",
+          "fa-retweet",
+          "fa-right-from-bracket",
+          "fa-right-left",
+          "fa-right-long",
+          "fa-right-to-bracket",
+          "fa-rotate",
+          "fa-rotate-left",
+          "fa-rotate-right",
+          "fa-share",
+          "fa-share-from-square",
+          "fa-shuffle",
+          "fa-sort",
+          "fa-sort-down",
+          "fa-sort-up",
+          "fa-square-arrow-up-right",
+          "fa-square-caret-down",
+          "fa-square-caret-left",
+          "fa-square-caret-right",
+          "fa-square-caret-up",
+          "fa-square-up-right",
+          "fa-turn-down",
+          "fa-turn-up",
+          "fa-up-down",
+          "fa-up-down-left-right",
+          "fa-up-long",
+          "fa-up-right-and-down-left-from-center",
+          "fa-up-right-from-square",
+          "fa-upload"
+      ]
   },
   {
-    key: 'automotive',
-    label: 'Automotive',
-    icons: [
-      'fa-air-freshener',
-      'fa-ambulance',
-      'fa-bus',
-      'fa-bus-alt',
-      'fa-car',
-      'fa-car-alt',
-      'fa-car-battery',
-      'fa-car-crash',
-      'fa-car-side',
-      'fa-caravan',
-      'fa-charging-station',
-      'fa-gas-pump',
-      'fa-motorcycle',
-      'fa-oil-can',
-      'fa-shuttle-van',
-      'fa-tachometer-alt',
-      'fa-taxi',
-      'fa-trailer',
-      'fa-truck',
-      'fa-truck-monster',
-      'fa-truck-pickup'
-    ]
+      key: "astronomy",
+      label: "Astronomy",
+      icons: [
+          "fa-binoculars",
+          "fa-globe",
+          "fa-meteor",
+          "fa-moon",
+          "fa-satellite",
+          "fa-satellite-dish",
+          "fa-shuttle-space",
+          "fa-user-astronaut"
+      ]
   },
   {
-    key: 'autumn',
-    label: 'Autumn',
-    icons: [
-      'fa-apple-alt',
-      'fa-campground',
-      'fa-cloud-sun',
-      'fa-drumstick-bite',
-      'fa-football-ball',
-      'fa-hiking',
-      'fa-mountain',
-      'fa-tractor',
-      'fa-tree',
-      'fa-wind',
-      'fa-wine-bottle'
-    ]
+      key: "automotive",
+      label: "Automotive",
+      icons: [
+          "fa-bus",
+          "fa-bus-simple",
+          "fa-car",
+          "fa-car-battery",
+          "fa-car-burst",
+          "fa-car-on",
+          "fa-car-rear",
+          "fa-car-side",
+          "fa-car-tunnel",
+          "fa-caravan",
+          "fa-charging-station",
+          "fa-gas-pump",
+          "fa-gauge",
+          "fa-gauge-high",
+          "fa-gauge-simple",
+          "fa-gauge-simple-high",
+          "fa-motorcycle",
+          "fa-oil-can",
+          "fa-spray-can-sparkles",
+          "fa-taxi",
+          "fa-trailer",
+          "fa-truck",
+          "fa-truck-field",
+          "fa-truck-field-un",
+          "fa-truck-medical",
+          "fa-truck-monster",
+          "fa-truck-pickup",
+          "fa-van-shuttle"
+      ]
   },
   {
-    key: 'beverage',
-    label: 'Beverage',
-    icons: [
-      'fa-beer',
-      'fa-blender',
-      'fa-cocktail',
-      'fa-coffee',
-      'fa-flask',
-      'fa-glass-cheers',
-      'fa-glass-martini',
-      'fa-glass-martini-alt',
-      'fa-glass-whiskey',
-      'fa-mug-hot',
-      'fa-wine-bottle',
-      'fa-wine-glass',
-      'fa-wine-glass-alt'
-    ]
+      key: "buildings",
+      label: "Buildings",
+      icons: [
+          "fa-archway",
+          "fa-arrow-right-to-city",
+          "fa-building",
+          "fa-building-circle-arrow-right",
+          "fa-building-circle-check",
+          "fa-building-circle-exclamation",
+          "fa-building-circle-xmark",
+          "fa-building-columns",
+          "fa-building-flag",
+          "fa-building-lock",
+          "fa-building-ngo",
+          "fa-building-shield",
+          "fa-building-un",
+          "fa-building-user",
+          "fa-building-wheat",
+          "fa-campground",
+          "fa-church",
+          "fa-city",
+          "fa-dungeon",
+          "fa-gopuram",
+          "fa-hospital",
+          "fa-hospital-user",
+          "fa-hotel",
+          "fa-house",
+          "fa-house-chimney",
+          "fa-house-chimney-crack",
+          "fa-house-chimney-medical",
+          "fa-house-chimney-window",
+          "fa-house-circle-check",
+          "fa-house-circle-exclamation",
+          "fa-house-circle-xmark",
+          "fa-house-crack",
+          "fa-house-fire",
+          "fa-house-flag",
+          "fa-house-lock",
+          "fa-house-medical",
+          "fa-house-medical-circle-check",
+          "fa-house-medical-circle-exclamation",
+          "fa-house-medical-circle-xmark",
+          "fa-house-medical-flag",
+          "fa-igloo",
+          "fa-industry",
+          "fa-kaaba",
+          "fa-landmark",
+          "fa-landmark-dome",
+          "fa-landmark-flag",
+          "fa-monument",
+          "fa-mosque",
+          "fa-mountain-city",
+          "fa-oil-well",
+          "fa-place-of-worship",
+          "fa-school",
+          "fa-school-circle-check",
+          "fa-school-circle-exclamation",
+          "fa-school-circle-xmark",
+          "fa-school-flag",
+          "fa-school-lock",
+          "fa-shop",
+          "fa-shop-lock",
+          "fa-store",
+          "fa-synagogue",
+          "fa-tent",
+          "fa-tent-arrow-down-to-line",
+          "fa-tent-arrow-left-right",
+          "fa-tent-arrow-turn-left",
+          "fa-tent-arrows-down",
+          "fa-tents",
+          "fa-toilet-portable",
+          "fa-toilets-portable",
+          "fa-torii-gate",
+          "fa-tower-observation",
+          "fa-tree-city",
+          "fa-vihara",
+          "fa-warehouse"
+      ]
   },
   {
-    key: 'brands',
-    label: 'Brands',
-    icons: [
-      'fa-500px',
-      'fa-accessible-icon',
-      'fa-accusoft',
-      'fa-acquisitions-incorporated',
-      'fa-adn',
-      'fa-adversal',
-      'fa-affiliatetheme',
-      'fa-airbnb',
-      'fa-algolia',
-      'fa-alipay',
-      'fa-amazon',
-      'fa-amazon-pay',
-      'fa-amilia',
-      'fa-android',
-      'fa-angellist',
-      'fa-angrycreative',
-      'fa-angular',
-      'fa-app-store',
-      'fa-app-store-ios',
-      'fa-apper',
-      'fa-apple',
-      'fa-apple-pay',
-      'fa-artstation',
-      'fa-asymmetrik',
-      'fa-atlassian',
-      'fa-audible',
-      'fa-autoprefixer',
-      'fa-avianex',
-      'fa-aviato',
-      'fa-aws',
-      'fa-bandcamp',
-      'fa-battle-net',
-      'fa-behance',
-      'fa-behance-square',
-      'fa-bimobject',
-      'fa-bitbucket',
-      'fa-bitcoin',
-      'fa-bity',
-      'fa-black-tie',
-      'fa-blackberry',
-      'fa-blogger',
-      'fa-blogger-b',
-      'fa-bluetooth',
-      'fa-bluetooth-b',
-      'fa-bootstrap',
-      'fa-btc',
-      'fa-buffer',
-      'fa-buromobelexperte',
-      'fa-buy-n-large',
-      'fa-buysellads',
-      'fa-canadian-maple-leaf',
-      'fa-cc-amazon-pay',
-      'fa-cc-amex',
-      'fa-cc-apple-pay',
-      'fa-cc-diners-club',
-      'fa-cc-discover',
-      'fa-cc-jcb',
-      'fa-cc-mastercard',
-      'fa-cc-paypal',
-      'fa-cc-stripe',
-      'fa-cc-visa',
-      'fa-centercode',
-      'fa-centos',
-      'fa-chrome',
-      'fa-chromecast',
-      'fa-cloudflare',
-      'fa-cloudscale',
-      'fa-cloudsmith',
-      'fa-cloudversify',
-      'fa-codepen',
-      'fa-codiepie',
-      'fa-confluence',
-      'fa-connectdevelop',
-      'fa-contao',
-      'fa-cotton-bureau',
-      'fa-cpanel',
-      'fa-creative-commons',
-      'fa-creative-commons-by',
-      'fa-creative-commons-nc',
-      'fa-creative-commons-nc-eu',
-      'fa-creative-commons-nc-jp',
-      'fa-creative-commons-nd',
-      'fa-creative-commons-pd',
-      'fa-creative-commons-pd-alt',
-      'fa-creative-commons-remix',
-      'fa-creative-commons-sa',
-      'fa-creative-commons-sampling',
-      'fa-creative-commons-sampling-plus',
-      'fa-creative-commons-share',
-      'fa-creative-commons-zero',
-      'fa-critical-role',
-      'fa-css3',
-      'fa-css3-alt',
-      'fa-cuttlefish',
-      'fa-d-and-d',
-      'fa-d-and-d-beyond',
-      'fa-dailymotion',
-      'fa-dashcube',
-      'fa-deezer',
-      'fa-delicious',
-      'fa-deploydog',
-      'fa-deskpro',
-      'fa-dev',
-      'fa-deviantart',
-      'fa-dhl',
-      'fa-diaspora',
-      'fa-digg',
-      'fa-digital-ocean',
-      'fa-discord',
-      'fa-discourse',
-      'fa-dochub',
-      'fa-docker',
-      'fa-draft2digital',
-      'fa-dribbble',
-      'fa-dribbble-square',
-      'fa-dropbox',
-      'fa-drupal',
-      'fa-dyalog',
-      'fa-earlybirds',
-      'fa-ebay',
-      'fa-edge',
-      'fa-edge-legacy',
-      'fa-elementor',
-      'fa-ello',
-      'fa-ember',
-      'fa-empire',
-      'fa-envira',
-      'fa-erlang',
-      'fa-ethereum',
-      'fa-etsy',
-      'fa-evernote',
-      'fa-expeditedssl',
-      'fa-facebook',
-      'fa-facebook-f',
-      'fa-facebook-messenger',
-      'fa-facebook-square',
-      'fa-fantasy-flight-games',
-      'fa-fedex',
-      'fa-fedora',
-      'fa-figma',
-      'fa-firefox',
-      'fa-firefox-browser',
-      'fa-first-order',
-      'fa-first-order-alt',
-      'fa-firstdraft',
-      'fa-flickr',
-      'fa-flipboard',
-      'fa-fly',
-      'fa-font-awesome',
-      'fa-font-awesome-alt',
-      'fa-font-awesome-flag',
-      'fa-font-awesome-logo-full',
-      'fa-fonticons',
-      'fa-fonticons-fi',
-      'fa-fort-awesome',
-      'fa-fort-awesome-alt',
-      'fa-forumbee',
-      'fa-foursquare',
-      'fa-free-code-camp',
-      'fa-freebsd',
-      'fa-fulcrum',
-      'fa-galactic-republic',
-      'fa-galactic-senate',
-      'fa-get-pocket',
-      'fa-gg',
-      'fa-gg-circle',
-      'fa-git',
-      'fa-git-alt',
-      'fa-git-square',
-      'fa-github',
-      'fa-github-alt',
-      'fa-github-square',
-      'fa-gitkraken',
-      'fa-gitlab',
-      'fa-gitter',
-      'fa-glide',
-      'fa-glide-g',
-      'fa-gofore',
-      'fa-goodreads',
-      'fa-goodreads-g',
-      'fa-google',
-      'fa-google-drive',
-      'fa-google-pay',
-      'fa-google-play',
-      'fa-google-plus',
-      'fa-google-plus-g',
-      'fa-google-plus-square',
-      'fa-google-wallet',
-      'fa-gratipay',
-      'fa-grav',
-      'fa-gripfire',
-      'fa-grunt',
-      'fa-guilded',
-      'fa-gulp',
-      'fa-hacker-news',
-      'fa-hacker-news-square',
-      'fa-hackerrank',
-      'fa-hips',
-      'fa-hire-a-helper',
-      'fa-hive',
-      'fa-hooli',
-      'fa-hornbill',
-      'fa-hotjar',
-      'fa-houzz',
-      'fa-html5',
-      'fa-hubspot',
-      'fa-ideal',
-      'fa-imdb',
-      'fa-innosoft',
-      'fa-instagram',
-      'fa-instagram-square',
-      'fa-instalod',
-      'fa-intercom',
-      'fa-internet-explorer',
-      'fa-invision',
-      'fa-ioxhost',
-      'fa-itch-io',
-      'fa-itunes',
-      'fa-itunes-note',
-      'fa-java',
-      'fa-jedi-order',
-      'fa-jenkins',
-      'fa-jira',
-      'fa-joget',
-      'fa-joomla',
-      'fa-js',
-      'fa-js-square',
-      'fa-jsfiddle',
-      'fa-kaggle',
-      'fa-keybase',
-      'fa-keycdn',
-      'fa-kickstarter',
-      'fa-kickstarter-k',
-      'fa-korvue',
-      'fa-laravel',
-      'fa-lastfm',
-      'fa-lastfm-square',
-      'fa-leanpub',
-      'fa-less',
-      'fa-line',
-      'fa-linkedin',
-      'fa-linkedin-in',
-      'fa-linode',
-      'fa-linux',
-      'fa-lyft',
-      'fa-magento',
-      'fa-mailchimp',
-      'fa-mandalorian',
-      'fa-markdown',
-      'fa-mastodon',
-      'fa-maxcdn',
-      'fa-mdb',
-      'fa-medapps',
-      'fa-medium',
-      'fa-medium-m',
-      'fa-medrt',
-      'fa-meetup',
-      'fa-megaport',
-      'fa-mendeley',
-      'fa-microblog',
-      'fa-microsoft',
-      'fa-mix',
-      'fa-mixcloud',
-      'fa-mixer',
-      'fa-mizuni',
-      'fa-modx',
-      'fa-monero',
-      'fa-napster',
-      'fa-neos',
-      'fa-nimblr',
-      'fa-node',
-      'fa-node-js',
-      'fa-npm',
-      'fa-ns8',
-      'fa-nutritionix',
-      'fa-octopus-deploy',
-      'fa-odnoklassniki',
-      'fa-odnoklassniki-square',
-      'fa-old-republic',
-      'fa-opencart',
-      'fa-openid',
-      'fa-opera',
-      'fa-optin-monster',
-      'fa-orcid',
-      'fa-osi',
-      'fa-page4',
-      'fa-pagelines',
-      'fa-palfed',
-      'fa-patreon',
-      'fa-paypal',
-      'fa-penny-arcade',
-      'fa-perbyte',
-      'fa-periscope',
-      'fa-phabricator',
-      'fa-phoenix-framework',
-      'fa-phoenix-squadron',
-      'fa-php',
-      'fa-pied-piper',
-      'fa-pied-piper-alt',
-      'fa-pied-piper-hat',
-      'fa-pied-piper-pp',
-      'fa-pied-piper-square',
-      'fa-pinterest',
-      'fa-pinterest-p',
-      'fa-pinterest-square',
-      'fa-playstation',
-      'fa-product-hunt',
-      'fa-pushed',
-      'fa-python',
-      'fa-qq',
-      'fa-quinscape',
-      'fa-quora',
-      'fa-r-project',
-      'fa-raspberry-pi',
-      'fa-ravelry',
-      'fa-react',
-      'fa-reacteurope',
-      'fa-readme',
-      'fa-rebel',
-      'fa-red-river',
-      'fa-reddit',
-      'fa-reddit-alien',
-      'fa-reddit-square',
-      'fa-redhat',
-      'fa-renren',
-      'fa-replyd',
-      'fa-researchgate',
-      'fa-resolving',
-      'fa-rev',
-      'fa-rocketchat',
-      'fa-rockrms',
-      'fa-rust',
-      'fa-safari',
-      'fa-salesforce',
-      'fa-sass',
-      'fa-schlix',
-      'fa-scribd',
-      'fa-searchengin',
-      'fa-sellcast',
-      'fa-sellsy',
-      'fa-servicestack',
-      'fa-shirtsinbulk',
-      'fa-shopify',
-      'fa-shopware',
-      'fa-simplybuilt',
-      'fa-sistrix',
-      'fa-sith',
-      'fa-sketch',
-      'fa-skyatlas',
-      'fa-skype',
-      'fa-slack',
-      'fa-slack-hash',
-      'fa-slideshare',
-      'fa-snapchat',
-      'fa-snapchat-ghost',
-      'fa-snapchat-square',
-      'fa-soundcloud',
-      'fa-sourcetree',
-      'fa-speakap',
-      'fa-speaker-deck',
-      'fa-spotify',
-      'fa-squarespace',
-      'fa-stack-exchange',
-      'fa-stack-overflow',
-      'fa-stackpath',
-      'fa-staylinked',
-      'fa-steam',
-      'fa-steam-square',
-      'fa-steam-symbol',
-      'fa-sticker-mule',
-      'fa-strava',
-      'fa-stripe',
-      'fa-stripe-s',
-      'fa-studiovinari',
-      'fa-stumbleupon',
-      'fa-stumbleupon-circle',
-      'fa-superpowers',
-      'fa-supple',
-      'fa-suse',
-      'fa-swift',
-      'fa-symfony',
-      'fa-teamspeak',
-      'fa-telegram',
-      'fa-telegram-plane',
-      'fa-tencent-weibo',
-      'fa-the-red-yeti',
-      'fa-themeco',
-      'fa-themeisle',
-      'fa-think-peaks',
-      'fa-tiktok',
-      'fa-trade-federation',
-      'fa-trello',
-      'fa-tumblr',
-      'fa-tumblr-square',
-      'fa-twitch',
-      'fa-twitter',
-      'fa-twitter-square',
-      'fa-typo3',
-      'fa-uber',
-      'fa-ubuntu',
-      'fa-uikit',
-      'fa-umbraco',
-      'fa-uncharted',
-      'fa-uniregistry',
-      'fa-unity',
-      'fa-unsplash',
-      'fa-untappd',
-      'fa-ups',
-      'fa-usb',
-      'fa-usps',
-      'fa-ussunnah',
-      'fa-vaadin',
-      'fa-viacoin',
-      'fa-viadeo',
-      'fa-viadeo-square',
-      'fa-viber',
-      'fa-vimeo',
-      'fa-vimeo-square',
-      'fa-vimeo-v',
-      'fa-vine',
-      'fa-vk',
-      'fa-vnv',
-      'fa-vuejs',
-      'fa-watchman-monitoring',
-      'fa-waze',
-      'fa-weebly',
-      'fa-weibo',
-      'fa-weixin',
-      'fa-whatsapp',
-      'fa-whatsapp-square',
-      'fa-whmcs',
-      'fa-wikipedia-w',
-      'fa-windows',
-      'fa-wix',
-      'fa-wizards-of-the-coast',
-      'fa-wodu',
-      'fa-wolf-pack-battalion',
-      'fa-wordpress',
-      'fa-wordpress-simple',
-      'fa-wpbeginner',
-      'fa-wpexplorer',
-      'fa-wpforms',
-      'fa-wpressr',
-      'fa-xbox',
-      'fa-xing',
-      'fa-xing-square',
-      'fa-y-combinator',
-      'fa-yahoo',
-      'fa-yammer',
-      'fa-yandex',
-      'fa-yandex-international',
-      'fa-yarn',
-      'fa-yelp',
-      'fa-yoast',
-      'fa-youtube',
-      'fa-youtube-square',
-      'fa-zhihu'
-    ]
+      key: "business",
+      label: "Business",
+      icons: [
+          "fa-address-book",
+          "fa-address-card",
+          "fa-arrows-spin",
+          "fa-arrows-to-dot",
+          "fa-arrows-to-eye",
+          "fa-bars-progress",
+          "fa-bars-staggered",
+          "fa-book",
+          "fa-box-archive",
+          "fa-boxes-packing",
+          "fa-briefcase",
+          "fa-building",
+          "fa-bullhorn",
+          "fa-bullseye",
+          "fa-business-time",
+          "fa-cake-candles",
+          "fa-calculator",
+          "fa-calendar",
+          "fa-calendar-days",
+          "fa-certificate",
+          "fa-chart-line",
+          "fa-chart-pie",
+          "fa-chart-simple",
+          "fa-city",
+          "fa-clipboard",
+          "fa-clipboard-question",
+          "fa-compass",
+          "fa-copy",
+          "fa-copyright",
+          "fa-envelope",
+          "fa-envelope-circle-check",
+          "fa-envelope-open",
+          "fa-eraser",
+          "fa-fax",
+          "fa-file",
+          "fa-file-circle-plus",
+          "fa-file-lines",
+          "fa-floppy-disk",
+          "fa-folder",
+          "fa-folder-minus",
+          "fa-folder-open",
+          "fa-folder-plus",
+          "fa-folder-tree",
+          "fa-glasses",
+          "fa-globe",
+          "fa-highlighter",
+          "fa-house-laptop",
+          "fa-industry",
+          "fa-landmark",
+          "fa-laptop-file",
+          "fa-list-check",
+          "fa-magnifying-glass-arrow-right",
+          "fa-magnifying-glass-chart",
+          "fa-marker",
+          "fa-mug-saucer",
+          "fa-network-wired",
+          "fa-note-sticky",
+          "fa-paperclip",
+          "fa-paste",
+          "fa-pen",
+          "fa-pen-clip",
+          "fa-pen-fancy",
+          "fa-pen-nib",
+          "fa-pen-to-square",
+          "fa-pencil",
+          "fa-percent",
+          "fa-person-chalkboard",
+          "fa-phone",
+          "fa-phone-flip",
+          "fa-phone-slash",
+          "fa-phone-volume",
+          "fa-print",
+          "fa-registered",
+          "fa-scale-balanced",
+          "fa-scale-unbalanced",
+          "fa-scale-unbalanced-flip",
+          "fa-scissors",
+          "fa-signature",
+          "fa-sitemap",
+          "fa-socks",
+          "fa-square-envelope",
+          "fa-square-pen",
+          "fa-square-phone",
+          "fa-square-phone-flip",
+          "fa-square-poll-horizontal",
+          "fa-square-poll-vertical",
+          "fa-stapler",
+          "fa-table",
+          "fa-table-columns",
+          "fa-tag",
+          "fa-tags",
+          "fa-thumbtack",
+          "fa-timeline",
+          "fa-trademark",
+          "fa-vault",
+          "fa-wallet"
+      ]
   },
   {
-    key: 'buildings',
-    label: 'Buildings',
-    icons: [
-      'fa-archway',
-      'fa-building',
-      'fa-campground',
-      'fa-church',
-      'fa-city',
-      'fa-clinic-medical',
-      'fa-dungeon',
-      'fa-gopuram',
-      'fa-home',
-      'fa-hospital',
-      'fa-hospital-alt',
-      'fa-hospital-user',
-      'fa-hotel',
-      'fa-house-damage',
-      'fa-igloo',
-      'fa-industry',
-      'fa-kaaba',
-      'fa-landmark',
-      'fa-monument',
-      'fa-mosque',
-      'fa-place-of-worship',
-      'fa-school',
-      'fa-store',
-      'fa-store-alt',
-      'fa-synagogue',
-      'fa-torii-gate',
-      'fa-university',
-      'fa-vihara',
-      'fa-warehouse'
-    ]
+      key: "camping",
+      label: "Camping",
+      icons: [
+          "fa-binoculars",
+          "fa-bottle-water",
+          "fa-bucket",
+          "fa-campground",
+          "fa-caravan",
+          "fa-compass",
+          "fa-faucet",
+          "fa-faucet-drip",
+          "fa-fire",
+          "fa-fire-burner",
+          "fa-fire-flame-curved",
+          "fa-frog",
+          "fa-kit-medical",
+          "fa-map",
+          "fa-map-location",
+          "fa-map-location-dot",
+          "fa-mattress-pillow",
+          "fa-mosquito",
+          "fa-mosquito-net",
+          "fa-mountain",
+          "fa-mountain-sun",
+          "fa-people-roof",
+          "fa-person-hiking",
+          "fa-person-shelter",
+          "fa-route",
+          "fa-signs-post",
+          "fa-tarp",
+          "fa-tarp-droplet",
+          "fa-tent",
+          "fa-tent-arrow-down-to-line",
+          "fa-tent-arrow-left-right",
+          "fa-tent-arrow-turn-left",
+          "fa-tent-arrows-down",
+          "fa-tents",
+          "fa-toilet-paper",
+          "fa-trailer",
+          "fa-tree"
+      ]
   },
   {
-    key: 'business',
-    label: 'Business',
-    icons: [
-      'fa-address-book',
-      'fa-address-card',
-      'fa-archive',
-      'fa-balance-scale',
-      'fa-balance-scale-left',
-      'fa-balance-scale-right',
-      'fa-birthday-cake',
-      'fa-book',
-      'fa-briefcase',
-      'fa-building',
-      'fa-bullhorn',
-      'fa-bullseye',
-      'fa-business-time',
-      'fa-calculator',
-      'fa-calendar',
-      'fa-calendar-alt',
-      'fa-certificate',
-      'fa-chart-area',
-      'fa-chart-bar',
-      'fa-chart-line',
-      'fa-chart-pie',
-      'fa-city',
-      'fa-clipboard',
-      'fa-coffee',
-      'fa-columns',
-      'fa-compass',
-      'fa-copy',
-      'fa-copyright',
-      'fa-cut',
-      'fa-edit',
-      'fa-envelope',
-      'fa-envelope-open',
-      'fa-envelope-square',
-      'fa-eraser',
-      'fa-fax',
-      'fa-file',
-      'fa-file-alt',
-      'fa-folder',
-      'fa-folder-minus',
-      'fa-folder-open',
-      'fa-folder-plus',
-      'fa-glasses',
-      'fa-globe',
-      'fa-highlighter',
-      'fa-industry',
-      'fa-landmark',
-      'fa-laptop-house',
-      'fa-marker',
-      'fa-paperclip',
-      'fa-paste',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-fancy',
-      'fa-pen-nib',
-      'fa-pen-square',
-      'fa-pencil-alt',
-      'fa-percent',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-phone-slash',
-      'fa-phone-square',
-      'fa-phone-square-alt',
-      'fa-phone-volume',
-      'fa-print',
-      'fa-project-diagram',
-      'fa-registered',
-      'fa-save',
-      'fa-sitemap',
-      'fa-socks',
-      'fa-sticky-note',
-      'fa-stream',
-      'fa-table',
-      'fa-tag',
-      'fa-tags',
-      'fa-tasks',
-      'fa-thumbtack',
-      'fa-trademark',
-      'fa-wallet'
-    ]
+      key: "charity",
+      label: "Charity",
+      icons: [
+          "fa-circle-dollar-to-slot",
+          "fa-dollar-sign",
+          "fa-dove",
+          "fa-gift",
+          "fa-globe",
+          "fa-hand-holding-dollar",
+          "fa-hand-holding-droplet",
+          "fa-hand-holding-hand",
+          "fa-hand-holding-heart",
+          "fa-hands-holding-child",
+          "fa-hands-holding-circle",
+          "fa-handshake",
+          "fa-handshake-angle",
+          "fa-handshake-simple",
+          "fa-heart",
+          "fa-leaf",
+          "fa-parachute-box",
+          "fa-piggy-bank",
+          "fa-ribbon",
+          "fa-seedling"
+      ]
   },
   {
-    key: 'camping',
-    label: 'Camping',
-    icons: [
-      'fa-binoculars',
-      'fa-campground',
-      'fa-caravan',
-      'fa-compass',
-      'fa-faucet',
-      'fa-fire',
-      'fa-fire-alt',
-      'fa-first-aid',
-      'fa-frog',
-      'fa-hiking',
-      'fa-map',
-      'fa-map-marked',
-      'fa-map-marked-alt',
-      'fa-map-signs',
-      'fa-mountain',
-      'fa-route',
-      'fa-toilet-paper',
-      'fa-trailer',
-      'fa-tree'
-    ]
+      key: "charts-diagrams",
+      label: "Charts + Diagrams",
+      icons: [
+          "fa-bars-progress",
+          "fa-chart-area",
+          "fa-chart-bar",
+          "fa-chart-column",
+          "fa-chart-gantt",
+          "fa-chart-line",
+          "fa-chart-pie",
+          "fa-chart-simple",
+          "fa-circle-half-stroke",
+          "fa-diagram-next",
+          "fa-diagram-predecessor",
+          "fa-diagram-project",
+          "fa-diagram-successor",
+          "fa-square-poll-horizontal",
+          "fa-square-poll-vertical"
+      ]
   },
   {
-    key: 'charity',
-    label: 'Charity',
-    icons: [
-      'fa-dollar-sign',
-      'fa-donate',
-      'fa-dove',
-      'fa-gift',
-      'fa-globe',
-      'fa-hand-holding-heart',
-      'fa-hand-holding-usd',
-      'fa-hand-holding-water',
-      'fa-hands-helping',
-      'fa-handshake',
-      'fa-heart',
-      'fa-leaf',
-      'fa-parachute-box',
-      'fa-piggy-bank',
-      'fa-ribbon',
-      'fa-seedling'
-    ]
+      key: "childhood",
+      label: "Childhood",
+      icons: [
+          "fa-apple-whole",
+          "fa-baby",
+          "fa-baby-carriage",
+          "fa-baseball-bat-ball",
+          "fa-bath",
+          "fa-bucket",
+          "fa-cake-candles",
+          "fa-child",
+          "fa-child-dress",
+          "fa-child-reaching",
+          "fa-children",
+          "fa-cookie",
+          "fa-cookie-bite",
+          "fa-cubes-stacked",
+          "fa-gamepad",
+          "fa-hands-holding-child",
+          "fa-ice-cream",
+          "fa-mitten",
+          "fa-person-biking",
+          "fa-person-breastfeeding",
+          "fa-puzzle-piece",
+          "fa-robot",
+          "fa-school",
+          "fa-shapes",
+          "fa-snowman"
+      ]
   },
   {
-    key: 'chat',
-    label: 'Chat',
-    icons: [
-      'fa-comment',
-      'fa-comment-alt',
-      'fa-comment-dots',
-      'fa-comment-medical',
-      'fa-comment-slash',
-      'fa-comments',
-      'fa-frown',
-      'fa-icons',
-      'fa-meh',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-phone-slash',
-      'fa-poo',
-      'fa-quote-left',
-      'fa-quote-right',
-      'fa-smile',
-      'fa-sms',
-      'fa-video',
-      'fa-video-slash'
-    ]
+      key: "clothing-fashion",
+      label: "Clothing + Fashion",
+      icons: [
+          "fa-glasses",
+          "fa-graduation-cap",
+          "fa-hat-cowboy",
+          "fa-hat-cowboy-side",
+          "fa-hat-wizard",
+          "fa-mitten",
+          "fa-shirt",
+          "fa-shoe-prints",
+          "fa-socks",
+          "fa-user-tie",
+          "fa-vest",
+          "fa-vest-patches"
+      ]
   },
   {
-    key: 'chess',
-    label: 'Chess',
-    icons: [
-      'fa-chess',
-      'fa-chess-bishop',
-      'fa-chess-board',
-      'fa-chess-king',
-      'fa-chess-knight',
-      'fa-chess-pawn',
-      'fa-chess-queen',
-      'fa-chess-rook',
-      'fa-square-full'
-    ]
+      key: "coding",
+      label: "Coding",
+      icons: [
+          "fa-barcode",
+          "fa-bars",
+          "fa-bars-staggered",
+          "fa-bath",
+          "fa-box-archive",
+          "fa-bug",
+          "fa-bug-slash",
+          "fa-circle-nodes",
+          "fa-code",
+          "fa-code-branch",
+          "fa-code-commit",
+          "fa-code-compare",
+          "fa-code-fork",
+          "fa-code-merge",
+          "fa-code-pull-request",
+          "fa-cube",
+          "fa-cubes",
+          "fa-diagram-project",
+          "fa-file",
+          "fa-file-code",
+          "fa-file-lines",
+          "fa-filter",
+          "fa-fire-extinguisher",
+          "fa-folder",
+          "fa-folder-open",
+          "fa-font-awesome",
+          "fa-gear",
+          "fa-gears",
+          "fa-keyboard",
+          "fa-laptop-code",
+          "fa-microchip",
+          "fa-mug-saucer",
+          "fa-network-wired",
+          "fa-notdef",
+          "fa-qrcode",
+          "fa-rectangle-xmark",
+          "fa-shield",
+          "fa-shield-halved",
+          "fa-sitemap",
+          "fa-terminal",
+          "fa-user-secret",
+          "fa-window-maximize",
+          "fa-window-minimize",
+          "fa-window-restore"
+      ]
   },
   {
-    key: 'childhood',
-    label: 'Childhood',
-    icons: [
-      'fa-apple-alt',
-      'fa-baby',
-      'fa-baby-carriage',
-      'fa-bath',
-      'fa-biking',
-      'fa-birthday-cake',
-      'fa-cookie',
-      'fa-cookie-bite',
-      'fa-gamepad',
-      'fa-ice-cream',
-      'fa-mitten',
-      'fa-robot',
-      'fa-school',
-      'fa-shapes',
-      'fa-snowman'
-    ]
+      key: "communication",
+      label: "Communication",
+      icons: [
+          "fa-address-book",
+          "fa-address-card",
+          "fa-at",
+          "fa-blender-phone",
+          "fa-bluetooth-b",
+          "fa-bullhorn",
+          "fa-comment",
+          "fa-comment-dots",
+          "fa-comment-medical",
+          "fa-comment-slash",
+          "fa-comment-sms",
+          "fa-comments",
+          "fa-ear-listen",
+          "fa-envelope",
+          "fa-envelope-circle-check",
+          "fa-envelope-open",
+          "fa-face-frown",
+          "fa-face-meh",
+          "fa-face-smile",
+          "fa-fax",
+          "fa-hands-asl-interpreting",
+          "fa-icons",
+          "fa-inbox",
+          "fa-language",
+          "fa-message",
+          "fa-microphone",
+          "fa-microphone-lines",
+          "fa-microphone-lines-slash",
+          "fa-microphone-slash",
+          "fa-mobile",
+          "fa-mobile-button",
+          "fa-mobile-retro",
+          "fa-mobile-screen",
+          "fa-mobile-screen-button",
+          "fa-paper-plane",
+          "fa-phone",
+          "fa-phone-flip",
+          "fa-phone-slash",
+          "fa-phone-volume",
+          "fa-poo",
+          "fa-quote-left",
+          "fa-quote-right",
+          "fa-square-envelope",
+          "fa-square-phone",
+          "fa-square-phone-flip",
+          "fa-square-rss",
+          "fa-tower-cell",
+          "fa-tty",
+          "fa-video",
+          "fa-video-slash",
+          "fa-voicemail",
+          "fa-walkie-talkie"
+      ]
   },
   {
-    key: 'clothing',
-    label: 'Clothing',
-    icons: [
-      'fa-graduation-cap',
-      'fa-hat-cowboy',
-      'fa-hat-cowboy-side',
-      'fa-hat-wizard',
-      'fa-mitten',
-      'fa-shoe-prints',
-      'fa-socks',
-      'fa-tshirt',
-      'fa-user-tie'
-    ]
+      key: "connectivity",
+      label: "Connectivity",
+      icons: [
+          "fa-bluetooth",
+          "fa-circle-nodes",
+          "fa-cloud",
+          "fa-cloud-arrow-down",
+          "fa-cloud-arrow-up",
+          "fa-ethernet",
+          "fa-globe",
+          "fa-house-signal",
+          "fa-rss",
+          "fa-satellite-dish",
+          "fa-signal",
+          "fa-tower-broadcast",
+          "fa-tower-cell",
+          "fa-wifi"
+      ]
   },
   {
-    key: 'code',
-    label: 'Code',
-    icons: [
-      'fa-archive',
-      'fa-barcode',
-      'fa-bath',
-      'fa-bug',
-      'fa-code',
-      'fa-code-branch',
-      'fa-coffee',
-      'fa-file',
-      'fa-file-alt',
-      'fa-file-code',
-      'fa-filter',
-      'fa-fire-extinguisher',
-      'fa-folder',
-      'fa-folder-open',
-      'fa-keyboard',
-      'fa-laptop-code',
-      'fa-microchip',
-      'fa-project-diagram',
-      'fa-qrcode',
-      'fa-shield-alt',
-      'fa-sitemap',
-      'fa-stream',
-      'fa-terminal',
-      'fa-user-secret',
-      'fa-window-close',
-      'fa-window-maximize',
-      'fa-window-minimize',
-      'fa-window-restore'
-    ]
+      key: "construction",
+      label: "Construction",
+      icons: [
+          "fa-arrow-up-from-ground-water",
+          "fa-bore-hole",
+          "fa-brush",
+          "fa-bucket",
+          "fa-compass-drafting",
+          "fa-dumpster",
+          "fa-dumpster-fire",
+          "fa-hammer",
+          "fa-helmet-safety",
+          "fa-mound",
+          "fa-paint-roller",
+          "fa-pen-ruler",
+          "fa-pencil",
+          "fa-person-digging",
+          "fa-ruler",
+          "fa-ruler-combined",
+          "fa-ruler-horizontal",
+          "fa-ruler-vertical",
+          "fa-screwdriver",
+          "fa-screwdriver-wrench",
+          "fa-sheet-plastic",
+          "fa-tarp",
+          "fa-tarp-droplet",
+          "fa-toilet-portable",
+          "fa-toilets-portable",
+          "fa-toolbox",
+          "fa-trowel",
+          "fa-trowel-bricks",
+          "fa-truck-pickup",
+          "fa-wrench"
+      ]
   },
   {
-    key: 'communication',
-    label: 'Communication',
-    icons: [
-      'fa-address-book',
-      'fa-address-card',
-      'fa-american-sign-language-interpreting',
-      'fa-assistive-listening-systems',
-      'fa-at',
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-bluetooth',
-      'fa-bluetooth-b',
-      'fa-broadcast-tower',
-      'fa-bullhorn',
-      'fa-chalkboard',
-      'fa-comment',
-      'fa-comment-alt',
-      'fa-comments',
-      'fa-envelope',
-      'fa-envelope-open',
-      'fa-envelope-square',
-      'fa-fax',
-      'fa-inbox',
-      'fa-language',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-microphone-alt-slash',
-      'fa-microphone-slash',
-      'fa-mobile',
-      'fa-mobile-alt',
-      'fa-paper-plane',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-phone-slash',
-      'fa-phone-square',
-      'fa-phone-square-alt',
-      'fa-phone-volume',
-      'fa-rss',
-      'fa-rss-square',
-      'fa-tty',
-      'fa-voicemail',
-      'fa-wifi'
-    ]
+      key: "design",
+      label: "Design",
+      icons: [
+          "fa-bezier-curve",
+          "fa-brush",
+          "fa-circle-half-stroke",
+          "fa-circle-nodes",
+          "fa-clone",
+          "fa-compass-drafting",
+          "fa-copy",
+          "fa-crop",
+          "fa-crop-simple",
+          "fa-crosshairs",
+          "fa-cube",
+          "fa-cubes",
+          "fa-draw-polygon",
+          "fa-droplet",
+          "fa-droplet-slash",
+          "fa-eraser",
+          "fa-eye",
+          "fa-eye-dropper",
+          "fa-eye-slash",
+          "fa-fill",
+          "fa-fill-drip",
+          "fa-floppy-disk",
+          "fa-font-awesome",
+          "fa-highlighter",
+          "fa-icons",
+          "fa-layer-group",
+          "fa-lines-leaning",
+          "fa-marker",
+          "fa-object-group",
+          "fa-object-ungroup",
+          "fa-paint-roller",
+          "fa-paintbrush",
+          "fa-palette",
+          "fa-paste",
+          "fa-pen",
+          "fa-pen-clip",
+          "fa-pen-fancy",
+          "fa-pen-nib",
+          "fa-pen-ruler",
+          "fa-pen-to-square",
+          "fa-pencil",
+          "fa-ruler-combined",
+          "fa-ruler-horizontal",
+          "fa-ruler-vertical",
+          "fa-scissors",
+          "fa-splotch",
+          "fa-spray-can",
+          "fa-stamp",
+          "fa-stapler",
+          "fa-swatchbook",
+          "fa-vector-square",
+          "fa-wand-magic",
+          "fa-wand-magic-sparkles"
+      ]
   },
   {
-    key: 'computers',
-    label: 'Computers',
-    icons: [
-      'fa-compact-disc',
-      'fa-database',
-      'fa-desktop',
-      'fa-download',
-      'fa-ethernet',
-      'fa-hdd',
-      'fa-headphones',
-      'fa-keyboard',
-      'fa-laptop',
-      'fa-laptop-house',
-      'fa-memory',
-      'fa-microchip',
-      'fa-mobile',
-      'fa-mobile-alt',
-      'fa-mouse',
-      'fa-plug',
-      'fa-power-off',
-      'fa-print',
-      'fa-satellite',
-      'fa-satellite-dish',
-      'fa-save',
-      'fa-sd-card',
-      'fa-server',
-      'fa-sim-card',
-      'fa-stream',
-      'fa-tablet',
-      'fa-tablet-alt',
-      'fa-tv',
-      'fa-upload'
-    ]
+      key: "devices-hardware",
+      label: "Devices + Hardware",
+      icons: [
+          "fa-blender-phone",
+          "fa-camera",
+          "fa-camera-retro",
+          "fa-car-battery",
+          "fa-compact-disc",
+          "fa-computer",
+          "fa-computer-mouse",
+          "fa-database",
+          "fa-desktop",
+          "fa-display",
+          "fa-download",
+          "fa-ethernet",
+          "fa-fax",
+          "fa-floppy-disk",
+          "fa-gamepad",
+          "fa-hard-drive",
+          "fa-headphones",
+          "fa-house-laptop",
+          "fa-keyboard",
+          "fa-laptop",
+          "fa-laptop-file",
+          "fa-memory",
+          "fa-microchip",
+          "fa-mobile",
+          "fa-mobile-button",
+          "fa-mobile-retro",
+          "fa-mobile-screen",
+          "fa-mobile-screen-button",
+          "fa-plug",
+          "fa-power-off",
+          "fa-print",
+          "fa-satellite",
+          "fa-satellite-dish",
+          "fa-sd-card",
+          "fa-server",
+          "fa-sim-card",
+          "fa-tablet",
+          "fa-tablet-button",
+          "fa-tablet-screen-button",
+          "fa-tachograph-digital",
+          "fa-tv",
+          "fa-upload",
+          "fa-walkie-talkie"
+      ]
   },
   {
-    key: 'construction',
-    label: 'Construction',
-    icons: [
-      'fa-brush',
-      'fa-drafting-compass',
-      'fa-dumpster',
-      'fa-hammer',
-      'fa-hard-hat',
-      'fa-paint-roller',
-      'fa-pencil-alt',
-      'fa-pencil-ruler',
-      'fa-ruler',
-      'fa-ruler-combined',
-      'fa-ruler-horizontal',
-      'fa-ruler-vertical',
-      'fa-screwdriver',
-      'fa-toolbox',
-      'fa-tools',
-      'fa-truck-pickup',
-      'fa-wrench'
-    ]
+      key: "disaster",
+      label: "Disaster + Crisis",
+      icons: [
+          "fa-biohazard",
+          "fa-bugs",
+          "fa-burst",
+          "fa-child-combatant",
+          "fa-circle-radiation",
+          "fa-cloud-bolt",
+          "fa-cloud-showers-heavy",
+          "fa-cloud-showers-water",
+          "fa-helmet-un",
+          "fa-hill-avalanche",
+          "fa-hill-rockslide",
+          "fa-house-chimney-crack",
+          "fa-house-crack",
+          "fa-house-fire",
+          "fa-house-flood-water",
+          "fa-house-flood-water-circle-arrow-right",
+          "fa-house-tsunami",
+          "fa-hurricane",
+          "fa-locust",
+          "fa-mosquito",
+          "fa-person-drowning",
+          "fa-person-rifle",
+          "fa-person-walking-arrow-loop-left",
+          "fa-person-walking-arrow-right",
+          "fa-person-walking-dashed-line-arrow-right",
+          "fa-plant-wilt",
+          "fa-radiation",
+          "fa-snowflake",
+          "fa-sun-plant-wilt",
+          "fa-temperature-arrow-down",
+          "fa-temperature-arrow-up",
+          "fa-tornado",
+          "fa-volcano",
+          "fa-wheat-awn-circle-exclamation",
+          "fa-wind",
+          "fa-worm",
+          "fa-xmarks-lines"
+      ]
   },
   {
-    key: 'currency',
-    label: 'Currency',
-    icons: [
-      'fa-bitcoin',
-      'fa-btc',
-      'fa-dollar-sign',
-      'fa-ethereum',
-      'fa-euro-sign',
-      'fa-gg',
-      'fa-gg-circle',
-      'fa-hryvnia',
-      'fa-lira-sign',
-      'fa-money-bill',
-      'fa-money-bill-alt',
-      'fa-money-bill-wave',
-      'fa-money-bill-wave-alt',
-      'fa-money-check',
-      'fa-money-check-alt',
-      'fa-pound-sign',
-      'fa-ruble-sign',
-      'fa-rupee-sign',
-      'fa-shekel-sign',
-      'fa-tenge',
-      'fa-won-sign',
-      'fa-yen-sign'
-    ]
+      key: "editing",
+      label: "Editing",
+      icons: [
+          "fa-arrows-rotate",
+          "fa-bandage",
+          "fa-bars",
+          "fa-brush",
+          "fa-chart-simple",
+          "fa-check",
+          "fa-check-double",
+          "fa-circle-check",
+          "fa-circle-half-stroke",
+          "fa-crop",
+          "fa-crop-simple",
+          "fa-cube",
+          "fa-delete-left",
+          "fa-ellipsis",
+          "fa-ellipsis-vertical",
+          "fa-eye-dropper",
+          "fa-eye-slash",
+          "fa-gear",
+          "fa-grip",
+          "fa-grip-lines",
+          "fa-grip-lines-vertical",
+          "fa-grip-vertical",
+          "fa-link",
+          "fa-link-slash",
+          "fa-minus",
+          "fa-paintbrush",
+          "fa-pen",
+          "fa-pen-clip",
+          "fa-pen-fancy",
+          "fa-pen-nib",
+          "fa-pen-ruler",
+          "fa-pen-to-square",
+          "fa-pencil",
+          "fa-plus",
+          "fa-rotate",
+          "fa-scissors",
+          "fa-signature",
+          "fa-sliders",
+          "fa-square-check",
+          "fa-square-pen",
+          "fa-trash",
+          "fa-trash-arrow-up",
+          "fa-trash-can",
+          "fa-trash-can-arrow-up",
+          "fa-wand-magic",
+          "fa-wand-magic-sparkles",
+          "fa-xmark"
+      ]
   },
   {
-    key: 'date-time',
-    label: 'Date & Time',
-    icons: [
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-calendar',
-      'fa-calendar-alt',
-      'fa-calendar-check',
-      'fa-calendar-minus',
-      'fa-calendar-plus',
-      'fa-calendar-times',
-      'fa-clock',
-      'fa-hourglass',
-      'fa-hourglass-end',
-      'fa-hourglass-half',
-      'fa-hourglass-start',
-      'fa-stopwatch'
-    ]
+      key: "education",
+      label: "Education",
+      icons: [
+          "fa-apple-whole",
+          "fa-atom",
+          "fa-award",
+          "fa-bell",
+          "fa-bell-slash",
+          "fa-book-open",
+          "fa-book-open-reader",
+          "fa-chalkboard",
+          "fa-chalkboard-user",
+          "fa-graduation-cap",
+          "fa-laptop-code",
+          "fa-laptop-file",
+          "fa-masks-theater",
+          "fa-microscope",
+          "fa-music",
+          "fa-person-chalkboard",
+          "fa-school",
+          "fa-school-circle-check",
+          "fa-school-circle-exclamation",
+          "fa-school-circle-xmark",
+          "fa-school-flag",
+          "fa-school-lock",
+          "fa-shapes",
+          "fa-user-graduate"
+      ]
   },
   {
-    key: 'design',
-    label: 'Design',
-    icons: [
-      'fa-adjust',
-      'fa-bezier-curve',
-      'fa-brush',
-      'fa-clone',
-      'fa-copy',
-      'fa-crop',
-      'fa-crop-alt',
-      'fa-crosshairs',
-      'fa-cut',
-      'fa-drafting-compass',
-      'fa-draw-polygon',
-      'fa-edit',
-      'fa-eraser',
-      'fa-eye',
-      'fa-eye-dropper',
-      'fa-eye-slash',
-      'fa-fill',
-      'fa-fill-drip',
-      'fa-highlighter',
-      'fa-icons',
-      'fa-layer-group',
-      'fa-magic',
-      'fa-marker',
-      'fa-object-group',
-      'fa-object-ungroup',
-      'fa-paint-brush',
-      'fa-paint-roller',
-      'fa-palette',
-      'fa-paste',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-fancy',
-      'fa-pen-nib',
-      'fa-pencil-alt',
-      'fa-pencil-ruler',
-      'fa-ruler-combined',
-      'fa-ruler-horizontal',
-      'fa-ruler-vertical',
-      'fa-save',
-      'fa-splotch',
-      'fa-spray-can',
-      'fa-stamp',
-      'fa-swatchbook',
-      'fa-tint',
-      'fa-tint-slash',
-      'fa-vector-square'
-    ]
+      key: "emoji",
+      label: "Emoji",
+      icons: [
+          "fa-face-angry",
+          "fa-face-dizzy",
+          "fa-face-flushed",
+          "fa-face-frown",
+          "fa-face-frown-open",
+          "fa-face-grimace",
+          "fa-face-grin",
+          "fa-face-grin-beam",
+          "fa-face-grin-beam-sweat",
+          "fa-face-grin-hearts",
+          "fa-face-grin-squint",
+          "fa-face-grin-squint-tears",
+          "fa-face-grin-stars",
+          "fa-face-grin-tears",
+          "fa-face-grin-tongue",
+          "fa-face-grin-tongue-squint",
+          "fa-face-grin-tongue-wink",
+          "fa-face-grin-wide",
+          "fa-face-grin-wink",
+          "fa-face-kiss",
+          "fa-face-kiss-beam",
+          "fa-face-kiss-wink-heart",
+          "fa-face-laugh",
+          "fa-face-laugh-beam",
+          "fa-face-laugh-squint",
+          "fa-face-laugh-wink",
+          "fa-face-meh",
+          "fa-face-meh-blank",
+          "fa-face-rolling-eyes",
+          "fa-face-sad-cry",
+          "fa-face-sad-tear",
+          "fa-face-smile",
+          "fa-face-smile-beam",
+          "fa-face-smile-wink",
+          "fa-face-surprise",
+          "fa-face-tired"
+      ]
   },
   {
-    key: 'editors',
-    label: 'Editors',
-    icons: [
-      'fa-align-center',
-      'fa-align-justify',
-      'fa-align-left',
-      'fa-align-right',
-      'fa-bold',
-      'fa-border-all',
-      'fa-border-none',
-      'fa-border-style',
-      'fa-clipboard',
-      'fa-clone',
-      'fa-columns',
-      'fa-copy',
-      'fa-cut',
-      'fa-edit',
-      'fa-eraser',
-      'fa-file',
-      'fa-file-alt',
-      'fa-font',
-      'fa-glasses',
-      'fa-heading',
-      'fa-highlighter',
-      'fa-i-cursor',
-      'fa-icons',
-      'fa-indent',
-      'fa-italic',
-      'fa-link',
-      'fa-list',
-      'fa-list-alt',
-      'fa-list-ol',
-      'fa-list-ul',
-      'fa-marker',
-      'fa-outdent',
-      'fa-paper-plane',
-      'fa-paperclip',
-      'fa-paragraph',
-      'fa-paste',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-fancy',
-      'fa-pen-nib',
-      'fa-pencil-alt',
-      'fa-print',
-      'fa-quote-left',
-      'fa-quote-right',
-      'fa-redo',
-      'fa-redo-alt',
-      'fa-remove-format',
-      'fa-reply',
-      'fa-reply-all',
-      'fa-screwdriver',
-      'fa-share',
-      'fa-spell-check',
-      'fa-strikethrough',
-      'fa-subscript',
-      'fa-superscript',
-      'fa-sync',
-      'fa-sync-alt',
-      'fa-table',
-      'fa-tasks',
-      'fa-text-height',
-      'fa-text-width',
-      'fa-th',
-      'fa-th-large',
-      'fa-th-list',
-      'fa-tools',
-      'fa-trash',
-      'fa-trash-alt',
-      'fa-trash-restore',
-      'fa-trash-restore-alt',
-      'fa-underline',
-      'fa-undo',
-      'fa-undo-alt',
-      'fa-unlink',
-      'fa-wrench'
-    ]
+      key: "energy",
+      label: "Energy",
+      icons: [
+          "fa-arrow-up-from-ground-water",
+          "fa-atom",
+          "fa-battery-empty",
+          "fa-battery-full",
+          "fa-battery-half",
+          "fa-battery-quarter",
+          "fa-battery-three-quarters",
+          "fa-bolt",
+          "fa-car-battery",
+          "fa-charging-station",
+          "fa-circle-radiation",
+          "fa-explosion",
+          "fa-fan",
+          "fa-fire",
+          "fa-fire-flame-curved",
+          "fa-fire-flame-simple",
+          "fa-gas-pump",
+          "fa-industry",
+          "fa-leaf",
+          "fa-lightbulb",
+          "fa-oil-well",
+          "fa-plug",
+          "fa-plug-circle-bolt",
+          "fa-plug-circle-check",
+          "fa-plug-circle-exclamation",
+          "fa-plug-circle-minus",
+          "fa-plug-circle-plus",
+          "fa-plug-circle-xmark",
+          "fa-poop",
+          "fa-power-off",
+          "fa-radiation",
+          "fa-seedling",
+          "fa-solar-panel",
+          "fa-sun",
+          "fa-tower-broadcast",
+          "fa-water",
+          "fa-wind"
+      ]
   },
   {
-    key: 'education',
-    label: 'Education',
-    icons: [
-      'fa-apple-alt',
-      'fa-atom',
-      'fa-award',
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-book-open',
-      'fa-book-reader',
-      'fa-chalkboard',
-      'fa-chalkboard-teacher',
-      'fa-graduation-cap',
-      'fa-laptop-code',
-      'fa-microscope',
-      'fa-music',
-      'fa-school',
-      'fa-shapes',
-      'fa-theater-masks',
-      'fa-user-graduate'
-    ]
+      key: "files",
+      label: "Files",
+      icons: [
+          "fa-box-archive",
+          "fa-clone",
+          "fa-copy",
+          "fa-file",
+          "fa-file-arrow-down",
+          "fa-file-arrow-up",
+          "fa-file-audio",
+          "fa-file-circle-check",
+          "fa-file-circle-exclamation",
+          "fa-file-circle-minus",
+          "fa-file-circle-plus",
+          "fa-file-circle-question",
+          "fa-file-circle-xmark",
+          "fa-file-code",
+          "fa-file-csv",
+          "fa-file-excel",
+          "fa-file-export",
+          "fa-file-image",
+          "fa-file-import",
+          "fa-file-lines",
+          "fa-file-pdf",
+          "fa-file-pen",
+          "fa-file-powerpoint",
+          "fa-file-shield",
+          "fa-file-video",
+          "fa-file-word",
+          "fa-file-zipper",
+          "fa-floppy-disk",
+          "fa-folder",
+          "fa-folder-closed",
+          "fa-folder-open",
+          "fa-note-sticky",
+          "fa-paste",
+          "fa-photo-film",
+          "fa-scissors"
+      ]
   },
   {
-    key: 'emoji',
-    label: 'Emoji',
-    icons: [
-      'fa-angry',
-      'fa-dizzy',
-      'fa-flushed',
-      'fa-frown',
-      'fa-frown-open',
-      'fa-grimace',
-      'fa-grin',
-      'fa-grin-alt',
-      'fa-grin-beam',
-      'fa-grin-beam-sweat',
-      'fa-grin-hearts',
-      'fa-grin-squint',
-      'fa-grin-squint-tears',
-      'fa-grin-stars',
-      'fa-grin-tears',
-      'fa-grin-tongue',
-      'fa-grin-tongue-squint',
-      'fa-grin-tongue-wink',
-      'fa-grin-wink',
-      'fa-kiss',
-      'fa-kiss-beam',
-      'fa-kiss-wink-heart',
-      'fa-laugh',
-      'fa-laugh-beam',
-      'fa-laugh-squint',
-      'fa-laugh-wink',
-      'fa-meh',
-      'fa-meh-blank',
-      'fa-meh-rolling-eyes',
-      'fa-sad-cry',
-      'fa-sad-tear',
-      'fa-smile',
-      'fa-smile-beam',
-      'fa-smile-wink',
-      'fa-surprise',
-      'fa-tired'
-    ]
+      key: "film-video",
+      label: "Film + Video",
+      icons: [
+          "fa-audio-description",
+          "fa-circle",
+          "fa-clapperboard",
+          "fa-closed-captioning",
+          "fa-compact-disc",
+          "fa-file-audio",
+          "fa-file-video",
+          "fa-film",
+          "fa-headphones",
+          "fa-microphone",
+          "fa-microphone-lines",
+          "fa-microphone-lines-slash",
+          "fa-microphone-slash",
+          "fa-photo-film",
+          "fa-podcast",
+          "fa-square-rss",
+          "fa-ticket",
+          "fa-tower-broadcast",
+          "fa-tower-cell",
+          "fa-tv",
+          "fa-video",
+          "fa-video-slash",
+          "fa-youtube"
+      ]
   },
   {
-    key: 'energy',
-    label: 'Energy',
-    icons: [
-      'fa-atom',
-      'fa-battery-empty',
-      'fa-battery-full',
-      'fa-battery-half',
-      'fa-battery-quarter',
-      'fa-battery-three-quarters',
-      'fa-broadcast-tower',
-      'fa-burn',
-      'fa-charging-station',
-      'fa-fan',
-      'fa-fire',
-      'fa-fire-alt',
-      'fa-gas-pump',
-      'fa-industry',
-      'fa-leaf',
-      'fa-lightbulb',
-      'fa-plug',
-      'fa-poop',
-      'fa-power-off',
-      'fa-radiation',
-      'fa-radiation-alt',
-      'fa-seedling',
-      'fa-solar-panel',
-      'fa-sun',
-      'fa-water',
-      'fa-wind'
-    ]
+      key: "food-beverage",
+      label: "Food + Beverage",
+      icons: [
+          "fa-apple-whole",
+          "fa-bacon",
+          "fa-beer-mug-empty",
+          "fa-blender",
+          "fa-bone",
+          "fa-bottle-droplet",
+          "fa-bottle-water",
+          "fa-bowl-food",
+          "fa-bowl-rice",
+          "fa-bread-slice",
+          "fa-burger",
+          "fa-cake-candles",
+          "fa-candy-cane",
+          "fa-carrot",
+          "fa-champagne-glasses",
+          "fa-cheese",
+          "fa-cloud-meatball",
+          "fa-cookie",
+          "fa-cubes-stacked",
+          "fa-drumstick-bite",
+          "fa-egg",
+          "fa-fish",
+          "fa-fish-fins",
+          "fa-flask",
+          "fa-glass-water",
+          "fa-glass-water-droplet",
+          "fa-hotdog",
+          "fa-ice-cream",
+          "fa-jar",
+          "fa-jar-wheat",
+          "fa-lemon",
+          "fa-martini-glass",
+          "fa-martini-glass-citrus",
+          "fa-martini-glass-empty",
+          "fa-mug-hot",
+          "fa-mug-saucer",
+          "fa-pepper-hot",
+          "fa-pizza-slice",
+          "fa-plate-wheat",
+          "fa-seedling",
+          "fa-shrimp",
+          "fa-stroopwafel",
+          "fa-wheat-awn",
+          "fa-wheat-awn-circle-exclamation",
+          "fa-whiskey-glass",
+          "fa-wine-bottle",
+          "fa-wine-glass",
+          "fa-wine-glass-empty"
+      ]
   },
   {
-    key: 'files',
-    label: 'Files',
-    icons: [
-      'fa-archive',
-      'fa-clone',
-      'fa-copy',
-      'fa-cut',
-      'fa-file',
-      'fa-file-alt',
-      'fa-file-archive',
-      'fa-file-audio',
-      'fa-file-code',
-      'fa-file-excel',
-      'fa-file-image',
-      'fa-file-pdf',
-      'fa-file-powerpoint',
-      'fa-file-video',
-      'fa-file-word',
-      'fa-folder',
-      'fa-folder-open',
-      'fa-paste',
-      'fa-photo-video',
-      'fa-save',
-      'fa-sticky-note'
-    ]
+      key: "fruits-vegetables",
+      label: "Fruits + Vegetables",
+      icons: [
+          "fa-apple-whole",
+          "fa-carrot",
+          "fa-leaf",
+          "fa-lemon",
+          "fa-pepper-hot",
+          "fa-seedling"
+      ]
   },
   {
-    key: 'finance',
-    label: 'Finance',
-    icons: [
-      'fa-balance-scale',
-      'fa-balance-scale-left',
-      'fa-balance-scale-right',
-      'fa-book',
-      'fa-cash-register',
-      'fa-chart-line',
-      'fa-chart-pie',
-      'fa-coins',
-      'fa-comment-dollar',
-      'fa-comments-dollar',
-      'fa-credit-card',
-      'fa-donate',
-      'fa-file-invoice',
-      'fa-file-invoice-dollar',
-      'fa-hand-holding-usd',
-      'fa-landmark',
-      'fa-money-bill',
-      'fa-money-bill-alt',
-      'fa-money-bill-wave',
-      'fa-money-bill-wave-alt',
-      'fa-money-check',
-      'fa-money-check-alt',
-      'fa-percentage',
-      'fa-piggy-bank',
-      'fa-receipt',
-      'fa-stamp',
-      'fa-wallet'
-    ]
+      key: "gaming",
+      label: "Gaming",
+      icons: [
+          "fa-book-skull",
+          "fa-chess",
+          "fa-chess-bishop",
+          "fa-chess-board",
+          "fa-chess-king",
+          "fa-chess-knight",
+          "fa-chess-pawn",
+          "fa-chess-queen",
+          "fa-chess-rook",
+          "fa-critical-role",
+          "fa-d-and-d",
+          "fa-d-and-d-beyond",
+          "fa-diamond",
+          "fa-dice",
+          "fa-dice-d20",
+          "fa-dice-d6",
+          "fa-dice-five",
+          "fa-dice-four",
+          "fa-dice-one",
+          "fa-dice-six",
+          "fa-dice-three",
+          "fa-dice-two",
+          "fa-dragon",
+          "fa-dungeon",
+          "fa-fantasy-flight-games",
+          "fa-gamepad",
+          "fa-ghost",
+          "fa-hand-fist",
+          "fa-hat-wizard",
+          "fa-headset",
+          "fa-heart",
+          "fa-playstation",
+          "fa-puzzle-piece",
+          "fa-ring",
+          "fa-scroll",
+          "fa-shield-halved",
+          "fa-skull-crossbones",
+          "fa-square-full",
+          "fa-square-steam",
+          "fa-steam",
+          "fa-steam-symbol",
+          "fa-twitch",
+          "fa-vr-cardboard",
+          "fa-wand-sparkles",
+          "fa-wizards-of-the-coast",
+          "fa-xbox"
+      ]
   },
   {
-    key: 'fitness',
-    label: 'Fitness',
-    icons: [
-      'fa-bicycle',
-      'fa-biking',
-      'fa-burn',
-      'fa-fire-alt',
-      'fa-heart',
-      'fa-heartbeat',
-      'fa-hiking',
-      'fa-running',
-      'fa-shoe-prints',
-      'fa-skating',
-      'fa-skiing',
-      'fa-skiing-nordic',
-      'fa-snowboarding',
-      'fa-spa',
-      'fa-swimmer',
-      'fa-walking'
-    ]
+      key: "gender",
+      label: "Genders",
+      icons: [
+          "fa-genderless",
+          "fa-mars",
+          "fa-mars-and-venus",
+          "fa-mars-double",
+          "fa-mars-stroke",
+          "fa-mars-stroke-right",
+          "fa-mars-stroke-up",
+          "fa-mercury",
+          "fa-neuter",
+          "fa-person-half-dress",
+          "fa-transgender",
+          "fa-venus",
+          "fa-venus-double",
+          "fa-venus-mars"
+      ]
   },
   {
-    key: 'food',
-    label: 'Food',
-    icons: [
-      'fa-apple-alt',
-      'fa-bacon',
-      'fa-bone',
-      'fa-bread-slice',
-      'fa-candy-cane',
-      'fa-carrot',
-      'fa-cheese',
-      'fa-cloud-meatball',
-      'fa-cookie',
-      'fa-drumstick-bite',
-      'fa-egg',
-      'fa-fish',
-      'fa-hamburger',
-      'fa-hotdog',
-      'fa-ice-cream',
-      'fa-lemon',
-      'fa-pepper-hot',
-      'fa-pizza-slice',
-      'fa-seedling',
-      'fa-stroopwafel'
-    ]
+      key: "halloween",
+      label: "Halloween",
+      icons: [
+          "fa-book-skull",
+          "fa-broom",
+          "fa-cat",
+          "fa-cloud-moon",
+          "fa-crow",
+          "fa-ghost",
+          "fa-hat-wizard",
+          "fa-mask",
+          "fa-skull",
+          "fa-skull-crossbones",
+          "fa-spider",
+          "fa-toilet-paper",
+          "fa-wand-sparkles"
+      ]
   },
   {
-    key: 'fruit-vegetable',
-    label: 'Fruits & Vegetables',
-    icons: [
-      'fa-apple-alt',
-      'fa-carrot',
-      'fa-leaf',
-      'fa-lemon',
-      'fa-pepper-hot',
-      'fa-seedling'
-    ]
+      key: "hands",
+      label: "Hands",
+      icons: [
+          "fa-hand",
+          "fa-hand-back-fist",
+          "fa-hand-dots",
+          "fa-hand-fist",
+          "fa-hand-holding",
+          "fa-hand-holding-dollar",
+          "fa-hand-holding-droplet",
+          "fa-hand-holding-hand",
+          "fa-hand-holding-heart",
+          "fa-hand-holding-medical",
+          "fa-hand-lizard",
+          "fa-hand-middle-finger",
+          "fa-hand-peace",
+          "fa-hand-point-down",
+          "fa-hand-point-left",
+          "fa-hand-point-right",
+          "fa-hand-point-up",
+          "fa-hand-pointer",
+          "fa-hand-scissors",
+          "fa-hand-sparkles",
+          "fa-hand-spock",
+          "fa-hands-bound",
+          "fa-hands-bubbles",
+          "fa-hands-clapping",
+          "fa-hands-holding",
+          "fa-hands-holding-child",
+          "fa-hands-holding-circle",
+          "fa-hands-praying",
+          "fa-handshake",
+          "fa-handshake-angle",
+          "fa-handshake-simple",
+          "fa-handshake-simple-slash",
+          "fa-handshake-slash",
+          "fa-thumbs-down",
+          "fa-thumbs-up"
+      ]
   },
   {
-    key: 'games',
-    label: 'Games',
-    icons: [
-      'fa-chess',
-      'fa-chess-bishop',
-      'fa-chess-board',
-      'fa-chess-king',
-      'fa-chess-knight',
-      'fa-chess-pawn',
-      'fa-chess-queen',
-      'fa-chess-rook',
-      'fa-dice',
-      'fa-dice-d20',
-      'fa-dice-d6',
-      'fa-dice-five',
-      'fa-dice-four',
-      'fa-dice-one',
-      'fa-dice-six',
-      'fa-dice-three',
-      'fa-dice-two',
-      'fa-gamepad',
-      'fa-ghost',
-      'fa-headset',
-      'fa-heart',
-      'fa-playstation',
-      'fa-puzzle-piece',
-      'fa-steam',
-      'fa-steam-square',
-      'fa-steam-symbol',
-      'fa-twitch',
-      'fa-xbox'
-    ]
+      key: "holidays",
+      label: "Holidays",
+      icons: [
+          "fa-candy-cane",
+          "fa-carrot",
+          "fa-champagne-glasses",
+          "fa-cookie-bite",
+          "fa-face-grin-hearts",
+          "fa-face-kiss-wink-heart",
+          "fa-gift",
+          "fa-gifts",
+          "fa-heart",
+          "fa-holly-berry",
+          "fa-menorah",
+          "fa-mug-hot",
+          "fa-sleigh",
+          "fa-snowman"
+      ]
   },
   {
-    key: 'gaming-tabletop',
-    label: 'Tabletop Gaming',
-    icons: [
-      'fa-acquisitions-incorporated',
-      'fa-book-dead',
-      'fa-critical-role',
-      'fa-d-and-d',
-      'fa-d-and-d-beyond',
-      'fa-dice-d20',
-      'fa-dice-d6',
-      'fa-dragon',
-      'fa-dungeon',
-      'fa-fantasy-flight-games',
-      'fa-fist-raised',
-      'fa-hat-wizard',
-      'fa-penny-arcade',
-      'fa-ring',
-      'fa-scroll',
-      'fa-skull-crossbones',
-      'fa-wizards-of-the-coast'
-    ]
+      key: "household",
+      label: "Household",
+      icons: [
+          "fa-arrow-up-from-water-pump",
+          "fa-bath",
+          "fa-bed",
+          "fa-bell",
+          "fa-blender",
+          "fa-box-tissue",
+          "fa-chair",
+          "fa-computer",
+          "fa-couch",
+          "fa-door-closed",
+          "fa-door-open",
+          "fa-dungeon",
+          "fa-fan",
+          "fa-faucet",
+          "fa-faucet-drip",
+          "fa-fire-burner",
+          "fa-house-chimney-user",
+          "fa-house-chimney-window",
+          "fa-house-fire",
+          "fa-house-laptop",
+          "fa-house-lock",
+          "fa-house-signal",
+          "fa-house-user",
+          "fa-jar",
+          "fa-jar-wheat",
+          "fa-jug-detergent",
+          "fa-kitchen-set",
+          "fa-lightbulb",
+          "fa-mattress-pillow",
+          "fa-mug-saucer",
+          "fa-people-roof",
+          "fa-plug",
+          "fa-pump-soap",
+          "fa-rug",
+          "fa-sheet-plastic",
+          "fa-shower",
+          "fa-sink",
+          "fa-snowflake",
+          "fa-soap",
+          "fa-spoon",
+          "fa-stairs",
+          "fa-temperature-arrow-down",
+          "fa-temperature-arrow-up",
+          "fa-toilet",
+          "fa-toilet-paper",
+          "fa-toilet-paper-slash",
+          "fa-tv",
+          "fa-utensils"
+      ]
   },
   {
-    key: 'gender',
-    label: 'Genders',
-    icons: [
-      'fa-genderless',
-      'fa-mars',
-      'fa-mars-double',
-      'fa-mars-stroke',
-      'fa-mars-stroke-h',
-      'fa-mars-stroke-v',
-      'fa-mercury',
-      'fa-neuter',
-      'fa-transgender',
-      'fa-transgender-alt',
-      'fa-venus',
-      'fa-venus-double',
-      'fa-venus-mars'
-    ]
+      key: "humanitarian",
+      label: "Humanitarian",
+      icons: [
+          "fa-anchor",
+          "fa-anchor-circle-check",
+          "fa-anchor-circle-exclamation",
+          "fa-anchor-circle-xmark",
+          "fa-anchor-lock",
+          "fa-arrow-down-up-across-line",
+          "fa-arrow-down-up-lock",
+          "fa-arrow-right-to-city",
+          "fa-arrow-up-from-ground-water",
+          "fa-arrow-up-from-water-pump",
+          "fa-arrow-up-right-dots",
+          "fa-arrow-up-right-from-square",
+          "fa-arrows-down-to-line",
+          "fa-arrows-down-to-people",
+          "fa-arrows-left-right-to-line",
+          "fa-arrows-spin",
+          "fa-arrows-split-up-and-left",
+          "fa-arrows-to-circle",
+          "fa-arrows-to-dot",
+          "fa-arrows-to-eye",
+          "fa-arrows-turn-right",
+          "fa-arrows-turn-to-dots",
+          "fa-arrows-up-to-line",
+          "fa-baby",
+          "fa-bacterium",
+          "fa-ban",
+          "fa-bed",
+          "fa-biohazard",
+          "fa-book-bookmark",
+          "fa-bore-hole",
+          "fa-bottle-droplet",
+          "fa-bottle-water",
+          "fa-bowl-food",
+          "fa-bowl-rice",
+          "fa-boxes-packing",
+          "fa-bridge",
+          "fa-bridge-circle-check",
+          "fa-bridge-circle-exclamation",
+          "fa-bridge-circle-xmark",
+          "fa-bridge-lock",
+          "fa-bridge-water",
+          "fa-bucket",
+          "fa-bugs",
+          "fa-building",
+          "fa-building-circle-arrow-right",
+          "fa-building-circle-check",
+          "fa-building-circle-exclamation",
+          "fa-building-circle-xmark",
+          "fa-building-columns",
+          "fa-building-flag",
+          "fa-building-lock",
+          "fa-building-ngo",
+          "fa-building-shield",
+          "fa-building-un",
+          "fa-building-user",
+          "fa-building-wheat",
+          "fa-burst",
+          "fa-bus",
+          "fa-car",
+          "fa-car-on",
+          "fa-car-tunnel",
+          "fa-child-combatant",
+          "fa-children",
+          "fa-church",
+          "fa-circle-h",
+          "fa-circle-nodes",
+          "fa-clipboard-question",
+          "fa-clipboard-user",
+          "fa-cloud-bolt",
+          "fa-cloud-showers-heavy",
+          "fa-cloud-showers-water",
+          "fa-computer",
+          "fa-cow",
+          "fa-cubes-stacked",
+          "fa-display",
+          "fa-droplet",
+          "fa-envelope",
+          "fa-envelope-circle-check",
+          "fa-explosion",
+          "fa-faucet-drip",
+          "fa-fax",
+          "fa-ferry",
+          "fa-file",
+          "fa-file-circle-check",
+          "fa-file-circle-exclamation",
+          "fa-file-circle-minus",
+          "fa-file-circle-plus",
+          "fa-file-circle-question",
+          "fa-file-circle-xmark",
+          "fa-file-csv",
+          "fa-file-pdf",
+          "fa-file-pen",
+          "fa-file-shield",
+          "fa-fire-burner",
+          "fa-fire-flame-simple",
+          "fa-fish-fins",
+          "fa-flag",
+          "fa-flask-vial",
+          "fa-gas-pump",
+          "fa-glass-water",
+          "fa-glass-water-droplet",
+          "fa-gopuram",
+          "fa-group-arrows-rotate",
+          "fa-hammer",
+          "fa-hand-holding-hand",
+          "fa-handcuffs",
+          "fa-hands-bound",
+          "fa-hands-bubbles",
+          "fa-hands-holding-child",
+          "fa-hands-holding-circle",
+          "fa-handshake-simple",
+          "fa-headset",
+          "fa-heart-circle-bolt",
+          "fa-heart-circle-check",
+          "fa-heart-circle-exclamation",
+          "fa-heart-circle-minus",
+          "fa-heart-circle-plus",
+          "fa-heart-circle-xmark",
+          "fa-helicopter",
+          "fa-helicopter-symbol",
+          "fa-helmet-un",
+          "fa-hill-avalanche",
+          "fa-hill-rockslide",
+          "fa-hospital",
+          "fa-hotel",
+          "fa-house-chimney",
+          "fa-house-chimney-crack",
+          "fa-house-circle-check",
+          "fa-house-circle-exclamation",
+          "fa-house-circle-xmark",
+          "fa-house-fire",
+          "fa-house-flag",
+          "fa-house-flood-water",
+          "fa-house-flood-water-circle-arrow-right",
+          "fa-house-lock",
+          "fa-house-medical",
+          "fa-house-medical-circle-check",
+          "fa-house-medical-circle-exclamation",
+          "fa-house-medical-circle-xmark",
+          "fa-house-medical-flag",
+          "fa-house-signal",
+          "fa-house-tsunami",
+          "fa-hurricane",
+          "fa-id-card",
+          "fa-jar",
+          "fa-jar-wheat",
+          "fa-jet-fighter-up",
+          "fa-jug-detergent",
+          "fa-kitchen-set",
+          "fa-land-mine-on",
+          "fa-landmark",
+          "fa-landmark-dome",
+          "fa-landmark-flag",
+          "fa-laptop",
+          "fa-laptop-file",
+          "fa-life-ring",
+          "fa-lines-leaning",
+          "fa-location-pin-lock",
+          "fa-locust",
+          "fa-lungs",
+          "fa-magnifying-glass-arrow-right",
+          "fa-magnifying-glass-chart",
+          "fa-mars-and-venus",
+          "fa-mars-and-venus-burst",
+          "fa-mask-face",
+          "fa-mask-ventilator",
+          "fa-mattress-pillow",
+          "fa-microscope",
+          "fa-mobile-retro",
+          "fa-mobile-screen",
+          "fa-money-bill-transfer",
+          "fa-money-bill-trend-up",
+          "fa-money-bill-wheat",
+          "fa-money-bills",
+          "fa-mosque",
+          "fa-mosquito",
+          "fa-mosquito-net",
+          "fa-mound",
+          "fa-mountain-city",
+          "fa-mountain-sun",
+          "fa-oil-well",
+          "fa-parachute-box",
+          "fa-people-arrows",
+          "fa-people-group",
+          "fa-people-line",
+          "fa-people-pulling",
+          "fa-people-robbery",
+          "fa-people-roof",
+          "fa-person",
+          "fa-person-arrow-down-to-line",
+          "fa-person-arrow-up-from-line",
+          "fa-person-breastfeeding",
+          "fa-person-burst",
+          "fa-person-cane",
+          "fa-person-chalkboard",
+          "fa-person-circle-check",
+          "fa-person-circle-exclamation",
+          "fa-person-circle-minus",
+          "fa-person-circle-plus",
+          "fa-person-circle-question",
+          "fa-person-circle-xmark",
+          "fa-person-digging",
+          "fa-person-dress",
+          "fa-person-dress-burst",
+          "fa-person-drowning",
+          "fa-person-falling",
+          "fa-person-falling-burst",
+          "fa-person-half-dress",
+          "fa-person-harassing",
+          "fa-person-military-pointing",
+          "fa-person-military-rifle",
+          "fa-person-military-to-person",
+          "fa-person-pregnant",
+          "fa-person-rays",
+          "fa-person-rifle",
+          "fa-person-shelter",
+          "fa-person-through-window",
+          "fa-person-walking",
+          "fa-person-walking-arrow-loop-left",
+          "fa-person-walking-arrow-right",
+          "fa-person-walking-dashed-line-arrow-right",
+          "fa-person-walking-luggage",
+          "fa-pills",
+          "fa-plane-circle-check",
+          "fa-plane-circle-exclamation",
+          "fa-plane-circle-xmark",
+          "fa-plane-lock",
+          "fa-plane-up",
+          "fa-plant-wilt",
+          "fa-plate-wheat",
+          "fa-plug",
+          "fa-plug-circle-bolt",
+          "fa-plug-circle-check",
+          "fa-plug-circle-exclamation",
+          "fa-plug-circle-minus",
+          "fa-plug-circle-plus",
+          "fa-plug-circle-xmark",
+          "fa-pump-soap",
+          "fa-radiation",
+          "fa-radio",
+          "fa-ranking-star",
+          "fa-road",
+          "fa-road-barrier",
+          "fa-road-bridge",
+          "fa-road-circle-check",
+          "fa-road-circle-exclamation",
+          "fa-road-circle-xmark",
+          "fa-road-lock",
+          "fa-road-spikes",
+          "fa-rug",
+          "fa-sack-dollar",
+          "fa-sack-xmark",
+          "fa-sailboat",
+          "fa-satellite-dish",
+          "fa-scale-balanced",
+          "fa-school",
+          "fa-school-circle-check",
+          "fa-school-circle-exclamation",
+          "fa-school-circle-xmark",
+          "fa-school-flag",
+          "fa-school-lock",
+          "fa-seedling",
+          "fa-sheet-plastic",
+          "fa-shield-cat",
+          "fa-shield-dog",
+          "fa-shield-heart",
+          "fa-ship",
+          "fa-shirt",
+          "fa-shop",
+          "fa-shop-lock",
+          "fa-shower",
+          "fa-skull-crossbones",
+          "fa-snowflake",
+          "fa-soap",
+          "fa-square-nfi",
+          "fa-square-person-confined",
+          "fa-square-virus",
+          "fa-staff-snake",
+          "fa-stethoscope",
+          "fa-suitcase-medical",
+          "fa-sun-plant-wilt",
+          "fa-syringe",
+          "fa-tarp",
+          "fa-tarp-droplet",
+          "fa-temperature-arrow-down",
+          "fa-temperature-arrow-up",
+          "fa-tent",
+          "fa-tent-arrow-down-to-line",
+          "fa-tent-arrow-left-right",
+          "fa-tent-arrow-turn-left",
+          "fa-tent-arrows-down",
+          "fa-tents",
+          "fa-toilet",
+          "fa-toilet-portable",
+          "fa-toilets-portable",
+          "fa-tornado",
+          "fa-tower-broadcast",
+          "fa-tower-cell",
+          "fa-tower-observation",
+          "fa-train-subway",
+          "fa-trash-can",
+          "fa-tree-city",
+          "fa-trowel",
+          "fa-trowel-bricks",
+          "fa-truck",
+          "fa-truck-arrow-right",
+          "fa-truck-droplet",
+          "fa-truck-field",
+          "fa-truck-field-un",
+          "fa-truck-front",
+          "fa-truck-medical",
+          "fa-truck-plane",
+          "fa-user-doctor",
+          "fa-user-injured",
+          "fa-users-between-lines",
+          "fa-users-line",
+          "fa-users-rays",
+          "fa-users-rectangle",
+          "fa-users-viewfinder",
+          "fa-vial-circle-check",
+          "fa-vial-virus",
+          "fa-vihara",
+          "fa-virus",
+          "fa-virus-covid",
+          "fa-volcano",
+          "fa-walkie-talkie",
+          "fa-wheat-awn",
+          "fa-wheat-awn-circle-exclamation",
+          "fa-wheelchair-move",
+          "fa-wifi",
+          "fa-wind",
+          "fa-worm",
+          "fa-xmarks-lines"
+      ]
   },
   {
-    key: 'halloween',
-    label: 'Halloween',
-    icons: [
-      'fa-book-dead',
-      'fa-broom',
-      'fa-cat',
-      'fa-cloud-moon',
-      'fa-crow',
-      'fa-ghost',
-      'fa-hat-wizard',
-      'fa-mask',
-      'fa-skull-crossbones',
-      'fa-spider',
-      'fa-toilet-paper'
-    ]
+      key: "logistics",
+      label: "Logistics",
+      icons: [
+          "fa-anchor",
+          "fa-anchor-circle-check",
+          "fa-anchor-circle-exclamation",
+          "fa-anchor-circle-xmark",
+          "fa-anchor-lock",
+          "fa-box",
+          "fa-boxes-packing",
+          "fa-boxes-stacked",
+          "fa-bridge",
+          "fa-bridge-circle-check",
+          "fa-bridge-circle-exclamation",
+          "fa-bridge-circle-xmark",
+          "fa-bridge-lock",
+          "fa-bridge-water",
+          "fa-bus",
+          "fa-bus-simple",
+          "fa-car",
+          "fa-car-tunnel",
+          "fa-cart-flatbed",
+          "fa-chart-simple",
+          "fa-clipboard-check",
+          "fa-clipboard-list",
+          "fa-clipboard-question",
+          "fa-dolly",
+          "fa-ferry",
+          "fa-gas-pump",
+          "fa-gears",
+          "fa-helicopter",
+          "fa-helicopter-symbol",
+          "fa-helmet-safety",
+          "fa-jet-fighter-up",
+          "fa-pallet",
+          "fa-plane-circle-check",
+          "fa-plane-circle-exclamation",
+          "fa-plane-circle-xmark",
+          "fa-plane-lock",
+          "fa-road",
+          "fa-road-barrier",
+          "fa-road-bridge",
+          "fa-road-circle-check",
+          "fa-road-circle-exclamation",
+          "fa-road-circle-xmark",
+          "fa-road-lock",
+          "fa-sailboat",
+          "fa-square-nfi",
+          "fa-train",
+          "fa-train-subway",
+          "fa-truck",
+          "fa-truck-arrow-right",
+          "fa-truck-fast",
+          "fa-truck-field",
+          "fa-truck-field-un",
+          "fa-truck-front",
+          "fa-truck-plane",
+          "fa-warehouse",
+          "fa-xmarks-lines"
+      ]
   },
   {
-    key: 'hands',
-    label: 'Hands',
-    icons: [
-      'fa-allergies',
-      'fa-fist-raised',
-      'fa-hand-holding',
-      'fa-hand-holding-heart',
-      'fa-hand-holding-medical',
-      'fa-hand-holding-usd',
-      'fa-hand-holding-water',
-      'fa-hand-lizard',
-      'fa-hand-middle-finger',
-      'fa-hand-paper',
-      'fa-hand-peace',
-      'fa-hand-point-down',
-      'fa-hand-point-left',
-      'fa-hand-point-right',
-      'fa-hand-point-up',
-      'fa-hand-pointer',
-      'fa-hand-rock',
-      'fa-hand-scissors',
-      'fa-hand-sparkles',
-      'fa-hand-spock',
-      'fa-hands',
-      'fa-hands-helping',
-      'fa-hands-wash',
-      'fa-handshake',
-      'fa-handshake-alt-slash',
-      'fa-handshake-slash',
-      'fa-praying-hands',
-      'fa-thumbs-down',
-      'fa-thumbs-up'
-    ]
+      key: "maps",
+      label: "Maps",
+      icons: [
+          "fa-anchor",
+          "fa-bag-shopping",
+          "fa-basket-shopping",
+          "fa-bath",
+          "fa-bed",
+          "fa-beer-mug-empty",
+          "fa-bell",
+          "fa-bell-slash",
+          "fa-bicycle",
+          "fa-binoculars",
+          "fa-bomb",
+          "fa-book",
+          "fa-book-atlas",
+          "fa-bookmark",
+          "fa-bridge",
+          "fa-bridge-water",
+          "fa-briefcase",
+          "fa-building",
+          "fa-building-columns",
+          "fa-cake-candles",
+          "fa-car",
+          "fa-cart-shopping",
+          "fa-circle-info",
+          "fa-crosshairs",
+          "fa-diamond-turn-right",
+          "fa-dollar-sign",
+          "fa-draw-polygon",
+          "fa-droplet",
+          "fa-eye",
+          "fa-eye-low-vision",
+          "fa-eye-slash",
+          "fa-fire",
+          "fa-fire-extinguisher",
+          "fa-fire-flame-curved",
+          "fa-flag",
+          "fa-flag-checkered",
+          "fa-flask",
+          "fa-gamepad",
+          "fa-gavel",
+          "fa-gift",
+          "fa-globe",
+          "fa-graduation-cap",
+          "fa-heart",
+          "fa-heart-pulse",
+          "fa-helicopter",
+          "fa-helicopter-symbol",
+          "fa-hospital",
+          "fa-house",
+          "fa-image",
+          "fa-images",
+          "fa-industry",
+          "fa-info",
+          "fa-jet-fighter",
+          "fa-key",
+          "fa-landmark",
+          "fa-landmark-flag",
+          "fa-layer-group",
+          "fa-leaf",
+          "fa-lemon",
+          "fa-life-ring",
+          "fa-lightbulb",
+          "fa-location-arrow",
+          "fa-location-crosshairs",
+          "fa-location-dot",
+          "fa-location-pin",
+          "fa-location-pin-lock",
+          "fa-magnet",
+          "fa-magnifying-glass",
+          "fa-magnifying-glass-minus",
+          "fa-magnifying-glass-plus",
+          "fa-map",
+          "fa-map-pin",
+          "fa-martini-glass-empty",
+          "fa-money-bill",
+          "fa-money-bill-1",
+          "fa-monument",
+          "fa-motorcycle",
+          "fa-mountain-sun",
+          "fa-mug-saucer",
+          "fa-music",
+          "fa-newspaper",
+          "fa-paw",
+          "fa-person",
+          "fa-person-walking-with-cane",
+          "fa-phone",
+          "fa-phone-flip",
+          "fa-phone-volume",
+          "fa-plane",
+          "fa-plug",
+          "fa-plus",
+          "fa-print",
+          "fa-recycle",
+          "fa-restroom",
+          "fa-road",
+          "fa-rocket",
+          "fa-route",
+          "fa-scale-balanced",
+          "fa-scale-unbalanced",
+          "fa-scale-unbalanced-flip",
+          "fa-ship",
+          "fa-shoe-prints",
+          "fa-shower",
+          "fa-signs-post",
+          "fa-snowplow",
+          "fa-spoon",
+          "fa-square-h",
+          "fa-square-parking",
+          "fa-square-phone",
+          "fa-square-phone-flip",
+          "fa-square-plus",
+          "fa-street-view",
+          "fa-suitcase",
+          "fa-suitcase-medical",
+          "fa-tag",
+          "fa-tags",
+          "fa-taxi",
+          "fa-thumbtack",
+          "fa-ticket",
+          "fa-ticket-simple",
+          "fa-traffic-light",
+          "fa-train",
+          "fa-train-subway",
+          "fa-train-tram",
+          "fa-tree",
+          "fa-trophy",
+          "fa-truck",
+          "fa-truck-medical",
+          "fa-tty",
+          "fa-umbrella",
+          "fa-utensils",
+          "fa-vest",
+          "fa-vest-patches",
+          "fa-wheelchair",
+          "fa-wheelchair-move",
+          "fa-wifi",
+          "fa-wine-glass",
+          "fa-wrench"
+      ]
   },
   {
-    key: 'health',
-    label: 'Health',
-    icons: [
-      'fa-accessible-icon',
-      'fa-ambulance',
-      'fa-h-square',
-      'fa-heart',
-      'fa-heartbeat',
-      'fa-hospital',
-      'fa-medkit',
-      'fa-plus-square',
-      'fa-prescription',
-      'fa-stethoscope',
-      'fa-user-md',
-      'fa-wheelchair'
-    ]
+      key: "maritime",
+      label: "Maritime",
+      icons: [
+          "fa-anchor",
+          "fa-anchor-circle-check",
+          "fa-anchor-circle-exclamation",
+          "fa-anchor-circle-xmark",
+          "fa-anchor-lock",
+          "fa-ferry",
+          "fa-fish",
+          "fa-fish-fins",
+          "fa-otter",
+          "fa-person-swimming",
+          "fa-sailboat",
+          "fa-ship",
+          "fa-shrimp",
+          "fa-water"
+      ]
   },
   {
-    key: 'holiday',
-    label: 'Holiday',
-    icons: [
-      'fa-candy-cane',
-      'fa-carrot',
-      'fa-cookie-bite',
-      'fa-gift',
-      'fa-gifts',
-      'fa-glass-cheers',
-      'fa-holly-berry',
-      'fa-mug-hot',
-      'fa-sleigh',
-      'fa-snowman'
-    ]
+      key: "marketing",
+      label: "Marketing",
+      icons: [
+          "fa-arrows-spin",
+          "fa-arrows-to-dot",
+          "fa-arrows-to-eye",
+          "fa-bullhorn",
+          "fa-bullseye",
+          "fa-chart-simple",
+          "fa-comment-dollar",
+          "fa-comments-dollar",
+          "fa-envelope-open-text",
+          "fa-envelopes-bulk",
+          "fa-filter-circle-dollar",
+          "fa-group-arrows-rotate",
+          "fa-lightbulb",
+          "fa-magnifying-glass-arrow-right",
+          "fa-magnifying-glass-chart",
+          "fa-magnifying-glass-dollar",
+          "fa-magnifying-glass-location",
+          "fa-people-group",
+          "fa-person-rays",
+          "fa-ranking-star",
+          "fa-rectangle-ad",
+          "fa-square-poll-horizontal",
+          "fa-square-poll-vertical",
+          "fa-timeline"
+      ]
   },
   {
-    key: 'hotel',
-    label: 'Hotel',
-    icons: [
-      'fa-baby-carriage',
-      'fa-bath',
-      'fa-bed',
-      'fa-briefcase',
-      'fa-car',
-      'fa-cocktail',
-      'fa-coffee',
-      'fa-concierge-bell',
-      'fa-dice',
-      'fa-dice-five',
-      'fa-door-closed',
-      'fa-door-open',
-      'fa-dumbbell',
-      'fa-glass-martini',
-      'fa-glass-martini-alt',
-      'fa-hot-tub',
-      'fa-hotel',
-      'fa-infinity',
-      'fa-key',
-      'fa-luggage-cart',
-      'fa-shower',
-      'fa-shuttle-van',
-      'fa-smoking',
-      'fa-smoking-ban',
-      'fa-snowflake',
-      'fa-spa',
-      'fa-suitcase',
-      'fa-suitcase-rolling',
-      'fa-swimmer',
-      'fa-swimming-pool',
-      'fa-tv',
-      'fa-umbrella-beach',
-      'fa-utensils',
-      'fa-wheelchair',
-      'fa-wifi'
-    ]
+      key: "mathematics",
+      label: "Mathematics",
+      icons: [
+          "fa-calculator",
+          "fa-circle-minus",
+          "fa-circle-plus",
+          "fa-circle-xmark",
+          "fa-divide",
+          "fa-equals",
+          "fa-greater-than",
+          "fa-greater-than-equal",
+          "fa-infinity",
+          "fa-less-than",
+          "fa-less-than-equal",
+          "fa-minus",
+          "fa-not-equal",
+          "fa-percent",
+          "fa-plus",
+          "fa-plus-minus",
+          "fa-square-minus",
+          "fa-square-root-variable",
+          "fa-square-xmark",
+          "fa-subscript",
+          "fa-superscript",
+          "fa-wave-square",
+          "fa-xmark"
+      ]
   },
   {
-    key: 'household',
-    label: 'Household',
-    icons: [
-      'fa-bath',
-      'fa-bed',
-      'fa-bell',
-      'fa-blender',
-      'fa-box-tissue',
-      'fa-chair',
-      'fa-coffee',
-      'fa-couch',
-      'fa-door-closed',
-      'fa-door-open',
-      'fa-dungeon',
-      'fa-fan',
-      'fa-faucet',
-      'fa-house-user',
-      'fa-laptop-house',
-      'fa-lightbulb',
-      'fa-plug',
-      'fa-pump-soap',
-      'fa-shower',
-      'fa-sink',
-      'fa-snowflake',
-      'fa-soap',
-      'fa-toilet-paper',
-      'fa-toilet-paper-slash',
-      'fa-tv'
-    ]
+      key: "media-playback",
+      label: "Media Playback",
+      icons: [
+          "fa-arrow-rotate-left",
+          "fa-arrow-rotate-right",
+          "fa-arrows-rotate",
+          "fa-backward",
+          "fa-backward-fast",
+          "fa-backward-step",
+          "fa-circle-pause",
+          "fa-circle-play",
+          "fa-circle-stop",
+          "fa-compress",
+          "fa-down-left-and-up-right-to-center",
+          "fa-eject",
+          "fa-expand",
+          "fa-forward",
+          "fa-forward-fast",
+          "fa-forward-step",
+          "fa-hand",
+          "fa-maximize",
+          "fa-minimize",
+          "fa-music",
+          "fa-pause",
+          "fa-phone-volume",
+          "fa-play",
+          "fa-plus-minus",
+          "fa-repeat",
+          "fa-rotate",
+          "fa-rotate-left",
+          "fa-rotate-right",
+          "fa-rss",
+          "fa-shuffle",
+          "fa-sliders",
+          "fa-stop",
+          "fa-up-right-and-down-left-from-center",
+          "fa-volume-high",
+          "fa-volume-low",
+          "fa-volume-off",
+          "fa-volume-xmark"
+      ]
   },
   {
-    key: 'images',
-    label: 'Images',
-    icons: [
-      'fa-adjust',
-      'fa-bolt',
-      'fa-camera',
-      'fa-camera-retro',
-      'fa-chalkboard',
-      'fa-clone',
-      'fa-compress',
-      'fa-compress-arrows-alt',
-      'fa-expand',
-      'fa-eye',
-      'fa-eye-dropper',
-      'fa-eye-slash',
-      'fa-file-image',
-      'fa-film',
-      'fa-id-badge',
-      'fa-id-card',
-      'fa-image',
-      'fa-images',
-      'fa-photo-video',
-      'fa-portrait',
-      'fa-sliders-h',
-      'fa-tint',
-      'fa-unsplash'
-    ]
+      key: "medical-health",
+      label: "Medical + Health",
+      icons: [
+          "fa-accessible-icon",
+          "fa-bacteria",
+          "fa-bacterium",
+          "fa-ban-smoking",
+          "fa-bandage",
+          "fa-bed-pulse",
+          "fa-biohazard",
+          "fa-bone",
+          "fa-bong",
+          "fa-book-medical",
+          "fa-brain",
+          "fa-briefcase-medical",
+          "fa-cannabis",
+          "fa-capsules",
+          "fa-circle-h",
+          "fa-circle-radiation",
+          "fa-clipboard-user",
+          "fa-clock-rotate-left",
+          "fa-comment-medical",
+          "fa-crutch",
+          "fa-disease",
+          "fa-dna",
+          "fa-eye",
+          "fa-eye-dropper",
+          "fa-file-medical",
+          "fa-file-prescription",
+          "fa-file-waveform",
+          "fa-fire-flame-simple",
+          "fa-flask",
+          "fa-flask-vial",
+          "fa-hand-dots",
+          "fa-hand-holding-medical",
+          "fa-head-side-cough",
+          "fa-head-side-cough-slash",
+          "fa-head-side-mask",
+          "fa-head-side-virus",
+          "fa-heart",
+          "fa-heart-circle-bolt",
+          "fa-heart-circle-check",
+          "fa-heart-circle-exclamation",
+          "fa-heart-circle-minus",
+          "fa-heart-circle-plus",
+          "fa-heart-circle-xmark",
+          "fa-heart-pulse",
+          "fa-hospital",
+          "fa-hospital-user",
+          "fa-house-chimney-medical",
+          "fa-house-medical",
+          "fa-house-medical-circle-check",
+          "fa-house-medical-circle-exclamation",
+          "fa-house-medical-circle-xmark",
+          "fa-house-medical-flag",
+          "fa-id-card-clip",
+          "fa-joint",
+          "fa-kit-medical",
+          "fa-laptop-medical",
+          "fa-lungs",
+          "fa-lungs-virus",
+          "fa-mask-face",
+          "fa-mask-ventilator",
+          "fa-microscope",
+          "fa-mortar-pestle",
+          "fa-notes-medical",
+          "fa-pager",
+          "fa-person-breastfeeding",
+          "fa-person-cane",
+          "fa-person-dots-from-line",
+          "fa-person-half-dress",
+          "fa-pills",
+          "fa-plus",
+          "fa-poop",
+          "fa-prescription",
+          "fa-prescription-bottle",
+          "fa-prescription-bottle-medical",
+          "fa-pump-medical",
+          "fa-radiation",
+          "fa-receipt",
+          "fa-shield-virus",
+          "fa-skull",
+          "fa-skull-crossbones",
+          "fa-smoking",
+          "fa-square-h",
+          "fa-square-plus",
+          "fa-square-virus",
+          "fa-staff-snake",
+          "fa-star-of-life",
+          "fa-stethoscope",
+          "fa-suitcase-medical",
+          "fa-syringe",
+          "fa-tablets",
+          "fa-teeth",
+          "fa-teeth-open",
+          "fa-thermometer",
+          "fa-tooth",
+          "fa-truck-medical",
+          "fa-user-doctor",
+          "fa-user-nurse",
+          "fa-vial",
+          "fa-vial-circle-check",
+          "fa-vial-virus",
+          "fa-vials",
+          "fa-virus",
+          "fa-virus-covid",
+          "fa-virus-covid-slash",
+          "fa-virus-slash",
+          "fa-viruses",
+          "fa-weight-scale",
+          "fa-wheelchair",
+          "fa-wheelchair-move",
+          "fa-x-ray"
+      ]
   },
   {
-    key: 'interfaces',
-    label: 'Interfaces',
-    icons: [
-      'fa-award',
-      'fa-ban',
-      'fa-barcode',
-      'fa-bars',
-      'fa-beer',
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-blog',
-      'fa-bug',
-      'fa-bullhorn',
-      'fa-bullseye',
-      'fa-calculator',
-      'fa-calendar',
-      'fa-calendar-alt',
-      'fa-calendar-check',
-      'fa-calendar-minus',
-      'fa-calendar-plus',
-      'fa-calendar-times',
-      'fa-certificate',
-      'fa-check',
-      'fa-check-circle',
-      'fa-check-double',
-      'fa-check-square',
-      'fa-circle',
-      'fa-clipboard',
-      'fa-clone',
-      'fa-cloud',
-      'fa-cloud-download-alt',
-      'fa-cloud-upload-alt',
-      'fa-coffee',
-      'fa-cog',
-      'fa-cogs',
-      'fa-copy',
-      'fa-cut',
-      'fa-database',
-      'fa-dot-circle',
-      'fa-download',
-      'fa-edit',
-      'fa-ellipsis-h',
-      'fa-ellipsis-v',
-      'fa-envelope',
-      'fa-envelope-open',
-      'fa-eraser',
-      'fa-exclamation',
-      'fa-exclamation-circle',
-      'fa-exclamation-triangle',
-      'fa-external-link-alt',
-      'fa-external-link-square-alt',
-      'fa-eye',
-      'fa-eye-slash',
-      'fa-file',
-      'fa-file-alt',
-      'fa-file-download',
-      'fa-file-export',
-      'fa-file-import',
-      'fa-file-upload',
-      'fa-filter',
-      'fa-fingerprint',
-      'fa-flag',
-      'fa-flag-checkered',
-      'fa-folder',
-      'fa-folder-open',
-      'fa-frown',
-      'fa-glasses',
-      'fa-grip-horizontal',
-      'fa-grip-lines',
-      'fa-grip-lines-vertical',
-      'fa-grip-vertical',
-      'fa-hashtag',
-      'fa-heart',
-      'fa-history',
-      'fa-home',
-      'fa-i-cursor',
-      'fa-info',
-      'fa-info-circle',
-      'fa-language',
-      'fa-magic',
-      'fa-marker',
-      'fa-medal',
-      'fa-meh',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-microphone-slash',
-      'fa-minus',
-      'fa-minus-circle',
-      'fa-minus-square',
-      'fa-paste',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-fancy',
-      'fa-pencil-alt',
-      'fa-plus',
-      'fa-plus-circle',
-      'fa-plus-square',
-      'fa-poo',
-      'fa-qrcode',
-      'fa-question',
-      'fa-question-circle',
-      'fa-quote-left',
-      'fa-quote-right',
-      'fa-redo',
-      'fa-redo-alt',
-      'fa-reply',
-      'fa-reply-all',
-      'fa-rss',
-      'fa-rss-square',
-      'fa-save',
-      'fa-screwdriver',
-      'fa-search',
-      'fa-search-minus',
-      'fa-search-plus',
-      'fa-share',
-      'fa-share-alt',
-      'fa-share-alt-square',
-      'fa-share-square',
-      'fa-shield-alt',
-      'fa-sign-in-alt',
-      'fa-sign-out-alt',
-      'fa-signal',
-      'fa-sitemap',
-      'fa-sliders-h',
-      'fa-smile',
-      'fa-sort',
-      'fa-sort-alpha-down',
-      'fa-sort-alpha-down-alt',
-      'fa-sort-alpha-up',
-      'fa-sort-alpha-up-alt',
-      'fa-sort-amount-down',
-      'fa-sort-amount-down-alt',
-      'fa-sort-amount-up',
-      'fa-sort-amount-up-alt',
-      'fa-sort-down',
-      'fa-sort-numeric-down',
-      'fa-sort-numeric-down-alt',
-      'fa-sort-numeric-up',
-      'fa-sort-numeric-up-alt',
-      'fa-sort-up',
-      'fa-star',
-      'fa-star-half',
-      'fa-sync',
-      'fa-sync-alt',
-      'fa-thumbs-down',
-      'fa-thumbs-up',
-      'fa-times',
-      'fa-times-circle',
-      'fa-toggle-off',
-      'fa-toggle-on',
-      'fa-tools',
-      'fa-trash',
-      'fa-trash-alt',
-      'fa-trash-restore',
-      'fa-trash-restore-alt',
-      'fa-trophy',
-      'fa-undo',
-      'fa-undo-alt',
-      'fa-upload',
-      'fa-user',
-      'fa-user-alt',
-      'fa-user-circle',
-      'fa-volume-down',
-      'fa-volume-mute',
-      'fa-volume-off',
-      'fa-volume-up',
-      'fa-wifi',
-      'fa-wrench'
-    ]
+      key: "money",
+      label: "Money",
+      icons: [
+          "fa-austral-sign",
+          "fa-baht-sign",
+          "fa-bangladeshi-taka-sign",
+          "fa-bitcoin",
+          "fa-bitcoin-sign",
+          "fa-brazilian-real-sign",
+          "fa-btc",
+          "fa-cash-register",
+          "fa-cedi-sign",
+          "fa-cent-sign",
+          "fa-chart-line",
+          "fa-chart-pie",
+          "fa-circle-dollar-to-slot",
+          "fa-coins",
+          "fa-colon-sign",
+          "fa-comment-dollar",
+          "fa-comments-dollar",
+          "fa-credit-card",
+          "fa-cruzeiro-sign",
+          "fa-dollar-sign",
+          "fa-dong-sign",
+          "fa-ethereum",
+          "fa-euro-sign",
+          "fa-file-invoice",
+          "fa-file-invoice-dollar",
+          "fa-florin-sign",
+          "fa-franc-sign",
+          "fa-gg",
+          "fa-gg-circle",
+          "fa-guarani-sign",
+          "fa-hand-holding-dollar",
+          "fa-hryvnia-sign",
+          "fa-indian-rupee-sign",
+          "fa-kip-sign",
+          "fa-landmark",
+          "fa-lari-sign",
+          "fa-lira-sign",
+          "fa-litecoin-sign",
+          "fa-manat-sign",
+          "fa-mill-sign",
+          "fa-money-bill",
+          "fa-money-bill-1",
+          "fa-money-bill-1-wave",
+          "fa-money-bill-transfer",
+          "fa-money-bill-trend-up",
+          "fa-money-bill-wave",
+          "fa-money-bill-wheat",
+          "fa-money-bills",
+          "fa-money-check",
+          "fa-money-check-dollar",
+          "fa-naira-sign",
+          "fa-percent",
+          "fa-peseta-sign",
+          "fa-peso-sign",
+          "fa-piggy-bank",
+          "fa-receipt",
+          "fa-ruble-sign",
+          "fa-rupee-sign",
+          "fa-rupiah-sign",
+          "fa-sack-dollar",
+          "fa-sack-xmark",
+          "fa-scale-balanced",
+          "fa-scale-unbalanced",
+          "fa-scale-unbalanced-flip",
+          "fa-shekel-sign",
+          "fa-stamp",
+          "fa-sterling-sign",
+          "fa-tenge-sign",
+          "fa-turkish-lira-sign",
+          "fa-vault",
+          "fa-wallet",
+          "fa-won-sign",
+          "fa-yen-sign"
+      ]
   },
   {
-    key: 'logistics',
-    label: 'Logistics',
-    icons: [
-      'fa-box',
-      'fa-boxes',
-      'fa-clipboard-check',
-      'fa-clipboard-list',
-      'fa-dolly',
-      'fa-dolly-flatbed',
-      'fa-hard-hat',
-      'fa-pallet',
-      'fa-shipping-fast',
-      'fa-truck',
-      'fa-warehouse'
-    ]
+      key: "moving",
+      label: "Moving",
+      icons: [
+          "fa-box-archive",
+          "fa-box-open",
+          "fa-boxes-packing",
+          "fa-caravan",
+          "fa-couch",
+          "fa-dolly",
+          "fa-house-chimney",
+          "fa-people-carry-box",
+          "fa-route",
+          "fa-sign-hanging",
+          "fa-suitcase",
+          "fa-tape",
+          "fa-trailer",
+          "fa-truck-moving",
+          "fa-truck-ramp-box",
+          "fa-wine-glass"
+      ]
   },
   {
-    key: 'maps',
-    label: 'Maps',
-    icons: [
-      'fa-ambulance',
-      'fa-anchor',
-      'fa-balance-scale',
-      'fa-balance-scale-left',
-      'fa-balance-scale-right',
-      'fa-bath',
-      'fa-bed',
-      'fa-beer',
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-bicycle',
-      'fa-binoculars',
-      'fa-birthday-cake',
-      'fa-blind',
-      'fa-bomb',
-      'fa-book',
-      'fa-bookmark',
-      'fa-briefcase',
-      'fa-building',
-      'fa-car',
-      'fa-coffee',
-      'fa-crosshairs',
-      'fa-directions',
-      'fa-dollar-sign',
-      'fa-draw-polygon',
-      'fa-eye',
-      'fa-eye-slash',
-      'fa-fighter-jet',
-      'fa-fire',
-      'fa-fire-alt',
-      'fa-fire-extinguisher',
-      'fa-flag',
-      'fa-flag-checkered',
-      'fa-flask',
-      'fa-gamepad',
-      'fa-gavel',
-      'fa-gift',
-      'fa-glass-martini',
-      'fa-globe',
-      'fa-graduation-cap',
-      'fa-h-square',
-      'fa-heart',
-      'fa-heartbeat',
-      'fa-helicopter',
-      'fa-home',
-      'fa-hospital',
-      'fa-image',
-      'fa-images',
-      'fa-industry',
-      'fa-info',
-      'fa-info-circle',
-      'fa-key',
-      'fa-landmark',
-      'fa-layer-group',
-      'fa-leaf',
-      'fa-lemon',
-      'fa-life-ring',
-      'fa-lightbulb',
-      'fa-location-arrow',
-      'fa-low-vision',
-      'fa-magnet',
-      'fa-male',
-      'fa-map',
-      'fa-map-marker',
-      'fa-map-marker-alt',
-      'fa-map-pin',
-      'fa-map-signs',
-      'fa-medkit',
-      'fa-money-bill',
-      'fa-money-bill-alt',
-      'fa-motorcycle',
-      'fa-music',
-      'fa-newspaper',
-      'fa-parking',
-      'fa-paw',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-phone-square',
-      'fa-phone-square-alt',
-      'fa-phone-volume',
-      'fa-plane',
-      'fa-plug',
-      'fa-plus',
-      'fa-plus-square',
-      'fa-print',
-      'fa-recycle',
-      'fa-restroom',
-      'fa-road',
-      'fa-rocket',
-      'fa-route',
-      'fa-search',
-      'fa-search-minus',
-      'fa-search-plus',
-      'fa-ship',
-      'fa-shoe-prints',
-      'fa-shopping-bag',
-      'fa-shopping-basket',
-      'fa-shopping-cart',
-      'fa-shower',
-      'fa-snowplow',
-      'fa-street-view',
-      'fa-subway',
-      'fa-suitcase',
-      'fa-tag',
-      'fa-tags',
-      'fa-taxi',
-      'fa-thumbtack',
-      'fa-ticket-alt',
-      'fa-tint',
-      'fa-traffic-light',
-      'fa-train',
-      'fa-tram',
-      'fa-tree',
-      'fa-trophy',
-      'fa-truck',
-      'fa-tty',
-      'fa-umbrella',
-      'fa-university',
-      'fa-utensil-spoon',
-      'fa-utensils',
-      'fa-vest',
-      'fa-vest-patches',
-      'fa-wheelchair',
-      'fa-wifi',
-      'fa-wine-glass',
-      'fa-wrench'
-    ]
+      key: "music-audio",
+      label: "Music + Audio",
+      icons: [
+          "fa-compact-disc",
+          "fa-drum",
+          "fa-drum-steelpan",
+          "fa-file-audio",
+          "fa-guitar",
+          "fa-headphones",
+          "fa-headphones-simple",
+          "fa-microphone",
+          "fa-microphone-lines",
+          "fa-microphone-lines-slash",
+          "fa-microphone-slash",
+          "fa-music",
+          "fa-napster",
+          "fa-radio",
+          "fa-record-vinyl",
+          "fa-sliders",
+          "fa-soundcloud",
+          "fa-spotify",
+          "fa-volume-high",
+          "fa-volume-low",
+          "fa-volume-off",
+          "fa-volume-xmark"
+      ]
   },
   {
-    key: 'maritime',
-    label: 'Maritime',
-    icons: [
-      'fa-anchor',
-      'fa-binoculars',
-      'fa-compass',
-      'fa-dharmachakra',
-      'fa-frog',
-      'fa-ship',
-      'fa-skull-crossbones',
-      'fa-swimmer',
-      'fa-water',
-      'fa-wind'
-    ]
+      key: "nature",
+      label: "Nature",
+      icons: [
+          "fa-binoculars",
+          "fa-bug",
+          "fa-bugs",
+          "fa-cannabis",
+          "fa-cloud-sun",
+          "fa-clover",
+          "fa-feather",
+          "fa-feather-pointed",
+          "fa-fire",
+          "fa-frog",
+          "fa-icicles",
+          "fa-leaf",
+          "fa-locust",
+          "fa-mosquito",
+          "fa-mound",
+          "fa-mountain",
+          "fa-mountain-city",
+          "fa-mountain-sun",
+          "fa-person-hiking",
+          "fa-plant-wilt",
+          "fa-seedling",
+          "fa-signs-post",
+          "fa-spider",
+          "fa-tree",
+          "fa-volcano",
+          "fa-water",
+          "fa-wind",
+          "fa-worm"
+      ]
   },
   {
-    key: 'marketing',
-    label: 'Marketing',
-    icons: [
-      'fa-ad',
-      'fa-bullhorn',
-      'fa-bullseye',
-      'fa-comment-dollar',
-      'fa-comments-dollar',
-      'fa-envelope-open-text',
-      'fa-funnel-dollar',
-      'fa-lightbulb',
-      'fa-mail-bulk',
-      'fa-poll',
-      'fa-poll-h',
-      'fa-search-dollar',
-      'fa-search-location'
-    ]
+      key: "numbers",
+      label: "Numbers",
+      icons: [
+          "fa-0",
+          "fa-1",
+          "fa-2",
+          "fa-3",
+          "fa-4",
+          "fa-5",
+          "fa-6",
+          "fa-7",
+          "fa-8",
+          "fa-9"
+      ]
   },
   {
-    key: 'mathematics',
-    label: 'Mathematics',
-    icons: [
-      'fa-calculator',
-      'fa-divide',
-      'fa-equals',
-      'fa-greater-than',
-      'fa-greater-than-equal',
-      'fa-infinity',
-      'fa-less-than',
-      'fa-less-than-equal',
-      'fa-minus',
-      'fa-not-equal',
-      'fa-percentage',
-      'fa-plus',
-      'fa-square-root-alt',
-      'fa-subscript',
-      'fa-superscript',
-      'fa-times',
-      'fa-wave-square'
-    ]
+      key: "photos-images",
+      label: "Photos + Images",
+      icons: [
+          "fa-bolt",
+          "fa-bolt-lightning",
+          "fa-camera",
+          "fa-camera-retro",
+          "fa-camera-rotate",
+          "fa-chalkboard",
+          "fa-circle-half-stroke",
+          "fa-clone",
+          "fa-droplet",
+          "fa-eye",
+          "fa-eye-dropper",
+          "fa-eye-slash",
+          "fa-file-image",
+          "fa-film",
+          "fa-id-badge",
+          "fa-id-card",
+          "fa-image",
+          "fa-image-portrait",
+          "fa-images",
+          "fa-minimize",
+          "fa-panorama",
+          "fa-photo-film",
+          "fa-sliders",
+          "fa-unsplash"
+      ]
   },
   {
-    key: 'medical',
-    label: 'Medical',
-    icons: [
-      'fa-allergies',
-      'fa-ambulance',
-      'fa-bacteria',
-      'fa-bacterium',
-      'fa-band-aid',
-      'fa-biohazard',
-      'fa-bone',
-      'fa-bong',
-      'fa-book-medical',
-      'fa-brain',
-      'fa-briefcase-medical',
-      'fa-burn',
-      'fa-cannabis',
-      'fa-capsules',
-      'fa-clinic-medical',
-      'fa-comment-medical',
-      'fa-crutch',
-      'fa-diagnoses',
-      'fa-disease',
-      'fa-dna',
-      'fa-file-medical',
-      'fa-file-medical-alt',
-      'fa-file-prescription',
-      'fa-first-aid',
-      'fa-hand-holding-medical',
-      'fa-head-side-cough',
-      'fa-head-side-cough-slash',
-      'fa-head-side-mask',
-      'fa-head-side-virus',
-      'fa-heart',
-      'fa-heartbeat',
-      'fa-hospital',
-      'fa-hospital-alt',
-      'fa-hospital-symbol',
-      'fa-hospital-user',
-      'fa-id-card-alt',
-      'fa-joint',
-      'fa-laptop-medical',
-      'fa-lungs',
-      'fa-lungs-virus',
-      'fa-microscope',
-      'fa-mortar-pestle',
-      'fa-notes-medical',
-      'fa-pager',
-      'fa-pills',
-      'fa-plus',
-      'fa-poop',
-      'fa-prescription',
-      'fa-prescription-bottle',
-      'fa-prescription-bottle-alt',
-      'fa-procedures',
-      'fa-pump-medical',
-      'fa-radiation',
-      'fa-radiation-alt',
-      'fa-shield-virus',
-      'fa-smoking',
-      'fa-smoking-ban',
-      'fa-star-of-life',
-      'fa-stethoscope',
-      'fa-syringe',
-      'fa-tablets',
-      'fa-teeth',
-      'fa-teeth-open',
-      'fa-thermometer',
-      'fa-tooth',
-      'fa-user-md',
-      'fa-user-nurse',
-      'fa-vial',
-      'fa-vials',
-      'fa-virus',
-      'fa-virus-slash',
-      'fa-viruses',
-      'fa-weight',
-      'fa-x-ray'
-    ]
+      key: "political",
+      label: "Political",
+      icons: [
+          "fa-award",
+          "fa-building-flag",
+          "fa-bullhorn",
+          "fa-check-double",
+          "fa-check-to-slot",
+          "fa-circle-dollar-to-slot",
+          "fa-democrat",
+          "fa-dove",
+          "fa-dumpster-fire",
+          "fa-flag-usa",
+          "fa-hand-fist",
+          "fa-handshake",
+          "fa-landmark-dome",
+          "fa-landmark-flag",
+          "fa-person-booth",
+          "fa-piggy-bank",
+          "fa-republican",
+          "fa-scale-balanced",
+          "fa-scale-unbalanced",
+          "fa-scale-unbalanced-flip"
+      ]
   },
   {
-    key: 'moving',
-    label: 'Moving',
-    icons: [
-      'fa-archive',
-      'fa-box-open',
-      'fa-caravan',
-      'fa-couch',
-      'fa-dolly',
-      'fa-people-carry',
-      'fa-route',
-      'fa-sign',
-      'fa-suitcase',
-      'fa-tape',
-      'fa-trailer',
-      'fa-truck-loading',
-      'fa-truck-moving',
-      'fa-wine-glass'
-    ]
+      key: "punctuation-symbols",
+      label: "Punctuation + Symbols",
+      icons: [
+          "fa-asterisk",
+          "fa-at",
+          "fa-check",
+          "fa-check-double",
+          "fa-circle-exclamation",
+          "fa-circle-question",
+          "fa-equals",
+          "fa-exclamation",
+          "fa-greater-than",
+          "fa-hashtag",
+          "fa-less-than",
+          "fa-minus",
+          "fa-percent",
+          "fa-plus",
+          "fa-question",
+          "fa-quote-left",
+          "fa-quote-right",
+          "fa-section"
+      ]
   },
   {
-    key: 'music',
-    label: 'Music',
-    icons: [
-      'fa-compact-disc',
-      'fa-drum',
-      'fa-drum-steelpan',
-      'fa-file-audio',
-      'fa-guitar',
-      'fa-headphones',
-      'fa-headphones-alt',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-microphone-alt-slash',
-      'fa-microphone-slash',
-      'fa-music',
-      'fa-napster',
-      'fa-play',
-      'fa-record-vinyl',
-      'fa-sliders-h',
-      'fa-soundcloud',
-      'fa-spotify',
-      'fa-volume-down',
-      'fa-volume-mute',
-      'fa-volume-off',
-      'fa-volume-up'
-    ]
+      key: "religion",
+      label: "Religion",
+      icons: [
+          "fa-ankh",
+          "fa-atom",
+          "fa-bahai",
+          "fa-book-bible",
+          "fa-book-journal-whills",
+          "fa-book-quran",
+          "fa-book-tanakh",
+          "fa-church",
+          "fa-cross",
+          "fa-dharmachakra",
+          "fa-dove",
+          "fa-gopuram",
+          "fa-hamsa",
+          "fa-hands-praying",
+          "fa-hanukiah",
+          "fa-jedi",
+          "fa-kaaba",
+          "fa-khanda",
+          "fa-menorah",
+          "fa-mosque",
+          "fa-om",
+          "fa-peace",
+          "fa-person-praying",
+          "fa-place-of-worship",
+          "fa-scroll-torah",
+          "fa-spaghetti-monster-flying",
+          "fa-star-and-crescent",
+          "fa-star-of-david",
+          "fa-synagogue",
+          "fa-torii-gate",
+          "fa-vihara",
+          "fa-yin-yang"
+      ]
   },
   {
-    key: 'objects',
-    label: 'Objects',
-    icons: [
-      'fa-ambulance',
-      'fa-anchor',
-      'fa-archive',
-      'fa-award',
-      'fa-baby-carriage',
-      'fa-balance-scale',
-      'fa-balance-scale-left',
-      'fa-balance-scale-right',
-      'fa-bath',
-      'fa-bed',
-      'fa-beer',
-      'fa-bell',
-      'fa-bicycle',
-      'fa-binoculars',
-      'fa-birthday-cake',
-      'fa-blender',
-      'fa-bomb',
-      'fa-book',
-      'fa-book-dead',
-      'fa-bookmark',
-      'fa-briefcase',
-      'fa-broadcast-tower',
-      'fa-bug',
-      'fa-building',
-      'fa-bullhorn',
-      'fa-bullseye',
-      'fa-bus',
-      'fa-calculator',
-      'fa-calendar',
-      'fa-calendar-alt',
-      'fa-camera',
-      'fa-camera-retro',
-      'fa-candy-cane',
-      'fa-car',
-      'fa-carrot',
-      'fa-church',
-      'fa-clipboard',
-      'fa-cloud',
-      'fa-coffee',
-      'fa-cog',
-      'fa-cogs',
-      'fa-compass',
-      'fa-cookie',
-      'fa-cookie-bite',
-      'fa-copy',
-      'fa-cube',
-      'fa-cubes',
-      'fa-cut',
-      'fa-dice',
-      'fa-dice-d20',
-      'fa-dice-d6',
-      'fa-dice-five',
-      'fa-dice-four',
-      'fa-dice-one',
-      'fa-dice-six',
-      'fa-dice-three',
-      'fa-dice-two',
-      'fa-digital-tachograph',
-      'fa-door-closed',
-      'fa-door-open',
-      'fa-drum',
-      'fa-drum-steelpan',
-      'fa-envelope',
-      'fa-envelope-open',
-      'fa-eraser',
-      'fa-eye',
-      'fa-eye-dropper',
-      'fa-fax',
-      'fa-feather',
-      'fa-feather-alt',
-      'fa-fighter-jet',
-      'fa-file',
-      'fa-file-alt',
-      'fa-file-prescription',
-      'fa-film',
-      'fa-fire',
-      'fa-fire-alt',
-      'fa-fire-extinguisher',
-      'fa-flag',
-      'fa-flag-checkered',
-      'fa-flask',
-      'fa-futbol',
-      'fa-gamepad',
-      'fa-gavel',
-      'fa-gem',
-      'fa-gift',
-      'fa-gifts',
-      'fa-glass-cheers',
-      'fa-glass-martini',
-      'fa-glass-whiskey',
-      'fa-glasses',
-      'fa-globe',
-      'fa-graduation-cap',
-      'fa-guitar',
-      'fa-hat-wizard',
-      'fa-hdd',
-      'fa-headphones',
-      'fa-headphones-alt',
-      'fa-headset',
-      'fa-heart',
-      'fa-heart-broken',
-      'fa-helicopter',
-      'fa-highlighter',
-      'fa-holly-berry',
-      'fa-home',
-      'fa-hospital',
-      'fa-hourglass',
-      'fa-igloo',
-      'fa-image',
-      'fa-images',
-      'fa-industry',
-      'fa-key',
-      'fa-keyboard',
-      'fa-laptop',
-      'fa-leaf',
-      'fa-lemon',
-      'fa-life-ring',
-      'fa-lightbulb',
-      'fa-lock',
-      'fa-lock-open',
-      'fa-magic',
-      'fa-magnet',
-      'fa-map',
-      'fa-map-marker',
-      'fa-map-marker-alt',
-      'fa-map-pin',
-      'fa-map-signs',
-      'fa-marker',
-      'fa-medal',
-      'fa-medkit',
-      'fa-memory',
-      'fa-microchip',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-mitten',
-      'fa-mobile',
-      'fa-mobile-alt',
-      'fa-money-bill',
-      'fa-money-bill-alt',
-      'fa-money-check',
-      'fa-money-check-alt',
-      'fa-moon',
-      'fa-motorcycle',
-      'fa-mug-hot',
-      'fa-newspaper',
-      'fa-paint-brush',
-      'fa-paper-plane',
-      'fa-paperclip',
-      'fa-paste',
-      'fa-paw',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-fancy',
-      'fa-pen-nib',
-      'fa-pencil-alt',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-plane',
-      'fa-plug',
-      'fa-print',
-      'fa-puzzle-piece',
-      'fa-ring',
-      'fa-road',
-      'fa-rocket',
-      'fa-ruler-combined',
-      'fa-ruler-horizontal',
-      'fa-ruler-vertical',
-      'fa-satellite',
-      'fa-satellite-dish',
-      'fa-save',
-      'fa-school',
-      'fa-screwdriver',
-      'fa-scroll',
-      'fa-sd-card',
-      'fa-search',
-      'fa-shield-alt',
-      'fa-shopping-bag',
-      'fa-shopping-basket',
-      'fa-shopping-cart',
-      'fa-shower',
-      'fa-sim-card',
-      'fa-skull-crossbones',
-      'fa-sleigh',
-      'fa-snowflake',
-      'fa-snowplow',
-      'fa-space-shuttle',
-      'fa-star',
-      'fa-sticky-note',
-      'fa-stopwatch',
-      'fa-stroopwafel',
-      'fa-subway',
-      'fa-suitcase',
-      'fa-sun',
-      'fa-tablet',
-      'fa-tablet-alt',
-      'fa-tachometer-alt',
-      'fa-tag',
-      'fa-tags',
-      'fa-taxi',
-      'fa-thumbtack',
-      'fa-ticket-alt',
-      'fa-toilet',
-      'fa-toolbox',
-      'fa-tools',
-      'fa-train',
-      'fa-tram',
-      'fa-trash',
-      'fa-trash-alt',
-      'fa-tree',
-      'fa-trophy',
-      'fa-truck',
-      'fa-tv',
-      'fa-umbrella',
-      'fa-university',
-      'fa-unlock',
-      'fa-unlock-alt',
-      'fa-utensil-spoon',
-      'fa-utensils',
-      'fa-wallet',
-      'fa-weight',
-      'fa-wheelchair',
-      'fa-wine-glass',
-      'fa-wrench'
-    ]
+      key: "science",
+      label: "Science",
+      icons: [
+          "fa-atom",
+          "fa-biohazard",
+          "fa-brain",
+          "fa-capsules",
+          "fa-circle-radiation",
+          "fa-clipboard-check",
+          "fa-disease",
+          "fa-dna",
+          "fa-eye-dropper",
+          "fa-filter",
+          "fa-fire",
+          "fa-fire-flame-curved",
+          "fa-fire-flame-simple",
+          "fa-flask",
+          "fa-flask-vial",
+          "fa-frog",
+          "fa-magnet",
+          "fa-microscope",
+          "fa-mortar-pestle",
+          "fa-pills",
+          "fa-prescription-bottle",
+          "fa-radiation",
+          "fa-seedling",
+          "fa-skull-crossbones",
+          "fa-square-virus",
+          "fa-syringe",
+          "fa-tablets",
+          "fa-temperature-high",
+          "fa-temperature-low",
+          "fa-vial",
+          "fa-vial-circle-check",
+          "fa-vial-virus",
+          "fa-vials"
+      ]
   },
   {
-    key: 'payments-shopping',
-    label: 'Payments & Shopping',
-    icons: [
-      'fa-alipay',
-      'fa-amazon-pay',
-      'fa-apple-pay',
-      'fa-bell',
-      'fa-bitcoin',
-      'fa-bookmark',
-      'fa-btc',
-      'fa-bullhorn',
-      'fa-camera',
-      'fa-camera-retro',
-      'fa-cart-arrow-down',
-      'fa-cart-plus',
-      'fa-cc-amazon-pay',
-      'fa-cc-amex',
-      'fa-cc-apple-pay',
-      'fa-cc-diners-club',
-      'fa-cc-discover',
-      'fa-cc-jcb',
-      'fa-cc-mastercard',
-      'fa-cc-paypal',
-      'fa-cc-stripe',
-      'fa-cc-visa',
-      'fa-certificate',
-      'fa-credit-card',
-      'fa-ethereum',
-      'fa-gem',
-      'fa-gift',
-      'fa-google-pay',
-      'fa-google-wallet',
-      'fa-handshake',
-      'fa-heart',
-      'fa-key',
-      'fa-money-check',
-      'fa-money-check-alt',
-      'fa-paypal',
-      'fa-receipt',
-      'fa-shopping-bag',
-      'fa-shopping-basket',
-      'fa-shopping-cart',
-      'fa-star',
-      'fa-stripe',
-      'fa-stripe-s',
-      'fa-tag',
-      'fa-tags',
-      'fa-thumbs-down',
-      'fa-thumbs-up',
-      'fa-trophy'
-    ]
+      key: "science-fiction",
+      label: "Science Fiction",
+      icons: [
+          "fa-atom",
+          "fa-book-journal-whills",
+          "fa-explosion",
+          "fa-galactic-republic",
+          "fa-galactic-senate",
+          "fa-hand-spock",
+          "fa-jedi",
+          "fa-jedi-order",
+          "fa-old-republic",
+          "fa-robot",
+          "fa-rocket",
+          "fa-space-awesome",
+          "fa-user-astronaut"
+      ]
   },
   {
-    key: 'pharmacy',
-    label: 'Pharmacy',
-    icons: [
-      'fa-band-aid',
-      'fa-book-medical',
-      'fa-cannabis',
-      'fa-capsules',
-      'fa-clinic-medical',
-      'fa-disease',
-      'fa-eye-dropper',
-      'fa-file-medical',
-      'fa-file-prescription',
-      'fa-first-aid',
-      'fa-flask',
-      'fa-history',
-      'fa-joint',
-      'fa-laptop-medical',
-      'fa-mortar-pestle',
-      'fa-notes-medical',
-      'fa-pills',
-      'fa-prescription',
-      'fa-prescription-bottle',
-      'fa-prescription-bottle-alt',
-      'fa-receipt',
-      'fa-skull-crossbones',
-      'fa-syringe',
-      'fa-tablets',
-      'fa-thermometer',
-      'fa-vial',
-      'fa-vials'
-    ]
+      key: "security",
+      label: "Security",
+      icons: [
+          "fa-ban",
+          "fa-bug",
+          "fa-bug-slash",
+          "fa-building-lock",
+          "fa-building-shield",
+          "fa-burst",
+          "fa-car-on",
+          "fa-door-closed",
+          "fa-door-open",
+          "fa-dungeon",
+          "fa-explosion",
+          "fa-eye",
+          "fa-eye-slash",
+          "fa-file-contract",
+          "fa-file-shield",
+          "fa-file-signature",
+          "fa-fingerprint",
+          "fa-gun",
+          "fa-handcuffs",
+          "fa-hands-bound",
+          "fa-hands-holding-child",
+          "fa-hands-holding-circle",
+          "fa-house-fire",
+          "fa-house-lock",
+          "fa-id-badge",
+          "fa-id-card",
+          "fa-id-card-clip",
+          "fa-key",
+          "fa-land-mine-on",
+          "fa-lock",
+          "fa-lock-open",
+          "fa-mars-and-venus-burst",
+          "fa-mask",
+          "fa-passport",
+          "fa-people-pulling",
+          "fa-people-robbery",
+          "fa-person-burst",
+          "fa-person-dress-burst",
+          "fa-person-falling-burst",
+          "fa-person-harassing",
+          "fa-person-military-pointing",
+          "fa-person-military-rifle",
+          "fa-person-military-to-person",
+          "fa-person-rifle",
+          "fa-person-shelter",
+          "fa-person-through-window",
+          "fa-road-spikes",
+          "fa-shield",
+          "fa-shield-cat",
+          "fa-shield-dog",
+          "fa-shield-halved",
+          "fa-shield-heart",
+          "fa-skull-crossbones",
+          "fa-square-person-confined",
+          "fa-tower-observation",
+          "fa-unlock",
+          "fa-unlock-keyhole",
+          "fa-user-lock",
+          "fa-user-secret",
+          "fa-user-shield",
+          "fa-vault"
+      ]
   },
   {
-    key: 'political',
-    label: 'Political',
-    icons: [
-      'fa-award',
-      'fa-balance-scale',
-      'fa-balance-scale-left',
-      'fa-balance-scale-right',
-      'fa-bullhorn',
-      'fa-check-double',
-      'fa-democrat',
-      'fa-donate',
-      'fa-dove',
-      'fa-fist-raised',
-      'fa-flag-usa',
-      'fa-handshake',
-      'fa-person-booth',
-      'fa-piggy-bank',
-      'fa-republican',
-      'fa-vote-yea'
-    ]
+      key: "shapes",
+      label: "Shapes",
+      icons: [
+          "fa-bookmark",
+          "fa-burst",
+          "fa-calendar",
+          "fa-certificate",
+          "fa-circle",
+          "fa-circle-half-stroke",
+          "fa-cloud",
+          "fa-clover",
+          "fa-comment",
+          "fa-crown",
+          "fa-cubes-stacked",
+          "fa-diamond",
+          "fa-file",
+          "fa-folder",
+          "fa-heart",
+          "fa-heart-crack",
+          "fa-lines-leaning",
+          "fa-location-pin",
+          "fa-play",
+          "fa-shapes",
+          "fa-shield",
+          "fa-square",
+          "fa-star",
+          "fa-ticket-simple"
+      ]
   },
   {
-    key: 'religion',
-    label: 'Religion',
-    icons: [
-      'fa-ankh',
-      'fa-atom',
-      'fa-bahai',
-      'fa-bible',
-      'fa-church',
-      'fa-cross',
-      'fa-dharmachakra',
-      'fa-dove',
-      'fa-gopuram',
-      'fa-hamsa',
-      'fa-hanukiah',
-      'fa-jedi',
-      'fa-journal-whills',
-      'fa-kaaba',
-      'fa-khanda',
-      'fa-menorah',
-      'fa-mosque',
-      'fa-om',
-      'fa-pastafarianism',
-      'fa-peace',
-      'fa-place-of-worship',
-      'fa-pray',
-      'fa-praying-hands',
-      'fa-quran',
-      'fa-star-and-crescent',
-      'fa-star-of-david',
-      'fa-synagogue',
-      'fa-torah',
-      'fa-torii-gate',
-      'fa-vihara',
-      'fa-yin-yang'
-    ]
+      key: "shopping",
+      label: "Shopping",
+      icons: [
+          "fa-alipay",
+          "fa-amazon-pay",
+          "fa-apple-pay",
+          "fa-bag-shopping",
+          "fa-barcode",
+          "fa-basket-shopping",
+          "fa-bell",
+          "fa-bitcoin",
+          "fa-bookmark",
+          "fa-btc",
+          "fa-bullhorn",
+          "fa-camera",
+          "fa-camera-retro",
+          "fa-cart-arrow-down",
+          "fa-cart-plus",
+          "fa-cart-shopping",
+          "fa-cash-register",
+          "fa-cc-amazon-pay",
+          "fa-cc-amex",
+          "fa-cc-apple-pay",
+          "fa-cc-diners-club",
+          "fa-cc-discover",
+          "fa-cc-jcb",
+          "fa-cc-mastercard",
+          "fa-cc-paypal",
+          "fa-cc-stripe",
+          "fa-cc-visa",
+          "fa-certificate",
+          "fa-credit-card",
+          "fa-ethereum",
+          "fa-gem",
+          "fa-gift",
+          "fa-gifts",
+          "fa-google-pay",
+          "fa-google-wallet",
+          "fa-handshake",
+          "fa-heart",
+          "fa-key",
+          "fa-money-check",
+          "fa-money-check-dollar",
+          "fa-nfc-directional",
+          "fa-nfc-symbol",
+          "fa-paypal",
+          "fa-person-booth",
+          "fa-receipt",
+          "fa-shirt",
+          "fa-shop",
+          "fa-shop-lock",
+          "fa-shop-slash",
+          "fa-star",
+          "fa-store",
+          "fa-store-slash",
+          "fa-stripe",
+          "fa-stripe-s",
+          "fa-tag",
+          "fa-tags",
+          "fa-thumbs-down",
+          "fa-thumbs-up",
+          "fa-trophy",
+          "fa-truck",
+          "fa-truck-fast"
+      ]
   },
   {
-    key: 'science',
-    label: 'Science',
-    icons: [
-      'fa-atom',
-      'fa-biohazard',
-      'fa-brain',
-      'fa-burn',
-      'fa-capsules',
-      'fa-clipboard-check',
-      'fa-disease',
-      'fa-dna',
-      'fa-eye-dropper',
-      'fa-filter',
-      'fa-fire',
-      'fa-fire-alt',
-      'fa-flask',
-      'fa-frog',
-      'fa-magnet',
-      'fa-microscope',
-      'fa-mortar-pestle',
-      'fa-pills',
-      'fa-prescription-bottle',
-      'fa-radiation',
-      'fa-radiation-alt',
-      'fa-seedling',
-      'fa-skull-crossbones',
-      'fa-syringe',
-      'fa-tablets',
-      'fa-temperature-high',
-      'fa-temperature-low',
-      'fa-vial',
-      'fa-vials'
-    ]
-  },
-  {
-    key: 'science-fiction',
-    label: 'Science Fiction',
-    icons: [
-      'fa-atom',
-      'fa-galactic-republic',
-      'fa-galactic-senate',
-      'fa-globe',
-      'fa-hand-spock',
-      'fa-jedi',
-      'fa-jedi-order',
-      'fa-journal-whills',
-      'fa-meteor',
-      'fa-moon',
-      'fa-old-republic',
-      'fa-robot',
-      'fa-rocket',
-      'fa-satellite',
-      'fa-satellite-dish',
-      'fa-space-shuttle',
-      'fa-user-astronaut'
-    ]
-  },
-  {
-    key: 'security',
-    label: 'Security',
-    icons: [
-      'fa-ban',
-      'fa-bug',
-      'fa-door-closed',
-      'fa-door-open',
-      'fa-dungeon',
-      'fa-eye',
-      'fa-eye-slash',
-      'fa-file-contract',
-      'fa-file-signature',
-      'fa-fingerprint',
-      'fa-id-badge',
-      'fa-id-card',
-      'fa-id-card-alt',
-      'fa-key',
-      'fa-lock',
-      'fa-lock-open',
-      'fa-mask',
-      'fa-passport',
-      'fa-shield-alt',
-      'fa-unlock',
-      'fa-unlock-alt',
-      'fa-user-lock',
-      'fa-user-secret',
-      'fa-user-shield'
-    ]
-  },
-  {
-    key: 'shapes',
-    label: 'Shapes',
-    icons: [
-      'fa-bookmark',
-      'fa-calendar',
-      'fa-certificate',
-      'fa-circle',
-      'fa-cloud',
-      'fa-comment',
-      'fa-file',
-      'fa-folder',
-      'fa-heart',
-      'fa-heart-broken',
-      'fa-map-marker',
-      'fa-play',
-      'fa-shapes',
-      'fa-square',
-      'fa-star'
-    ]
-  },
-  {
-    key: 'shopping',
-    label: 'Shopping',
-    icons: [
-      'fa-barcode',
-      'fa-cart-arrow-down',
-      'fa-cart-plus',
-      'fa-cash-register',
-      'fa-gift',
-      'fa-gifts',
-      'fa-person-booth',
-      'fa-receipt',
-      'fa-shipping-fast',
-      'fa-shopping-bag',
-      'fa-shopping-basket',
-      'fa-shopping-cart',
-      'fa-store',
-      'fa-store-alt',
-      'fa-store-alt-slash',
-      'fa-store-slash',
-      'fa-truck',
-      'fa-tshirt'
-    ]
-  },
-  {
-    key: 'social',
-    label: 'Social',
-    icons: [
-      'fa-bell',
-      'fa-birthday-cake',
-      'fa-camera',
-      'fa-comment',
-      'fa-comment-alt',
-      'fa-envelope',
-      'fa-hashtag',
-      'fa-heart',
-      'fa-icons',
-      'fa-image',
-      'fa-images',
-      'fa-map-marker',
-      'fa-map-marker-alt',
-      'fa-photo-video',
-      'fa-poll',
-      'fa-poll-h',
-      'fa-retweet',
-      'fa-share',
-      'fa-share-alt',
-      'fa-share-square',
-      'fa-star',
-      'fa-thumbs-down',
-      'fa-thumbs-up',
-      'fa-thumbtack',
-      'fa-user',
-      'fa-user-circle',
-      'fa-user-friends',
-      'fa-user-plus',
-      'fa-users',
-      'fa-video'
-    ]
+      key: "social",
+      label: "Social",
+      icons: [
+          "fa-bell",
+          "fa-cake-candles",
+          "fa-camera",
+          "fa-circle-user",
+          "fa-comment",
+          "fa-envelope",
+          "fa-hashtag",
+          "fa-heart",
+          "fa-icons",
+          "fa-image",
+          "fa-images",
+          "fa-location-dot",
+          "fa-location-pin",
+          "fa-message",
+          "fa-photo-film",
+          "fa-retweet",
+          "fa-share",
+          "fa-share-from-square",
+          "fa-share-nodes",
+          "fa-square-poll-horizontal",
+          "fa-square-poll-vertical",
+          "fa-square-share-nodes",
+          "fa-star",
+          "fa-thumbs-down",
+          "fa-thumbs-up",
+          "fa-thumbtack",
+          "fa-user",
+          "fa-user-group",
+          "fa-user-plus",
+          "fa-users",
+          "fa-video"
+      ]
   },
   {
     key: 'sociamedia',
@@ -24334,452 +31628,526 @@ export const IconCategories = [
     icons: [
       'fa-tiktok',
       'fa-twitter',
-      'fa-twitter-square',
+      'fa-square-twitter',
+      'fa-x-twitter',
+      'fa-square-x-twitter',
       'fa-facebook',
       'fa-facebook-f',
       'fa-facebook-messenger',
-      'fa-facebook-square',
+      'fa-square-facebook',
       'fa-instagram',
-      'fa-instagram-square',
+      'fa-square-instagram',
       'fa-youtube',
-      'fa-youtube-square',
+      'fa-square-youtube',
       'fa-linkedin',
       'fa-linkedin-in',
       'fa-snapchat',
-      'fa-snapchat-ghost',
-      'fa-snapchat-square',
+      'fa-square-snapchat',
       'fa-spotify',
       'fa-discord',
       'fa-reddit',
       'fa-reddit-alien',
-      'fa-reddit-square',
+      'fa-square-reddit',
       'fa-vimeo',
-      'fa-vimeo-square',
+      'fa-square-vimeo',
       'fa-vimeo-v'
     ]
   },
   {
-    key: 'spinners',
-    label: 'Spinners',
-    icons: [
-      'fa-asterisk',
-      'fa-atom',
-      'fa-bahai',
-      'fa-certificate',
-      'fa-circle-notch',
-      'fa-cog',
-      'fa-compact-disc',
-      'fa-compass',
-      'fa-crosshairs',
-      'fa-dharmachakra',
-      'fa-fan',
-      'fa-life-ring',
-      'fa-palette',
-      'fa-ring',
-      'fa-slash',
-      'fa-snowflake',
-      'fa-spinner',
-      'fa-stroopwafel',
-      'fa-sun',
-      'fa-sync',
-      'fa-sync-alt',
-      'fa-yin-yang'
-    ]
+      key: "spinners",
+      label: "Spinners",
+      icons: [
+          "fa-arrows-spin",
+          "fa-asterisk",
+          "fa-atom",
+          "fa-bahai",
+          "fa-certificate",
+          "fa-circle-notch",
+          "fa-compact-disc",
+          "fa-compass",
+          "fa-crosshairs",
+          "fa-dharmachakra",
+          "fa-fan",
+          "fa-gear",
+          "fa-hurricane",
+          "fa-life-ring",
+          "fa-palette",
+          "fa-ring",
+          "fa-rotate",
+          "fa-slash",
+          "fa-snowflake",
+          "fa-spinner",
+          "fa-stroopwafel",
+          "fa-sun",
+          "fa-yin-yang"
+      ]
   },
   {
-    key: 'sports',
-    label: 'Sports',
-    icons: [
-      'fa-baseball-ball',
-      'fa-basketball-ball',
-      'fa-biking',
-      'fa-bowling-ball',
-      'fa-dumbbell',
-      'fa-football-ball',
-      'fa-futbol',
-      'fa-golf-ball',
-      'fa-hockey-puck',
-      'fa-quidditch',
-      'fa-running',
-      'fa-skating',
-      'fa-skiing',
-      'fa-skiing-nordic',
-      'fa-snowboarding',
-      'fa-swimmer',
-      'fa-table-tennis',
-      'fa-volleyball-ball'
-    ]
+      key: "sports-fitness",
+      label: "Sports + Fitness",
+      icons: [
+          "fa-baseball",
+          "fa-baseball-bat-ball",
+          "fa-basketball",
+          "fa-bicycle",
+          "fa-bowling-ball",
+          "fa-broom-ball",
+          "fa-dumbbell",
+          "fa-fire-flame-curved",
+          "fa-fire-flame-simple",
+          "fa-football",
+          "fa-futbol",
+          "fa-golf-ball-tee",
+          "fa-heart",
+          "fa-heart-pulse",
+          "fa-hockey-puck",
+          "fa-medal",
+          "fa-mound",
+          "fa-person-biking",
+          "fa-person-hiking",
+          "fa-person-running",
+          "fa-person-skating",
+          "fa-person-skiing",
+          "fa-person-skiing-nordic",
+          "fa-person-snowboarding",
+          "fa-person-swimming",
+          "fa-person-walking",
+          "fa-ranking-star",
+          "fa-shoe-prints",
+          "fa-spa",
+          "fa-stopwatch-20",
+          "fa-table-tennis-paddle-ball",
+          "fa-volleyball",
+          "fa-weight-hanging"
+      ]
   },
   {
-    key: 'spring',
-    label: 'Spring',
-    icons: [
-      'fa-allergies',
-      'fa-broom',
-      'fa-cloud-sun',
-      'fa-cloud-sun-rain',
-      'fa-frog',
-      'fa-rainbow',
-      'fa-seedling',
-      'fa-umbrella'
-    ]
+      key: "text-formatting",
+      label: "Text Formatting",
+      icons: [
+          "fa-align-center",
+          "fa-align-justify",
+          "fa-align-left",
+          "fa-align-right",
+          "fa-bold",
+          "fa-border-all",
+          "fa-border-none",
+          "fa-border-top-left",
+          "fa-check",
+          "fa-check-double",
+          "fa-circle-check",
+          "fa-filter-circle-xmark",
+          "fa-font",
+          "fa-heading",
+          "fa-highlighter",
+          "fa-i-cursor",
+          "fa-icons",
+          "fa-indent",
+          "fa-italic",
+          "fa-list",
+          "fa-list-check",
+          "fa-list-ol",
+          "fa-list-ul",
+          "fa-outdent",
+          "fa-paragraph",
+          "fa-rectangle-list",
+          "fa-spell-check",
+          "fa-square-check",
+          "fa-strikethrough",
+          "fa-subscript",
+          "fa-superscript",
+          "fa-table",
+          "fa-table-cells",
+          "fa-table-cells-large",
+          "fa-table-columns",
+          "fa-table-list",
+          "fa-text-height",
+          "fa-text-slash",
+          "fa-text-width",
+          "fa-underline"
+      ]
   },
   {
-    key: 'status',
-    label: 'Status',
-    icons: [
-      'fa-ban',
-      'fa-battery-empty',
-      'fa-battery-full',
-      'fa-battery-half',
-      'fa-battery-quarter',
-      'fa-battery-three-quarters',
-      'fa-bell',
-      'fa-bell-slash',
-      'fa-calendar',
-      'fa-calendar-alt',
-      'fa-calendar-check',
-      'fa-calendar-day',
-      'fa-calendar-minus',
-      'fa-calendar-plus',
-      'fa-calendar-times',
-      'fa-calendar-week',
-      'fa-cart-arrow-down',
-      'fa-cart-plus',
-      'fa-comment',
-      'fa-comment-alt',
-      'fa-comment-slash',
-      'fa-compass',
-      'fa-door-closed',
-      'fa-door-open',
-      'fa-exclamation',
-      'fa-exclamation-circle',
-      'fa-exclamation-triangle',
-      'fa-eye',
-      'fa-eye-slash',
-      'fa-file',
-      'fa-file-alt',
-      'fa-folder',
-      'fa-folder-open',
-      'fa-gas-pump',
-      'fa-info',
-      'fa-info-circle',
-      'fa-lightbulb',
-      'fa-lock',
-      'fa-lock-open',
-      'fa-map-marker',
-      'fa-map-marker-alt',
-      'fa-microphone',
-      'fa-microphone-alt',
-      'fa-microphone-alt-slash',
-      'fa-microphone-slash',
-      'fa-minus',
-      'fa-minus-circle',
-      'fa-minus-square',
-      'fa-parking',
-      'fa-phone',
-      'fa-phone-alt',
-      'fa-phone-slash',
-      'fa-plus',
-      'fa-plus-circle',
-      'fa-plus-square',
-      'fa-print',
-      'fa-question',
-      'fa-question-circle',
-      'fa-shield-alt',
-      'fa-shopping-cart',
-      'fa-sign-in-alt',
-      'fa-sign-out-alt',
-      'fa-signal',
-      'fa-smoking-ban',
-      'fa-star',
-      'fa-star-half',
-      'fa-star-half-alt',
-      'fa-stream',
-      'fa-thermometer-empty',
-      'fa-thermometer-full',
-      'fa-thermometer-half',
-      'fa-thermometer-quarter',
-      'fa-thermometer-three-quarters',
-      'fa-thumbs-down',
-      'fa-thumbs-up',
-      'fa-tint',
-      'fa-tint-slash',
-      'fa-toggle-off',
-      'fa-toggle-on',
-      'fa-unlock',
-      'fa-unlock-alt',
-      'fa-user',
-      'fa-user-alt',
-      'fa-user-alt-slash',
-      'fa-user-slash',
-      'fa-video',
-      'fa-video-slash',
-      'fa-volume-down',
-      'fa-volume-mute',
-      'fa-volume-off',
-      'fa-volume-up',
-      'fa-wifi'
-    ]
+      key: "time",
+      label: "Time",
+      icons: [
+          "fa-bell",
+          "fa-bell-slash",
+          "fa-calendar",
+          "fa-calendar-check",
+          "fa-calendar-day",
+          "fa-calendar-days",
+          "fa-calendar-minus",
+          "fa-calendar-plus",
+          "fa-calendar-week",
+          "fa-calendar-xmark",
+          "fa-clock",
+          "fa-hourglass",
+          "fa-hourglass-end",
+          "fa-hourglass-half",
+          "fa-hourglass-start",
+          "fa-stopwatch",
+          "fa-stopwatch-20"
+      ]
   },
   {
-    key: 'summer',
-    label: 'Summer',
-    icons: [
-      'fa-anchor',
-      'fa-biking',
-      'fa-fish',
-      'fa-hotdog',
-      'fa-ice-cream',
-      'fa-lemon',
-      'fa-sun',
-      'fa-swimmer',
-      'fa-swimming-pool',
-      'fa-umbrella-beach',
-      'fa-volleyball-ball',
-      'fa-water'
-    ]
+      key: "toggle",
+      label: "Toggle",
+      icons: [
+          "fa-bullseye",
+          "fa-circle",
+          "fa-circle-check",
+          "fa-circle-dot",
+          "fa-location-crosshairs",
+          "fa-microphone",
+          "fa-microphone-slash",
+          "fa-plane-up",
+          "fa-signal",
+          "fa-star",
+          "fa-star-half",
+          "fa-star-half-stroke",
+          "fa-toggle-off",
+          "fa-toggle-on",
+          "fa-wifi"
+      ]
   },
   {
-    key: 'toggle',
-    label: 'Toggle',
-    icons: [
-      'fa-bullseye',
-      'fa-check-circle',
-      'fa-circle',
-      'fa-dot-circle',
-      'fa-microphone',
-      'fa-microphone-slash',
-      'fa-star',
-      'fa-star-half',
-      'fa-star-half-alt',
-      'fa-toggle-off',
-      'fa-toggle-on',
-      'fa-wifi'
-    ]
+      key: "transportation",
+      label: "Transportation",
+      icons: [
+          "fa-accessible-icon",
+          "fa-baby-carriage",
+          "fa-bicycle",
+          "fa-bus",
+          "fa-bus-simple",
+          "fa-cable-car",
+          "fa-car",
+          "fa-car-burst",
+          "fa-car-rear",
+          "fa-car-side",
+          "fa-car-tunnel",
+          "fa-cart-shopping",
+          "fa-ferry",
+          "fa-helicopter",
+          "fa-horse",
+          "fa-jet-fighter",
+          "fa-jet-fighter-up",
+          "fa-motorcycle",
+          "fa-mound",
+          "fa-paper-plane",
+          "fa-plane",
+          "fa-plane-slash",
+          "fa-plane-up",
+          "fa-road",
+          "fa-road-barrier",
+          "fa-road-spikes",
+          "fa-rocket",
+          "fa-sailboat",
+          "fa-ship",
+          "fa-shuttle-space",
+          "fa-sleigh",
+          "fa-snowplow",
+          "fa-taxi",
+          "fa-tractor",
+          "fa-train",
+          "fa-train-subway",
+          "fa-train-tram",
+          "fa-truck",
+          "fa-truck-arrow-right",
+          "fa-truck-droplet",
+          "fa-truck-field",
+          "fa-truck-field-un",
+          "fa-truck-front",
+          "fa-truck-medical",
+          "fa-truck-monster",
+          "fa-truck-pickup",
+          "fa-truck-plane",
+          "fa-van-shuttle",
+          "fa-wheelchair",
+          "fa-wheelchair-move"
+      ]
   },
   {
-    key: 'travel',
-    label: 'Travel',
-    icons: [
-      'fa-archway',
-      'fa-atlas',
-      'fa-bed',
-      'fa-bus',
-      'fa-bus-alt',
-      'fa-caravan',
-      'fa-cocktail',
-      'fa-concierge-bell',
-      'fa-dumbbell',
-      'fa-glass-martini',
-      'fa-glass-martini-alt',
-      'fa-globe-africa',
-      'fa-globe-americas',
-      'fa-globe-asia',
-      'fa-globe-europe',
-      'fa-hot-tub',
-      'fa-hotel',
-      'fa-luggage-cart',
-      'fa-map',
-      'fa-map-marked',
-      'fa-map-marked-alt',
-      'fa-monument',
-      'fa-passport',
-      'fa-plane',
-      'fa-plane-arrival',
-      'fa-plane-departure',
-      'fa-shuttle-van',
-      'fa-spa',
-      'fa-suitcase',
-      'fa-suitcase-rolling',
-      'fa-swimmer',
-      'fa-swimming-pool',
-      'fa-taxi',
-      'fa-tram',
-      'fa-tv',
-      'fa-umbrella-beach',
-      'fa-wine-glass',
-      'fa-wine-glass-alt'
-    ]
+      key: "travel-hotel",
+      label: "Travel + Hotel",
+      icons: [
+          "fa-archway",
+          "fa-baby-carriage",
+          "fa-ban-smoking",
+          "fa-bath",
+          "fa-bed",
+          "fa-bell-concierge",
+          "fa-book-atlas",
+          "fa-briefcase",
+          "fa-bus",
+          "fa-bus-simple",
+          "fa-cable-car",
+          "fa-car",
+          "fa-caravan",
+          "fa-cart-flatbed-suitcase",
+          "fa-dice",
+          "fa-dice-five",
+          "fa-door-closed",
+          "fa-door-open",
+          "fa-dumbbell",
+          "fa-earth-africa",
+          "fa-earth-americas",
+          "fa-earth-asia",
+          "fa-earth-europe",
+          "fa-earth-oceania",
+          "fa-elevator",
+          "fa-hot-tub-person",
+          "fa-hotel",
+          "fa-infinity",
+          "fa-key",
+          "fa-kitchen-set",
+          "fa-map",
+          "fa-map-location",
+          "fa-map-location-dot",
+          "fa-martini-glass",
+          "fa-martini-glass-citrus",
+          "fa-martini-glass-empty",
+          "fa-monument",
+          "fa-mountain-city",
+          "fa-mug-saucer",
+          "fa-passport",
+          "fa-person-swimming",
+          "fa-person-walking-luggage",
+          "fa-plane",
+          "fa-plane-arrival",
+          "fa-plane-circle-check",
+          "fa-plane-circle-exclamation",
+          "fa-plane-circle-xmark",
+          "fa-plane-departure",
+          "fa-plane-lock",
+          "fa-plane-slash",
+          "fa-plane-up",
+          "fa-shower",
+          "fa-smoking",
+          "fa-snowflake",
+          "fa-spa",
+          "fa-stairs",
+          "fa-suitcase",
+          "fa-suitcase-rolling",
+          "fa-taxi",
+          "fa-toilet",
+          "fa-toilet-paper",
+          "fa-train-tram",
+          "fa-tree-city",
+          "fa-tv",
+          "fa-umbrella-beach",
+          "fa-utensils",
+          "fa-van-shuttle",
+          "fa-water-ladder",
+          "fa-wheelchair",
+          "fa-wheelchair-move",
+          "fa-wifi",
+          "fa-wine-glass",
+          "fa-wine-glass-empty"
+      ]
   },
   {
-    key: 'users-people',
-    label: 'Users & People',
-    icons: [
-      'fa-accessible-icon',
-      'fa-address-book',
-      'fa-address-card',
-      'fa-baby',
-      'fa-bed',
-      'fa-biking',
-      'fa-blind',
-      'fa-chalkboard-teacher',
-      'fa-child',
-      'fa-female',
-      'fa-frown',
-      'fa-hiking',
-      'fa-id-badge',
-      'fa-id-card',
-      'fa-id-card-alt',
-      'fa-male',
-      'fa-meh',
-      'fa-people-arrows',
-      'fa-people-carry',
-      'fa-person-booth',
-      'fa-poo',
-      'fa-portrait',
-      'fa-power-off',
-      'fa-pray',
-      'fa-restroom',
-      'fa-running',
-      'fa-skating',
-      'fa-skiing',
-      'fa-skiing-nordic',
-      'fa-smile',
-      'fa-snowboarding',
-      'fa-street-view',
-      'fa-swimmer',
-      'fa-user',
-      'fa-user-alt',
-      'fa-user-alt-slash',
-      'fa-user-astronaut',
-      'fa-user-check',
-      'fa-user-circle',
-      'fa-user-clock',
-      'fa-user-cog',
-      'fa-user-edit',
-      'fa-user-friends',
-      'fa-user-graduate',
-      'fa-user-injured',
-      'fa-user-lock',
-      'fa-user-md',
-      'fa-user-minus',
-      'fa-user-ninja',
-      'fa-user-nurse',
-      'fa-user-plus',
-      'fa-user-secret',
-      'fa-user-shield',
-      'fa-user-slash',
-      'fa-user-tag',
-      'fa-user-tie',
-      'fa-user-times',
-      'fa-users',
-      'fa-users-cog',
-      'fa-users-slash',
-      'fa-walking',
-      'fa-wheelchair'
-    ]
+      key: "users-people",
+      label: "Users + People",
+      icons: [
+          "fa-accessible-icon",
+          "fa-address-book",
+          "fa-address-card",
+          "fa-arrows-down-to-people",
+          "fa-baby",
+          "fa-bed",
+          "fa-chalkboard-user",
+          "fa-child",
+          "fa-child-dress",
+          "fa-child-reaching",
+          "fa-children",
+          "fa-circle-user",
+          "fa-clipboard-user",
+          "fa-elevator",
+          "fa-face-frown",
+          "fa-face-meh",
+          "fa-face-smile",
+          "fa-head-side-cough",
+          "fa-head-side-cough-slash",
+          "fa-head-side-mask",
+          "fa-head-side-virus",
+          "fa-hospital-user",
+          "fa-hot-tub-person",
+          "fa-house-chimney-user",
+          "fa-house-user",
+          "fa-id-badge",
+          "fa-id-card",
+          "fa-id-card-clip",
+          "fa-image-portrait",
+          "fa-mars-and-venus-burst",
+          "fa-people-arrows",
+          "fa-people-carry-box",
+          "fa-people-group",
+          "fa-people-line",
+          "fa-people-pulling",
+          "fa-people-robbery",
+          "fa-people-roof",
+          "fa-person",
+          "fa-person-arrow-down-to-line",
+          "fa-person-arrow-up-from-line",
+          "fa-person-biking",
+          "fa-person-booth",
+          "fa-person-breastfeeding",
+          "fa-person-burst",
+          "fa-person-cane",
+          "fa-person-chalkboard",
+          "fa-person-circle-check",
+          "fa-person-circle-exclamation",
+          "fa-person-circle-minus",
+          "fa-person-circle-plus",
+          "fa-person-circle-question",
+          "fa-person-circle-xmark",
+          "fa-person-digging",
+          "fa-person-dots-from-line",
+          "fa-person-dress",
+          "fa-person-dress-burst",
+          "fa-person-drowning",
+          "fa-person-falling",
+          "fa-person-falling-burst",
+          "fa-person-half-dress",
+          "fa-person-harassing",
+          "fa-person-hiking",
+          "fa-person-military-pointing",
+          "fa-person-military-rifle",
+          "fa-person-military-to-person",
+          "fa-person-praying",
+          "fa-person-pregnant",
+          "fa-person-rays",
+          "fa-person-rifle",
+          "fa-person-running",
+          "fa-person-shelter",
+          "fa-person-skating",
+          "fa-person-skiing",
+          "fa-person-skiing-nordic",
+          "fa-person-snowboarding",
+          "fa-person-swimming",
+          "fa-person-through-window",
+          "fa-person-walking",
+          "fa-person-walking-arrow-loop-left",
+          "fa-person-walking-arrow-right",
+          "fa-person-walking-dashed-line-arrow-right",
+          "fa-person-walking-luggage",
+          "fa-person-walking-with-cane",
+          "fa-poo",
+          "fa-restroom",
+          "fa-skull",
+          "fa-square-person-confined",
+          "fa-street-view",
+          "fa-user",
+          "fa-user-astronaut",
+          "fa-user-check",
+          "fa-user-clock",
+          "fa-user-doctor",
+          "fa-user-gear",
+          "fa-user-graduate",
+          "fa-user-group",
+          "fa-user-injured",
+          "fa-user-large",
+          "fa-user-large-slash",
+          "fa-user-lock",
+          "fa-user-minus",
+          "fa-user-ninja",
+          "fa-user-nurse",
+          "fa-user-pen",
+          "fa-user-plus",
+          "fa-user-secret",
+          "fa-user-shield",
+          "fa-user-slash",
+          "fa-user-tag",
+          "fa-user-tie",
+          "fa-user-xmark",
+          "fa-users",
+          "fa-users-between-lines",
+          "fa-users-gear",
+          "fa-users-line",
+          "fa-users-rays",
+          "fa-users-rectangle",
+          "fa-users-slash",
+          "fa-users-viewfinder",
+          "fa-wheelchair",
+          "fa-wheelchair-move"
+      ]
   },
   {
-    key: 'vehicles',
-    label: 'Vehicles',
-    icons: [
-      'fa-accessible-icon',
-      'fa-ambulance',
-      'fa-baby-carriage',
-      'fa-bicycle',
-      'fa-bus',
-      'fa-bus-alt',
-      'fa-car',
-      'fa-car-alt',
-      'fa-car-crash',
-      'fa-car-side',
-      'fa-fighter-jet',
-      'fa-helicopter',
-      'fa-horse',
-      'fa-motorcycle',
-      'fa-paper-plane',
-      'fa-plane',
-      'fa-rocket',
-      'fa-ship',
-      'fa-shopping-cart',
-      'fa-shuttle-van',
-      'fa-sleigh',
-      'fa-snowplow',
-      'fa-space-shuttle',
-      'fa-subway',
-      'fa-taxi',
-      'fa-tractor',
-      'fa-train',
-      'fa-tram',
-      'fa-truck',
-      'fa-truck-monster',
-      'fa-truck-pickup',
-      'fa-wheelchair'
-    ]
+      key: "weather",
+      label: "Weather",
+      icons: [
+          "fa-bolt",
+          "fa-bolt-lightning",
+          "fa-cloud",
+          "fa-cloud-bolt",
+          "fa-cloud-meatball",
+          "fa-cloud-moon",
+          "fa-cloud-moon-rain",
+          "fa-cloud-rain",
+          "fa-cloud-showers-heavy",
+          "fa-cloud-showers-water",
+          "fa-cloud-sun",
+          "fa-cloud-sun-rain",
+          "fa-house-tsunami",
+          "fa-hurricane",
+          "fa-icicles",
+          "fa-meteor",
+          "fa-moon",
+          "fa-poo-storm",
+          "fa-rainbow",
+          "fa-smog",
+          "fa-snowflake",
+          "fa-sun",
+          "fa-sun-plant-wilt",
+          "fa-temperature-arrow-down",
+          "fa-temperature-arrow-up",
+          "fa-temperature-empty",
+          "fa-temperature-full",
+          "fa-temperature-half",
+          "fa-temperature-high",
+          "fa-temperature-low",
+          "fa-temperature-quarter",
+          "fa-temperature-three-quarters",
+          "fa-tornado",
+          "fa-umbrella",
+          "fa-volcano",
+          "fa-water",
+          "fa-wind"
+      ]
   },
   {
-    key: 'weather',
-    label: 'Weather',
-    icons: [
-      'fa-bolt',
-      'fa-cloud',
-      'fa-cloud-meatball',
-      'fa-cloud-moon',
-      'fa-cloud-moon-rain',
-      'fa-cloud-rain',
-      'fa-cloud-showers-heavy',
-      'fa-cloud-sun',
-      'fa-cloud-sun-rain',
-      'fa-meteor',
-      'fa-moon',
-      'fa-poo-storm',
-      'fa-rainbow',
-      'fa-smog',
-      'fa-snowflake',
-      'fa-sun',
-      'fa-temperature-high',
-      'fa-temperature-low',
-      'fa-umbrella',
-      'fa-water',
-      'fa-wind'
-    ]
-  },
-  {
-    key: 'winter',
-    label: 'Winter',
-    icons: [
-      'fa-glass-whiskey',
-      'fa-icicles',
-      'fa-igloo',
-      'fa-mitten',
-      'fa-skating',
-      'fa-skiing',
-      'fa-skiing-nordic',
-      'fa-snowboarding',
-      'fa-snowplow',
-      'fa-tram'
-    ]
-  },
-  {
-    key: 'writing',
-    label: 'Writing',
-    icons: [
-      'fa-archive',
-      'fa-blog',
-      'fa-book',
-      'fa-bookmark',
-      'fa-edit',
-      'fa-envelope',
-      'fa-envelope-open',
-      'fa-eraser',
-      'fa-file',
-      'fa-file-alt',
-      'fa-folder',
-      'fa-folder-open',
-      'fa-keyboard',
-      'fa-newspaper',
-      'fa-paper-plane',
-      'fa-paperclip',
-      'fa-paragraph',
-      'fa-pen',
-      'fa-pen-alt',
-      'fa-pen-square',
-      'fa-pencil-alt',
-      'fa-quote-left',
-      'fa-quote-right',
-      'fa-sticky-note',
-      'fa-thumbtack'
-    ]
+      key: "writing",
+      label: "Writing",
+      icons: [
+          "fa-blog",
+          "fa-book",
+          "fa-book-bookmark",
+          "fa-bookmark",
+          "fa-box-archive",
+          "fa-envelope",
+          "fa-envelope-open",
+          "fa-eraser",
+          "fa-file",
+          "fa-file-lines",
+          "fa-folder",
+          "fa-folder-open",
+          "fa-keyboard",
+          "fa-newspaper",
+          "fa-notdef",
+          "fa-note-sticky",
+          "fa-paper-plane",
+          "fa-paperclip",
+          "fa-paragraph",
+          "fa-pen",
+          "fa-pen-clip",
+          "fa-pen-to-square",
+          "fa-pencil",
+          "fa-quote-left",
+          "fa-quote-right",
+          "fa-signature",
+          "fa-square-pen",
+          "fa-thumbtack"
+      ]
   }
 ]

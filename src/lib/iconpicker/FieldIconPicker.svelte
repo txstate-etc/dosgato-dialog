@@ -113,7 +113,7 @@
 </script>
 
 <FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
-  <Icon icon={`${value.prefix === 'fab' ? 'fa-brands' : 'fa-solid'}:${value.icon?.slice(3) ?? 'graduation-cap'}`}/>
+  <Icon icon={`${value.prefix === 'fab' ? 'fa6-brands' : 'fa6-solid'}:${value.icon?.slice(3) ?? 'graduation-cap'}`}/>
   <button type="button" id="btnSelectIcon" class="select-icon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])}>Select New Icon</button>
   {#if modalOpen}
   <Modal>
@@ -139,8 +139,9 @@
             <ScreenReaderOnly><legend class="sr-only">Icons</legend></ScreenReaderOnly>
             <div class="icon-picker-items" role="radiogroup">
               {#each visibleIcons as icon, idx (icon.class)}
+
                 <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)} on:keydown={onKeyDown}>
-                  <Icon icon={`${iconToPrefix[icon.class] === 'fab' ? 'fa-brands' : 'fa-solid'}:${icon.class.slice(3)}`}/>
+                  <Icon icon={`${iconToPrefix[icon.class] === 'fab' ? 'fa6-brands' : 'fa6-solid'}:${icon.class.slice(3)}`}/>
                   <ScreenReaderOnly>{icon.label}</ScreenReaderOnly>
                 </div>
               {:else}
