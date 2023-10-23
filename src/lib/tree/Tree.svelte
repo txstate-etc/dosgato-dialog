@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { resize, type ElementSize } from '@txstate-mws/svelte-components'
+  import { Icon } from '$lib'
+  import { resize, type ElementSize, PopupMenu, type PopupMenuItem } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
-  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext } from 'svelte'
+  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
+  import dotsIcon from '@iconify-icons/ph/dots-three-outline-vertical-fill'
   import { isNotBlank } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
@@ -22,6 +24,7 @@
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean | undefined = undefined
   export let enableResize = false
+  export let minColumnSize: number = 100
   /**
    * this `itemType` prop is here for typescript only
    *
@@ -44,21 +47,50 @@
   let checkboxelement: HTMLElement
   const headerelements: HTMLElement[] = []
   const treeWidth = new Store<ElementSize>({})
+  let numShownColumns = headers.length
+  let numNeverHidden = headers.filter(h => h.neverHide).length
+  // Need to keep track of which headers are shown or hidden and which is selected
+  let shownHeaders: TreeHeader<T>[] = headers
+  let hiddenHeaders: TreeHeader<T>[] = []
+  let selectedHeader: TreeHeader<T> | undefined = undefined
+
+  function updateShownHeaders () {
+    numShownColumns = Math.min(headers.length, Math.floor(($treeWidth.clientWidth ?? 1024) / minColumnSize))
+    if (numShownColumns < headers.length) {
+      shownHeaders = []
+      hiddenHeaders = []
+      let available = (selectedHeader ? numShownColumns - 1 : numShownColumns) - numNeverHidden
+      if (selectedHeader?.neverHide) available++
+      for (let i = 0; i < headers.length; i++) {
+        if (available > 0 || headers[i].neverHide || headers[i].id === selectedHeader?.id) {
+          shownHeaders.push(headers[i])
+          if (headers[i].id !== selectedHeader?.id && !headers[i].neverHide) available--
+        } else {
+          hiddenHeaders.push(headers[i])
+        }
+      }
+    } else {
+      shownHeaders = headers
+      hiddenHeaders = []
+    }
+  }
+
   function calcHeaderSizes () {
+    updateShownHeaders()
     const headerSizes: string[] = []
     let totalFixed = checkboxelement?.offsetWidth ?? 0
-    for (let i = 0; i < headers.length; i++) {
-      const header = headers[i]
+    for (let i = 0; i < shownHeaders.length; i++) {
+      const header = shownHeaders[i]
       if (header.fixed || $headerOverride[header.id]) {
-        headerSizes[i] = $headerOverride[header.id] ?? header.fixed
+        headerSizes[i] = $headerOverride[header.id] ?? (header.fixed ? (hiddenHeaders.length && i === shownHeaders.length - 1 ? `calc(${header.fixed} + 1em)` : header.fixed) : undefined)
         totalFixed += headerelements[i]?.offsetWidth ?? 0
       }
     }
     const remainingWidth = ($treeWidth.clientWidth ?? 1024) - totalFixed
-    const growHeaders = headers.filter((h, i) => !h.fixed && !$headerOverride[h.id] && headerelements[i]?.offsetWidth)
+    const growHeaders = shownHeaders.filter((h, i) => !h.fixed && !$headerOverride[h.id])
     const totalGrowShares = growHeaders.reduce((sum, h) => sum + (h.grow ?? 1), 0)
-    for (let i = 0; i < headers.length; i++) {
-      const header = headers[i]
+    for (let i = 0; i < shownHeaders.length; i++) {
+      const header = shownHeaders[i]
       if (!header.fixed && !$headerOverride[header.id] && headerelements[i]?.offsetWidth) {
         headerSizes[i] = `${remainingWidth * (header.grow ?? 1) / totalGrowShares}px`
       }
@@ -159,25 +191,44 @@
   })
   $: myRootItemIds = $store && $filteredRootItems
   $: myRootItems = $store?.rootItems?.filter(r => myRootItemIds.has(r.id)) ?? []
+
+  async function selectHeader (selected: PopupMenuItem) {
+    selectedHeader = headers.find(h => h.id === selected.value)
+    updateShownHeaders()
+    headerSizes.set([])
+    store.resetHeaderOverride()
+    await tick()
+    headerSizes.set(calcHeaderSizes())
+  }
+
 </script>
 
 <svelte:window on:mouseup={headerDragEnd} />
-
 <div class="tree-header" class:resizing={!!dragtargetid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined}>
   <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
-  {#each headers as header, i (header.label)}
-    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
+  {#each shownHeaders as header, i (header.label)}
+    {@const hasDropdown = hiddenHeaders.length && i === shownHeaders.length - 1}
+    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" class:column-dropdown={hasDropdown} style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined} tabindex={hasDropdown ? 0 : undefined}>{header.label}{#if i === 0 && $store.loading}
+      <LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}
+      {#if hasDropdown}
+        <Icon icon={dotsIcon} inline hiddenLabel="Show more columns"/>
+      {/if}
+    </div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    {#if enableResize && i !== headers.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
+    {#if enableResize && i !== shownHeaders.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
   {/each}
 </div>
+{#if hiddenHeaders.length > 0}
+  <PopupMenu items={hiddenHeaders.map(h => ({ value: h.id, label: h.label }))} buttonelement={headerelements[shownHeaders.length-1]} on:change={e => {selectHeader(e.detail)}}/>
+{/if}
 {#if mounted && myRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragtargetid} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
     {#each myRootItems as item, i (item.id)}
       <TreeNode
         {item}
-        {headers}
+        headers={shownHeaders}
         {headerSizes}
         {nodeClass}
         posinset={i + 1}
@@ -225,6 +276,11 @@
     width: 2px;
     height: 100%;
     background-color: var(--tree-head-text, white);
+  }
+  :global(.column-dropdown) {
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
   }
   :global([data-eq~="650px"]) .tree-header {
     font-size: 0.8em;
