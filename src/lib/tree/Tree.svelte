@@ -1,9 +1,12 @@
 <script lang="ts">
   import { Icon } from '$lib'
+
   import { resize, type ElementSize, PopupMenu, type PopupMenuItem } from '@txstate-mws/svelte-components'
   import { derivedStore, Store } from '@txstate-mws/svelte-store'
   import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
   import dotsIcon from '@iconify-icons/ph/dots-three-outline-vertical-fill'
+  import circleIcon from '@iconify-icons/ph/circle'
+  import radioSelectedIcon from '@iconify-icons/ph/radio-button-fill'
   import { isNotBlank } from 'txstate-utils'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
@@ -24,7 +27,13 @@
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean | undefined = undefined
   export let enableResize = false
-  export let minColumnSize: number = 100
+  /**
+   * Takes the width of the tree, in pixels, and returns an array of TreeHeader IDs that should be
+   * displayed at that screen width. Any headers whose ID is not returned will be added to a dropdown, which allows
+   * the user to view them. The last ID returned by this function is the header that is replaced if the user chooses
+   * to view a different header. The headers will always appear in the order in which they are defined in the headers prop.
+   */
+  export let responsiveHeaders: ((treeWidth: number) => string[]) | undefined = undefined
   /**
    * this `itemType` prop is here for typescript only
    *
@@ -46,32 +55,35 @@
 
   let checkboxelement: HTMLElement
   const headerelements: HTMLElement[] = []
+  let showMoreButton: HTMLButtonElement
   const treeWidth = new Store<ElementSize>({})
-  let numShownColumns = headers.length
-  let numNeverHidden = headers.filter(h => h.neverHide).length
+
   // Need to keep track of which headers are shown or hidden and which is selected
   let shownHeaders: TreeHeader<T>[] = headers
   let hiddenHeaders: TreeHeader<T>[] = []
   let selectedHeader: TreeHeader<T> | undefined = undefined
+  let selectedHeaderValue: string
 
-  function updateShownHeaders () {
-    numShownColumns = Math.min(headers.length, Math.floor(($treeWidth.clientWidth ?? 1024) / minColumnSize))
-    if (numShownColumns < headers.length) {
+  function updateShownHeaders() {
+    if (typeof responsiveHeaders === 'function') {
       shownHeaders = []
       hiddenHeaders = []
-      let available = (selectedHeader ? numShownColumns - 1 : numShownColumns) - numNeverHidden
-      if (selectedHeader?.neverHide) available++
-      for (let i = 0; i < headers.length; i++) {
-        if (available > 0 || headers[i].neverHide || headers[i].id === selectedHeader?.id) {
-          shownHeaders.push(headers[i])
-          if (headers[i].id !== selectedHeader?.id && !headers[i].neverHide) available--
+      const shown = responsiveHeaders($treeWidth.clientWidth ?? 1024)
+      if (selectedHeader && !shown.includes(selectedHeader.id)) {
+        shown[shown.length - 1] = selectedHeader.id
+      }
+      for (const h of headers) {
+        if (shown.includes(h.id)) {
+          shownHeaders.push(h)
         } else {
-          hiddenHeaders.push(headers[i])
+          hiddenHeaders.push(h)
         }
       }
-    } else {
-      shownHeaders = headers
-      hiddenHeaders = []
+      selectedHeaderValue = shown[shown.length - 1]
+      if (hiddenHeaders.length) {
+        const hideable = headers.find(h => h.id === selectedHeaderValue)
+        if (hideable) hiddenHeaders.push(hideable)
+      }
     }
   }
 
@@ -79,10 +91,11 @@
     updateShownHeaders()
     const headerSizes: string[] = []
     let totalFixed = checkboxelement?.offsetWidth ?? 0
+    if (hiddenHeaders.length) totalFixed += (showMoreButton?.offsetWidth ?? 0)
     for (let i = 0; i < shownHeaders.length; i++) {
       const header = shownHeaders[i]
       if (header.fixed || $headerOverride[header.id]) {
-        headerSizes[i] = $headerOverride[header.id] ?? (header.fixed ? (hiddenHeaders.length && i === shownHeaders.length - 1 ? `calc(${header.fixed} + 1em)` : header.fixed) : undefined)
+        headerSizes[i] = $headerOverride[header.id] ?? header.fixed
         totalFixed += headerelements[i]?.offsetWidth ?? 0
       }
     }
@@ -195,33 +208,34 @@
   async function selectHeader (selected: PopupMenuItem) {
     selectedHeader = headers.find(h => h.id === selected.value)
     updateShownHeaders()
-    headerSizes.set([])
     store.resetHeaderOverride()
+    const headersizes = shownHeaders.map(h => h.fixed ? h.fixed : '')
+    headerSizes.set(headersizes)
     await tick()
     headerSizes.set(calcHeaderSizes())
   }
-
 </script>
 
 <svelte:window on:mouseup={headerDragEnd} />
-<div class="tree-header" class:resizing={!!dragtargetid} use:resize={{ store: treeWidth }} aria-hidden="true" on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined}>
-  <div class="checkbox" bind:this={checkboxelement}>&nbsp;</div>
-  {#each shownHeaders as header, i (header.label)}
-    {@const hasDropdown = hiddenHeaders.length && i === shownHeaders.length - 1}
-    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" class:column-dropdown={hasDropdown} style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined} tabindex={hasDropdown ? 0 : undefined}>{header.label}{#if i === 0 && $store.loading}
-      <LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}
-      {#if hasDropdown}
-        <Icon icon={dotsIcon} inline hiddenLabel="Show more columns"/>
+<div class="tree-header" class:resizing={!!dragtargetid} use:resize={{ store: treeWidth }} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined}>
+<div class="checkbox" bind:this={checkboxelement} aria-hidden="true">&nbsp;</div>
+{#each shownHeaders as header, i (header.label)}
+  <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" aria-hidden="true" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  {#if enableResize && i !== shownHeaders.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
+{/each}
+{#if hiddenHeaders.length}
+  <div class="button-wrapper">
+    <button bind:this={showMoreButton} type='button'><Icon icon={dotsIcon} hiddenLabel="View other columns"/></button>
+    <PopupMenu bind:value={selectedHeaderValue} items={hiddenHeaders.map(h => ({ value: h.id, label: h.label }))} buttonelement={showMoreButton} on:change={e => {selectHeader(e.detail)}} let:item menuContainerClass="hideable-container" menuClass="hideable-headers" menuItemSelectedClass="selected-header">
+      {#if item.hasOwnProperty('value')}
+        <Icon icon={'value' in item && item.value === selectedHeaderValue ? radioSelectedIcon : circleIcon} inline/>
+        {item.label}
       {/if}
-    </div>
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    {#if enableResize && i !== shownHeaders.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
-  {/each}
-</div>
-{#if hiddenHeaders.length > 0}
-  <PopupMenu items={hiddenHeaders.map(h => ({ value: h.id, label: h.label }))} buttonelement={headerelements[shownHeaders.length-1]} on:change={e => {selectHeader(e.detail)}}/>
+    </PopupMenu>
+  </div>
 {/if}
+</div>
 {#if mounted && myRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragtargetid} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
@@ -277,11 +291,6 @@
     height: 100%;
     background-color: var(--tree-head-text, white);
   }
-  :global(.column-dropdown) {
-    display: flex;
-    gap: 0.5em;
-    justify-content: space-between;
-  }
   :global([data-eq~="650px"]) .tree-header {
     font-size: 0.8em;
   }
@@ -297,5 +306,29 @@
   }
   :global([data-eq~="650px"]) ul {
     font-size: 0.8em;
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 2;
+  }
+  .button-wrapper button {
+    background: transparent;
+    color: var(--tree-head-text, white);
+    border: 0;
+  }
+  :global(.hideable-container .hideable-headers) {
+    margin: 0;
+    padding: 0.4em;
+    background: white;
+    border: 1px solid slategray;
+    border-radius: 3px;
+    min-width: 10em;
+    max-height: 20em;
+    overflow-y: auto;
+  }
+  :global(div.hideable-container ul.hideable-headers li[role="option"]) {
+    padding-left: 0;
+    color: black;
   }
 </style>

@@ -53,6 +53,18 @@
   const treestore = new TreeStore(fetchChildren, { copyHandler, dropEffect })
   let showtree = true
   let filter = ''
+
+  function handleResponsiveHeaders(treeWidth: number) {
+    if (treeWidth > 1000) {
+      return ['name', 'size', 'status', 'type', 'modified']
+    } else if (treeWidth > 800) {
+      return ['name', 'type', 'status', 'modified']
+    } else if (treeWidth > 400) {
+      return ['name', 'status', 'type']
+    } else {
+      return ['name', 'status']
+    }
+  }
 </script>
 <div>
   <input type="text" on:keyup={e => { filter = e.currentTarget?.value ?? '' }}/>
@@ -68,7 +80,7 @@
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'status', label: 'Status', fixed: '4em', icon: item => ({ icon: statusIcon[item.status], label: item.status }) },
     { id: 'modified', label: 'Modified', render: itm => itm.modified.toISOString() }
-  ]} searchable="name" filterable={itm => [itm.name, bytesToHuman(itm.size)]} {filter} enableResize />
+  ]} searchable="name" filterable={itm => [itm.name, bytesToHuman(itm.size)]} {filter} responsiveHeaders={handleResponsiveHeaders} enableResize/>
 {/if}
 
 <style>

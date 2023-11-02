@@ -54,7 +54,6 @@ export interface TreeHeader<T extends TreeItemFromDB> {
   render?: (item: TypedTreeItem<T>) => string
   component?: SvelteComponent
   class?: (item: TypedTreeItem<T>) => string | string[]
-  neverHide?: boolean
 }
 
 export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<T>> {
