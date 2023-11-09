@@ -13,6 +13,11 @@
   export let store = new TabStore(tabs, active)
   export let disableDialogControl = false
   export let accordionOnMobile = true
+  /**
+   * Takes the width of the tabs area, in pixels, and returns the number of tabs that should be
+   * displayed at that width.
+   */
+  export let columnsShown: ((tabsWidth: number) => number) | undefined = undefined
   $: store.update(v => ({ ...v, tabs, accordionOnMobile }))
 
   const activeStore = new Store<ElementOffsets>({})
@@ -34,7 +39,7 @@
   const currentName = store.currentName()
   const currentIdx = store.currentIdx()
   const accordion = store.accordion()
-  $: cols = Math.min(Math.floor(($store.clientWidth ?? 1024) / 90), $store.tabs.length)
+  $: cols = (typeof columnsShown === 'function') ? columnsShown($store.clientWidth ?? 1024) : Math.min(Math.floor(($store.clientWidth ?? 1024) / 90), $store.tabs.length)
   $: scalefactor = Math.min(roundTo(($store.clientWidth ?? 1024) / (cols * 130), 4), 1)
   $: wrapping = cols !== $store.tabs.length
   $: dialogContext.hasTabs = !$accordion
