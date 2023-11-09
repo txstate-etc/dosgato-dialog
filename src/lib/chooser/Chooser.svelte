@@ -160,7 +160,7 @@
     .dialog-chooser-chooser {
       order: 3;
       width: 100%;
-      height: 50%;
+      height: 70%;
     }
   }
 </style>

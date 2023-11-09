@@ -243,14 +243,23 @@
     align-items: flex-start;
     margin-top: 0.2em;
   }
+  :global([data-eq~="400px"]) .dialog-chooser-entry {
+    flex-direction: column;
+  }
   .dialog-chooser-entry > button {
     border-radius: 0.25em;
-    border: 1px solid #808080;
-    color: black;
+    border: 0;
+    background-color: var(--dg-button-bg, #501214);
+    color: var(--dg-button-text, #fff);
+    padding: 0.5em 1em;
+    font-size: 0.8em;
   }
   .dialog-chooser-entry-input {
     position: relative;
     flex-grow: 1;
+  }
+  :global([data-eq~="400px"]) .dialog-chooser-entry-input {
+    margin-bottom: 0.2em;
   }
   .dialog-chooser-entry-input input {
     width: 100%;
