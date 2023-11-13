@@ -245,6 +245,7 @@
   }
   :global([data-eq~="400px"]) .dialog-chooser-entry {
     flex-direction: column;
+    align-items: center;
   }
   .dialog-chooser-entry > button {
     border-radius: 0.25em;
@@ -260,6 +261,7 @@
   }
   :global([data-eq~="400px"]) .dialog-chooser-entry-input {
     margin-bottom: 0.2em;
+    width: 100%;
   }
   .dialog-chooser-entry-input input {
     width: 100%;

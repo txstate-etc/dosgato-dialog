@@ -100,17 +100,17 @@
       flex-direction: row;
       height: 25vh;
     }
-    .dialog-chooser-preview :global(.dialog-chooser-thumbnail) {
+    .dialog-chooser-preview .preview-container :global(.dialog-chooser-thumbnail) {
       max-width: 50%;
     }
-    .dialog-chooser-preview :global(.dialog-chooser-thumbnail.expanded) {
+    .dialog-chooser-preview .preview-container :global(.dialog-chooser-thumbnail.expanded) {
       max-width: unset;
     }
-    .dialog-chooser-preview :global(.dialog-chooser-thumbnail img) {
+    .dialog-chooser-preview .preview-container :global(.dialog-chooser-thumbnail img) {
       object-fit: cover;
       object-position: center;
     }
-    .dialog-chooser-preview :global(.dialog-chooser-thumbnail.expanded img) {
+    .dialog-chooser-preview .preview-container :global(.dialog-chooser-thumbnail.expanded img) {
       object-fit: scale-down;
       width: unset;
     }
