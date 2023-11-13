@@ -12,8 +12,8 @@
 </script>
 <script lang="ts">
   import type { IconifyIcon } from '@iconify/svelte'
-  import arrowLeftLight from '@iconify-icons/ph/arrow-left-light'
-  import arrowRightLight from '@iconify-icons/ph/arrow-right-light'
+  import arrowLeft from '@iconify-icons/ph/arrow-left'
+  import arrowRight from '@iconify-icons/ph/arrow-right'
   import xLight from '@iconify-icons/ph/x-light'
   import arrowsOutSimple from '@iconify-icons/ph/arrows-out-simple'
   import arrowsInSimple from '@iconify-icons/ph/arrows-in-simple'
@@ -75,7 +75,7 @@
     <footer class="actions">
       <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
         {#if prevTitle && !ignoreTabs}
-          <Button class="prev" disabled={!prevTitle} on:click={onPrev}><Icon icon={arrowLeftLight} inline /> Previous<ScreenReaderOnly> Tab ({prevTitle})</ScreenReaderOnly></Button>
+          <Button class="prev" disabled={!prevTitle} on:click={onPrev}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
         {/if}
         {#if isNotBlank(cancelText)}
           <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
@@ -84,7 +84,7 @@
           <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline /> {continueText}</Button>
         {/if}
         {#if nextTitle && !ignoreTabs}
-          <Button class="next" disabled={!nextTitle} on:click={onNext}>Next<ScreenReaderOnly> Tab ({nextTitle})</ScreenReaderOnly> <Icon width="1.2em" icon={arrowRightLight} inline /></Button>
+          <Button class="next" disabled={!nextTitle} on:click={onNext}><span class="prev-next" aria-hidden="true">Next</span><ScreenReaderOnly> Next Tab ({nextTitle})</ScreenReaderOnly> <Icon icon={arrowRight} inline /></Button>
         {/if}
       </slot>
     </footer>
@@ -183,9 +183,21 @@
     border-bottom: 0px !important;
   }
 
+  footer.actions {
+    container-type: inline-size;
+    container-name: dosgato-dialog-actions
+  }
+
   footer.actions :global(.prev) {
     margin-right: auto;
   }
+
+  @container dosgato-dialog-actions (max-width: 450px) {
+    footer.actions :global(button span.prev-next) {
+      display: none;
+    }
+  }
+
   .header-buttons {
     position: absolute;
     top: 0.1em;
