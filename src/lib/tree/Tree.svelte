@@ -64,7 +64,7 @@
   let selectedHeader: TreeHeader<T> | undefined = undefined
   let selectedHeaderValue: string
 
-  function updateShownHeaders() {
+  function updateShownHeaders () {
     if (typeof responsiveHeaders === 'function') {
       shownHeaders = []
       hiddenHeaders = []
@@ -217,24 +217,24 @@
 </script>
 
 <svelte:window on:mouseup={headerDragEnd} />
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="tree-header" class:resizing={!!dragtargetid} use:resize={{ store: treeWidth }} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined}>
-<div class="checkbox" bind:this={checkboxelement} aria-hidden="true">&nbsp;</div>
-{#each shownHeaders as header, i (header.label)}
-  <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" aria-hidden="true" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  {#if enableResize && i !== shownHeaders.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
-{/each}
-{#if hiddenHeaders.length}
-  <div class="button-wrapper">
-    <button bind:this={showMoreButton} type='button'><Icon icon={dotsIcon} hiddenLabel="View other columns"/></button>
-    <PopupMenu bind:value={selectedHeaderValue} items={hiddenHeaders.map(h => ({ value: h.id, label: h.label }))} buttonelement={showMoreButton} on:change={e => {selectHeader(e.detail)}} let:item menuContainerClass="hideable-container" menuClass="hideable-headers" menuItemSelectedClass="selected-header">
-      {#if item.hasOwnProperty('value')}
-        <Icon icon={'value' in item && item.value === selectedHeaderValue ? radioSelectedIcon : circleIcon} inline/>
-        {item.label}
-      {/if}
-    </PopupMenu>
-  </div>
-{/if}
+  <div class="checkbox" bind:this={checkboxelement} aria-hidden="true">&nbsp;</div>
+  {#each shownHeaders as header, i (header.label)}
+    <div bind:this={headerelements[i]} id={header.id} class="tree-header-cell {header.id}" aria-hidden="true" style:width={$headerOverride[header.id] ?? $headerSizes?.[i]} style:padding-left={i === 0 ? '1.4em' : undefined}>{header.label}{#if i === 0 && $store.loading}<LoadIcon />{/if}{#if i === 0 && isNotBlank(search)}&nbsp;(searching: {search}){/if}</div>
+    {#if enableResize && i !== shownHeaders.length - 1}<div class="tree-separator {header.id}" on:mousedown={headerDragStart(header, i)} on:touchstart={headerDragStart(header, i)} on:dblclick={headerDragReset}>&nbsp;</div>{/if}
+  {/each}
+  {#if hiddenHeaders.length}
+    <div class="button-wrapper">
+      <button bind:this={showMoreButton} type='button'><Icon icon={dotsIcon} hiddenLabel="View other columns"/></button>
+      <PopupMenu bind:value={selectedHeaderValue} items={hiddenHeaders.map(h => ({ value: h.id, label: h.label }))} buttonelement={showMoreButton} on:change={async e => { await selectHeader(e.detail) }} let:item menuContainerClass="hideable-container" menuClass="hideable-headers" menuItemSelectedClass="selected-header">
+        {#if 'value' in item}
+          <Icon icon={'value' in item && item.value === selectedHeaderValue ? radioSelectedIcon : circleIcon} inline width="1.1em"/>
+          {item.label}
+        {/if}
+      </PopupMenu>
+    </div>
+  {/if}
 </div>
 {#if mounted && myRootItems?.length}
   <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
@@ -322,7 +322,7 @@
     padding: 0.4em;
     background: white;
     border: 1px solid slategray;
-    border-radius: 3px;
+    border-radius: 5px;
     min-width: 10em;
     max-height: 20em;
     overflow-y: auto;
@@ -330,5 +330,7 @@
   :global(div.hideable-container ul.hideable-headers li[role="option"]) {
     padding-left: 0;
     color: black;
+    padding: 0.5em;
+    font-size: 1.1em;
   }
 </style>
