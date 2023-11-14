@@ -339,12 +339,13 @@
   :global(.resizing) .tree-node {
     cursor: col-resize;
   }
+  .tree-node > div {
+    padding: 0.6em 0.5em;
+  }
   .tree-node .checkbox {
     min-width: 1.5em;
     max-width: 1.5em;
-  }
-  .tree-node > div {
-    padding: 0.6em 0.3em;
+    padding-left: 0.3em;
   }
   .tree-node > div.left {
     display: flex;

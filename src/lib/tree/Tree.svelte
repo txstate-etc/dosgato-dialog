@@ -273,7 +273,7 @@
     cursor: col-resize;
   }
   .tree-header > .tree-header-cell {
-    padding: 0.4em 0.3em;
+    padding: 0.4em 0.5em;
   }
   .tree-header > .tree-separator {
     position: relative;
