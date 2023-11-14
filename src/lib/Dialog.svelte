@@ -12,8 +12,8 @@
 </script>
 <script lang="ts">
   import type { IconifyIcon } from '@iconify/svelte'
-  import arrowLeft from '@iconify-icons/ph/arrow-left'
-  import arrowRight from '@iconify-icons/ph/arrow-right'
+  import arrowLeft from '@iconify-icons/ph/arrow-left-bold'
+  import arrowRight from '@iconify-icons/ph/arrow-right-bold'
   import xLight from '@iconify-icons/ph/x-light'
   import arrowsOutSimple from '@iconify-icons/ph/arrows-out-simple'
   import arrowsInSimple from '@iconify-icons/ph/arrows-in-simple'
