@@ -12,7 +12,7 @@
   export let active: string | undefined = undefined
   export let store = new TabStore(tabs, active)
   export let disableDialogControl = false
-  export let accordionOnMobile = true
+  export let accordionOnMobile = false
   /**
    * Takes the width of the tabs area, in pixels, and returns the number of tabs that should be
    * displayed at that width.
