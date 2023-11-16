@@ -96,7 +96,7 @@
 </script>
 
 <Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
-  <section class="dialog-chooser-window">
+  <section class="dialog-chooser-window" class:no-controls={$sources.length < 2}>
     {#if $sources.length > 1}
     <header class="dialog-chooser-controls">
       <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ name: s.name, title: s.label ?? s.name }))} active={$preview?.source ?? $selected?.source ?? $source?.name ?? initialSource} accordionOnMobile={false}/>
@@ -134,6 +134,9 @@
     overflow: hidden;
     container-type: inline-size;
     container-name: dosgato-dialog-chooser-window
+  }
+  .dialog-chooser-window.no-controls {
+    height: 85vh;
   }
   .dialog-chooser-window * {
     box-sizing: border-box;
