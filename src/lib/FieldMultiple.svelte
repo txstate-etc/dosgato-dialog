@@ -82,7 +82,9 @@
       </div>{/if}
     </div>
     <svelte:fragment slot="addbutton" let:maxed let:onClick>
-      <Button type="button" icon={plusCircleLight} class="{addMoreClass} dialog-multiple-button" disabled={maxed} on:click={onClick}>{maxed ? maxedText : addMoreText}</Button>
+      {#if !maxed || (maxed && maxLength > 1)}
+        <Button type="button" icon={plusCircleLight} class="{addMoreClass} dialog-multiple-button" disabled={maxed} on:click={onClick}>{maxed ? maxedText : addMoreText}</Button>
+      {/if}
     </svelte:fragment>
   </AddMore>
 </Container>
