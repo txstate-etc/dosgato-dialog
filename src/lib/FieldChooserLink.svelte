@@ -242,6 +242,7 @@
     display: flex;
     align-items: flex-start;
     margin-top: 0.2em;
+    gap: 0.3em;
   }
   :global([data-eq~="400px"]) .dialog-chooser-entry {
     flex-direction: column;
@@ -252,7 +253,7 @@
     border: 0;
     background-color: var(--dg-button-bg, #501214);
     color: var(--dg-button-text, #fff);
-    padding: 0.5em 1em;
+    padding: 0.4em 1em;
     font-size: 0.8em;
   }
   .dialog-chooser-entry-input {
@@ -260,7 +261,6 @@
     flex-grow: 1;
   }
   :global([data-eq~="400px"]) .dialog-chooser-entry-input {
-    margin-bottom: 0.2em;
     width: 100%;
   }
   .dialog-chooser-entry-input input {

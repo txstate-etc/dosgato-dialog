@@ -168,7 +168,7 @@
     border: 0px;
     background-color: var(--dg-button-bg, #501214);
     color: var(--dg-button-text, #fff);
-    padding: 0.5em 1em;
+    padding: 0.4em 1em;
     font-size: 0.8em;
   }
   section {
