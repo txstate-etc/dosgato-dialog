@@ -122,11 +122,6 @@
     max-width: 2000px;
   }
 
-  section {
-    container-type: inline-size;
-    container-name: dosgato-dialog-section
-  }
-
   @media (max-width: 430px) {
     section.tiny, section.small, section.normal, section.large, section.xl {
       width: 95vw;
@@ -188,24 +183,16 @@
     border-bottom: 0px !important;
   }
 
-  footer.actions {
-    container-type: inline-size;
-    container-name: dosgato-dialog-actions
-  }
-
   footer.actions :global(.prev) {
     margin-right: auto;
   }
 
-  @container dosgato-dialog-actions (max-width: 450px) {
-    footer.actions :global(button span.prev-next) {
-      display: none;
-    }
-  }
-
-  @container dosgato-dialog-section (max-width: 350px) {
+  @media (max-width: 475px) {
     footer.actions {
       padding: 0.5em;
+    }
+    footer.actions :global(button span.prev-next) {
+      display: none;
     }
   }
 
