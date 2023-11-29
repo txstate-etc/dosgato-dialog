@@ -7,6 +7,7 @@
   import checkCircleOutline from '@iconify-icons/mdi/check-circle-outline.js'
   import informationOutline from '@iconify-icons/mdi/information-outline.js'
   import closeOctagonOutline from '@iconify-icons/mdi/close-octagon-outline.js'
+  import { htmlEncode } from 'txstate-utils'
 
   import Icon from './Icon.svelte'
   export let message: Feedback
@@ -28,9 +29,33 @@
   }
   $: hiddenLabel = ariaLables[message.type] ?? 'Error'
   */
+
+  function addMarkup (msg: string) {
+    const lines = msg.split(/\r?\n/)
+    const output: string[] = []
+    for (const line of lines) {
+      const splitLinks = line.split(/((?:\[[^\]]+\])?\([^)]+\))/)
+      const replaced: string[] = []
+      for (const segment of splitLinks) {
+        const m = segment.match(/(?:\[([^\]]+)\])?\(([^)]+)\)/)
+        if (m) {
+          try {
+            const url = new URL(m[2])
+            replaced.push('<a href="' + htmlEncode(url.toString()) + '" target="_blank">' + htmlEncode(m[1] || m[2]) + '</a>')
+          } catch {
+            replaced.push(htmlEncode(m[0]))
+          }
+        } else {
+          replaced.push(htmlEncode(segment))
+        }
+      }
+      output.push(replaced.join(''))
+    }
+    return output.join('<br>')
+  }
 </script>
 
-<div class={message.type}><Icon width='1.5em' {icon} hiddenLabel='Error' /><span>{message.message}</span></div>
+<div class={message.type}><Icon width='1.5em' {icon} hiddenLabel='Error' /><span>{@html addMarkup(message.message)}</span></div>
 
 <style>
   div {
@@ -55,5 +80,8 @@
   div.success {
     background-color: #218739;
     color: white;
+  }
+  div :global(a) {
+    color: inherit;
   }
 </style>
