@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { onMount } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import FieldStandard from '../FieldStandard.svelte'
   import { CropperStore, type CropOutput } from './cropper'
@@ -25,7 +26,10 @@
   }
 
   $: store.setOutput(value)
-  $: setVal?.($output)
+  function reactToOutput (...args: any[]) {
+    if (mounted) setVal?.($output)
+  }
+  $: reactToOutput($output)
 
   let rect: DOMRect
   function updateRect (..._: any) {
@@ -102,6 +106,11 @@
       }
     }
   }
+
+  let mounted = false
+  onMount(() => {
+    mounted = true
+  })
 
   $: updateRect(container)
   const descid = randomid()
