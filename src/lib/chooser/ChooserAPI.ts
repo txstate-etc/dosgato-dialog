@@ -1,3 +1,5 @@
+import type { IconifyIcon } from '@iconify/svelte'
+
 export const CHOOSER_API_CONTEXT = {}
 export type ChooserType = 'asset' | 'page'
 export type AnyItem = Asset | Folder | Page
@@ -102,6 +104,7 @@ interface Item {
    * user's interaction.
    */
   url: string
+  icon?: { icon: IconifyIcon, label?: string }
 }
 
 export interface Folder extends Item {

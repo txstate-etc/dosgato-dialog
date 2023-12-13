@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions */
 import type { TypedTreeItem } from '$lib'
+import treeIcon from '@iconify-icons/ph/tree-evergreen'
 import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
 import { randomid } from 'txstate-utils'
 
@@ -104,7 +105,8 @@ const assets: Record<string, RootFolder | RootPage> = {
             name: 'about',
             url: 'https://example.org/human-resources/about.html',
             title: 'About Us',
-            hasChildren: false
+            hasChildren: false,
+            icon: { icon: treeIcon, label: 'testing custom icon' }
           },
           {
             type: 'page',

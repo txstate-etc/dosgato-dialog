@@ -93,6 +93,16 @@
 
   const previewId = randomid()
   let thumbnailExpanded = false
+
+  function iconForItem (item: TypedTreeItem<AnyItem>) {
+    if (item.icon) {
+      return item.icon
+    } else {
+      return {
+        icon: item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : browserIcon)
+      }
+    }
+  }
 </script>
 
 <Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
@@ -105,7 +115,7 @@
     <section class="dialog-chooser-chooser">
       {#if $store.initialized}
         <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => ({ icon: item.type === 'asset' ? iconForMime(item.mime) : (item.type === 'folder' ? (item.open ? folderNotchOpen : folderIcon) : browserIcon) }), get: 'name' }
+          { label: 'Path', id: 'name', grow: 4, icon: item => iconForItem(item), get: 'name' }
         ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
       {/if}
     </section>
