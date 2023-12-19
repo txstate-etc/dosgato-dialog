@@ -1,7 +1,7 @@
 {
   "name": "@dosgato/dialog",
   "description": "A component library for building forms that edit a JSON document.",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "scripts": {
     "prepublishOnly": "svelte-package",
     "dev": "vite dev --force",
@@ -23,7 +23,7 @@
     "@codemirror/lang-javascript": "^6.1.7",
     "@codemirror/lang-css": "^6.2.1",
     "@codemirror/lang-html": "^6.4.3",
-    "@iconify/svelte": "^3.0.0",
+    "@iconify/svelte": "^3.1.6",
     "@iconify-icons/mdi": "^1.2.22",
     "@iconify-icons/ph": "^1.2.2",
     "@txstate-mws/svelte-components": "^1.5.5",

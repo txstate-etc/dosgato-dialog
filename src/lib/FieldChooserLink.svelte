@@ -170,7 +170,7 @@
         <Details item={selectedAsset} singleLine />
         {#if !urlEntry}
           <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
-            <Icon icon={arrowClockwiseFill} /> Replace
+            <Icon icon={arrowClockwiseFill} inline /> Replace
           </button>
           <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
             <Icon icon={deleteOutline} inline /> Remove

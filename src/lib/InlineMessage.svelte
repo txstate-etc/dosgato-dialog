@@ -55,7 +55,7 @@
   }
 </script>
 
-<div class={message.type}><Icon width='1.5em' {icon} hiddenLabel='Error' /><span>{@html addMarkup(message.message)}</span></div>
+<div class={message.type}><Icon width='1.5em' {icon} inline hiddenLabel='Error' /><span>{@html addMarkup(message.message)}</span></div>
 
 <style>
   div {

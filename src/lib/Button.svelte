@@ -15,7 +15,7 @@
   export { className as class }
 </script>
 
-<button {disabled} bind:this={element} {type} class="reset {className ?? ''}" class:cancel class:destructive class:secondary class:compact aria-describedby={describedby} on:click><Icon {icon} width="1.3em" /><span><slot /></span></button>
+<button {disabled} bind:this={element} {type} class="reset {className ?? ''}" class:cancel class:destructive class:secondary class:compact aria-describedby={describedby} on:click><Icon {icon} width="1.3em" inline /><span><slot /></span></button>
 
 <style>
   button.reset {
