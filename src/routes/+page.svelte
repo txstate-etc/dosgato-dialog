@@ -67,7 +67,7 @@
       <FieldMultiple reorder path="images" label="Images" let:index>
         <FieldChooserLink path="" assets urlEntry />
       </FieldMultiple>
-      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={(index) => { return { thing: `This will be thing ${index + 1}` } }}>
+      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={(index) => { return { thing: `This will be thing ${index + 1}` } }} confirmDelete="Are you sure?">
         <FieldText path="thing" />
       </FieldMultiple>
     </Tab>

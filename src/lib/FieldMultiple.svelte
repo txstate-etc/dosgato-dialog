@@ -30,6 +30,14 @@
   export let addMoreClass: string | undefined = undefined
   export let related: true | number = 0
   export let helptext: string | undefined = undefined
+  /**
+   * If you want to ask users if they're sure before removing an array element, fill this
+   * prop with the question that should be in the confirmation dialog.
+   *
+   * Alternatively, you can provide a function to generate the question from the item being
+   * deleted. e.g. (item) => `Are you sure you want to delete ${item.name}?`
+   */
+  export let confirmDelete: string | ((item: any) => string) | undefined = undefined
 
   const fieldMultipleContext: { helptextid: string | undefined } = { helptextid: undefined }
   setContext(DG_DIALOG_FIELD_MULTIPLE, fieldMultipleContext)
@@ -61,6 +69,14 @@
     }
   }
 
+  function confirmedDelete (onDelete: () => void, item: any) {
+    return () => {
+      if (confirmDelete == null) return onDelete()
+      const msg = typeof confirmDelete === 'string' ? confirmDelete : confirmDelete(item)
+      if (confirm(msg)) onDelete()
+    }
+  }
+
   $: messages = compact ? $messageStore : []
 </script>
 
@@ -78,7 +94,7 @@
           <button bind:this={reorderdownelements[index]} class="dialog-multiple-move" type="button" disabled={index === currentLength - 1} on:click|preventDefault|stopPropagation={moveDownAndFocus(onMoveDown, index)}><Icon icon={caretCircleDown} hiddenLabel="move down in the list" /></button>
           <button bind:this={reorderupelements[index]} class="dialog-multiple-move" type="button" disabled={index === 0} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}><Icon icon={caretCircleUp} hiddenLabel="move up in the list" /></button>
         {/if}
-        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}><Icon icon={xCircle} hiddenLabel="remove from list" /></button>{/if}
+        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={confirmedDelete(onDelete, value)}><Icon icon={xCircle} hiddenLabel="remove from list" /></button>{/if}
       </div>{/if}
     </div>
     <svelte:fragment slot="addbutton" let:maxed let:onClick>
