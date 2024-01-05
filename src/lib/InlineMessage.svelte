@@ -3,22 +3,13 @@
 -->
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
-  import alertCircleOutline from '@iconify-icons/mdi/alert-circle-outline.js'
-  import checkCircleOutline from '@iconify-icons/mdi/check-circle-outline.js'
-  import informationOutline from '@iconify-icons/mdi/information-outline.js'
-  import closeOctagonOutline from '@iconify-icons/mdi/close-octagon-outline.js'
   import { htmlEncode } from 'txstate-utils'
 
+  import { messageIcons } from '$lib'
   import Icon from './Icon.svelte'
   export let message: Feedback
 
-  const icons = {
-    error: alertCircleOutline,
-    warning: informationOutline,
-    success: checkCircleOutline,
-    system: closeOctagonOutline
-  }
-  $: icon = icons[message.type] ?? alertCircleOutline
+  $: icon = messageIcons[message.type] ?? messageIcons.error
   // Would we like to add something like the following for non-Error message types being used in aria descriptions?
   /*
   const ariaLables = {
@@ -70,16 +61,16 @@
     margin-left: 0.5em;
   }
   div.error, div.system {
-    background-color: #9a3332;
-    color: white;
+    background-color: var(--dg-danger-bg, #9a3332);
+    color: var(--dg-danger-text, white);
   }
   div.warning {
-    background-color: #ffc107;
-    color: black;
+    background-color: var(--dg-warning-bg, #ffc107);
+    color: var(--dg-warning-text, black);
   }
   div.success {
-    background-color: #218739;
-    color: white;
+    background-color: var(--dg-success-bg, #218739);
+    color: var(--dg-success-text, white);
   }
   div :global(a) {
     color: inherit;

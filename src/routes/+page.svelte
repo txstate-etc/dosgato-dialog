@@ -22,6 +22,14 @@
       type: 'error',
       message: 'Nope',
       path: 'multi.0.first'
+    },
+    {
+      type: 'warning',
+      message: 'Be careful'
+    },
+    {
+      type: 'success',
+      message: 'Yay!'
     }]
   }
 

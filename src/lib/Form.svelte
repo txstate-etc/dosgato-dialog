@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Form, type FormStore, type Feedback, type SubmitResponse } from '@txstate-mws/svelte-forms'
-    import { setContext } from 'svelte'
-  import { CHOOSER_API_CONTEXT, type Client } from './chooser'
+  import { setContext } from 'svelte'
+  import { CHOOSER_API_CONTEXT, type Client, messageIcons } from '$lib'
+  import Icon from './Icon.svelte'
 
   type T = $$Generic<any>
   type F = $$Generic<any>
@@ -21,21 +22,32 @@
 
 <Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} {allMessages} {showingInlineErrors} />
-  {#if messages.length || showingInlineErrors}
-    <div class="form-errors" aria-live='assertive'>
-      {#if messages.length}
-        <ul>
-          {#each messages as message}
-            <li>{message.message}</li>
-          {/each}
-          {#if showingInlineErrors}
-            <li>More errors. See inline messages for details.</li>
-          {/if}
-        </ul>
-      {:else if showingInlineErrors}
-        This form contains validation errors. See inline messages for details.
+  {@const errorMessages = messages.filter(m => m.type === 'error' || m.type === 'system')}
+  {@const warningMessages = messages.filter(m => m.type === 'warning')}
+  {@const successMessages = messages.filter(m => m.type === 'success')}
+  {#if errorMessages.length || showingInlineErrors}
+    <ul class="form-errors" aria-live='assertive'>
+      {#each errorMessages as message}
+        <li><Icon icon={messageIcons[message.type] ?? messageIcons.error} inline hiddenLabel="error"/> {message.message}</li>
+      {/each}
+      {#if showingInlineErrors}
+        <li><Icon icon={messageIcons.error} inline /> {#if errorMessages.length}More errors.{:else}This form contains validation errors.{/if} See inline messages for details.</li>
       {/if}
-    </div>
+    </ul>
+  {/if}
+  {#if warningMessages.length}
+    <ul class="form-warnings" aria-live='assertive'>
+      {#each warningMessages as message}
+        <li><Icon icon={messageIcons.warning} inline hiddenLabel="warning"/> {message.message}</li>
+      {/each}
+    </ul>
+  {/if}
+  {#if successMessages.length}
+    <ul class="form-successes" aria-live='assertive'>
+      {#each successMessages as message}
+        <li><Icon icon={messageIcons.success} inline hiddenLabel="success" /> {message.message}</li>
+      {/each}
+    </ul>
   {/if}
   <slot name="submit" {saved} {validating} {submitting} {valid} {invalid} {allMessages} {showingInlineErrors} />
 </Form>
@@ -50,8 +62,20 @@
   :global(.dialog-content > .dialog-form) {
     margin: -2em 0;
   }
+  ul {
+    list-style-type: none;
+    padding: 0.5em;
+  }
   .form-errors {
-    color: var(--dg-danger-bg, #9a3332);
-    padding: 1em;
+    background-color: var(--dg-danger-bg, #9a3332);
+    color: var(--dg-danger-text, white);
+  }
+  .form-warnings {
+    background-color: var(--dg-warning-bg, #ffc107);
+    color: var(--dg-warning-text, black);
+  }
+  .form-successes {
+    background-color: var(--dg-success-bg, #218739);
+    color: var(--dg-success-text, white);
   }
 </style>
