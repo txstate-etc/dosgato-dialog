@@ -14,6 +14,8 @@
   export let width: string | number | undefined = undefined
   export let height: string | number | undefined = undefined
   export let tooltip: string | undefined = undefined
+  let className: string | undefined = undefined
+  export { className as class }
 
   function replaceIDs (body: string): string {
     const matches = body.matchAll(/\sid="(\S+)"/g)
@@ -47,7 +49,7 @@
 
 {#if icon}
   <Tooltip tip={tooltip} top>
-    <svg role="img" viewBox="{icon.left ?? 0} {icon.top ?? 0} {icon.width ?? 256} {icon.height ?? 256}" class:vFlip={icon.vFlip} class:hFlip={icon.hFlip} class:inline {width} {height} aria-hidden={!hiddenLabel} aria-label={hiddenLabel} xmlns="http://www.w3.org/2000/svg">
+    <svg role="img" class={className} viewBox="{icon.left ?? 0} {icon.top ?? 0} {icon.width ?? 256} {icon.height ?? 256}" class:vFlip={icon.vFlip} class:hFlip={icon.hFlip} class:inline {width} {height} aria-hidden={!hiddenLabel} aria-label={hiddenLabel} xmlns="http://www.w3.org/2000/svg">
       {@html svgBody(icon)}
     </svg>
   </Tooltip>
