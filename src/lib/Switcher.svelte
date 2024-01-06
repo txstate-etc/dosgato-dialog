@@ -9,6 +9,7 @@
   let className = ''
   export { className as class }
   export let id: string | undefined = randomid()
+  export let path: string = ''
   export let name = randomid()
   export let choices: { label?: string, value: string, disabled?: boolean }[]
   export let horizontal = false
@@ -35,7 +36,7 @@
   $: columns = Math.floor($store.width / 250)
   $: width = (horizontal ? 100 / Math.min(choices.length, choices.length === 4 && columns === 3 ? 2 : columns) : 100) + '%'
 </script>
-<Container {id} {label} {messages} descid={groupid} {required} {related} {helptext} let:helptextid>
+<Container {path} {id} {label} {messages} descid={groupid} {required} {related} {helptext} let:helptextid>
   <div class="dialog-radio {className}" use:eq={{ store }} class:horizontal role="radiogroup" aria-labelledby={groupid} class:valid class:invalid>
     {#each choices as choice, idx (choice.value)}
       {@const radioid = `${groupid}.${idx}`}

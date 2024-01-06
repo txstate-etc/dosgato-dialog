@@ -4,6 +4,7 @@ import { findIndex, randomid } from 'txstate-utils'
 import type { IconifyIcon } from '@iconify/svelte'
 
 export const TAB_CONTEXT = {}
+export const TAB_NAME_CONTEXT = {}
 
 export interface TabDef {
   name: string
@@ -22,6 +23,8 @@ interface ITabStore extends ElementSize {
   tabids: Record<string, string>
   panelids: Record<string, string>
   accordionOnMobile: boolean
+  errorPaths: Record<string, string[] | undefined>
+  hasError: Record<string, boolean | undefined>
 }
 
 function checkNext (v: ITabStore) {
@@ -43,7 +46,9 @@ export class TabStore extends Store<ITabStore> {
       tabids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
       panelids: tabs.reduce((acc, curr) => ({ ...acc, [curr.name]: randomid() }), {}),
       clientWidth: 1024,
-      accordionOnMobile: true
+      accordionOnMobile: true,
+      errorPaths: {},
+      hasError: {}
     }))
   }
 
@@ -104,5 +109,27 @@ export class TabStore extends Store<ITabStore> {
 
   activateName (name: string) {
     this.update(v => ({ ...v, current: findIndex(v.tabs, t => t.name === name) ?? v.current }))
+  }
+
+  notifyErrorPath (tabname: string, path: string) {
+    this.update(v => {
+      const errorPaths: Record<string, string[] | undefined> = {}
+      for (const k of Object.keys(v.errorPaths)) errorPaths[k] = v.errorPaths[k]?.filter(p => p !== path)
+      errorPaths[tabname] ??= []
+      errorPaths[tabname]!.push(path)
+      const hasError: Record<string, boolean> = {}
+      for (const k of Object.keys(errorPaths)) hasError[k] = !!errorPaths[k]!.length
+      return { ...v, errorPaths, hasError }
+    })
+  }
+
+  notifyErrorPathGone (path: string) {
+    this.update(v => {
+      const errorPaths: Record<string, string[] | undefined> = {}
+      for (const k of Object.keys(v.errorPaths)) errorPaths[k] = v.errorPaths[k]?.filter(p => p !== path)
+      const hasError: Record<string, boolean> = {}
+      for (const k of Object.keys(errorPaths)) hasError[k] = !!errorPaths[k]!.length
+      return { ...v, errorPaths, hasError }
+    })
   }
 }

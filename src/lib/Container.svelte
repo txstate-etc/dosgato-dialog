@@ -6,11 +6,13 @@
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { eq, resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
   import { randomid } from 'txstate-utils'
-  import { getContext } from 'svelte'
+  import { getContext, onDestroy } from 'svelte'
   import { DG_DIALOG_FIELD_MULTIPLE } from './FieldMultiple.svelte'
   import InlineMessages from './InlineMessages.svelte'
-  import { getDescribedBy } from '$lib'
+  import { getDescribedBy, type TabStore, TAB_CONTEXT, TAB_NAME_CONTEXT } from '$lib'
+    import type { Writable } from 'svelte/store'
 
+  export let path: string
   /** A label for the Container `<div>`. */
   export let label: string
   export let messages: Feedback[]
@@ -39,6 +41,17 @@
     if (!needsShowHelp) showhelp = false
   }
   $: setNeedsShowHelp(helpelement)
+
+  const tabContext = getContext<{ store: TabStore } | undefined>(TAB_CONTEXT)
+  const tabNameStore = getContext<Writable<string> | undefined>(TAB_NAME_CONTEXT)
+  $: if (messages.length) {
+    tabContext?.store.notifyErrorPath($tabNameStore!, path)
+  } else {
+    tabContext?.store.notifyErrorPathGone(path)
+  }
+  onDestroy(() => {
+    tabContext?.store.notifyErrorPathGone(path)
+  })
 </script>
 
 {#if conditional !== false}
