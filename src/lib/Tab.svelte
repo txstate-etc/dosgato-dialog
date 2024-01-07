@@ -37,9 +37,11 @@
 <style>
   .tabs-panel {
     width: 100%;
-    min-height: 50vh;
     border: var(--tabs-panel-border, var(--tabs-border, 0));
     padding: var(--tabs-margin-top, 1.5em) var(--tabs-padding-hori, 0.7em) 0.5em var(--tabs-padding-hori, 0.7em);
+  }
+  :global(.dialog-content) .tabs-panel {
+    min-height: 50vh;
   }
   .tabs-panel.accordion {
     border-left: 0;
