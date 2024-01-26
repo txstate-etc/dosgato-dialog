@@ -37,7 +37,7 @@
 </script>
 
 <Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} {initialize} {finalize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid let:serialize let:deserialize>
-  <Container {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
+  <Container {path} {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
     <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} {serialize} {deserialize} />
   </Container>
 </Field>

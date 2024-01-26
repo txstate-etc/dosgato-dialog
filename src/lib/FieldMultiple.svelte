@@ -30,6 +30,14 @@
   export let addMoreClass: string | undefined = undefined
   export let related: true | number = 0
   export let helptext: string | undefined = undefined
+  /**
+   * If you want to ask users if they're sure before removing an array element, fill this
+   * prop with the question that should be in the confirmation dialog.
+   *
+   * Alternatively, you can provide a function to generate the question from the item being
+   * deleted. e.g. (item) => `Are you sure you want to delete ${item.name}?`
+   */
+  export let confirmDelete: string | ((item: any) => string) | undefined = undefined
 
   const fieldMultipleContext: { helptextid: string | undefined } = { helptextid: undefined }
   setContext(DG_DIALOG_FIELD_MULTIPLE, fieldMultipleContext)
@@ -61,10 +69,18 @@
     }
   }
 
+  function confirmedDelete (onDelete: () => void, item: any) {
+    return () => {
+      if (confirmDelete == null) return onDelete()
+      const msg = typeof confirmDelete === 'string' ? confirmDelete : confirmDelete(item)
+      if (confirm(msg)) onDelete()
+    }
+  }
+
   $: messages = compact ? $messageStore : []
 </script>
 
-<Container {label} {messages} {conditional} {related} {helptext} let:helptextid>
+<Container {path} {label} {messages} {conditional} {related} {helptext} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
   <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
@@ -83,7 +99,7 @@
           </button>
         {/if}
         {#if showDelete}
-          <button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={onDelete}>
+          <button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={confirmedDelete(onDelete, value)}>
             <slot name='removeBtnIcon'><Icon icon={xCircle} hiddenLabel="remove from list" /></slot>
           </button>
         {/if}

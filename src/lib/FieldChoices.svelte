@@ -68,7 +68,7 @@
 
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
   {@const _ = updateValue(value, setVal)}
-  <Container {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
+  <Container {path} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#each choices as choice, idx (choice.value)}
         {@const checkid = `${path}.${idx}`}

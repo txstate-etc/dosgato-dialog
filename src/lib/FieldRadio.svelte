@@ -43,5 +43,5 @@
 
 <Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize let:setVal let:deserialize>
   {@const _ = updateValue(value, setVal, deserialize)}
-  <Switcher bind:id class={className} name={path} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: serialize(c.value) }))} />
+  <Switcher bind:id {path} class={className} name={path} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: serialize(c.value) }))} />
 </Field>

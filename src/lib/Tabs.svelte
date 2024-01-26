@@ -1,4 +1,6 @@
 <script lang="ts">
+  import caretRightFill from '@iconify-icons/ph/caret-right-fill'
+  import warningCircleFill from '@iconify-icons/ph/warning-circle-fill'
   import { type ElementOffsets, modifierKey, resize, offset, PopupMenu } from '@txstate-mws/svelte-components'
   import { Store } from '@txstate-mws/svelte-store'
   import { getContext, onMount, setContext, tick } from 'svelte'
@@ -6,7 +8,6 @@
   import { DIALOG_TABS_CONTEXT, type DialogTabContext } from './Dialog.svelte'
   import Icon from './Icon.svelte'
   import { TabStore, TAB_CONTEXT, type TabDef } from './TabStore'
-  import caretRightFill from '@iconify-icons/ph/caret-right-fill'
 
   export let tabs: TabDef[]
   export let active: string | undefined = undefined
@@ -119,7 +120,7 @@
       {#each $store.tabs as tab, idx (tab.name)}
         {@const active = isActive(idx, $store.current)}
         {@const left = idx === 0}
-        <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active class:hidden={tabIsHidden(idx)} style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}</span></li>
+        <li bind:this={tabelements[idx]} use:offset={{ store: active ? activeStore : undefined }} id={$store.tabids[tab.name]} class="tabs-tab" class:left class:wrapping class:active class:hidden={tabIsHidden(idx)} style:font-size="{scalefactor}em" style:line-height={1.2 / scalefactor} aria-selected={active} aria-controls={$store.panelids[tab.name]} role="tab" tabindex={active ? 0 : -1} on:click={onClick(idx)} on:keydown={onKeyDown(idx)}><span><Icon icon={tab.icon} inline />{tab.title}{#if $store.hasError[tab.name] && !active} <Icon icon={warningCircleFill} inline class='errorIcon' />{/if}</span></li>
       {/each}
       {#if cols < $store.tabs.length}
         <li class="overflow" role="presentation"><button bind:this={tabOverflowButton} type="button" tabindex="-1"><Icon icon={caretRightFill} hiddenLabel="More Tabs Menu" inline /></button></li>
@@ -163,7 +164,13 @@
     word-break: break-word;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--tabs-text, #363534)
+    color: var(--tabs-text, #363534);
+  }
+  li :global(.errorIcon) {
+    color: var(--dg-danger-bg, #9a3332);
+    font-size: 1.2em;
+    margin-left: 0.4em;
+    vertical-align: -0.25em;
   }
   :global(.tabs-tab.hidden) {
     display: none;
