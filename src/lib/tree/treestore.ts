@@ -473,3 +473,20 @@ export function transformSearchable<T> (searchable: SearchableType<T>): undefine
             )
       )
 }
+
+export async function expandTreePath <T extends TreeItemFromDB & { name: string }> (treeStore: TreeStore<T>, pathSplit: string[], depth = 0): Promise<TypedTreeItem<T> | undefined> {
+  let curr = (treeStore as any).value.rootItems?.find(itm => itm.name === pathSplit[0])
+  for (let i = 0; i < depth; i++) {
+    curr = curr?.children?.find(c => c.name === pathSplit[i + 1])
+  }
+  if (!curr) {
+    console.warn('tried to preload a path', '/' + pathSplit.join('/'), 'that does not exist ')
+    return
+  }
+  await treeStore.open(curr, false)
+  if (depth + 1 >= pathSplit.length) {
+    treeStore.focus(curr, false)
+    return curr
+  }
+  return await expandTreePath(treeStore, pathSplit, depth + 1)
+}

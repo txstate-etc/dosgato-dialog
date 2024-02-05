@@ -4,7 +4,7 @@
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
   import { createEventDispatcher, getContext, onMount, setContext, tick } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
-  import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI } from '$lib'
+  import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI, expandTreePath } from '$lib'
   import { CHOOSER_API_CONTEXT, type AnyItem, type Client, type Folder, type Page, type Asset } from './ChooserAPI'
   import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
   import Details from './Details.svelte'
@@ -57,24 +57,10 @@
     showuploader = false
   }
 
-  async function openRecursive (pathSplit: string[], depth: number): Promise<TypedTreeItem<Page | Asset | Folder> | undefined> {
-    let curr = $treeStore.rootItems?.find(itm => itm.name === pathSplit[0])
-    for (let i = 0; i < depth; i++) {
-      curr = curr?.children?.find(c => c.name === pathSplit[i + 1])
-    }
-    if (!curr) {
-      console.warn('tried to preload a path', '/' + pathSplit.join('/'), 'that does not exist ')
-      return
-    }
-    await treeStore.open(curr, false)
-    if (depth + 1 >= pathSplit.length) return curr
-    return await openRecursive(pathSplit, depth + 1)
-  }
   async function selectPreview (preloadPath) {
     if (!$store.initialized) return
     if (preloadPath) {
-      const currentSelection = await openRecursive(preloadPath.split('/').filter(isNotBlank), 0)
-      treeStore.trigger()
+      const currentSelection = await expandTreePath(treeStore, preloadPath.split('/').filter(isNotBlank))
       if (!currentSelection) return
       store.setPreview(currentSelection)
       treeStore.select(currentSelection, { clear: true })
