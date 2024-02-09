@@ -55,7 +55,7 @@
 </script>
 
 <Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
-  <section class="{expanded ? 'xl' : size}" use:eq>
+  <section class="{expanded ? 'xl expanded' : size}" use:eq>
     {#if title || icon}
       <header id={labelid}>
         <Icon width="1.4em" {icon} inline />{title}
@@ -134,7 +134,7 @@
     width: 95vw;
     max-width: 2000px;
   }
-  @media (max-width: 2000px) { section.xl button.expand { display: none; } }
+  @media (max-width: 2000px) { section.xl:not(.expanded) button.expand { display: none; } }
   @media (max-width: 800px) { section.xl { width: 97vw; } }
 
   header {
@@ -164,8 +164,8 @@
     max-height: calc(100vh - 7.5em);
     max-height: calc(100dvh - 7.5em);
   }
-  @media (max-width: 800px) { .dialog-content { padding: 1.2em; } }
-  @media (max-width: 430px) { .dialog-content { padding: 0.6em; } }
+  @media (max-width: 800px) { .dialog-content { padding: 2rem 1.2em; } }
+  @media (max-width: 430px) { .dialog-content { padding: 2rem 0.6em; } }
 
   section.tiny .dialog-content, section.small .dialog-content {
     padding: 0 1em;
