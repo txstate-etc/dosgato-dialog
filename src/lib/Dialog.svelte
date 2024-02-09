@@ -100,37 +100,42 @@
   section.tiny {
     width: 30vw;
     min-width: 200px;
-    max-width: 250px;
+    max-width: 275px;
   }
+  @media (max-width: 250px) { section.tiny button.expand { display: none; } }
+  @media (max-width: 800px) { section.tiny { width: 50vw; } }
+  @media (max-width: 430px) { section.tiny { width: 75vw; } }
+
   section.small {
     width: 50vw;
-    min-width: 220px;
-    max-width: 400px;
+    min-width: 250px;
+    max-width: 450px;
   }
+  @media (max-width: 450px) { section.small button.expand { display: none; } }
+  @media (max-width: 800px) { section.small { width: 75vw; } }
+  @media (max-width: 430px) { section.small { width: 90vw; } }
   section.normal {
     width: 75vw;
-    min-width: 250px;
+    min-width: 300px;
     max-width: 750px;
   }
+  @media (max-width: 750px) { section.normal button.expand { display: none; } }
+  @media (max-width: 800px) { section.normal { width: 90vw; } }
+  @media (max-width: 430px) { section.normal { width: 95vw; } }
   section.large {
     width: 90vw;
     min-width: 300px;
     max-width: 1000px;
   }
+  @media (max-width: 1000px) { section.large button.expand { display: none; } }
+  @media (max-width: 800px) { section.large { width: 95vw; } }
+  @media (max-width: 430px) { section.large { width: 97vw; } }
   section.xl {
     width: 95vw;
     max-width: 2000px;
   }
-
-  @media (max-width: 430px) {
-    section.tiny, section.small, section.normal, section.large, section.xl {
-      width: 95vw;
-      max-width: 2000px;
-    }
-    button.expand {
-      display: none;
-    }
-  }
+  @media (max-width: 2000px) { section.xl button.expand { display: none; } }
+  @media (max-width: 800px) { section.xl { width: 97vw; } }
 
   header {
     display: flex;
@@ -159,6 +164,8 @@
     max-height: calc(100vh - 7.5em);
     max-height: calc(100dvh - 7.5em);
   }
+  @media (max-width: 800px) { .dialog-content { padding: 1.2em; } }
+  @media (max-width: 430px) { .dialog-content { padding: 0.6em; } }
 
   section.tiny .dialog-content, section.small .dialog-content {
     padding: 0 1em;
