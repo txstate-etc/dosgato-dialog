@@ -6,10 +6,10 @@
 -->
 <script lang="ts">
   import { getContext, onMount } from 'svelte'
-  import { Field, FORM_CONTEXT, arraySerialize } from '@txstate-mws/svelte-forms'
+  import { Field, FORM_CONTEXT, arraySerialize, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
-  import { randomid } from 'txstate-utils'
+  import { get, isNotBlank, randomid } from 'txstate-utils'
   import Container from './Container.svelte'
   import Checkbox from './Checkbox.svelte'
   import { getDescribedBy } from './helpers'
@@ -29,6 +29,8 @@
   export let helptext: string | undefined = undefined
 
   const store = getContext<FormStore>(FORM_CONTEXT)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
   const currentWidth = derivedStore(store, 'width')
   $: cols = Math.min(Math.ceil($currentWidth / maxwidth), choices.length)
 
@@ -51,23 +53,17 @@
 
   const descid = randomid()
 
-  let val: any, stVal: (val: any, notDirty?: boolean) => void
-  function updateValue (valu: any, sVal: any) {
-    val = valu
-    stVal = sVal
-  }
   function reactToChoices (..._: any[]) {
-    if (!stVal) return
     const choiceSet = new Set(choices?.map(c => c.value))
+    const val = get($store, finalPath)
     const filtered = val?.filter(v => choiceSet.has(v))
-    if (filtered?.length !== val?.length) stVal(filtered, true)
+    if (filtered?.length !== val?.length) store.setField(finalPath, filtered).catch(console.error)
   }
   $: reactToChoices(choices)
   onMount(reactToChoices)
 </script>
 
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
-  {@const _ = updateValue(value, setVal)}
   <Container {path} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#each choices as choice, idx (choice.value)}

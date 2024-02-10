@@ -183,7 +183,7 @@
     <div class="dialog-chooser-entry">
       {#if urlEntry}
         <div class="dialog-chooser-entry-input">
-          <input bind:this={urlEntryInput} type="text" data-lpignore="true" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:input={userUrlEntry}>
+          <input bind:this={urlEntryInput} {id} type="text" data-lpignore="true" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:input={userUrlEntry} on:blur={onBlur}>
           <button type="button" on:click={clearUrlEntry}><Icon icon={xCircle} hiddenLabel="clear input" inline/></button>
         </div>
       {/if}

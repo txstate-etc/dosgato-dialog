@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Field } from '@txstate-mws/svelte-forms'
-  import { onMount } from 'svelte'
+  import { FORM_CONTEXT, FORM_INHERITED_PATH, Field, type FormStore } from '@txstate-mws/svelte-forms'
+  import { getContext, onMount } from 'svelte'
+  import { get, isNotBlank } from 'txstate-utils'
   import Switcher from './Switcher.svelte'
   let className = ''
   export { className as class }
@@ -23,25 +24,26 @@
   export let serialize: ((value: any) => string) | undefined = undefined
   export let deserialize: ((value: string) => any) | undefined = undefined
 
-  let val: any, stVal: (val: any, notDirty?: boolean) => void, finalDeserialize: (value: string) => any
-  function updateValue (valu: any, sVal: any, fDes: any) {
-    val = valu
-    stVal = sVal
+  const store = getContext<FormStore>(FORM_CONTEXT)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+
+  let finalDeserialize: (value: string) => any
+  function updateDeserialize (fDes: any) {
     finalDeserialize = fDes
   }
-  function reactToChoices (..._: any[]) {
-    if (!stVal) return
+  async function reactToChoices (..._: any[]) {
     if (!choices.length) {
-      stVal(finalDeserialize(''), true)
-      return
+      return await store.setField(finalPath, finalDeserialize(''))
     }
-    if (!choices.some(o => o.value === finalDeserialize(val))) stVal(notNull ? defaultValue : finalDeserialize(''), true)
+    const val = get($store, finalPath)
+    if (!choices.some(o => o.value === finalDeserialize(val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
   }
-  $: reactToChoices(choices)
+  $: reactToChoices(choices).catch(console.error)
   onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize let:setVal let:deserialize>
-  {@const _ = updateValue(value, setVal, deserialize)}
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize let:deserialize>
+  {@const _ = updateDeserialize(deserialize)}
   <Switcher bind:id {path} class={className} name={path} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: serialize(c.value) }))} />
 </Field>

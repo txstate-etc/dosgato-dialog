@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { type FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
+  import { getContext, onMount } from 'svelte'
+  import { isNotBlank, get } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''
@@ -25,26 +27,27 @@
   export let serialize: ((value: any) => string) | undefined = undefined
   export let deserialize: ((value: string) => any) | undefined = undefined
 
-  let val: any, stVal: (val: any, notDirty?: boolean) => void, finalDeserialize: (value: string) => any
-  function updateValue (valu: any, sVal: any, fDes: any) {
-    val = valu
-    stVal = sVal
+  const store = getContext<FormStore>(FORM_CONTEXT)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+
+  let finalDeserialize: (value: string) => any
+  function updateDeserialize (fDes: any) {
     finalDeserialize = fDes
   }
-  function reactToChoices (..._: any[]) {
-    if (!stVal) return
+  async function reactToChoices (..._: any[]) {
     if (!choices.length) {
-      stVal(finalDeserialize(''), true)
-      return
+      return await store.setField(finalPath, finalDeserialize(''))
     }
-    if (!choices.some(o => o.value === finalDeserialize(val))) stVal(notNull ? defaultValue : finalDeserialize(''), true)
+    const val = get($store, finalPath)
+    if (!choices.some(o => o.value === finalDeserialize(val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
   }
-  $: reactToChoices(choices)
+  $: reactToChoices(choices).catch(console.error)
   onMount(reactToChoices)
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize let:deserialize let:setVal>
-  {@const _ = updateValue(value, setVal, deserialize)}
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize let:deserialize>
+  {@const _ = updateDeserialize(deserialize)}
   <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
