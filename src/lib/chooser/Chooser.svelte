@@ -7,8 +7,6 @@
   import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI, expandTreePath } from '$lib'
   import { CHOOSER_API_CONTEXT, type AnyItem, type Client, type Folder, type Page, type Asset } from './ChooserAPI'
   import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
-  import Details from './Details.svelte'
-  import Thumbnail from './Thumbnail.svelte'
   import ChooserPreview from './ChooserPreview.svelte'
 
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)

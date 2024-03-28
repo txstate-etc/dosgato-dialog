@@ -89,7 +89,8 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   async fetchChildren (item?: TypedTreeItem<Page | Folder | Asset>): Promise<AnyItem[]> {
     const $source = this.getSource()
     if (item?.type === 'asset' || !$source) return []
-    return await this.client.getChildren($source.name, item?.path ?? '/', this.filter)
+    const imageFilter = this.options.images ? (itm: AnyItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') : nofilter
+    return (await this.client.getChildren($source.name, item?.path ?? '/', this.filter)).filter(imageFilter)
   }
 
   treeStore = new TreeStore<Page | Folder | Asset>(this.fetchChildren.bind(this))
