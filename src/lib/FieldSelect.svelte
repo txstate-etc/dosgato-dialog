@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import { getContext, onMount } from 'svelte'
-  import { isNotBlank, get } from 'txstate-utils'
+  import { isNotBlank, get, equal } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''
@@ -36,11 +36,12 @@
     finalDeserialize = fDes
   }
   async function reactToChoices (..._: any[]) {
+    if (!finalDeserialize) return
     if (!choices.length) {
       return await store.setField(finalPath, finalDeserialize(''))
     }
-    const val = get($store, finalPath)
-    if (!choices.some(o => o.value === finalDeserialize(val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
+    const val = get($store.data, finalPath)
+    if (!choices.some(o => equal(o.value, val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
   }
   $: reactToChoices(choices).catch(console.error)
   onMount(reactToChoices)

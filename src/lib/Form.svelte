@@ -6,6 +6,28 @@
 
   type T = $$Generic<any>
   type F = $$Generic<any>
+  interface $$Slots {
+    default: {
+      messages: Feedback[]
+      allMessages: Feedback[]
+      saved: boolean
+      validating: boolean
+      submitting: boolean
+      valid: boolean
+      invalid: boolean
+      showingInlineErrors: boolean
+      data: Partial<T>
+    }
+    submit: {
+      saved: boolean
+      validating: boolean
+      submitting: boolean
+      allMessages: Feedback[]
+      valid: boolean
+      invalid: boolean
+      showingInlineErrors: boolean
+    }
+  }
 
   let className = ''
   export { className as class }
