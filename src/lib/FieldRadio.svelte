@@ -37,7 +37,7 @@
     if (!choices.length) {
       return await store.setField(finalPath, finalDeserialize(''))
     }
-    const val = get($store, finalPath)
+    const val = get($store.data, finalPath)
     if (!choices.some(o => o.value === finalDeserialize(val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
   }
   $: reactToChoices(choices).catch(console.error)
