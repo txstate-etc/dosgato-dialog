@@ -33,6 +33,7 @@
     finalDeserialize = fDes
   }
   async function reactToChoices (..._: any[]) {
+    if (!finalDeserialize) return
     if (!choices.length) {
       return await store.setField(finalPath, finalDeserialize(''))
     }
