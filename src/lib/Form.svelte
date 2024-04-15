@@ -46,6 +46,7 @@
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} {allMessages} {showingInlineErrors} />
   {@const errorMessages = messages.filter(m => m.type === 'error' || m.type === 'system')}
   {@const warningMessages = messages.filter(m => m.type === 'warning')}
+  {@const infoMessages = messages.filter(m => m.type === 'info')}
   {@const successMessages = messages.filter(m => m.type === 'success')}
   {#if errorMessages.length || showingInlineErrors}
     <ul class="form-errors" aria-live='assertive'>
@@ -61,6 +62,13 @@
     <ul class="form-warnings" aria-live='assertive'>
       {#each warningMessages as message}
         <li><Icon icon={messageIcons.warning} inline hiddenLabel="warning"/> {message.message}</li>
+      {/each}
+    </ul>
+  {/if}
+  {#if infoMessages.length}
+    <ul class="form-info" aria-live='assertive'>
+      {#each infoMessages as message}
+        <li><Icon icon={messageIcons.info} inline hiddenLabel="info"/> {message.message}</li>
       {/each}
     </ul>
   {/if}
@@ -95,6 +103,10 @@
   .form-warnings {
     background-color: var(--dg-warning-bg, #ffc107);
     color: var(--dg-warning-text, black);
+  }
+  .form-info {
+    background-color: var(--dg-info-bg, #619bff);
+    color: var(--dg-info-text, black);
   }
   .form-successes {
     background-color: var(--dg-success-bg, #218739);

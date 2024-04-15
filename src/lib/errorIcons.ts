@@ -7,5 +7,14 @@ export const messageIcons = {
   error: alertCircleOutline,
   warning: informationOutline,
   success: checkCircleOutline,
-  system: closeOctagonOutline
+  system: closeOctagonOutline,
+  info: informationOutline
 }
+
+export const messageLabels = {
+  error: 'error',
+  warning: 'warning',
+  success: 'success',
+  info: 'info',
+  system: 'error'
+} as const

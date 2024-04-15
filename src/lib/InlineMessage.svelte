@@ -5,21 +5,12 @@
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { htmlEncode } from 'txstate-utils'
 
-  import { messageIcons } from '$lib'
+  import { messageIcons, messageLabels } from '$lib'
   import Icon from './Icon.svelte'
   export let message: Feedback
 
   $: icon = messageIcons[message.type] ?? messageIcons.error
-  // Would we like to add something like the following for non-Error message types being used in aria descriptions?
-  /*
-  const ariaLables = {
-    error: 'Error',
-    warning: 'Warning',
-    success: 'Success',
-    system: 'System'
-  }
-  $: hiddenLabel = ariaLables[message.type] ?? 'Error'
-  */
+  $: iconLabel = messageLabels[message.type] ?? messageLabels.error
 
   function addMarkup (msg: string) {
     const lines = msg.split(/\r?\n/)
@@ -46,7 +37,7 @@
   }
 </script>
 
-<div class={message.type}><Icon width='1.5em' {icon} inline hiddenLabel='Error' /><span>{@html addMarkup(message.message)}</span></div>
+<div class={message.type}><Icon width='1.5em' {icon} inline hiddenLabel={iconLabel} /><span>{@html addMarkup(message.message)}</span></div>
 
 <style>
   div {
