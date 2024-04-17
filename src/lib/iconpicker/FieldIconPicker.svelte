@@ -230,7 +230,7 @@
       border-radius: 10px;
       border: 1px solid #999;
       height: 30px;
-      padding: 0px 0px 0px 30px;
+      padding: 0.5em;
       font-family: 'Nunito Sans', sans-serif !important;
   }
 
@@ -259,7 +259,7 @@
     font-size: 28px;
 }
 
-.icon-picker-item[aria-checked=true] {
+.icon-picker-item[aria-checked=true] :global(svg) {
   outline: 4px solid #93BBC4;
   background-color: #eee;
 }
