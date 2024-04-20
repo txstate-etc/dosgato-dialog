@@ -1,7 +1,7 @@
 <script lang="ts">
   import { FORM_CONTEXT, FORM_INHERITED_PATH, Field, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext, onMount } from 'svelte'
-  import { get, isNotBlank } from 'txstate-utils'
+  import { equal, get, isNotBlank } from 'txstate-utils'
   import Switcher from './Switcher.svelte'
   let className = ''
   export { className as class }
@@ -38,7 +38,7 @@
       return await store.setField(finalPath, finalDeserialize(''))
     }
     const val = get($store.data, finalPath)
-    if (!choices.some(o => o.value === finalDeserialize(val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
+    if (!choices.some(o => equal(o.value, val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
   }
   $: reactToChoices(choices).catch(console.error)
   onMount(reactToChoices)
