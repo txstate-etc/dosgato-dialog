@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
-  import { onMount } from 'svelte'
+  import { onMount, tick } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import FieldStandard from '../FieldStandard.svelte'
   import { CropperStore, type CropOutput } from './cropper'
@@ -20,6 +20,7 @@
 
   let setVal: (val: any) => void
   let value: CropOutput | undefined
+  const initialAspectRatio: number = selectionAspectRatio
   function init (spValue, spSetVal) {
     setVal = spSetVal
     value = spValue
@@ -116,6 +117,18 @@
   const descid = randomid()
   const movedescid = randomid()
   let focusWithin = false
+
+  let arChanged = false
+  async function reactToAspectRatio (ar) {
+    if (!ar) return
+    store.updateTargetAspect(ar)
+    await tick()
+    if (ar !== initialAspectRatio || arChanged) {
+      store.reset()
+      arChanged = true
+    }
+  }
+  $: void reactToAspectRatio(selectionAspectRatio)
 </script>
 
 <svelte:window on:mousemove={onMouseMove} on:mouseup={onMouseUp} on:touchend={onMouseUp} on:touchcancel={onMouseUp} />

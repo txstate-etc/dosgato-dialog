@@ -72,6 +72,10 @@ export class CropperStore extends Store<ICropperStore> {
     this.update(v => ({ ...v, width, height }))
   }
 
+  updateTargetAspect (ar: number) {
+    this.update(v => ({ ...v, targetAspect: ar }))
+  }
+
   /**
    * The svelte component is responsible for making sure x and y are relative to the drawing area,
    * e.g. (0, 0) is the top left corner of the drawing area
