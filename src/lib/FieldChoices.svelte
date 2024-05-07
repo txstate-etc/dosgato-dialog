@@ -54,7 +54,7 @@
   const descid = randomid()
 
   function reactToChoices (..._: any[]) {
-    const choiceSet = new Set(choices?.map(c => c.value))
+    const choiceSet = new Set(choices?.filter(c => !c.disabled).map(c => c.value))
     const val = get($store, finalPath)
     const filtered = val?.filter(v => choiceSet.has(v))
     if (filtered?.length !== val?.length) store.setField(finalPath, filtered).catch(console.error)
