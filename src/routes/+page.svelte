@@ -4,7 +4,7 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem } from '$lib'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem, FieldImagePosition } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
   let store: FormStore
@@ -38,7 +38,8 @@
     { name: 'Text' },
     { name: 'Dates' },
     { name: 'Selections', required: true },
-    { name: 'Checkboxes' }
+    { name: 'Checkboxes' },
+    { name: 'Images' }
   ]
 
   let colors: PopupMenuItem[] = []
@@ -54,6 +55,7 @@
   })
 
   let selectedAsset: AnyItem | RawURL
+
 </script>
 
 <svelte:head><title>DosGato Dialog Example</title></svelte:head>
@@ -95,11 +97,6 @@
       <button type="button" on:click={() => { colorpicker = colorpicker.filter(c => c.value !== 'teal') }}>Remove Teal</button>
       <FieldRadio notNull horizontal path="radio" label="Choose One House" choices={houses} />
       <FieldChooserLink path="asset" label="Choose an Asset" pages assets urlEntry initialSource="Assets" initialPath="/chemistry/organic"></FieldChooserLink>
-      <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
-      <FieldCropper path="crop" label="Image Crop" selectionAspectRatio={3 / 2} imageSrc="{selectedAsset?.url}"/>
-      {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
-        <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
-      {/if}
       <FieldIconPicker path="icon" label="Icon" defaultValue={{ icon: 'fa-spider', prefix: 'fas' }}/>
       <FieldColorPicker addAllOption notNull defaultValue="hotpink" path="color" label="Another Color" options={colorpicker} helptext="Just pick something."/>
       <FieldDualListbox
@@ -116,6 +113,18 @@
     <Tab name="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
+    </Tab>
+    <Tab name="Images">
+      <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
+      <FieldSelect path="ar" number label="Select Aspect Ratio" choices={[{ value: 1, label: '1:1' }, { value: 1.333, label: '4:3' }, { value: 0.75, label: '3:4' }, { value: 1.7778, label: '16:9' }]} defaultValue={1} notNull />
+      <FieldCropper path="crop" label="Image Crop" selectionAspectRatio={data.ar} imageSrc="{selectedAsset?.url}"/>
+      {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
+        <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
+      {/if}
+      <FieldImagePosition path="position" label="Image Position" imageSrc="{selectedAsset?.url}" info="Images in flex sections cannot be cropped due to the flexible nature of the content. If there is content in the image that should never be visible to the audience, be sure to crop it in an image editing software before uploading. " helptext="Select the most important part of your image."/>
+      {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
+        <img alt="" src={selectedAsset.url} style="width: 100%; max-height: 300px; object-fit: cover; object-position: {data.position?.x ?? 50}% {data.position?.y ?? 50}%"/>
+      {/if}
     </Tab>
   </Tabs>
   <svelte:fragment slot="submit" let:saved>
