@@ -124,7 +124,7 @@
     store.updateTargetAspect(ar)
     await tick()
     if (ar !== initialAspectRatio || arChanged) {
-      store.reset()
+      store.maximize()
       arChanged = true
     }
   }
