@@ -243,23 +243,38 @@
 
   /* Styles for the icon picker grid */
 
-  .icon-picker-items{
+  .icon-picker-items {
     margin-top: 5px;
     padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .icon-picker-items {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .icon-picker-items {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
 .icon-picker-item {
-    float: left;
-    margin: 0px 11px 12px 11px;
     text-align: center;
     cursor: pointer;
     color: inherit;
-    width: 10%;
     position: relative;
     font-size: 28px;
 }
 
-.icon-picker-item[aria-checked=true] :global(svg) {
+.icon-picker-item[aria-checked=true] {
   outline: 4px solid #93BBC4;
   background-color: #eee;
 }
