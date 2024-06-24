@@ -62,9 +62,10 @@
 
   function onSearch () {
     visibleIcons = FontAwesomeIcons.filter(i => {
-      if (i.class.includes(searchVal)) return true
+      const searchValLC = searchVal.toLowerCase()
+      if (i.class.toLowerCase().includes(searchValLC)) return true
       for (const term of i.search.terms) {
-        if (term.includes(searchVal)) return true
+        if (term.toLowerCase().includes(searchValLC)) return true
       }
       return false
     })
@@ -137,7 +138,7 @@
           </div>
           <fieldset>
             <ScreenReaderOnly><legend class="sr-only">Icons</legend></ScreenReaderOnly>
-            <div class="icon-picker-items" role="radiogroup">
+            <div class="icon-picker-items" role="radiogroup" class:empty={visibleIcons.length === 0}>
               {#each visibleIcons as icon, idx (icon.class)}
 
                 <div bind:this={iconElements[idx]} id={icon.class} class="icon-picker-item" role="radio" aria-checked={icon.class === selected.icon} tabindex={icon.class === selected.icon ? 0 : -1} data-index={idx} on:click={() => onSelectIcon(icon.class)} on:keydown={onKeyDown}>
@@ -252,6 +253,9 @@
     column-gap: 1em;
     justify-items: center;
     align-items: center;
+  }
+  .icon-picker-items.empty {
+    display: block;
   }
 
   @media (max-width: 800px) {
