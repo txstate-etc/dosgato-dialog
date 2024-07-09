@@ -4,7 +4,6 @@
   import Button from '../Button.svelte'
   import arrowsIn from '@iconify-icons/ph/arrows-in'
   import { Dialog, type ImagePositionOutput } from '$lib'
-  import { onMount } from 'svelte'
   import { modifierKey, ScreenReaderOnly } from '@txstate-mws/svelte-components'
 
   export let id: string | undefined = undefined
@@ -41,11 +40,6 @@
   }
 
   let x, y
-
-  onMount(() => {
-    x = initialVal?.x / 25
-    y = initialVal?.y / 25
-  })
 
   function onSave (setVal) {
     setVal({ x: x * 25, y: y * 25 })
@@ -114,44 +108,54 @@
       4: 'Bottom Right Corner'
     }
   }
+
+  let dialogWasOpened = false
+  function onDialogOpen () {
+    if (!dialogWasOpened) {
+      x = (initialVal.x ?? 50) / 25
+      y = (initialVal.y ?? 50) / 25
+      dialogWasOpened = true
+    }
+  }
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} conditional={conditional && isNotBlank(imageSrc)} {helptext} {descid} let:value let:setVal let:helptextid>
   {@const _ = init(value)}
   {#if isNotBlank(imageSrc)}
     <Button icon={arrowsIn} on:click={showModal}>Adjust Image Position</Button>
-      {#if modalOpen}
-        <Dialog size="large" title={label} on:escape={hideModal} continueText="Save" cancelText="Cancel" on:continue={() => onSave(setVal)} {labelid}>
+    {#if modalOpen}
+      <Dialog size="large" title={label} on:escape={hideModal} continueText="Save" cancelText="Cancel" on:continue={() => onSave(setVal)} {labelid}>
+        {@const _dialogopen = onDialogOpen()}
         {#if info}
           <section class="info">
             {info}
           </section>
-          <section class="position">
-            <p>
-              Using the grid overlays, select a focal point in your image to determine how Gato will align, position, and scale your image
-              in the section. This will help ensure the focal point of your image is always in frame. By default, Gato will
-              use the center of the image.
-            </p>
-            <div class="image-container">
-              <img class="crop-image" src={imageSrc} alt="" />
-              <div class="overlay" role="radiogroup" aria-labelledby={labelid}>
-                {#each Array.from(Array(5).keys()) as col}
-                  {#each Array.from(Array(5).keys()) as row}
-                    <div
-                      bind:this={boxes[col + row * 5]}
-                      class="box"
-                      class:side={row === 4}
-                      class:bottom={col === 4}
-                      role="radio"
-                      aria-checked={row === x && col === y}
-                      tabindex={row === x && col === y ? 0 : -1}
-                      on:click={() => onSelectBox(row, col)} on:keydown={onKeyDown}><ScreenReaderOnly>{positionText[row][col]}</ScreenReaderOnly></div>
-                  {/each}
-                {/each}
-              </div>
-            </div>
-          </section>
         {/if}
+        <section class="position">
+          <p>
+            Using the grid overlays, select a focal point in your image to determine how Gato will align, position, and scale your image
+            in the section. This will help ensure the focal point of your image is always in frame. By default, Gato will
+            use the center of the image.
+          </p>
+          <div class="image-container">
+            <img class="crop-image" src={imageSrc} alt="" />
+            <div class="overlay" role="radiogroup" aria-labelledby={labelid}>
+              {#each Array.from(Array(5).keys()) as col}
+                {#each Array.from(Array(5).keys()) as row}
+                  <div
+                    bind:this={boxes[col + row * 5]}
+                    class="box"
+                    class:side={row === 4}
+                    class:bottom={col === 4}
+                    role="radio"
+                    aria-checked={row === x && col === y}
+                    tabindex={row === x && col === y ? 0 : -1}
+                    on:click={() => onSelectBox(row, col)} on:keydown={onKeyDown}><ScreenReaderOnly>{positionText[row][col]}</ScreenReaderOnly></div>
+                {/each}
+              {/each}
+            </div>
+          </div>
+        </section>
       </Dialog>
     {/if}
   {/if}
