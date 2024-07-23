@@ -6,7 +6,7 @@
   import { CHOOSER_API_CONTEXT, Form, type Client } from '$lib'
   import Dialog from './Dialog.svelte'
 
-  type T = $$Generic<any>
+  type T = $$Generic<Record<string, any>>
 
   interface $$Events {
     saved: CustomEvent<T>

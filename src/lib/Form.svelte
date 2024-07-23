@@ -4,7 +4,7 @@
   import { CHOOSER_API_CONTEXT, type Client, messageIcons } from '$lib'
   import Icon from './Icon.svelte'
 
-  type T = $$Generic<any>
+  type T = $$Generic<Record<string, any>>
   type F = $$Generic<any>
   interface $$Slots {
     default: {
