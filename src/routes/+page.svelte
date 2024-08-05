@@ -63,7 +63,7 @@
 
 <main>
 {#if showdialog}
-<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data preload={{ radio: 'slytherin' }}>
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data preload={{ radio: 'ravenclaw' }}>
   <Tabs {tabs}>
     <Tab name="Add More">
       <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it. <i>It also tests for allowance of html tags.</i>"/>
