@@ -11,6 +11,7 @@
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
+  export let placeholder: string | undefined = undefined
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
   export let type: string = 'text'
@@ -27,7 +28,7 @@
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  <Input bind:inputelement {type} {autocomplete} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {messagesid} {helptextid} {extradescid} {use}></Input>
+  <Input bind:inputelement {type} {placeholder} {autocomplete} name={path} {value} {id} class="dialog-input {className}" {allowlastpass} {onChange} {onBlur} {valid} {invalid} {messagesid} {helptextid} {extradescid} {use}></Input>
   {#if isNotNull(maxlength)}
     <MaxLength {value} {maxlength}/>
   {/if}

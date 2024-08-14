@@ -27,7 +27,7 @@
   export let related: true | number = 0
   export let conditional: boolean | undefined = undefined
   /** The `id` of `<div>` messages are rendered in. */
-  let messagesid
+  let messagesid: string | undefined
 
   const dgMultipleContext = getContext<{ helptextid: string | undefined } | undefined>(DG_DIALOG_FIELD_MULTIPLE)
 

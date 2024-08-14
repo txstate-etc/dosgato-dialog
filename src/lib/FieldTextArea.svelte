@@ -10,6 +10,7 @@
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
+  export let placeholder: string | undefined = undefined
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
   export let maxlength: number | undefined = undefined
@@ -24,7 +25,7 @@
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid>
-  <textarea bind:this={inputelement} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste use:passActions={use}></textarea>
+  <textarea bind:this={inputelement} {placeholder} name={path} {value} {id} {rows} class="dialog-input dialog-textarea {className}" class:valid class:invalid aria-invalid={invalid} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])} on:change={onChange} on:blur={onBlur} on:keyup={onChange} on:paste use:passActions={use}></textarea>
   {#if isNotNull(maxlength)}
     <MaxLength {value} {maxlength}/>
   {/if}

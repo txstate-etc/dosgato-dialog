@@ -9,6 +9,7 @@
   export let value: string
   export let type: string = 'text'
   export let allowlastpass = false
+  export let placeholder: string | undefined = undefined
   export let maxlength: number | undefined = undefined
   export let min: string | Date | { toJSDate: () => Date } | number | undefined = undefined
   export let max: string | Date | { toJSDate: () => Date } | number | undefined = undefined
@@ -40,4 +41,4 @@
 </script>
 
 <!-- svelte-ignore a11y-autocomplete-valid -->
-<input bind:this={inputelement} {type} {id} {autocomplete} class={className} data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
+<input bind:this={inputelement} {type} {id} {autocomplete} {placeholder} class={className} data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
