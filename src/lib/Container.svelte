@@ -44,7 +44,7 @@
 
   const tabContext = getContext<{ store: TabStore } | undefined>(TAB_CONTEXT)
   const tabNameStore = getContext<Writable<string> | undefined>(TAB_NAME_CONTEXT)
-  $: if (messages.length) {
+  $: if (messages.length && messages.some(m => m.type === 'error')) {
     tabContext?.store.notifyErrorPath($tabNameStore!, path)
   } else {
     tabContext?.store.notifyErrorPathGone(path)
