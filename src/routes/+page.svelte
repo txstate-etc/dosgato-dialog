@@ -4,9 +4,10 @@
   import plusThick from '@iconify-icons/mdi/plus-thick.js'
   import { onMount } from 'svelte'
   import { sleep } from 'txstate-utils'
-  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem, FieldImagePosition } from '$lib'
+  import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem, FieldImagePosition, FieldTagPicker } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
+    import { demoTagClient } from '../demo/DemoTagAPI';
   let store: FormStore
   let showdialog = true
   async function submit (data: { crop: CropOutput }) {
@@ -63,7 +64,7 @@
 
 <main>
 {#if showdialog}
-<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} size="large" on:escape={() => { showdialog = false }} let:saved let:data preload={{ radio: 'ravenclaw' }}>
+<FormDialog bind:store title="Example Dialog" {submit} {validate} icon={apertureLight} chooserClient={demoChooserAPI} tagClient={demoTagClient} size="large" on:escape={() => { showdialog = false }} let:saved let:data preload={{ radio: 'ravenclaw' }}>
   <Tabs {tabs}>
     <Tab name="Add More">
       <FieldText path="test" label="Test" required helptext="This is some very long test helptext. It is really long to help show us what happens when long help text is going to wrap all the way to another line and allow us to test the expand and collapse functionality by clicking on it. <i>It also tests for allowance of html tags.</i>"/>
@@ -115,6 +116,7 @@
     <Tab name="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
+      <FieldTagPicker path="tags" label="Tags" target={undefined} />
     </Tab>
     <Tab name="Images">
       <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
@@ -123,7 +125,7 @@
       {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
         <crop-img alt="" src={selectedAsset.url} imageaspect={selectedAsset.image.width / selectedAsset.image.height} cropleft={data.crop?.left ?? 0} cropright={data.crop?.right ?? 0} croptop={data.crop?.top ?? 0} cropbottom={data.crop?.bottom ?? 0} />
       {/if}
-      <FieldImagePosition path="position" label="Image Position" imageSrc="{selectedAsset?.url}" info="Images in flex sections cannot be cropped due to the flexible nature of the content. If there is content in the image that should never be visible to the audience, be sure to crop it in an image editing software before uploading. " helptext="Select the most important part of your image."/>
+      <FieldImagePosition path="position" label="Image Position" imageSrc="{selectedAsset?.url}" helptext="Select the most important part of your image."/>
       {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}
         <img alt="" src={selectedAsset.url} style="width: 100%; max-height: 300px; object-fit: cover; object-position: {data.position?.x ?? 50}% {data.position?.y ?? 50}%"/>
       {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Form, type FormStore, type Feedback, type SubmitResponse } from '@txstate-mws/svelte-forms'
   import { setContext } from 'svelte'
-  import { CHOOSER_API_CONTEXT, type Client, messageIcons } from '$lib'
+  import { CHOOSER_API_CONTEXT, type Client, messageIcons, TAG_API_CONTEXT, type TagClient } from '$lib'
   import Icon from './Icon.svelte'
 
   type T = $$Generic<Record<string, any>>
@@ -35,11 +35,13 @@
   export let validate: ((state: T) => Promise<Feedback[]>) | undefined = undefined
   export let store: FormStore<T> = undefined as any
   export let chooserClient: Client<F> | undefined = undefined
+  export let tagClient: TagClient | undefined = undefined
   export let autocomplete: string | undefined = undefined
   export let name: string | undefined = undefined
   export let preload: T | undefined = undefined
 
   setContext(CHOOSER_API_CONTEXT, chooserClient)
+  setContext(TAG_API_CONTEXT, tagClient)
 </script>
 
 <Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
