@@ -22,7 +22,7 @@
   }
 
   function tagToOption (tag: (typeof tags)[0]) {
-    return { label: `${tag.group.title ?? ''}${isNotBlank(tag.group.title) ? ': ' : ''}${tag.name}`, value: tag.id }
+    return { label: (!tag.group.excludeTitle && isNotBlank(tag.group.title) ? tag.group.title + ': ' : '') + tag.name, value: tag.id }
   }
 
   async function getOptions (search: string) {
