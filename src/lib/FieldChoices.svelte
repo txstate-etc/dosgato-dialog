@@ -27,10 +27,12 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
+  export let selectAll: boolean = false
 
   const store = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const valStore = store.getField<any[]>(finalPath)
   const currentWidth = derivedStore(store, 'width')
   $: cols = Math.min(Math.ceil($currentWidth / maxwidth), choices.length)
 
@@ -51,11 +53,29 @@
     })
   }
 
+  $: selected = new Set($valStore ?? [])
+
+  let selectAllElement: HTMLInputElement | undefined
+  const selectAllId = randomid()
+
+  $: selectAllChecked = choices.every(choice => choice.disabled || selected.has(choice.value))
+
+  function selectAllChanged () {
+    if (selectAllChecked) {
+      // it was checked and is now unchecked, clear it out
+      void store.setField(finalPath, [])
+    } else {
+      // it was not checked and now it is checked
+      void store.setField(finalPath, choices.filter(choice => !choice.disabled).map(choice => choice.value))
+    }
+  }
+
   const descid = randomid()
 
   function reactToChoices (..._: any[]) {
     const choiceSet = new Set(choices?.filter(c => !c.disabled).map(c => c.value))
-    const val = get($store, finalPath)
+    selected = new Set(Array.from(selected).filter(v => choiceSet.has(v)))
+    const val = get($store.data, finalPath)
     const filtered = val?.filter(v => choiceSet.has(v))
     if (filtered?.length !== val?.length) store.setField(finalPath, filtered).catch(console.error)
   }
@@ -66,6 +86,12 @@
 <Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
   <Container {path} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
+      {#if selectAll}
+        <label for={selectAllId} style:width>
+          <Checkbox id={selectAllId} name={selectAllId} bind:inputelement={selectAllElement} value={selectAllChecked} onChange={selectAllChanged} />
+          <span>Select All</span>
+        </label>
+      {/if}
       {#each choices as choice, idx (choice.value)}
         {@const checkid = `${path}.${idx}`}
         {@const included = value?.includes(choice.value)}
