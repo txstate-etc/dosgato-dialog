@@ -4,6 +4,9 @@
   import { isNotBlank, randomid } from 'txstate-utils'
   import FieldStandard from '../FieldStandard.svelte'
   import { CropperStore, type CropOutput } from './cropper'
+  import { Button } from '$lib'
+  import arrowsOutIcon from '@iconify-icons/ph/arrows-out-fill'
+  import arrowsCircleIcon from '@iconify-icons/ph/arrows-clockwise-fill'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -136,6 +139,13 @@
   {@const _ = init(value, setVal)}
   {#if isNotBlank(imageSrc)}
     <div on:focusin={() => { focusWithin = true }} on:focusout={() => { focusWithin = false }}>
+      <div class="action-buttons">
+        <Button type="button" on:click={onMaximize} icon={arrowsOutIcon}>Center and Maximize</Button>
+        <Button type="button" on:click={() => store.reset()} icon={arrowsCircleIcon} class="btn-clear">Clear</Button>
+      </div>
+      <div class="cropper-instructions">
+        Click and drag to select a section of your image to use.
+      </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
         <img class="crop-image" src={imageSrc} alt="" />
@@ -189,13 +199,6 @@
           </div>
         {/if}
       </div>
-      <div class="action-buttons">
-        <button type="button" class='btn-center-max' on:click={onMaximize}>Center and Maximize</button>
-        <button type="button" class='btn-clear' on:click={() => store.reset()}>Clear</button>
-      </div>
-      <div class="cropper-instructions">
-        Click and drag to select a section of your image to use.
-      </div>
     </div>
   {:else}
     Image not selected
@@ -203,6 +206,22 @@
 </FieldStandard>
 
 <style>
+  .action-buttons {
+    display: flex;
+    gap: 1em;
+  }
+  :global(button.reset.btn-clear) {
+    background-color: var(--dg-button-cancel-bg, #808080);
+
+  }
+  :global(button.reset.btn-clear:not([disabled]):hover) {
+    background-color: var(--dg-button-cancel-hover-bg, #595959);
+  }
+
+  .cropper-instructions {
+    padding: 0.5em 0;
+  }
+
   .crop-image-container {
     position: relative;
     user-select: none;
