@@ -27,6 +27,9 @@
   export let label: string = ''
   /** Text to display in the text input when it's empty. */
   export let placeholder = ''
+  /** When there are no items (e.g. it's a filtered search and there were no results), we still display one
+  disabled item in the menu to let the user know what is going on. Use this prop to specify the message. */
+  export let emptyText: string | undefined = undefined
   export let disabled = false
   export let defaultValue: string[] = []
   export let conditional: boolean | undefined = undefined
@@ -80,7 +83,7 @@
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
       <MultiSelect {id} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
-        {disabled} {maxSelections} selected={$selectedStore} {placeholder} getOptions={wrapGetOptions}
+        {disabled} {maxSelections} selected={$selectedStore} {placeholder} {emptyText} getOptions={wrapGetOptions}
         inputClass='multiselect-input'
         on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}
       />
