@@ -7,6 +7,9 @@
   export let path: string
   export let label: string
   export let target: any
+  export let conditional: boolean | undefined = undefined
+  export let required = false
+  export let helptext: string | undefined = undefined
 
   const tagClient = getContext<TagClient>(TAG_API_CONTEXT)
 
@@ -39,4 +42,4 @@
   }
 </script>
 
-<FieldMultiselect {path} {label} {getOptions} {lookupByValue} />
+<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {helptext}/>
