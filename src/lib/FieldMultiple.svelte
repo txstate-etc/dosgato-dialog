@@ -3,10 +3,10 @@
   function noOp (..._: any[]) { return '' }
 </script>
 <script lang="ts">
-  import caretCircleDown from '@iconify-icons/ph/caret-circle-down'
-  import caretCircleUp from '@iconify-icons/ph/caret-circle-up'
+  import caretCircleDown from '@iconify-icons/ph/caret-circle-down-fill'
+  import caretCircleUp from '@iconify-icons/ph/caret-circle-up-fill'
   import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
-  import xCircle from '@iconify-icons/ph/x-circle'
+  import xCircle from '@iconify-icons/ph/x-circle-fill'
   import { AddMore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
@@ -135,6 +135,9 @@
     cursor: pointer;
     font-size: 1.3em;
     color: black;
+  }
+  .dialog-multiple-buttons .dialog-multiple-delete {
+    color: var(--dg-danger-bg, #9a3332);
   }
   .dialog-multiple-buttons button:disabled {
     color: #6d6d6d;
