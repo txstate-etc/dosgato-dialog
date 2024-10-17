@@ -11,6 +11,8 @@
   export let required = false
   export let helptext: string | undefined = undefined
   export let emptyText: string | undefined = undefined
+  /** Text to display in the tag picker input field when it's empty. */
+  export let placeholder = ''
 
   const tagClient = getContext<TagClient>(TAG_API_CONTEXT)
 
@@ -43,4 +45,4 @@
   }
 </script>
 
-<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {helptext} {emptyText}/>
+<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {helptext} {emptyText} {placeholder} />
