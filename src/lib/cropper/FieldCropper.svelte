@@ -132,6 +132,22 @@
     }
   }
   $: void reactToAspectRatio(selectionAspectRatio)
+
+  let initialLoad = true
+  let initialVal
+  let srcChanged = false
+  async function onimageload (e) {
+    if (initialLoad) {
+      initialVal = e.target.src
+      initialLoad = false
+    } else {
+      if (e.target.src !== initialVal || srcChanged) {
+        await tick()
+        store.maximize()
+        srcChanged = true
+      }
+    }
+  }
 </script>
 
 <svelte:window on:mousemove={onMouseMove} on:mouseup={onMouseUp} on:touchend={onMouseUp} on:touchcancel={onMouseUp} />
@@ -148,7 +164,7 @@
       </div>
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div bind:this={container} use:resize on:resize={() => updateRect()} class="crop-image-container" on:mousedown={onMouseDown} on:touchstart={onMouseDown} on:touchmove={onMouseMove} style:cursor={$store.cursor}>
-        <img class="crop-image" src={imageSrc} alt="" />
+        <img class="crop-image" src={imageSrc} alt="" on:load={onimageload}/>
         {#if $selection && $outputPct}
           <div class='crop-bg'>
             <img class='crop-image clipped' src={imageSrc} alt="" style:clip-path="polygon({$outputPct.left}% {$outputPct.top}%, {100 - $outputPct.right}% {$outputPct.top}%, {100 - $outputPct.right}% {100 - $outputPct.bottom}%, {$outputPct.left}% {100 - $outputPct.bottom}%, {$outputPct.left}% {$outputPct.top}%)" />
