@@ -333,4 +333,7 @@
     padding: 0.5em;
     font-size: 1.1em;
   }
+  :global(div.hideable-container ul.hideable-headers li.selected-header::after) {
+    display: none;
+  }
 </style>
