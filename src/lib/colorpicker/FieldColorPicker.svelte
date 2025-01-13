@@ -1,10 +1,11 @@
 <script lang="ts">
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext, onMount } from 'svelte'
-  import { get, isNotBlank, randomid, shouldUseWhiteText } from 'txstate-utils'
+  import { get, isNotBlank, isNotNull, keyby, randomid } from 'txstate-utils'
   import { Radio } from '$lib'
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
+    import { ScreenReaderOnly } from '@txstate-mws/svelte-components';
 
   export let id: string | undefined = undefined
   let className = ''
@@ -24,6 +25,8 @@
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
 
+  $: colorsByValue = keyby(options, 'value')
+
   async function reactToOptions (..._: any[]) {
     const val = get($store.data, finalPath)
     if (!val) return
@@ -40,22 +43,31 @@
       {#if addAllOption}
         <label for={`${groupid}.alt`} class="colorsel alternating">
           <Radio id={`${groupid}.alt`} name={groupid} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid}/>
-          <span class="alternating-bg">
-            {#each options as option (option.value)}
-              <span style:background-color={option.color}></span>
-            {/each}
-          </span>
-          <span class="picker-text">Alternating</span>
+          <div class="picker-text">
+            <ScreenReaderOnly>Alternating</ScreenReaderOnly>
+            <div class="alternating-bg">
+              {#each options as option (option.value)}
+                <div style:background-color={option.color} style:flex-basis={`calc(100% / ${options.length})`}></div>
+              {/each}
+            </div>
+          </div>
         </label>
       {/if}
       {#each options as option, idx (option.value) }
         {@const radioid = `${groupid}.${idx}`}
-        <label for={radioid} class="colorsel">
+        <label for={radioid} class="colorsel" title={option.name || option.value}>
           <Radio id={radioid} name={groupid} value={option.value} selected={value === option.value} {onChange} {onBlur} {helptextid}/>
-          <span class="picker-text" style:background-color={option.color} class:dark={shouldUseWhiteText(option.color)}>{option.name || option.value}</span>
+          <div class="picker-text" style:background-color={option.color}>
+            <ScreenReaderOnly>{option.name || option.value}</ScreenReaderOnly>
+          </div>
         </label>
       {/each}
     </div>
+    {#if options.length && isNotNull(get($store.data, finalPath))}
+      <div>
+        Selected Color: <span class="selected-color">{get($store.data, finalPath) === 'alternating' ? 'Alternating' : (colorsByValue[get($store.data, finalPath)]?.name ?? get($store.data, finalPath))}</span>
+      </div>
+    {/if}
   </div>
 </FieldStandard>
 
@@ -65,21 +77,11 @@
     container-name: color-picker-container;
   }
   .color-container {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 1em;
   }
-  @container color-picker-container (max-width: 600px) {
-    .color-container {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-  @container color-picker-container (max-width: 350px) {
-    .color-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
   label.colorsel :global(input[type="radio"]) {
     border: 0;
     clip: rect(0 0 0 0);
@@ -90,53 +92,32 @@
     position: absolute;
     width: 1px;
   }
-
-  label.colorsel :global(input[type="radio"] + span) {
-    display: inline-block;
-    padding: 1rem;
-    width: 100%;
+  label.colorsel :global(input[type="radio"] + div.picker-text) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
     text-align: center;
     white-space: nowrap;
     border: 1px solid #D1D1D1;
   }
 
-  label.colorsel :global(input[type="radio"]:checked + span) {
+  label.colorsel :global(input[type="radio"]:checked + div.picker-text) {
     outline: 5px solid #93BBC4;
   }
 
-  label.colorsel :global(input[type="radio"]:focus + span) {
+  label.colorsel :global(input[type="radio"]:focus + div.picker-text) {
     outline: 5px solid blue;
   }
-
-  label.colorsel.alternating {
-    position: relative;
+  label.colorsel.alternating .picker-text {
+    overflow: hidden;
   }
-
-  label.colorsel.alternating span.alternating-bg {
+  label.colorsel.alternating .picker-text .alternating-bg {
     display: flex;
-    padding: 0;
     height: 100%;
-  }
-
-  label.colorsel.alternating span.alternating-bg span {
     width: 100%;
-  }
-
-  label.colorsel.alternating span.picker-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  label .picker-text {
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    color: black;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), 1px -1px 1px rgba(255, 255, 255, 0.6), -1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.6);
-  }
-  label .picker-text.dark, label.alternating .picker-text {
-    color: white;
-    text-shadow: 1px 1px 1px #222, 1px -1px 1px #222, -1px 1px 1px #222, -1px -1px 1px #222;
   }
 </style>
