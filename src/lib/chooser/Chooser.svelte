@@ -100,7 +100,7 @@
       {#if $store.initialized}
         <Tree headers={[
           { label: 'Path', id: 'name', grow: 4, icon: item => iconForItem(item), get: 'name' }
-        ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} />
+        ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} searchable='name' />
       {/if}
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
