@@ -12,6 +12,7 @@
   export let target: any
   export let conditional: boolean | undefined = undefined
   export let required = false
+  export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let emptyText: string | undefined = undefined
   /** Text to display in the tag picker input field when it's empty. */
@@ -66,7 +67,7 @@
 
 </script>
 
-<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {helptext} {emptyText} {placeholder} {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass} selectedItemLabel={showTitleInDialog ? selectedItemLabel : undefined} includeDeleteAll confirmDelete="Are you sure you want remove all tag selections?">
+<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {extradescid} {helptext} {emptyText} {placeholder} {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass} selectedItemLabel={showTitleInDialog ? selectedItemLabel : undefined} includeDeleteAll confirmDelete="Are you sure you want remove all tag selections?">
   <svelte:fragment slot="deleteall"><span class="delete-button-text">Delete All <Icon icon={trashIcon}/></span></svelte:fragment>
 </FieldMultiselect>
 
