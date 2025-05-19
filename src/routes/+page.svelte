@@ -117,7 +117,7 @@
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />
       <FieldChoices label="Choose a Vegetable" path="vegchoices" selectAll choices={[{ value: 'lettuce' }, { value: 'carrot' }, { value: 'cucumber' }, { value: 'celery' }]} />
       <FieldCheckbox path="receiveNewsletter" label="Newsletter" boxLabel="I would like to receive your thrice daily newsletter" defaultValue={true} />
-      <FieldTagPicker path="tags" label="Tags" target={undefined} />
+      <FieldTagPicker path="tags" label="Tags" target={undefined} showTitleInDialog />
     </Tab>
     <Tab name="Images">
       <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>

@@ -40,9 +40,21 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
+  export let menuContainerClass = ''
+  export let menuClass = ''
+  export let menuItemClass = ''
+  export let menuItemHilitedClass = ''
+  export let menuCategoryClass = ''
+  /** Add a Delete All button to clear all selected items */
+  export let includeDeleteAll = false
+  /** Show a confirmation message before clearing all selections */
+  export let confirmDelete: string | undefined = undefined
+
+  export let selectedItemLabel: ((item: PopupMenuItem) => string) | undefined = (item) => item.label || item.value
 
   /** Each time we run getOptions we will save the value -> label mappings that it finds, so that we can display labels on pills. */
   const valueToLabel: Record<string, string> = {}
+  const valueToGroup: Record<string, string | undefined> = {}
 
   async function wrapGetOptions (search: string) {
     const opts = await getOptions(search)
@@ -50,11 +62,13 @@
     // if (opts.length === 0) opts = await getOptions('')
     for (const opt of opts) {
       valueToLabel[opt.value] = opt.label || opt.value
+      valueToGroup[opt.value] = opt.group
     }
     return opts
   }
 
-  const selectedStore = new Store<{ value: string, label: string }[]>([])
+  const selectedStore = new Store<{ value: string, label: string, group?: string }[]>([])
+
   let hasInit = !defaultValue.length
 
   let inputelement: HTMLElement
@@ -70,10 +84,13 @@
     await Promise.all(value.map(async v => {
       if (!valueToLabel[v]) {
         const item = await lookupByValue(v)
-        if (item) valueToLabel[item.value] = item.label ?? item.value
+        if (item) {
+          valueToLabel[item.value] = item.label ?? item.value
+          valueToGroup[item.value] = item.group
+        }
       }
     }))
-    selectedStore.set(value.map(v => ({ value: v, label: valueToLabel[v] })).filter(v => isNotBlank(v.label)))
+    selectedStore.set(value.map(v => ({ value: v, label: valueToLabel[v], group: valueToGroup[v] })).filter(v => isNotBlank(v.label)))
   }
 </script>
 
@@ -86,7 +103,11 @@
         {disabled} {maxSelections} selected={$selectedStore} {placeholder} {emptyText} getOptions={wrapGetOptions}
         inputClass='multiselect-input'
         on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}
-      />
+        {includeDeleteAll} {confirmDelete} {selectedItemLabel}
+        {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass}
+      >
+      <slot name="deleteall" slot="deleteall" />
+    </MultiSelect>
     </div>
   </FieldStandard>
 {/if}
