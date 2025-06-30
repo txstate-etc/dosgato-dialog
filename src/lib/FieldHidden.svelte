@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Field, nullableSerialize, nullableDeserialize, type FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
+  import { Field, type FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
   export let id: string | undefined = undefined
@@ -15,6 +15,6 @@
   $: void store.setField(finalPath, value)
 </script>
 
-<Field {path} {conditional} {boolean} {number} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value>
+<Field {path} {conditional} {boolean} {number} {notNull} let:value>
   <input type="hidden" name={path} {value} {id}>
 </Field>

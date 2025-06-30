@@ -7,11 +7,9 @@
   import caretCircleUp from '@iconify-icons/ph/caret-circle-up-fill'
   import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
   import xCircle from '@iconify-icons/ph/x-circle-fill'
-  import { AddMore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
-  import type { FormStore } from '@txstate-mws/svelte-forms'
-  import { derivedStore } from '@txstate-mws/svelte-store'
-  import { getContext, setContext } from 'svelte'
-  import { isNotNull } from 'txstate-utils'
+  import { AddMore, type Feedback } from '@txstate-mws/svelte-forms'
+  import { setContext } from 'svelte'
+  import { writable } from 'svelte/store'
   import Button from './Button.svelte'
   import Container from './Container.svelte'
   import Icon from './Icon.svelte'
@@ -41,10 +39,6 @@
 
   const fieldMultipleContext: { helptextid: string | undefined } = { helptextid: undefined }
   setContext(DG_DIALOG_FIELD_MULTIPLE, fieldMultipleContext)
-  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
-  const finalPath = [inheritedPath, path].filter(isNotNull).join('.')
-  const store = getContext<FormStore>(FORM_CONTEXT)
-  const messageStore = derivedStore(store, ({ messages }) => messages.all.filter(m => m.path?.startsWith(finalPath)))
 
   const reorderupelements: HTMLButtonElement[] = []
   const reorderdownelements: HTMLButtonElement[] = []
@@ -77,12 +71,12 @@
     }
   }
 
-  $: messages = compact ? $messageStore : []
+  let messages: Feedback[] = []
 </script>
 
 <Container {path} {label} {messages} {conditional} {related} {helptext} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
-  <AddMore {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
+  <AddMore bind:messages {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && currentLength > 1}
     <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove} class:first={index === 0}>

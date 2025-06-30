@@ -1,17 +1,15 @@
-<script lang="ts">
+<script lang="ts" generics="F">
   import browserIcon from '@iconify-icons/ph/browser'
   import folderIcon from '@iconify-icons/ph/folder'
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
   import { createEventDispatcher, getContext, onMount, setContext, tick } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI, expandTreePath } from '$lib'
-  import { CHOOSER_API_CONTEXT, type AnyItem, type Client, type Folder, type Page, type Asset } from './ChooserAPI'
+  import { CHOOSER_API_CONTEXT, type AnyItem, type Client } from './ChooserAPI'
   import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
   import ChooserPreview from './ChooserPreview.svelte'
 
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
-
-  type F = $$Generic
 
   export let label: string | undefined = undefined
   export let images = false

@@ -1,10 +1,8 @@
-<script lang="ts">
+<script lang="ts" generics="T extends TreeItemFromDB = TreeItemFromDB">
   import type { IconifyIcon } from '@iconify/svelte'
   import { get } from 'txstate-utils'
   import { Icon } from '$lib'
   import type { TreeHeader, TreeItemFromDB, TypedTreeItem } from './treestore'
-
-  type T = $$Generic<TreeItemFromDB>
 
   export let header: TreeHeader<T>
   export let item: TypedTreeItem<T>

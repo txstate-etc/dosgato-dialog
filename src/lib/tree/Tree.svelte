@@ -1,19 +1,16 @@
-<script lang="ts">
-  import { Icon } from '$lib'
-
-  import { resize, type ElementSize, PopupMenu, type PopupMenuItem } from '@txstate-mws/svelte-components'
-  import { derivedStore, Store } from '@txstate-mws/svelte-store'
-  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
+<script lang="ts" generics="T extends TreeItemFromDB = TreeItemFromDB">
   import dotsIcon from '@iconify-icons/ph/dots-three-outline-vertical-fill'
   import circleIcon from '@iconify-icons/ph/circle'
   import radioSelectedIcon from '@iconify-icons/ph/radio-button-fill'
+  import { resize, type ElementSize, PopupMenu, type PopupMenuItem } from '@txstate-mws/svelte-components'
+  import { derivedStore, Store } from '@txstate-mws/svelte-store'
+  import { afterUpdate, beforeUpdate, onDestroy, onMount, setContext, tick } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
+  import { Icon } from '$lib'
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
   import { getHashId, transformSearchable, TreeStore, TREE_STORE_CONTEXT } from './treestore'
   import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB, SearchableType } from './treestore'
-
-  type T = $$Generic<TreeItemFromDB>
 
   interface $$Events {
     choose: CustomEvent<T>

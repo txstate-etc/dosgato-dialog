@@ -1,23 +1,22 @@
 <script lang="ts">
-  import { Field, nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
-  import { randomid } from 'txstate-utils'
-  import { onMount } from 'svelte'
+  import { Field, FORM_INHERITED_PATH, type FormStore, FORM_CONTEXT } from '@txstate-mws/svelte-forms'
+  import { getContext, onMount } from 'svelte'
+  import { isNotBlank, randomid } from 'txstate-utils'
 
   export let path: string
   export let conditional: boolean | undefined = undefined
   export let length: number = 10
 
-  let val: any, stVal: (val: any, notDirty?: boolean) => void
-  function updateValue (valu: any, sVal: any) {
-    val = valu
-    stVal = sVal
-  }
+  const store = getContext<FormStore>(FORM_CONTEXT)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const valueStore = store.getField<string | null>(finalPath)
+
   onMount(() => {
-    if (!val) stVal(randomid(length))
+    if (!$valueStore) store.setField(finalPath, randomid(length))
   })
 </script>
 
-<Field {path} {conditional} defaultValue={randomid(length)} serialize={nullableSerialize} deserialize={nullableDeserialize} let:value let:setVal>
-  {@const _ = updateValue(value, setVal)}
+<Field {path} {conditional} defaultValue={randomid(length)} notNull let:value>
   <input type="hidden" name={path} {value}>
 </Field>

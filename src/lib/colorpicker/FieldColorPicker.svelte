@@ -39,7 +39,7 @@
     <div class="color-container {className}" role="radiogroup" aria-labelledby={groupid} class:invalid class:valid>
       {#if addAllOption}
         <label for={`${groupid}.alt`} class="colorsel alternating">
-          <Radio id={`${groupid}.alt`} name={groupid} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid}/>
+          <Radio id={`${groupid}.alt`} name={groupid} value="alternating" selected={value === 'alternating'} {onChange} {onBlur} {helptextid} {messagesid} />
           <span class="alternating-bg">
             {#each options as option (option.value)}
               <span style:background-color={option.color}></span>
@@ -51,7 +51,7 @@
       {#each options as option, idx (option.value) }
         {@const radioid = `${groupid}.${idx}`}
         <label for={radioid} class="colorsel">
-          <Radio id={radioid} name={groupid} value={option.value} selected={value === option.value} {onChange} {onBlur} {helptextid}/>
+          <Radio id={radioid} name={groupid} value={option.value} selected={value === option.value} {onChange} {onBlur} {helptextid} {messagesid} />
           <span class="picker-text" style:background-color={option.color} class:dark={shouldUseWhiteText(option.color)}>{option.name || option.value}</span>
         </label>
       {/each}

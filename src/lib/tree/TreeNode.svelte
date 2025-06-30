@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" generics="T extends TreeItemFromDB = TreeItemFromDB">
   import checkboxOutline from '@iconify-icons/mdi/checkbox-outline'
   import checkboxBlankOutline from '@iconify-icons/mdi/checkbox-blank-outline'
   import menuDown from '@iconify-icons/mdi/menu-down'
@@ -11,8 +11,6 @@
   import { type TreeStore, TREE_STORE_CONTEXT, type TypedTreeItem, type TreeItemFromDB, type TreeHeader, getHashId, lazyObserver } from './treestore'
   import LoadIcon from './LoadIcon.svelte'
   import TreeCell from './TreeCell.svelte'
-
-  type T = $$Generic<TreeItemFromDB>
 
   export let headers: TreeHeader<T>[]
   export let headerSizes: Store<string[]>

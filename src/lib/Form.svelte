@@ -1,11 +1,9 @@
-<script lang="ts">
-  import { Form, type FormStore, type Feedback, type SubmitResponse } from '@txstate-mws/svelte-forms'
-  import { setContext } from 'svelte'
+<script lang="ts" generics="T = Record<string, any>, F = any">
+  import { Form, type FormStore, type Feedback } from '@txstate-mws/svelte-forms'
+  import { setContext, type ComponentProps } from 'svelte'
   import { CHOOSER_API_CONTEXT, type Client, messageIcons, TAG_API_CONTEXT, type TagClient } from '$lib'
   import Icon from './Icon.svelte'
 
-  type T = $$Generic<Record<string, any>>
-  type F = $$Generic<any>
   interface $$Slots {
     default: {
       messages: Feedback[]
@@ -28,23 +26,20 @@
       showingInlineErrors: boolean
     }
   }
+  interface $$Props extends ComponentProps<Form<T>> {
+    tagClient?: TagClient
+    chooserClient?: Client<F>
+  }
 
-  let className = ''
-  export { className as class }
-  export let submit: ((state: T) => Promise<SubmitResponse<T>>) | undefined = undefined
-  export let validate: ((state: T) => Promise<Feedback[]>) | undefined = undefined
   export let store: FormStore<T> = undefined as any
   export let chooserClient: Client<F> | undefined = undefined
   export let tagClient: TagClient | undefined = undefined
-  export let autocomplete: string | undefined = undefined
-  export let name: string | undefined = undefined
-  export let preload: T | undefined = undefined
 
   setContext(CHOOSER_API_CONTEXT, chooserClient)
   setContext(TAG_API_CONTEXT, tagClient)
 </script>
 
-<Form bind:store class="{className} dialog-form" {submit} {validate} on:saved {autocomplete} {name} {preload} let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
+<Form bind:store {...$$restProps} class="{$$restProps.class} dialog-form" on:saved on:validationfail on:autosaved let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
   <slot {messages} {saved} {validating} {submitting} {valid} {invalid} {data} {allMessages} {showingInlineErrors} />
   {@const errorMessages = messages.filter(m => m.type === 'error' || m.type === 'system')}
   {@const warningMessages = messages.filter(m => m.type === 'warning')}

@@ -121,7 +121,6 @@
       }
     }
     void formStore.setField(finalPath, selectedAsset?.id)
-    formStore.dirtyField(finalPath)
   }
 
   const urlToValueCache: Record<string, string> = {}

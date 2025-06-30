@@ -75,7 +75,7 @@
     <footer class="actions">
       <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
         {#if prevTitle && !ignoreTabs}
-          <Button class="prev" disabled={!prevTitle} on:click={onPrev}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
+          <Button class="prev" disabled={!prevTitle} on:click={() => onPrev?.()}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
         {/if}
         {#if isNotBlank(cancelText)}
           <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
@@ -84,7 +84,7 @@
           <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline /> {continueText}</Button>
         {/if}
         {#if nextTitle && !ignoreTabs}
-          <Button class="next" disabled={!nextTitle} on:click={onNext}><span class="prev-next" aria-hidden="true">Next</span><ScreenReaderOnly> Next Tab ({nextTitle})</ScreenReaderOnly> <Icon icon={arrowRight} inline /></Button>
+          <Button class="next" disabled={!nextTitle} on:click={() => onNext?.()}><span class="prev-next" aria-hidden="true">Next</span><ScreenReaderOnly> Next Tab ({nextTitle})</ScreenReaderOnly> <Icon icon={arrowRight} inline /></Button>
         {/if}
       </slot>
     </footer>
@@ -185,7 +185,7 @@
     margin-right: 0.5em;
   }
 
-  :global(.dialog-field-container) {
+  .dialog-content :global(.dialog-field-container) {
     background-color: transparent !important;
     border-bottom: 0px !important;
   }

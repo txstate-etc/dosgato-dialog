@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
-  import FieldStandard from './FieldStandard.svelte'
-  import { isBlank, isNotBlank, randomid } from 'txstate-utils'
   import { modifierKey, PopupMenu, ScreenReaderOnly, type PopupMenuItem } from '@txstate-mws/svelte-components'
+  import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
+  import { isBlank, isNotBlank, randomid } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
-  import { onMount } from 'svelte'
+  import FieldStandard from './FieldStandard.svelte'
+
   export let id: string | undefined = undefined
   export let path: string
   export let label: string = ''
@@ -62,7 +62,6 @@
       setVal(e.detail.value)
     }
   }
-
 
   function reactToValue (value: string, setVal: any) {
     const dsvalue = finaldeserialize(value)
