@@ -67,7 +67,7 @@
 
 </script>
 
-<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {extradescid} {helptext} {emptyText} {placeholder} {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass} selectedItemLabel={showTitleInDialog ? selectedItemLabel : undefined} includeDeleteAll confirmDelete="Are you sure you want remove all tag selections?">
+<FieldMultiselect {path} {label} {getOptions} {lookupByValue} {conditional} {required} {extradescid} {helptext} {emptyText} {placeholder} {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass} selectedItemLabel={showTitleInDialog ? selectedItemLabel : undefined} includeDeleteAll confirmDelete="Are you sure you want to remove all tag selections?">
   <svelte:fragment slot="deleteall"><span class="delete-button-text">Delete All <Icon icon={trashIcon}/></span></svelte:fragment>
 </FieldMultiselect>
 
