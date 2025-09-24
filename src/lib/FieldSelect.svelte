@@ -38,10 +38,10 @@
   async function reactToChoices (..._: any[]) {
     if (!finalDeserialize) return
     if (!choices.length) {
-      return await store.setField(finalPath, finalDeserialize(''))
+      return await store.setField(finalPath, finalDeserialize(''), { notDirty: true })
     }
     const val = get($store.data, finalPath)
-    if (!choices.some(o => equal(o.value, val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''))
+    if (!choices.some(o => equal(o.value, val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''), { notDirty: true })
   }
   $: reactToChoices(choices).catch(console.error)
   onMount(reactToChoices)

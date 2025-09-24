@@ -27,8 +27,8 @@
   async function reactToOptions (..._: any[]) {
     const val = get($store.data, finalPath)
     if (!val) return
-    if (!options.length) await store.setField(finalPath, addAllOption ? 'alternating' : undefined)
-    else if (val !== 'alternating' && !options.some(o => o.value === val)) await store.setField(finalPath, notNull ? options[0].value : (addAllOption ? 'alternating' : undefined))
+    if (!options.length) await store.setField(finalPath, addAllOption ? 'alternating' : undefined, { notDirty: true })
+    else if (val !== 'alternating' && !options.some(o => o.value === val)) await store.setField(finalPath, notNull ? options[0].value : (addAllOption ? 'alternating' : undefined), { notDirty: true })
   }
   $: reactToOptions(options).catch(console.error)
   onMount(reactToOptions)

@@ -13,7 +13,7 @@
   const valueStore = store.getField<string | null>(finalPath)
 
   onMount(() => {
-    if (!$valueStore) store.setField(finalPath, randomid(length))
+    if (!$valueStore) store.setField(finalPath, randomid(length), { notDirty: true })
   })
 </script>
 
