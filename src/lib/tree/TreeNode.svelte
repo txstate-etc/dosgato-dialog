@@ -164,12 +164,13 @@
     if ($store.selected.size <= 1) dispatch('choose', item)
   }
   function onDragStart (e: DragEvent) {
-    userWantsCopy = e.dataTransfer!.dropEffect === 'copy'
+    userWantsCopy = e.ctrlKey || e.metaKey
     e.dataTransfer!.effectAllowed = 'copyMove'
     e.dataTransfer!.setData('text/plain', item.id)
     store.dragStart(item)
   }
   function onDragOver (e: DragEvent) {
+    userWantsCopy = e.ctrlKey || e.metaKey
     if (dropZone) {
       e.preventDefault()
       e.dataTransfer!.dropEffect = store.dropEffect(item, false, userWantsCopy)
@@ -177,6 +178,7 @@
     return !dropZone
   }
   function onDragOverAbove (e: DragEvent) {
+    userWantsCopy = e.ctrlKey || e.metaKey
     if (dropAbove) {
       e.preventDefault()
       e.dataTransfer!.dropEffect = store.dropEffect(item, true, userWantsCopy)
