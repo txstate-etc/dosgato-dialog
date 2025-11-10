@@ -170,7 +170,6 @@
     store.dragStart(item)
   }
   function onDragOver (e: DragEvent) {
-    userWantsCopy = e.dataTransfer!.dropEffect === 'copy'
     if (dropZone) {
       e.preventDefault()
       e.dataTransfer!.dropEffect = store.dropEffect(item, false, userWantsCopy)
@@ -178,7 +177,6 @@
     return !dropZone
   }
   function onDragOverAbove (e: DragEvent) {
-    userWantsCopy = e.dataTransfer!.dropEffect === 'copy'
     if (dropAbove) {
       e.preventDefault()
       e.dataTransfer!.dropEffect = store.dropEffect(item, true, userWantsCopy)
