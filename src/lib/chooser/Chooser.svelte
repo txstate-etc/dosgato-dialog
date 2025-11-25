@@ -23,6 +23,7 @@
   export let passthruFilters: F | undefined = undefined
   export let filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
   export let store = new ChooserStore<F>(chooserClient)
+  export let showAltTextOption = false
   store.filter = filter
 
   setContext(CHOOSER_STORE_CONTEXT, store)
@@ -40,7 +41,7 @@
   $: store.setPreview($selected)
 
   function onChoose () {
-    dispatch('change', $store.preview)
+    dispatch('change', { preview: $store.preview, copyAltText: altTextCheckbox?.checked ?? false } )
   }
 
   function onDeselect () {
@@ -85,6 +86,8 @@
       }
     }
   }
+
+  let altTextCheckbox: HTMLInputElement
 </script>
 
 <Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
@@ -102,6 +105,14 @@
       {/if}
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
+    {#if showAltTextOption && $preview && $preview.type === 'asset' && $preview.image}
+      <section class="alt-text-options">
+        <label>
+          <input bind:this={altTextCheckbox} type="checkbox" />
+          <span>Copy/paste alt. text (if available)</span>
+        </label>
+      </section>
+    {/if}
   </section>
   <svelte:fragment slot="buttons" let:describedby>
     {#if chooserClient.upload && $source?.type === 'asset'}
@@ -137,13 +148,17 @@
     position: relative;
     width: 75%;
     min-width: calc(100% - 21em);
-    height: calc(100% - 4em);
+    height: calc(100% - 4.5em);
     background-color: white;
     overflow: auto;
   }
   .dialog-chooser-controls {
     position: relative;
     width: 100%;
+  }
+  .alt-text-options {
+    width: 100%;
+    padding-block: 1em;
   }
   :global(footer.actions .upload) {
     margin-right: auto;
@@ -155,7 +170,10 @@
     .dialog-chooser-chooser {
       order: 3;
       width: 100%;
-      height: 70%;
+      height: 50%;
+    }
+    .alt-text-options {
+      order: 4;
     }
   }
 </style>

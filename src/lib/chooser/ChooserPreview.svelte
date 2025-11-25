@@ -45,7 +45,7 @@
   .dialog-chooser-preview {
     width: 25%;
     max-width: 21em;
-    height: calc(100% - 4em);
+    height: calc(100% - 4.5em);
     padding: 0 1em 1em 1em;
     overflow-y: auto;
     overflow-x: hidden;

@@ -63,6 +63,12 @@ export interface Client<F = any> {
    * may optionally return an array of accepted mime types for the folder
    */
   mayUpload?: (folder: Folder) => boolean | string[]
+
+  /**
+   * given an asset ID, return a URL that can be used to edit the asset in the main
+   * application. If undefined is returned, no "Edit" button will be shown
+   */
+  idToEditingUrl?: (id: string) => Promise<string | undefined>
 }
 
 export interface Source {
@@ -143,5 +149,7 @@ export interface Asset extends Item {
     // leave undefined if no tiny size or non-animated version is available - performance may take
     // a serious hit if we try to load dozens of high res images
     tinyUrl?: string
+    // alt text for the image, if available
+    altText?: string
   }
 }

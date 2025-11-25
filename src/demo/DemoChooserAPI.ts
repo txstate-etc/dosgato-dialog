@@ -47,7 +47,7 @@ const assets: Record<string, RootFolder | RootPage> = {
             hasChildren: true,
             childCount: 1,
             children: [
-              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', extension: 'png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } }
+              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', extension: 'png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png', altText: 'It looks like a film spiral.' } }
             ]
           },
           { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', url: '/assets/biology/humananatomy', acceptsUpload: false, hasChildren: false }
@@ -78,8 +78,8 @@ const assets: Record<string, RootFolder | RootPage> = {
         children: [
           { type: 'asset', id: 'asset-1', path: '/physics/cannondiagram.png', name: 'cannondiagram.png', mime: 'image/png', extension: 'png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png' } },
           { type: 'asset', id: 'asset-2', path: '/physics/modernphysics.pdf', name: 'modernphysics.pdf', mime: 'application/pdf', extension: 'pdf', bytes: 1264, url: '/blankpdf.pdf' },
-          { type: 'asset', id: 'asset-4', path: '/physics/bobcat.jpg', name: 'bobcat.jpg', mime: 'image/jpeg', extension: 'jpg', bytes: 3793056, url: '/bobcat.jpg', image: { width: 6016, height: 4016, thumbnailUrl: '/bobcat-thumbnail.jpg' } },
-          { type: 'asset', id: 'asset-5', path: '/physics/building.jpg', name: 'building.jpg', mime: 'image/jpeg', extension: 'jpg', bytes: 1050369, url: '/building.jpg', image: { width: 2500, height: 3750, thumbnailUrl: '/building-thumbnail.jpg' } }
+          { type: 'asset', id: 'asset-4', path: '/physics/bobcat.jpg', name: 'bobcat.jpg', mime: 'image/jpeg', extension: 'jpg', bytes: 3793056, url: '/bobcat.jpg', image: { width: 6016, height: 4016, thumbnailUrl: '/bobcat-thumbnail.jpg', altText: 'bronze bobcat statue' } },
+          { type: 'asset', id: 'asset-5', path: '/physics/building.jpg', name: 'building.jpg', mime: 'image/jpeg', extension: 'jpg', bytes: 1050369, url: '/building.jpg', image: { width: 2500, height: 3750, thumbnailUrl: '/building-thumbnail.jpg', altText: 'a portion of the Old Main building at Texas State University in San Marcos, TX' } }
         ]
       }
     ]
@@ -250,6 +250,10 @@ class DemoChooserAPI implements Client {
       progress(ratio)
     }
     return folder.children
+  }
+
+  async idToEditingUrl (id: string): Promise<string | undefined> {
+    return `https://example.org/edit-asset/${id}`
   }
 }
 

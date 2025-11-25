@@ -32,7 +32,9 @@
         {/if}
       </div>
     {:else}
-      <FileIcon mime={item.mime} width='5em' />
+      <div class="file-icon-container">
+        <FileIcon mime={item.mime} width='5em' />
+      </div>
     {/if}
   {:else if item.type === 'folder'}
     <Icon icon={folderOutline} width='5em' />
@@ -61,6 +63,15 @@
   }
   .dialog-chooser-thumbnail > :global(*) {
     display: block;
+  }
+  .dialog-chooser-thumbnail .file-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dialog-chooser-thumbnail .file-icon-container :global(svg) {
+    width: 100%;
+    height: 100%;
   }
   .dialog-chooser-thumbnail button {
     position: absolute;

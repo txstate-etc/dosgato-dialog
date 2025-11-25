@@ -1,6 +1,6 @@
 <script lang="ts">
   import arrowClockwiseFill from '@iconify-icons/ph/arrow-clockwise-fill'
-  import deleteOutline from '@iconify-icons/mdi/delete-outline'
+  import deleteOutline from '@iconify-icons/mdi/delete'
   import xCircle from '@iconify-icons/ph/x-circle'
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
@@ -9,6 +9,7 @@
   import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
+  import AssetTabs from './chooser/AssetTabs.svelte'
   import { getDescribedBy, FieldStandard, InlineMessage, Icon } from '$lib'
 
   export let id: string | undefined = undefined
@@ -28,6 +29,8 @@
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let selectedAsset: AnyItem | RawURL | BrokenURL | undefined = undefined
+  export let altTextPath : string | undefined = undefined
+  export let altTextRequired: boolean = false
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -41,6 +44,7 @@
   let urlEntryInput: HTMLInputElement | undefined
 
   const descid = randomid()
+  const assetTabsId = randomid()
   let modalshown = false
   async function show () {
     if (selectedAsset && selectedAsset.type !== 'raw' && selectedAsset.type !== 'broken') store.setPreview(selectedAsset)
@@ -51,7 +55,15 @@
   }
   function onChange (setVal: any) {
     return (e) => {
-      selectedAsset = e.detail
+      selectedAsset = e.detail.preview
+      if (
+        altTextPath &&
+        e.detail.copyAltText &&
+        selectedAsset?.type === 'asset' &&
+        selectedAsset?.image?.altText
+      ) {
+        formStore.setField(altTextPath, selectedAsset.image.altText).catch(console.error)
+      }
       setVal(selectedAsset?.id)
       hide()
     }
@@ -159,25 +171,66 @@
     }
   }
   $: void updateSelected($value)
+ function onClickRemove (setVal: any) {
+      return (e) => {
+        selectedAsset = undefined
+        setVal(undefined)
+        if (altTextPath) {
+          formStore.setField(altTextPath, undefined).catch(console.error)
+        }
+      }
+    }
 </script>
 
 <FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
   {#if selectedAsset?.id}
-    <div class="dialog-chooser-container" class:urlEntry>
-      <Thumbnail item={selectedAsset} />
-      <div class="dialog-chooser-right">
-        <Details item={selectedAsset} singleLine />
-        {#if !urlEntry}
-          <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
-            <Icon icon={arrowClockwiseFill} inline /> Replace
-          </button>
-          <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
-            <Icon icon={deleteOutline} inline /> Remove
-          </button>
-        {/if}
-    </div>
-    </div>
+    {#if selectedAsset?.type === 'asset'}
+      <div class="asset-chooser-container">
+        <div class="preview-container">
+          <Thumbnail item={selectedAsset} />
+          {#if !urlEntry}
+            <div class="actions">
+              <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+                <span>Replace</span> <Icon icon={arrowClockwiseFill} inline />
+              </button>
+              <button type="button" on:click={onClickRemove(setVal)} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+                <span>Remove</span> <Icon icon={deleteOutline} inline />
+              </button>
+            </div>
+          {/if}
+        </div>
+        <div class="detail-container">
+          <div class="file-name" aria-live="polite">
+            <span class="chooser-label">Name:</span>
+            <span class="chooser-data">{selectedAsset.name}</span>
+          </div>
+          <div class="tabs-container">
+            <AssetTabs id={assetTabsId} {selectedAsset} showMetadata={$$slots.metadata != null} {altTextPath} {altTextRequired}>
+              <slot name="metadata" slot="metadata" selectedAsset={selectedAsset} />
+            </AssetTabs>
+          </div>
+        </div>
+      </div>
+    {:else}
+      <div class="dialog-chooser-container" class:urlEntry>
+        <Thumbnail item={selectedAsset} />
+        <div class="dialog-chooser-right">
+          <Details item={selectedAsset} singleLine />
+          {#if !urlEntry}
+            <div class="actions">
+              <button type="button" on:click={show} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+                <Icon icon={arrowClockwiseFill} inline /> Replace
+              </button>
+              <button type="button" on:click={() => { selectedAsset = undefined; setVal(undefined) }} aria-describedby={getDescribedBy([descid, messagesid, helptextid, extradescid])}>
+                <Icon icon={deleteOutline} inline /> Remove
+              </button>
+            </div>
+          {/if}
+        </div>
+      </div>
+    {/if}
   {/if}
+
   {#if urlEntry || !selectedAsset?.id}
     <div class="dialog-chooser-entry">
       {#if urlEntry}
@@ -193,7 +246,7 @@
     <InlineMessage message={{ message: 'Entry does not match an internal resource and is not a valid URL. Nothing will be saved.', type: 'warning' }} />
   {/if}
   {#if modalshown}
-    <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} on:change={onChange(setVal)} on:escape={hide} />
+    <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} showAltTextOption={!!altTextPath} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
 </FieldStandard>
 
@@ -225,16 +278,24 @@
   :global([data-eq~="400px"]) .dialog-chooser-right {
     max-width: unset;
   }
-  .dialog-chooser-right button {
-    margin-top: 0.5em;
+  .dialog-chooser-right .actions {
+    display: flex;
+  }
+  .dialog-chooser-right button, .asset-chooser-container .actions button {
     border: 0;
-    font-weight: bold;
     border-radius: 0.2em;
     cursor: pointer;
     padding: 0.4em;
     background: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
-  .dialog-chooser-right button:hover {
+  .asset-chooser-container .actions button span {
+    font-weight: bold;
+    font-size: 0.75em;
+  }
+  .dialog-chooser-right button:hover, .asset-chooser-container .actions button:hover {
     background-color: #cccccc;
   }
   .dialog-chooser-entry {
@@ -280,5 +341,65 @@
   }
   :global([data-eq~="400px"] .dialog-chooser-container .dialog-chooser-thumbnail img) {
     object-position: left;
+  }
+  .asset-chooser-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .asset-chooser-container .preview-container {
+    width: 20%;
+  }
+
+  .asset-chooser-container .preview-container :global(.dialog-chooser-thumbnail) {
+    justify-content: center;
+    display: flex;
+  }
+
+  .asset-chooser-container .preview-container .actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .asset-chooser-container .detail-container {
+    flex: 1;
+    border: 1px solid var(--dg-dialog-header-bg, #ddd);
+    border-radius: 4px;
+  }
+
+  .asset-chooser-container .detail-container .file-name {
+    background-color: var(--dg-dialog-header-bg, #ddd);
+    padding: 0.75em;
+    word-break: break-word;
+  }
+
+  .asset-chooser-container .detail-container .chooser-label {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+  .asset-chooser-container .detail-container .tabs-container {
+    position: relative;
+  }
+
+  @media (max-width: 800px) {
+    .asset-chooser-container {
+      flex-direction: column;
+    }
+    .asset-chooser-container .preview-container {
+      width: 100%;
+    }
+    .asset-chooser-container .preview-container :global(.dialog-chooser-thumbnail img) {
+      max-height: 300px;
+    }
+    .asset-chooser-container .preview-container .actions {
+      justify-content: center;
+      gap: 2em;
+    }
+    .asset-chooser-container .detail-container {
+      width: 100%;
+    }
   }
 </style>

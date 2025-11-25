@@ -25,6 +25,12 @@
   {/if}
   {#if item.type === 'asset'}
     {#if item.image}
+      {#if item.image.altText}
+        <div class="alt-text">
+          <dt>Alt. Text:</dt>
+          <dd>{item.image.altText}</dd>
+        </div>
+      {/if}
       <div>
         <dt>Dimensions:</dt>
         <dd>{item.image.width}x{item.image.height}</dd>
@@ -83,8 +89,8 @@
   .multiLine .top-row {
     width: 100%;
   }
-  .top-row {
-    max-width: calc(100% - 9em);
+  .alt-text {
+    width: 100%;
   }
   dl.asset .top-row {
     max-width: 30em;
