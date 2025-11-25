@@ -206,7 +206,7 @@
           </div>
           <div class="tabs-container">
             <AssetTabs id={assetTabsId} {selectedAsset} showMetadata={$$slots.metadata != null} {altTextPath} {altTextRequired}>
-              <slot name="metadata" slot="metadata" selectedAsset={selectedAsset} />
+              <slot name="metadata" slot="metadata" {selectedAsset} />
             </AssetTabs>
           </div>
         </div>

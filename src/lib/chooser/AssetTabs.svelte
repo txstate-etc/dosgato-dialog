@@ -127,7 +127,7 @@
 {/if}
 {#if activeTab === `${id}-metadata`}
   <div id={`${id}-metadata`} class="tab-content" role="tabpanel" aria-labelledby="{id}-metadata-tab">
-    <slot name="metadata" let:selectedAsset={selectedAsset} />
+    <slot name="metadata" {selectedAsset} />
   </div>
 {/if}
 {#if manageAssetsModalOpen}
