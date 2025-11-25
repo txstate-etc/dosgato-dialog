@@ -92,6 +92,9 @@
   .alt-text {
     width: 100%;
   }
+  .alt-text {
+    width: 100%;
+  }
   dl.asset .top-row {
     max-width: 30em;
     white-space: nowrap;
