@@ -129,7 +129,7 @@
 <style>
   .dialog-chooser-window {
     position: relative;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -139,7 +139,7 @@
     container-name: dosgato-dialog-chooser-window
   }
   .dialog-chooser-window.no-controls {
-    height: 85vh;
+    height: 80vh;
   }
   .dialog-chooser-window * {
     box-sizing: border-box;

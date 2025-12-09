@@ -23,6 +23,7 @@
   const preload = {
     imageAsset: 'asset-4',
     imageAssetNoAlt: 'asset-4',
+    imageAssetNoAltNoMeta: 'asset-5',
     documentAsset: 'asset-2',
     folder: 'folder-1',
     gatoPage: 'page-3',
@@ -56,6 +57,7 @@
           {/if}
       </svelte:fragment>
     </FieldChooserLink>
+    <FieldChooserLink label="Image Asset with no Alt Text field or metadata" path="imageAssetNoAltNoMeta" assets />
     <FieldChooserLink label="Document Asset" path="documentAsset" assets helptext="not displaying metadata for this one"/>
     <FieldChooserLink label="Folder Selected" path="folder" folders assets />
     <FieldChooserLink label="Gato Page" path="gatoPage" pages />

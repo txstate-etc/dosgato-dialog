@@ -346,11 +346,10 @@
     display: flex;
     align-items: flex-start;
     gap: 1em;
-    padding: 1em;
   }
 
   .asset-chooser-container .preview-container {
-    width: 20%;
+    width: 30%;
   }
 
   .asset-chooser-container .preview-container :global(.dialog-chooser-thumbnail) {
@@ -368,6 +367,7 @@
     flex: 1;
     border: 1px solid var(--dg-dialog-header-bg, #ddd);
     border-radius: 4px;
+    font-size: 0.9em;
   }
 
   .asset-chooser-container .detail-container .file-name {

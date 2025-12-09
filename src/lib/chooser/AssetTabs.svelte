@@ -23,6 +23,8 @@
 
   $: isImage = selectedAsset?.image !== undefined
 
+  $: useTabs = (isImage && altTextPath) || showMetadata
+
   $: tabs = [
     ...(isImage && altTextPath ? [{ id: `${id}-alttext`, label: 'Alternate Text' }] : []),
     { id: `${id}-details`, label: 'Asset Details' },
@@ -69,35 +71,37 @@
   }
 </script>
 
-<ul bind:this={tabListEl} class="tabs" role="tablist">
-  {#each tabs as tab, idx}
-    <li
-      id="{tab.id}-tab"
-      class="tab {activeTab === tab.id ? 'active' : ''}"
-      role="tab"
-      aria-selected={activeTab === tab.id}
-      aria-controls={tab.id}
-      tabindex={focusedTabIdx === idx ? 0 : -1}
-      data-tab-asset
-      on:click={() => selectTab(tab.id)}
-      on:keydown={(e) => onTabKeydown(e, idx)}
-      on:focus={() => { focusedTabIdx = idx }}
-    >
-      <span>{tab.label}</span>
-    </li>
-  {/each}
-</ul>
+{#if useTabs}
+  <ul bind:this={tabListEl} class="tabs" role="tablist">
+    {#each tabs as tab, idx}
+      <li
+        id="{tab.id}-tab"
+        class="tab {activeTab === tab.id ? 'active' : ''}"
+        role="tab"
+        aria-selected={activeTab === tab.id}
+        aria-controls={tab.id}
+        tabindex={focusedTabIdx === idx ? 0 : -1}
+        data-tab-asset
+        on:click={() => selectTab(tab.id)}
+        on:keydown={(e) => onTabKeydown(e, idx)}
+        on:focus={() => { focusedTabIdx = idx }}
+      >
+        <span>{tab.label}</span>
+      </li>
+    {/each}
+  </ul>
 
-{#if activeTab === `${id}-alttext`}
-  <div id={`${id}-alttext`} class="tab-content" role="tabpanel" aria-labelledby="{id}-alttext-tab">
-    {#if altTextPath}<FieldTextArea required={altTextRequired} path={altTextPath} label="Alt. Text" helptext="Describes the asset for visually-impaired users and search engines."/>{/if}
-  </div>
+  {#if activeTab === `${id}-alttext`}
+    <div id={`${id}-alttext`} class="tab-content" role="tabpanel" aria-labelledby="{id}-alttext-tab">
+      {#if altTextPath}<FieldTextArea required={altTextRequired} path={altTextPath} label="Alt. Text" helptext="Describes the asset for visually-impaired users and search engines."/>{/if}
+    </div>
+  {/if}
 {/if}
-{#if activeTab === `${id}-details`}
+{#if activeTab === `${id}-details` || !useTabs}
   <div id={`${id}-details`} class="tab-content" role="tabpanel" aria-labelledby="{id}-details-tab">
     <div class="details">
       <div class="path">
-        <span class="chooser-label">Assets Path:</span>
+        <span class="chooser-label">Path:</span>
         <span class="chooser-data">{selectedAsset.path}</span>
       </div>
       {#if selectedAsset.image}
