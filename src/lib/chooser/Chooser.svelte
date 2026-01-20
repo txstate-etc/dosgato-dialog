@@ -105,7 +105,7 @@
       {/if}
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
-    {#if showAltTextOption && $preview && $preview.type === 'asset' && $preview.image}
+    {#if showAltTextOption}
       <section class="alt-text-options">
         <label>
           <input bind:this={altTextCheckbox} type="checkbox" />
