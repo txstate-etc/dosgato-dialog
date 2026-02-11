@@ -85,11 +85,20 @@
       </div>
       {#if showDelete || showMove}<div class="dialog-multiple-buttons">
         {#if showMove}
-          <button bind:this={reorderdownelements[index]} class="dialog-multiple-move" type="button" disabled={index === currentLength - 1} on:click|preventDefault|stopPropagation={moveDownAndFocus(onMoveDown, index)}><Icon icon={caretCircleDown} hiddenLabel="move down in the list" /></button>
-          <button bind:this={reorderupelements[index]} class="dialog-multiple-move" type="button" disabled={index === 0} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}><Icon icon={caretCircleUp} hiddenLabel="move up in the list" /></button>
+          <button bind:this={reorderdownelements[index]} class="dialog-multiple-move" type="button" disabled={index === currentLength - 1} on:click|preventDefault|stopPropagation={moveDownAndFocus(onMoveDown, index)}>
+            <slot name='mvDownBtnIcon'><Icon icon={caretCircleDown} hiddenLabel="move down in the list" /></slot>
+          </button>
+          <button bind:this={reorderupelements[index]} class="dialog-multiple-move" type="button" disabled={index === 0} on:click|preventDefault|stopPropagation={moveUpAndFocus(onMoveUp, index)}>
+            <slot name='mvUpBtnIcon'><Icon icon={caretCircleUp} hiddenLabel="move up in the list" /></slot>
+          </button>
         {/if}
-        {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={confirmedDelete(onDelete, value)}><Icon icon={xCircle} hiddenLabel="remove from list" /></button>{/if}
-      </div>{/if}
+        {#if showDelete}
+          <button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={confirmedDelete(onDelete, value)}>
+            <slot name='removeBtnIcon'><Icon icon={xCircle} hiddenLabel="remove from list" /></slot>
+          </button>
+        {/if}
+        </div>
+      {/if}
     </div>
     <svelte:fragment slot="addbutton" let:maxed let:onClick>
       {#if !maxed || (maxed && maxLength > 1)}
