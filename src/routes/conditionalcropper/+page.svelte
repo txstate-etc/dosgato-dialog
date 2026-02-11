@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { FieldCheckbox, FieldChooserLink, FieldCropper, FormDialog, type Asset, type CropOutput } from '$lib'
+  import { FieldCheckbox, FieldChooserLink, FieldCropper, FormDialog, FieldImagePosition, type Asset } from '$lib'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { demoChooserAPI } from '../../demo/DemoChooserAPI'
+
   let showdialog = true
   let selectedAsset: Asset
   let store: FormStore
@@ -20,6 +21,10 @@
       right: 0.09134615384615384,
       top: 0.36537741507257304,
       bottom: 0.25852231600807635
+    },
+    position: {
+      x: 0,
+      y: 50
     }
   }
 </script>
@@ -34,6 +39,7 @@
     <FieldChooserLink path="image" label="Choose an image" bind:selectedAsset={selectedAsset} images/>
     <FieldCropper path="squarecrop" label="Square Crop Image" imageSrc="{selectedAsset?.url}" selectionAspectRatio={1} helptext="Not conditional on anything"/>
     <FieldCropper path="widecrop" label="Conditional Crop Image" imageSrc="{selectedAsset?.url}" selectionAspectRatio={3} conditional={!!data.addsecondcrop} helptext="This crop is conditional."/>
+    <FieldImagePosition path="position" label="Image Position" imageSrc="{selectedAsset?.url}" helptext="This field is not conditional but is here to test if the cropper's conditional status affects it."/>
   </FormDialog>
   {/if}
   <button on:click={() => { showdialog = true }}>Show Dialog</button>

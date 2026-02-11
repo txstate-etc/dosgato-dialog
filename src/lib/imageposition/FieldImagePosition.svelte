@@ -1,10 +1,12 @@
 <script lang="ts">
+  import arrowsIn from '@iconify-icons/ph/arrows-in'
+  import { modifierKey, ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
+  import { getContext } from 'svelte'
   import { isNotBlank, randomid } from 'txstate-utils'
   import FieldStandard from '../FieldStandard.svelte'
   import Button from '../Button.svelte'
-  import arrowsIn from '@iconify-icons/ph/arrows-in'
   import { Dialog, type ImagePositionOutput } from '$lib'
-  import { modifierKey, ScreenReaderOnly } from '@txstate-mws/svelte-components'
 
   export let id: string | undefined = undefined
   export let path: string
@@ -15,22 +17,22 @@
   export let helptext: string | undefined = undefined
   export let defaultValue: ImagePositionOutput = { x: 50, y: 50 }
 
-  let initialVal: ImagePositionOutput
-  function init (v) {
-    if (v) {
-      initialVal = v
-    } else {
-      initialVal = defaultValue
-    }
-  }
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const store = getContext<FormStore>(FORM_CONTEXT)
+  const val = store.getField<ImagePositionOutput>(finalPath)
 
   const boxes: HTMLDivElement[] = []
 
   const descid = randomid()
   const labelid = randomid()
-  let modalOpen: boolean = false
 
+  let modalOpen: boolean = false
   function showModal () {
+    if (!modalOpen) {
+      x = ($val?.x ?? 50) / 25
+      y = ($val?.y ?? 50) / 25
+    }
     modalOpen = true
   }
 
@@ -38,7 +40,7 @@
     modalOpen = false
   }
 
-  let x, y
+  let x: number, y: number
 
   function onSave (setVal) {
     setVal({ x: x * 25, y: y * 25 })
@@ -108,28 +110,17 @@
     }
   }
 
-  let dialogWasOpened = false
-  function onDialogOpen () {
-    if (!dialogWasOpened) {
-      x = (initialVal.x ?? 50) / 25
-      y = (initialVal.y ?? 50) / 25
-      dialogWasOpened = true
-    }
-  }
-
   function resetPosition () {
     x = 2
     y = 2
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} conditional={conditional && isNotBlank(imageSrc)} {helptext} {descid} let:value let:setVal let:helptextid>
-  {@const _ = init(value)}
+<FieldStandard bind:id {label} {path} {required} {defaultValue} conditional={conditional && isNotBlank(imageSrc)} {helptext} {descid} let:setVal let:helptextid>
   {#if isNotBlank(imageSrc)}
     <Button icon={arrowsIn} on:click={showModal}>Adjust Image Position</Button>
     {#if modalOpen}
       <Dialog size="large" title={label} on:escape={hideModal} continueText="Save" cancelText="Cancel" on:continue={() => onSave(setVal)} {labelid}>
-        {@const _dialogopen = onDialogOpen()}
         <section class="info">
           <p>This image is in a responsive layout, meaning the size and shape of the image may change based on the viewer’s browser window and device.</p>
           <div class="warning">
@@ -155,6 +146,7 @@
                     class:bottom={col === 4}
                     role="radio"
                     aria-checked={row === x && col === y}
+                    aria-describedby={helptextid}
                     tabindex={row === x && col === y ? 0 : -1}
                     on:click={() => onSelectBox(row, col)} on:keydown={onKeyDown}><ScreenReaderOnly>{positionText[row][col]}</ScreenReaderOnly></div>
                 {/each}
@@ -233,4 +225,3 @@
     background-color: var(--dg-button-cancel-hover-bg, #595959);
   }
 </style>
-
