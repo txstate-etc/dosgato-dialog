@@ -73,7 +73,54 @@ export class CropperStore extends Store<ICropperStore> {
   }
 
   updateTargetAspect (ar: number) {
-    this.update(v => ({ ...v, targetAspect: ar }))
+    this.update(v => {
+      if (v.selection) {
+        const selection = this.convertToPx(v.selection, v.width, v.height)!
+        const selar = (selection.right - selection.left) / (selection.bottom - selection.top)
+
+        // adjust the aspect ratio to match the new aspect ratio, keep the center the same
+        // and preserve the pixel area of the selection. Compute new width and height
+        // from the original area and the new aspect ratio, then recenter the box.
+        const currWidth = selection.right - selection.left
+        const currHeight = selection.bottom - selection.top
+        const area = currWidth * currHeight
+        const newWidth = Math.sqrt(area * ar)
+        const newHeight = Math.sqrt(area / ar)
+        const centerX = (selection.left + selection.right) / 2
+        const centerY = (selection.top + selection.bottom) / 2
+        selection.left = centerX - newWidth / 2
+        selection.right = centerX + newWidth / 2
+        selection.top = centerY - newHeight / 2
+        selection.bottom = centerY + newHeight / 2
+
+        // shrink the box until its width and height are less than the width and height of the drawing area
+        // maintaining the center
+        let selWidth = selection.right - selection.left
+        let selHeight = selection.bottom - selection.top
+        if (selWidth > v.width || selHeight > v.height) {
+          const scale = Math.min(v.width / selWidth, v.height / selHeight)
+          const cX = (selection.left + selection.right) / 2
+          const cY = (selection.top + selection.bottom) / 2
+          const halfW = (selWidth * scale) / 2
+          const halfH = (selHeight * scale) / 2
+          selection.left = cX - halfW
+          selection.right = cX + halfW
+          selection.top = cY - halfH
+          selection.bottom = cY + halfH
+        }
+
+        // translate selection until all edges are within the drawing area
+        const dx = Math.max(0 - selection.left, Math.min(v.width - selection.right, 0))
+        const dy = Math.max(0 - selection.top, Math.min(v.height - selection.bottom, 0))
+        selection.left += dx
+        selection.right += dx
+        selection.top += dy
+        selection.bottom += dy
+
+        return { ...v, selection: this.convertToPct(selection, v.width, v.height), targetAspect: ar }
+      }
+      return { ...v, targetAspect: ar }
+    })
   }
 
   /**
