@@ -16,6 +16,7 @@
   export let altTextRequired: boolean = false
   // if they say it's required but don't provide a path, default to 'altText'
   export let altTextPath: string | undefined = altTextRequired ? 'altText' : undefined
+  export let altTextHelp: string | undefined
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
 
   let tabListEl: HTMLUListElement
@@ -93,7 +94,7 @@
 
   {#if activeTab === `${id}-alttext`}
     <div id={`${id}-alttext`} class="tab-content" role="tabpanel" aria-labelledby="{id}-alttext-tab">
-      {#if altTextPath}<FieldTextArea required={altTextRequired} path={altTextPath} label="Alt. Text" helptext="Describes the asset for visually-impaired users and search engines."/>{/if}
+      {#if altTextPath}<FieldTextArea required={altTextRequired} path={altTextPath} label="Alt. Text" helptext={altTextHelp} />{/if}
     </div>
   {/if}
 {/if}

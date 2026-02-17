@@ -1,7 +1,7 @@
 <script lang="ts">
   import { type Feedback, type FormStore } from '@txstate-mws/svelte-forms'
   import apertureLight from '@iconify-icons/ph/aperture-light'
-  import { FieldChooserLink, FormDialog } from '$lib'
+  import { FieldChooserLink, FieldMultiple, FormDialog } from '$lib'
   import { demoChooserAPI } from '../../demo/DemoChooserAPI'
   import { demoTagClient } from '../../demo/DemoTagAPI'
   let store: FormStore
@@ -64,6 +64,9 @@
     <FieldChooserLink label="Gato Page Allow URL Entry" path="gatoPageAllowURL" pages urlEntry/>
     <FieldChooserLink label="External URL" path="externalUrl" urlEntry />
     <FieldChooserLink label="Broken" path="broken" assets pages />
+    <FieldMultiple label="Images in Field Multiple" path="imagesInFieldMultiple" reorder removable>
+      <FieldChooserLink label="Image" path="image" assets altTextPath="imageAlt" altTextRequired />
+    </FieldMultiple>
   </FormDialog>
   {/if}
   <button on:click={() => { showdialog = true }}>Show Dialog</button>

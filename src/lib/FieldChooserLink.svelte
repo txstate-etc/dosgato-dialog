@@ -31,6 +31,7 @@
   export let selectedAsset: AnyItem | RawURL | BrokenURL | undefined = undefined
   export let altTextPath : string | undefined = undefined
   export let altTextRequired: boolean = false
+  export let altTextHelp: string = 'Describes the asset for visually-impaired users and search engines.'
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -38,6 +39,7 @@
   const formStore = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const finalAltTextPath = altTextPath ? [inheritedPath, altTextPath].filter(isNotBlank).join('.') : undefined
   const value = formStore.getField<string>(finalPath)
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
   const store = new ChooserStore(chooserClient)
@@ -57,12 +59,12 @@
     return (e) => {
       selectedAsset = e.detail.preview
       if (
-        altTextPath &&
+        finalAltTextPath &&
         e.detail.copyAltText &&
         selectedAsset?.type === 'asset' &&
         selectedAsset?.image?.altText
       ) {
-        formStore.setField(altTextPath, selectedAsset.image.altText).catch(console.error)
+        formStore.setField(finalAltTextPath, selectedAsset.image.altText).catch(console.error)
       }
       setVal(selectedAsset?.id)
       hide()
@@ -175,8 +177,8 @@
       return (e) => {
         selectedAsset = undefined
         setVal(undefined)
-        if (altTextPath) {
-          formStore.setField(altTextPath, undefined).catch(console.error)
+        if (finalAltTextPath) {
+          formStore.setField(finalAltTextPath, undefined).catch(console.error)
         }
       }
     }
@@ -205,7 +207,7 @@
             <span class="chooser-data">{selectedAsset.name}</span>
           </div>
           <div class="tabs-container">
-            <AssetTabs id={assetTabsId} {selectedAsset} showMetadata={$$slots.metadata != null} {altTextPath} {altTextRequired}>
+            <AssetTabs id={assetTabsId} {selectedAsset} showMetadata={$$slots.metadata != null} {altTextPath} {altTextRequired} {altTextHelp} >
               <slot name="metadata" slot="metadata" {selectedAsset} />
             </AssetTabs>
           </div>
