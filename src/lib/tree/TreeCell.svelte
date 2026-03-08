@@ -1,5 +1,5 @@
 <script lang="ts" generics="T extends TreeItemFromDB = TreeItemFromDB">
-  import { get, toArray } from 'txstate-utils'
+  import { get, isNotBlank, toArray } from 'txstate-utils'
   import { Icon } from '$lib'
   import type { TreeHeader, TreeItemFromDB, TypedTreeItem } from './treestore'
 
@@ -12,8 +12,8 @@
 </script>
 
 {#each leadingIcons as icon}
-  <span class="icon">
-    <Icon icon={icon.icon} tooltip={icon.tooltip} class={icon.class} inline width="1.5em" hiddenLabel={icon.label} />
+  <span class={['icon', icon.class?.trim()].filter(isNotBlank).join(' ')}>
+    <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
   </span>
 {/each}
 {#if header.component}
@@ -26,8 +26,8 @@
 {#if trailingIcons.length}
   <span class="trailing-icons">
     {#each trailingIcons as icon}
-      <span class="icon">
-        <Icon icon={icon.icon} tooltip={icon.tooltip} class={icon.class} inline width="1.5em" hiddenLabel={icon.label} />
+      <span class={['icon', icon.class?.trim()].filter(isNotBlank).join(' ')}>
+        <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
       </span>
     {/each}
   </span>
