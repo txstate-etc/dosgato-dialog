@@ -47,6 +47,7 @@ export type SearchableFn<T extends TreeItemFromDB> = (item: TypedTreeItem<T>) =>
 export interface TreeIcon {
   icon: IconifyIcon
   label?: string
+  class?: string
   trailing?: boolean
   tooltip?: string
 }

@@ -13,7 +13,7 @@
 
 {#each leadingIcons as icon}
   <span class="icon">
-    <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
+    <Icon icon={icon.icon} tooltip={icon.tooltip} class={icon.class} inline width="1.5em" hiddenLabel={icon.label} />
   </span>
 {/each}
 {#if header.component}
@@ -27,7 +27,7 @@
   <span class="trailing-icons">
     {#each trailingIcons as icon}
       <span class="icon">
-        <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
+        <Icon icon={icon.icon} tooltip={icon.tooltip} class={icon.class} inline width="1.5em" hiddenLabel={icon.label} />
       </span>
     {/each}
   </span>
