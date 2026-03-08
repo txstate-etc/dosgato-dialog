@@ -44,12 +44,19 @@ export type MoveHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeI
 export type CopyHandlerFn<T extends TreeItemFromDB> = (selectedItems: TypedTreeItem<T>[], dropTarget: TypedTreeItem<T>, above: boolean, userWantsRecursive: boolean | undefined) => boolean | Promise<boolean>
 export type SearchableFn<T extends TreeItemFromDB> = (item: TypedTreeItem<T>) => string[]
 
+export interface TreeIcon {
+  icon: IconifyIcon
+  label?: string
+  trailing?: boolean
+  tooltip?: string
+}
+
 export interface TreeHeader<T extends TreeItemFromDB> {
   id: string
   label: string
   fixed?: string
   grow?: number
-  icon?: { icon: IconifyIcon, label?: string } | ((item: TypedTreeItem<T>) => { icon: IconifyIcon, label?: string } | undefined)
+  icon?: TreeIcon[] | TreeIcon | ((item: TypedTreeItem<T>) => TreeIcon[] | TreeIcon | undefined)
   get?: string
   render?: (item: TypedTreeItem<T>) => string
   component?: SvelteComponent

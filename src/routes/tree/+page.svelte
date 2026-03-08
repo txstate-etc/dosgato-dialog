@@ -75,7 +75,7 @@
 </div>
 {#if showtree}
   <Tree store={treestore} headers={[
-    { id: 'name', label: 'Name', get: 'name' },
+    { id: 'name', label: 'Name', get: 'name', icon: { icon: circleIcon, trailing: true } },
     { id: 'size', label: 'Size', render: itm => bytesToHuman(itm.size) },
     { id: 'type', label: 'Type', get: 'type' },
     { id: 'status', label: 'Status', fixed: '4em', icon: item => ({ icon: statusIcon[item.status], label: item.status }) },
