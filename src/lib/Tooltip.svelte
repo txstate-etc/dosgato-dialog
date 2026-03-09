@@ -1,11 +1,54 @@
 <script lang="ts">
+  import { tick } from 'svelte'
+  import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { randomid } from 'txstate-utils'
+
   export let tip: string | undefined = undefined
   export let top: boolean = false
   export let right: boolean = false
   export let bottom: boolean = false
   export let left: boolean = false
   export let active: boolean = false
+
+  const tooltipId = randomid()
+  let triggerEl: HTMLSpanElement
+  let hasFocusableChild = false
+
+  async function reactToTip (..._: any[]) {
+    await tick()
+    if (!triggerEl) return
+    const focusable = triggerEl.querySelector('a[href], button, input, select, textarea, [tabindex]')
+    if (focusable) {
+      hasFocusableChild = true
+      focusable.setAttribute('aria-describedby', tooltipId)
+    } else {
+      hasFocusableChild = false
+    }
+  }
+  $: reactToTip(tip).catch(console.error)
 </script>
+
+{#if tip}
+<div class="tooltip-wrapper">
+  <span class="tooltip-slot" bind:this={triggerEl}>
+    <slot />
+    {#if !hasFocusableChild}<ScreenReaderOnly>tooltip: {tip}</ScreenReaderOnly>{/if}
+  </span>
+  <div
+    id={tooltipId}
+    role="tooltip"
+    class="tooltip"
+    class:active
+    class:left
+    class:right
+    class:bottom
+    class:top>
+      <div class="default-tip tip">{tip}</div>
+  </div>
+</div>
+{:else}
+  <slot />
+{/if}
 
 <style>
   .tooltip {
@@ -28,7 +71,8 @@
     opacity: 1;
     visibility: initial;
   }
-  .tooltip-slot:hover + .tooltip {
+  .tooltip-slot:hover + .tooltip,
+  .tooltip-slot:focus-within + .tooltip {
     opacity: 1;
     visibility: initial;
   }
@@ -37,22 +81,3 @@
     background-color: #fff;
   }
 </style>
-
-{#if tip}
-<div class="tooltip-wrapper">
-  <span class="tooltip-slot">
-    <slot />
-  </span>
-  <div
-    class="tooltip"
-    class:active
-    class:left
-    class:right
-    class:bottom
-    class:top>
-      <div class="default-tip tip">{tip}</div>
-  </div>
-</div>
-{:else}
-  <slot />
-{/if}
