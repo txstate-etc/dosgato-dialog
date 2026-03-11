@@ -19,7 +19,7 @@
 
 <style>
   button.reset {
-    padding: 0.5em 1em;
+    padding: 0.5em 15px;
     border: 0;
     border-radius: 0.25em;
     background-color: var(--dg-button-bg, #501214);
@@ -30,7 +30,8 @@
     line-height: 1;
   }
   button.reset.compact {
-    padding: 0.1em;
+    padding: 0.2em 5px 0.1em 5px;
+    font-size: 0.9em;
   }
   button.reset[disabled] {
     opacity: 0.6;
