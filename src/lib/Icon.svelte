@@ -5,8 +5,10 @@
 -->
 <script lang="ts">
   import type { IconifyIcon } from '@iconify/svelte'
+  import type { GlueAlignOpts } from '@txstate-mws/svelte-components'
   import { randomid } from 'txstate-utils'
   import Tooltip from './Tooltip.svelte'
+
   export let icon: IconifyIcon | undefined
   /** Label used in a `<ScreenReaderOnly>`. */
   export let hiddenLabel: string | undefined = undefined
@@ -14,6 +16,7 @@
   export let width: string | number | undefined = undefined
   export let height: string | number | undefined = undefined
   export let tooltip: string | undefined = undefined
+  export let tooltipAlign: GlueAlignOpts = 'automiddle'
   let className: string | undefined = undefined
   export { className as class }
 
@@ -48,7 +51,7 @@
 </script>
 
 {#if icon}
-  <Tooltip tip={tooltip} top>
+  <Tooltip tip={tooltip} align={tooltipAlign}>
     <svg role="img" class={className} viewBox="{icon.left ?? 0} {icon.top ?? 0} {icon.width ?? 256} {icon.height ?? 256}" class:vFlip={icon.vFlip} class:hFlip={icon.hFlip} class:inline {width} {height} aria-hidden={!hiddenLabel} aria-label={hiddenLabel} xmlns="http://www.w3.org/2000/svg">
       {@html svgBody(icon)}
     </svg>

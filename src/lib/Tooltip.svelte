@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from 'svelte'
-  import { ScreenReaderOnly } from '@txstate-mws/svelte-components'
+  import { glue, ScreenReaderOnly, type GlueAlignOpts } from '@txstate-mws/svelte-components'
   import { randomid } from 'txstate-utils'
 
   export let tip: string | undefined = undefined
@@ -8,11 +8,16 @@
   export let right: boolean = false
   export let bottom: boolean = false
   export let left: boolean = false
+  export let align: GlueAlignOpts | undefined = undefined
   export let active: boolean = false
 
   const tooltipId = randomid()
+  const anchorName = `--tip-${tooltipId}`
   let triggerEl: HTMLSpanElement
+  let slotwrapper: HTMLSpanElement
+
   let hasFocusableChild = false
+  $: resolvedAlign = align ?? (top ? 'top' : right ? 'right' : bottom ? 'bottom' : left ? 'left' : 'auto') as GlueAlignOpts
 
   async function reactToTip (..._: any[]) {
     await tick()
@@ -30,7 +35,7 @@
 
 {#if tip}
 <div class="tooltip-wrapper">
-  <span class="tooltip-slot" bind:this={triggerEl}>
+  <span bind:this={slotwrapper} class="tooltip-slot" style:anchor-name={anchorName} bind:this={triggerEl}>
     <slot />
     {#if !hasFocusableChild}<ScreenReaderOnly>tooltip: {tip}</ScreenReaderOnly>{/if}
   </span>
@@ -39,10 +44,7 @@
     role="tooltip"
     class="tooltip"
     class:active
-    class:left
-    class:right
-    class:bottom
-    class:top>
+    use:glue={{ target: slotwrapper, align: resolvedAlign, gap: 5 }}>
       <div class="default-tip tip">{tip}</div>
   </div>
 </div>
@@ -53,7 +55,6 @@
 <style>
   .tooltip {
     opacity: 0;
-    position: absolute;
     z-index: 1;
     visibility: hidden;
     transition: opacity 150ms, visibility 150ms;
@@ -62,10 +63,6 @@
     padding: 4px 8px;
     border-radius: 6px;
     color: inherit;
-  }
-  .tooltip.top {
-    transform: translate(-40%, -100%);
-    margin-top: -20px;
   }
   .tooltip.active {
     opacity: 1;
