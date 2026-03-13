@@ -13,7 +13,6 @@
 
   const tooltipId = randomid()
   const anchorName = `--tip-${tooltipId}`
-  let triggerEl: HTMLSpanElement
   let slotwrapper: HTMLSpanElement
 
   let hasFocusableChild = false
@@ -21,8 +20,8 @@
 
   async function reactToTip (..._: any[]) {
     await tick()
-    if (!triggerEl) return
-    const focusable = triggerEl.querySelector('a[href], button, input, select, textarea, [tabindex]')
+    if (!slotwrapper) return
+    const focusable = slotwrapper.querySelector('a[href], button, input, select, textarea, [tabindex]')
     if (focusable) {
       hasFocusableChild = true
       focusable.setAttribute('aria-describedby', tooltipId)
@@ -35,7 +34,7 @@
 
 {#if tip}
 <div class="tooltip-wrapper">
-  <span bind:this={slotwrapper} class="tooltip-slot" style:anchor-name={anchorName} bind:this={triggerEl}>
+  <span bind:this={slotwrapper} class="tooltip-slot">
     <slot />
     {#if !hasFocusableChild}<ScreenReaderOnly>tooltip: {tip}</ScreenReaderOnly>{/if}
   </span>
