@@ -23,6 +23,7 @@
     "@codemirror/lang-javascript": "^6.1.7",
     "@codemirror/lang-css": "^6.2.1",
     "@codemirror/lang-html": "^6.4.3",
+    "cm6-graphql": "0.2.1",
     "@iconify/svelte": "^4.0.0 || ^5.0.0",
     "@iconify-icons/mdi": "^1.2.22",
     "@iconify-icons/ph": "^1.2.2",
