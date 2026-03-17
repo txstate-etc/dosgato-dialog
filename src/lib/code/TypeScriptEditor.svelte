@@ -146,7 +146,12 @@
       parent: editorelement
     })
     updatePreamble = (text: string) => {
-      env.updateFile(PREAMBLE_PATH, text)
+      const content = text || ' '
+      if (env.getSourceFile(PREAMBLE_PATH)) {
+        env.updateFile(PREAMBLE_PATH, content)
+      } else {
+        env.createFile(PREAMBLE_PATH, content)
+      }
     }
     updateCode = code => {
       if (editor.state.doc.toString() !== code) editor.update([editor.state.update({ changes: { from: 0, to: editor.state.doc.length, insert: code } })])
