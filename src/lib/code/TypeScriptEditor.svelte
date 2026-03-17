@@ -39,7 +39,7 @@
       { indentOnInput },
       { javascript },
       { tsFacet, tsSync, tsHover },
-      ts,
+      tsModule,
       { createDefaultMapFromCDN, createSystem, createVirtualTypeScriptEnvironment }
     ] = await Promise.all([
       import('codemirror'),
@@ -52,6 +52,7 @@
       import('typescript'),
       import('@typescript/vfs')
     ])
+    const ts = tsModule.default ?? tsModule
 
     const compilerOptions: CompilerOptions = {
       target: ts.ScriptTarget.ES2024,
