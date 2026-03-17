@@ -49,7 +49,7 @@
     return () => store.activate(idx)
   }
   function onKeyDown (idx: number) {
-    return async (e) => {
+    return async e => {
       if (modifierKey(e)) return
       if (['Enter', ' ', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
         e.preventDefault()
@@ -98,13 +98,13 @@
     if (!activeelement) return
     const tabelement = tabelements[$currentIdx]
     if (!tabelement) return
-    const span = tabelement.querySelector(':scope > span') as HTMLSpanElement
+    const span = tabelement.querySelector<HTMLElement>(':scope > span')!
     if (!span) return
     const left = span.offsetLeft - activeelement.offsetLeft - activeOversize
     const width = span.offsetWidth + (activeOversize * 2)
     activeelement.style.transform = `translateX(${left}px)`
     activeelement.style.width = `${width}px`
-    hiddenTabs = $store.tabs.filter((tab, idx) => { return tabIsHidden(idx) })
+    hiddenTabs = $store.tabs.filter((tab, idx) => tabIsHidden(idx))
   }
 
   $: active = $currentName
@@ -115,7 +115,6 @@
 
 {#if $store.tabs.length > 1}
   {#if !$accordion}
-    <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
     <ul use:resize={{ store }} class="tabs-buttons" role="tablist">
       {#each $store.tabs as tab, idx (tab.name)}
         {@const active = isActive(idx, $store.current)}

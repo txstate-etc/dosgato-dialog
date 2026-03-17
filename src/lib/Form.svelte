@@ -47,7 +47,7 @@
   {@const successMessages = messages.filter(m => m.type === 'success')}
   {#if errorMessages.length || showingInlineErrors}
     <ul class="form-errors" aria-live='assertive'>
-      {#each errorMessages as message}
+      {#each errorMessages as message (message.path, message.message)}
         <li><Icon icon={messageIcons[message.type] ?? messageIcons.error} inline hiddenLabel="error"/> {message.message}</li>
       {/each}
       {#if showingInlineErrors}
@@ -57,21 +57,21 @@
   {/if}
   {#if warningMessages.length}
     <ul class="form-warnings" aria-live='assertive'>
-      {#each warningMessages as message}
+      {#each warningMessages as message (message.message)}
         <li><Icon icon={messageIcons.warning} inline hiddenLabel="warning"/> {message.message}</li>
       {/each}
     </ul>
   {/if}
   {#if infoMessages.length}
     <ul class="form-info" aria-live='assertive'>
-      {#each infoMessages as message}
+      {#each infoMessages as message (message.message)}
         <li><Icon icon={messageIcons.info} inline hiddenLabel="info"/> {message.message}</li>
       {/each}
     </ul>
   {/if}
   {#if successMessages.length}
     <ul class="form-successes" aria-live='assertive'>
-      {#each successMessages as message}
+      {#each successMessages as message (message.message)}
         <li><Icon icon={messageIcons.success} inline hiddenLabel="success" /> {message.message}</li>
       {/each}
     </ul>

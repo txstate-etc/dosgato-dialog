@@ -11,8 +11,8 @@
   export { className as class }
   export let path: string
   export let options: ColorPickerOption[]
-  export let addAllOption: boolean = false
-  export let label: string = ''
+  export let addAllOption = false
+  export let label = ''
   export let required = false
   export let notNull = false
   export let defaultValue: any = notNull ? (addAllOption ? 'alternating' : options[0].value) : undefined

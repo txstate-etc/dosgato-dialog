@@ -6,7 +6,7 @@
   const dispatch = createEventDispatcher()
   export let items: PopupMenuItem[] = []
   export let label: string
-  export let multiselect: boolean = false
+  export let multiselect = false
   export let selected: { value: string, label?: string }[] = []
   export let descid: string | undefined = undefined
   export let valid = false
@@ -67,13 +67,13 @@
       e.preventDefault()
       if (items.length < 1) return
       let i = (hilited ?? firstactive - 1) + 1
-      while (items[i]?.disabled) i++
+      while (items[i]?.disabled) i += 1
       move(i)
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       if (items.length < 1) return
       let i = (hilited ?? lastactive + 1) - 1
-      while (items[i]?.disabled) i--
+      while (items[i]?.disabled) i -= 1
       move(i)
     } else if (e.key === ' ') {
       e.preventDefault()
@@ -114,7 +114,6 @@
 
 <div class="listbox-container" class:valid class:invalid>
   <span id={labelId}>{label}</span>
-  <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={listboxElement} role="listbox" id={listId} class="listbox-items" tabindex="0" aria-describedby={descid} aria-labelledby={labelId} aria-multiselectable={multiselect} on:keydown={onkeydown} on:focus={focusListbox}>
     {#each items as item, i (item.value)}
       <!-- svelte-ignore a11y-click-events-have-key-events -->

@@ -7,7 +7,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let notNull = false
   export let defaultValue: any = notNull ? '' : undefined
   export let rows = 8
@@ -22,6 +22,6 @@
   export let sandbox = false
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
-  <TypeScriptEditor {id} bind:inputelement {preamble} {sandbox} {rows} class={className} {value} {valid} {invalid} {helptextid} {messagesid} {extradescid} on:paste on:focusout={onBlur} {use} on:change={e => setVal(e.detail)}/>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid>
+  <TypeScriptEditor id={fieldid} bind:inputelement {preamble} {sandbox} {rows} class={className} {value} {valid} {invalid} {helptextid} {messagesid} {extradescid} on:paste on:focusout={onBlur} {use} on:change={e => setVal(e.detail)}/>
 </FieldStandard>

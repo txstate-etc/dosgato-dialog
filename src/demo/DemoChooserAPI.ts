@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
+/* eslint-disable @typescript-eslint/consistent-type-assertions -- totally screws up the demo data */
 import type { TypedTreeItem } from '$lib'
 import treeIcon from '@iconify-icons/ph/tree-evergreen'
 import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
@@ -235,7 +235,7 @@ class DemoChooserAPI implements Client {
     let ratio = 0
     for (const file of files) {
       const isImage = file.type.startsWith('image')
-      const asset: StoredAsset = { type: 'asset', id: randomid(), path: folder.path + '/' + file.name, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', extension: file.name.replace(/^[^.]*/, ''), bytes: isImage ? 196672 : 1264, url: '/static/' + file.name }
+      const asset: StoredAsset = { type: 'asset', id: randomid(), path: folder.path + '/' + file.name, name: file.name, mime: isImage ? 'image/png' : 'application/pdf', extension: file.name.replace(/^[^.]*/v, ''), bytes: isImage ? 196672 : 1264, url: '/static/' + file.name }
       if (isImage) {
         asset.image = {
           width: 909,

@@ -14,7 +14,7 @@
 
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let defaultValue: boolean | undefined = undefined
   export let conditional: boolean | undefined = undefined
   export let required = false
@@ -29,9 +29,9 @@
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let selectedAsset: AnyItem | RawURL | BrokenURL | undefined = undefined
-  export let altTextPath : string | undefined = undefined
-  export let altTextRequired: boolean = false
-  export let altTextHelp: string = 'Describes the asset for visually-impaired users and search engines.'
+  export let altTextPath: string | undefined = undefined
+  export let altTextRequired = false
+  export let altTextHelp = 'Describes the asset for visually-impaired users and search engines.'
 
   // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
   // choosing unacceptable mime types
@@ -56,13 +56,13 @@
     modalshown = false
   }
   function onChange (setVal: any) {
-    return (e) => {
+    return e => {
       selectedAsset = e.detail.preview
       if (
-        finalAltTextPath &&
-        e.detail.copyAltText &&
-        selectedAsset?.type === 'asset' &&
-        selectedAsset?.image?.altText
+        finalAltTextPath
+        && e.detail.copyAltText
+        && selectedAsset?.type === 'asset'
+        && selectedAsset?.image?.altText
       ) {
         formStore.setField(finalAltTextPath, selectedAsset.image.altText).catch(console.error)
       }
@@ -98,10 +98,10 @@
       if (item) {
         found = true
         if (
-          (item.type === 'page' && !pages) || // they typed the URL for a page but we don't allow pages right now
-          (item.type === 'folder' && !folders) || // they typed the URL for an asset folder but not allowed
-          (item.type === 'asset' && !assets) || // they typed the URL for an asset but not allowed
-          (item.type === 'asset' && !item.image && images) // they typed the URL for a non-image asset but we only want images
+          (item.type === 'page' && !pages) // they typed the URL for a page but we don't allow pages right now
+          || (item.type === 'folder' && !folders) // they typed the URL for an asset folder but not allowed
+          || (item.type === 'asset' && !assets) // they typed the URL for an asset but not allowed
+          || (item.type === 'asset' && !item.image && images) // they typed the URL for a non-image asset but we only want images
         ) {
           // they entered something that is recognized but not allowed
           // they can keep the typing they've done, but the id must be 'undefined' so that nothing
@@ -119,18 +119,16 @@
     if (!found) {
       if (urlToValueCache[url]) {
         selectedAsset = { type: 'raw', id: urlToValueCache[url], url }
-      } else {
-        if (isBlank(cleanedUrl) || cleanedUrl.startsWith('/')) {
+      } else if (isBlank(cleanedUrl) || cleanedUrl.startsWith('/')) {
           // here we "select" a raw url so that we do not interrupt the users' typing, but
           // we set its id to 'undefined' so that nothing makes it into the form until it's
           // a valid URL
-          selectedAsset = { type: 'raw', id: undefined, url }
-        } else {
-          selectedAsset = {
-            type: 'raw',
-            id: chooserClient.urlToValue?.(cleanedUrl) ?? cleanedUrl,
-            url
-          }
+        selectedAsset = { type: 'raw', id: undefined, url }
+      } else {
+        selectedAsset = {
+          type: 'raw',
+          id: chooserClient.urlToValue?.(cleanedUrl) ?? cleanedUrl,
+          url
         }
       }
     }
@@ -174,17 +172,17 @@
   }
   $: void updateSelected($value)
  function onClickRemove (setVal: any) {
-      return (e) => {
-        selectedAsset = undefined
-        setVal(undefined)
-        if (finalAltTextPath) {
-          formStore.setField(finalAltTextPath, undefined).catch(console.error)
-        }
-      }
-    }
+   return e => {
+     selectedAsset = undefined
+     setVal(undefined)
+     if (finalAltTextPath) {
+       formStore.setField(finalAltTextPath, undefined).catch(console.error)
+     }
+   }
+ }
 </script>
 
-<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {required} {related} {helptext} let:value let:messagesid let:helptextid let:valid let:invalid let:id={fieldid} let:onBlur let:setVal>
   {#if selectedAsset?.id}
     {#if selectedAsset?.type === 'asset'}
       <div class="asset-chooser-container">
@@ -237,7 +235,7 @@
     <div class="dialog-chooser-entry">
       {#if urlEntry}
         <div class="dialog-chooser-entry-input">
-          <input bind:this={urlEntryInput} {id} type="text" data-lpignore="true" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:input={userUrlEntry} on:blur={onBlur}>
+          <input bind:this={urlEntryInput} id={fieldid} type="text" data-lpignore="true" value={selectedAsset?.url ?? ''} on:change={userUrlEntry} on:input={userUrlEntry} on:blur={onBlur}>
           <button type="button" on:click={clearUrlEntry}><Icon icon={xCircle} hiddenLabel="clear input" inline/></button>
         </div>
       {/if}

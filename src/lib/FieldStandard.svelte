@@ -34,10 +34,12 @@
   export let required = false
   export let related: true | number = 0
   export let helptext: string | undefined = undefined
+  export let finalSerialize: ((value: any) => string) | undefined = undefined
+  export let finalDeserialize: ((value: string) => any) | undefined = undefined
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} {initialize} {finalize} let:path let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid let:serialize let:deserialize>
-  <Container {path} {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
-    <slot {id} {path} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} {serialize} {deserialize} />
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalSerialize bind:finalDeserialize {initialize} {finalize} let:path={fullpath} let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
+  <Container path={fullpath} {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
+    <slot {id} path={fullpath} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} serialize={finalSerialize} deserialize={finalDeserialize} />
   </Container>
 </Field>

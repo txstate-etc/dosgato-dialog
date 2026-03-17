@@ -8,7 +8,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let placeholder: string = 'Select' + (label ? ' ' + label : '')
   export let notNull = false
   export let disabled = false
@@ -32,9 +32,6 @@
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
 
   let finalDeserialize: (value: string) => any
-  function updateDeserialize (fDes: any) {
-    finalDeserialize = fDes
-  }
   async function reactToChoices (..._: any[]) {
     if (!finalDeserialize) return
     if (!choices.length) {
@@ -47,12 +44,11 @@
   onMount(reactToChoices)
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:messagesid let:helptextid let:serialize let:deserialize>
-  {@const _ = updateDeserialize(deserialize)}
-  <select bind:this={inputelement} {id} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalDeserialize let:serialize={finalSerialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:messagesid let:helptextid>
+  <select bind:this={inputelement} id={fieldid} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
-      {@const serializedValue = serialize(choice.value)}
+      {@const serializedValue = finalSerialize?.(choice.value)}
       <option value={serializedValue} disabled={choice.disabled} selected={value === serializedValue}>{choice.label || serializedValue}</option>
     {/each}
   </select>

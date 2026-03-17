@@ -19,7 +19,7 @@ export interface TagGroup {
   tags: Tag[]
 }
 
-export interface TagClient <TargetTypes = any> {
+export interface TagClient<TargetTypes = any> {
   availableForTarget: (
     target: TargetTypes,
     /**

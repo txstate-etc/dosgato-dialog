@@ -9,13 +9,13 @@
   import xCircle from '@iconify-icons/ph/x-circle-fill'
   import { AddMore, type Feedback } from '@txstate-mws/svelte-forms'
   import { setContext } from 'svelte'
-  import { writable } from 'svelte/store'
   import Button from './Button.svelte'
   import Container from './Container.svelte'
   import Icon from './Icon.svelte'
 
   export let path: string
   export let label: string
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents -- it's weird but helps with understanding
   export let initialState: any | ((index: number) => any) = undefined
   export let minLength = 1
   export let maxLength: number | undefined = undefined
@@ -65,8 +65,9 @@
 
   function confirmedDelete (onDelete: () => void, item: any) {
     return () => {
-      if (confirmDelete == null) return onDelete()
+      if (confirmDelete == null) { onDelete(); return }
       const msg = typeof confirmDelete === 'string' ? confirmDelete : confirmDelete(item)
+      // eslint-disable-next-line no-alert -- I don't have a better way to do this at the moment
       if (confirm(msg)) onDelete()
     }
   }
@@ -76,12 +77,12 @@
 
 <Container {path} {label} {messages} {conditional} {related} {helptext} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
-  <AddMore bind:messages {path} {initialState} {minLength} {maxLength} {conditional} let:path let:currentLength let:maxLength let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
+  <AddMore bind:messages {path} {initialState} {minLength} {maxLength} {conditional} let:path={fullpath} let:currentLength let:maxLength={resolvedMaxLength} let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && currentLength > 1}
     <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove} class:first={index === 0}>
       <div class="dialog-multiple-content">
-        <slot {path} {index} {value} {maxed} {maxLength} {currentLength}/>
+        <slot path={fullpath} {index} {value} {maxed} maxLength={resolvedMaxLength} {currentLength}/>
       </div>
       {#if showDelete || showMove}<div class="dialog-multiple-buttons">
         {#if showMove}
@@ -92,7 +93,7 @@
       </div>{/if}
     </div>
     <svelte:fragment slot="addbutton" let:maxed let:onClick>
-      {#if !maxed || (maxed && maxLength > 1)}
+      {#if !maxed || (maxed && resolvedMaxLength > 1)}
         <Button type="button" icon={plusCircleLight} class="{addMoreClass} dialog-multiple-button" disabled={maxed} on:click={onClick}>{maxed ? maxedText : addMoreText}</Button>
       {/if}
     </svelte:fragment>

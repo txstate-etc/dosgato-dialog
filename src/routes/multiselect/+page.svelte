@@ -33,8 +33,6 @@
   }
 </script>
 
-
-
 <svelte:head><title>Multiselect Lookup By Value</title></svelte:head>
 <h1>Testing Multiselect Lookup By Value</h1>
 

@@ -7,7 +7,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let boxLabel: string
   export let defaultValue: boolean | undefined = undefined
   export let conditional: boolean | undefined = undefined
@@ -26,10 +26,10 @@
   const descid = randomid()
 </script>
 
-<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {related} {helptext} {required} let:value let:messagesid let:helptextid let:valid let:invalid let:id let:onBlur let:setVal>
+<FieldStandard bind:id {path} {descid} {label} {defaultValue} {conditional} {related} {helptext} {required} let:value let:messagesid let:helptextid let:valid let:invalid let:id={fieldid} let:onBlur let:setVal>
   <div class={className}>
-    <label for={id}>
-      <Checkbox bind:inputelement {id} name={path} {value} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} {valid} {invalid} {onBlur} onChange={onChange(setVal)}></Checkbox>
+    <label for={fieldid}>
+      <Checkbox bind:inputelement id={fieldid} name={path} {value} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} {valid} {invalid} {onBlur} onChange={onChange(setVal)}></Checkbox>
       <span>{boxLabel}</span>
     </label>
   </div>

@@ -2,7 +2,7 @@
   import type { IconifyIcon } from '@iconify/svelte'
   import contentSave from '@iconify-icons/mdi/content-save'
   import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
-  import { type ComponentProps } from 'svelte'
+  import type { ComponentProps } from 'svelte'
   import { Form } from '$lib'
   import Dialog from './Dialog.svelte'
 
@@ -28,7 +28,7 @@
   }
 
   export let store: FormStore<T> | undefined = undefined
-  export let title: string = ''
+  export let title = ''
   export let icon: IconifyIcon | undefined = undefined
   export let size: 'tiny' | 'small' | 'normal' | 'large' = 'normal'
   export let expandable = true

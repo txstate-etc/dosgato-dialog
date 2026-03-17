@@ -11,7 +11,7 @@
   export let id: string | undefined = undefined
   export let path: string
   export let imageSrc: string | undefined
-  export let label: string = ''
+  export let label = ''
   export let required = false
   export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
@@ -27,7 +27,7 @@
   const descid = randomid()
   const labelid = randomid()
 
-  let modalOpen: boolean = false
+  let modalOpen = false
   function showModal () {
     if (!modalOpen) {
       x = ($val?.x ?? 50) / 25
@@ -70,7 +70,6 @@
     }
     boxes[y + x * 5].focus()
   }
-
 
   const positionText: Record<number, Record<number, string>> = {
     0: {
@@ -137,8 +136,8 @@
           <div class="image-container">
             <img class="crop-image" src={imageSrc} alt="" />
             <div class="overlay" role="radiogroup" aria-labelledby={labelid}>
-              {#each Array.from(Array(5).keys()) as col}
-                {#each Array.from(Array(5).keys()) as row}
+              {#each Array.from(Array(5).keys()) as col (col)}
+                {#each Array.from(Array(5).keys()) as row (row)}
                   <div
                     bind:this={boxes[col + row * 5]}
                     class="box"

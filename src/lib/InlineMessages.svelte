@@ -15,7 +15,7 @@
 
 {#if id}
   <div {id}>
-    {#each messages as message}
+    {#each messages as message (message.type, message.path, message.message)}
       <InlineMessage {message} />
     {/each}
   </div>

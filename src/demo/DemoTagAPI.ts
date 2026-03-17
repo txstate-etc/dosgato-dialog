@@ -1,4 +1,4 @@
-import type { TagClient, TagGroup } from "$lib";
+import type { TagClient } from '$lib'
 
 class DemoTagClient implements TagClient {
   async availableForTarget (target: any, publicTags?: boolean) {

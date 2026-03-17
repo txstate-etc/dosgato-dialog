@@ -13,13 +13,13 @@
   $: iconLabel = messageLabels[message.type] ?? messageLabels.error
 
   function addMarkup (msg: string) {
-    const lines = msg.split(/\r?\n/)
+    const lines = msg.split(/\r?\n/v)
     const output: string[] = []
     for (const line of lines) {
-      const splitLinks = line.split(/((?:\[[^\]]+\])?\([^)]+\))/)
+      const splitLinks = line.split(/((?:\[[^\]]+\])?\([^\)]+\))/v)
       const replaced: string[] = []
       for (const segment of splitLinks) {
-        const m = segment.match(/(?:\[([^\]]+)\])?\(([^)]+)\)/)
+        const m = segment.match(/(?:\[([^\]]+)\])?\(([^\)]+)\)/v)
         if (m) {
           try {
             const url = new URL(m[2])

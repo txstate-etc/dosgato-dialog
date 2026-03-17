@@ -31,7 +31,7 @@
 <svelte:head><title>Premature Error Messages Issue</title></svelte:head>
 <h1>Premature Error Messages Issue</h1>
 <p>
-  This page demonstrates the issue with error messages appearing before a user has interacted with a dialog. 
+  This page demonstrates the issue with error messages appearing before a user has interacted with a dialog.
 </p>
 
 <main>

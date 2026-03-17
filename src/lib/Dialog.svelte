@@ -28,10 +28,10 @@
   export let icon: IconifyIcon | undefined = undefined
   export let size: 'tiny' | 'small' | 'normal' | 'large' | 'xl' = 'normal'
   export let cancelText: string | undefined = undefined
-  export let continueText: string = 'Ok'
+  export let continueText = 'Ok'
   export let continueIcon: IconifyIcon | undefined = undefined
   export let escapable = isNotBlank(cancelText)
-  export let expandable: boolean = false
+  export let expandable = false
   export let disabled = false
   export let ignoreTabs = false
 
@@ -45,7 +45,7 @@
   let hasRequired: boolean | undefined = false
   let onPrev: (() => void) | undefined
   let onNext: (() => void) | undefined
-  let expanded: boolean = false
+  let expanded = false
   function onTabChange () {
     ({ hasTabs, prevTitle, nextTitle, hasRequired, onPrev, onNext } = ctx)
   }

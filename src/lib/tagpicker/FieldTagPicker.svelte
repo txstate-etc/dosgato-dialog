@@ -4,7 +4,7 @@
   import { isNotBlank } from 'txstate-utils'
   import { TAG_API_CONTEXT, type Tag, type TagClient, type TagGroup } from './TagAPI'
   import trashIcon from '@iconify-icons/ph/trash-simple-fill'
-  import { Icon } from '$lib';
+  import { Icon } from '$lib'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
 
   export let path: string
@@ -63,7 +63,6 @@
     const tag = item.label ?? item.value
     return item.group ? `${item.group}: ${tag}` : tag
   }
-
 
 </script>
 

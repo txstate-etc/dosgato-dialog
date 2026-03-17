@@ -62,7 +62,7 @@ export function combinePath (path: string, name: string) {
 export function bytesToHuman (bytes: number) {
   const scales = [' bytes', 'KB', 'MB', 'GB', 'TB', 'PB']
   const scale = Math.floor(Math.log(bytes) / Math.log(1024))
-  return String(parseFloat((bytes / Math.pow(1024, scale)).toPrecision(3))) + scales[scale]
+  return String(parseFloat((bytes / 1024 ** scale).toPrecision(3))) + scales[scale]
 }
 
 export class ChooserStore<F = any> extends Store<IAssetStore> {
@@ -137,7 +137,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   setSource (name?: string, init?: boolean) {
     this.update(v => {
       if (!v.initialized && !init) return v
-      name ??= [...(v.sources?.page ?? []), ...(v.sources?.asset ?? [])].filter(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true)[0].name
+      name ??= [...(v.sources?.page ?? []), ...(v.sources?.asset ?? [])].find(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true)?.name
       const pageSource = v.sources?.page.findIndex(s => s.name === name)
       const assetSource = v.sources?.asset.findIndex(s => s.name === name)
       if ((pageSource ?? -1) >= 0) return { ...v, activetype: 'page', activesource: pageSource! }

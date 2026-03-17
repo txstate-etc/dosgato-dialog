@@ -11,10 +11,10 @@
 
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
-  export let sourceLabel: string = 'Available'
-  export let selectedLabel: string = 'Selected'
-  export let multiselect: boolean = false
+  export let label = ''
+  export let sourceLabel = 'Available'
+  export let selectedLabel = 'Selected'
+  export let multiselect = false
   export let choices: PopupMenuItem[]
   export let defaultValue: string[] = []
   export let conditional: boolean | undefined = undefined
@@ -25,7 +25,7 @@
 
   let itemsToAdd: PopupMenuItem[] = [] // the items selected in the left listbox
   let itemsToRemove: PopupMenuItem[] = [] // the items selected in the right listbox
-  let instructions: string = 'test'
+  let instructions = ''
 
   $: {
     if (itemsToAdd.length === 1) instructions = `Press right arrow key to move selected ${sourceLabel} items to ${selectedLabel} items list.`
@@ -71,7 +71,7 @@
   }
 
   function onkeydown (value: string[], setVal: (val: any) => void) {
-    return (e) => {
+    return e => {
       if (modifierKey(e)) return
       if (e.key === 'ArrowRight') {
         e.preventDefault()
@@ -86,12 +86,10 @@
   }
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:helptextid let:messagesid serialize={arraySerialize}>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {descid} {related} {helptext} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:helptextid let:messagesid serialize={arraySerialize}>
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div {id} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
-    <ScreenReaderOnly>
-      <span aria-live="polite">{instructions}</span>
-    </ScreenReaderOnly>
+  <div id={fieldid} role="group" class="dual-list-container" on:keydown={onkeydown(value, setVal)}>
+    <ScreenReaderOnly arialive="polite">{instructions}</ScreenReaderOnly>
     <Listbox label={sourceLabel} multiselect={multiselect} items={getAvailable(value)} descid={getDescribedBy([descid, messagesid, helptextid, extradescid])} {valid} {invalid} on:change={e => { itemsToAdd = e.detail }} selected={itemsToAdd} on:blur={onBlur}/>
     <div class="toolbar">
       <button type="button" class="toolbar-button" title="Move selection to {selectedLabel}" disabled={itemsToAdd.length === 0} on:click={addToSelected(value, setVal)}>

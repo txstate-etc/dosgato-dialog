@@ -40,7 +40,7 @@
       const queryText = view.state.doc.toString()
       const cursor = offsetToPos(view.state.doc, pos)
       const info = getHoverInformation(s, queryText, cursor, undefined, { useMarkdown: false })
-      const content = Array.isArray(info) ? info.join('\n') : typeof info === 'string' ? info : ''
+      const content = Array.isArray(info) ? info.map(i => typeof i === 'string' ? i : i.value).join('\n') : typeof info === 'string' ? info : ''
       if (!content) return null
       return {
         pos,

@@ -7,7 +7,7 @@
   import { getDescribedBy } from '$lib/helpers'
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let required = false
   export let defaultValue: { icon: string, prefix: string } = { icon: 'fa-graduation-cap', prefix: 'fas' }
   export let conditional: boolean | undefined = undefined
@@ -16,7 +16,7 @@
   const labelid = randomid()
   const descid = randomid()
 
-  let modalOpen: boolean = false
+  let modalOpen = false
   let selected: { icon: string, prefix: string } = defaultValue
 
   const iconToPrefix: Record<string, string> = {}
@@ -30,8 +30,8 @@
 
   let visibleIcons = FontAwesomeIcons
 
-  let searchVal: string = ''
-  let category: string = 'all'
+  let searchVal = ''
+  let category = 'all'
 
   $:iconCountMessage = visibleIcons.length === FontAwesomeIcons.length ? 'Showing all icons' : `Showing ${visibleIcons.length} icons`
 
@@ -59,7 +59,6 @@
     }
   }
 
-
   function onSearch () {
     visibleIcons = FontAwesomeIcons.filter(i => {
       const searchValLC = searchVal.toLowerCase()
@@ -78,9 +77,7 @@
     if (category === 'all') {
       visibleIcons = FontAwesomeIcons
     } else {
-      visibleIcons = FontAwesomeIcons.filter(i => {
-        return categoriesToIcons[category].icons.includes(i.class)
-      })
+      visibleIcons = FontAwesomeIcons.filter(i => categoriesToIcons[category].icons.includes(i.class))
     }
     if (visibleIcons.findIndex(i => i.class === selected.icon) < 0) {
       onSelectIcon(visibleIcons[0].class)
@@ -113,9 +110,9 @@
   }
 </script>
 
-<FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid>
+<FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid>
   <Icon icon={`${value.prefix === 'fab' ? 'fa7-brands' : 'fa7-solid'}:${value.icon?.slice(3) ?? 'graduation-cap'}`}/>
-  <button type="button" {id} class="select-icon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])} on:blur={onBlur}>Select New Icon</button>
+  <button type="button" id={fieldid} class="select-icon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])} on:blur={onBlur}>Select New Icon</button>
   {#if modalOpen}
   <Modal>
     <section>
@@ -161,7 +158,6 @@
   </Modal>
 {/if}
 </FieldStandard>
-
 
 <style>
   .select-icon {

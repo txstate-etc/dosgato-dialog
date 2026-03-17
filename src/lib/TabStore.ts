@@ -116,7 +116,7 @@ export class TabStore extends Store<ITabStore> {
       const errorPaths: Record<string, string[] | undefined> = {}
       for (const k of Object.keys(v.errorPaths)) errorPaths[k] = v.errorPaths[k]?.filter(p => p !== path)
       errorPaths[tabname] ??= []
-      errorPaths[tabname]!.push(path)
+      errorPaths[tabname].push(path)
       const hasError: Record<string, boolean> = {}
       for (const k of Object.keys(errorPaths)) hasError[k] = !!errorPaths[k]!.length
       return { ...v, errorPaths, hasError }

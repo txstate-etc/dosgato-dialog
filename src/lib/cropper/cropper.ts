@@ -53,9 +53,7 @@ const edgeSensitivity = 4
 export class CropperStore extends Store<ICropperStore> {
   // coordinates of the selection edges relative to the top left of the draw area, in pixels
   // e.g. { left: 0, right: 10 } means the selection is 10 pixels wide
-  selection = derivedStore(this, v => {
-    return this.convertToPx(v.selection, v.width, v.height)
-  })
+  selection = derivedStore(this, v => this.convertToPx(v.selection, v.width, v.height))
 
   output = derivedStore(this, 'selection')
   outputPct = derivedStore(this, v => v.selection ? ({ left: v.selection.left * 100, top: v.selection.top * 100, right: v.selection.right * 100, bottom: v.selection.bottom * 100 }) : undefined)
@@ -95,8 +93,8 @@ export class CropperStore extends Store<ICropperStore> {
 
         // shrink the box until its width and height are less than the width and height of the drawing area
         // maintaining the center
-        let selWidth = selection.right - selection.left
-        let selHeight = selection.bottom - selection.top
+        const selWidth = selection.right - selection.left
+        const selHeight = selection.bottom - selection.top
         if (selWidth > v.width || selHeight > v.height) {
           const scale = Math.min(v.width / selWidth, v.height / selHeight)
           const cX = (selection.left + selection.right) / 2
@@ -142,13 +140,13 @@ export class CropperStore extends Store<ICropperStore> {
           bottom: Math.abs(selection.bottom - y) < edgeSensitivity
         }
         if (
-          (r.drag.edge.left && r.drag.edge.top) ||
-          (r.drag.edge.top && r.drag.edge.right) ||
-          (r.drag.edge.right && r.drag.edge.bottom) ||
-          (r.drag.edge.bottom && r.drag.edge.left) ||
-          (
-            x > selection.left && x < selection.right &&
-            y > selection.top && y < selection.bottom
+          (r.drag.edge.left && r.drag.edge.top)
+          || (r.drag.edge.top && r.drag.edge.right)
+          || (r.drag.edge.right && r.drag.edge.bottom)
+          || (r.drag.edge.bottom && r.drag.edge.left)
+          || (
+            x > selection.left && x < selection.right
+            && y > selection.top && y < selection.bottom
           )
         ) r.drag.selection = selection
       }

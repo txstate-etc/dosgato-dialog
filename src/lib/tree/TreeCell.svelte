@@ -11,7 +11,7 @@
   $: headerComponent = header.component as any
 </script>
 
-{#each leadingIcons as icon}
+{#each leadingIcons as icon (icon.icon)}
   <span class={['icon', icon.class?.trim()].filter(isNotBlank).join(' ')}>
     <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
   </span>
@@ -25,7 +25,7 @@
 {/if}
 {#if trailingIcons.length}
   <span class="trailing-icons">
-    {#each trailingIcons as icon}
+    {#each trailingIcons as icon (icon.icon)}
       <span class={['icon', icon.class?.trim()].filter(isNotBlank).join(' ')}>
         <Icon icon={icon.icon} tooltip={icon.tooltip} inline width="1.5em" hiddenLabel={icon.label} />
       </span>

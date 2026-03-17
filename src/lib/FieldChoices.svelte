@@ -18,7 +18,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let choices: { label?: string, value: any, disabled?: boolean }[]
   export let defaultValue: any = []
   export let conditional: boolean | undefined = undefined
@@ -27,12 +27,12 @@
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
-  export let selectAll: boolean = false
+  export let selectAll = false
 
   const store = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
-  const valStore = store.getField<any[]>(finalPath)
+  const val = store.getField<any[]>(finalPath)
   const currentWidth = derivedStore(store, 'width')
   $: cols = Math.min(Math.ceil($currentWidth / maxwidth), choices.length)
 
@@ -53,7 +53,11 @@
     })
   }
 
-  $: selected = new Set($valStore ?? [])
+  let selected = new Set<any>()
+  function reactToValue (value: any[]) {
+    selected = new Set(value ?? [])
+  }
+  $: reactToValue($val)
 
   let selectAllElement: HTMLInputElement | undefined
   const selectAllId = randomid()
@@ -83,8 +87,8 @@
   onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} let:path let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
-  <Container {path} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
+<Field {path} {defaultValue} {conditional} let:path={fullpath} let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
+  <Container path={fullpath} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#if selectAll}
         <label for={selectAllId} style:width>
@@ -93,7 +97,7 @@
         </label>
       {/if}
       {#each choices as choice, idx (choice.value)}
-        {@const checkid = `${path}.${idx}`}
+        {@const checkid = `${fullpath}.${idx}`}
         {@const included = value?.includes(choice.value)}
         {@const label = choice.label || (typeof choice.value === 'string' ? choice.value : '')}
         <label for={checkid} style:width style:order={orders[idx]}>

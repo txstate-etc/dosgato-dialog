@@ -1,19 +1,17 @@
 <script lang="ts">
   import { bytesToHuman } from 'txstate-utils'
-  import type { Asset } from './ChooserAPI'
   import { Dialog, FieldTextArea } from '$lib'
   import Button from '$lib/Button.svelte'
   import Icon from '$lib/Icon.svelte'
   import outIcon from '@iconify-icons/ph/arrow-square-out-bold'
   import warningIcon from '@iconify-icons/ph/warning'
   import { getContext } from 'svelte'
-  import type { Client } from './ChooserAPI'
-  import { CHOOSER_API_CONTEXT } from './ChooserAPI'
+  import { CHOOSER_API_CONTEXT, type Asset, type Client } from './ChooserAPI'
 
   export let id: string
   export let selectedAsset: Asset
-  export let showMetadata: boolean = false
-  export let altTextRequired: boolean = false
+  export let showMetadata = false
+  export let altTextRequired = false
   // if they say it's required but don't provide a path, default to 'altText'
   export let altTextPath: string | undefined = altTextRequired ? 'altText' : undefined
   export let altTextHelp: string | undefined
@@ -31,26 +29,30 @@
     { id: `${id}-details`, label: 'Asset Details' },
     ...(showMetadata ? [{ id: `${id}-metadata`, label: 'Metadata' }] : [])
   ]
-  $: activeTab = tabs ? tabs[0].id : 0
+  let activeTab: string | number = 0
+  function reactToTabs (..._: any[]) {
+    activeTab = tabs ? tabs[0].id : 0
+  }
+  $: reactToTabs(tabs)
   let focusedTabIdx = 0
 
-  function selectTab(tabId: string) {
+  function selectTab (tabId: string) {
     activeTab = tabId
     focusedTabIdx = tabs.findIndex(t => t.id === tabId)
     // ensure the focused tab is visible
-    const tabEls = tabListEl.querySelectorAll(`[role="tab"][data-tab-asset]`)
-    tabEls[focusedTabIdx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center'})
+    const tabEls = tabListEl.querySelectorAll('[role="tab"][data-tab-asset]')
+    tabEls[focusedTabIdx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
   }
 
-  function focusTab(idx: number) {
+  function focusTab (idx: number) {
     focusedTabIdx = idx
     activeTab = tabs[idx].id
-    const tabEls = tabListEl.querySelectorAll(`[role="tab"][data-tab-asset]`)
+    const tabEls = tabListEl.querySelectorAll('[role="tab"][data-tab-asset]')
     if (tabEls[idx]) (tabEls[idx] as HTMLElement).focus()
-    tabEls[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center'})
+    tabEls[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
   }
 
-  function onTabKeydown(e: KeyboardEvent, idx: number) {
+  function onTabKeydown (e: KeyboardEvent, idx: number) {
     if (e.key === 'ArrowRight') {
       e.preventDefault()
       focusTab((idx + 1) % tabs.length)
@@ -63,7 +65,7 @@
     }
   }
 
-  async function navigateToManageAsset() {
+  async function navigateToManageAsset () {
     manageAssetsModalOpen = false
     const url = chooserClient.idToEditingUrl ? await chooserClient.idToEditingUrl(selectedAsset.id) : undefined
     if (url) {
@@ -74,7 +76,7 @@
 
 {#if useTabs}
   <ul bind:this={tabListEl} class="tabs" role="tablist">
-    {#each tabs as tab, idx}
+    {#each tabs as tab, idx (tab.id)}
       <li
         id="{tab.id}-tab"
         class="tab {activeTab === tab.id ? 'active' : ''}"
@@ -84,7 +86,7 @@
         tabindex={focusedTabIdx === idx ? 0 : -1}
         data-tab-asset
         on:click={() => selectTab(tab.id)}
-        on:keydown={(e) => onTabKeydown(e, idx)}
+        on:keydown={e => onTabKeydown(e, idx)}
         on:focus={() => { focusedTabIdx = idx }}
       >
         <span>{tab.label}</span>

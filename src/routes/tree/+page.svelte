@@ -41,7 +41,8 @@
     return item.dbChildren
   }
 
-  async function copyHandler (selectedItems: TestItem[], dropTarget: TestItem, above: boolean, userWantsRecursive: boolean = false) {
+  async function copyHandler (selectedItems: TestItem[], dropTarget: TestItem, above: boolean, userWantsRecursive = false) {
+    // eslint-disable-next-line no-alert -- just a demo
     alert(`copying: ${userWantsRecursive ? 'recursive' : 'not recursive'}`)
     return true
   }
@@ -54,7 +55,7 @@
   let showtree = true
   let filter = ''
 
-  function handleResponsiveHeaders(treeWidth: number) {
+  function handleResponsiveHeaders (treeWidth: number) {
     if (treeWidth > 1000) {
       return ['name', 'size', 'status', 'type', 'modified']
     } else if (treeWidth > 800) {

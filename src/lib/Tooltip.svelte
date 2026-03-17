@@ -4,12 +4,12 @@
   import { randomid } from 'txstate-utils'
 
   export let tip: string | undefined = undefined
-  export let top: boolean = false
-  export let right: boolean = false
-  export let bottom: boolean = false
-  export let left: boolean = false
+  export let top = false
+  export let right = false
+  export let bottom = false
+  export let left = false
   export let align: GlueAlignOpts | undefined = undefined
-  export let active: boolean = false
+  export let active = false
 
   const tooltipId = randomid()
   const anchorName = `--tip-${tooltipId}`

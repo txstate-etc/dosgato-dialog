@@ -24,7 +24,7 @@
   `PopupMenuItem[]` by `getOptions`. */
   export let getOptions: (search: string) => Promise<PopupMenuItem[]>
   export let id: string | undefined = undefined
-  export let label: string = ''
+  export let label = ''
   /** Text to display in the text input when it's empty. */
   export let placeholder = ''
   /** When there are no items (e.g. it's a filtered search and there were no results), we still display one
@@ -36,7 +36,7 @@
   export let required = false
   /** Max number of selections to be allowed before disabling the input - 0 for unlimited. */
   export let maxSelections = 0
-  export let lookupByValue: (val: string) => Promise<PopupMenuItem | undefined> = async (val) => { const options = await getOptions(val); return options.find((opt) => opt.value === val) }
+  export let lookupByValue: (val: string) => Promise<PopupMenuItem | undefined> = async val => { const options = await getOptions(val); return options.find(opt => opt.value === val) }
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
@@ -50,7 +50,7 @@
   /** Show a confirmation message before clearing all selections */
   export let confirmDelete: string | undefined = undefined
 
-  export let selectedItemLabel: ((item: PopupMenuItem) => string) | undefined = (item) => item.label || item.value
+  export let selectedItemLabel: ((item: PopupMenuItem) => string) | undefined = item => item.label || item.value
 
   /** Each time we run getOptions we will save the value -> label mappings that it finds, so that we can display labels on pills. */
   const valueToLabel: Record<string, string> = {}
@@ -96,10 +96,10 @@
 
 <div bind:this={inputelement}></div>
 {#if hasInit}
-  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id let:onBlur let:setVal let:messagesid let:helptextid serialize={arraySerialize}>
+  <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid serialize={arraySerialize}>
     {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
-      <MultiSelect {id} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
+      <MultiSelect id={fieldid} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
         {disabled} {maxSelections} selected={$selectedStore} {placeholder} {emptyText} getOptions={wrapGetOptions}
         inputClass='multiselect-input'
         on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}

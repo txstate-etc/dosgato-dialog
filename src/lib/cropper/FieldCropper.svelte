@@ -12,9 +12,9 @@
   export let id: string | undefined = undefined
   export let path: string
   export let imageSrc: string | undefined
-  export let selectionAspectRatio: number = 1
-  export let minSelection: number = 0 // percentage of image, a value 0-1
-  export let label: string = ''
+  export let selectionAspectRatio = 1
+  export let minSelection = 0 // percentage of image, a value 0-1
+  export let label = ''
   export let required = false
   export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
@@ -29,7 +29,7 @@
 
   $: cropperStore.setOutput($val)
   function reactToOutput (...args: any[]) {
-    if (mounted) store.setField(finalPath, $output)
+    if (mounted) void store.setField(finalPath, $output)
   }
   $: reactToOutput($output)
 
@@ -132,12 +132,10 @@
     if (initialLoad) {
       initialVal = e.target.src
       initialLoad = false
-    } else {
-      if (e.target.src !== initialVal || srcChanged) {
-        await tick()
-        cropperStore.maximize()
-        srcChanged = true
-      }
+    } else if (e.target.src !== initialVal || srcChanged) {
+      await tick()
+      cropperStore.maximize()
+      srcChanged = true
     }
   }
 </script>

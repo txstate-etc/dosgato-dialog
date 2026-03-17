@@ -9,7 +9,7 @@
   let className = ''
   export { className as class }
   export let id: string | undefined = randomid()
-  export let path: string = ''
+  export let path = ''
   export let name = randomid()
   export let choices: { label?: string, value: string, disabled?: boolean }[]
   export let horizontal = false

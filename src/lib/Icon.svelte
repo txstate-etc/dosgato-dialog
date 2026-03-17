@@ -12,7 +12,7 @@
   export let icon: IconifyIcon | undefined
   /** Label used in a `<ScreenReaderOnly>`. */
   export let hiddenLabel: string | undefined = undefined
-  export let inline: boolean = false
+  export let inline = false
   export let width: string | number | undefined = undefined
   export let height: string | number | undefined = undefined
   export let tooltip: string | undefined = undefined
@@ -21,24 +21,25 @@
   export { className as class }
 
   function replaceIDs (body: string): string {
-    const matches = body.matchAll(/\sid="(\S+)"/g)
+    const matches = body.matchAll(/\sid="(\S+)"/gv)
     const ids = Array.from(matches).map(m => m[1])
     if (!ids.length) return body
 
     // Replace with unique ids
-    ids.forEach((id) => {
-      const escapedID = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    ids.forEach(id => {
+      const escapedID = id.replace(/[.*+?^$\{\}\(\)\]\\]/gv, '\\$&')
 
       body = body.replace(
         // Allowed characters before id: [#;"]
         // Allowed characters after id: [)"], .[a-z]
-        new RegExp('([#;"])(' + escapedID + ')([")]|\\.[a-z])', 'g'),
+        new RegExp('([#;"])(' + escapedID + ')([\\)"]|\\.[a-z])', 'gv'),
         '$1' + randomid() + '$3'
       )
     })
     return body
   }
 
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity -- no need for reactivity
   const fixedSVG = new Map<IconifyIcon, string>()
   function svgBody (icon: IconifyIcon) {
     if (!fixedSVG.has(icon)) fixedSVG.set(icon, replaceIDs(icon.body))
@@ -46,7 +47,10 @@
   }
 
   // If neither is defined, set both to 1em
-  if (!width && !height) width = height = '1em'
+  if (!width && !height) {
+    width = '1em'
+    height = '1em'
+  }
   height ??= width
 </script>
 

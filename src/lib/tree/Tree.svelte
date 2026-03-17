@@ -178,9 +178,9 @@
   onMount(async () => {
     document.addEventListener('dragend', onDragEnd)
     headerSizes.set(calcHeaderSizes()) // seems to need a kick on first mount
-    await new Promise(resolve => requestAnimationFrame(resolve))
+    await new Promise(resolve => { requestAnimationFrame(resolve) })
     // need to wait long enough for headers to redraw before trying to mount the rows
-    await new Promise(resolve => requestAnimationFrame(resolve))
+    await new Promise(resolve => { requestAnimationFrame(resolve) })
     mounted = true
     await store.refresh()
   })
@@ -234,7 +234,6 @@
   {/if}
 </div>
 {#if mounted && myRootItems?.length}
-  <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
   <ul bind:this={store.treeElement} role="tree" class:resizing={!!dragtargetid} on:mousemove={dragtargetid ? headerDrag : undefined} on:touchmove={dragtargetid ? headerDrag : undefined} on:mouseup={headerDragEnd} on:touchend={headerDragEnd} on:keyup={onKeyUp}>
     {#each myRootItems as item, i (item.id)}
       <TreeNode

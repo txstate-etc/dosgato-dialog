@@ -1,7 +1,6 @@
 <script lang="ts">
   import { isNotBlank } from 'txstate-utils'
 
-
   export let id: string | undefined = undefined
   export let name: string
   export let value: string

@@ -6,7 +6,7 @@
 
   export let title: string
   export let folder: Folder
-  export let maxFiles: number = 200
+  export let maxFiles = 200
   export let escapable = true
   export let mimeWhitelist: string[] = []
   export let mimeBlacklist: string[] = []
@@ -23,11 +23,11 @@
   let uploadError: string | undefined
 
   function onUploadEnter (e: DragEvent) {
-    if (e.dataTransfer?.items.length) dragover++
+    if (e.dataTransfer?.items.length) dragover += 1
   }
 
   function onUploadLeave (e: DragEvent) {
-    if (e.dataTransfer?.items.length) dragover--
+    if (e.dataTransfer?.items.length) dragover -= 1
   }
 
   function onUploadDrop (e: DragEvent) {
@@ -99,7 +99,7 @@
       <input type="file" id="uploader_input" multiple on:change={onUploadChange}>
       <label for="uploader_input">Choose or drag files</label>
       <ul>
-        {#each uploadList as file}
+        {#each uploadList as file (file)}
           <li>
             <FileIcon width="1.5em" mime={file.type} inline />{file.name}<button type="button" on:click={onDeleteFile(file)}><Icon icon={trashLight} width="1.5em" hiddenLabel="Remove File" inline /></button>
             {#if (whitelist.size && !whitelist.has(file.type)) || (blacklist.size && blacklist.has(file.type))}

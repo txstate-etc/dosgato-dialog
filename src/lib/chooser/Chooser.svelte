@@ -1,4 +1,4 @@
-<script lang="ts" generics="F">
+<script lang="ts" generics="F extends object">
   import browserIcon from '@iconify-icons/ph/browser'
   import folderIcon from '@iconify-icons/ph/folder'
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
@@ -41,7 +41,7 @@
   $: store.setPreview($selected)
 
   function onChoose () {
-    dispatch('change', { preview: $store.preview, copyAltText: altTextCheckbox?.checked ?? false } )
+    dispatch('change', { preview: $store.preview, copyAltText: altTextCheckbox?.checked ?? false })
   }
 
   function onDeselect () {
@@ -54,7 +54,7 @@
     showuploader = false
   }
 
-  async function selectPreview (preloadPath) {
+  async function selectPreview (preloadPath: string | undefined) {
     if (!$store.initialized) return
     if (preloadPath) {
       const currentSelection = await expandTreePath(treeStore, preloadPath.split('/').filter(isNotBlank))

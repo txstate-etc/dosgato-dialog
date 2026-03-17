@@ -7,7 +7,7 @@
   import { FieldChooserLink, FieldChoices, FieldDate, FieldDateTime, FieldMultiselect, FieldRadio, FieldSelect, FieldText, FieldMultiple, Tab, Tabs, FieldCheckbox, FieldDualListbox, FieldAutocomplete, FieldIconPicker, FieldColorPicker, FieldTextArea, FieldCodeEditor, FormDialog, FieldCropper, type CropOutput, type RawURL, type AnyItem, FieldImagePosition, FieldTagPicker } from '$lib'
   import { demoChooserAPI } from '../demo/DemoChooserAPI'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
-    import { demoTagClient } from '../demo/DemoTagAPI';
+    import { demoTagClient } from '../demo/DemoTagAPI'
   let store: FormStore
   let showdialog = true
   async function submit (data: { crop: CropOutput }) {
@@ -78,7 +78,7 @@
       <FieldMultiple reorder path="images" label="Images" let:index>
         <FieldChooserLink path="" assets urlEntry />
       </FieldMultiple>
-      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={(index) => { return { thing: `This will be thing ${index + 1}` } }} confirmDelete="Are you sure?">
+      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={index => ({ thing: `This will be thing ${index + 1}` })} confirmDelete="Are you sure?">
         <FieldText path="thing" />
       </FieldMultiple>
     </Tab>
@@ -111,7 +111,7 @@
           { value: 'Option 12' }, { value: 'Option 13' }, { value: 'Option 14' }, { value: 'Option 15' }, { value: 'Option 16' }]}
         defaultValue={['Option 5']}/>
       <FieldAutocomplete label="State" path='homestate' defaultValue='TX' helptext='Please select the state closest to your destination.' choices={[{ label: 'Texas', value: 'TX' }, { label: 'Illinois', value: 'IL' }, { label: 'Tennessee', value: 'TN' }, { label: 'Indiana', value: 'IN' }, { label: 'Pennsylvania', value: 'PA' }, { label: 'North Carolina', value: 'NC' }, { label: 'Iowa', value: 'IA' }]}/>
-      <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async (search) => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
+      <FieldMultiselect path="multiselect" label="Choose States" defaultValue={['TX']} getOptions={async search => { await sleep(500); return search.length ? [{ value: 'AZ', label: 'Arizona' }, { value: 'CO', label: 'Colorado' }, { value: 'TX', label: 'Texas' }] : [] }} />
     </Tab>
     <Tab name="Checkboxes">
       <FieldChoices label="Choose a Fruit" path="choices" choices={[{ value: 'apple' }, { value: 'banana banana banana banana' }, { value: 'orange' }]} />

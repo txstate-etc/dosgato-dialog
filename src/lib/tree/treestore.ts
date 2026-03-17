@@ -181,7 +181,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
       const children = await this.fetch(item)
       // re-open any open children
       await Promise.all(children.map(async (child: TypedTreeItem<T>) => {
-        await this.visit(child, async (child) => {
+        await this.visit(child, async child => {
           child.open = this.value.itemsById[child.id]?.open
           if (child.open) {
             child.children = await this.fetch(child)
@@ -472,17 +472,17 @@ export function transformSearchable<T> (searchable: SearchableType<T>): undefine
   return searchable == null
     ? undefined
     : (
-        typeof searchable === 'function'
-          ? (itm: T) => toArray((searchable as any)(itm)).filter(isNotBlank)
-          : (
-              Array.isArray(searchable)
-                ? (itm: T) => searchable.map(k => itm[k] as string).filter(isNotBlank)
-                : (itm: T) => isNotBlank(itm[searchable] as string | undefined) ? [itm[searchable] as string] : []
-            )
-      )
+      typeof searchable === 'function'
+        ? (itm: T) => toArray((searchable as any)(itm)).filter(isNotBlank)
+        : (
+          Array.isArray(searchable)
+            ? (itm: T) => searchable.map(k => itm[k] as string).filter(isNotBlank)
+            : (itm: T) => isNotBlank(itm[searchable] as string | undefined) ? [itm[searchable] as string] : []
+        )
+    )
 }
 
-export async function expandTreePath <T extends TreeItemFromDB & { name: string }> (treeStore: TreeStore<T>, pathSplit: string[], depth = 0): Promise<TypedTreeItem<T> | undefined> {
+export async function expandTreePath<T extends TreeItemFromDB & { name: string }> (treeStore: TreeStore<T>, pathSplit: string[], depth = 0): Promise<TypedTreeItem<T> | undefined> {
   let curr = (treeStore as any).value.rootItems?.find(itm => itm.name === pathSplit[0])
   for (let i = 0; i < depth; i++) {
     curr = curr?.children?.find(c => c.name === pathSplit[i + 1])

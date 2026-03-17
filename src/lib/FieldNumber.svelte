@@ -6,7 +6,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let defaultValue: number | undefined = undefined
   export let nullable = false
   export let min: number | undefined = undefined
@@ -20,6 +20,6 @@
   export let helptext: string | undefined = undefined
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id let:onBlur let:onChange let:helptextid>
-  <Input bind:inputelement type="number" name={path} {value} {id} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {helptextid} {extradescid}></Input>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={numberSerialize} deserialize={nullable ? numberNullableDeserialize : numberDeserialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:helptextid>
+  <Input bind:inputelement type="number" name={path} {value} id={fieldid} class="dialog-input {className}" {onChange} {onBlur} {valid} {invalid} {min} {max} {step} {helptextid} {extradescid}></Input>
 </FieldStandard>

@@ -7,7 +7,7 @@
   export { className as class }
   export let id: string | undefined = undefined
   export let path: string
-  export let label: string = ''
+  export let label = ''
   export let notNull = false
   export let choices: { label?: string, value: any, disabled?: boolean }[]
   export let defaultValue: any = notNull ? choices[0].value : undefined
@@ -29,9 +29,6 @@
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
 
   let finalDeserialize: (value: string) => any
-  function updateDeserialize (fDes: any) {
-    finalDeserialize = fDes
-  }
   async function reactToChoices (..._: any[]) {
     if (!finalDeserialize) return
     if (!choices.length) {
@@ -44,7 +41,6 @@
   onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages let:serialize let:deserialize>
-  {@const _ = updateDeserialize(deserialize)}
-  <Switcher bind:id {path} class={className} name={finalPath} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: serialize(c.value) }))} />
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalDeserialize let:serialize={finalSerialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages>
+  <Switcher bind:id {path} class={className} name={finalPath} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: finalSerialize(c.value) }))} />
 </Field>

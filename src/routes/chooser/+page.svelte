@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Feedback, type FormStore } from '@txstate-mws/svelte-forms'
+  import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
   import apertureLight from '@iconify-icons/ph/aperture-light'
   import { FieldChooserLink, FieldMultiple, FormDialog } from '$lib'
   import { demoChooserAPI } from '../../demo/DemoChooserAPI'
@@ -16,7 +16,7 @@
 
   async function validate (data: any): Promise<Feedback[]> {
     const feedback: Feedback[] = []
-    
+
     return feedback
   }
 
@@ -37,7 +37,7 @@
 <svelte:head><title>Testing FieldChooserLink</title></svelte:head>
 <h1>Testing all Varieties of FieldChooserLink</h1>
 <p>
-  This page demonstrates possible states of FieldChooserLink. 
+  This page demonstrates possible states of FieldChooserLink.
 </p>
 
 <main>

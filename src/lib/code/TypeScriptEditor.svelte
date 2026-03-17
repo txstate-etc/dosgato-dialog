@@ -1,6 +1,8 @@
 <script lang="ts">
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
   import type { EditorView, ViewUpdate } from '@codemirror/view'
+  import type { CompletionSource } from '@codemirror/autocomplete'
+  import type { CompilerOptions } from 'typescript'
   import type { Diagnostic } from '@codemirror/lint'
   import { createEventDispatcher, onDestroy, onMount } from 'svelte'
   import { getDescribedBy } from '$lib'
@@ -51,7 +53,7 @@
       import('@typescript/vfs')
     ])
 
-    const compilerOptions: import('typescript').CompilerOptions = {
+    const compilerOptions: CompilerOptions = {
       target: ts.ScriptTarget.ES2024,
       module: ts.ModuleKind.ESNext,
       lib: ['es2024'],
@@ -77,13 +79,13 @@
     const system = createSystem(fsMap)
     const env = createVirtualTypeScriptEnvironment(system, [PREAMBLE_PATH, FILE_PATH], ts, compilerOptions)
 
-    const tsComplete: import('@codemirror/autocomplete').CompletionSource = (context) => {
+    const tsComplete: CompletionSource = context => {
       const content = env.getSourceFile(FILE_PATH)?.getFullText()
       if (!content) return null
       const line = context.state.doc.lineAt(context.pos)
       const textBefore = line.text.slice(0, context.pos - line.from)
-      const wordMatch = textBefore.match(/\w*$/)
-      const dotMatch = textBefore.match(/\.\s*$/)
+      const wordMatch = textBefore.match(/\w*$/v)
+      const dotMatch = textBefore.match(/\.\s*$/v)
       if (!wordMatch?.[0] && !dotMatch && !context.explicit) return null
       const from = context.pos - (wordMatch?.[0].length ?? 0)
       const completions = env.languageService.getCompletionsAtPosition(FILE_PATH, context.pos, {})
@@ -98,7 +100,7 @@
     }
 
     const { linter } = await import('@codemirror/lint')
-    const importPattern = /\b(import|require)\s*(\(|['"]|{?\s*['"])/g
+    const importPattern = /\b(import|require)\s*(\(|['"]|\{?\s*['"])/gv
     const sandboxLinter = linter(view => {
       if (!sandbox) return []
       const diagnostics: Diagnostic[] = []

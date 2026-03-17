@@ -5,7 +5,7 @@
 
   export let path: string
   export let conditional: boolean | undefined = undefined
-  export let length: number = 10
+  export let length = 10
 
   const store = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
@@ -13,7 +13,7 @@
   const valueStore = store.getField<string | null>(finalPath)
 
   onMount(() => {
-    if (!$valueStore) store.setField(finalPath, randomid(length), { notDirty: true })
+    if (!$valueStore) void store.setField(finalPath, randomid(length), { notDirty: true })
   })
 </script>
 

@@ -56,15 +56,13 @@
     if (['Enter', ' '].includes(e.key)) {
       e.preventDefault()
       e.stopPropagation()
-      if ($store.selected && $store.selected.size === 1 && $store.selected.has(item.id)) dispatch('choose', item)
-      else {
-        if (e.metaKey || e.altKey) {
-          store.select(item, { clear: false, toggle: true })
-        } else if (e.shiftKey) {
-          shiftClick()
-        } else {
-          store.select(item, { clear: true })
-        }
+      if ($store.selected?.size === 1 && $store.selected.has(item.id)) dispatch('choose', item)
+      else if (e.metaKey || e.altKey) {
+        store.select(item, { clear: false, toggle: true })
+      } else if (e.shiftKey) {
+        shiftClick()
+      } else {
+        store.select(item, { clear: true })
       }
     } else if (e.key === 'Escape') {
       store.deselect()
@@ -115,7 +113,8 @@
     const selectedNodes = treenodes.filter(n => n.matches('.selected'))
     const firstSelected = selectedNodes[0]
     if (!firstSelected || (selectedNodes.length === 1 && firstSelected === nodeelement)) {
-      return store.select(item, { toggle: true })
+      store.select(item, { toggle: true })
+      return
     }
     const lastSelected = selectedNodes[selectedNodes.length - 1]
     const selectingdownward = firstSelected.compareDocumentPosition(nodeelement) === Node.DOCUMENT_POSITION_FOLLOWING
@@ -199,26 +198,26 @@
   }
   function onDragEnter (e: DragEvent) {
     if (!dropZone) dragOver = 0
-    else dragOver++
+    else dragOver += 1
     onDragOver(e)
   }
   function onDragEnterAbove (e: DragEvent) {
     if (!dropAbove) dragOverAbove = 0
-    else dragOverAbove++
+    else dragOverAbove += 1
     onDragOverAbove(e)
   }
   function onDragLeave (e: DragEvent) {
     if (!dropZone) dragOver = 0
-    else dragOver--
+    else dragOver -= 1
   }
   function onDragLeaveAbove (e: DragEvent) {
     if (!dropAbove) dragOverAbove = 0
-    else dragOverAbove--
+    else dragOverAbove -= 1
   }
 
-  let display = $focused && $focused.id === item.id
+  let display = $focused?.id === item.id
   onMount(() => {
-    if ($focused && $focused.id === item.id) nodeelement.scrollIntoView({ block: 'center' })
+    if ($focused?.id === item.id) nodeelement.scrollIntoView({ block: 'center' })
     nodeelement.addEventListener('lazy', () => { display = true })
     lazyObserver!.observe(nodeelement)
     return () => lazyObserver!.unobserve(nodeelement)
@@ -252,7 +251,7 @@
     role="treeitem"
     data-id={item.id}
     draggable={isDraggable}
-    tabindex={$focused && $focused.id === item.id ? 0 : -1}
+    tabindex={$focused?.id === item.id ? 0 : -1}
     aria-level={level}
     aria-posinset={posinset}
     aria-setsize={setsize}
