@@ -90,10 +90,7 @@
 <main>
   <FormDialog bind:store title="GraphQL Query" {submit} let:data>
     <FieldGraphQLEditor path="query" label="Query" {schema} rows={12} />
-    <svelte:fragment slot="submit" let:saved>
-      <button>Save</button>
-      {#if saved}Save successful!{/if}
-    </svelte:fragment>
+    <FieldGraphQLEditor path="nomutations" label="Query (no mutations)" {schema} noMutations rows={12} />
   </FormDialog>
 </main>
 <aside>

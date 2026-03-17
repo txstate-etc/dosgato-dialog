@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { HTMLActionEntry } from '@txstate-mws/svelte-components'
   import type { GraphQLSchema } from 'graphql'
-  import { nullableSerialize, nullableDeserialize } from '@txstate-mws/svelte-forms'
   import { FieldStandard } from '$lib'
   import GraphQLEditor from './GraphQLEditor.svelte'
   let className = ''
@@ -20,8 +19,10 @@
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let schema: GraphQLSchema | undefined = undefined
+  export let noMutations = false
+  export let allowInvalid = false
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={!notNull ? nullableSerialize : undefined} deserialize={!notNull ? nullableDeserialize : undefined} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid>
-  <GraphQLEditor id={fieldid} bind:inputelement {schema} {rows} class={className} {value} {valid} {invalid} {helptextid} {messagesid} {extradescid} on:paste on:focusout={onBlur} {use} on:change={e => setVal(e.detail)}/>
+<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid let:deserialize>
+  <GraphQLEditor id={fieldid} bind:inputelement {schema} {noMutations} {allowInvalid} {rows} class={className} {value} {valid} {invalid} {helptextid} {messagesid} {extradescid} on:paste on:focusout={onBlur} {use} on:change={e => { console.log(e.detail); setVal(deserialize?.(e.detail)) }}/>
 </FieldStandard>

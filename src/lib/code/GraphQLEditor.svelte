@@ -10,6 +10,8 @@
   export let id: string | undefined = undefined
   export let rows = 8
   export let schema: GraphQLSchema | undefined = undefined
+  export let noMutations = false
+  export let allowInvalid = false
   export let use: HTMLActionEntry[] = []
   export let inputelement: HTMLElement | undefined = undefined
   export let extradescid: string | undefined = undefined
@@ -21,18 +23,30 @@
 
   const dispatch = createEventDispatcher()
 
+  let editorInvalid = false
   let updateCode: (code: string) => void
   let updateEditorSchema: (schema?: GraphQLSchema) => void
   let editorelement: HTMLElement | undefined
   let editor: EditorView
   onMount(async () => {
     const { EditorView, minimalSetup } = await import('codemirror')
+    const { EditorState } = await import('@codemirror/state')
     const { indentWithTab } = await import('@codemirror/commands')
     const { lineNumbers, highlightActiveLine, highlightActiveLineGutter, keymap, hoverTooltip } = await import('@codemirror/view')
     const { autocompletion, completionKeymap, closeBracketsKeymap } = await import('@codemirror/autocomplete')
+    const { setDiagnosticsEffect } = await import('@codemirror/lint')
     const { indentOnInput } = await import('@codemirror/language')
     const { graphql, updateSchema, getSchema, offsetToPos } = await import('cm6-graphql')
-    const { getHoverInformation } = await import('graphql-language-service')
+    const { getHoverInformation, getDiagnostics } = await import('graphql-language-service')
+    const { GraphQLSchema: GQLSchema, GraphQLObjectType, GraphQLString } = await import('graphql')
+
+    function stripMutations (s?: GraphQLSchema): GraphQLSchema | undefined {
+      if (!s || !noMutations) return s
+      const config = s.toConfig()
+      const emptyMutation = new GraphQLObjectType({ name: 'Mutation', fields: { _: { type: GraphQLString } } })
+      const types = config.types.filter(t => t.name !== 'Mutation')
+      return new GQLSchema({ ...config, mutation: emptyMutation, types: [...types, emptyMutation] })
+    }
 
     const graphqlHover = hoverTooltip((view, pos) => {
       const s = getSchema(view.state)
@@ -63,19 +77,36 @@
         autocompletion(),
         indentOnInput(),
         graphqlHover,
-        ...graphql(schema),
+        ...graphql(stripMutations(schema)),
+        EditorState.transactionFilter.of(tr => {
+          if (!tr.newDoc.toString().trim() && tr.effects.some(e => e.is(setDiagnosticsEffect))) {
+            return { changes: tr.changes, effects: tr.effects.filter(e => !e.is(setDiagnosticsEffect)) }
+          }
+          return tr
+        }),
         keymap.of([...completionKeymap, ...closeBracketsKeymap, indentWithTab]),
         EditorView.updateListener.of((v: ViewUpdate) => {
           if (v.docChanged) {
             const newval = editor.state.doc.toString()
-            if (value !== newval) dispatch('change', newval)
+            if (value === newval) return
+            if (!allowInvalid) {
+              const effectiveSchema = getSchema(v.state)
+              if (!effectiveSchema || !newval.trim() || getDiagnostics(newval, effectiveSchema).some(e => e.severity === 1)) {
+                editorInvalid = true
+                dispatch('change', '')
+                return
+              }
+            }
+            editorInvalid = false
+            dispatch('change', newval)
           }
         })
       ],
       parent: editorelement
     })
-    updateEditorSchema = (s?: GraphQLSchema) => { updateSchema(editor, s) }
+    updateEditorSchema = (s?: GraphQLSchema) => { updateSchema(editor, stripMutations(s)) }
     updateCode = code => {
+      if (editorInvalid) return
       if (editor.state.doc.toString() !== code) editor.update([editor.state.update({ changes: { from: 0, to: editor.state.doc.length, insert: code } })])
     }
     inputelement = editorelement?.querySelector('.cm-content') ?? undefined
