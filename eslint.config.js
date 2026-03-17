@@ -26,6 +26,7 @@ const customConfig = {
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }], // allow normal for loops
     'no-useless-assignment': 'off', // often done for reactivity
     'prefer-named-capture-group': 'off', // do not prefer
+    'require-unicode-regexp': 'off', // v flag breaks downstream vite-plugin-svelte
     'prefer-template': 'off', // unnecessary
     'promise/avoid-new': 'off',
     'no-self-assign': 'off', // self assign in svelte is to trigger reactivity

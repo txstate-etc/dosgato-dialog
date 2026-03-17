@@ -21,18 +21,18 @@
   export { className as class }
 
   function replaceIDs (body: string): string {
-    const matches = body.matchAll(/\sid="(\S+)"/gv)
+    const matches = body.matchAll(/\sid="(\S+)"/g)
     const ids = Array.from(matches).map(m => m[1])
     if (!ids.length) return body
 
     // Replace with unique ids
     ids.forEach(id => {
-      const escapedID = id.replace(/[.*+?^$\{\}\(\)\]\\]/gv, '\\$&')
+      const escapedID = id.replace(/[.*+?^${}()\]\\]/g, '\\$&')
 
       body = body.replace(
         // Allowed characters before id: [#;"]
         // Allowed characters after id: [)"], .[a-z]
-        new RegExp('([#;"])(' + escapedID + ')([\\)"]|\\.[a-z])', 'gv'),
+        new RegExp('([#;"])(' + escapedID + ')([)"]|\\.[a-z])', 'g'),
         '$1' + randomid() + '$3'
       )
     })

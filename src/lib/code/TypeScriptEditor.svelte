@@ -84,8 +84,8 @@
       if (!content) return null
       const line = context.state.doc.lineAt(context.pos)
       const textBefore = line.text.slice(0, context.pos - line.from)
-      const wordMatch = textBefore.match(/\w*$/v)
-      const dotMatch = textBefore.match(/\.\s*$/v)
+      const wordMatch = textBefore.match(/\w*$/)
+      const dotMatch = textBefore.match(/\.\s*$/)
       if (!wordMatch?.[0] && !dotMatch && !context.explicit) return null
       const from = context.pos - (wordMatch?.[0].length ?? 0)
       const completions = env.languageService.getCompletionsAtPosition(FILE_PATH, context.pos, {})
@@ -100,7 +100,7 @@
     }
 
     const { linter } = await import('@codemirror/lint')
-    const importPattern = /\b(import|require)\s*(\(|['"]|\{?\s*['"])/gv
+    const importPattern = /\b(import|require)\s*(\(|['"]|\{?\s*['"])/g
     const sandboxLinter = linter(view => {
       if (!sandbox) return []
       const diagnostics: Diagnostic[] = []
