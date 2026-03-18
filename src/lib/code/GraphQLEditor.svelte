@@ -36,9 +36,7 @@
     const { autocompletion, completionKeymap, closeBracketsKeymap } = await import('@codemirror/autocomplete')
     const { setDiagnosticsEffect } = await import('@codemirror/lint')
     const { indentOnInput } = await import('@codemirror/language')
-    const { graphql, updateSchema, getSchema, offsetToPos } = await import('cm6-graphql')
-    const { getHoverInformation, getDiagnostics } = await import('graphql-language-service')
-    const { GraphQLSchema: GQLSchema, GraphQLObjectType, GraphQLString } = await import('graphql')
+    const { graphql, updateSchema, getSchema, offsetToPos, getHoverInformation, getDiagnostics, GraphQLSchema: GQLSchema, GraphQLObjectType, GraphQLString } = await import('./_graphql-env.js')
 
     function stripMutations (s?: GraphQLSchema): GraphQLSchema | undefined {
       if (!s || !noMutations) return s

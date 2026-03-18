@@ -2,7 +2,7 @@
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
   import type { EditorView, ViewUpdate } from '@codemirror/view'
   import type { CompletionSource } from '@codemirror/autocomplete'
-  import type { CompilerOptions } from 'typescript'
+  import type { CompilerOptions } from './_ts-env.js'
   import type { Diagnostic } from '@codemirror/lint'
   import { createEventDispatcher, onDestroy, onMount } from 'svelte'
   import { getDescribedBy } from '$lib'
@@ -38,9 +38,7 @@
       { autocompletion, completionKeymap, closeBracketsKeymap },
       { indentOnInput },
       { javascript },
-      { tsFacet, tsSync, tsHover },
-      tsModule,
-      { createDefaultMapFromCDN, createSystem, createVirtualTypeScriptEnvironment }
+      { ts, tsFacet, tsSync, tsHover, createDefaultMapFromCDN, createSystem, createVirtualTypeScriptEnvironment, knownLibFilesForCompilerOptions }
     ] = await Promise.all([
       import('codemirror'),
       import('@codemirror/commands'),
@@ -48,11 +46,8 @@
       import('@codemirror/autocomplete'),
       import('@codemirror/language'),
       import('@codemirror/lang-javascript'),
-      import('@valtown/codemirror-ts'),
-      import('typescript'),
-      import('@typescript/vfs')
+      import('./_ts-env.js')
     ])
-    const ts = tsModule.default ?? tsModule
 
     const compilerOptions: CompilerOptions = {
       target: ts.ScriptTarget.ES2024,
@@ -69,7 +64,6 @@
     // ensure all expected lib files exist so TS doesn't throw
     // note: @typescript/vfs has a bug where empty string content is treated as
     // missing (falsy check in getScriptSnapshot), so we use a space
-    const { knownLibFilesForCompilerOptions } = await import('@typescript/vfs')
     for (const lib of knownLibFilesForCompilerOptions(compilerOptions, ts)) {
       if (!fsMap.has('/' + lib)) fsMap.set('/' + lib, ' ')
     }
