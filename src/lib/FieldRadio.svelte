@@ -41,6 +41,6 @@
   onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalDeserialize let:serialize={finalSerialize} let:value let:valid let:invalid let:onBlur let:onChange let:messages>
-  <Switcher bind:id {path} class={className} name={finalPath} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={onChange} {onBlur} choices={choices.map(c => ({ ...c, value: finalSerialize(c.value) }))} />
+<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalDeserialize let:serialize={finalSerialize} let:value let:valid let:invalid let:onBlur let:setVal let:messages>
+  <Switcher bind:id {path} class={className} name={finalPath} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={e => setVal(finalDeserialize(e.detail))} {onBlur} choices={choices.map(c => ({ ...c, value: finalSerialize(c.value) }))} />
 </Field>
