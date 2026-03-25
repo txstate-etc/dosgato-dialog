@@ -1,7 +1,7 @@
 {
   "name": "@dosgato/dialog",
   "description": "A component library for building forms that edit a JSON document.",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "scripts": {
     "prepublishOnly": "npm run package",
     "dev": "vite dev --force",
@@ -33,9 +33,14 @@
     "@iconify/svelte": "^4.0.0 || ^5.0.0",
     "@txstate-mws/svelte-components": "^1.6.11",
     "@txstate-mws/svelte-forms": "^2.0.0",
+    "@valtown/codemirror-ts": "^2.3.1",
     "codemirror": "^6.0.1",
+    "cm6-graphql": "0.2.1",
     "graphql": "^16.0.0",
-    "txstate-utils": "^1.8.0"
+    "graphql-language-service": "^5.0.0",
+    "txstate-utils": "^1.8.0",
+    "typescript": "^5.0.2",
+    "@typescript/vfs": "^1.6.4"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.3",
@@ -44,15 +49,10 @@
     "@sveltejs/kit": "^2.0.1",
     "@sveltejs/package": "^2.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@typescript/vfs": "^1.6.4",
-    "@valtown/codemirror-ts": "^2.3.1",
-    "cm6-graphql": "0.2.1",
     "eslint-config-love": "^151.0.0",
-    "graphql-language-service": "^5.0.0",
     "eslint-plugin-svelte": "^3.0.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
-    "typescript": "^5.0.2",
     "vite": "^8.0.0"
   },
   "peerDependencies": {
