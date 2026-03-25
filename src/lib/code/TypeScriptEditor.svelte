@@ -2,9 +2,9 @@
   import { type HTMLActionEntry, passActions } from '@txstate-mws/svelte-components'
   import type { EditorView, ViewUpdate } from '@codemirror/view'
   import type { CompletionSource } from '@codemirror/autocomplete'
-  import type { CompilerOptions } from './_ts-env.js'
   import type { Diagnostic } from '@codemirror/lint'
   import { createEventDispatcher, onDestroy, onMount } from 'svelte'
+  import type { CompilerOptions } from 'typescript'
   import { getDescribedBy } from '$lib'
   let className = ''
   export { className as class }
@@ -38,7 +38,9 @@
       { autocompletion, completionKeymap, closeBracketsKeymap },
       { indentOnInput },
       { javascript },
-      { ts, tsFacet, tsSync, tsHover, createDefaultMapFromCDN, createSystem, createVirtualTypeScriptEnvironment, knownLibFilesForCompilerOptions }
+      ts,
+      { createDefaultMapFromCDN, createSystem, createVirtualTypeScriptEnvironment, knownLibFilesForCompilerOptions },
+      { tsFacet, tsSync, tsHover }
     ] = await Promise.all([
       import('codemirror'),
       import('@codemirror/commands'),
@@ -46,7 +48,9 @@
       import('@codemirror/autocomplete'),
       import('@codemirror/language'),
       import('@codemirror/lang-javascript'),
-      import('./_ts-env.js')
+      import('typescript'),
+      import('@typescript/vfs'),
+      import('@valtown/codemirror-ts')
     ])
 
     const compilerOptions: CompilerOptions = {
