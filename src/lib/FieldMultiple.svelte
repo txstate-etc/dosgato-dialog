@@ -92,7 +92,7 @@
         {#if showDelete}<button class="dialog-multiple-delete" type="button" on:click|preventDefault|stopPropagation={confirmedDelete(onDelete, value)}><Icon icon={xCircle} hiddenLabel="remove from list" /></button>{/if}
       </div>{/if}
     </div>
-    <svelte:fragment slot="addbutton" let:maxed let:onClick>
+    <svelte:fragment slot="addbutton" let:maxed let:onClick let:maxLength={resolvedMaxLength}>
       {#if !maxed || (maxed && resolvedMaxLength > 1)}
         <Button type="button" icon={plusCircleLight} class="{addMoreClass} dialog-multiple-button" disabled={maxed} on:click={onClick}>{maxed ? maxedText : addMoreText}</Button>
       {/if}
