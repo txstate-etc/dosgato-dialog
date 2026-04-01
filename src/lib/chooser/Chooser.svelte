@@ -105,6 +105,8 @@
       {/if}
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
+  </section>
+  <svelte:fragment slot="buttons" let:describedby>
     {#if showAltTextOption}
       <section class="alt-text-options">
         <label>
@@ -113,8 +115,6 @@
         </label>
       </section>
     {/if}
-  </section>
-  <svelte:fragment slot="buttons" let:describedby>
     {#if chooserClient.upload && $source?.type === 'asset'}
       <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
     {/if}
@@ -159,6 +159,7 @@
   .alt-text-options {
     width: 100%;
     padding-block: 1em;
+    margin-bottom: 0.5em;
   }
   :global(footer.actions .upload) {
     margin-right: auto;
@@ -171,9 +172,6 @@
       order: 3;
       width: 100%;
       height: 50%;
-    }
-    .alt-text-options {
-      order: 4;
     }
   }
 </style>
