@@ -19,7 +19,7 @@
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
   export let messages: Feedback[] = []
-  export let iptValue = choices[0].value
+  export let iptValue: string | undefined = undefined
   export let valid = false
   export let invalid = false
   export let onBlur: (() => void | Promise<void>) | undefined = undefined

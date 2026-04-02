@@ -1,7 +1,7 @@
 {
   "name": "@dosgato/dialog",
   "description": "A component library for building forms that edit a JSON document.",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "scripts": {
     "prepublishOnly": "npm run package",
     "dev": "vite dev --force",
