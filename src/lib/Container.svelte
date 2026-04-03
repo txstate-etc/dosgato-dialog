@@ -26,6 +26,8 @@
   export let required = false
   export let related: true | number = 0
   export let conditional: boolean | undefined = undefined
+  let className = ''
+  export { className as class }
   /** The `id` of `<div>` messages are rendered in. */
   let messagesid: string | undefined
 
@@ -55,7 +57,7 @@
 </script>
 
 {#if conditional !== false}
-<div use:eq class="dialog-field-container" data-related={Array.from({ length: related === true ? 1 : related }, (_, i) => i + 1).join(' ')}>
+<div use:eq class="dialog-field-container {className}" data-related={Array.from({ length: related === true ? 1 : related }, (_, i) => i + 1).join(' ')}>
   {#if descid == null}
     <label class="dialog-field-label" for={id}>{label}{#if required}&nbsp;*{/if}</label>
   {:else}

@@ -75,7 +75,7 @@
   let messages: Feedback[] = []
 </script>
 
-<Container {path} {label} {messages} {conditional} {related} {helptext} let:helptextid>
+<Container {path} {label} {messages} {conditional} {related} {helptext} class={compact ? 'compact' : ''} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
   <AddMore bind:messages {path} {initialState} {minLength} {maxLength} {conditional} let:path={fullpath} let:currentLength let:maxLength={resolvedMaxLength} let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
