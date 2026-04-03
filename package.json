@@ -32,7 +32,7 @@
     "@iconify-icons/ph": "^1.2.2",
     "@iconify/svelte": "^4.0.0 || ^5.0.0",
     "@txstate-mws/svelte-components": "^1.6.11",
-    "@txstate-mws/svelte-forms": "^2.0.0",
+    "@txstate-mws/svelte-forms": "^2.1.0",
     "@valtown/codemirror-ts": "^2.3.1",
     "codemirror": "^6.0.1",
     "cm6-graphql": "0.2.1",

@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
-  import { getContext, onMount } from 'svelte'
-  import { get, isNotBlank, randomid, shouldUseWhiteText } from 'txstate-utils'
+  import { randomid, shouldUseWhiteText } from 'txstate-utils'
   import { Radio } from '$lib'
   import FieldStandard from '../FieldStandard.svelte'
   import type { ColorPickerOption } from './colorpicker'
@@ -15,26 +13,15 @@
   export let label = ''
   export let required = false
   export let notNull = false
-  export let defaultValue: any = notNull ? (addAllOption ? 'alternating' : options[0].value) : undefined
+  export let defaultValue: any = notNull && addAllOption ? 'alternating' : undefined
   export let conditional: boolean | undefined = undefined
   export let helptext: string | undefined = undefined
   const groupid = randomid()
 
-  const store = getContext<FormStore>(FORM_CONTEXT)
-  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
-  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
-
-  async function reactToOptions (..._: any[]) {
-    const val = get($store.data, finalPath)
-    if (!val) return
-    if (!options.length) await store.setField(finalPath, addAllOption ? 'alternating' : undefined, { notDirty: true })
-    else if (val !== 'alternating' && !options.some(o => o.value === val)) await store.setField(finalPath, notNull ? options[0].value : (addAllOption ? 'alternating' : undefined), { notDirty: true })
-  }
-  $: reactToOptions(options).catch(console.error)
-  onMount(reactToOptions)
+  $: allowedValues = [...(addAllOption ? ['alternating'] : []), ...options.map(o => o.value)]
 </script>
 
-<FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid let:setVal>
+<FieldStandard bind:id descid={groupid} {path} {label} {required} {defaultValue} {notNull} {conditional} {helptext} {allowedValues} let:value let:valid let:invalid let:onBlur let:onChange let:messagesid let:helptextid>
   <div class="container-query-wrapper">
     <div class="color-container {className}" role="radiogroup" aria-labelledby={groupid} class:invalid class:valid>
       {#if addAllOption}

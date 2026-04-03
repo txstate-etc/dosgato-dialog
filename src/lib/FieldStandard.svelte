@@ -36,9 +36,11 @@
   export let helptext: string | undefined = undefined
   export let finalSerialize: ((value: any) => string) | undefined = undefined
   export let finalDeserialize: ((value: string) => any) | undefined = undefined
+  export let allowedValues: any[] | undefined = undefined
+  export let allowedValuesMultiple = false
 </script>
 
-<Field {path} {defaultValue} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalSerialize bind:finalDeserialize {initialize} {finalize} let:path={fullpath} let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
+<Field {path} {defaultValue} {allowedValues} {allowedValuesMultiple} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalSerialize bind:finalDeserialize {initialize} {finalize} let:path={fullpath} let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
   <Container path={fullpath} {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
     <slot {id} path={fullpath} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} serialize={finalSerialize} deserialize={finalDeserialize} />
   </Container>

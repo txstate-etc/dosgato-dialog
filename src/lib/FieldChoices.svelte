@@ -5,11 +5,11 @@
   The value of the field will be an array corresponding to the values of the checkboxes that are checked.
 -->
 <script lang="ts">
-  import { getContext, onMount } from 'svelte'
+  import { getContext } from 'svelte'
   import { Field, FORM_CONTEXT, arraySerialize, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
   import type { FormStore } from '@txstate-mws/svelte-forms'
   import { derivedStore } from '@txstate-mws/svelte-store'
-  import { get, isNotBlank, randomid } from 'txstate-utils'
+  import { isNotBlank, randomid } from 'txstate-utils'
   import Container from './Container.svelte'
   import Checkbox from './Checkbox.svelte'
   import { getDescribedBy } from './helpers'
@@ -19,7 +19,7 @@
   export let id: string | undefined = undefined
   export let path: string
   export let label = ''
-  export let choices: { label?: string, value: any, disabled?: boolean }[]
+  export let choices: { label?: string, value: any, disabled?: boolean }[] | undefined
   export let defaultValue: any = []
   export let conditional: boolean | undefined = undefined
   export let maxwidth = 250
@@ -34,18 +34,18 @@
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
   const val = store.getField<any[]>(finalPath)
   const currentWidth = derivedStore(store, 'width')
-  $: cols = Math.min(Math.ceil($currentWidth / maxwidth), choices.length)
+  $: cols = Math.min(Math.ceil($currentWidth / maxwidth), choices?.length ?? 0)
 
   let orders: number[]
   let width = '100%'
   function redoLayout (..._: any) {
     width = `${100 / cols}%`
-    const rows = Math.ceil(choices.length / cols)
-    orders = choices.map((_, i) => leftToRight ? i : Math.floor((i + 1) / cols) + rows * (i % cols))
+    const rows = Math.ceil((choices?.length ?? 0) / cols)
+    orders = choices?.map((_, i) => leftToRight ? i : Math.floor((i + 1) / cols) + rows * (i % cols)) ?? []
   }
   $: redoLayout(choices, cols)
 
-  function onChangeCheckbox (setVal: (val: any) => void, choice: typeof choices[number], included: boolean) {
+  function onChangeCheckbox (setVal: (val: any) => void, choice: NonNullable<typeof choices>[number], included: boolean) {
     setVal(v => {
       if (v == null) return included ? [] : [choice.value]
       if (included) return v.filter(s => s !== choice.value)
@@ -62,7 +62,7 @@
   let selectAllElement: HTMLInputElement | undefined
   const selectAllId = randomid()
 
-  $: selectAllChecked = choices.every(choice => choice.disabled || selected.has(choice.value))
+  $: selectAllChecked = choices?.every(choice => choice.disabled || selected.has(choice.value)) ?? false
 
   function selectAllChanged () {
     if (selectAllChecked) {
@@ -70,24 +70,14 @@
       void store.setField(finalPath, [])
     } else {
       // it was not checked and now it is checked
-      void store.setField(finalPath, choices.filter(choice => !choice.disabled).map(choice => choice.value))
+      void store.setField(finalPath, choices?.filter(choice => !choice.disabled).map(choice => choice.value) ?? [])
     }
   }
 
   const descid = randomid()
-
-  function reactToChoices (..._: any[]) {
-    const choiceSet = new Set(choices?.filter(c => !c.disabled).map(c => c.value))
-    selected = new Set(Array.from(selected).filter(v => choiceSet.has(v)))
-    const val = get($store.data, finalPath)
-    const filtered = val?.filter(v => choiceSet.has(v))
-    if (filtered?.length !== val?.length) store.setField(finalPath, filtered).catch(console.error)
-  }
-  $: reactToChoices(choices)
-  onMount(reactToChoices)
 </script>
 
-<Field {path} {defaultValue} {conditional} let:path={fullpath} let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
+<Field {path} {defaultValue} allowedValues={choices?.map(choice => choice.value)} allowedValuesMultiple {conditional} let:path={fullpath} let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
   <Container path={fullpath} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid>
       {#if selectAll}

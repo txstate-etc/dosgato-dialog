@@ -12,8 +12,8 @@
   export let placeholder: string = 'Select' + (label ? ' ' + label : '')
   export let notNull = false
   export let disabled = false
-  export let choices: { label?: string, value: any, disabled?: boolean }[]
-  export let defaultValue: any = notNull ? choices[0]?.value : undefined
+  export let choices: { label?: string, value: any, disabled?: boolean }[] | undefined
+  export let defaultValue: any = undefined
   export let conditional: boolean | undefined = undefined
   export let required = false
   export let inputelement: HTMLSelectElement = undefined as any
@@ -26,25 +26,9 @@
   export let boolean = false
   export let serialize: ((value: any) => string) | undefined = undefined
   export let deserialize: ((value: string) => any) | undefined = undefined
-
-  const store = getContext<FormStore>(FORM_CONTEXT)
-  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
-  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
-
-  let finalDeserialize: (value: string) => any
-  async function reactToChoices (..._: any[]) {
-    if (!finalDeserialize) return
-    if (!choices.length) {
-      return await store.setField(finalPath, finalDeserialize(''), { notDirty: true })
-    }
-    const val = get($store.data, finalPath)
-    if (!choices.some(o => equal(o.value, val))) await store.setField(finalPath, notNull ? defaultValue : finalDeserialize(''), { notDirty: true })
-  }
-  $: reactToChoices(choices).catch(console.error)
-  onMount(reactToChoices)
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalDeserialize let:serialize={finalSerialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id allowedValues={choices?.map(choice => choice.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:serialize={finalSerialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:messagesid let:helptextid>
   <select bind:this={inputelement} id={fieldid} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
