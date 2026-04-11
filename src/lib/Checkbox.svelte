@@ -6,14 +6,28 @@
   export let value: boolean
   export let onChange: any = undefined
   export let onBlur: any = undefined
+  export let onKeydown: any = undefined
   export let descid: string | undefined = undefined
   export let disabled = false
   export let valid = false
   export let invalid = false
   export let inputelement: HTMLInputElement = undefined as any
+  export let indeterminate = false
+  export let tabindex: number | undefined = undefined
+
+  $: if (inputelement) {
+    if (!indeterminate && inputelement.indeterminate) {
+      inputelement.style.setProperty('--cb-transition', 'none')
+      inputelement.indeterminate = false
+      // restore after one frame so checked transitions still animate
+      requestAnimationFrame(() => { inputelement.style.removeProperty('--cb-transition') })
+    } else {
+      inputelement.indeterminate = indeterminate
+    }
+  }
 </script>
 
-<input bind:this={inputelement} {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={descid} bind:checked={value} on:change={onChange} on:blur={onBlur}>
+<input bind:this={inputelement} {id} type="checkbox" {name} class:valid class:invalid {disabled} aria-describedby={descid} {tabindex} bind:checked={value} on:change={onChange} on:blur={onBlur} on:keydown={onKeydown}>
 
 <style>
 input, input:before, input:after {
@@ -45,13 +59,19 @@ input[type="checkbox"]::before {
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
   transform-origin: bottom left;
-  transition: 120ms transform ease-in-out;
+  transition: var(--cb-transition, 120ms transform ease-in-out);
   box-shadow: inset 1em 1em var(--dialog-checkbox-color, currentColor);
   /* Windows High Contrast Mode */
   background-color: CanvasText;
 }
 
 input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="checkbox"]:indeterminate::before {
+  clip-path: polygon(10% 40%, 10% 60%, 90% 60%, 90% 40%);
   transform: scale(1);
 }
 
