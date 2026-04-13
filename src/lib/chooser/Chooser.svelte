@@ -91,7 +91,7 @@
 </script>
 
 <Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
-  <section class="dialog-chooser-window" class:no-controls={$sources.length < 2}>
+  <section class="dialog-chooser-window" class:no-controls={$sources.length < 2} class:has-alt-text={showAltTextOption}>
     {#if $sources.length > 1}
     <header class="dialog-chooser-controls">
       <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ name: s.name, title: s.label ?? s.name }))} active={$preview?.source ?? $selected?.source ?? $source?.name ?? initialSource} accordionOnMobile={false}/>
@@ -141,6 +141,12 @@
   .dialog-chooser-window.no-controls {
     height: 80vh;
   }
+  .dialog-chooser-window.has-alt-text {
+    height: calc(75vh - 3em);
+  }
+  .dialog-chooser-window.has-alt-text.no-controls {
+    height: calc(80vh - 3em);
+  }
   .dialog-chooser-window * {
     box-sizing: border-box;
   }
@@ -159,7 +165,6 @@
   .alt-text-options {
     width: 100%;
     padding-block: 1em;
-    margin-bottom: 0.5em;
   }
   :global(footer.actions .upload) {
     margin-right: auto;
@@ -172,6 +177,10 @@
       order: 3;
       width: 100%;
       height: 50%;
+    }
+    /* Need more room for the alt text option on mobile */
+    .dialog-chooser-window.has-alt-text .dialog-chooser-chooser {
+      height: 40%;
     }
   }
 </style>
