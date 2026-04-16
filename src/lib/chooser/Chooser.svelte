@@ -142,10 +142,10 @@
     height: 80vh;
   }
   .dialog-chooser-window.has-alt-text {
-    height: calc(75vh - 3em);
+    height: calc(75vh - 4.5em);
   }
   .dialog-chooser-window.has-alt-text.no-controls {
-    height: calc(80vh - 3em);
+    height: calc(80vh - 4.5em);
   }
   .dialog-chooser-window * {
     box-sizing: border-box;
@@ -154,13 +154,14 @@
     position: relative;
     width: 75%;
     min-width: calc(100% - 21em);
-    height: calc(100% - 4.5em);
+    height: 100%;
     background-color: white;
     overflow: auto;
   }
   .dialog-chooser-controls {
     position: relative;
     width: 100%;
+    margin-bottom: 0.5em;
   }
   .alt-text-options {
     width: 100%;
@@ -168,6 +169,15 @@
   }
   :global(footer.actions .upload) {
     margin-right: auto;
+  }
+  @media (max-width: 800px) {
+    .dialog-chooser-window {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .dialog-chooser-chooser {
+      flex: 1;
+    }
   }
   @container dosgato-dialog-chooser-window (max-width: 800px) {
     .dialog-chooser-controls {

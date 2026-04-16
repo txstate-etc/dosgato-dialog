@@ -45,7 +45,7 @@
   .dialog-chooser-preview {
     width: 25%;
     max-width: 21em;
-    height: calc(100% - 4.5em);
+    height: 100%;
     padding: 0 1em 1em 1em;
     overflow-y: auto;
     overflow-x: hidden;
@@ -91,6 +91,7 @@
       height: unset;
       display: flex;
       overflow: hidden;
+      margin-bottom: 1em;
     }
     .dialog-chooser-preview.image.collapsed {
       flex-direction: column;
@@ -130,7 +131,8 @@
       height: unset;
     }
     .dialog-chooser-preview.collapsed .mobile-name {
-      display: block;
+      display: flex;
+      gap: 0.25em;
       font-size: 0.75em;
     }
     .dialog-chooser-preview :global(.dialog-chooser-info) {
