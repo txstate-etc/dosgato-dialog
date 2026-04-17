@@ -1,5 +1,6 @@
 <script lang="ts">
   import { datetimeSerialize, datetimeDeserialize } from '@txstate-mws/svelte-forms'
+  import ClearableWrapper from './ClearableWrapper.svelte'
   import FieldStandard from './FieldStandard.svelte'
   import Input from './Input.svelte'
   import { createEventDispatcher } from 'svelte'
@@ -14,6 +15,7 @@
   export let step: number | undefined = undefined
   export let conditional: boolean | undefined = undefined
   export let required = false
+  export let clearable = false
   export let related: true | number = 0
   export let extradescid: string | undefined = undefined
   export let helptext: string | undefined = undefined
@@ -36,8 +38,18 @@
       }
     }
   }
+
+  function onClear (setVal) {
+    return () => {
+      setVal(undefined)
+      dispatch('change', undefined)
+      if (inputelement) inputelement.value = ''
+    }
+  }
 </script>
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:helptextid let:messagesid let:setVal>
-  <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} id={fieldid} class="dialog-input {className}" {onBlur} onChange={onChange(setVal)} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
+  <ClearableWrapper {clearable} hasValue={!!value} hiddenLabel="clear date and time" {fieldid} on:click={onClear(setVal)}>
+    <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} id={fieldid} class="dialog-input {className}" {onBlur} onChange={onChange(setVal)} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
+  </ClearableWrapper>
 </FieldStandard>

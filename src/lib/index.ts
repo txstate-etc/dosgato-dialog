@@ -1,6 +1,7 @@
 export { default as Button } from './Button.svelte'
 export { default as ButtonGroup } from './ButtonGroup.svelte'
 export { default as Checkbox } from './Checkbox.svelte'
+export { default as ClearableWrapper } from './ClearableWrapper.svelte'
 export { default as Container } from './Container.svelte'
 export { default as Dialog } from './Dialog.svelte'
 export { default as FieldAutocomplete } from './FieldAutocomplete.svelte'

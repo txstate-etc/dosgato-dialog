@@ -59,7 +59,7 @@
 {#if conditional !== false}
 <div use:eq class="dialog-field-container {className}" data-related={Array.from({ length: related === true ? 1 : related }, (_, i) => i + 1).join(' ')}>
   {#if descid == null}
-    <label class="dialog-field-label" for={id}>{label}{#if required}&nbsp;*{/if}</label>
+    <label class="dialog-field-label" id={id ? `${id}-label` : undefined} for={id}>{label}{#if required}&nbsp;*{/if}</label>
   {:else}
     <div id={descid} class="dialog-field-label">{label}{#if required}&nbsp;*{/if}</div>
   {/if}
