@@ -50,6 +50,6 @@
 
 <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} serialize={datetimeSerialize} deserialize={datetimeDeserialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:helptextid let:messagesid let:setVal>
   <ClearableWrapper {clearable} hasValue={!!value} hiddenLabel="clear date and time" {fieldid} on:click={onClear(setVal)}>
-    <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} id={fieldid} class="dialog-input {className}" {onBlur} onChange={onChange(setVal)} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
+    <Input bind:inputelement={inputelement} type="datetime-local" name={path} {value} id={fieldid} class="dialog-input {className}" {onBlur} onChange={onChange(setVal)} on:input={onChange(setVal)} {valid} {invalid} {min} {max} {step} {extradescid} {messagesid} {helptextid}/>
   </ClearableWrapper>
 </FieldStandard>

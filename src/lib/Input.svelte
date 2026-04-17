@@ -41,4 +41,4 @@
   $: maxStr = resolveMinMax(max)
 </script>
 
-<input bind:this={inputelement} {type} {id} {autocomplete} {placeholder} class={className} data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
+<input bind:this={inputelement} {type} {id} {autocomplete} {placeholder} class={className} data-lpignore={!allowlastpass} {name} {value} {disabled} {maxlength} min={minStr} max={maxStr} {step} class:valid class:invalid aria-invalid={invalid} aria-describedby={isNotBlank(descby) ? descby : null} on:change={onChange} on:input on:select={onSelect} on:blur={onBlur} on:keyup={onChange} use:passActions={use}>
