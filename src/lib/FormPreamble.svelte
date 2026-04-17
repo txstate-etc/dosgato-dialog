@@ -4,7 +4,7 @@
 
 <style>
   .dialog-form-preamble {
-    margin-top: 1em;
+    padding: 1em 0;
     color: var(--dialog-muted-text, #595959);
     font-size: 0.9em;
   }
