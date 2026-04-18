@@ -29,11 +29,13 @@
   interface $$Props extends ComponentProps<Form<T>> {
     tagClient?: TagClient
     chooserClient?: Client<F>
+    hideInlineSummary?: boolean
   }
 
   export let store: FormStore<T> = undefined as any
   export let chooserClient: Client<F> | undefined = undefined
   export let tagClient: TagClient | undefined = undefined
+  export let hideInlineSummary = false
 
   setContext(CHOOSER_API_CONTEXT, chooserClient)
   setContext(TAG_API_CONTEXT, tagClient)
@@ -45,12 +47,12 @@
   {@const warningMessages = messages.filter(m => m.type === 'warning')}
   {@const infoMessages = messages.filter(m => m.type === 'info')}
   {@const successMessages = messages.filter(m => m.type === 'success')}
-  {#if errorMessages.length || showingInlineErrors}
+  {#if errorMessages.length || (!hideInlineSummary && showingInlineErrors)}
     <ul class="form-errors" aria-live='assertive'>
       {#each errorMessages as message (message.path, message.message)}
         <li><Icon icon={messageIcons[message.type] ?? messageIcons.error} inline hiddenLabel="error"/> {message.message}</li>
       {/each}
-      {#if showingInlineErrors}
+      {#if showingInlineErrors && !hideInlineSummary}
         <li><Icon icon={messageIcons.error} inline /> {#if errorMessages.length}More errors.{:else}This form contains validation errors.{/if} See inline messages for details.</li>
       {/if}
     </ul>

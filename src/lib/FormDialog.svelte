@@ -3,7 +3,7 @@
   import contentSave from '@iconify-icons/mdi/content-save'
   import type { Feedback, FormStore } from '@txstate-mws/svelte-forms'
   import type { ComponentProps } from 'svelte'
-  import { Form } from '$lib'
+  import { Form, Icon, messageIcons } from '$lib'
   import Dialog from './Dialog.svelte'
 
   interface $$Props extends ComponentProps<Form<T, F>> {
@@ -39,13 +39,25 @@
 </script>
 
 <Dialog continueText="Save" continueIcon={contentSave} cancelText="Cancel" on:escape on:continue={onSubmit} {title} {icon} {size} escapable={false} {expandable}>
-  <Form bind:store {...$$restProps} on:saved on:autosaved on:validationfail let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
+  <Form bind:store hideInlineSummary {...$$restProps} on:saved on:autosaved on:validationfail let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
     <slot {messages} {allMessages} {saved} {validating} {submitting} {valid} {invalid} {data} {showingInlineErrors} />
   </Form>
+  <svelte:fragment slot="footerMessage">
+    {#if $store?.showingInlineErrors}
+      <span class="footer-error"><Icon icon={messageIcons.error} inline /> Form contains errors. See inline messages.</span>
+    {/if}
+  </svelte:fragment>
 </Dialog>
 
 <style>
   :global(:root) {
     --ck-z-default: var(--popup-z, 3001);
+  }
+  .footer-error {
+    color: var(--dg-danger-bg, #9a3332);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
   }
 </style>

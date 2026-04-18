@@ -37,6 +37,7 @@
 
   export let labelid = randomid()
   export let descid = randomid()
+  const footerMessageId = randomid()
 
   const ctx: DialogTabContext = { change: onTabChange }
   let hasTabs: boolean | undefined = false
@@ -51,7 +52,7 @@
   }
   setContext(DIALOG_TABS_CONTEXT, ctx)
 
-  $: describedby = [title ? labelid : undefined, descid].filter(isNotBlank).join(' ')
+  $: describedby = [title ? labelid : undefined, descid, $$slots.footerMessage ? footerMessageId : undefined].filter(isNotBlank).join(' ')
 </script>
 
 <Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
@@ -73,20 +74,23 @@
       <slot></slot>
     </div>
     <footer class="actions">
-      <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
-        {#if prevTitle && !ignoreTabs}
-          <Button class="prev" disabled={!prevTitle} on:click={() => onPrev?.()}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
-        {/if}
-        {#if isNotBlank(cancelText)}
-          <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
-        {/if}
-        {#if isNotBlank(continueText)}
-          <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline /> {continueText}</Button>
-        {/if}
-        {#if nextTitle && !ignoreTabs}
-          <Button class="next" disabled={!nextTitle} on:click={() => onNext?.()}><span class="prev-next" aria-hidden="true">Next</span><ScreenReaderOnly> Next Tab ({nextTitle})</ScreenReaderOnly> <Icon icon={arrowRight} inline /></Button>
-        {/if}
-      </slot>
+      <div class="footer-message" id={footerMessageId}><slot name="footerMessage" /></div>
+      <div class="footer-buttons">
+        <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
+          {#if prevTitle && !ignoreTabs}
+            <Button class="prev" disabled={!prevTitle} on:click={() => onPrev?.()}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
+          {/if}
+          {#if isNotBlank(cancelText)}
+            <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
+          {/if}
+          {#if isNotBlank(continueText)}
+            <Button class="primary" disabled={disabled || (hasRequired && !ignoreTabs)} {describedby} on:click={() => dispatch('continue')}><Icon icon={continueIcon} inline /> {continueText}</Button>
+          {/if}
+          {#if nextTitle && !ignoreTabs}
+            <Button class="next" disabled={!nextTitle} on:click={() => onNext?.()}><span class="prev-next" aria-hidden="true">Next</span><ScreenReaderOnly> Next Tab ({nextTitle})</ScreenReaderOnly> <Icon icon={arrowRight} inline /></Button>
+          {/if}
+        </slot>
+      </div>
     </footer>
   </section>
 </Modal>
@@ -175,14 +179,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    gap: 0.5em;
     background-color: var(--dg-dialog-footer-bg, #DDDDDD);
     margin-top: 0;
     padding: 0.5em 1em;
   }
 
-  footer > :global(*:not(:last-child)) {
-    margin-right: 0.5em;
+  .footer-buttons {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.5em;
   }
 
   .dialog-content :global(.dialog-field-container) {
@@ -190,7 +197,16 @@
     border-bottom: 0px !important;
   }
 
-  footer.actions :global(.prev) {
+  .footer-message {
+    margin-right: auto;
+    min-width: 0;
+  }
+
+  .footer-message:empty {
+    display: none;
+  }
+
+  .footer-buttons :global(.prev) {
     margin-right: auto;
   }
 
@@ -198,7 +214,7 @@
     footer.actions {
       padding: 0.5em;
     }
-    footer.actions :global(button span.prev-next) {
+    .footer-buttons :global(button span.prev-next) {
       display: none;
     }
   }
