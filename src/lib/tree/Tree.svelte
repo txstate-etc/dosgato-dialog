@@ -116,7 +116,7 @@
   }
 
   let search = ''
-  let searchTimer = 0
+  let searchTimer: ReturnType<typeof setTimeout>
   $: store.filter(filter)
   function onKeyUp (e) {
     if (!store.searchableFn) return

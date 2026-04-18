@@ -115,7 +115,7 @@
       object-fit: scale-down;
       width: unset;
     }
-    .dialog-chooser-preview:not(.image) .dialog-chooser-thumbnail :global(svg) {
+    .dialog-chooser-preview:not(.image) :global(.dialog-chooser-thumbnail svg) {
       height: 8em;
       width: 8em;
     }
