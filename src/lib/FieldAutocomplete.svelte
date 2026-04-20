@@ -1,7 +1,7 @@
 <script lang="ts">
   import { modifierKey, PopupMenu, ScreenReaderOnly, type PopupMenuItem } from '@txstate-mws/svelte-components'
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
-  import { isBlank, isNotBlank, randomid } from 'txstate-utils'
+  import { isNotBlank, randomid } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   import { getContext } from 'svelte'
@@ -14,7 +14,7 @@
   export { className as class }
   export let notNull = false
   export let disabled = false
-  export let choices: { label?: string, value: string, disabled?: boolean }[]
+  export let choices: { label?: string, value: string, disabled?: boolean }[] | undefined
   export let defaultValue: string | undefined = undefined
   export let conditional: boolean | undefined = undefined
   export let required = false
@@ -35,9 +35,9 @@
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
   const val = store.getField<string>(finalPath)
 
-  $: valueToLabel = Object.fromEntries(choices.map(c => [c.value, c.label || c.value]))
-  $: labelToValue = Object.fromEntries(choices.map(c => [c.label || c.value, c.value]))
-  $: filteredChoices = choices.filter((item: PopupMenuItem) => item.label?.toLowerCase().includes(inputvalue.toLowerCase()) || item.value.toLowerCase().includes(inputvalue.toLowerCase()))
+  $: valueToLabel = Object.fromEntries(choices?.map(c => [c.value, c.label || c.value]) ?? [])
+  $: labelToValue = Object.fromEntries(choices?.map(c => [c.label || c.value, c.value]) ?? [])
+  $: filteredChoices = choices?.filter((item: PopupMenuItem) => item.label?.toLowerCase().includes(inputvalue.toLowerCase()) || item.value.toLowerCase().includes(inputvalue.toLowerCase())) ?? []
 
   let menushown = false
   let savedVal = defaultValue
@@ -66,28 +66,22 @@
     }
   }
 
-  async function reactToValue (value: string) {
+  async function reactToValue (value: string, ..._: any[]) {
     if (!finalDeserialize) return
     const dsvalue = finalDeserialize(value)
     if (dsvalue !== savedVal) {
       const label = valueToLabel[dsvalue]
-
-      // if the form state value changes from the outside we need to replace the text field content
-      // with the new label
-      // if the new form state value is undefined, we should let them keep any half-finished typing they
-      // might have in the field, but if they have a fully valid entry in the field, it needs to disappear
-      // to reflect the new reality that the form value has gone away
-      if (label != null || (savedVal && valueToLabel[savedVal])) inputvalue = label ?? ''
+      // if the new form state value is undefined and they were just typing (no prior valid selection),
+      // let them keep their half-finished input; otherwise update to reflect the new value
+      if (label != null || savedVal) inputvalue = label ?? ''
 
       savedVal = dsvalue
-      // if the form state value changes from the outside to an invalid value, we have to clear it out
-      if (isNotBlank(dsvalue) && isBlank(label)) await store.setField(finalPath, finalDeserialize(''), { notDirty: true })
     }
   }
-  $: reactToValue($val).catch(console.error)
+  $: reactToValue($val, finalDeserialize, valueToLabel).catch(console.error)
 </script>
 
-<FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} bind:finalDeserialize let:setVal let:valid let:invalid let:id={fieldid} let:onBlur let:messagesid let:helptextid>
+<FieldStandard bind:id allowedValues={choices?.map(c => c.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} bind:finalDeserialize let:setVal let:valid let:invalid let:id={fieldid} let:onBlur let:messagesid let:helptextid let:value>
   <input bind:this={inputelement} bind:value={inputvalue} id={fieldid} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:keyup={onKeyUp(setVal)} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
   <PopupMenu bind:menushown bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   <ScreenReaderOnly arialive="polite" ariaatomic={true} id={liveTextId}>
