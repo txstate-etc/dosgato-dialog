@@ -107,19 +107,23 @@
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
   </section>
   <svelte:fragment slot="buttons" let:describedby>
-    {#if showAltTextOption}
-      <section class="alt-text-options">
-        <label>
-          <input bind:this={altTextCheckbox} type="checkbox" />
-          <span>Copy/paste alt. text (if available)</span>
-        </label>
-      </section>
-    {/if}
-    {#if chooserClient.upload && $source?.type === 'asset'}
-      <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
-    {/if}
-    <Button cancel {describedby} on:click={() => dispatch('escape')}>Cancel</Button>
-    <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
+    <div class="chooser-footer">
+      {#if showAltTextOption}
+        <section class="alt-text-options">
+          <label>
+            <input bind:this={altTextCheckbox} type="checkbox" checked />
+            <span>Copy/paste alt. text (if available)</span>
+          </label>
+        </section>
+      {/if}
+      <div class="chooser-buttons">
+        {#if chooserClient.upload && $source?.type === 'asset'}
+          <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
+        {/if}
+        <Button cancel {describedby} on:click={() => dispatch('escape')}>Cancel</Button>
+        <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
+      </div>
+    </div>
   </svelte:fragment>
   {#if showuploader && $selected?.type === 'folder' && chooserClient.upload}
     <UploadUI title="Upload to {$selected.path}" folder={$selected} uploader={chooserClient.upload.bind(chooserClient)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>
@@ -169,6 +173,18 @@
   }
   :global(footer.actions .upload) {
     margin-right: auto;
+  }
+  :global(.footer-buttons) {
+    width: 100%;
+  }
+  .chooser-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .chooser-buttons {
+    display: flex;
+    gap: 0.5em;
   }
   @media (max-width: 800px) {
     .dialog-chooser-window {
