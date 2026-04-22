@@ -19,7 +19,7 @@
     {#if showdialog}
       <FormDialog {submit} bind:store title="Date Fields" on:escape={() => { showdialog = false }}>
         <FieldDate path="date" label="Date (not clearable)" />
-        <FieldDate path="date_clearable" label="Date (clearable)" clearable />
+        <FieldDate path="date_clearable" label="Date (clearable)" clearable helptext="This is a fairly long bit of helptext that will help me to see what's up with the wrapping when Clear Field is out"/>
         <FieldDate path="date_required" label="Date (clearable + required)" clearable required />
         <FieldDateTime path="datetime" label="Date & Time (not clearable)" />
         <FieldDateTime path="datetime_clearable" label="Date & Time (clearable)" clearable />

@@ -5,7 +5,7 @@
 <script lang="ts">
   import type { Feedback } from '@txstate-mws/svelte-forms'
   import { eq, resize, ScreenReaderOnly } from '@txstate-mws/svelte-components'
-  import { getContext, onDestroy } from 'svelte'
+  import { createEventDispatcher, getContext, onDestroy } from 'svelte'
   import type { Writable } from 'svelte/store'
   import { randomid } from 'txstate-utils'
   import { DG_DIALOG_FIELD_MULTIPLE } from './FieldMultiple.svelte'
@@ -26,8 +26,12 @@
   export let required = false
   export let related: true | number = 0
   export let conditional: boolean | undefined = undefined
+  /** If true, render a "Clear Field" button above the input that dispatches a `clear` event when clicked. */
+  export let showClear = false
   let className = ''
   export { className as class }
+
+  const dispatch = createEventDispatcher()
   /** The `id` of `<div>` messages are rendered in. */
   let messagesid: string | undefined
 
@@ -64,13 +68,20 @@
     <div id={descid} class="dialog-field-label">{label}{#if required}&nbsp;*{/if}</div>
   {/if}
   <div class="dialog-field-content">
-    {#if helptext}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div use:resize={{ debounce: 10 }} on:resize={setNeedsShowHelp} class="dialog-field-help" class:needsShowHelp class:expanded={showhelp} on:click={() => { if (needsShowHelp) showhelp = !showhelp }}>
-        <span bind:this={helpelement} id={helptextid}>{@html helptext}</span>
-        {#if needsShowHelp}
-          <button type="button" class="dialog-field-help-expand">Show {#if showhelp}Less{:else}More{/if}<ScreenReaderOnly>, ignore this, the help text it controls will be fully read to you as input description</ScreenReaderOnly></button>
+    {#if helptext || showClear}
+      <div class="dialog-field-header">
+        {#if helptext}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div use:resize={{ debounce: 10 }} on:resize={setNeedsShowHelp} class="dialog-field-help" class:needsShowHelp class:expanded={showhelp} on:click={() => { if (needsShowHelp) showhelp = !showhelp }}>
+            <span bind:this={helpelement} id={helptextid}>{@html helptext}</span>
+            {#if needsShowHelp}
+              <button type="button" class="dialog-field-help-expand">Show {#if showhelp}Less{:else}More{/if}<ScreenReaderOnly>, ignore this, the help text it controls will be fully read to you as input description</ScreenReaderOnly></button>
+            {/if}
+          </div>
+        {/if}
+        {#if showClear}
+          <button type="button" class="dialog-field-clear" aria-describedby={id ? `${id}-label` : undefined} on:click={() => dispatch('clear')}>Clear Field</button>
         {/if}
       </div>
     {/if}
@@ -151,14 +162,36 @@
     background-color: var(--dialog-field-bg2, transparent);
     color: var(--dialog-field-text2, inherit);
   }
+  .dialog-field-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 0.4em;
+  }
   .dialog-field-help {
+    flex: 1;
+    min-width: 0;
+    position: relative;
     font-size: 0.9em;
     color: #595959;
-    margin-bottom: 0.4em;
     line-height: 1.25em;
     overflow: hidden;
     text-overflow: ellipsis;
     height: 1.25em;
+  }
+  .dialog-field-clear {
+    flex-shrink: 0;
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  .dialog-field-clear:hover {
+    text-decoration: none;
   }
   .dialog-field-help.expanded {
     max-height: fit-content;

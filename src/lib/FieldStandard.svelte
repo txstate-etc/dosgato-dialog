@@ -38,10 +38,12 @@
   export let finalDeserialize: ((value: string) => any) | undefined = undefined
   export let allowedValues: any[] | undefined = undefined
   export let allowedValuesMultiple = false
+  /** If true, show a "Clear Field" button above the input when the field has a value. Field components listen for `on:clear` for any extra cleanup. */
+  export let clearable = false
 </script>
 
 <Field {path} {defaultValue} {allowedValues} {allowedValuesMultiple} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} bind:finalSerialize bind:finalDeserialize {initialize} {finalize} let:path={fullpath} let:value let:onBlur let:onChange let:setVal let:messages let:valid let:invalid>
-  <Container path={fullpath} {id} {label} {messages} {descid} {required} {related} {helptext} let:messagesid let:helptextid>
+  <Container path={fullpath} {id} {label} {messages} {descid} {required} {related} {helptext} showClear={clearable && !!value} on:clear={() => setVal(finalDeserialize?.(''))} on:clear let:messagesid let:helptextid>
     <slot {id} path={fullpath} {value} {onBlur} {onChange} {setVal} {valid} {invalid} {messagesid} {helptextid} serialize={finalSerialize} deserialize={finalDeserialize} />
   </Container>
 </Field>
