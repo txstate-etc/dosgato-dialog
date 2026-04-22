@@ -9,9 +9,9 @@
 <script lang="ts">
   import { MultiSelect } from '@txstate-mws/svelte-components'
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
-  import { arraySerialize } from '@txstate-mws/svelte-forms'
+  import { arraySerialize, FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { Store } from '@txstate-mws/svelte-store'
-  import { onMount } from 'svelte'
+  import { getContext, onMount } from 'svelte'
   import { isNotBlank } from 'txstate-utils'
   import FieldStandard from './FieldStandard.svelte'
   import { getDescribedBy } from './helpers'
@@ -52,6 +52,11 @@
 
   export let selectedItemLabel: ((item: PopupMenuItem) => string) | undefined = item => item.label || item.value
 
+  const store = getContext<FormStore>(FORM_CONTEXT)
+  const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
+  const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
+  const val = store.getField<any[]>(finalPath)
+
   /** Each time we run getOptions we will save the value -> label mappings that it finds, so that we can display labels on pills. */
   const valueToLabel: Record<string, string> = {}
   const valueToGroup: Record<string, string | undefined> = {}
@@ -71,7 +76,6 @@
 
   let hasInit = !defaultValue.length
 
-  let inputelement: HTMLElement
   onMount(async () => {
     await reactToValue(defaultValue)
     hasInit = true
@@ -92,12 +96,11 @@
     }))
     selectedStore.set(value.map(v => ({ value: v, label: valueToLabel[v], group: valueToGroup[v] })).filter(v => isNotBlank(v.label)))
   }
+  $: if (hasInit) void reactToValue($val)
 </script>
 
-<div bind:this={inputelement}></div>
 {#if hasInit}
   <FieldStandard bind:id {label} {path} {required} {defaultValue} {conditional} {related} {helptext} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid serialize={arraySerialize}>
-    {@const _ = reactToValue(value)}
     <div class:valid class:invalid>
       <MultiSelect id={fieldid} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
         {disabled} {maxSelections} selected={$selectedStore} {placeholder} {emptyText} getOptions={wrapGetOptions}

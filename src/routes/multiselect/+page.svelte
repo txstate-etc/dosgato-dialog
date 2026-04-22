@@ -37,8 +37,9 @@
 <h1>Testing Multiselect Lookup By Value</h1>
 
 <main style="padding: 20px">
-  <Form bind:store {submit} preload={{ planets: ['3', '7', '9', '10'], autocomplete: '9', select: '7' }}>
-    <FieldMultiselect path='planets' label='Pick Some Planets' getOptions={getOptions} {lookupByValue}/>
+  <Form bind:store {submit} preload={{ planets: ['3', '7', '9', '10'], autocomplete: '9', select: '7' }} let:data>
+    <FieldMultiselect path='planets' label='Pick Some Planets' getOptions={getOptions} {lookupByValue} defaultValue={['4']}/>
+    <FieldMultiselect path='planets2' label='Pick Some Planets' getOptions={getOptions} {lookupByValue} defaultValue={['4']}/>
     <FieldAutocomplete path='autocomplete' label='Pick One Planet' choices={planets}/>
     <FieldAutocomplete path='defaultval' defaultValue='1' label='Pick One More Planet' choices={planets}/>
     <FieldAutocomplete path='noval' label='And One More' choices={planets}/>
