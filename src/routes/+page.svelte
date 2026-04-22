@@ -120,7 +120,7 @@
       <FieldTagPicker path="tags" label="Tags" target={undefined} showTitleInDialog />
     </Tab>
     <Tab name="Images">
-      <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
+      <FieldChooserLink path="cropimage" bind:selectedAsset label="Image to Crop" pages images altTextPath="alt" initialSource="Assets"initialPath="/physics" ></FieldChooserLink>
       <FieldSelect path="ar" number label="Select Aspect Ratio" choices={[{ value: 1, label: '1:1' }, { value: 1.333, label: '4:3' }, { value: 0.75, label: '3:4' }, { value: 1.7778, label: '16:9' }]} defaultValue={1} notNull />
       <FieldCropper path="crop" label="Image Crop" selectionAspectRatio={data.ar} imageSrc="{selectedAsset?.url}"/>
       {#if selectedAsset && 'image' in selectedAsset && selectedAsset.image}

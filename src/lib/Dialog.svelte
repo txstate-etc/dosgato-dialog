@@ -52,7 +52,7 @@
   }
   setContext(DIALOG_TABS_CONTEXT, ctx)
 
-  $: describedby = [title ? labelid : undefined, descid, $$slots.footerMessage ? footerMessageId : undefined].filter(isNotBlank).join(' ')
+  $: describedby = [title ? labelid : undefined, descid, $$slots['footer-message'] ? footerMessageId : undefined].filter(isNotBlank).join(' ')
 </script>
 
 <Modal {escapable} {initialfocus} hidefocus={false} includeselector=".ck-body-wrapper" on:escape>
@@ -74,12 +74,16 @@
       <slot></slot>
     </div>
     <footer class="actions">
-      <div class="footer-message" id={footerMessageId}><slot name="footerMessage" /></div>
-      <div class="footer-buttons">
-        <slot name="buttons" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
+      <div class="footer-left">
+        <slot name="footer-left" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
           {#if prevTitle && !ignoreTabs}
             <Button class="prev" disabled={!prevTitle} on:click={() => onPrev?.()}><Icon icon={arrowLeft} inline /> <span class="prev-next" aria-hidden="true">Previous</span><ScreenReaderOnly>Previous Tab ({prevTitle})</ScreenReaderOnly></Button>
           {/if}
+        </slot>
+      </div>
+      <div class="footer-message" id={footerMessageId}><slot name="footer-message" /></div>
+      <div class="footer-right">
+        <slot name="footer-right" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
           {#if isNotBlank(cancelText)}
             <Button cancel {describedby} on:click={() => dispatch('escape')}>{cancelText}</Button>
           {/if}
@@ -178,18 +182,24 @@
   footer {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     gap: 0.5em;
     background-color: var(--dg-dialog-footer-bg, #DDDDDD);
     margin-top: 0;
     padding: 0.5em 1em;
   }
 
-  .footer-buttons {
+  .footer-left, .footer-right {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    flex-wrap: wrap;
     gap: 0.5em;
+  }
+
+  .footer-message {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
   }
 
   .dialog-content :global(.dialog-field-container) {
@@ -197,24 +207,11 @@
     border-bottom: 0px !important;
   }
 
-  .footer-message {
-    margin-right: auto;
-    min-width: 0;
-  }
-
-  .footer-message:empty {
-    display: none;
-  }
-
-  .footer-buttons :global(.prev) {
-    margin-right: auto;
-  }
-
   @media (max-width: 475px) {
     footer.actions {
       padding: 0.5em;
     }
-    .footer-buttons :global(button span.prev-next) {
+    footer.actions :global(button span.prev-next) {
       display: none;
     }
   }

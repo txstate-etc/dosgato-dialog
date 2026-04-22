@@ -42,7 +42,7 @@
   <Form bind:store hideInlineSummary {...$$restProps} on:saved on:autosaved on:validationfail let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
     <slot {messages} {allMessages} {saved} {validating} {submitting} {valid} {invalid} {data} {showingInlineErrors} />
   </Form>
-  <svelte:fragment slot="footerMessage">
+  <svelte:fragment slot="footer-message">
     {#if $store?.showingInlineErrors}
       <span class="footer-error"><Icon icon={messageIcons.error} inline /> Form contains errors. See inline messages.</span>
     {/if}
