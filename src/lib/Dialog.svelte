@@ -52,6 +52,9 @@
   }
   setContext(DIALOG_TABS_CONTEXT, ctx)
 
+  let footerMessageWidth = 0
+  $: tooSmall = footerMessageWidth > 0 && footerMessageWidth < 260
+
   $: describedby = [title ? labelid : undefined, descid, $$slots['footer-message'] ? footerMessageId : undefined].filter(isNotBlank).join(' ')
 </script>
 
@@ -74,7 +77,12 @@
       <slot></slot>
     </div>
     <footer class="actions">
-      <div class="footer-top"><slot name="footer-top" /></div>
+      <div class="footer-top">
+        {#if tooSmall}
+          <slot name="footer-middle" />
+          {#if $$slots['footer-message']}<div class="footer-message" id={footerMessageId}><slot name="footer-message" /></div>{/if}
+        {/if}
+      </div>
       <div class="footer-left">
         <slot name="footer-left" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
           {#if prevTitle && !ignoreTabs}
@@ -82,7 +90,12 @@
           {/if}
         </slot>
       </div>
-      <div class="footer-message" id={footerMessageId}><slot name="footer-message" /></div>
+      <div class="footer-middle" bind:clientWidth={footerMessageWidth}>
+        {#if !tooSmall}
+          <slot name="footer-middle" />
+          {#if $$slots['footer-message']}<div class="footer-message" id={footerMessageId}><slot name="footer-message" /></div>{/if}
+        {/if}
+      </div>
       <div class="footer-right">
         <slot name="footer-right" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
           {#if isNotBlank(cancelText)}
@@ -193,6 +206,9 @@
   .footer-top {
     width: 100%;
   }
+  .footer-top:empty {
+    display: none;
+  }
 
   .footer-left, .footer-right {
     display: flex;
@@ -202,7 +218,7 @@
     gap: 0.5em;
   }
 
-  .footer-message {
+  .footer-middle {
     flex: 1;
     min-width: 0;
     text-align: left;

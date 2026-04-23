@@ -96,7 +96,7 @@
     }))
     selectedStore.set(value.map(v => ({ value: v, label: valueToLabel[v], group: valueToGroup[v] })).filter(v => isNotBlank(v.label)))
   }
-  $: if (hasInit) void reactToValue($val)
+  $: if (hasInit) void reactToValue($val ?? [])
 </script>
 
 {#if hasInit}

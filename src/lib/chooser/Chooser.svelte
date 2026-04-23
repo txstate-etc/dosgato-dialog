@@ -106,18 +106,18 @@
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
   </section>
-  <svelte:fragment slot="footer-top">
+  <svelte:fragment slot="footer-left">
+      {#if chooserClient.upload && $source?.type === 'asset'}
+        <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
+      {/if}
+  </svelte:fragment>
+  <svelte:fragment slot="footer-middle">
     {#if showAltTextOption}
       <label class="alt-text-options">
         <input bind:this={altTextCheckbox} type="checkbox" checked />
         <span>Copy/paste alt. text (if available)</span>
       </label>
     {/if}
-  </svelte:fragment>
-  <svelte:fragment slot="footer-left">
-      {#if chooserClient.upload && $source?.type === 'asset'}
-        <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
-      {/if}
   </svelte:fragment>
   <svelte:fragment slot="footer-right" let:describedby>
       <Button cancel {describedby} on:click={() => dispatch('escape')}>Cancel</Button>
