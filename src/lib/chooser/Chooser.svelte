@@ -106,13 +106,15 @@
     </section>
     <ChooserPreview {thumbnailExpanded} {previewId} {store} on:thumbnailsizechange={() => { thumbnailExpanded = !thumbnailExpanded }}/>
   </section>
+  <svelte:fragment slot="footer-top">
+    {#if showAltTextOption}
+      <label class="alt-text-options">
+        <input bind:this={altTextCheckbox} type="checkbox" checked />
+        <span>Copy/paste alt. text (if available)</span>
+      </label>
+    {/if}
+  </svelte:fragment>
   <svelte:fragment slot="footer-left">
-      {#if showAltTextOption}
-        <label class="alt-text-options">
-          <input bind:this={altTextCheckbox} type="checkbox" checked />
-          <span>Copy/paste alt. text (if available)</span>
-        </label>
-      {/if}
       {#if chooserClient.upload && $source?.type === 'asset'}
         <Button class="upload" disabled={$selected?.type !== 'folder' || !(chooserClient.mayUpload?.($selected) ?? true)} on:click={() => { showuploader = true }}>Upload</Button>
       {/if}
@@ -164,8 +166,10 @@
     margin-bottom: 0.5em;
   }
   .alt-text-options {
-    width: 100%;
-    padding-block: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-block: 0.5em;
   }
   @media (max-width: 800px) {
     .dialog-chooser-window {

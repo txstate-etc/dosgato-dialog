@@ -74,6 +74,7 @@
       <slot></slot>
     </div>
     <footer class="actions">
+      <div class="footer-top"><slot name="footer-top" /></div>
       <div class="footer-left">
         <slot name="footer-left" {nextTitle} {prevTitle} hasRequired={hasRequired && !ignoreTabs} onPrev={onPrev} onNext={onNext} {describedby}>
           {#if prevTitle && !ignoreTabs}
@@ -181,11 +182,16 @@
 
   footer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.5em;
     background-color: var(--dg-dialog-footer-bg, #DDDDDD);
     margin-top: 0;
     padding: 0.5em 1em;
+  }
+
+  .footer-top {
+    width: 100%;
   }
 
   .footer-left, .footer-right {
