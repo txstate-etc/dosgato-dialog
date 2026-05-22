@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { FORM_CONTEXT, FORM_INHERITED_PATH, Field, type FormStore } from '@txstate-mws/svelte-forms'
-  import { getContext, onMount } from 'svelte'
-  import { equal, get, isNotBlank } from 'txstate-utils'
+  import { FORM_INHERITED_PATH, Field } from '@txstate-mws/svelte-forms'
+  import { getContext } from 'svelte'
+  import { isNotBlank } from 'txstate-utils'
   import Switcher from './Switcher.svelte'
   let className = ''
   export { className as class }
@@ -28,6 +28,6 @@
   const finalPath = [inheritedPath, path].filter(isNotBlank).join('.')
 </script>
 
-<Field {path} {defaultValue} allowedValues={choices?.map(c => c.value)} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:deserialize={finalDeserialize} let:serialize={finalSerialize} let:value let:valid let:invalid let:onBlur let:setVal let:messages>
+<Field {path} {defaultValue} allowedValues={choices?.filter(c => !c.disabled).map(c => c.value)} {conditional} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:deserialize={finalDeserialize} let:serialize={finalSerialize} let:value let:valid let:invalid let:onBlur let:setVal let:messages>
   <Switcher bind:id {path} class={className} name={finalPath} {horizontal} {label} iptValue={value} {valid} {invalid} {required} {related} {extradescid} {helptext} {messages} on:change={e => setVal(finalDeserialize(e.detail))} {onBlur} choices={choices?.map(c => ({ ...c, value: finalSerialize(c.value) })) ?? []} />
 </Field>

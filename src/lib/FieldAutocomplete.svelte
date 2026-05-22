@@ -81,7 +81,7 @@
   $: reactToValue($val, finalDeserialize, valueToLabel).catch(console.error)
 </script>
 
-<FieldStandard bind:id allowedValues={choices?.map(c => c.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} bind:finalDeserialize let:setVal let:valid let:invalid let:id={fieldid} let:onBlur let:messagesid let:helptextid let:value>
+<FieldStandard bind:id allowedValues={choices?.filter(c => !c.disabled).map(c => c.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} bind:finalDeserialize let:setVal let:valid let:invalid let:id={fieldid} let:onBlur let:messagesid let:helptextid let:value>
   <input bind:this={inputelement} bind:value={inputvalue} id={fieldid} {placeholder} class="dialog-input {className}" class:valid class:invalid aria-invalid={invalid} aria-expanded={false} aria-controls={menuid} on:blur={onBlur} on:keyup={onKeyUp(setVal)} autocapitalize="none" type="text" autocomplete="off" aria-autocomplete="list" role="combobox" {disabled} aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
   <PopupMenu bind:menushown bind:menuid align="bottomleft" items={filteredChoices} buttonelement={inputelement} bind:value={popupvalue} on:change={onchangepopup(setVal)} emptyText="No options available"/>
   <ScreenReaderOnly arialive="polite" ariaatomic={true} id={liveTextId}>

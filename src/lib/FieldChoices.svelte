@@ -209,7 +209,7 @@
   const descid = randomid()
 </script>
 
-<Field {path} {defaultValue} allowedValues={choices?.map(choice => choice.value)} allowedValuesMultiple {conditional} let:path={fullpath} let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
+<Field {path} {defaultValue} allowedValues={choices?.filter(c => !c.disabled).map(c => c.value)} allowedValuesMultiple {conditional} let:path={fullpath} let:value let:onBlur let:setVal let:messages let:valid let:invalid serialize={arraySerialize}>
   <Container path={fullpath} {id} {label} {messages} {descid} {related} {helptext} let:messagesid let:helptextid>
     <div class="dialog-choices {className}" class:valid class:invalid role="listbox" aria-multiselectable={true} aria-label={label}>
       {#if selectAll}

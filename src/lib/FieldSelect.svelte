@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { type FormStore, FORM_CONTEXT, FORM_INHERITED_PATH } from '@txstate-mws/svelte-forms'
-  import { getContext, onMount } from 'svelte'
-  import { isNotBlank, get, equal } from 'txstate-utils'
   import { getDescribedBy } from '$lib'
   import FieldStandard from './FieldStandard.svelte'
   let className = ''
@@ -28,7 +25,7 @@
   export let deserialize: ((value: string) => any) | undefined = undefined
 </script>
 
-<FieldStandard bind:id allowedValues={choices?.map(choice => choice.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:serialize={finalSerialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:messagesid let:helptextid>
+<FieldStandard bind:id allowedValues={choices?.filter(c => !c.disabled).map(c => c.value)} {label} {path} {required} {defaultValue} {conditional} {related} {helptext} {notNull} {number} {date} {datetime} {boolean} {serialize} {deserialize} let:serialize={finalSerialize} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:onChange let:messagesid let:helptextid>
   <select bind:this={inputelement} id={fieldid} name={path} {disabled} class="dialog-input dialog-select {className}" on:change={onChange} on:blur={onBlur} class:valid class:invalid aria-describedby={getDescribedBy([messagesid, helptextid, extradescid])}>
     {#if !notNull}<option value="" selected={!value}>{placeholder}</option>{/if}
     {#each choices as choice (choice.value)}
