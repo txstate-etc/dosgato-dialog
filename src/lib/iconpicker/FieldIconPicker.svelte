@@ -28,10 +28,25 @@
 
   const iconElements: HTMLDivElement[] = []
 
-  let visibleIcons = FontAwesomeIcons
-
   let searchVal = ''
   let category = 'all'
+
+  function reactToFilters (category: string, searchVal: string) {
+    const availableIcons = category === 'all' ? FontAwesomeIcons : FontAwesomeIcons.filter(i => categoriesToIcons[category].icons.includes(i.class))
+    const searchValLC = searchVal.toLowerCase()
+    return availableIcons.filter(i => {
+      if (i.class.toLowerCase().includes(searchValLC)) return true
+      for (const term of i.search.terms) {
+        if (term.toLowerCase().includes(searchValLC)) return true
+      }
+      return false
+    })
+  }
+
+  $: visibleIcons = reactToFilters(category, searchVal)
+  $: if (visibleIcons.length > 0 && visibleIcons.findIndex(i => i.class === selected.icon) < 0) {
+    onSelectIcon(visibleIcons[0].class)
+  }
 
   $:iconCountMessage = visibleIcons.length === FontAwesomeIcons.length ? 'Showing all icons' : `Showing ${visibleIcons.length} icons`
 
@@ -44,7 +59,6 @@
       setVal(selected)
       category = 'all'
       searchVal = ''
-      visibleIcons = FontAwesomeIcons
       modalOpen = false
     }
   }
@@ -54,33 +68,7 @@
       selected = val
       category = 'all'
       searchVal = ''
-      visibleIcons = FontAwesomeIcons
       modalOpen = false
-    }
-  }
-
-  function onSearch () {
-    visibleIcons = FontAwesomeIcons.filter(i => {
-      const searchValLC = searchVal.toLowerCase()
-      if (i.class.toLowerCase().includes(searchValLC)) return true
-      for (const term of i.search.terms) {
-        if (term.toLowerCase().includes(searchValLC)) return true
-      }
-      return false
-    })
-    if (visibleIcons.findIndex(i => i.class === selected.icon) < 0) {
-      onSelectIcon(visibleIcons[0].class)
-    }
-  }
-
-  function onSelectCategory () {
-    if (category === 'all') {
-      visibleIcons = FontAwesomeIcons
-    } else {
-      visibleIcons = FontAwesomeIcons.filter(i => categoriesToIcons[category].icons.includes(i.class))
-    }
-    if (visibleIcons.findIndex(i => i.class === selected.icon) < 0) {
-      onSelectIcon(visibleIcons[0].class)
     }
   }
 
@@ -97,7 +85,7 @@
       }
       onSelectIcon(visibleIcons[newIndex].class)
       iconElements[newIndex].focus()
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault()
       if (currentSelectionIndex === 0) {
         newIndex = visibleIcons.length - 1
@@ -123,10 +111,10 @@
         <div class="icon-modal-content">
           <div class="filters">
             <div class="search-wrapper">
-              <input bind:value={searchVal} id="search_for" placeholder="Search Icons" on:keyup={onSearch}/>
+              <input bind:value={searchVal} id="search_for" placeholder="Search Icons"/>
               <label for="search_for" class="fa fa-search" title="search"></label>
             </div>
-            <select bind:value={category} class="icon-category" aria-label="Select Category" on:change={onSelectCategory}>
+            <select bind:value={category} class="icon-category" aria-label="Select Category">
               <option value="all">All</option>
               {#each IconCategories as category (category.key)}
                 <option value={category.key}>{category.label}</option>
