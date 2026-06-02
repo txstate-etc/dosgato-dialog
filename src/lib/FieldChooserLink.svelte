@@ -112,7 +112,7 @@
             url
           }
         } else {
-          selectedAsset = { ...item, url } as any
+          selectedAsset = { ...item, url }
         }
       }
     }

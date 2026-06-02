@@ -147,7 +147,7 @@ const assets: Record<string, RootFolder | RootPage> = {
         hasChildren: false
       }
     ]
-  } as RootPage
+  }
 }
 
 class DemoChooserAPI implements Client {
@@ -244,7 +244,7 @@ class DemoChooserAPI implements Client {
           thumbnailUrl: '/demo-thumb.png'
         }
       }
-      treeFolder.children!.push(asset as any)
+      treeFolder.children.push(asset as any)
       treeFolder.childCount += 1
       treeFolder.hasChildren = true
       ratio += inc
