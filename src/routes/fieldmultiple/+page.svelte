@@ -5,7 +5,7 @@
   let store: FormStore
   let showdialog = true
 
-  async function submit (data) {
+  async function submit (data: any) {
     return {
       success: true,
       data,

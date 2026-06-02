@@ -2,9 +2,9 @@
   import { Form, FieldChoices } from '$lib'
   import type { Feedback } from '@txstate-mws/svelte-forms'
 
-  let store
+  let store: any
 
-  async function submit (data) {
+  async function submit (data: any) {
     return {
       success: true,
       data,
@@ -12,7 +12,7 @@
     }
   }
 
-  async function validate (data): Promise<Feedback[]> {
+  async function validate (data: any): Promise<Feedback[]> {
     return []
   }
 </script>

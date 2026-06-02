@@ -157,7 +157,7 @@
     }
   }
   function onDblClick (e: MouseEvent) {
-    if (modifierKey(e) || e.button > 0) return
+    if (modifierKey(e as unknown as KeyboardEvent) || e.button > 0) return
     e.preventDefault()
     e.stopPropagation()
     if ($store.selected.size <= 1) dispatch('choose', item)

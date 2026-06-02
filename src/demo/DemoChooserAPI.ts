@@ -228,9 +228,10 @@ class DemoChooserAPI implements Client {
 
   /** If a folder corresponds to `path` under `source` this will build StoredAsset objects from the `files` passed and simulate adding them to that folder's children in memory.
    * @throws 'User may not upload to this folder` error if that folder doesn't acceptUpload. */
-  async upload (folder: TypedTreeItem<Folder>, files: File[], progress: (ratio: number) => void) {
-    if (!folder?.acceptsUpload) throw new Error('User may not upload to this folder')
-    folder.children ??= []
+  async upload (folder: Folder, files: File[], progress: (ratio: number) => void) {
+    const treeFolder = folder as TypedTreeItem<Folder>
+    if (!treeFolder?.acceptsUpload) throw new Error('User may not upload to this folder')
+    treeFolder.children ??= []
     const inc = 1 / files.length
     let ratio = 0
     for (const file of files) {
@@ -243,13 +244,13 @@ class DemoChooserAPI implements Client {
           thumbnailUrl: '/demo-thumb.png'
         }
       }
-      folder.children.push(asset as any)
-      folder.childCount += 1
-      folder.hasChildren = true
+      treeFolder.children!.push(asset as any)
+      treeFolder.childCount += 1
+      treeFolder.hasChildren = true
       ratio += inc
       progress(ratio)
     }
-    return folder.children
+    return treeFolder.children
   }
 
   async idToEditingUrl (id: string): Promise<string | undefined> {

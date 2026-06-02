@@ -28,7 +28,7 @@
   const store = new Store({ width: 1000 })
 
   const groupid = randomid()
-  function onChange (e: InputEvent) {
+  function onChange (this: HTMLInputElement, e: InputEvent) {
     iptValue = this.value
     dispatch('change', iptValue)
   }

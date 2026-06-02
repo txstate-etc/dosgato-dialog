@@ -118,7 +118,7 @@
   let search = ''
   let searchTimer: ReturnType<typeof setTimeout>
   $: store.filter(filter)
-  function onKeyUp (e) {
+  function onKeyUp (e: KeyboardEvent) {
     if (!store.searchableFn) return
     if (e.key.length === 1) {
       search += e.key.toLocaleLowerCase()

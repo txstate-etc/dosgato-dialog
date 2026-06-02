@@ -49,7 +49,7 @@
     return () => store.activate(idx)
   }
   function onKeyDown (idx: number) {
-    return async e => {
+    return async (e: KeyboardEvent) => {
       if (modifierKey(e)) return
       if (['Enter', ' ', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
         e.preventDefault()
@@ -77,7 +77,7 @@
     }
   }
 
-  function isActive (idx, activeidx) {
+  function isActive (idx: number, activeidx: number | undefined) {
     return idx === (activeidx ?? 0)
   }
 

@@ -105,7 +105,7 @@
       <MultiSelect id={fieldid} name={path} descid={getDescribedBy([messagesid, helptextid, extradescid])}
         {disabled} {maxSelections} selected={$selectedStore} {placeholder} {emptyText} getOptions={wrapGetOptions}
         inputClass='multiselect-input'
-        on:change={e => setVal(e.detail.map(itm => itm.value))} on:blur={onBlur}
+        on:change={e => setVal(e.detail.map((itm: { value: any }) => itm.value))} on:blur={onBlur}
         {includeDeleteAll} {confirmDelete} {selectedItemLabel}
         {menuClass} {menuContainerClass} {menuItemClass} {menuItemHilitedClass} {menuCategoryClass}
       >

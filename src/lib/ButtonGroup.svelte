@@ -29,7 +29,7 @@
   }
 
   function onKeyDown (choice: PopupMenuItem, idx: number) {
-    return e => {
+    return (e: KeyboardEvent) => {
       if (modifierKey(e)) return
       if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && idx < choices.length - 1) {
         e.preventDefault()

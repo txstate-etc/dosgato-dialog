@@ -56,7 +56,7 @@
     modalshown = false
   }
   function onChange (setVal: any) {
-    return e => {
+    return (e: CustomEvent<{ preview: AnyItem | RawURL | BrokenURL, copyAltText?: boolean }>) => {
       selectedAsset = e.detail.preview
       if (
         finalAltTextPath
@@ -76,12 +76,12 @@
   }
 
   let timer: ReturnType<typeof setTimeout>
-  function userUrlEntry () {
+  function userUrlEntry (this: HTMLInputElement) {
     clearTimeout(timer)
     timer = setTimeout(userUrlEntryDebounced.bind(this), 300)
   }
 
-  async function userUrlEntryDebounced () {
+  async function userUrlEntryDebounced (this: HTMLInputElement) {
     const url = this.value
     const cleanedUrl = cleanUrl(url)
     store.clearPreview()
@@ -172,7 +172,7 @@
   }
   $: void updateSelected($value)
  function onClickRemove (setVal: any) {
-   return e => {
+   return (e: MouseEvent) => {
      selectedAsset = undefined
      setVal(undefined)
      if (finalAltTextPath) {

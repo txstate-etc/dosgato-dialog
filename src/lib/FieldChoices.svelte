@@ -60,9 +60,9 @@
   }
 
   function onChangeCheckbox (setVal: (val: any) => void, choice: NonNullable<typeof choices>[number], included: boolean) {
-    setVal(v => {
+    setVal((v: any[] | undefined) => {
       if (v == null) return included ? [] : [choice.value]
-      if (included) return v.filter(s => s !== choice.value)
+      if (included) return v.filter((s: any) => s !== choice.value)
       else return sortByChoiceOrder([...v, choice.value])
     })
   }

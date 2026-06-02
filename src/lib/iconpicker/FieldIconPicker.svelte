@@ -63,7 +63,7 @@
     }
   }
 
-  function onCancel (val) {
+  function onCancel (val: any) {
     return function () {
       selected = val
       category = 'all'

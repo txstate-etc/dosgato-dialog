@@ -10,7 +10,7 @@
     import { demoTagClient } from '../demo/DemoTagAPI'
   let store: FormStore
   let showdialog = true
-  async function submit (data: { crop: CropOutput }) {
+  async function submit (data: any) {
     return {
       success: true,
       data,
@@ -18,7 +18,7 @@
     }
   }
 
-  async function validate (data: { crop: CropOutput }): Promise<Feedback[]> {
+  async function validate (data: any): Promise<Feedback[]> {
     return [{
       type: 'error',
       message: 'Nope',
@@ -78,7 +78,7 @@
       <FieldMultiple reorder path="images" label="Images" let:index>
         <FieldChooserLink path="" assets urlEntry />
       </FieldMultiple>
-      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={index => ({ thing: `This will be thing ${index + 1}` })} confirmDelete="Are you sure?">
+      <FieldMultiple label="Things" removable reorder path="multi_initial_state_function" initialState={(index: number) => ({ thing: `This will be thing ${index + 1}` })} confirmDelete="Are you sure?">
         <FieldText path="thing" />
       </FieldMultiple>
     </Tab>

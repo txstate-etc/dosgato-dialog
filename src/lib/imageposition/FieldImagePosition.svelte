@@ -42,12 +42,12 @@
 
   let x: number, y: number
 
-  function onSave (setVal) {
+  function onSave (setVal: (val: any) => void) {
     setVal({ x: x * 25, y: y * 25 })
     hideModal()
   }
 
-  function onSelectBox (newX, newY) {
+  function onSelectBox (newX: number, newY: number) {
     x = newX
     y = newY
     boxes[x + y * 5].focus()

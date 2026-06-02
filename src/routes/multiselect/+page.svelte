@@ -4,7 +4,7 @@
   import type { PopupMenuItem } from '@txstate-mws/svelte-components'
   let store: FormStore
 
-  async function submit (data) {
+  async function submit (data: any) {
     return {
       success: true,
       data,

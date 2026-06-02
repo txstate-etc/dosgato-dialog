@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <div class="dialog-form-preamble">
   <slot />
 </div>

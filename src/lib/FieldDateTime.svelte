@@ -22,7 +22,7 @@
 
   const dispatch = createEventDispatcher()
 
-  function onChange (setVal) {
+  function onChange (setVal: (val: any) => void) {
     return () => {
       if (inputelement) {
         const date = new Date(inputelement.value)

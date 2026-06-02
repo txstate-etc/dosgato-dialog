@@ -25,6 +25,7 @@
       showingInlineErrors: boolean
       data: Partial<T>
     }
+    submit: { saved: boolean }
   }
 
   export let store: FormStore<T> | undefined = undefined

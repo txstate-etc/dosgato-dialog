@@ -7,7 +7,7 @@
   import { demoTagClient } from '../../demo/DemoTagAPI'
   let store: FormStore
   let showdialog = true
-  async function submit (data: { crop: CropOutput }) {
+  async function submit (data: any) {
     return {
       success: true,
       data,

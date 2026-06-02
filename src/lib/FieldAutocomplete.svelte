@@ -24,7 +24,7 @@
   export let helptext: string | undefined = undefined
 
   let inputvalue = ''
-  let popupvalue = undefined
+  let popupvalue: string | undefined = undefined
   let menuid: string
 
   const liveTextId = randomid()
@@ -42,7 +42,7 @@
   let menushown = false
   let savedVal = defaultValue
   function onKeyUp (setVal: any) {
-    return e => {
+    return (e: KeyboardEvent) => {
       if (!modifierKey(e)) {
         const val = labelToValue[inputvalue.trim()]
         menushown = !val
@@ -58,7 +58,7 @@
   }
 
   function onchangepopup (setVal: any) {
-    return e => {
+    return (e: CustomEvent<{ label?: string, value: string }>) => {
       inputvalue = e.detail.label || e.detail.value
       popupvalue = undefined
       savedVal = e.detail.value

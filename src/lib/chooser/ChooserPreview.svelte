@@ -10,7 +10,7 @@
   export let thumbnailExpanded: boolean
   const dispatch = createEventDispatcher()
 
-  function reactToPreview (_preview) {
+  function reactToPreview (_preview: unknown) {
     if (thumbnailExpanded) dispatch('thumbnailsizechange')
   }
   $: reactToPreview($preview)

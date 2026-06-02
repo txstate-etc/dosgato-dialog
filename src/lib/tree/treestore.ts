@@ -85,7 +85,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
         ret.add(itm.id)
       }
     }
-    if (!foundfocus) this.focus(ret[0])
+    if (!foundfocus) this.focus((ret as any)[0])
     this.setSelected(newselected, {})
     return ret
   })
@@ -326,7 +326,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     return true
   }
 
-  async drop (item: TypedTreeItem<T>, above: boolean, userWantsCopy) {
+  async drop (item: TypedTreeItem<T>, above: boolean, userWantsCopy: boolean) {
     const ret = await this._drop(item, this.value.selected, above, userWantsCopy, undefined)
     return ret
   }
@@ -352,7 +352,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     const [first, ...rest] = items
     const ancestors = [first, ...this.collectAncestors(first)]
     const lookup = keyby(ancestors, 'id')
-    const depthById = ancestors.reduce((depthById, a, i) => { depthById[a.id] = i; return depthById }, {})
+    const depthById = ancestors.reduce<Record<string, number>>((depthById, a, i) => { depthById[a.id] = i; return depthById }, {})
     let idx = -1
     for (const item of rest) {
       const itemAncestors = this.collectAncestors(item)
@@ -483,9 +483,9 @@ export function transformSearchable<T> (searchable: SearchableType<T>): undefine
 }
 
 export async function expandTreePath<T extends TreeItemFromDB & { name: string }> (treeStore: TreeStore<T>, pathSplit: string[], depth = 0): Promise<TypedTreeItem<T> | undefined> {
-  let curr = (treeStore as any).value.rootItems?.find(itm => itm.name === pathSplit[0])
+  let curr = (treeStore as any).value.rootItems?.find((itm: TypedTreeItem<T>) => itm.name === pathSplit[0])
   for (let i = 0; i < depth; i++) {
-    curr = curr?.children?.find(c => c.name === pathSplit[i + 1])
+    curr = curr?.children?.find((c: TypedTreeItem<T>) => c.name === pathSplit[i + 1])
   }
   if (!curr) {
     console.warn('tried to preload a path', '/' + pathSplit.join('/'), 'that does not exist ')

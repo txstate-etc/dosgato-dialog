@@ -41,11 +41,11 @@
     return true
   }
 
-  function isInside (clientX, clientY) {
+  function isInside (clientX: number, clientY: number) {
     return !(clientX < rect.left || clientX > rect.right || clientY > rect.bottom || clientY < rect.top)
   }
 
-  function relativeToRect (clientX, clientY): [number, number] {
+  function relativeToRect (clientX: number, clientY: number): [number, number] {
     return [Math.min(Math.max(0, clientX - rect.left), rect.width), Math.min(Math.max(0, clientY - rect.top), rect.height)]
   }
 
@@ -119,20 +119,21 @@
   const movedescid = randomid()
   let focusWithin = false
 
-  async function reactToAspectRatio (ar) {
+  async function reactToAspectRatio (ar: number | undefined) {
     if (!ar) return
     cropperStore.updateTargetAspect(ar)
   }
   $: void reactToAspectRatio(selectionAspectRatio)
 
   let initialLoad = true
-  let initialVal
+  let initialVal: string | undefined
   let srcChanged = false
-  async function onimageload (e) {
+  async function onimageload (e: Event) {
+    const target = e.target as HTMLImageElement
     if (initialLoad) {
-      initialVal = e.target.src
+      initialVal = target.src
       initialLoad = false
-    } else if (e.target.src !== initialVal || srcChanged) {
+    } else if (target.src !== initialVal || srcChanged) {
       await tick()
       cropperStore.maximize()
       srcChanged = true

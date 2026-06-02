@@ -66,7 +66,7 @@ export function bytesToHuman (bytes: number) {
 }
 
 export class ChooserStore<F = any> extends Store<IAssetStore> {
-  options: InternalStoreOptions<F>
+  options!: InternalStoreOptions<F>
   constructor (public client: Client) {
     super({ activetype: 'page', activesource: 0, initialized: false })
     this.setOptions({})
@@ -74,8 +74,8 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
 
   setOptions (options: ChooserStoreOptions<F>) {
     const userFilter = options.filter ?? nofilter
-    const filter = options.images
-      ? async (itm: AnyUIItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') && await userFilter(itm)
+    const filter: (itm: AnyItem) => boolean | Promise<boolean> = options.images
+      ? async (itm: AnyItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') && await userFilter(itm)
       : userFilter
     this.options = {
       ...options,

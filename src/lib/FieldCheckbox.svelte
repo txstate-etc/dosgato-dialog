@@ -18,7 +18,7 @@
   export let helptext: string | undefined = undefined
 
   function onChange (setVal: (val: any) => void) {
-    return function () {
+    return function (this: HTMLInputElement) {
       setVal(this.checked)
     }
   }

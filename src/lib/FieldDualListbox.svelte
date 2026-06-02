@@ -71,7 +71,7 @@
   }
 
   function onkeydown (value: string[], setVal: (val: any) => void) {
-    return e => {
+    return (e: KeyboardEvent) => {
       if (modifierKey(e)) return
       if (e.key === 'ArrowRight') {
         e.preventDefault()

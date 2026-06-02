@@ -11,7 +11,7 @@
     type: string
     modified: Date
     dbChildren: this[]
-    status: string
+    status: keyof typeof statusIcon
   }
 
   const statusIcon = {
@@ -20,9 +20,9 @@
     unpublished: squareIcon
   }
 
-  const statuses = ['published', 'modified', 'unpublished']
+  const statuses = ['published', 'modified', 'unpublished'] as const
 
-  function randomNumber (min, max) { // min and max included
+  function randomNumber (min: number, max: number) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 

@@ -38,7 +38,7 @@
     }
   }
 
-  function onUploadChange (e: InputEvent & { currentTarget: HTMLInputElement }) {
+  function onUploadChange (e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
     const files = e.currentTarget.files
     if (files?.length) uploadList = unique(uploadList.concat(Array.from(files)), 'name').slice(-1 * maxFiles)
     e.currentTarget.value = ''
