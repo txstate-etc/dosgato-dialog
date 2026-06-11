@@ -9,10 +9,8 @@
   export let bottom = false
   export let left = false
   export let align: GlueAlignOpts | undefined = undefined
-  export let active = false
 
   const tooltipId = randomid()
-  const anchorName = `--tip-${tooltipId}`
   let slotwrapper: HTMLSpanElement
 
   let hasFocusableChild = false
@@ -42,7 +40,6 @@
     id={tooltipId}
     role="tooltip"
     class="tooltip"
-    class:active
     use:glue={{ target: slotwrapper, align: resolvedAlign, gap: 5 }}>
       <div class="default-tip tip">{tip}</div>
   </div>
@@ -63,10 +60,6 @@
     padding: 4px 8px;
     border-radius: 6px;
     color: inherit;
-  }
-  .tooltip.active {
-    opacity: 1;
-    visibility: initial;
   }
   .tooltip-slot:hover + .tooltip,
   .tooltip-slot:focus-within + .tooltip {
