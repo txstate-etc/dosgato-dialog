@@ -43,7 +43,13 @@
   let helpelement: HTMLSpanElement
   let needsShowHelp = false
   function setNeedsShowHelp (..._: any[]) {
-    needsShowHelp = (helpelement?.getClientRects().length ?? 0) > 1
+    const fragments = helpelement?.getClientRects() ?? []
+    const tops = new Set(
+      [...fragments]
+        .filter(r => r.height > 0)
+        .map(r => Math.round(r.top))
+    )
+    needsShowHelp = tops.size > 1
     if (!needsShowHelp) showhelp = false
   }
   $: setNeedsShowHelp(helpelement)
