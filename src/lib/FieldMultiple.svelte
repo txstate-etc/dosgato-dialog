@@ -7,7 +7,7 @@
   import caretCircleUp from '@iconify-icons/ph/caret-circle-up-fill'
   import plusCircleLight from '@iconify-icons/ph/plus-circle-light'
   import xCircle from '@iconify-icons/ph/x-circle-fill'
-  import { AddMore, type Feedback } from '@txstate-mws/svelte-forms'
+  import { AddMore, SubForm, type Feedback } from '@txstate-mws/svelte-forms'
   import { setContext } from 'svelte'
   import Button from './Button.svelte'
   import Container from './Container.svelte'
@@ -75,9 +75,16 @@
   let messages: Feedback[] = []
 </script>
 
-<Container {path} {label} {messages} {conditional} {related} {helptext} class={compact ? 'compact' : ''} let:helptextid>
+<!--
+  SubForm must be the outermost element so that it stays mounted when `conditional` flips
+  to false and its handler can delete/stash the array data per the svelte-forms contract.
+  If Container's own `{#if conditional}` were on the outside it would unmount AddMore
+  before the prop update arrived and the data would remain in the payload.
+-->
+<SubForm {path} {conditional} let:path={arraypath}>
+<Container path={arraypath} {label} {messages} {related} {helptext} class={compact ? 'compact' : ''} let:helptextid>
   {noOp(fieldMultipleContext.helptextid = helptextid)}
-  <AddMore bind:messages {path} {initialState} {minLength} {maxLength} {conditional} let:path={fullpath} let:currentLength let:maxLength={resolvedMaxLength} let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
+  <AddMore bind:messages path="" {initialState} {minLength} {maxLength} let:path={fullpath} let:currentLength let:maxLength={resolvedMaxLength} let:index let:minned let:maxed let:value let:onDelete let:onMoveUp let:onMoveDown>
     {@const showDelete = removable && !minned}
     {@const showMove = reorder && currentLength > 1}
     <div class="dialog-multiple" class:has-delete-icon={showDelete} class:has-move-icon={showMove} class:first={index === 0}>
@@ -99,6 +106,7 @@
     </svelte:fragment>
   </AddMore>
 </Container>
+</SubForm>
 
 <style>
   .dialog-multiple {
