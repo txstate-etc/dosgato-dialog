@@ -5,7 +5,7 @@
   import { FORM_CONTEXT, FORM_INHERITED_PATH, type FormStore } from '@txstate-mws/svelte-forms'
   import { getContext } from 'svelte'
   import { isBlank, isNotBlank, randomid } from 'txstate-utils'
-  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, cleanUrl, type BrokenURL, type RawURL } from './chooser'
+  import { Chooser, ChooserStore, CHOOSER_API_CONTEXT, cleanUrl, mimeAccepted, type BrokenURL, type MimeAccept, type RawURL } from './chooser'
   import type { AnyItem, Client } from './chooser/ChooserAPI'
   import Details from './chooser/Details.svelte'
   import Thumbnail from './chooser/Thumbnail.svelte'
@@ -22,6 +22,16 @@
   export let pages = false
   export let assets = images
   export let folders = false
+  /**
+   * Restrict which assets may be chosen or uploaded by mime type. A list of mime
+   * types, a trailing wildcard like 'image/*' is supported.
+   */
+  export let acceptMime: MimeAccept | undefined = undefined
+  /**
+   * Arbitrarily restrict which items may be chosen. Composed with acceptMime, both
+   * must approve. Return false for a folder to hide it and everything beneath it.
+   */
+  export let filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
   export let urlEntry = false
   export let initialSource: string | undefined = undefined
   export let initialPath: string | undefined = undefined
@@ -32,9 +42,6 @@
   export let altTextPath: string | undefined = undefined
   export let altTextRequired = false
   export let altTextHelp = 'Describes the asset for visually-impaired users and search engines.'
-
-  // TODO: add a mime type acceptance prop, maybe a regex or function, to prevent users from
-  // choosing unacceptable mime types
 
   const formStore = getContext<FormStore>(FORM_CONTEXT)
   const inheritedPath = getContext<string>(FORM_INHERITED_PATH)
@@ -97,11 +104,15 @@
       if (url !== this.value) return
       if (item) {
         found = true
+        const filterAllows = await (filter?.(item) ?? true)
+        if (url !== this.value) return
         if (
           (item.type === 'page' && !pages) // they typed the URL for a page but we don't allow pages right now
           || (item.type === 'folder' && !folders) // they typed the URL for an asset folder but not allowed
           || (item.type === 'asset' && !assets) // they typed the URL for an asset but not allowed
           || (item.type === 'asset' && !item.image && images) // they typed the URL for a non-image asset but we only want images
+          || (item.type === 'asset' && !mimeAccepted(acceptMime, item.mime)) // they typed the URL for an asset with an unacceptable mime type
+          || !filterAllows // they typed the URL for an item the provided filter rejects
         ) {
           // they entered something that is recognized but not allowed
           // they can keep the typing they've done, but the id must be 'undefined' so that nothing
@@ -246,7 +257,7 @@
     <InlineMessage message={{ message: 'Entry does not match an internal resource and is not a valid URL. Nothing will be saved.', type: 'warning' }} />
   {/if}
   {#if modalshown}
-    <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} showAltTextOption={!!altTextPath} on:change={onChange(setVal)} on:escape={hide} />
+    <Chooser {store} {label} {pages} {assets} {images} {initialSource} {initialPath} {folders} {required} {acceptMime} {filter} showAltTextOption={!!altTextPath} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
 </FieldStandard>
 

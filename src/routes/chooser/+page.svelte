@@ -58,7 +58,7 @@
       </svelte:fragment>
     </FieldChooserLink>
     <FieldChooserLink label="Image Asset with no Alt Text field or metadata" path="imageAssetNoAltNoMeta" assets />
-    <FieldChooserLink label="Document Asset" path="documentAsset" assets helptext="not displaying metadata for this one"/>
+    <FieldChooserLink label="Document Asset" path="documentAsset" assets acceptMime={['application/pdf']} helptext="not displaying metadata for this one, and only PDFs may be chosen"/>
     <FieldChooserLink label="Folder Selected" path="folder" folders assets />
     <FieldChooserLink label="Gato Page" path="gatoPage" pages />
     <FieldChooserLink label="Gato Page Allow URL Entry" path="gatoPageAllowURL" pages urlEntry/>

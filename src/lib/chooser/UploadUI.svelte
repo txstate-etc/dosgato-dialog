@@ -2,7 +2,7 @@
   import trashLight from '@iconify-icons/ph/trash-light'
   import { roundTo, unique } from 'txstate-utils'
   import { createEventDispatcher } from 'svelte'
-  import { Dialog, FileIcon, Icon, type Client, type Folder } from '$lib'
+  import { Dialog, FileIcon, Icon, mimeAccepted, type Client, type Folder, type MimeAccept } from '$lib'
 
   export let title: string
   export let folder: Folder
@@ -10,6 +10,11 @@
   export let escapable = true
   export let mimeWhitelist: string[] = []
   export let mimeBlacklist: string[] = []
+  /**
+   * Restrict which mime types may be uploaded. A list of mime types, a trailing
+   * wildcard like 'image/*' is supported.
+   */
+  export let acceptMime: MimeAccept | undefined = undefined
   export let uploader: NonNullable<Client['upload']>
   $: whitelist = new Set(mimeWhitelist)
   $: blacklist = new Set(mimeBlacklist)
@@ -21,6 +26,11 @@
   let uploadLocked = false
   let uploadProgress = 0
   let uploadError: string | undefined
+
+  function fileAllowed (file: File) {
+    return mimeAccepted(acceptMime, file.type) && (!whitelist.size || whitelist.has(file.type)) && !blacklist.has(file.type)
+  }
+  $: anyDisallowed = uploadList.some(f => !fileAllowed(f))
 
   function onUploadEnter (e: DragEvent) {
     if (e.dataTransfer?.items.length) dragover += 1
@@ -45,7 +55,7 @@
   }
 
   async function onUploadSubmit () {
-    if (uploadLocked) return
+    if (uploadLocked || anyDisallowed) return
     uploadLocked = true
     try {
       const data = new FormData()
@@ -85,7 +95,7 @@
   }
 </script>
 
-<Dialog {title} disabled={!uploadList.length} cancelText="Cancel" continueText="Upload" on:escape={onUploadEscape} on:continue={onUploadSubmit}>
+<Dialog {title} disabled={!uploadList.length || anyDisallowed} cancelText="Cancel" continueText="Upload" on:escape={onUploadEscape} on:continue={onUploadSubmit}>
   {#if uploadLocked}
     <progress value={uploadProgress} aria-label="Assets Uploading">{roundTo(100 * uploadProgress)}%</progress>
   {:else}
@@ -96,13 +106,13 @@
       on:dragenter={onUploadEnter} on:dragleave={onUploadLeave}
       on:dragover|preventDefault={() => {}} on:drop={onUploadDrop}
     >
-      <input type="file" id="uploader_input" multiple on:change={onUploadChange}>
+      <input type="file" id="uploader_input" multiple accept={acceptMime?.join(',') || undefined} on:change={onUploadChange}>
       <label for="uploader_input">Choose or drag files</label>
       <ul>
         {#each uploadList as file (file)}
           <li>
             <FileIcon width="1.5em" mime={file.type} inline />{file.name}<button type="button" on:click={onDeleteFile(file)}><Icon icon={trashLight} width="1.5em" hiddenLabel="Remove File" inline /></button>
-            {#if (whitelist.size && !whitelist.has(file.type)) || (blacklist.size && blacklist.has(file.type))}
+            {#if !fileAllowed(file)}
               <div class="error">File type not allowed</div>
             {/if}
           </li>

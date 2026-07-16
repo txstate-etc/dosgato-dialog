@@ -6,7 +6,7 @@
   import { isNotBlank, randomid } from 'txstate-utils'
   import { Button, Dialog, iconForMime, Tabs, Tree, type TypedTreeItem, type TabStore, UploadUI, expandTreePath } from '$lib'
   import { CHOOSER_API_CONTEXT, type AnyItem, type Client } from './ChooserAPI'
-  import { CHOOSER_STORE_CONTEXT, ChooserStore } from './ChooserStore'
+  import { CHOOSER_STORE_CONTEXT, ChooserStore, mimeAccepted, type MimeAccept } from './ChooserStore'
   import ChooserPreview from './ChooserPreview.svelte'
 
   const chooserClient = getContext<Client>(CHOOSER_API_CONTEXT)
@@ -22,12 +22,26 @@
   export let activeSources: string[] | undefined = undefined
   export let passthruFilters: F | undefined = undefined
   export let filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
+  /**
+   * Restrict which assets may be chosen or uploaded by mime type. A list of mime
+   * types, a trailing wildcard like 'image/*' is supported.
+   */
+  export let acceptMime: MimeAccept | undefined = undefined
   export let store = new ChooserStore<F>(chooserClient)
   export let showAltTextOption = false
-  store.filter = filter
 
   setContext(CHOOSER_STORE_CONTEXT, store)
   const dispatch = createEventDispatcher()
+
+  // in images mode, non-image uploads would succeed but be filtered out of the tree, so
+  // restrict uploads to the image types in acceptMime, or any image type if none qualify
+  $: imageAcceptMime = acceptMime?.filter(m => m.toLowerCase().startsWith('image/'))
+  $: uploadAcceptMime = images ? (imageAcceptMime?.length ? imageAcceptMime : ['image/*']) : acceptMime
+
+  async function combinedFilter (item: AnyItem) {
+    if (item.type === 'asset' && !mimeAccepted(acceptMime, item.mime)) return false
+    return await (filter?.(item) ?? true)
+  }
 
   let showuploader = false
   let tabStore: TabStore
@@ -69,7 +83,7 @@
   onMount(async () => {
     const preloadSource = $preview?.source ?? $selected?.source ?? $source?.name ?? initialSource
     const preloadPath = $preview?.path ?? $selected?.path ?? initialPath
-    await store.init({ images, pages, assets, folders, activeSources, initialSource: preloadSource, initialPath: preloadPath, passthruFilters, filter })
+    await store.init({ images, pages, assets, folders, activeSources, initialSource: preloadSource, initialPath: preloadPath, passthruFilters, filter: combinedFilter })
     await treeStore.refresh()
     await selectPreview(preloadPath)
   })
@@ -124,7 +138,7 @@
       <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
   </svelte:fragment>
   {#if showuploader && $selected?.type === 'folder' && chooserClient.upload}
-    <UploadUI title="Upload to {$selected.path}" folder={$selected} uploader={chooserClient.upload.bind(chooserClient)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>
+    <UploadUI title="Upload to {$selected.path}" folder={$selected} acceptMime={uploadAcceptMime} uploader={chooserClient.upload.bind(chooserClient)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>
   {/if}
 </Dialog>
 

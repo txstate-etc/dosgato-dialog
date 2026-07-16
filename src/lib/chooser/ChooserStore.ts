@@ -1,9 +1,8 @@
 import { TreeStore, type TypedTreeItem } from '$lib/tree/treestore.js'
 import { Store, derivedStore } from '@txstate-mws/svelte-store'
 import { tick } from 'svelte'
-import { findIndex } from 'txstate-utils'
+import { filterAsync, findIndex } from 'txstate-utils'
 import type { AnyItem, Asset, Client, ChooserType, Folder, Page, Source } from './ChooserAPI.js'
-import { TabStore } from '$lib/TabStore.js'
 
 export interface UISource extends Source {
   children?: AnyUIItem[]
@@ -75,7 +74,7 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   setOptions (options: ChooserStoreOptions<F>) {
     const userFilter = options.filter ?? nofilter
     const filter: (itm: AnyItem) => boolean | Promise<boolean> = options.images
-      ? async (itm: AnyItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') && await userFilter(itm)
+      ? async (itm: AnyItem) => (itm.type !== 'asset' || !!itm.image) && await userFilter(itm)
       : userFilter
     this.options = {
       ...options,
@@ -84,13 +83,11 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
     }
   }
 
-  filter: undefined | ((item: AnyItem) => boolean | Promise<boolean>) = undefined
-
   async fetchChildren (item?: TypedTreeItem<Page | Folder | Asset>): Promise<AnyItem[]> {
     const $source = this.getSource()
     if (item?.type === 'asset' || !$source) return []
-    const imageFilter = this.options.images ? (itm: AnyItem) => ((itm.type === 'asset' && !!itm.image) || itm.type === 'folder') : nofilter
-    return (await this.client.getChildren($source.name, item?.path ?? '/', this.filter)).filter(imageFilter)
+    const children = await this.client.getChildren($source.name, item?.path ?? '/', this.options.passthruFilters)
+    return await filterAsync(children, this.options.filter ?? nofilter)
   }
 
   treeStore = new TreeStore<Page | Folder | Asset>(this.fetchChildren.bind(this))
@@ -162,6 +159,17 @@ export function cleanUrl (url: string) {
       return ''
     }
   }
+}
+
+/**
+ * a list of acceptable mime types, a trailing wildcard like 'image/*' is supported,
+ * so the list can double as the accept attribute on a file input
+ */
+export type MimeAccept = string[]
+
+export function mimeAccepted (accept: MimeAccept | undefined, mime: string) {
+  if (!accept?.length) return true
+  return accept.some(a => a.toLowerCase() === mime.toLowerCase() || (a.endsWith('/*') && mime.toLowerCase().startsWith(a.slice(0, -1).toLowerCase())))
 }
 
 export function humanFileType (mime: string, extension: string) {
