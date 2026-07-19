@@ -21,6 +21,8 @@
         <FieldDate path="date" label="Date (not clearable)" />
         <FieldDate path="date_clearable" label="Date (clearable)" clearable helptext="This is a fairly long bit of helptext that will help me to see what's up with the wrapping when Clear Field is out"/>
         <FieldDate path="date_required" label="Date (clearable + required)" clearable required />
+        <FieldDate path="date_beginning" label="Date (beginningOfDay)" beginningOfDay helptext="records the time as 00:00:00.000 local instead of noon" />
+        <FieldDate path="date_end" label="Date (endOfDay)" endOfDay helptext="records the time as 23:59:59.999 local instead of noon" />
         <FieldDateTime path="datetime" label="Date & Time (not clearable)" />
         <FieldDateTime path="datetime_clearable" label="Date & Time (clearable)" clearable />
         <FieldDateTime path="datetime_required" label="Date & Time (clearable + required)" clearable required />
