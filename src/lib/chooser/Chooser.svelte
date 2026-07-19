@@ -138,7 +138,7 @@
       <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
   </svelte:fragment>
   {#if showuploader && $selected?.type === 'folder' && chooserClient.upload}
-    <UploadUI title="Upload to {$selected.path}" folder={$selected} acceptMime={uploadAcceptMime} uploader={chooserClient.upload.bind(chooserClient)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>
+    <UploadUI title="Upload to {$selected.path}" acceptMime={uploadAcceptMime} uploader={async (files, progress, signal) => await chooserClient.upload!($selected, files, progress, signal)} on:escape={() => { showuploader = false }} on:saved={onUploadComplete}/>
   {/if}
 </Dialog>
 

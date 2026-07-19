@@ -87,7 +87,7 @@ function mountUploader (acceptMime) {
   document.body.appendChild(target)
   const component = mount(UploadUI, {
     target,
-    props: { title: 'Upload to /docs', folder, acceptMime, uploader: async () => [] }
+    props: { title: 'Upload to /docs', acceptMime, uploader: async () => [] }
   })
   flushSync()
   return { target, component }

@@ -13,7 +13,7 @@ const customConfig = {
     '@stylistic': stylistic
   },
   rules: {
-    ...stylistic.configs['recommended-flat'].rules,
+    ...stylistic.configs.recommended.rules,
     ...love.rules,
     'complexity': 'off', // overkill
     'eqeqeq': ['error', 'smart'],

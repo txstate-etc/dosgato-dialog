@@ -2,10 +2,10 @@
   import trashLight from '@iconify-icons/ph/trash-light'
   import { roundTo, unique } from 'txstate-utils'
   import { createEventDispatcher } from 'svelte'
-  import { Dialog, FileIcon, Icon, mimeAccepted, type Client, type Folder, type MimeAccept } from '$lib'
+  import { Dialog, FileIcon, Icon, mimeAccepted, type MimeAccept } from '$lib'
 
   export let title: string
-  export let folder: Folder
+  export let helptext: string | undefined = undefined
   export let maxFiles = 200
   export let escapable = true
   export let mimeWhitelist: string[] = []
@@ -15,7 +15,13 @@
    * wildcard like 'image/*' is supported.
    */
   export let acceptMime: MimeAccept | undefined = undefined
-  export let uploader: NonNullable<Client['upload']>
+  /**
+   * Perform the actual upload. Receives the chosen files, a progress callback
+   * expecting a ratio between 0 and 1, and an AbortSignal that fires if the user
+   * cancels the upload in progress. Implementations that ignore the signal simply
+   * cannot be aborted.
+   */
+  export let uploader: (files: File[], progress: (ratio: number) => void, signal: AbortSignal) => Promise<unknown>
   $: whitelist = new Set(mimeWhitelist)
   $: blacklist = new Set(mimeBlacklist)
 
@@ -26,6 +32,9 @@
   let uploadLocked = false
   let uploadProgress = 0
   let uploadError: string | undefined
+  let abortController: AbortController | undefined
+
+  let tooManyFiles = false
 
   function fileAllowed (file: File) {
     return mimeAccepted(acceptMime, file.type) && (!whitelist.size || whitelist.has(file.type)) && !blacklist.has(file.type)
@@ -44,44 +53,51 @@
     e.preventDefault()
     dragover = 0
     if (!uploadLocked && e.dataTransfer?.items?.length) {
+      tooManyFiles = e.dataTransfer?.items?.length > maxFiles
       uploadList = unique(uploadList.concat(Array.from(e.dataTransfer.files)), 'name').slice(-1 * maxFiles)
     }
   }
 
   function onUploadChange (e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
     const files = e.currentTarget.files
-    if (files?.length) uploadList = unique(uploadList.concat(Array.from(files)), 'name').slice(-1 * maxFiles)
+    if (files?.length) {
+      tooManyFiles = files.length > maxFiles
+      uploadList = unique(Array.from(files).concat(uploadList), 'name').slice(-1 * maxFiles)
+    }
     e.currentTarget.value = ''
   }
 
   async function onUploadSubmit () {
     if (uploadLocked || anyDisallowed) return
     uploadLocked = true
+    abortController = new AbortController()
     try {
-      const data = new FormData()
-      for (let i = 0; i < uploadList.length; i++) {
-        data.append('file' + i, uploadList[i])
-      }
-
-      // TODO: accept new list of children from uploader function and feed it
-      // to the tree instead of refreshing the tree
-      await uploader(
-        folder,
-        uploadList,
-        ratio => { uploadProgress = ratio }
-      )
+      const fileCount = uploadList.length
+      await uploader(uploadList, ratio => { uploadProgress = ratio }, abortController.signal)
       uploadList = []
       uploadError = undefined
-      dispatch('saved')
+      dispatch('saved', { fileCount })
     } catch (e: any) {
+      if (abortController.signal.aborted) {
+        uploadList = []
+        uploadError = undefined
+        dispatch('escape')
+        return
+      }
       uploadError = e.message
     } finally {
       uploadLocked = false
+      uploadProgress = 0
+      abortController = undefined
     }
   }
 
   function onUploadEscape () {
-    if (!uploadLocked && escapable) {
+    if (uploadLocked) {
+      if (escapable) abortController?.abort()
+      return
+    }
+    if (escapable) {
       uploadList = []
       uploadError = undefined
       dispatch('escape')
@@ -107,28 +123,33 @@
       on:dragover|preventDefault={() => {}} on:drop={onUploadDrop}
     >
       <input type="file" id="uploader_input" multiple accept={acceptMime?.join(',') || undefined} on:change={onUploadChange}>
-      <label for="uploader_input">Choose or drag files</label>
+      <label for="uploader_input">Choose or drag {$$props.maxFiles ? (maxFiles > 1 ? `up to ${maxFiles}` : 'a') : ''} file{maxFiles === 1 ? '' : 's'}</label>
       <ul>
-        {#each uploadList as file (file)}
+        {#each uploadList as file (file.name)}
           <li>
-            <FileIcon width="1.5em" mime={file.type} inline />{file.name}<button type="button" on:click={onDeleteFile(file)}><Icon icon={trashLight} width="1.5em" hiddenLabel="Remove File" inline /></button>
+            <FileIcon width="1.5em" mime={file.type} inline />{file.name}{#if maxFiles > 1}<button type="button" on:click={onDeleteFile(file)}><Icon icon={trashLight} width="1.5em" hiddenLabel="Remove File" inline /></button>{/if}
             {#if !fileAllowed(file)}
-              <div class="error">File type not allowed</div>
+              <div class="error">File type not allowed.</div>
             {/if}
           </li>
         {/each}
       </ul>
+      {#if tooManyFiles}
+        <div class="error left">Only {maxFiles} file{#if maxFiles !== 1}s{/if} allowed.</div>
+      {/if}
     </form>
+    {helptext ?? ''}
   {/if}
 </Dialog>
 
 <style>
-    .uploader {
+  .uploader {
     border: 2px dashed #666666;
     border-radius: 0.5em;
     text-align: center;
     padding: 1em;
     min-height: 10em;
+    margin-bottom: 0.5em;
   }
   .uploader.dragover {
     border-color: #333333;
@@ -162,6 +183,9 @@
   }
   .error {
     color: red;
+  }
+  .error.left {
+    text-align: left;
   }
   button {
     border: 0;

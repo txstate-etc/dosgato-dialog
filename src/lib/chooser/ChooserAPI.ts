@@ -54,8 +54,10 @@ export interface Client<F = any> {
    * responsible for refreshing the folder list after success
    * should call the provided progress function as often as possible so that
    * dosgato-dialog can keep the user informed
+   * the provided AbortSignal fires if the user cancels the upload in progress;
+   * implementations that ignore it simply cannot be aborted
    */
-  upload?: (folder: Folder, files: File[], progress: (ratio: number) => void) => Promise<(Asset | Folder)[] | undefined>
+  upload?: (folder: Folder, files: File[], progress: (ratio: number) => void, signal?: AbortSignal) => Promise<(Asset | Folder)[] | undefined>
 
   /**
    * return whether the user is allowed to upload to the currently selected folder
