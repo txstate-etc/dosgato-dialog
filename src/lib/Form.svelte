@@ -1,7 +1,7 @@
 <script lang="ts" generics="T = Record<string, any>, F = any">
   import { Form, type FormStore, type Feedback } from '@txstate-mws/svelte-forms'
   import { setContext, type ComponentProps } from 'svelte'
-  import { CHOOSER_API_CONTEXT, type Client, messageIcons, TAG_API_CONTEXT, type TagClient } from '$lib'
+  import { CHOOSER_API_CONTEXT, type Client, DATA_CHOOSER_API_CONTEXT, type DataChooserClient, messageIcons, TAG_API_CONTEXT, type TagClient } from '$lib'
   import Icon from './Icon.svelte'
 
   interface $$Slots {
@@ -29,15 +29,18 @@
   interface $$Props extends ComponentProps<Form<T>> {
     tagClient?: TagClient
     chooserClient?: Client<F>
+    dataChooserClient?: DataChooserClient
     hideInlineSummary?: boolean
   }
 
   export let store: FormStore<T> = undefined as any
   export let chooserClient: Client<F> | undefined = undefined
+  export let dataChooserClient: DataChooserClient | undefined = undefined
   export let tagClient: TagClient | undefined = undefined
   export let hideInlineSummary = false
 
   setContext(CHOOSER_API_CONTEXT, chooserClient)
+  setContext(DATA_CHOOSER_API_CONTEXT, dataChooserClient)
   setContext(TAG_API_CONTEXT, tagClient)
 </script>
 

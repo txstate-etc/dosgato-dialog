@@ -15,7 +15,7 @@
   export let id: string | undefined = undefined
   export let path: string
   export let label = ''
-  export let defaultValue: boolean | undefined = undefined
+  export let defaultValue: string | undefined = undefined
   export let conditional: boolean | undefined = undefined
   export let required = false
   export let images = false
