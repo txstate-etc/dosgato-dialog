@@ -32,9 +32,11 @@
   $: descby = [messagesid, helptextid, extradescid].filter(isNotBlank).join(' ')
 
   function resolveMinMax (dt: any) {
-    if (typeof dt === 'undefined') return undefined
-    if ('toJSDate' in dt) dt = dt.toJSDate()
-    if (dt instanceof Date) return type === 'date' ? dateSerialize(dt) : datetimeSerialize(dt)
+    if (dt == null) return undefined
+    if (typeof dt === 'object') {
+      if ('toJSDate' in dt) dt = dt.toJSDate()
+      if (dt instanceof Date) return type === 'date' ? dateSerialize(dt) : datetimeSerialize(dt)
+    }
     return dt
   }
   $: minStr = resolveMinMax(min)
