@@ -23,12 +23,12 @@ const data: Record<string, Record<string, StoredDataItem[]>> = {
         childCount: 3,
         icon: { icon: folderIcon, label: 'folder' },
         children: [
-          { id: 'data-1', name: 'welcome-week', label: 'Welcome Week', path: '/announcements/welcome-week', templateKey: 'articledata', hasChildren: false, icon: articleIcon, details: [{ label: 'Status', value: 'published' }] },
-          { id: 'data-2', name: 'finals-schedule', label: 'Finals Schedule', path: '/announcements/finals-schedule', templateKey: 'articledata', hasChildren: false, icon: articleIcon, details: [{ label: 'Status', value: 'draft' }] },
-          { id: 'data-5', name: 'commencement', label: 'Commencement Ceremony', path: '/announcements/commencement', templateKey: 'eventdata', hasChildren: false, icon: eventIcon, details: [{ label: 'Status', value: 'published' }] }
+          { id: 'data-1', name: 'welcome-week', label: 'Welcome Week', path: '/announcements/welcome-week', templateKey: 'articledata', hasChildren: false, icon: articleIcon, published: 'published' },
+          { id: 'data-2', name: 'finals-schedule', label: 'Finals Schedule', path: '/announcements/finals-schedule', templateKey: 'articledata', hasChildren: false, icon: articleIcon, published: 'unpublished' },
+          { id: 'data-5', name: 'commencement', label: 'Commencement Ceremony', path: '/announcements/commencement', templateKey: 'eventdata', hasChildren: false, icon: eventIcon, published: 'modified' }
         ]
       },
-      { id: 'data-3', name: 'campus-history', label: 'Campus History', path: '/campus-history', templateKey: 'articledata', hasChildren: false, icon: articleIcon, details: [{ label: 'Status', value: 'published' }] }
+      { id: 'data-3', name: 'campus-history', label: 'Campus History', path: '/campus-history', templateKey: 'articledata', hasChildren: false, icon: articleIcon, published: 'published' }
     ],
     Sites: [
       {

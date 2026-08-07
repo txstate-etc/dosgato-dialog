@@ -3,6 +3,8 @@
 
   export let item: DataChooserItem | UnknownDataItem
   export let singleLine = false
+
+  const statusLabels = { published: 'Published', modified: 'Has unpublished changes', unpublished: 'Unpublished' }
 </script>
 
 <dl class="dialog-chooser-info" aria-live="polite" class:multiLine={!singleLine}>
@@ -24,6 +26,12 @@
       <div>
         <dt>Contents:</dt>
         <dd>{item.childCount} sub-items</dd>
+      </div>
+    {/if}
+    {#if item.published}
+      <div>
+        <dt>Status:</dt>
+        <dd>{statusLabels[item.published]}</dd>
       </div>
     {/if}
     {#each item.details ?? [] as detail (detail.label)}

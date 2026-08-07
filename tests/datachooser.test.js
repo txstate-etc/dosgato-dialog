@@ -74,8 +74,9 @@ it('FieldDataChooser opens a chooser with source tabs and records the chosen ite
   row.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   await settleChooser()
 
-  // preview pane now shows the item details provided by the client
-  expect(document.body.textContent).toContain('published')
+  // preview pane now shows the publish status provided by the client
+  expect(document.body.textContent).toContain('Status')
+  expect(document.body.textContent).toContain('Published')
 
   const choosebutton = Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Choose')
   choosebutton.click()
@@ -121,19 +122,31 @@ async function openChooserForField (index) {
   await settleChooser()
 }
 
-it('FieldDataChooser filter prop hides rejected items in the chooser', async () => {
+it('FieldDataChooser publishedOnly prop hides unpublished items but keeps modified ones', async () => {
   const { target, component } = mountDemo()
   await settle(30)
 
-  // the "published only" field filters out draft items
   await openChooserForField(2)
 
+  // Welcome Week is published and Commencement is modified (still has a live
+  // published version); Finals Schedule is unpublished and should be hidden
   expect(document.body.textContent).toContain('Welcome Week')
   expect(document.body.textContent).toContain('Commencement Ceremony')
   expect(document.body.textContent).not.toContain('Finals Schedule')
 
   unmount(component)
   target.remove()
+})
+
+it('DataChooserStore publishedOnly hides unpublished items, keeps items without a status, and composes with filter', async () => {
+  const store = new DataChooserStore(demoDataChooserAPI)
+  await store.init({ rootTemplateKey: 'articledata', publishedOnly: true, filter: itm => itm.id !== 'data-3' })
+  const roots = await store.fetchChildren()
+  // the announcements folder has no publish status, so it passes; campus-history
+  // is published but rejected by the composed filter
+  expect(roots.map(c => c.id)).toEqual(['datafolder-1'])
+  const children = await store.fetchChildren({ ...roots[0], level: 0 })
+  expect(children.map(c => c.id)).toEqual(['data-1', 'data-5'])
 })
 
 it('FieldDataChooser filter prop can restrict choices to a templateKey', async () => {

@@ -32,6 +32,15 @@
    */
   export let filter: undefined | ((item: DataChooserItem) => boolean | Promise<boolean>) = undefined
   /**
+   * Hide items whose `published` status is 'unpublished'. 'modified' items still
+   * have a live published version, so they remain choosable, as do items with no
+   * status at all (containers, or clients that do not track publish status).
+   *
+   * A preloaded value is still displayed even if its item is unpublished; the
+   * restriction only applies while choosing.
+   */
+  export let publishedOnly = false
+  /**
    * Passed through to the DataChooserClient on every fetch, in case the
    * implementing application supports extra filtering options.
    */
@@ -118,7 +127,7 @@
     </div>
   {/if}
   {#if modalshown}
-    <DataChooser {store} {label} {rootTemplateKey} {initialSource} {initialPath} {activeSources} {passthruFilters} {filter} {required} on:change={onChange(setVal)} on:escape={hide} />
+    <DataChooser {store} {label} {rootTemplateKey} {initialSource} {initialPath} {activeSources} {passthruFilters} {filter} {publishedOnly} {required} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
 </FieldStandard>
 

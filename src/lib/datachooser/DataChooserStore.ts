@@ -16,6 +16,12 @@ export interface IDataChooserStore {
 export interface DataChooserStoreOptions<F> {
   rootTemplateKey?: string
   filter?: (itm: DataChooserItem) => boolean | Promise<boolean>
+  /**
+   * hide items whose `published` status is 'unpublished'; 'modified' items still
+   * have a live published version, so they remain choosable, as do items with no
+   * status at all (containers, or clients that do not track publish status)
+   */
+  publishedOnly?: boolean
   passthruFilters?: F
   activeSources?: string[]
   initialSource?: string
@@ -46,7 +52,8 @@ export class DataChooserStore<F = any> extends Store<IDataChooserStore> {
   async fetchChildren (item?: DataUIItem): Promise<DataChooserItem[]> {
     const $source = this.getSource()
     if (!$source || (item && !item.hasChildren)) return []
-    const children = await this.client.getChildren(this.options.rootTemplateKey ?? '', $source.name, item?.path ?? '/', this.options.passthruFilters)
+    let children = await this.client.getChildren(this.options.rootTemplateKey ?? '', $source.name, item?.path ?? '/', this.options.passthruFilters)
+    if (this.options.publishedOnly) children = children.filter(c => c.published !== 'unpublished')
     return await filterAsync(children, this.options.filter ?? nofilter)
   }
 

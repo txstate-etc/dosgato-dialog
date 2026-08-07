@@ -39,6 +39,13 @@ export interface DataChooserClient<F = any> {
   findById: (rootTemplateKey: string, id: string) => Promise<DataChooserItem | undefined>
 }
 
+/**
+ * 'published' - the live version is the latest version
+ * 'modified' - published, but with unpublished changes pending
+ * 'unpublished' - no published version exists
+ */
+export type DataChooserPublishedStatus = 'published' | 'modified' | 'unpublished'
+
 export interface DataChooserSource {
   // this must be immutable or else existing selections saved in the system may
   // be difficult to trace back to their source
@@ -92,8 +99,17 @@ export interface DataChooserItem {
    */
   icon?: { icon: IconifyIcon, label?: string }
   /**
+   * publish status of the data item; shown as a Status row in the preview pane
+   * and used by the `publishedOnly` prop on FieldDataChooser to hide unpublished
+   * items
+   *
+   * leave undefined for containers or when the client does not track publish
+   * status; items without a status are never hidden by `publishedOnly`
+   */
+  published?: DataChooserPublishedStatus
+  /**
    * extra label/value rows to show in the preview pane and after selection,
-   * e.g. published status or last modified date
+   * e.g. last modified date
    */
   details?: { label: string, value: string }[]
 }

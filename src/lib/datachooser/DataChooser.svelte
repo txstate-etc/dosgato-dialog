@@ -20,6 +20,8 @@
   export let activeSources: string[] | undefined = undefined
   export let passthruFilters: F | undefined = undefined
   export let filter: undefined | ((item: DataChooserItem) => boolean | Promise<boolean>) = undefined
+  /** hide items whose `published` status is 'unpublished' */
+  export let publishedOnly = false
   export let store = new DataChooserStore<F>(chooserClient)
 
   setContext(DATA_CHOOSER_STORE_CONTEXT, store)
@@ -60,7 +62,7 @@
   onMount(async () => {
     const preloadSource = $preview?.source ?? $selected?.source ?? $source?.name ?? initialSource
     const preloadPath = $preview?.path ?? $selected?.path ?? initialPath
-    await store.init({ rootTemplateKey, activeSources, initialSource: preloadSource, passthruFilters, filter })
+    await store.init({ rootTemplateKey, activeSources, initialSource: preloadSource, passthruFilters, filter, publishedOnly })
     await treeStore.refresh()
     await selectPreview(preloadPath)
   })
