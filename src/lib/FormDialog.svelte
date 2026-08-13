@@ -39,7 +39,7 @@
   }
 </script>
 
-<Dialog continueText="Save" continueIcon={contentSave} cancelText="Cancel" on:escape on:continue={onSubmit} {title} {icon} {size} escapable={false} {expandable}>
+<Dialog continueText="Save" continueIcon={contentSave} disabled={$store?.saved || $store?.submitting} cancelText="Cancel" on:escape on:continue={onSubmit} {title} {icon} {size} escapable={false} {expandable}>
   <Form bind:store hideInlineSummary {...$$restProps} on:saved on:autosaved on:validationfail let:messages let:allMessages let:showingInlineErrors let:saved let:valid let:invalid let:validating let:submitting let:data>
     <slot {messages} {allMessages} {saved} {validating} {submitting} {valid} {invalid} {data} {showingInlineErrors} />
   </Form>
