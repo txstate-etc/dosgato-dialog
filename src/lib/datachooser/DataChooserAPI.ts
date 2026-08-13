@@ -34,7 +34,8 @@ export interface DataChooserClient<F = any> {
    *
    * return undefined if the id does not resolve (e.g. the item was deleted or the user
    * may not see it); the field will show an "unknown item" state and preserve the value
-   * unless the user replaces or removes it
+   * unless the user replaces or removes it (or, with multiple, confirms an edited
+   * selection, since unknown items cannot be shown in the chooser)
    */
   findById: (rootTemplateKey: string, id: string) => Promise<DataChooserItem | undefined>
 }
@@ -90,6 +91,16 @@ export interface DataChooserItem {
    * of another type
    */
   hasChildren: boolean
+  /**
+   * mark true if this container is a folder, as opposed to some other kind of
+   * container like a site
+   *
+   * folders may be chosen as values when the field enables `selectableFolders`;
+   * choosing a folder means "everything beneath it, now and in the future", so its
+   * `id` should be a stable identifier the implementing application can resolve to
+   * the folder's contents at render time (for DosGato a stringified DataFolderLink)
+   */
+  folder?: boolean
   childCount?: number
   /**
    * icon shown in the tree and preview area; the client decides how to visually
@@ -122,4 +133,28 @@ export interface DataChooserItem {
 export interface UnknownDataItem {
   broken: true
   id: string
+}
+
+/**
+ * a selected folder means "everything beneath it, now and in the future", so any
+ * other selection beneath a selected folder is redundant and gets dropped when the
+ * user confirms their selections
+ */
+export function dedupeSelections<T extends DataChooserItem> (items: T[]): T[] {
+  const folders = items.filter(itm => itm.folder)
+  return items.filter(itm => !folders.some(f => f.id !== itm.id && f.source === itm.source && itm.path.startsWith(f.path + '/')))
+}
+
+/**
+ * summarize a multiple selection for display, e.g. "2 folders, 3 items"
+ */
+export function describeSelections (items: (DataChooserItem | UnknownDataItem)[]): string {
+  const folders = items.filter(itm => !('broken' in itm) && itm.folder).length
+  const broken = items.filter(itm => 'broken' in itm).length
+  const others = items.length - folders - broken
+  const parts: string[] = []
+  if (folders) parts.push(`${folders} folder${folders === 1 ? '' : 's'}`)
+  if (others) parts.push(`${others} item${others === 1 ? '' : 's'}`)
+  if (broken) parts.push(`${broken} unknown item${broken === 1 ? '' : 's'}`)
+  return parts.join(', ')
 }

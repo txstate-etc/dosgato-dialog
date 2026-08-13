@@ -10,7 +10,7 @@
   import LoadIcon from './LoadIcon.svelte'
   import TreeNode from './TreeNode.svelte'
   import { getHashId, transformSearchable, TreeStore, TREE_STORE_CONTEXT } from './treestore'
-  import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB, SearchableType } from './treestore'
+  import type { DragEligibleFn, CopyHandlerFn, DropEffectFn, FetchChildrenFn, MoveHandlerFn, TreeHeader, TreeItemFromDB, SearchableType, TypedTreeItem } from './treestore'
 
   interface $$Events {
     choose: CustomEvent<T>
@@ -23,6 +23,8 @@
   export let filter = ''
   export let nodeClass: ((itm: T) => string) | undefined = undefined
   export let singleSelect: boolean | undefined = undefined
+  /** items this returns false for cannot be selected: their checkboxes render disabled and clicks only move focus */
+  export let selectEligible: ((item: TypedTreeItem<T>) => boolean) | undefined = undefined
   export let enableResize = false
   /**
    * Takes the width of the tree, in pixels, and returns an array of TreeHeader IDs that should be
@@ -110,6 +112,7 @@
   const headerSizes = derivedStore([headerOverride, treeWidth], calcHeaderSizes)
 
   $: store.singleSelect = singleSelect
+  $: store.selectEligible = selectEligible
 
   function onDragEnd () {
     store.update(v => ({ ...v, dragging: false }))

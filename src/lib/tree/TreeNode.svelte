@@ -31,6 +31,7 @@
 
   let userWantsCopy = false
   $: isSelected = $selected.has(item.id)
+  $: selectable = store.selectionEligible(item)
   $: showChildren = !!item.open && !!item.children?.length
   $: hashedId = getHashId(item.id)
   $: isDraggable = $draggable && ((isSelected && !$selectedUndraggable) || store.dragEligible([item], true) || store.dragEligible([item], false))
@@ -145,11 +146,28 @@
       else if (!item.open) void store.open(item)
     }
   }
+  function onArrowClick (e: MouseEvent) {
+    if (e.button > 0 || item.loading) return
+    e.preventDefault()
+    e.stopPropagation()
+    if (store.singleSelect) {
+      // no selection built up to lose in single-select, so the arrow selects like
+      // the rest of the row
+      store.select(item, { clear: true, toggle: false })
+    } else {
+      // in multi-select the arrow is a pure disclosure control: expand/collapse
+      // without disturbing the selection, same as the ArrowRight/ArrowLeft keys
+      store.focus(item, false)
+    }
+    void store.toggle(item)
+  }
   function onCheckClick (e: MouseEvent) {
     if (e.button > 0) return
     e.preventDefault()
     e.stopPropagation()
-    if (e.shiftKey) {
+    if (!selectable) {
+      store.focus(item)
+    } else if (e.shiftKey) {
       shiftClick()
     } else {
       if (isSelected) dispatch('deselect', item)
@@ -272,7 +290,7 @@
     <!-- keyboard users have modifier keys, they don't ever focus the checkbox -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="checkbox" on:click={onCheckClick}>
+    <div class="checkbox" class:disabled={!selectable} on:click={onCheckClick}>
       <Icon icon={isSelected ? checkboxOutline : checkboxBlankOutline } width="1.15em" inline />
     </div>
     {#each headers as header, i (header.id)}
@@ -285,7 +303,7 @@
         {#if i === 0 && item.hasChildren}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <span class="arrow" on:click={onClick}><Icon icon={item.open ? menuDown : menuRight} width="1.5em" inline /></span>
+          <span class="arrow" on:click={onArrowClick}><Icon icon={item.open ? menuDown : menuRight} width="1.5em" inline /></span>
         {/if}
         <TreeCell {header} {item} />
         {#if i === 0 && item.loading}
@@ -343,6 +361,9 @@
     min-width: 1.5em;
     max-width: 1.5em;
     padding-left: 0.3em;
+  }
+  .tree-node .checkbox.disabled {
+    opacity: 0.3;
   }
   .tree-node > div.left {
     display: flex;

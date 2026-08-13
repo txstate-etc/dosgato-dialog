@@ -5,7 +5,7 @@
   import { createEventDispatcher, getContext, onMount, setContext, tick } from 'svelte'
   import { htmlEncode, isNotBlank, randomid } from 'txstate-utils'
   import { Button, Dialog, Icon, Tabs, Tree, type TabStore, expandTreePath } from '$lib'
-  import { DATA_CHOOSER_API_CONTEXT, type DataChooserClient, type DataChooserItem } from './DataChooserAPI'
+  import { DATA_CHOOSER_API_CONTEXT, describeSelections, type DataChooserClient, type DataChooserItem } from './DataChooserAPI'
   import { DATA_CHOOSER_STORE_CONTEXT, DataChooserStore, type DataUIItem } from './DataChooserStore'
   import DataDetails from './DataDetails.svelte'
 
@@ -20,30 +20,51 @@
   export let activeSources: string[] | undefined = undefined
   export let passthruFilters: F | undefined = undefined
   export let filter: undefined | ((item: DataChooserItem) => boolean | Promise<boolean>) = undefined
+  /** return true to disable selection of an item without hiding it like `filter` does */
+  export let disable: undefined | ((item: DataChooserItem) => boolean) = undefined
   /** hide items whose `published` status is 'unpublished' */
   export let publishedOnly = false
+  /** allow multiple selections; the change event carries them in `selections` */
+  export let multiple = false
+  /** allow items marked `folder` to be chosen as values */
+  export let selectableFolders = false
+  /** selections to check when the chooser opens, e.g. the field's current value */
+  export let preloadSelections: DataChooserItem[] = []
   export let store = new DataChooserStore<F>(chooserClient)
 
   setContext(DATA_CHOOSER_STORE_CONTEXT, store)
   const dispatch = createEventDispatcher()
 
   let tabStore: TabStore
-  const { sources, source, preview, treeStore } = store
+  const { sources, source, preview, treeStore, chosen } = store
   const selected = store.selected
   $: currentName = tabStore?.currentName()
 
-  $: if ($currentName) {
-    store.setSource($currentName)
-    treeStore.refresh().catch(console.error)
+  $: if ($currentName) void switchSource($currentName)
+
+  async function switchSource (name: string) {
+    const prev = $source
+    if (!$store.initialized || !prev || name === prev.name) return
+    // remember the active source's selections so they survive the tab switch
+    if (multiple) store.stashSelections(prev.name, $chosen.filter(itm => itm.source === prev.name))
+    store.setSource(name)
+    await treeStore.refresh()
+    if (multiple) await selectItems(store.takeStash(name))
   }
-  $: store.setPreview($selected)
+  $: store.setPreview(multiple ? $chosen[$chosen.length - 1] : $selected)
 
   function onChoose () {
-    dispatch('change', { preview: $store.preview })
+    dispatch('change', { preview: $store.preview, selections: multiple ? $chosen : ($store.preview ? [$store.preview] : []) })
   }
 
   function onDeselect () {
-    store.setPreview(undefined)
+    if (!multiple) store.setPreview(undefined)
+  }
+
+  async function scrollToFocused () {
+    await tick()
+    const focusedElement = document.querySelector('.tree-node[tabindex="0"]')
+    if (focusedElement?.classList.contains('tree-node')) focusedElement.scrollIntoView({ block: 'center' })
   }
 
   async function selectPreview (preloadPath: string | undefined) {
@@ -53,18 +74,46 @@
       if (!currentSelection) return
       store.setPreview(currentSelection)
       treeStore.select(currentSelection, { clear: true })
-      await tick()
-      const focusedElement = document.querySelector('.tree-node[tabindex="0"]')
-      if (focusedElement?.classList.contains('tree-node')) focusedElement.scrollIntoView({ block: 'center' })
+      await scrollToFocused()
     }
   }
 
+  async function selectItems (items: DataChooserItem[]) {
+    const toSelect: DataUIItem[] = []
+    // an item that is no longer choosable (e.g. rejected by the disable prop) must
+    // not sneak back into the selection through a preload or a source switch
+    for (const itm of items.filter(i => store.isChoosable(i))) {
+      // expand down to the item so its checkbox is visible and checked; items that
+      // cannot be shown (e.g. hidden by the current filters) fall out of the selection
+      // eslint-disable-next-line no-await-in-loop -- expansions share the tree store and must run one at a time
+      const treeItem = await expandTreePath(treeStore, itm.path.split('/').filter(isNotBlank))
+      if (treeItem) toSelect.push(treeItem)
+    }
+    // always sync, even to empty - the tree store outlives the dialog and may hold
+    // selections from a previous open that the user cancelled
+    treeStore.setSelected(toSelect, {})
+    if (toSelect.length) await scrollToFocused()
+  }
+
+  async function selectPreloaded () {
+    if (!$store.initialized) return
+    const active: DataChooserItem[] = []
+    const other: Record<string, DataChooserItem[]> = {}
+    for (const itm of preloadSelections) {
+      if (itm.source === $source?.name) active.push(itm)
+      else (other[itm.source] ??= []).push(itm)
+    }
+    for (const [sourceName, items] of Object.entries(other)) store.stashSelections(sourceName, items)
+    await selectItems(active)
+  }
+
   onMount(async () => {
-    const preloadSource = $preview?.source ?? $selected?.source ?? $source?.name ?? initialSource
+    const preloadSource = (multiple ? preloadSelections[0]?.source : ($preview?.source ?? $selected?.source)) ?? $source?.name ?? initialSource
     const preloadPath = $preview?.path ?? $selected?.path ?? initialPath
-    await store.init({ rootTemplateKey, activeSources, initialSource: preloadSource, passthruFilters, filter, publishedOnly })
+    await store.init({ rootTemplateKey, activeSources, initialSource: preloadSource, passthruFilters, filter, disable, publishedOnly, multiple, selectableFolders })
     await treeStore.refresh()
-    await selectPreview(preloadPath)
+    if (multiple) await selectPreloaded()
+    else await selectPreview(preloadPath)
   })
 
   const previewId = randomid()
@@ -76,7 +125,7 @@
   }
 </script>
 
-<Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={!$preview && required} cancelText="Cancel">
+<Dialog size="xl" ignoreTabs title={label} on:escape continueText="Choose" disabled={required && (multiple ? !$chosen.length : !$preview)} cancelText="Cancel">
   <section class="dialog-chooser-window" class:no-controls={$sources.length < 2}>
     {#if $sources.length > 1}
     <header class="dialog-chooser-controls">
@@ -87,10 +136,13 @@
       {#if $store.initialized}
         <Tree headers={[
           { label: 'Path', id: 'name', grow: 4, icon: item => iconForItem(item), render: item => htmlEncode(item.label ?? item.name) }
-        ]} singleSelect store={treeStore} on:deselect={onDeselect} on:choose={onChoose} searchable={itm => [itm.label ?? itm.name]} />
+        ]} singleSelect={!multiple} selectEligible={itm => store.isChoosable(itm)} store={treeStore} on:deselect={onDeselect} on:choose={onChoose} searchable={itm => [itm.label ?? itm.name]} />
       {/if}
     </section>
     <section id={previewId} class="dialog-chooser-preview" tabindex="-1">
+      {#if multiple && $chosen.length}
+        <div class="selection-count">{describeSelections($chosen)} selected</div>
+      {/if}
       {#if $preview}
         <div class="preview-container">
           <div class="preview-icon">
@@ -100,14 +152,14 @@
         </div>
       {:else}
         <section class="placeholder">
-          <p>Select an item to preview it here.</p>
+          <p>Select {#if multiple}items to add them to your selections.{:else}an item to preview it here.{/if}</p>
         </section>
       {/if}
     </section>
   </section>
   <svelte:fragment slot="footer-right" let:describedby>
     <Button cancel {describedby} on:click={() => dispatch('escape')}>Cancel</Button>
-    <Button class="primary" disabled={!$preview && required} describedby={previewId} on:click={onChoose}>Choose</Button>
+    <Button class="primary" disabled={required && (multiple ? !$chosen.length : !$preview)} describedby={previewId} on:click={onChoose}>Choose</Button>
   </svelte:fragment>
 </Dialog>
 
@@ -149,6 +201,10 @@
     padding: 0 1em 1em 1em;
     overflow-y: auto;
     overflow-x: hidden;
+  }
+  .selection-count {
+    font-weight: 600;
+    padding: 0.7em 0 0 0;
   }
   .preview-container {
     display: flex;

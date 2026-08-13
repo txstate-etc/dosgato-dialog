@@ -21,6 +21,7 @@ const data: Record<string, Record<string, StoredDataItem[]>> = {
         path: '/announcements',
         hasChildren: true,
         childCount: 3,
+        folder: true,
         icon: { icon: folderIcon, label: 'folder' },
         children: [
           { id: 'data-1', name: 'welcome-week', label: 'Welcome Week', path: '/announcements/welcome-week', templateKey: 'articledata', hasChildren: false, icon: articleIcon, published: 'published' },
@@ -37,10 +38,23 @@ const data: Record<string, Record<string, StoredDataItem[]>> = {
         label: 'History Department',
         path: '/history-dept',
         hasChildren: true,
-        childCount: 1,
+        childCount: 2,
         icon: siteIcon,
         children: [
-          { id: 'data-4', name: 'faculty-spotlight', label: 'Faculty Spotlight', path: '/history-dept/faculty-spotlight', templateKey: 'articledata', hasChildren: false, icon: articleIcon }
+          { id: 'data-4', name: 'faculty-spotlight', label: 'Faculty Spotlight', path: '/history-dept/faculty-spotlight', templateKey: 'articledata', hasChildren: false, icon: articleIcon },
+          {
+            id: 'datafolder-2',
+            name: 'newsletters',
+            path: '/history-dept/newsletters',
+            hasChildren: true,
+            childCount: 2,
+            folder: true,
+            icon: { icon: folderIcon, label: 'folder' },
+            children: [
+              { id: 'data-6', name: 'spring-gala', label: 'Spring Gala', path: '/history-dept/newsletters/spring-gala', templateKey: 'eventdata', hasChildren: false, icon: eventIcon, published: 'published' },
+              { id: 'data-7', name: 'draft-issue', label: 'Draft Issue', path: '/history-dept/newsletters/draft-issue', templateKey: 'articledata', hasChildren: false, icon: articleIcon, published: 'unpublished' }
+            ]
+          }
         ]
       },
       {

@@ -105,6 +105,12 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   public searchableFn?: SearchableFn<T>
   public filterableFn?: SearchableFn<T>
   public singleSelect?: boolean
+  /**
+   * when set, items this returns false for cannot enter the selection at all:
+   * their checkboxes render disabled and clicking/keyboarding them only moves
+   * focus, e.g. containers in a chooser that only picks items
+   */
+  public selectEligible?: (item: TypedTreeItem<T>) => boolean
 
   private refreshPromise?: Promise<void>
 
@@ -230,7 +236,12 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
     if (notify) this.trigger()
   }
 
+  selectionEligible (item: TypedTreeItem<T>) {
+    return !this.selectEligible || this.selectEligible(item)
+  }
+
   select (item: TypedTreeItem<T>, { clear = false, notify = true, toggle = false }) {
+    if (!this.selectionEligible(item)) { this.focus(item, notify); return }
     const selected = this.isSelected(item)
     const numSelected = this.value.selected.size
     if (this.singleSelect) clear = true
@@ -247,6 +258,7 @@ export class TreeStore<T extends TreeItemFromDB> extends ActiveStore<ITreeStore<
   setSelected (items: TypedTreeItem<T>[], { notify = true }) {
     this.value.selected.clear()
     for (const itm of items) this.value.selected.set(itm.id, itm)
+    this.determineDraggable()
     if (notify) this.trigger()
   }
 

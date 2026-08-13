@@ -19,7 +19,8 @@
 
   const preload = {
     preloadedArticle: 'data-1',
-    brokenArticle: 'data-deleted'
+    brokenArticle: 'data-deleted',
+    preloadedArticles: ['data-1', 'data-deleted']
   }
 </script>
 
@@ -38,6 +39,10 @@
     <FieldDataChooser label="Color (single source, required)" path="color" rootTemplateKey="colordata" required />
     <FieldDataChooser label="Article (published only)" path="publishedArticle" rootTemplateKey="articledata" publishedOnly helptext="unpublished items are hidden via the publishedOnly prop; modified items still have a live published version so they remain choosable" />
     <FieldDataChooser label="Articles only (by templateKey)" path="articleOnly" rootTemplateKey="articledata" filter={item => item.templateKey == null || item.templateKey === 'articledata'} helptext="the filter prop restricts choices to a specific type of data; containers pass through" />
+    <FieldDataChooser label="Articles (multiple)" path="articles" rootTemplateKey="articledata" multiple helptext="the value is an array of item ids; use the checkboxes to select several items" />
+    <FieldDataChooser label="Articles (multiple, folders selectable)" path="articlesWithFolders" rootTemplateKey="articledata" multiple selectableFolders helptext="a chosen folder means everything beneath it now and in the future, so selections inside a chosen folder are deduplicated away" />
+    <FieldDataChooser label="Articles (multiple, events disabled)" path="eligibleArticles" rootTemplateKey="articledata" multiple disable={item => item.templateKey === 'eventdata'} helptext="unlike the filter prop, disable keeps rejected items visible - their checkboxes are just disabled" />
+    <FieldDataChooser label="Articles (multiple, preloaded with a deleted item)" path="preloadedArticles" rootTemplateKey="articledata" multiple helptext="the unresolvable id is preserved and counted as unknown; confirming an edit drops it, since it cannot be shown in the chooser" />
   </FormDialog>
   {/if}
   <button on:click={() => { showdialog = true }}>Show Dialog</button>
