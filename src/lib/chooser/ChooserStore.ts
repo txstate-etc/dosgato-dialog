@@ -73,9 +73,11 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
 
   setOptions (options: ChooserStoreOptions<F>) {
     const userFilter = options.filter ?? nofilter
-    const filter: (itm: AnyItem) => boolean | Promise<boolean> = options.images
+    // leave filter undefined when no filtering was requested so fetchChildren can
+    // tell whether client-side filtering is active
+    const filter: ((itm: AnyItem) => boolean | Promise<boolean>) | undefined = options.images
       ? async (itm: AnyItem) => (itm.type !== 'asset' || !!itm.image) && await userFilter(itm)
-      : userFilter
+      : options.filter
     this.options = {
       ...options,
       activeSources: options.activeSources ? new Set(options.activeSources) : undefined,
@@ -86,7 +88,24 @@ export class ChooserStore<F = any> extends Store<IAssetStore> {
   async fetchChildren (item?: TypedTreeItem<Page | Folder | Asset>): Promise<AnyItem[]> {
     const $source = this.getSource()
     if (item?.type === 'asset' || !$source) return []
-    const children = await this.client.getChildren($source.name, item?.path ?? '/', this.options.passthruFilters)
+    const children = await this.fetchFiltered($source.name, item?.path ?? '/')
+    // the client reports hasChildren/childCount for the unfiltered tree, so a
+    // container could show an expand arrow and then come up empty; when we are
+    // filtering client-side, look ahead one level so arrows and counts are
+    // post-filter - but only when the user opens a container, as a performance
+    // tradeoff; root-level arrows stay client-reported and self-correct on open
+    if (item != null && this.options.filter) {
+      await Promise.all(children.filter((c): c is Page | Folder => c.type !== 'asset' && c.hasChildren).map(async c => {
+        const grandchildren = await this.fetchFiltered($source.name, c.path)
+        c.hasChildren = grandchildren.length > 0
+        if (c.type === 'folder') c.childCount = grandchildren.length
+      }))
+    }
+    return children
+  }
+
+  protected async fetchFiltered (source: string, path: string) {
+    const children = await this.client.getChildren(source, path, this.options.passthruFilters)
     return await filterAsync(children, this.options.filter ?? nofilter)
   }
 

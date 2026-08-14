@@ -2,6 +2,7 @@ import { flushSync, mount, unmount } from 'svelte'
 import { get } from 'svelte/store'
 import { expect, it } from 'vitest'
 import { ChooserStore, UploadUI } from '$lib'
+import { demoChooserAPI } from '../src/demo/DemoChooserAPI'
 import Harness from './ChooserMimeHarness.svelte'
 
 const folder = { type: 'folder', id: 'folder-1', path: '/docs', name: 'docs', source: 'Assets', hasChildren: true, childCount: 2, acceptsUpload: false, url: '/docs' }
@@ -32,6 +33,44 @@ it('ChooserStore.fetchChildren drops non-image assets but keeps folders when ima
   await store.init({ assets: true, images: true })
   const children = await store.fetchChildren()
   expect(children.map(c => c.id)).toEqual(['folder-1', 'asset-png'])
+})
+
+it('ChooserStore recomputes hasChildren and childCount post-filter when a folder is opened', async () => {
+  const foldersOnly = itm => itm.type !== 'asset'
+  async function openBiology (store) {
+    const biology = (await store.fetchChildren()).find(c => c.id === 'folder-1')
+    return await store.fetchChildren({ ...biology, level: 1 })
+  }
+
+  // root-level folders keep the client-reported arrow as a performance tradeoff,
+  // even though the filter would empty biology's subfolders
+  const rootstore = new ChooserStore(demoChooserAPI)
+  await rootstore.init({ assets: true, filter: foldersOnly })
+  const biology = (await rootstore.fetchChildren()).find(c => c.id === 'folder-1')
+  expect(biology.hasChildren).toBe(true)
+  expect(biology.childCount).toBe(2)
+
+  // opening a folder corrects the arrows of the folders inside it: evolutionary
+  // only contains assets, which the filter rejects
+  const filterstore = new ChooserStore(demoChooserAPI)
+  await filterstore.init({ assets: true, filter: foldersOnly })
+  const evolutionary = (await openBiology(filterstore)).find(c => c.id === 'folder-4')
+  expect(evolutionary.hasChildren).toBe(false)
+  expect(evolutionary.childCount).toBe(0)
+
+  // the images option counts as filtering: evolutionary's pdf drops out of the count
+  const imagestore = new ChooserStore(demoChooserAPI)
+  await imagestore.init({ assets: true, images: true })
+  const evolutionary2 = (await openBiology(imagestore)).find(c => c.id === 'folder-4')
+  expect(evolutionary2.hasChildren).toBe(true)
+  expect(evolutionary2.childCount).toBe(1)
+
+  // with no filtering active there is no lookahead and client-reported counts stand
+  const plainstore = new ChooserStore(demoChooserAPI)
+  await plainstore.init({ assets: true })
+  const evolutionary3 = (await openBiology(plainstore)).find(c => c.id === 'folder-4')
+  expect(evolutionary3.hasChildren).toBe(true)
+  expect(evolutionary3.childCount).toBe(2)
 })
 
 it('FieldChooserLink acceptMime hides unacceptable assets in the chooser', async () => {

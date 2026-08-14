@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions -- totally screws up the demo data */
-import type { TypedTreeItem } from '$lib'
 import treeIcon from '@iconify-icons/ph/tree-evergreen'
 import type { Asset, ChooserType, Client, Folder, Page, Source, AnyItem } from '$lib/chooser/ChooserAPI'
 import { randomid } from 'txstate-utils'
@@ -45,9 +44,10 @@ const assets: Record<string, RootFolder | RootPage> = {
             url: '/assets/biology/evolutionary',
             acceptsUpload: false,
             hasChildren: true,
-            childCount: 1,
+            childCount: 2,
             children: [
-              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', extension: 'png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png', altText: 'It looks like a film spiral.' } }
+              { type: 'asset', id: 'asset-3', path: '/biology/evolutionary/missinglink.png', name: 'missinglink.png', mime: 'image/png', extension: 'png', bytes: 196672, url: '/demo-full.png', image: { width: 909, height: 1114, thumbnailUrl: '/demo-thumb.png', altText: 'It looks like a film spiral.' } },
+              { type: 'asset', id: 'asset-6', path: '/biology/evolutionary/originofspecies.pdf', name: 'originofspecies.pdf', mime: 'application/pdf', extension: 'pdf', bytes: 1264, url: '/blankpdf.pdf' }
             ]
           },
           { type: 'folder', id: 'folder-5', name: 'humananatomy', path: '/biology/humananatomy', url: '/assets/biology/humananatomy', acceptsUpload: false, hasChildren: false }
@@ -188,11 +188,12 @@ class DemoChooserAPI implements Client {
     return ret
   }
 
-  /** Returns any children of `path` as an AnyItem array with `source` added as a property to each child in the array.  */
+  /** Returns any children of `path` as an AnyItem array with `source` added as a property to each child in the array.
+   * Returns copies because the chooser mutates fetched items (tree bookkeeping, post-filter
+   * hasChildren/childCount corrections) and must not corrupt the stored demo data. */
   async getChildren (source: string, path: string) {
     const folder = this.findFolder(source, path)
-    for (const c of folder.children ?? []) (c as AnyItem).source = source
-    return folder.children as AnyItem[] ?? []
+    return (folder.children ?? []).map(c => ({ ...c, source })) as AnyItem[]
   }
 
   /** Goes through all the items decending from path, under source, and case insensitively checks if their name includes
@@ -229,8 +230,9 @@ class DemoChooserAPI implements Client {
   /** If a folder corresponds to `path` under `source` this will build StoredAsset objects from the `files` passed and simulate adding them to that folder's children in memory.
    * @throws 'User may not upload to this folder` error if that folder doesn't acceptUpload. */
   async upload (folder: Folder, files: File[], progress: (ratio: number) => void) {
-    const treeFolder = folder as TypedTreeItem<Folder>
-    if (!treeFolder?.acceptsUpload) throw new Error('User may not upload to this folder')
+    if (!folder?.acceptsUpload) throw new Error('User may not upload to this folder')
+    // getChildren hands out copies, so find the stored folder to make the upload stick
+    const treeFolder = this.findFolder(folder.source, folder.path) as FolderWithChildren
     treeFolder.children ??= []
     const inc = 1 / files.length
     let ratio = 0
@@ -244,13 +246,13 @@ class DemoChooserAPI implements Client {
           thumbnailUrl: '/demo-thumb.png'
         }
       }
-      treeFolder.children.push(asset as any)
+      treeFolder.children.push(asset)
       treeFolder.childCount += 1
       treeFolder.hasChildren = true
       ratio += inc
       progress(ratio)
     }
-    return treeFolder.children
+    return treeFolder.children.map(c => ({ ...c, source: folder.source })) as (Asset | Folder)[]
   }
 
   async idToEditingUrl (id: string): Promise<string | undefined> {
