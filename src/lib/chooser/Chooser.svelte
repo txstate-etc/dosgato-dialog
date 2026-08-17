@@ -163,7 +163,7 @@
   .dialog-chooser-window.has-alt-text.no-controls {
     height: calc(80vh - 4.5em);
   }
-  .dialog-chooser-window * {
+  .dialog-chooser-window :global(*) {
     box-sizing: border-box;
   }
   .dialog-chooser-chooser {

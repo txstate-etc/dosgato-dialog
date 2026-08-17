@@ -178,7 +178,7 @@
   .dialog-chooser-window.no-controls {
     height: 80vh;
   }
-  .dialog-chooser-window * {
+  .dialog-chooser-window :global(*) {
     box-sizing: border-box;
   }
   .dialog-chooser-chooser {
