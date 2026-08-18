@@ -4,7 +4,7 @@
   import folderNotchOpen from '@iconify-icons/ph/folder-notch-open'
   import { createEventDispatcher, getContext, onMount, setContext, tick } from 'svelte'
   import { htmlEncode, isNotBlank, randomid } from 'txstate-utils'
-  import { Button, Dialog, Icon, Tabs, Tree, type TabStore, expandTreePath } from '$lib'
+  import { Button, Dialog, Icon, Tabs, Tree, type TabStore, expandTreePath, publishedStatusColors, publishedStatusTreeIcon } from '$lib'
   import { DATA_CHOOSER_API_CONTEXT, describeSelections, type DataChooserClient, type DataChooserItem } from './DataChooserAPI'
   import { DATA_CHOOSER_STORE_CONTEXT, DataChooserStore, type DataUIItem } from './DataChooserStore'
   import DataDetails from './DataDetails.svelte'
@@ -132,10 +132,15 @@
       <Tabs bind:store={tabStore} tabs={$sources.map(s => ({ name: s.name, title: s.label ?? s.name }))} active={$preview?.source ?? $selected?.source ?? $source?.name ?? initialSource} accordionOnMobile={false}/>
     </header>
     {/if}
-    <section class="dialog-chooser-chooser">
+    <section class="dialog-chooser-chooser"
+      style:--dg-status-published={publishedStatusColors.published}
+      style:--dg-status-modified={publishedStatusColors.modified}
+      style:--dg-status-unpublished={publishedStatusColors.unpublished}
+    >
       {#if $store.initialized}
         <Tree headers={[
-          { label: 'Path', id: 'name', grow: 4, icon: item => iconForItem(item), render: item => htmlEncode(item.label ?? item.name) }
+          { label: 'Path', id: 'name', grow: 4, icon: item => iconForItem(item), render: item => htmlEncode(item.label ?? item.name) },
+          { label: 'Status', id: 'status', fixed: '4.5em', icon: item => item.published ? publishedStatusTreeIcon(item.published) : undefined }
         ]} singleSelect={!multiple} selectEligible={itm => store.isChoosable(itm)} store={treeStore} on:deselect={onDeselect} on:choose={onChoose} searchable={itm => [itm.label ?? itm.name]} />
       {/if}
     </section>
@@ -188,6 +193,19 @@
     height: 100%;
     background-color: white;
     overflow: auto;
+  }
+  .dialog-chooser-chooser :global(.tree-cell.status) {
+    display: flex;
+    justify-content: center;
+  }
+  .dialog-chooser-chooser :global(.tree-cell.status .icon.published) {
+    color: var(--dg-status-published);
+  }
+  .dialog-chooser-chooser :global(.tree-cell.status .icon.modified) {
+    color: var(--dg-status-modified);
+  }
+  .dialog-chooser-chooser :global(.tree-cell.status .icon.unpublished) {
+    color: var(--dg-status-unpublished);
   }
   .dialog-chooser-controls {
     position: relative;

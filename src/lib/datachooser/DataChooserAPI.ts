@@ -1,4 +1,5 @@
 import type { IconifyIcon } from '@iconify/svelte'
+import type { PublishedStatus } from '../publishedIcons.js'
 
 export const DATA_CHOOSER_API_CONTEXT = {}
 
@@ -39,13 +40,6 @@ export interface DataChooserClient<F = any> {
    */
   findById: (rootTemplateKey: string, id: string) => Promise<DataChooserItem | undefined>
 }
-
-/**
- * 'published' - the live version is the latest version
- * 'modified' - published, but with unpublished changes pending
- * 'unpublished' - no published version exists
- */
-export type DataChooserPublishedStatus = 'published' | 'modified' | 'unpublished'
 
 export interface DataChooserSource {
   // this must be immutable or else existing selections saved in the system may
@@ -110,14 +104,15 @@ export interface DataChooserItem {
    */
   icon?: { icon: IconifyIcon, label?: string }
   /**
-   * publish status of the data item; shown as a Status row in the preview pane
-   * and used by the `publishedOnly` prop on FieldDataChooser to hide unpublished
-   * items
+   * publish status of the data item; shown as a colored status icon column in
+   * the chooser tree and used by the `publishedOnly` prop on FieldDataChooser
+   * to hide unpublished items
    *
    * leave undefined for containers or when the client does not track publish
-   * status; items without a status are never hidden by `publishedOnly`
+   * status; items without a status get a blank cell in the status column and
+   * are never hidden by `publishedOnly`
    */
-  published?: DataChooserPublishedStatus
+  published?: PublishedStatus
   /**
    * extra label/value rows to show in the preview pane and after selection,
    * e.g. last modified date

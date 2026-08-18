@@ -75,10 +75,6 @@ it('FieldDataChooser opens a chooser with source tabs and records the chosen ite
   row.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   await settleChooser()
 
-  // preview pane now shows the publish status provided by the client
-  expect(document.body.textContent).toContain('Status')
-  expect(document.body.textContent).toContain('Published')
-
   const choosebutton = Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Choose')
   choosebutton.click()
   await settle(30)
@@ -122,6 +118,26 @@ async function openChooserForField (index) {
   folderRow.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   await settleChooser()
 }
+
+it('DataChooser shows a colored status icon per item, leaving the cell blank without a status', async () => {
+  const { target, component } = mountDemo()
+  await settle(30)
+
+  await openChooserForField(0)
+  expect(document.querySelector('.tree-header-cell.status')).not.toBeNull()
+  expect(findRow('Campus History').querySelector('.tree-cell.status .icon.published')).not.toBeNull()
+  expect(findRow('Finals Schedule').querySelector('.tree-cell.status .icon.unpublished')).not.toBeNull()
+  expect(findRow('Commencement Ceremony').querySelector('.tree-cell.status .icon.modified')).not.toBeNull()
+  // containers have no status, so their status cell stays empty
+  expect(findRow('announcements').querySelector('.tree-cell.status .icon')).toBeNull()
+  // the preview pane no longer carries a Status row
+  findRow('Campus History').dispatchEvent(new MouseEvent('click', { bubbles: true }))
+  await settleChooser()
+  expect(document.querySelector('.dialog-chooser-preview').textContent).not.toContain('Status')
+
+  unmount(component)
+  target.remove()
+})
 
 it('FieldDataChooser publishedOnly prop hides unpublished items but keeps modified ones', async () => {
   const { target, component } = mountDemo()
