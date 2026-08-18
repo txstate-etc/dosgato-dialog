@@ -1,4 +1,5 @@
 import { flushSync, mount, unmount } from 'svelte'
+import { dateToISOWithTZ } from 'txstate-utils'
 import { expect, it } from 'vitest'
 import { DataChooserStore, dedupeSelections, describeSelections } from '$lib'
 import { demoDataChooserAPI } from '../src/demo/DemoDataChooserAPI'
@@ -134,6 +135,87 @@ it('DataChooser shows a colored status icon per item, leaving the cell blank wit
   findRow('Campus History').dispatchEvent(new MouseEvent('click', { bubbles: true }))
   await settleChooser()
   expect(document.querySelector('.dialog-chooser-preview').textContent).not.toContain('Status')
+
+  unmount(component)
+  target.remove()
+})
+
+it('DataChooserStore pulls full data at preview time only, never while listing', async () => {
+  const calls = []
+  const client = {
+    getSources: demoDataChooserAPI.getSources.bind(demoDataChooserAPI),
+    getChildren: demoDataChooserAPI.getChildren.bind(demoDataChooserAPI),
+    findById: demoDataChooserAPI.findById.bind(demoDataChooserAPI),
+    getPreviewData: async (rootTemplateKey, item) => { calls.push(item.id); return await demoDataChooserAPI.getPreviewData(rootTemplateKey, item) }
+  }
+  const store = new DataChooserStore(client)
+  await store.init({ rootTemplateKey: 'articledata' })
+  const roots = await store.fetchChildren()
+  expect(calls).toEqual([])
+
+  const campusHistory = roots.find(c => c.id === 'data-3')
+  store.setPreview(campusHistory)
+  await settle()
+  expect(calls).toEqual(['data-3'])
+  expect(store.value.previewData.title).toBe('Campus History')
+
+  // previewing the same item again does not refetch
+  store.setPreview(campusHistory)
+  await settle()
+  expect(calls).toEqual(['data-3'])
+
+  // clearing the preview clears the data along with it
+  store.setPreview(undefined)
+  expect(store.value.previewData).toBeUndefined()
+
+  // a client without getPreviewData previews fine, just without data
+  const bare = new DataChooserStore({ ...client, getPreviewData: undefined })
+  await bare.init({ rootTemplateKey: 'articledata' })
+  bare.setPreview(campusHistory)
+  await settle()
+  expect(bare.value.preview.id).toBe('data-3')
+  expect(bare.value.previewData).toBeUndefined()
+})
+
+it('DataChooser preview renders full data as nested lists, eliding past the depth limit', async () => {
+  const { target, component } = mountDemo()
+  await settle(30)
+
+  const selectbutton = Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Select Data'))
+  selectbutton.click()
+  await settleChooser()
+  findRow('Campus History').dispatchEvent(new MouseEvent('click', { bubbles: true }))
+  await settleChooser()
+
+  const previewEl = document.querySelector('.dialog-chooser-preview')
+  // objects render as key/value rows, arrays as bulleted lists, nested inline
+  expect(previewEl.textContent).toContain('title:')
+  expect(previewEl.textContent).toContain('sections:')
+  expect(previewEl.textContent).toContain('Founding')
+  expect(previewEl.textContent).toContain('An Item')
+  // the citations array sits inside a level-4 object, so it elides
+  expect(previewEl.textContent).toContain('citations:')
+  expect(previewEl.querySelector('.nested-data-elided')).not.toBeNull()
+  expect(previewEl.textContent).not.toContain('example.edu/archives')
+
+  // datetimes render as ISO8601 in the browser's timezone, whether they arrive
+  // as UTC strings or Date objects; date-only strings pass through untouched
+  const localize = iso => dateToISOWithTZ(new Date(iso)).replace('.000', '')
+  expect(previewEl.textContent).toContain(localize('2026-03-04T15:30:00Z'))
+  expect(previewEl.textContent).not.toContain('2026-03-04T15:30:00Z')
+  expect(previewEl.textContent).toContain(localize('2026-06-01T12:00:00Z'))
+  expect(previewEl.textContent).toContain('1899-05-10')
+
+  // PreviewLink/PreviewImage shapes embedded by the client render as a real
+  // link (new tab) and a thumbnail
+  const link = previewEl.querySelector('a[href="https://example.edu/campus-history.pdf"]')
+  expect(link).not.toBeNull()
+  expect(link.textContent).toBe('History PDF')
+  expect(link.getAttribute('target')).toBe('_blank')
+  const img = previewEl.querySelector('.nested-data-trusted img')
+  expect(img).not.toBeNull()
+  expect(img.getAttribute('src').startsWith('data:image/')).toBe(true)
+  expect(img.getAttribute('alt')).toBe('campus banner')
 
   unmount(component)
   target.remove()

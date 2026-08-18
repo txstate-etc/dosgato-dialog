@@ -7,6 +7,7 @@
   import { Button, Dialog, Icon, Tabs, Tree, type TabStore, expandTreePath, publishedStatusColors, publishedStatusTreeIcon } from '$lib'
   import { DATA_CHOOSER_API_CONTEXT, describeSelections, type DataChooserClient, type DataChooserItem } from './DataChooserAPI'
   import { DATA_CHOOSER_STORE_CONTEXT, DataChooserStore, type DataUIItem } from './DataChooserStore'
+  import { NestedData } from '@txstate-mws/svelte-components'
   import DataDetails from './DataDetails.svelte'
 
   const chooserClient = getContext<DataChooserClient>(DATA_CHOOSER_API_CONTEXT)
@@ -24,6 +25,10 @@
   export let disable: undefined | ((item: DataChooserItem) => boolean) = undefined
   /** hide items whose `published` status is 'unpublished' */
   export let publishedOnly = false
+  /** render tag-bearing strings in the preview data as real (scrubbed) HTML; only for trusted payloads */
+  export let previewAllowHtml = false
+  /** app-level display overrides for the preview data; consulted before the built-in encodePreviewLink/encodePreviewImage handling */
+  export let previewFormat: undefined | ((value: string, path: (string | number)[]) => string | { html: string, inline?: boolean } | undefined) = undefined
   /** allow multiple selections; the change event carries them in `selections` */
   export let multiple = false
   /** allow items marked `folder` to be chosen as values */
@@ -36,7 +41,7 @@
   const dispatch = createEventDispatcher()
 
   let tabStore: TabStore
-  const { sources, source, preview, treeStore, chosen } = store
+  const { sources, source, preview, previewData, treeStore, chosen } = store
   const selected = store.selected
   $: currentName = tabStore?.currentName()
 
@@ -118,6 +123,27 @@
 
   const previewId = randomid()
 
+  /**
+   * the app's previewFormat gets first refusal, then we catch any remaining
+   * encodePreviewLink / encodePreviewImage strings the client embedded in the
+   * payload; the markup we build here is trusted by NestedData, but the hrefs
+   * come from the client's data, so NestedData still scrubs executable schemes
+   */
+  function previewFormatter (value: string, path: (string | number)[]) {
+    const result = previewFormat?.(value, path)
+    if (result != null) return result
+    if (!value.startsWith('{')) return undefined
+    let parsed: any
+    try { parsed = JSON.parse(value) } catch { return undefined }
+    if (typeof parsed?.link === 'string') {
+      return { html: `<a href="${htmlEncode(parsed.link)}" target="_blank" rel="noopener">${htmlEncode(parsed.label ?? parsed.link)}</a>`, inline: true }
+    }
+    if (typeof parsed?.image === 'string') {
+      return { html: `<img src="${htmlEncode(parsed.image)}" alt="${htmlEncode(parsed.alt ?? '')}">` }
+    }
+    return undefined
+  }
+
   function iconForItem (item: DataUIItem) {
     if (item.icon) return item.icon
     if (item.hasChildren) return { icon: item.open ? folderNotchOpen : folderIcon }
@@ -151,9 +177,14 @@
       {#if $preview}
         <div class="preview-container">
           <div class="preview-icon">
-            <Icon icon={$preview.icon?.icon ?? databaseIcon} width="5em" />
+            <Icon icon={$preview.icon?.icon ?? databaseIcon} width="2.5em" />
           </div>
           <DataDetails item={$preview} />
+          {#if $previewData != null}
+            <div class="preview-data">
+              <NestedData data={$previewData} allowHtml={previewAllowHtml} format={previewFormatter} />
+            </div>
+          {/if}
         </div>
       {:else}
         <section class="placeholder">
@@ -225,14 +256,26 @@
     padding: 0.7em 0 0 0;
   }
   .preview-container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
+    padding-top: 0.7em;
   }
+  /* the icon floats top right and the name/path details rise up alongside it */
   .preview-icon {
-    display: flex;
-    justify-content: center;
-    padding: 1em 0;
+    float: right;
+    margin: 0 0 0.4em 0.6em;
+  }
+  .preview-data {
+    margin-top: 0.7em;
+    padding-top: 0.7em;
+    border-top: 1px solid #cccccc;
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+  }
+  /* PreviewImage thumbnails: a block that fills whatever width the indenting left, up to 200px */
+  .preview-data :global(.nested-data-trusted img) {
+    display: block;
+    width: 100%;
+    max-width: 200px;
   }
   .placeholder {
     position: relative;
@@ -278,11 +321,6 @@
       display: flex;
       overflow: hidden;
       margin-bottom: 1em;
-    }
-    .preview-container {
-      flex-direction: row;
-      align-items: center;
-      gap: 1em;
     }
     .placeholder {
       width: 100%;

@@ -26,12 +26,6 @@
         <dd>{item.childCount} sub-items</dd>
       </div>
     {/if}
-    {#each item.details ?? [] as detail (detail.label)}
-      <div>
-        <dt>{detail.label}:</dt>
-        <dd>{detail.value}</dd>
-      </div>
-    {/each}
   {/if}
   <slot />
 </dl>

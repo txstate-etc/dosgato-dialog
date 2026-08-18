@@ -12,6 +12,8 @@ export interface IDataChooserStore {
   activesource: number
   initialized: boolean
   preview?: DataChooserItem | DataUIItem
+  /** the previewed item's full data payload, fetched lazily at display time */
+  previewData?: any
   /**
    * selections being remembered for sources other than the active one, keyed by
    * source name; the tree only holds the active source's selections
@@ -106,6 +108,7 @@ export class DataChooserStore<F = any> extends Store<IDataChooserStore> {
   sources = derivedStore(this, v => (v.sources ?? []).filter(s => this.options.activeSources ? this.options.activeSources.has(s.name) : true))
   source = derivedStore(this, v => this.getSource(v))
   preview = derivedStore(this, 'preview')
+  previewData = derivedStore(this, 'previewData')
   selected = derivedStore<DataUIItem | undefined>(this.treeStore, 'selectedItems.0')
   /**
    * the current selections that would become the value if the user confirmed right
@@ -159,11 +162,24 @@ export class DataChooserStore<F = any> extends Store<IDataChooserStore> {
   setPreview (item?: DataChooserItem | DataUIItem) {
     if (!item) { this.clearPreview(); return }
     if (!this.isChoosable(item)) return
-    this.update(v => ({ ...v, preview: item }))
+    if (this.value.preview?.id === item.id) return
+    this.update(v => ({ ...v, preview: item, previewData: undefined }))
+    void this.fetchPreviewData(item)
+  }
+
+  /**
+   * the full data payload is only pulled at display time, for the one item being
+   * previewed, so the client can afford a heavier query than getChildren
+   */
+  protected async fetchPreviewData (item: DataChooserItem) {
+    if (!this.client.getPreviewData) return
+    const data = await this.client.getPreviewData(this.options.rootTemplateKey ?? '', item)
+    // the user may have moved on to previewing another item before this resolved
+    if (this.value.preview?.id === item.id) this.update(v => ({ ...v, previewData: data }))
   }
 
   clearPreview () {
-    this.update(v => ({ ...v, preview: undefined }))
+    this.update(v => ({ ...v, preview: undefined, previewData: undefined }))
   }
 
   setSource (name?: string, init?: boolean) {

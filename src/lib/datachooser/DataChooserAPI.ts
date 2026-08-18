@@ -39,6 +39,46 @@ export interface DataChooserClient<F = any> {
    * selection, since unknown items cannot be shown in the chooser)
    */
   findById: (rootTemplateKey: string, id: string) => Promise<DataChooserItem | undefined>
+
+  /**
+   * fetch an item's data payload so the preview pane can display it
+   *
+   * this is only called at display time, when the user previews a single item -
+   * never while listing items - so it is acceptable for it to be a heavier query
+   * than getChildren
+   *
+   * the payload is for display only and never becomes part of the form's value,
+   * so the client is free to redact, reshape, or summarize the underlying data
+   *
+   * it is rendered as a nested structure (property lists for objects, bulleted
+   * lists for arrays) down to a limited depth, with a placeholder for anything
+   * deeper; return undefined, or omit this method entirely, to show no data in
+   * the preview pane
+   *
+   * dosgato-dialog is intentionally ignorant of any internal link format, so if
+   * the payload contains links the client would like displayed as real links or
+   * images, it should resolve them while reshaping and encode them with
+   * encodePreviewLink / encodePreviewImage anywhere in the payload; the preview
+   * pane recognizes the encoded strings and renders them
+   */
+  getPreviewData?: (rootTemplateKey: string, item: DataChooserItem) => Promise<any>
+}
+
+/**
+ * encode a resolved link for a getPreviewData payload; the preview pane
+ * renders it as a real anchor that opens in a new tab, displaying the label
+ * (or the href when the label is absent)
+ */
+export function encodePreviewLink (href: string, label?: string) {
+  return JSON.stringify(label != null ? { link: href, label } : { link: href })
+}
+
+/**
+ * encode a resolved image for a getPreviewData payload; the preview pane
+ * renders it as a small thumbnail beneath its key
+ */
+export function encodePreviewImage (src: string, alt?: string) {
+  return JSON.stringify(alt != null ? { image: src, alt } : { image: src })
 }
 
 export interface DataChooserSource {
@@ -113,11 +153,6 @@ export interface DataChooserItem {
    * are never hidden by `publishedOnly`
    */
   published?: PublishedStatus
-  /**
-   * extra label/value rows to show in the preview pane and after selection,
-   * e.g. last modified date
-   */
-  details?: { label: string, value: string }[]
 }
 
 /**

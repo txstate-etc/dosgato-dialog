@@ -86,6 +86,17 @@
    */
   export let passthruFilters: any = undefined
   /** Restrict the chooser to a subset of the client's sources for this rootTemplateKey. */
+  /**
+   * Render tag-bearing strings in the preview data as real (scrubbed) HTML.
+   * Only enable when the client's preview payloads are trusted.
+   */
+  export let previewAllowHtml = false
+  /**
+   * App-level display overrides for the preview data, consulted before the
+   * built-in PreviewLink/PreviewImage handling. See NestedData's format prop
+   * in @txstate-mws/svelte-components for the contract.
+   */
+  export let previewFormat: undefined | ((value: string, path: (string | number)[]) => string | { html: string, inline?: boolean } | undefined) = undefined
   export let activeSources: string[] | undefined = undefined
   export let initialSource: string | undefined = undefined
   export let initialPath: string | undefined = undefined
@@ -223,7 +234,7 @@
     </div>
   {/if}
   {#if modalshown}
-    <DataChooser {store} {label} {rootTemplateKey} {initialSource} {initialPath} {activeSources} {passthruFilters} {filter} {disable} {publishedOnly} {required} {multiple} {selectableFolders} preloadSelections={resolvedSelections} on:change={onChange(setVal)} on:escape={hide} />
+    <DataChooser {store} {label} {rootTemplateKey} {initialSource} {initialPath} {activeSources} {passthruFilters} {filter} {disable} {publishedOnly} {previewAllowHtml} {previewFormat} {required} {multiple} {selectableFolders} preloadSelections={resolvedSelections} on:change={onChange(setVal)} on:escape={hide} />
   {/if}
 </FieldStandard>
 

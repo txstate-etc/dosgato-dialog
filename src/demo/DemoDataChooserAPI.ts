@@ -2,7 +2,7 @@ import calendarBlank from '@iconify-icons/ph/calendar-blank'
 import globeIcon from '@iconify-icons/ph/globe'
 import folderIcon from '@iconify-icons/ph/folder'
 import newspaperIcon from '@iconify-icons/ph/newspaper'
-import type { DataChooserClient, DataChooserItem, DataChooserSource } from '$lib/datachooser/DataChooserAPI'
+import { encodePreviewImage, encodePreviewLink, type DataChooserClient, type DataChooserItem, type DataChooserSource } from '$lib/datachooser/DataChooserAPI'
 
 interface StoredDataItem extends Omit<DataChooserItem, 'source'> {
   children?: StoredDataItem[]
@@ -70,10 +70,53 @@ const data: Record<string, Record<string, StoredDataItem[]>> = {
   },
   colordata: {
     Global: [
-      { id: 'color-1', name: 'maroon', label: 'Maroon', path: '/maroon', templateKey: 'colordata', hasChildren: false, details: [{ label: 'Hex', value: '#501214' }] },
-      { id: 'color-2', name: 'gold', label: 'Gold', path: '/gold', templateKey: 'colordata', hasChildren: false, details: [{ label: 'Hex', value: '#6a5638' }] }
+      { id: 'color-1', name: 'maroon', label: 'Maroon', path: '/maroon', templateKey: 'colordata', hasChildren: false },
+      { id: 'color-2', name: 'gold', label: 'Gold', path: '/gold', templateKey: 'colordata', hasChildren: false }
     ]
   }
+}
+
+/**
+ * full data payloads, fetched one at a time when an item is previewed; Campus
+ * History nests deep enough to demonstrate the preview's depth limit - the
+ * `citations` array sits inside a level-4 object, so it renders as an ellipsis
+ */
+const fullData: Record<string, any> = {
+  'data-1': {
+    title: 'Welcome Week',
+    intro: 'Kick off the semester with a full week of events.',
+    author: { name: 'Riley Byrd', email: 'rbyrd@example.edu' },
+    tags: ['students', 'events']
+  },
+  'data-2': {
+    title: 'Finals Schedule',
+    intro: 'Exam times for every section.'
+  },
+  'data-3': {
+    title: 'Campus History',
+    // datetimes display as ISO8601 in the browser's timezone, whether they come
+    // in as UTC strings or Date objects; date-only strings pass through as-is
+    updatedAt: '2026-03-04T15:30:00Z',
+    archivedAt: new Date('2026-06-01T12:00:00Z'),
+    established: '1899-05-10',
+    // a real client would resolve its internal link format into these encoded strings
+    attachment: encodePreviewLink('https://example.edu/campus-history.pdf', 'History PDF'),
+    heroImage: encodePreviewImage("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40'%3E%3Crect width='80' height='40' fill='%23501214'/%3E%3C/svg%3E", 'campus banner'),
+    sections: [
+      {
+        heading: 'Founding',
+        subsections: [
+          { id: 5, name: 'An Item', citations: [{ url: 'https://example.edu/archives' }] }
+        ]
+      }
+    ]
+  },
+  'data-4': {
+    title: 'Faculty Spotlight',
+    author: { name: 'Alex Chen' }
+  },
+  'color-1': { hex: '#501214', usage: ['primary', 'headers'] },
+  'color-2': { hex: '#6a5638', usage: ['accents'] }
 }
 
 class DemoDataChooserAPI implements DataChooserClient {
@@ -106,6 +149,10 @@ class DemoDataChooserAPI implements DataChooserClient {
       if (item.children?.length) ret.push(...this.collectItems(item.children, source))
     }
     return ret
+  }
+
+  async getPreviewData (rootTemplateKey: string, item: DataChooserItem) {
+    return fullData[item.id]
   }
 
   async findById (rootTemplateKey: string, id: string): Promise<DataChooserItem | undefined> {
