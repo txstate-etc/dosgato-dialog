@@ -99,8 +99,9 @@
 </script>
 
 <FieldStandard bind:id {path} {descid} {label} {required} {defaultValue} {conditional} {helptext} let:value let:valid let:invalid let:id={fieldid} let:onBlur let:setVal let:messagesid let:helptextid>
-  <Icon icon={`${value.prefix === 'fab' ? 'fa7-brands' : 'fa7-solid'}:${value.icon?.slice(3) ?? 'graduation-cap'}`}/>
-  <button type="button" id={fieldid} class="select-icon" on:click={() => { modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])} on:blur={onBlur}>Select New Icon</button>
+  {@const current = value || defaultValue}
+  <Icon icon={`${current.prefix === 'fab' ? 'fa7-brands' : 'fa7-solid'}:${current.icon.slice(3)}`}/>
+  <button type="button" id={fieldid} class="select-icon" on:click={() => { selected = current; modalOpen = true }} aria-describedby={getDescribedBy([descid, messagesid, helptextid])} on:blur={onBlur}>Select New Icon</button>
   {#if modalOpen}
   <Modal>
     <section>
@@ -139,7 +140,7 @@
         </div>
       </div>
       <footer class="actions">
-        <button type="button" aria-describedby="{labelid} {descid}" on:click={onCancel(value)}>Cancel</button>
+        <button type="button" aria-describedby="{labelid} {descid}" on:click={onCancel(current)}>Cancel</button>
         <button type="button" aria-describedby="{labelid} {descid}" on:click={onSaveIconSelection(setVal)}>Save</button>
       </footer>
     </section>
