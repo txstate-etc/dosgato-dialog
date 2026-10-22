@@ -2,10 +2,10 @@
   export let size = '1em'
 </script>
 
-<i aria-hidden="true" style:width={size} style:padding-top={size}></i>
+<i aria-hidden="true" style:width={size} style:padding-top={size} class="load-icon"></i>
 
 <style>
-  i {
+  i.load-icon {
     display: inline-block;
     box-sizing: content-box;
     border-color: var(--loadicon-bg-color, #FFFFFF);
